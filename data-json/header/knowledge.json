@@ -1,0 +1,17 @@
+{
+	"programmingLanguages": {
+		{"level": 1, "icon": {"class": "tl-high", "title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"}},
+		{"level": 1, "icon": {"class": "tl-high", "title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"}},
+		{"level": 3, "icon": {"class": "tl-high", "title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"}}
+	},
+	"markupLanguages": {
+		{"level": 2, "icon": {"class": "tl-high", "title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"}},
+		{"level": 1, "icon": {"class": "tl-high", "title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"}}
+	},
+	"utilities": {
+		{"level": 1, "icon": {"class": "tl-high", "title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"}},
+		{"level": 2, "icon": {"class": "tl-high", "title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"}},
+		{"level": 2, "icon": {"class": "tl-high", "title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"}},
+		{"level": 1, "icon": {"class": "tl-high", "title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"}}
+	}
+}
