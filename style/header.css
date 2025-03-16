@@ -1,0 +1,60 @@
+section#header >
+section#welcome {
+	background-color: #8855aa;
+	padding: 2vw;
+	border-radius: 5%;
+}
+
+section#header >
+section#welcome >
+div#top {
+	display: flex;
+	justify-content: space-between;
+	padding-right: 2vw;
+}
+
+section#header >
+section#welcome >
+div#top >
+div#center {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 6.5vw;
+	gap: 3.5vw;
+}
+
+section#header >
+section#welcome >
+div#top >
+div#center >
+div#links {
+	display: flex;
+	font-size: 6vw;
+	gap: 7.5vw;
+}
+
+section#header >
+section#welcome >
+div#top >
+div#center >
+h1#title {
+	font-size: 6vw;
+	margin: 0px;
+}
+
+section#header >
+section#welcome >
+div#top >
+img#perfil-image {
+	border-radius: 50%;
+	width: 30vw;
+	border: 0.75vw solid black;
+	max-width: 210px;
+}
+
+section#header >
+section#welcome >
+p#description {
+	padding: 0px 3vw 0px 3vw;
+}
