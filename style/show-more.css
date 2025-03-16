@@ -1,0 +1,123 @@
+section#header >
+section#show-more {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100vw;
+	height: 100dvh;
+	background-color: rgba(50, 50, 50, 0.6);
+	color: #eee;
+	margin: 0px;
+	padding: 7dvh 7vw 7dvh 7vw;
+	box-sizing: border-box;
+}
+
+section#header >
+section#show-more >
+div#popup {
+	background-color: #af6601;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	border-radius: 5vw;
+	border: 0.5vw solid black;
+	padding: 7.85vw;
+	display: flex;
+	flex-direction: column;
+}
+
+section#header >
+section#show-more >
+div#popup >
+div#top {
+	display: flex;
+	justify-content: space-between;
+}
+
+section#header >
+section#show-more >
+div#popup >
+div#top >
+h1#title {
+	margin: 0px;
+	margin-top: -2vw;
+	font-size: 6vw;
+}
+
+section#header >
+section#show-more >
+div#popup >
+div#top >
+i {
+	font-size: 4vw;
+}
+
+section#header >
+section#show-more >
+div#popup >
+div#knowledge-level {
+	display: flex;
+	justify-content: space-between;
+	margin: 3dvh 0px 3dvh 0px;
+}
+
+section#header >
+section#show-more >
+div#popup >
+div#knowledge-level >
+span#low {
+	color: #a05;
+}
+
+section#header >
+section#show-more >
+div#popup >
+div#knowledge-level >
+span#middle {
+	color: #aa5;
+}
+
+section#header >
+section#show-more >
+div#popup >
+div#knowledge-level >
+span#high {
+	color: #0a5;
+}
+
+section#header >
+section#show-more >
+div#popup >
+div#knowledge {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+section#header >
+section#show-more >
+div#popup >
+div#knowledge >
+section.images-chain {
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+}
+
+section#header >
+section#show-more >
+div#popup >
+div#knowledge >
+section.images-chain >
+img {
+	margin: 2px;
+	padding: 2px;
+	max-width: 100px;
+	max-height: 100px;
+}
+
+img.knowledge-technolog-image {
+	width: 10vw;
+	border: 5px solid black;
+	border-radius: 25%;
+}

@@ -10,6 +10,7 @@
 
 	<link rel="stylesheet" href="style/global.css">
 	<link rel="stylesheet" href="style/header.css">
+	<link rel="stylesheet" href="style/show-more.css">
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,34 +25,82 @@
 
 <body>
 	<section id="header">
+
 		<section id="welcome">
 			<div id="top">
 				<img id="perfil-image" src="./img/foo.png">
 				<div id="center">
 					<h1 id="title">Hello world!</h1>
 					<div id="links">
-						<i class="fa-brands fa-github"></i>
-						<i class="fa-brands fa-itch-io"></i>
-						<i class="fa-brands fa-facebook"></i>
+						<a href="https://duckafire.github.io/nest"><i class="fa-brands fa-github"></i></a>
+						<a href="https://duckafire.github.io/nest"><i class="fa-brands fa-itch-io"></i></a>
+						<a href="https://duckafire.github.io/nest"><i class="fa-brands fa-facebook"></i></a>
 					</div>
 				</div>
-				<i class="fa-solid fa-ellipsis-vertical"></i>
+				<div id="show-more">
+					<i id="show-more" class="fa-solid fa-ellipsis-vertical"></i>
+				</div>
 			</div>
-			<p id="description">
-				Lorem ipsum odor amet, consectetuer adipiscing elit. Potenti
-				ultricies inceptos, quam facilisis aliquam vehicula quis. Laoreet
-				proin magna inceptos senectus lorem. Penatibus etiam metus quam
-				sodales nisi. Pellentesque mattis ligula habitasse sed eleifend
-				massa hendrerit accumsan. Venenatis sed penatibus justo sagittis
-				laoreet malesuada elementum. Auctor adipiscing conubia phasel lus;
-				aptent habitasse accumsan. Diam inceptos finibus magna imperdiet
-				gravida molestie consequat himenaeos. Imperdiet suscipit natoque
-				sem tellus ut; vel urna. Vulputate cubilia sodales risus at eget
-				et sociosqu lacus commodo.
-			</p>
+			<div id="description">
+				<p id="description">
+					&emsp;Lorem ipsum odor amet, consectetuer adipiscing elit. Potenti
+					ultricies inceptos, quam facilisis aliquam vehicula quis. Laoreet
+					proin magna inceptos senectus lorem. Penatibus etiam metus quam
+					sodales nisi. Pellentesque mattis ligula habitasse sed eleifend
+					massa hendrerit accumsan. Venenatis sed penatibus justo sagittis
+					laoreet malesuada elementum. Auctor adipiscing conubia phasel lus;
+					aptent habitasse accumsan. Diam inceptos finibus magna imperdiet
+					gravida molestie consequat himenaeos. Imperdiet suscipit natoque
+					sem tellus ut; vel urna. Vulputate cubilia sodales risus at eget
+					et sociosqu lacus commodo.
+				</p>
+			</div>
 		</section>
-		<!--<i class="fa-solid fa-mug-hot"></i>-->
+
+		<section id="show-more"><!--hidden-->
+			<div id="popup">
+				<div id="top">
+					<i class="fa-solid fa-mug-hot"></i>
+					<h1 id="title">Title</h1>
+					<i class="fa-solid fa-xmark"></i>
+				</div>
+				<div id="knowledge-level">
+					<span id="low">Raso</span>
+					<span id="middle">Intermediário</span>
+					<span id="high">Avançado</span>
+				</div>
+				<div id="knowledge">
+					<section id="programming-languages" class="images-chain">
+						<img class="knowledge-technolog-image" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg">
+						<img class="knowledge-technolog-image" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg">
+						<img class="knowledge-technolog-image" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg">
+						<img class="knowledge-technolog-image" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg">
+						<img class="knowledge-technolog-image" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg">
+					</section>
+					<section id="markup-languages" class="images-chain">
+						<img class="knowledge-technolog-image" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg">
+						<img class="knowledge-technolog-image" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg">
+						<img class="knowledge-technolog-image" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg">
+						<img class="knowledge-technolog-image" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg">
+						<img class="knowledge-technolog-image" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg">
+					</section>
+					<section id="other-utilities" class="images-chain">
+						<img class="knowledge-technolog-image" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg">
+						<img class="knowledge-technolog-image" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg">
+						<img class="knowledge-technolog-image" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg">
+						<img class="knowledge-technolog-image" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg">
+						<img class="knowledge-technolog-image" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg">
+						<img class="knowledge-technolog-image" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg">
+						<img class="knowledge-technolog-image" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg">
+						<img class="knowledge-technolog-image" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg">
+					</section>
+				</div>
+			</div>
+		</section>
+
 	</section>
 </body>
+
+<script src="./javascript/events/open-close.js"></script>
 
 </html>

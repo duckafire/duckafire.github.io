@@ -10,3 +10,7 @@ body{
 	padding: 3.5dvh 3.5vw 3.5dvh 3.5vw;
 	box-sizing: border-box;
 }
+
+a {
+	color: #eee;
+}
