@@ -1,3 +1,5 @@
+{
+
 const header = {
 	welcome: {
 		showMore: document.querySelector("section#header > section#welcome > div#top > div#show-more > i#show-more"),
@@ -6,3 +8,5 @@ const header = {
 }
 
 header.welcome.showMore.addEventListener("click", () => { header.showMore.hidden = false; });
+
+}
