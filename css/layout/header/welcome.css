@@ -1,8 +1,6 @@
 section#header >
 section#welcome {
-	background-color: #8855aa;
 	padding: 2vw;
-	border-radius: 5vw;
 }
 
 section#header >
@@ -47,7 +45,6 @@ section#header >
 section#welcome >
 div#top >
 img#perfil-image {
-	border-radius: 50%;
 	width: 30vw;
 	border: 0.75vw solid black;
 	max-width: 210px;
@@ -83,6 +80,4 @@ div#top >
 div#show-more >
 i#show-more {
 	font-size: 4vw;
-	padding: 1.5rem;
-	margin: -1.5rem;
 }

@@ -7,7 +7,7 @@ const knowledgeTechnolog = [
 ];
 
 let foo;
-const max = [9, 3, 5];
+const max = [9, 3, 15];
 
 for(let knowId = 0; knowId < knowledgeTechnolog.length; knowId++){
 	for(let i = 0; i < max[knowId]; i++){

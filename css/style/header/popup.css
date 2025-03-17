@@ -1,0 +1,40 @@
+section#header >
+section#show-more {
+	background-color: rgba(50, 50, 50, 0.6);
+	color: #eee;
+}
+
+section#header >
+section#show-more >
+div#popup {
+	background-color: #af6601;
+	border-radius: 5vw;
+}
+
+section#header >
+section#show-more >
+div#popup >
+div#knowledge-level >
+span#low {
+	color: #a05;
+}
+
+section#header >
+section#show-more >
+div#popup >
+div#knowledge-level >
+span#middle {
+	color: #aa5;
+}
+
+section#header >
+section#show-more >
+div#popup >
+div#knowledge-level >
+span#high {
+	color: #0a5;
+}
+
+img.knowledge-technolog-image {
+	border-radius: 25%;
+}

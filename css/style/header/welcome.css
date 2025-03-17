@@ -1,0 +1,12 @@
+section#header >
+section#welcome {
+	background-color: #8855aa;
+	border-radius: 5vw;
+}
+
+section#header >
+section#welcome >
+div#top >
+img#perfil-image {
+	border-radius: 50%;
+}
