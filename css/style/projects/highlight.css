@@ -1,0 +1,25 @@
+section#projects >
+section#highlight >
+div {
+	background-color: #33af77;
+	border-radius: 5vw;
+}
+
+section#projects >
+section#highlight >
+div >
+div#text >
+div#links >
+a {
+	background-color: #118d55;
+	border-radius: 5vw;
+}
+
+section#projects >
+section#highlight >
+div >
+div#text >
+div#show-links {
+	background-color: #118d55;
+	border-radius: 5vw;
+}

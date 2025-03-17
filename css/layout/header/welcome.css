@@ -1,3 +1,7 @@
+section#header {
+	margin-bottom: 2.25dvh;
+}
+
 section#header >
 section#welcome {
 	padding: 2vw;
@@ -46,7 +50,6 @@ section#welcome >
 div#top >
 img#perfil-image {
 	width: 30vw;
-	border: 0.75vw solid black;
 	max-width: 210px;
 }
 
@@ -56,6 +59,7 @@ div#description {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	margin: 1rem 0px 1rem 0px;
 }
 
 section#header >

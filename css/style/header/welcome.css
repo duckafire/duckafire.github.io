@@ -10,3 +10,10 @@ div#top >
 img#perfil-image {
 	border-radius: 50%;
 }
+
+section#header >
+section#welcome >
+div#top >
+img#perfil-image {
+	border: 0.75vw solid black;
+}

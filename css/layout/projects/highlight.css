@@ -1,0 +1,103 @@
+section#projects >
+section#highlight >
+div {
+	padding: 3.5vw;
+}
+
+section#projects >
+section#highlight >
+div >
+div#images {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0px 5vw 0px 5vw;
+}
+
+section#projects >
+section#highlight >
+div >
+div#images >
+div#showcase {
+	flex-grow: 1;
+}
+
+section#projects >
+section#highlight >
+div >
+div#images >
+div#showcase >
+.showcase-container {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+section#projects >
+section#highlight >
+div >
+div#images >
+div#showcase >
+div#used-languages {
+	font-size: 2.5rem;
+}
+
+section#projects >
+section#highlight >
+div >
+div#images >
+img {
+	width: 20vw;
+}
+
+section#projects >
+section#highlight >
+div >
+div#images >
+div#showcase >
+div#images >
+img {
+	width: 10vw;
+}
+
+section#projects >
+section#highlight >
+div >
+div#text {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.5dvh;
+}
+
+section#projects >
+section#highlight >
+div >
+div#text >
+div#links {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 0.45rem;
+	width: 100%;
+}
+
+section#projects >
+section#highlight >
+div >
+div#text >
+div#links >
+a {
+	width: 100%;
+	padding: 0.4rem;
+}
+
+section#projects >
+section#highlight >
+div >
+div#text >
+div#show-links {
+	width: 100%;
+	text-align: center;
+	padding: 0.4rem;
+}

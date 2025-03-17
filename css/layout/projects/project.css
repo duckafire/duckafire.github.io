@@ -1,0 +1,6 @@
+section#projects {
+	display: flex;
+	flex-direction: column;
+	gap: 2.25dvh;
+	margin-bottom: 3.5dvh;
+}
