@@ -1,0 +1,30 @@
+{
+	"programmingLanguages": {
+		{"level": 1, "icon": {"title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"}},
+		{"level": 1, "icon": {"title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"}},
+		{"level": 1, "icon": {"title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"}},
+		{"level": 2, "icon": {"title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"}},
+		{"level": 2, "icon": {"title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"}},
+		{"level": 1, "icon": {"title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"}},
+		{"level": 3, "icon": {"title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"}},
+		{"level": 1, "icon": {"title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"}},
+		{"level": 1, "icon": {"title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"}},
+		{"level": 3, "icon": {"title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"}},
+		{"level": 3, "icon": {"title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"}}
+	},
+	"markupLanguages": {
+		{"level": 2, "icon": {"title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"}},
+		{"level": 1, "icon": {"title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"}},
+		{"level": 2, "icon": {"title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"}},
+		{"level": 3, "icon": {"title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"}},
+		{"level": 2, "icon": {"title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"}},
+		{"level": 1, "icon": {"title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"}}
+	},
+	"otherUtilities": {
+		{"level": 2, "icon": {"title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"}},
+		{"level": 1, "icon": {"title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"}},
+		{"level": 2, "icon": {"title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"}},
+		{"level": 2, "icon": {"title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"}},
+		{"level": 1, "icon": {"title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"}}
+	}
+}

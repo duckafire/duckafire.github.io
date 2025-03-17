@@ -1,15 +1,15 @@
-{
+[
 	{
 		"cover": "https://github.com/duckafire/nest/blob/work-in-progress/img/duckafire-perfil-icon.png",
 		"title": "foo",
 		"description": "This is a foo item",
 		"links": [
-			{"fa_iconClass": "fa-solid fa-file", "title": "foo", "address": "https://duckafire.github.io/nest"},
-			{"fa_iconClass": "fa-solid fa-file", "title": "foo", "address": "https://duckafire.github.io/nest"}
+			{"fa_iconClass": "fa-solid fa-file", "textContent": "foo", "title": "foo", "address": "https://duckafire.github.io/nest"},
+			{"fa_iconClass": "fa-solid fa-file", "textContent": "foo", "title": "foo", "address": "https://duckafire.github.io/nest"}
 		],
 		"di_usedLangIcons": [
-			{"class": "tl-high", "title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"},
-			{"class": "tl-high", "title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"}
+			{"title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"},
+			{"title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"}
 		],
 		"showcaseImages": [
 			"https://github.com/duckafire/nest/blob/work-in-progress/img/foo.png",
@@ -23,7 +23,7 @@
 		"title": "foo2",
 		"description": "This is a foo item2",
 		"links": [
-			{"fa_iconClass": "fa-solid fa-file", "title": "foo2", "address": "https://duckafire.github.io/nest"}
+			{"fa_iconClass": "fa-solid fa-file", "textContent": "foo", "title": "foo2", "address": "https://duckafire.github.io/nest"}
 		],
 		"di_usedLangIcons": [
 		],
@@ -37,15 +37,15 @@
 		"title": "foo3",
 		"description": "This is a foo item3",
 		"links": [
-			{"fa_iconClass": "fa-solid fa-file", "title": "foo3", "address": "https://duckafire.github.io/nest"},
-			{"fa_iconClass": "fa-solid fa-file", "title": "foo3", "address": "https://duckafire.github.io/nest"},
-			{"fa_iconClass": "fa-solid fa-file", "title": "foo3", "address": "https://duckafire.github.io/nest"}
+			{"fa_iconClass": "fa-solid fa-file", "textContent": "foo", "title": "foo3", "address": "https://duckafire.github.io/nest"},
+			{"fa_iconClass": "fa-solid fa-file", "textContent": "foo", "title": "foo3", "address": "https://duckafire.github.io/nest"},
+			{"fa_iconClass": "fa-solid fa-file", "textContent": "foo", "title": "foo3", "address": "https://duckafire.github.io/nest"}
 		],
 		"di_usedLangIcons": [
-			{"class": "tl-high", "title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"},
-			{"class": "tl-high", "title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"},
-			{"class": "tl-high", "title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"},
-			{"class": "tl-high", "title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"}
+			{"title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"},
+			{"title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"},
+			{"title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"},
+			{"title": "c", "src": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg"}
 		],
 		"showcaseImages": [
 			"https://github.com/duckafire/nest/blob/work-in-progress/img/foo.png",
@@ -56,4 +56,4 @@
 			"https://github.com/duckafire/nest/blob/work-in-progress/img/foo.png"
 		]
 	}
-}
+]
