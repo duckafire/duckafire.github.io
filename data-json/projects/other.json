@@ -1,6 +1,6 @@
 [
 	{
-		"cover": "https://github.com/duckafire/nest/blob/work-in-progress/img/duckafire-perfil-icon.png",
+		"cover": "https://github.com/duckafire/nest/blob/work-in-progress/img/foo.png",
 		"showcase": {
 			"images": [
 				"https://github.com/duckafire/nest/blob/work-in-progress/img/foo0.png",
@@ -21,7 +21,7 @@
 	},
 
 	{
-		"cover": "https://github.com/duckafire/nest/blob/work-in-progress/img/duckafire-perfil-icon.png",
+		"cover": "https://github.com/duckafire/nest/blob/work-in-progress/img/foo.png",
 		"showcase": {
 			"images": [
 				"https://github.com/duckafire/nest/blob/work-in-progress/img/foo0.png"
@@ -40,9 +40,6 @@
 		"cover": "https://github.com/duckafire/nest/blob/work-in-progress/img/duckafire-perfil-icon.png",
 		"showcase": {
 			"images": [
-				"https://github.com/duckafire/nest/blob/work-in-progress/img/foo0.png",
-				"https://github.com/duckafire/nest/blob/work-in-progress/img/foo0.png",
-				"https://github.com/duckafire/nest/blob/work-in-progress/img/foo0.png",
 				"https://github.com/duckafire/nest/blob/work-in-progress/img/foo0.png",
 				"https://github.com/duckafire/nest/blob/work-in-progress/img/foo0.png",
 				"https://github.com/duckafire/nest/blob/work-in-progress/img/foo0.png"
