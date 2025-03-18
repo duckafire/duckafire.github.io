@@ -1,10 +1,8 @@
-section#projects >
 section#highlight >
 div {
 	padding: 3.5vw;
 }
 
-section#projects >
 section#highlight >
 div >
 div#images {
@@ -14,7 +12,6 @@ div#images {
 	padding: 0px 5vw 0px 5vw;
 }
 
-section#projects >
 section#highlight >
 div >
 div#images >
@@ -22,7 +19,6 @@ div#showcase {
 	flex-grow: 1;
 }
 
-section#projects >
 section#highlight >
 div >
 div#images >
@@ -32,7 +28,6 @@ div#showcase >
 	justify-content: space-evenly;
 }
 
-section#projects >
 section#highlight >
 div >
 div#images >
@@ -41,7 +36,6 @@ div#used-languages {
 	font-size: 2.5rem;
 }
 
-section#projects >
 section#highlight >
 div >
 div#images >
@@ -49,7 +43,6 @@ img {
 	width: 20vw;
 }
 
-section#projects >
 section#highlight >
 div >
 div#images >
@@ -59,7 +52,6 @@ img {
 	width: 10vw;
 }
 
-section#projects >
 section#highlight >
 div >
 div#text {
@@ -69,7 +61,6 @@ div#text {
 	gap: 1.5dvh;
 }
 
-section#projects >
 section#highlight >
 div >
 div#text >
@@ -82,7 +73,6 @@ div#links {
 	width: 100%;
 }
 
-section#projects >
 section#highlight >
 div >
 div#text >
@@ -92,7 +82,6 @@ a {
 	padding: 0.4rem;
 }
 
-section#projects >
 section#highlight >
 div >
 div#text >

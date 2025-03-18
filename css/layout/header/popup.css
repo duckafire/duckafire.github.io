@@ -1,4 +1,3 @@
-section#header >
 section#show-more {
 	position: fixed;
 	top: 0px;
@@ -10,7 +9,6 @@ section#show-more {
 	box-sizing: border-box;
 }
 
-section#header >
 section#show-more >
 div#popup {
 	width: 100%;
@@ -22,7 +20,6 @@ div#popup {
 	flex-direction: column;
 }
 
-section#header >
 section#show-more >
 div#popup >
 div#top {
@@ -30,7 +27,6 @@ div#top {
 	justify-content: space-between;
 }
 
-section#header >
 section#show-more >
 div#popup >
 div#top >
@@ -40,7 +36,6 @@ h1#title {
 	font-size: 6vw;
 }
 
-section#header >
 section#show-more >
 div#popup >
 div#top >
@@ -48,7 +43,6 @@ i {
 	font-size: 4vw;
 }
 
-section#header >
 section#show-more >
 div#popup >
 div#knowledge-level {
@@ -57,7 +51,6 @@ div#knowledge-level {
 	margin: 3dvh 0px 3dvh 0px;
 }
 
-section#header >
 section#show-more >
 div#popup >
 div#knowledge {
@@ -68,7 +61,6 @@ div#knowledge {
 	align-items: center;
 }
 
-section#header >
 section#show-more >
 div#popup >
 div#knowledge >
@@ -79,7 +71,6 @@ div {
 	flex-direction: column;
 }
 
-section#header >
 section#show-more >
 div#popup >
 div#knowledge >
@@ -89,7 +80,6 @@ div {
 	overflow: auto;
 }
 
-section#header >
 section#show-more >
 div#popup >
 div#knowledge >
@@ -99,7 +89,6 @@ h1 {
 	margin: 0px 0px 0.1rem 0px;
 }
 
-section#header >
 section#show-more >
 div#popup >
 div#knowledge >
@@ -111,7 +100,6 @@ section.images-chain {
 	flex-wrap: wrap;
 }
 
-section#header >
 section#show-more >
 div#popup >
 div#knowledge >

@@ -1,13 +1,7 @@
-section#header {
-	margin-bottom: 2.25dvh;
-}
-
-section#header >
 section#welcome {
 	padding: 2vw;
 }
 
-section#header >
 section#welcome >
 div#top {
 	display: flex;
@@ -15,7 +9,6 @@ div#top {
 	padding-right: 2vw;
 }
 
-section#header >
 section#welcome >
 div#top >
 div#center {
@@ -26,7 +19,6 @@ div#center {
 	gap: 3.5vw;
 }
 
-section#header >
 section#welcome >
 div#top >
 div#center >
@@ -36,7 +28,6 @@ div#links {
 	gap: 7.5vw;
 }
 
-section#header >
 section#welcome >
 div#top >
 div#center >
@@ -45,7 +36,6 @@ h1#title {
 	margin: 0px;
 }
 
-section#header >
 section#welcome >
 div#top >
 img#perfil-image {
@@ -53,7 +43,6 @@ img#perfil-image {
 	max-width: 210px;
 }
 
-section#header >
 section#welcome >
 div#description {
 	display: flex;
@@ -62,7 +51,6 @@ div#description {
 	margin: 1rem 0px 1rem 0px;
 }
 
-section#header >
 section#welcome >
 div#description >
 p#description {
@@ -71,14 +59,12 @@ p#description {
 	padding: 0px 3vw 0px 3vw;
 }
 
-section#header >
 section#welcome >
 div#top >
 div#show-more {
 	padding-top: 1vw;
 }
 
-section#header >
 section#welcome >
 div#top >
 div#show-more >
