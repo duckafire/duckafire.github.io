@@ -1,7 +1,7 @@
-section#popup >
-div#container >
+section#presentation >
 div#header >
-i#close-popup {
+div#open-popup >
+i {
 	padding: 1.5rem;
 	margin: -1.5rem;
 }

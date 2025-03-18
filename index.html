@@ -5,6 +5,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<meta name="darkreader-lock">
 	<title id ="page-title">DuckAfire's Nest</title>
+	<link rel="icon" href="img/nest-website-icon.png">
+
+	<link rel="stylesheet" href="css/classes.css">
 
 	<link rel="stylesheet" href="css/html-tags/all.css">
 	<link rel="stylesheet" href="css/html-tags/body.css">
@@ -12,27 +15,21 @@
 	<link rel="stylesheet" href="css/html-tags/a.css">
 
 	<link rel="stylesheet" href="css/layout/header/header.css">
-	<link rel="stylesheet" href="css/layout/header/welcome.css">
+	<link rel="stylesheet" href="css/layout/header/presentation.css">
 	<link rel="stylesheet" href="css/layout/header/popup.css">
 	<link rel="stylesheet" href="css/layout/projects/project.css">
 	<link rel="stylesheet" href="css/layout/projects/highlight.css">
-	<link rel="stylesheet" href="css/layout/projects/show-more.css">
+	<link rel="stylesheet" href="css/layout/projects/expand-projects.css">
 
-	<link rel="stylesheet" href="css/hitbox/header/welcome.css">
+	<link rel="stylesheet" href="css/hitbox/header/presentation.css">
 	<link rel="stylesheet" href="css/hitbox/header/popup.css">
 
-	<link rel="stylesheet" href="css/style/header/welcome.css">
+	<link rel="stylesheet" href="css/style/header/presentation.css">
 	<link rel="stylesheet" href="css/style/header/popup.css">
 	<link rel="stylesheet" href="css/style/projects/highlight.css">
-	<link rel="stylesheet" href="css/style/projects/show-more.css">
-
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/style/projects/expand-projects.css">
 
 	<link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-	<link rel="icon" href="img/nest-website-icon.png">
 
 	<script src="https://kit.fontawesome.com/7d914c2988.js" crossorigin="anonymous"></script>
 </head>
@@ -40,23 +37,23 @@
 <body>
 	<section id="header">
 
-		<section id="welcome">
-			<div id="top">
+		<section id="presentation">
+			<div id="header">
 				<img id="perfil-image" src="./img/foo.png">
-				<div id="center">
-					<h1 id="title">Hello world!</h1>
-					<div id="links">
+				<div id="title-links">
+					<h1>Hello world!</h1>
+					<div>
 						<a href="https://duckafire.github.io/nest"><i class="fa-brands fa-github"></i></a>
 						<a href="https://duckafire.github.io/nest"><i class="fa-brands fa-itch-io"></i></a>
 						<a href="https://duckafire.github.io/nest"><i class="fa-brands fa-facebook"></i></a>
 					</div>
 				</div>
-				<div id="show-more">
-					<i id="show-more" class="fa-solid fa-ellipsis-vertical"></i>
+				<div id="open-popup">
+					<i class="fa-solid fa-ellipsis-vertical"></i>
 				</div>
 			</div>
 			<div id="description">
-				<p id="description">
+				<p>
 					&emsp;Lorem ipsum odor amet, consectetuer adipiscing elit. Potenti
 					ultricies inceptos, quam facilisis aliquam vehicula quis. Laoreet
 					proin magna inceptos senectus lorem. Penatibus etiam metus quam
@@ -71,14 +68,14 @@
 			</div>
 		</section>
 
-		<section id="show-more" hidden>
-			<div id="popup">
-				<div id="top">
-					<i class="fa-solid fa-mug-hot"></i>
+		<section id="popup" style="display: none;">
+			<div id="container">
+				<div id="header">
+					<i id="donate" class="fa-solid fa-mug-hot"></i>
 					<h1 id="title">Title</h1>
 					<i id="close-popup" class="fa-solid fa-xmark"></i>
 				</div>
-				<div id="knowledge-level">
+				<div id="know-level">
 					<span id="low">Raso</span>
 					<span id="middle">Intermediário</span>
 					<span id="high">Avançado</span>
@@ -141,7 +138,7 @@
 						<a href="https://duckafire.github.io/nest"><i class="fa-solid fa-file"></i>foo</a>
 						<a href="https://duckafire.github.io/nest"><i class="fa-solid fa-file"></i>foo</a>
 					</div>
-					<div id="show-links">
+					<div id="show-hide-links">
 						<i class="fa-solid fa-caret-down"></i>
 					</div>
 				</div>
@@ -151,7 +148,7 @@
 		<!--<section id="other">-->
 		<!--</section>-->
 
-		<div id="show-more">
+		<div id="expand-projects">
 			<i class="fa-solid fa-caret-down"></i>
 		</div>
 
