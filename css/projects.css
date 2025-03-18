@@ -1,5 +1,11 @@
 /* MAIN-SECTIONS */
 
+section.projects-list {
+	display: flex;
+	flex-direction: column;
+	gap: 2.25dvh;
+}
+
 section#projects {
 	display: flex;
 	flex-direction: column;
