@@ -1,0 +1,76 @@
+.classes {
+	layout: ---;
+
+	style: ---;
+
+	hitbox: --;
+
+	animations: ---;
+}
+
+
+
+
+/* MAIN-SECTIONS */
+
+tag#name {
+	layout: ---;
+
+	style: ---;
+
+	hitbox: --;
+
+	animations: ---;
+}
+
+
+
+/* SUBSECTION */
+
+tag#path > tag#to >
+tag | item0 | tag#item0 {
+	layout: ---;
+
+	style: ---;
+
+	hitbox: --;
+
+	animations: ---;
+}
+
+tag#path > tag#to >
+tag | item0 | tag#item1 {
+	layout: ---;
+
+	style: ---;
+
+	hitbox: --;
+
+	animations: ---;
+}
+
+
+
+/* SUBSECTION */
+
+tag#path > tag#to >
+tag | item0 | tag#item0 {
+	layout: ---;
+
+	style: ---;
+
+	hitbox: --;
+
+	animations: ---;
+}
+
+tag#path > tag#to >
+tag | item0 | tag#item1 {
+	layout: ---;
+
+	style: ---;
+
+	hitbox: --;
+
+	animations: ---;
+}
