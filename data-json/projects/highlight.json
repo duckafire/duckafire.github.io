@@ -1,59 +1,65 @@
 [
 	{
 		"cover": "https://github.com/duckafire/nest/blob/work-in-progress/img/duckafire-perfil-icon.png",
+		"showcase": {
+			"images": [
+				"https://github.com/duckafire/nest/blob/work-in-progress/img/foo.png",
+				"https://github.com/duckafire/nest/blob/work-in-progress/img/foo.png",
+				"https://github.com/duckafire/nest/blob/work-in-progress/img/foo.png"
+			],
+			"usedLang": [
+				{"title": "c", "className": "devicon-c-plain"},
+				{"title": "c", "className": "devicon-c-plain"}
+			]
+		},
 		"title": "foo",
 		"description": "This is a foo item",
 		"links": [
-			{"fa_iconClass": "fa-solid fa-file", "textContent": "foo", "title": "foo", "address": "https://duckafire.github.io/nest"},
-			{"fa_iconClass": "fa-solid fa-file", "textContent": "foo", "title": "foo", "address": "https://duckafire.github.io/nest"}
-		],
-		"di_usedLangIcons": [
-			{"title": "c", "className": "devicon-c-plain"},
-			{"title": "c", "className": "devicon-c-plain"}
-		],
-		"showcaseImages": [
-			"https://github.com/duckafire/nest/blob/work-in-progress/img/foo.png",
-			"https://github.com/duckafire/nest/blob/work-in-progress/img/foo.png",
-			"https://github.com/duckafire/nest/blob/work-in-progress/img/foo.png"
+			{"address": "https://duckafire.github.io/nest", "title": "foo", "className": "fa-solid fa-file", "textContent": "foo"},
+			{"address": "https://duckafire.github.io/nest", "title": "foo", "className": "fa-solid fa-file", "textContent": "foo"}
 		]
 	},
 
 	{
 		"cover": "https://github.com/duckafire/nest/blob/work-in-progress/img/duckafire-perfil-icon.png",
+		"showcase": {
+			"images": [
+				"https://github.com/duckafire/nest/blob/work-in-progress/img/foo.png"
+			],
+			"usedLang": [
+			]
+		},
 		"title": "foo2",
 		"description": "This is a foo item2",
 		"links": [
-			{"fa_iconClass": "fa-solid fa-file", "textContent": "foo", "title": "foo2", "address": "https://duckafire.github.io/nest"}
-		],
-		"di_usedLangIcons": [
-		],
-		"showcaseImages": [
-			"https://github.com/duckafire/nest/blob/work-in-progress/img/foo.png"
+			{"address": "https://duckafire.github.io/nest", "title": "foo2", "className": "fa-solid fa-file", "textContent": "foo"}
 		]
 	},
 
 	{
 		"cover": "https://github.com/duckafire/nest/blob/work-in-progress/img/duckafire-perfil-icon.png",
+		"showcase": {
+			"images": [
+				"https://github.com/duckafire/nest/blob/work-in-progress/img/foo.png",
+				"https://github.com/duckafire/nest/blob/work-in-progress/img/foo.png",
+				"https://github.com/duckafire/nest/blob/work-in-progress/img/foo.png",
+				"https://github.com/duckafire/nest/blob/work-in-progress/img/foo.png",
+				"https://github.com/duckafire/nest/blob/work-in-progress/img/foo.png",
+				"https://github.com/duckafire/nest/blob/work-in-progress/img/foo.png"
+			],
+			"usedLang": [
+				{"title": "c", "className": "devicon-c-plain"},
+				{"title": "c", "className": "devicon-c-plain"},
+				{"title": "c", "className": "devicon-c-plain"},
+				{"title": "c", "className": "devicon-c-plain"}
+			]
+		},
 		"title": "foo3",
 		"description": "This is a foo item3",
 		"links": [
-			{"fa_iconClass": "fa-solid fa-file", "textContent": "foo", "title": "foo3", "address": "https://duckafire.github.io/nest"},
-			{"fa_iconClass": "fa-solid fa-file", "textContent": "foo", "title": "foo3", "address": "https://duckafire.github.io/nest"},
-			{"fa_iconClass": "fa-solid fa-file", "textContent": "foo", "title": "foo3", "address": "https://duckafire.github.io/nest"}
-		],
-		"di_usedLangIcons": [
-			{"title": "c", "className": "devicon-c-plain"},
-			{"title": "c", "className": "devicon-c-plain"},
-			{"title": "c", "className": "devicon-c-plain"},
-			{"title": "c", "className": "devicon-c-plain"}
-		],
-		"showcaseImages": [
-			"https://github.com/duckafire/nest/blob/work-in-progress/img/foo.png",
-			"https://github.com/duckafire/nest/blob/work-in-progress/img/foo.png",
-			"https://github.com/duckafire/nest/blob/work-in-progress/img/foo.png",
-			"https://github.com/duckafire/nest/blob/work-in-progress/img/foo.png",
-			"https://github.com/duckafire/nest/blob/work-in-progress/img/foo.png",
-			"https://github.com/duckafire/nest/blob/work-in-progress/img/foo.png"
+			{"address": "https://duckafire.github.io/nest", "title": "foo3", "className": "fa-solid fa-file", "textContent": "foo"},
+			{"address": "https://duckafire.github.io/nest", "title": "foo3", "className": "fa-solid fa-file", "textContent": "foo"},
+			{"address": "https://duckafire.github.io/nest", "title": "foo3", "className": "fa-solid fa-file", "textContent": "foo"}
 		]
 	}
 ]
