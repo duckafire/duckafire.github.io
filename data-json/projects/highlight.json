@@ -24,7 +24,7 @@
 		"cover": {"title": "foo", "alt": "foo image", "src": "https://github.com/duckafire/nest/blob/work-in-progress/img/foo.png?raw=true"},
 		"showcase": {
 			"images": [
-				{"title": "c", "alt": "foo image", "src": "https://github.com/duckafire/nest/blob/work-in-progress/img/foo.png?raw=true}"
+				{"title": "c", "alt": "foo image", "src": "https://github.com/duckafire/nest/blob/work-in-progress/img/foo.png?raw=true"}
 			],
 			"usedLang": [
 			]

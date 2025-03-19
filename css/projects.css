@@ -10,7 +10,7 @@ section#projects {
 	display: flex;
 	flex-direction: column;
 	gap: 2.25dvh;
-	margin-bottom: 3.5dvh;
+	padding-bottom: 3.5dvh;
 }
 
 section#expand-projects{
