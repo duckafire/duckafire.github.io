@@ -1,11 +1,11 @@
 [
 	{
-		"cover": "https://github.com/duckafire/nest/blob/work-in-progress/img/foo.png",
+		"cover": "https://github.com/duckafire/nest/blob/work-in-progress/img/foo.png?raw=true",
 		"showcase": {
 			"images": [
-				"https://github.com/duckafire/nest/blob/work-in-progress/img/foo0.png",
-				"https://github.com/duckafire/nest/blob/work-in-progress/img/foo0.png",
-				"https://github.com/duckafire/nest/blob/work-in-progress/img/foo0.png"
+				"https://github.com/duckafire/nest/blob/work-in-progress/img/foo0.png?raw=true",
+				"https://github.com/duckafire/nest/blob/work-in-progress/img/foo0.png?raw=true",
+				"https://github.com/duckafire/nest/blob/work-in-progress/img/foo0.png?raw=true"
 			],
 			"usedLang": [
 				{"title": "c", "className": "devicon-c-plain"},
@@ -21,10 +21,10 @@
 	},
 
 	{
-		"cover": "https://github.com/duckafire/nest/blob/work-in-progress/img/foo.png",
+		"cover": "https://github.com/duckafire/nest/blob/work-in-progress/img/foo.png?raw=true",
 		"showcase": {
 			"images": [
-				"https://github.com/duckafire/nest/blob/work-in-progress/img/foo0.png"
+				"https://github.com/duckafire/nest/blob/work-in-progress/img/foo0.png?raw=true"
 			],
 			"usedLang": [
 			]
@@ -37,12 +37,12 @@
 	},
 
 	{
-		"cover": "https://github.com/duckafire/nest/blob/work-in-progress/img/duckafire-perfil-icon.png",
+		"cover": "https://github.com/duckafire/nest/blob/work-in-progress/img/duckafire-perfil-icon.png?raw=true",
 		"showcase": {
 			"images": [
-				"https://github.com/duckafire/nest/blob/work-in-progress/img/foo0.png",
-				"https://github.com/duckafire/nest/blob/work-in-progress/img/foo0.png",
-				"https://github.com/duckafire/nest/blob/work-in-progress/img/foo0.png"
+				"https://github.com/duckafire/nest/blob/work-in-progress/img/foo0.png?raw=true",
+				"https://github.com/duckafire/nest/blob/work-in-progress/img/foo0.png?raw=true",
+				"https://github.com/duckafire/nest/blob/work-in-progress/img/foo0.png?raw=true"
 			],
 			"usedLang": [
 				{"title": "c", "className": "devicon-c-plain"},
