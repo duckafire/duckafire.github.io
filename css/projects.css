@@ -88,18 +88,20 @@ div#text >
 div#links {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	text-align: center;
 	gap: 0.45rem;
 	width: 100%;
+	align-items: center;
 }
 
 div.projects-list-item >
 div#text >
 div#links >
 a {
+	display: flex;
+	gap: 0.35rem;
 	width: 100%;
 	padding: 0.4rem;
+	justify-content: center;
 
 	background-color: #118d55;
 	border-radius: 5vw;
