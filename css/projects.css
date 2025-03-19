@@ -40,46 +40,35 @@ div#images {
 	padding: 0px 5vw 0px 5vw;
 }
 
-div.projects-list-item >
-div#images >
+div.projects-list-item > div#images >
 div#showcase {
 	flex-grow: 1;
 }
 
-div.projects-list-item >
-div#images >
-div#showcase >
+div.projects-list-item > div#images > div#showcase >
 div.showcase-container {
 	display: flex;
 	justify-content: space-evenly;
 }
 
-div.projects-list-item >
-div#images >
-div >
+div.projects-list-item > div#images > div >
 i#turn-showcase {
 	padding: 1.5rem;
 	margin: -1.5rem;
 }
 
-div.projects-list-item >
-div#images >
-div#showcase >
+div.projects-list-item > div#images > div#showcase >
 div#used-languages {
 	font-size: 2.5rem;
 }
 
-div.projects-list-item >
-div#images >
+div.projects-list-item > div#images >
 img {
 	width: 20vw;
 	min-width: 36px;
 }
 
-div.projects-list-item >
-div#images >
-div#showcase >
-div#images >
+div.projects-list-item > div#images > div#showcase > div#images >
 img {
 	width: 10vw;
 	min-width: 18px;
@@ -93,8 +82,7 @@ div#text {
 	gap: 1.5dvh;
 }
 
-div.projects-list-item >
-div#text >
+div.projects-list-item > div#text >
 div#links {
 	display: flex;
 	flex-direction: column;
@@ -103,9 +91,7 @@ div#links {
 	align-items: center;
 }
 
-div.projects-list-item >
-div#text >
-div#links >
+div.projects-list-item > div#text > div#links >
 a {
 	display: flex;
 	gap: 0.35rem;
@@ -117,8 +103,7 @@ a {
 	border-radius: 5vw;
 }
 
-div.projects-list-item >
-div#text >
+div.projects-list-item > div#text >
 div#show-hide-links {
 	width: 100%;
 	text-align: center;
