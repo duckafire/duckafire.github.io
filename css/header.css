@@ -72,6 +72,7 @@ section#popup {
 	height: 100dvh;
 	margin: 0px;
 	padding: 7dvh 7vw 7dvh 7vw;
+	z-index: 9999;
 
 	background-color: rgba(50, 50, 50, 0.6);
 	color: #eee;

@@ -6,8 +6,15 @@ const header = {
 	popup: document.querySelector("section#header > section#popup"),
 };
 
-header.openPopup.addEventListener("click",  () => { header.popup.style.display = ""; });
-header.closePopup.addEventListener("click", () => { header.popup.style.display = "none"; });
+header.openPopup.addEventListener("click",  () => {
+	header.popup.style.display = "";
+	document.body.style.overflow = "hidden"
+});
+
+header.closePopup.addEventListener("click", () => {
+	header.popup.style.display = "none";
+	document.body.style.overflow = "initial";
+});
 
 
 const projects = {
