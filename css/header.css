@@ -19,6 +19,36 @@ img {
 	max-height: 100px;
 }
 
+span.know-tech-level-low {
+	
+	color: #a05;
+}
+
+span.know-tech-level-middle {
+	
+	color: #aa5;
+}
+
+span.know-tech-level-high {
+
+	color: #0a5;
+}
+
+img.know-tech-level-low {
+	
+	border-color: #a05;
+}
+
+img.know-tech-level-middle {
+	
+	border-color: #aa5;
+}
+
+img.know-tech-level-high {
+
+	border-color: #0a5;
+}
+
 
 
 /* MAIN-SECTION */
@@ -195,22 +225,4 @@ h1 {
 	text-align: center;
 	margin: 0px 0px 0.1rem 0px;
 }
-
-
-div#know-level >
-span#low {
-	
-	color: #a05;
-}
-
-div#know-level >
-span#middle {
-	
-	color: #aa5;
-}
-
-div#know-level >
-span#high {
-
-	color: #0a5;
 }
