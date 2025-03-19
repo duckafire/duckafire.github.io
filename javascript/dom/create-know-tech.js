@@ -1,6 +1,7 @@
 function createKnowTech(data, className, dest){
 	const img = document.createElement("img");
 	img.title = data.title;
+	img.alt   = data.alt;
 	img.src   = data.src;
 	img.className = className;
 

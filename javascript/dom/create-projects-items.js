@@ -21,7 +21,9 @@ function createProjectsItems(data, dest){
 	images.container.id = "images";
 	images.showcase.container.id = "showcase";
 
-	images.cover.src = data.cover;
+	images.cover.title = data.cover.title;
+	images.cover.alt   = data.cover.alt;
+	images.cover.src   = data.cover.src;
 
 	images.showcase.images.id          = "images";
 	images.showcase.images.className   = "showcase-container";
@@ -31,7 +33,9 @@ function createProjectsItems(data, dest){
 
 	for(let i = 0; i < data.showcase.images.length; i++){
 		foo = document.createElement("img");
-		foo.src = data.showcase.images[i];
+		foo.title = data.showcase.images[i].title;
+		foo.alt   = data.showcase.images[i].alt;
+		foo.src   = data.showcase.images[i].src;
 
 		images.showcase.images.appendChild(foo);
 	}
