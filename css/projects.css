@@ -73,6 +73,7 @@ div.projects-list-item >
 div#images >
 img {
 	width: 20vw;
+	min-width: 36px;
 }
 
 div.projects-list-item >
@@ -81,6 +82,7 @@ div#showcase >
 div#images >
 img {
 	width: 10vw;
+	min-width: 18px;
 }
 
 div.projects-list-item >

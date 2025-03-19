@@ -73,6 +73,8 @@ section#popup {
 	margin: 0px;
 	padding: 7dvh 7vw 7dvh 7vw;
 	z-index: 9999;
+	min-width: 180px;
+	min-height: 230px;
 
 	background-color: rgba(50, 50, 50, 0.6);
 	color: #eee;
@@ -86,6 +88,7 @@ div#container {
 	padding: 7.85vw;
 	display: flex;
 	flex-direction: column;
+	overflow: auto;
 
 	background-color: #af6601;
 	border-radius: 5vw;
@@ -114,26 +117,26 @@ div#title-links {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-top: 6.5vw;
+	margin-top: max(6.5vw, 11px);
 	gap: 3.5vw;
 }
 
 div#header > div#title-links >
 div {
 	display: flex;
-	font-size: 6vw;
+	font-size: max(6vw, 12px);
 	gap: 7.5vw;
 }
 
 div#header > div#title-links >
 h1 {
-	font-size: 6vw;
-	margin: 0px;
+	font-size: max(6vw, 12px);
 }
 
 div#header >
 img#perfil-image {
 	width: 30vw;
+	min-width: 54px;
 	max-width: 210px;
 
 	border-radius: 50%;
@@ -161,7 +164,7 @@ div#open-popup {
 
 div#header > div#open-popup >
 i {
-	font-size: 4vw;
+	font-size: max(4vw, 13px);
 }
 
 
@@ -185,18 +188,19 @@ div#header >
 h1#title {
 	margin: 0px;
 	margin-top: -2vw;
-	font-size: 6vw;
+	font-size: max(6vw, 12px);
 }
 
 div#header >
 i {
-	font-size: 4vw;
+	font-size: max(4vw, 10px);
 }
 
 div#know-level {
 	display: flex;
 	justify-content: space-between;
 	margin: 3dvh 0px 3dvh 0px;
+	flex-wrap: wrap;
 }
 
 div#knowledge {

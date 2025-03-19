@@ -8,14 +8,17 @@
 }
 
 body{
-	width: 100vw;
+	width: 100dvw;
 	height: 100dvh;
+	min-width: 180px;
+	min-height: 230px;
+	padding: 3.5dvh 3.5dvw 3.5dvh 3.5dvw;
+
 	background-color: #111;
 	color: #eee;
-	margin: 0px;
-	padding: 3.5dvh 3.5vw 3.5dvh 3.5vw;
 }
 
 a {
+
 	color: #eee;
 }
