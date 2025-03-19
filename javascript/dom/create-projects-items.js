@@ -51,6 +51,17 @@ function createProjectsItems(data, dest){
 	images.showcase.turnButton.icon.className = "fa-solid fa-repeat";
 	images.showcase.turnButton.container.appendChild(images.showcase.turnButton.icon);
 
+	images.showcase.turnButton.icon.addEventListener("click", () => {
+		if(images.showcase.images.style.display != "none"){
+			images.showcase.images.style.display   = "none";
+			images.showcase.usedLang.style.display = "";
+			return;
+		}
+
+		images.showcase.images.style.display   = "";
+		images.showcase.usedLang.style.display = "none";
+	});
+
 	images.container.appendChild(images.cover);
 	images.container.appendChild(images.showcase.container);
 	images.container.appendChild(images.showcase.turnButton.container);
@@ -79,6 +90,7 @@ function createProjectsItems(data, dest){
 	text.description.textContent = data.description;
 
 	text.links.container.id = "links";
+	text.links.container.style.display = "none";
 
 	for(const link of data.links){
 		text.a = document.createElement("a");
@@ -101,6 +113,19 @@ function createProjectsItems(data, dest){
 
 	text.showHideLinks.container.appendChild(text.showHideLinks.icon);
 
+	text.showHideLinks.container.addEventListener("click", () => {
+		if(text.links.container.style.display != "none"){
+			text.links.container.style.display = "none";
+			text.showHideLinks.icon.style.transform = "scaleY(1)";
+			text.showHideLinks.icon.style.transformOrigin = "50% 50%";
+			return;
+		}
+
+		text.links.container.style.display = "";
+		text.showHideLinks.icon.style.transform = "scaleY(-1)";
+		text.showHideLinks.icon.style.transformOrigin = "50% 55%";
+	});
+
 	text.container.appendChild(text.title);
 	text.container.appendChild(text.description);
 	text.container.appendChild(text.links.container);
@@ -116,8 +141,13 @@ for(const name of ["highlight", "other"]){
 	.then(response => response.json())
 	.then(data => {
 
+		const curContainer = document.querySelector(`section#projects > section#${name}`);
+
 		for(let i = 0; i < data.length; i++)
-			createProjectsItems(data[i], document.querySelector(`section#projects > section#${name}`));
+			createProjectsItems(data[i], curContainer);
+
+		if(name == "other")
+			curContainer.style.display = "none";
 
 	});
 }
