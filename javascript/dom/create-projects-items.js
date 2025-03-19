@@ -31,7 +31,7 @@ function createProjectsItems(data, dest){
 
 	for(let i = 0; i < data.showcase.images.length; i++){
 		foo = document.createElement("img");
-		foo.src = JSON.stringify(data.showcase.images[i]);
+		foo.src = data.showcase.images[i];
 
 		images.showcase.images.appendChild(foo);
 	}
