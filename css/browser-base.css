@@ -1,0 +1,8 @@
+/* CHROMIUM */
+
+
+* ::-webkit-scrollbar { display: none; }
+
+/* FIREFOX */
+
+* { scrollbar-width: none; }
