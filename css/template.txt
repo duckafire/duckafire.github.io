@@ -38,8 +38,8 @@ tag | item0 | tag#item0 {
 	animations: ---;
 }
 
-tag#path > tag#to >
-tag | item0 | tag#item1 {
+tag#path > tag#to > tag | item1 | tag#item1,
+tag#path > tag#to > tag | item1 | tag#item1 {
 	layout: ---;
 
 	style: ---;
@@ -64,8 +64,8 @@ tag | item0 | tag#item0 {
 	animations: ---;
 }
 
-tag#path > tag#to >
-tag | item0 | tag#item1 {
+tag#path > tag#to > tag | item1 | tag#item1,
+tag#path > tag#to > tag | item1 | tag#item1 {
 	layout: ---;
 
 	style: ---;

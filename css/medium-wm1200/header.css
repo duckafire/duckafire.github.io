@@ -1,0 +1,69 @@
+@media only screen and (min-width: 800px){
+
+/* MAIN-SECTION */
+
+section#presentation {
+}
+
+/* PRESENTATION */
+
+div#header {
+	align-items: center;
+}
+
+div#header >
+img#perfil-image {
+	min-width: 250px;
+	max-width: none;
+	width: 30vw;
+}
+
+div#header >
+div#title-links {
+	margin-top: 0px;
+	gap: 2.75vw;
+	justify-content: center;
+	padding: 3dvh 0px 3dvh 0px;
+}
+
+div#header > div#title-links >
+h1 {
+	font-size: 4vw;
+}
+
+div#header > div#title-links >
+div {
+	overflow: scroll;
+	font-size: 1rem;
+	justify-content: center;
+	height: 40dvh;
+	padding: 0px 3vw 0px 3vw;
+}
+
+div#header > div#title-links > div >
+p {
+	text-align: justify;
+	width: 100%;
+}
+
+div#header >
+div#open-popup {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding-bottom: 1vw;
+	height: 52.5dvh;
+}
+
+div#header > div#open-popup > i,
+div#header > div#open-popup a > i {
+	font-size: min(4.5vw, 80px);
+}
+
+div#description {
+	display: none;
+}
+
+/* POPUP > CONTAINER */
+
+}
