@@ -73,7 +73,7 @@ function updateOpenHeaderPopupButton(){
 	}
 }
 
-window.addEventListener("DOMContentLoaded", updateOpenHeaderPopupButton());
-window.addEventListener("resize", updateOpenHeaderPopupButton());
+window.addEventListener("DOMContentLoaded", updateOpenHeaderPopupButton);
+window.addEventListener("resize",           updateOpenHeaderPopupButton);
 
 }

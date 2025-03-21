@@ -9,6 +9,7 @@ section#presentation {
 
 div#header {
 	align-items: center;
+	max-height: 300px;
 }
 
 div#header >
@@ -24,6 +25,7 @@ div#title-links {
 	gap: 2.75vw;
 	justify-content: center;
 	padding: 3dvh 0px 3dvh 0px;
+	max-height: 30dvh;
 }
 
 div#header > div#title-links >
@@ -36,7 +38,6 @@ div {
 	overflow: scroll;
 	font-size: 1rem;
 	justify-content: center;
-	height: 40dvh;
 	padding: 0px 3vw 0px 3vw;
 }
 
@@ -52,12 +53,20 @@ div#open-popup {
 	flex-direction: column;
 	justify-content: space-between;
 	padding-bottom: 1vw;
-	height: 52.5dvh;
+	align-self: stretch;
+}
+
+div#header > div#open-popup >
+i {
+
+
+	margin: 0px;
+	padding: 0px;
 }
 
 div#header > div#open-popup > i,
 div#header > div#open-popup a > i {
-	font-size: min(4.5vw, 80px);
+	font-size: min(4.5vw, 6.5dvh);
 }
 
 div#description {
