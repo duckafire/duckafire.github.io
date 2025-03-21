@@ -13,7 +13,7 @@ window.setTimeout(() => {
 		}
 	}, 100);
 
-}, 1000);
+}, 1500);
 
 const header = {
 	openPopup: document.querySelector("section#header > section#presentation > div#header > div#open-popup > i"),
