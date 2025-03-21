@@ -52,8 +52,12 @@ for(let i = 1; i < 4; i++){
 	);
 }
 
+let lastPlace;
+
 function updateOpenHeaderPopupButton(){
-	if(WIDTH.isSmall() && ELEM.openHeaderPopup.classList.contains("fa-circle-info")){
+	if(lastPlace != CUR_PLACE.small && WIDTH.isSmall()){
+		lastPlace = CUR_PLACE.small;
+
 		ELEM.openHeaderPopup.classList.remove("fa-circle-info");
 		ELEM.openHeaderPopup.classList.add("fa-ellipsis-vertical");
 
@@ -62,7 +66,10 @@ function updateOpenHeaderPopupButton(){
 		for(let i = 0; i < 3; i++)
 			ELEM.headerLinksIcons[i].move(CUR_PLACE.small);
 
-	}else if(WIDTH.isMedium() && ELEM.openHeaderPopup.classList.contains("fa-ellipsis-vertical")){
+	// TODO: remove WIDTH.isBig from here
+	}else if(lastPlace != CUR_PLACE.medium && (WIDTH.isMedium() || WIDTH.isBig())){
+		lastPlace = CUR_PLACE.medium;
+
 		ELEM.openHeaderPopup.classList.remove("fa-ellipsis-vertical");
 		ELEM.openHeaderPopup.classList.add("fa-circle-info");
 
