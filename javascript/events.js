@@ -1,5 +1,20 @@
 {
 
+window.setTimeout(() => {
+	const item = window.getComputedStyle(document.querySelector(".fa-github"));
+
+	const removeWildcardChar = setInterval(() => {
+		if(item.fontFamily.includes("Font Awesome")){
+			document.querySelectorAll(".FA-wildcard").forEach((elem) => {
+				elem.classList.remove("FA-wildcard");
+			});
+
+			clearInterval(removeWildcardChar);
+		}
+	}, 100);
+
+}, 1000);
+
 const header = {
 	openPopup: document.querySelector("section#header > section#presentation > div#header > div#open-popup > i"),
 	closePopup: document.querySelector("section#header > section#popup > div#container > div#header > i#close-popup"),

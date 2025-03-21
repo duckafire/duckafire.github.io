@@ -5,6 +5,8 @@
 	box-sizing: border-box;
 	margin: 0px;
 	padding: 0px;
+	top: 0px;
+	left: 0px;
 }
 
 body{
@@ -19,6 +21,7 @@ body{
 }
 
 a {
+	text-align: center;
 
 	color: #eee;
 }
