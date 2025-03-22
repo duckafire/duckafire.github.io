@@ -1,3 +1,5 @@
+/* loading animation based in: https://loading.io/css/ */
+
 section.projects-list >
 div.loading-icon-animated-container {
 
@@ -27,12 +29,5 @@ div.loading-icon-animated div {
 
 div.loading-icon-animated div:nth-child(2) {
 	animation-delay: -0.5s;
-}
-
-@keyframes loading-animation {
-	0%   { top: 36px; left: 36px; width: 8px;  height: 8px;  opacity: 0; }
-	4.9% { top: 36px; left: 36px; width: 8px;  height: 8px;  opacity: 0; }
-	5%   { top: 36px; left: 36px; width: 8px;  height: 8px;  opacity: 1; }
-	100% { top: 0px;  left: 0px;  width: 80px; height: 80px; opacity: 0; }
 }
 
