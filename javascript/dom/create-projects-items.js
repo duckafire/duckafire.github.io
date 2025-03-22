@@ -4,10 +4,10 @@ let hidedList = [];
 
 function createProjectsItems(data, dest){
 	let foo; // any object
-	const item = document.createElement("div");
-	item.className = "projects-list-item";
+	const ITEM = document.createElement("div");
+	ITEM.className = "projects-list-item";
 
-	const images = {
+	const IMAGES = {
 		container: document.createElement("div"),
 		cover: document.createElement("img"),
 		showcase: {
@@ -21,18 +21,18 @@ function createProjectsItems(data, dest){
 		},
 	}
 
-	images.container.id = "images";
-	images.showcase.container.id = "showcase";
+	IMAGES.container.id = "images";
+	IMAGES.showcase.container.id = "showcase";
 
-	images.cover.title = data.cover.title;
-	images.cover.alt   = data.cover.alt;
-	images.cover.src   = data.cover.src;
+	IMAGES.cover.title = data.cover.title;
+	IMAGES.cover.alt   = data.cover.alt;
+	IMAGES.cover.src   = data.cover.src;
 
-	images.showcase.images.id          = "images";
-	images.showcase.images.className   = "showcase-container";
-	images.showcase.usedLang.id        = "used-languages";
-	images.showcase.usedLang.className = "showcase-container";
-	images.showcase.usedLang.style.display = "none"; // HIDDEN
+	IMAGES.showcase.images.id          = "images";
+	IMAGES.showcase.images.className   = "showcase-container";
+	IMAGES.showcase.usedLang.id        = "used-languages";
+	IMAGES.showcase.usedLang.className = "showcase-container";
+	IMAGES.showcase.usedLang.style.display = "none"; // HIDDEN
 
 	for(let i = 0; i < data.showcase.images.length; i++){
 		foo = document.createElement("img");
@@ -40,42 +40,42 @@ function createProjectsItems(data, dest){
 		foo.alt   = data.showcase.images[i].alt;
 		foo.src   = data.showcase.images[i].src;
 
-		images.showcase.images.appendChild(foo);
+		IMAGES.showcase.images.appendChild(foo);
 	}
 
-	for(const icon of data.showcase.usedLang){
+	for(const ICON of data.showcase.usedLang){
 		foo = document.createElement("i");
-		foo.title     = icon.title;
-		foo.className = icon.className;
+		foo.title     = ICON.title;
+		foo.className = ICON.className;
 
-		images.showcase.usedLang.appendChild(foo);
+		IMAGES.showcase.usedLang.appendChild(foo);
 	}
 
-	images.showcase.container.appendChild(images.showcase.images);
-	images.showcase.container.appendChild(images.showcase.usedLang);
+	IMAGES.showcase.container.appendChild(IMAGES.showcase.images);
+	IMAGES.showcase.container.appendChild(IMAGES.showcase.usedLang);
 
-	images.showcase.turnButton.icon.id        = "turn-showcase";
-	images.showcase.turnButton.icon.className = "fa-solid fa-repeat";
-	images.showcase.turnButton.container.appendChild(images.showcase.turnButton.icon);
+	IMAGES.showcase.turnButton.icon.id        = "turn-showcase";
+	IMAGES.showcase.turnButton.icon.className = "fa-solid fa-repeat";
+	IMAGES.showcase.turnButton.container.appendChild(IMAGES.showcase.turnButton.icon);
 
-	images.showcase.turnButton.icon.addEventListener("click", () => {
-		if(images.showcase.images.style.display != "none"){
-			images.showcase.images.style.display   = "none";
-			images.showcase.usedLang.style.display = "";
+	IMAGES.showcase.turnButton.icon.addEventListener("click", () => {
+		if(IMAGES.showcase.images.style.display != "none"){
+			IMAGES.showcase.images.style.display   = "none";
+			IMAGES.showcase.usedLang.style.display = "";
 			return;
 		}
 
-		images.showcase.images.style.display   = "";
-		images.showcase.usedLang.style.display = "none";
+		IMAGES.showcase.images.style.display   = "";
+		IMAGES.showcase.usedLang.style.display = "none";
 	});
 
-	images.container.appendChild(images.cover);
-	images.container.appendChild(images.showcase.container);
-	images.container.appendChild(images.showcase.turnButton.container);
+	IMAGES.container.appendChild(IMAGES.cover);
+	IMAGES.container.appendChild(IMAGES.showcase.container);
+	IMAGES.container.appendChild(IMAGES.showcase.turnButton.container);
 
-	item.appendChild(images.container);
+	ITEM.appendChild(IMAGES.container);
 
-	const text = {
+	const TEXT = {
 		container: document.createElement("div"),
 		title:  document.createElement("h1"),
 		description: document.createElement("p"),
@@ -91,83 +91,83 @@ function createProjectsItems(data, dest){
 		}
 	};
 
-	text.container.id = "text";
+	TEXT.container.id = "text";
 
-	text.title.textContent = data.title;
-	text.description.textContent = data.description;
+	TEXT.title.textContent = data.title;
+	TEXT.description.textContent = data.description;
 
-	text.links.container.id = "links";
-	text.links.container.style.display = "none";
+	TEXT.links.container.id = "links";
+	TEXT.links.container.style.display = "none";
 
-	for(const link of data.links){
-		text.a = document.createElement("a");
-		text.a.href  = link.address;
-		text.a.title = link.title;
+	for(const LINK of data.links){
+		TEXT.a = document.createElement("a");
+		TEXT.a.href  = LINK.address;
+		TEXT.a.title = LINK.title;
 
-		text.i = document.createElement("i");
-		text.i.className = link.className;
+		TEXT.i = document.createElement("i");
+		TEXT.i.className = LINK.className;
 
-		text.span = document.createElement("span");
-		text.span.textContent = link.textContent;
+		TEXT.span = document.createElement("span");
+		TEXT.span.textContent = LINK.textContent;
 
-		text.a.appendChild(text.i);
-		text.a.appendChild(text.span);
-		text.links.container.appendChild(text.a);
+		TEXT.a.appendChild(TEXT.i);
+		TEXT.a.appendChild(TEXT.span);
+		TEXT.links.container.appendChild(TEXT.a);
 	}
 
-	text.showHideLinks.container.id = "show-hide-links";
-	text.showHideLinks.icon.className = "fa-solid fa-caret-down";
+	TEXT.showHideLinks.container.id = "show-hide-links";
+	TEXT.showHideLinks.icon.className = "fa-solid fa-caret-down";
 
-	text.showHideLinks.container.appendChild(text.showHideLinks.icon);
+	TEXT.showHideLinks.container.appendChild(TEXT.showHideLinks.icon);
 
-	text.showHideLinks.container.addEventListener("click", () => {
-		if(text.links.container.style.display != "none"){
-			text.links.container.style.display = "none";
-			text.showHideLinks.icon.style.transform = "scaleY(1)";
-			text.showHideLinks.icon.style.transformOrigin = "50% 50%";
+	TEXT.showHideLinks.container.addEventListener("click", () => {
+		if(TEXT.links.container.style.display != "none"){
+			TEXT.links.container.style.display = "none";
+			TEXT.showHideLinks.icon.style.transform = "scaleY(1)";
+			TEXT.showHideLinks.icon.style.transformOrigin = "50% 50%";
 			return;
 		}
 
-		text.links.container.style.display = "";
-		text.showHideLinks.icon.style.transform = "scaleY(-1)";
-		text.showHideLinks.icon.style.transformOrigin = "50% 55%";
+		TEXT.links.container.style.display = "";
+		TEXT.showHideLinks.icon.style.transform = "scaleY(-1)";
+		TEXT.showHideLinks.icon.style.transformOrigin = "50% 55%";
 	});
 
-	text.container.appendChild(text.title);
-	text.container.appendChild(text.description);
-	text.container.appendChild(text.links.container);
-	text.container.appendChild(text.showHideLinks.container);
+	TEXT.container.appendChild(TEXT.title);
+	TEXT.container.appendChild(TEXT.description);
+	TEXT.container.appendChild(TEXT.links.container);
+	TEXT.container.appendChild(TEXT.showHideLinks.container);
 
-	item.appendChild(text.container);
+	ITEM.appendChild(TEXT.container);
 
-	dest.appendChild(item);
+	dest.appendChild(ITEM);
 
-	item.style.display = "none";
-	hidedList.push(item);
+	ITEM.style.display = "none";
+	hidedList.push(ITEM);
 }
 
-for(const name of ["highlight", "other"]){
-	const curContainer = document.querySelector(`section#projects > section#${name}`);
+for(const NAME of ["highlight", "other"]){
+	const CUR_CONTAINER = document.querySelector(`section#projects > section#${NAME}`);
 
-	fetch(`https://raw.githubusercontent.com/duckafire/nest/refs/heads/work-in-progress/data-json/projects/${name}.json`)
+	fetch(`https://raw.githubusercontent.com/duckafire/nest/refs/heads/work-in-progress/data-json/projects/${NAME}.json`)
 	.then(response => response.json())
 	.then(data => {
 
 		for(let i = 0; i < data.length; i++)
-			createProjectsItems(data[i], curContainer);
+			createProjectsItems(data[i], CUR_CONTAINER);
 
-		if(name == "other")
-			curContainer.style.display = "none";
+		if(NAME == "other")
+			CUR_CONTAINER.style.display = "none";
 
 	}).then(() => {
 
 		// remove loading-icon-animated
-		curContainer.removeChild(curContainer.children[0]);
+		CUR_CONTAINER.removeChild(CUR_CONTAINER.children[0]);
 
 		hidedList.forEach(item => {item.style.display = ""});
 		hidedList = [];
 
-	});
+	}).then(() => {hideList = null;});
 }
 
 }

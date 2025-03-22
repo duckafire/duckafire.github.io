@@ -1,31 +1,31 @@
 {
 
-const hideList = [];
+let hideList = [];
 
 function createKnowTech(data, className, dest){
-	const img = document.createElement("img");
-	img.title = data.title;
-	img.alt   = data.alt;
-	img.src   = data.src;
-	img.className = className;
+	const IMG = document.createElement("img");
+	IMG.title = data.title;
+	IMG.alt   = data.alt;
+	IMG.src   = data.src;
+	IMG.className = className;
 
-	dest.appendChild(img);
+	dest.appendChild(IMG);
 
-	img.style.display = "none";
-	hideList.push(img);
+	IMG.style.display = "none";
+	hideList.push(IMG);
 }
 
 fetch("https:raw.githubusercontent.com/duckafire/nest/refs/heads/work-in-progress/data-json/header/welcome-popup-know.json")
 .then(response => response.json())
 .then(data => {
 	let level;
-	const classLastName = [undefined, "low", "middle", "high"];
+	const CLASS_LAST_NAME = [undefined, "low", "middle", "high"];
 
 	for(let i = 0; i < data.programmingLanguages.length; i++){
 		level = data.programmingLanguages[i].level;
 		createKnowTech(
 			data.programmingLanguages[i].icon,
-			"know-tech know-tech-level-" + classLastName[level],
+			"know-tech know-tech-level-" + CLASS_LAST_NAME[level],
 			document.getElementById("programming-languages")
 		);
 	}
@@ -34,7 +34,7 @@ fetch("https:raw.githubusercontent.com/duckafire/nest/refs/heads/work-in-progres
 		level = data.markupLanguages[i].level;
 		createKnowTech(
 			data.markupLanguages[i].icon,
-			"know-tech know-tech-level-" + classLastName[level],
+			"know-tech know-tech-level-" + CLASS_LAST_NAME[level],
 			document.getElementById("markup-languages")
 		);
 	}
@@ -43,23 +43,23 @@ fetch("https:raw.githubusercontent.com/duckafire/nest/refs/heads/work-in-progres
 		level = data.otherUtilities[i].level;
 		createKnowTech(
 			data.otherUtilities[i].icon,
-			"know-tech know-tech-level-" + classLastName[level],
+			"know-tech know-tech-level-" + CLASS_LAST_NAME[level],
 			document.getElementById("other-utilities")
 		);
 	}
 }).then(() => {
 
-	const container = [
-		document.getElementById("programming-languages");
-		document.getElementById("markup-languages");
-		document.getElementById("other-utilities");
+	const CONTAINER = [
+		document.getElementById("programming-languages"),
+		document.getElementById("markup-languages"),
+		document.getElementById("other-utilities"),
 	];
 
 	// remove loading-icon-animated
-	container.forEach(item => {item.removeChild(item.children[0])});
+	CONTAINER.forEach(item => {item.removeChild(item.children[0])});
 
 	hideList.forEach(item => {item.style.display = ""});
 
-});
+}).then(() => {hideList = null});
 
 }

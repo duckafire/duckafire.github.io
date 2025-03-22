@@ -1,22 +1,22 @@
 function newLoadingIconAnimated(){
-	const container = document.createElement("div");
-	const icon     = document.createElement("div");
+	const CONTAINER = document.createElement("div");
+	const ICON     = document.createElement("div");
 
-	container.className = "loading-icon-animated-container";
-	icon.className      = "loading-icon-animated";
+	CONTAINER.className = "loading-icon-animated-container";
+	ICON.className      = "loading-icon-animated";
 
 	for(let i = 0; i < 2; i++)
-		icon.appendChild(document.createElement("div"));
+		ICON.appendChild(document.createElement("div"));
 
-	container.appendChild(icon);
-	return container;
+	CONTAINER.appendChild(ICON);
+	return CONTAINER;
 }
 
 {
 
-const knowledge = "section#header > section#popup > div#container > div#knowledge > div > div >";
+let knowledge = "section#header > section#popup > div#container > div#knowledge > div > div >";
 
-const queries = [
+let queries = [
 	knowledge + "section#programming-languages",
 	knowledge + "section#markup-languages",
 	knowledge + "section#other-utilities",
@@ -31,5 +31,7 @@ for(const cur of queries){
 
 	foo.appendChild( newLoadingIconAnimated() );
 }
+
+knowledge = queries = null;
 
 }
