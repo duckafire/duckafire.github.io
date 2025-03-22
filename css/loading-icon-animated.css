@@ -1,0 +1,38 @@
+section.projects-list >
+div.loading-icon-animated-container {
+
+	background-color: #33af77;
+	border-radius: 5vw;
+}
+
+div.loading-icon-animated-container {
+	text-align: center;
+}
+
+div.loading-icon-animated {
+	display: inline-block;
+	position: relative;
+	width: 80px;
+	height: 80px;
+}
+
+div.loading-icon-animated div {
+	position: absolute;
+
+	border: 4px solid currentColor;
+	opacity: 1;
+	border-radius: 50%;
+	animation: loading-animation 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+div.loading-icon-animated div:nth-child(2) {
+	animation-delay: -0.5s;
+}
+
+@keyframes loading-animation {
+	0%   { top: 36px; left: 36px; width: 8px;  height: 8px;  opacity: 0; }
+	4.9% { top: 36px; left: 36px; width: 8px;  height: 8px;  opacity: 0; }
+	5%   { top: 36px; left: 36px; width: 8px;  height: 8px;  opacity: 1; }
+	100% { top: 0px;  left: 0px;  width: 80px; height: 80px; opacity: 0; }
+}
+

@@ -1,5 +1,8 @@
-function createProjectsItems(data, dest){
+{
 
+let hidedList = [];
+
+function createProjectsItems(data, dest){
 	let foo; // any object
 	const item = document.createElement("div");
 	item.className = "projects-list-item";
@@ -138,14 +141,17 @@ function createProjectsItems(data, dest){
 	item.appendChild(text.container);
 
 	dest.appendChild(item);
+
+	item.style.display = "none";
+	hidedList.push(item);
 }
 
 for(const name of ["highlight", "other"]){
+	const curContainer = document.querySelector(`section#projects > section#${name}`);
+
 	fetch(`https://raw.githubusercontent.com/duckafire/nest/refs/heads/work-in-progress/data-json/projects/${name}.json`)
 	.then(response => response.json())
 	.then(data => {
-
-		const curContainer = document.querySelector(`section#projects > section#${name}`);
 
 		for(let i = 0; i < data.length; i++)
 			createProjectsItems(data[i], curContainer);
@@ -153,5 +159,15 @@ for(const name of ["highlight", "other"]){
 		if(name == "other")
 			curContainer.style.display = "none";
 
+	}).then(() => {
+
+		// remove loading-icon-animated
+		curContainer.removeChild(curContainer.children[0]);
+
+		hidedList.forEach(item => {item.style.display = ""});
+		hidedList = [];
+
 	});
+}
+
 }

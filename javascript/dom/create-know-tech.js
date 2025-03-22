@@ -1,3 +1,7 @@
+{
+
+const hideList = [];
+
 function createKnowTech(data, className, dest){
 	const img = document.createElement("img");
 	img.title = data.title;
@@ -6,6 +10,9 @@ function createKnowTech(data, className, dest){
 	img.className = className;
 
 	dest.appendChild(img);
+
+	img.style.display = "none";
+	hideList.push(img);
 }
 
 fetch("https:raw.githubusercontent.com/duckafire/nest/refs/heads/work-in-progress/data-json/header/welcome-popup-know.json")
@@ -40,4 +47,19 @@ fetch("https:raw.githubusercontent.com/duckafire/nest/refs/heads/work-in-progres
 			document.getElementById("other-utilities")
 		);
 	}
+}).then(() => {
+
+	const container = [
+		document.getElementById("programming-languages");
+		document.getElementById("markup-languages");
+		document.getElementById("other-utilities");
+	];
+
+	// remove loading-icon-animated
+	container.forEach(item => {item.removeChild(item.children[0])});
+
+	hideList.forEach(item => {item.style.display = ""});
+
 });
+
+}
