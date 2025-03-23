@@ -58,7 +58,7 @@ function createProjectsItems(data, dest){
 	for(const ICON of data.showcase.usedLang){
 		foo = document.createElement("i");
 		foo.title     = ICON.title;
-		foo.className = ICON.className;
+		foo.className = ICON.className + " FA-wildcard";
 
 		IMAGES.showcase.usedLang.appendChild(foo);
 	}
@@ -67,7 +67,7 @@ function createProjectsItems(data, dest){
 	IMAGES.showcase.container.appendChild(IMAGES.showcase.usedLang);
 
 	IMAGES.showcase.turnButton.icon.id        = "turn-showcase";
-	IMAGES.showcase.turnButton.icon.className = "fa-solid fa-repeat";
+	IMAGES.showcase.turnButton.icon.className = "FA-wildcard fa-solid fa-repeat";
 	IMAGES.showcase.turnButton.container.appendChild(IMAGES.showcase.turnButton.icon);
 
 	IMAGES.showcase.turnButton.icon.addEventListener("click", () => {
@@ -117,7 +117,7 @@ function createProjectsItems(data, dest){
 		TEXT.a.title = LINK.title;
 
 		TEXT.i = document.createElement("i");
-		TEXT.i.className = LINK.className;
+		TEXT.i.className = LINK.className + " FA-wildcard";
 
 		TEXT.span = document.createElement("span");
 		TEXT.span.textContent = LINK.textContent;
@@ -128,7 +128,7 @@ function createProjectsItems(data, dest){
 	}
 
 	TEXT.showHideLinks.container.id = "show-hide-links";
-	TEXT.showHideLinks.icon.className = "fa-solid fa-caret-down";
+	TEXT.showHideLinks.icon.className = "FA-wildcard fa-solid fa-caret-down";
 
 	TEXT.showHideLinks.container.appendChild(TEXT.showHideLinks.icon);
 
