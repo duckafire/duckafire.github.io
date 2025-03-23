@@ -10,6 +10,7 @@ function createProjectsItems(data, dest){
 	const IMAGES = {
 		container: document.createElement("div"),
 		cover: document.createElement("img"),
+		coverContainer: document.createElement("div"),
 		showcase: {
 			container: document.createElement("div"),
 			images: document.createElement("div"),   // container
@@ -24,9 +25,13 @@ function createProjectsItems(data, dest){
 	IMAGES.container.id = "images";
 	IMAGES.showcase.container.id = "showcase";
 
-	IMAGES.cover.title = data.cover.title;
-	IMAGES.cover.alt   = data.cover.alt;
-	IMAGES.cover.src   = data.cover.src;
+	IMAGES.cover.title  = data.cover.title;
+	IMAGES.cover.alt    = data.cover.alt;
+	IMAGES.cover.src    = data.cover.src;
+	IMAGES.cover.onload = () => {IMAGES.coverContainer.classList.remove("image-skeleton-loading")}
+
+	IMAGES.coverContainer.appendChild(IMAGES.cover);
+	IMAGES.coverContainer.className = "image-skeleton-loading";
 
 	IMAGES.showcase.images.id          = "images";
 	IMAGES.showcase.images.className   = "showcase-container";
@@ -40,7 +45,13 @@ function createProjectsItems(data, dest){
 		foo.alt   = data.showcase.images[i].alt;
 		foo.src   = data.showcase.images[i].src;
 
-		IMAGES.showcase.images.appendChild(foo);
+		let foo2 = document.createElement("div");
+		foo2.className = "image-skeleton-loading";
+
+		foo.onload = () => {foo2.classList.remove("image-skeleton-loading")}
+
+		foo2.appendChild(foo);
+		IMAGES.showcase.images.appendChild(foo2);
 	}
 
 	for(const ICON of data.showcase.usedLang){
@@ -69,7 +80,7 @@ function createProjectsItems(data, dest){
 		IMAGES.showcase.usedLang.style.display = "none";
 	});
 
-	IMAGES.container.appendChild(IMAGES.cover);
+	IMAGES.container.appendChild(IMAGES.coverContainer);
 	IMAGES.container.appendChild(IMAGES.showcase.container);
 	IMAGES.container.appendChild(IMAGES.showcase.turnButton.container);
 

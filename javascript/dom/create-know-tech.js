@@ -3,16 +3,23 @@
 let hideList = [];
 
 function createKnowTech(data, className, dest){
+	const CONTAINER = document.createElement("div");
+
 	const IMG = document.createElement("img");
 	IMG.title = data.title;
 	IMG.alt   = data.alt;
 	IMG.src   = data.src;
 	IMG.className = className;
 
-	dest.appendChild(IMG);
+	CONTAINER.appendChild(IMG);
+	CONTAINER.className = "image-skeleton-loading";
 
-	IMG.style.display = "none";
-	hideList.push(IMG);
+	IMG.onload = () => {CONTAINER.classList.remove("image-skeleton-loading")}
+
+	dest.appendChild(CONTAINER);
+
+	CONTAINER.style.display = "none";
+	hideList.push(CONTAINER);
 }
 
 fetch("https:raw.githubusercontent.com/duckafire/nest/refs/heads/work-in-progress/data-json/header/welcome-popup-know.json")

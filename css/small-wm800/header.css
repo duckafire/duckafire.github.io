@@ -11,7 +11,7 @@ section.images-chain {
 	flex-wrap: wrap;
 }
 
-section.images-chain >
+section.images-chain > div >
 img {
 	margin: 2px;
 	padding: 2px;

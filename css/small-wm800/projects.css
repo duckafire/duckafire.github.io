@@ -62,13 +62,13 @@ div#used-languages {
 	font-size: 2.5rem;
 }
 
-div.projects-list-item > div#images >
+div.projects-list-item > div#images > div >
 img {
 	width: 20vw;
 	min-width: 36px;
 }
 
-div.projects-list-item > div#images > div#showcase > div#images >
+div.projects-list-item > div#images > div#showcase > div#images > div >
 img {
 	width: 10vw;
 	min-width: 18px;
