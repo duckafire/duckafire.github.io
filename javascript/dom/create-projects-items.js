@@ -1,9 +1,8 @@
 {
 
-let hideList = [];
 const IMAGE_VIEWER = document.querySelector("section#header > section#image-viewer");
 
-function createProjectsItems(data, dest){
+function createProjectsItems(data, dest, hideList){
 	let foo; // any object
 	const ITEM = document.createElement("div");
 	ITEM.className = "projects-list-item";
@@ -164,14 +163,16 @@ for(const NAME of ["highlight", "other"]){
 	fetch(`https://raw.githubusercontent.com/duckafire/nest/refs/heads/work-in-progress/data-json/projects/${NAME}.json`)
 	.then(response => response.json())
 	.then(data => {
+		let hideList = [];
 
 		for(let i = 0; i < data.length; i++)
-			createProjectsItems(data[i], CUR_CONTAINER);
+			createProjectsItems(data[i], CUR_CONTAINER, hideList);
 
 		if(NAME == "other")
 			CUR_CONTAINER.style.display = "none";
 
-	}).then(() => {
+		return hideList;
+	}).then((hideList) => {
 
 		// remove loading-icon-animated
 		CUR_CONTAINER.removeChild(CUR_CONTAINER.children[0]);
@@ -198,14 +199,11 @@ for(const NAME of ["highlight", "other"]){
 
 		});
 
-		hideList = [];
+		hideList = null;
 
 	}).then(() => {
 		if(NAME != "other")
 			return;
-
-		console.log(0);
-		hideList = null;
 
 		IMAGE_VIEWER.addEventListener("click", () => {
 			IMAGE_VIEWER.style.display   = "none";
