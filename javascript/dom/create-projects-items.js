@@ -1,6 +1,7 @@
 {
 
-let hidedList = [];
+let hideList = [];
+const IMAGE_VIEWER = document.querySelector("section#header > section#image-viewer");
 
 function createProjectsItems(data, dest){
 	let foo; // any object
@@ -154,7 +155,7 @@ function createProjectsItems(data, dest){
 	dest.appendChild(ITEM);
 
 	ITEM.style.display = "none";
-	hidedList.push(ITEM);
+	hideList.push(ITEM);
 }
 
 for(const NAME of ["highlight", "other"]){
@@ -175,10 +176,47 @@ for(const NAME of ["highlight", "other"]){
 		// remove loading-icon-animated
 		CUR_CONTAINER.removeChild(CUR_CONTAINER.children[0]);
 
-		hidedList.forEach(item => {item.style.display = ""});
-		hidedList = [];
+		hideList.forEach(item => {
+			item.style.display = "";
+		
+			// item -> images#0 -> showcase#1 -> images#0 -> children-container
+			Array.from(item.children[0].children[1].children[0].children).forEach((cur) => {
+				cur.children[0].addEventListener("click", () => {
+					if(WIDTH.isBig())
+						return;
 
-	}).then(() => {hideList = null;});
+					IMAGE_VIEWER.style.display = "";
+					document.body.style.overflow = "hidden";
+
+					const IMG = IMAGE_VIEWER.children[0].children[0];
+
+					IMG.src   = cur.children[0].src;
+					IMG.alt   = cur.children[0].alt;
+					IMG.title = cur.children[0].title;
+				});
+			});
+
+		});
+
+		hideList = [];
+
+	}).then(() => {
+		if(NAME != "other")
+			return;
+
+		console.log(0);
+		hideList = null;
+
+		IMAGE_VIEWER.addEventListener("click", () => {
+			IMAGE_VIEWER.style.display   = "none";
+			document.body.style.overflow = "initial";
+		});
+
+		IMAGE_VIEWER.children[0].children[0].addEventListener("click", (event) => {
+			event.stopPropagation();
+		});
+
+	});
 }
 
 }

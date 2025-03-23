@@ -23,6 +23,8 @@ section#expand-projects{
 	border-radius: 5vw;
 }
 
+
+
 /* HIGHLIGHT x OTHER */
 
 div.projects-list-item {
@@ -112,5 +114,7 @@ div#show-hide-links {
 	background-color: #118d55;
 	border-radius: 5vw;
 }
+
+
 
 /* EXPAND-PROJECTS */

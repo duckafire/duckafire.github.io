@@ -1,12 +1,12 @@
-{
-
-const CUR_PLACE = {small: 0, medium: 1, big: 2};
-
 const WIDTH = {
 	isSmall(){  return (window.innerWidth < 800); },
 	isMedium(){ return (window.innerWidth > 799 && window.innerWidth < 1200); },
 	isBig(){    return (window.innerWidth > 1199); }
 };
+
+{
+
+const CUR_PLACE = {small: 0, medium: 1, big: 2};
 
 class MoveElement {
 	constructor(commonPath, itId, smallId, mediumId, bigId){
