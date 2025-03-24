@@ -11,9 +11,9 @@
 
 
 
-/* MAIN-SECTIONS */
+/* MAIN-CONTAINERS */
 
-tag#name {
+tag {
 	layout: ---;
 
 	style: ---;
@@ -25,10 +25,10 @@ tag#name {
 
 
 
-/* SUBSECTION */
+/* SUBCONTAINER */
 
-tag#path > tag#to >
-tag | item0 | tag#item0 {
+tag > tag > tag#item >
+tag#item {
 	layout: ---;
 
 	style: ---;
@@ -38,8 +38,8 @@ tag | item0 | tag#item0 {
 	animations: ---;
 }
 
-tag#path > tag#to > tag | item1 | tag#item1,
-tag#path > tag#to > tag | item1 | tag#item1 {
+tag > tag > tag#item >
+tag#item::after || tag#item pseudo-element {
 	layout: ---;
 
 	style: ---;
@@ -49,28 +49,6 @@ tag#path > tag#to > tag | item1 | tag#item1 {
 	animations: ---;
 }
 
-
-
-/* SUBSECTION */
-
-tag#path > tag#to >
-tag | item0 | tag#item0 {
-	layout: ---;
-
-	style: ---;
-
-	hitbox: --;
-
-	animations: ---;
-}
-
-tag#path > tag#to > tag | item1 | tag#item1,
-tag#path > tag#to > tag | item1 | tag#item1 {
-	layout: ---;
-
-	style: ---;
-
-	hitbox: --;
-
-	animations: ---;
-}
+tag > tag > tag#item0 { single: ---; }
+tag > tag > tag#item1 { single: ---; }
+tag > tag > tag#itemn { single: ---; }

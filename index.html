@@ -8,7 +8,7 @@
 	<link rel="icon" href="img/nest-website-icon.png">
 
 	<link rel="stylesheet" href="css/browser-base.css">
-	<link rel="stylesheet" href="css/html-tags.css">
+	<link rel="stylesheet" href="css/global.css">
 	<link rel="stylesheet" href="css/keyframes.css">
 
 	<link rel="stylesheet" href="css/fa-wildcard.css">
@@ -27,26 +27,35 @@
 </head>
 
 <body>
-	<section id="header">
+	
+	<header>
 
-		<section id="presentation">
-			<div id="header">
-				<img id="perfil-image" src="./img/foo.png">
-				<div id="title-links">
+		<nav>
+			<div id="top">
+				<figure id="left">
+					<img src="./img/foo.png">
+				</figure>
+				<section id="center">
 					<h1>Hello world!</h1>
-					<div>
-						<a href="https://duckafire.github.io/nest"><i class="FA-wildcard fa-brands fa-github"></i></a>
-						<a href="https://duckafire.github.io/nest"><i class="FA-wildcard fa-brands fa-itch-io"></i></a>
-						<a href="https://duckafire.github.io/nest"><i class="FA-wildcard fa-brands fa-facebook"></i></a>
-					</div>
-				</div>
-				<div id="open-popup">
-					<i class="FA-wildcard fa-solid fa-ellipsis-vertical"></i>
-				</div>
+					<ul class="list-no-style">
+						<li><a href=""><i class="FA-wildcard fa-brands fa-github"  ></i></a></li>
+						<li><a href=""><i class="FA-wildcard fa-brands fa-itch-io" ></i></a></li>
+						<li><a href=""><i class="FA-wildcard fa-brands fa-facebook"></i></a></li>
+					</ul>
+				</section>
+				<section id="right">
+					<ul class="list-no-style">
+						<li>
+							<button id="open-know-popup">
+								<i class="FA-wildcard fa-solid fa-ellipsis-vertical"></i>
+							</button>
+						</li>
+					</ul>
+				</section>
 			</div>
-			<div id="description">
+			<div id="bottom">
 				<p>
-					&emsp;Lorem ipsum odor amet, consectetuer adipiscing elit. Potenti
+					Lorem ipsum odor amet, consectetuer adipiscing elit. Potenti
 					ultricies inceptos, quam facilisis aliquam vehicula quis. Laoreet
 					proin magna inceptos senectus lorem. Penatibus etiam metus quam
 					sodales nisi. Pellentesque mattis ligula habitasse sed eleifend
@@ -58,66 +67,63 @@
 					et sociosqu lacus commodo.
 				</p>
 			</div>
-		</section>
+		</nav>
 
-		<section id="popup" class="background-popup" style="display: none;">
-			<div id="container">
-				<div id="header">
-					<i id="donate" class="FA-wildcard fa-solid fa-mug-hot"></i>
-					<h1 id="title">Title</h1>
-					<i id="close-popup" class="FA-wildcard fa-solid fa-xmark"></i>
-				</div>
-				<div id="know-level">
-					<span class="know-tech-level-low">Raso</span>
-					<span class="know-tech-level-middle">Intermediário</span>
-					<span class="know-tech-level-high">Avançado</span>
-				</div>
-				<div id="knowledge">
-					<div>
-						<h1>foo</h1>
-						<div>
-							<section id="programming-languages" class="images-chain"></section>
-						</div>
-					</div>
-					<div>
-						<h1>foo</h1>
-						<div>
-							<section id="markup-languages" class="images-chain"></section>
-						</div>
-					</div>
-					<div>
-						<h1>foo</h1>
-						<div>
-							<section id="other-utilities" class="images-chain"></section>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+		<dialog class="popup-background">
+			<section>
+				<nav>
+					<button id="donate">
+						<i class="FA-wildcard fa-solid fa-mug-hot"></i>
+					</button>
+					<h1>Title</h1>
+					<button id="close-popup">
+						<i class="FA-wildcard fa-solid fa-xmark"></i>
+					</button>
+				</nav>
+				<ul id="knoz-level">
+					<li class="know-level-low">Raso</li>
+					<li class="know-level-middle">Intermediário</li>
+					<li class="know-level-high">Avançado</li>
+				</ul>
+				<ul id="knowledge">
+					<li>
+						<section id="programming-lang">
+							<h1></h1>
+							<div></div>
+						</section>
+					</li>
+					<li>
+						<section id="markup-lang">
+							<h1></h1>
+							<div></div>
+						</section>
+					</li>
+					<li>
+						<section id="other-util">
+							<h1></h1>
+							<div></div>
+						</section>
+					</li>
+				</ul>
+			</section>
+		</dialog>
 
-		<section id="image-viewer" class="background-popup" style="display: none;">
-			<div id="container">
+		<dialog class="popup-background">
+			<figure>
 				<img>
-			</div>
-		</section>
+			</figure>
+		</dialog>
 
-	</section>
-	<section id="projects">
+	</header>
 
+	<main>
 		<section id="highlight" class="projects-list"></section>
-		<section id="other" class="projects-list" style="display: none;"></section>
-		<section id="expand-projects">
+		<section id="other"     class="projects-list" style="display: none;"></section>
+		<button>
 			<i class="FA-wildcard fa-solid fa-caret-down"></i>
-		</section>
-
-	</section>
+		</button>
+	</main>
 </body>
-
-<script src="./javascript/dom/new-loading-icon-animated.js"></script>
-<script src="./javascript/dom/create-know-tech.js"></script>
-<script src="./javascript/dom/create-projects-items.js"></script>
-<script src="./javascript/responsive-layout.js"></script>
-<script src="./javascript/events.js"></script>
 
 <script src="https://kit.fontawesome.com/7d914c2988.js" crossorigin="anonymous"></script>
 

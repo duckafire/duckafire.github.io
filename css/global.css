@@ -1,6 +1,10 @@
 :root{
 }
 
+
+
+/* TAGS */
+
 * {
 	box-sizing: border-box;
 	margin: 0px;
@@ -26,3 +30,17 @@ a {
 	color: #eee;
 	text-decoration: none;
 }
+
+button {
+	background: none;
+	border: none;
+	color: inherit;
+	font: inherit;
+	cursor: auto;
+}
+
+
+
+/* CLASSES */
+
+ul.list-no-style { list-style-type: none; }

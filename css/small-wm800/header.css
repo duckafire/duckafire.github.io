@@ -1,4 +1,4 @@
-section.background-popup {
+dialog.background-popup {
 	position: fixed;
 	width: 100vw;
 	height: 100dvh;
@@ -12,6 +12,14 @@ section.background-popup {
 	color: #eee;
 }
 
+span.know-level-low    { color: #a05; }
+span.know-level-middle { color: #aa5; }
+span.know-level-high   { color: #0a5; }
+img.know-level-low     { border-color: #a05; }
+img.know-level-middle  { border-color: #aa5; }
+img.know-level-high    { border-color: #0a5; }
+
+/*
 img.know-tech {
 	width: 10vw;
 
@@ -32,54 +40,23 @@ img {
 	max-width: 100px;
 	max-height: 100px;
 }
-
-span.know-tech-level-low {
-	
-	color: #a05;
-}
-
-span.know-tech-level-middle {
-	
-	color: #aa5;
-}
-
-span.know-tech-level-high {
-
-	color: #0a5;
-}
-
-img.know-tech-level-low {
-	
-	border-color: #a05;
-}
-
-img.know-tech-level-middle {
-	
-	border-color: #aa5;
-}
-
-img.know-tech-level-high {
-
-	border-color: #0a5;
-}
+*/
 
 
 
 /* MAIN-SECTION */
 
-section#header {
-	margin-bottom: 2.25dvh;
-}
+header { margin-bottom: 2.25dvh; }
 
-section#presentation {
+header > nav {
 	padding: 2vw;
 
 	background-color: #8855aa;
 	border-radius: 5vw;
 }
 
-section#popup >
-div#container {
+dialog >
+section {
 	width: 100%;
 	height: 100%;
 	border: 0.5vw solid black;
@@ -92,8 +69,8 @@ div#container {
 	border-radius: 5vw;
 }
 
-section#image-viewer >
-div#container {
+dialog >
+figure {
 	width: 100%;
 	height: 100%;
 	display: flex;
@@ -105,43 +82,15 @@ div#container {
 
 /* PRESENTATION */
 
-div#header > div#open-popup >
-i {
-
-
-	padding: 1.5rem;
-	margin: -1.5rem;
-}
-
-div#header {
+header > nav >
+div#top {
 	display: flex;
 	justify-content: space-between;
 	padding-right: 2vw;
 }
 
-div#header >
-div#title-links {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin-top: max(6.5vw, 11px);
-	gap: 3.5vw;
-}
-
-div#header > div#title-links >
-div {
-	display: flex;
-	font-size: max(6vw, 12px);
-	gap: 7.5vw;
-}
-
-div#header > div#title-links >
-h1 {
-	font-size: max(6vw, 12px);
-}
-
-div#header >
-img#perfil-image {
+header > nav > div#top > figure#left >
+img {
 	width: 30vw;
 	min-width: 54px;
 	max-width: 210px;
@@ -150,67 +99,91 @@ img#perfil-image {
 	border: 0.75vw solid black;
 }
 
-div#description {
+header > nav > div#top >
+section#center {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: max(6.5vw, 11px);
+	gap: 3.5vw;
+}
+
+header > nav > div#top > section#center >
+h1 {
+	font-size: max(6vw, 12px);
+}
+
+header > nav > div#top > section#right > ul > li >
+button#open-know-popup {
+	padding-top: 1vw;
+	font-size: max(4vw, 13px);
+
+	padding: 1.5rem;
+	margin: -1.5rem;
+}
+
+header > nav > div#top > section#center >
+ul {
+	display: flex;
+	font-size: max(6vw, 12px);
+	gap: 7.5vw;
+}
+
+header > nav >
+div#bottom {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	margin: 1rem 0px 1rem 0px;
 }
 
-div#description >
+header > nav > div#bottom >
 p {
 	text-align: justify;
 	max-width: 600px;
 	padding: 0px 3vw 0px 3vw;
 }
 
-div#header >
-div#open-popup {
-	padding-top: 1vw;
-}
-
-div#header > div#open-popup >
-i {
-	font-size: max(4vw, 13px);
-}
-
 
 
 /* POPUP > CONTAINER */
 
-div#header >
-i#close-popup {
+header > dialog > section > nav >
+button#close-popup {
 
 
 	padding: 1.5rem;
 	margin: -1.5rem;
 }
 
-div#header {
+header > dialog > section >
+nav {
 	display: flex;
 	justify-content: space-between;
 }
 
-div#header >
-h1#title {
+header > dialog > section > nav >
+h1 {
 	margin: 0px;
 	margin-top: -2vw;
 	font-size: max(6vw, 12px);
 }
 
-div#header >
-i {
+header > dialog > section > nav >
+button {
 	font-size: max(4vw, 10px);
 }
 
-div#know-level {
+header > dialog > section >
+ul#know-level {
 	display: flex;
 	justify-content: space-between;
 	margin: 3dvh 0px 3dvh 0px;
 	flex-wrap: wrap;
 }
 
-div#knowledge {
+header > dialog > section >
+ul#knowledge {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
@@ -218,21 +191,21 @@ div#knowledge {
 	align-items: center;
 }
 
-div#knowledge >
-div {
+header > dialog > section > ul#knowledge > li >
+section {
 	flex-grow: 1;
 	max-height: 20dvh;
 	display: flex;
 	flex-direction: column;
 }
 
-div#knowledge > div >
+header > dialog > section > ul#knowledge > li > section >
 div {
 	flex-grow: 1;
 	overflow: auto;
 }
 
-div#knowledge > div >
+header > dialog > section > ul#knowledge > li > section > div >
 h1 {
 	text-align: center;
 	margin: 0px 0px 0.1rem 0px;
@@ -242,7 +215,7 @@ h1 {
 
 /* IMAGE VIEWER */
 
-section#image-viewer > div#container >
+header > dialog > figure >
 img {
 	width:  min(75vw, 75dvh);
 	height: min(75vw, 75dvh);
