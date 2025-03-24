@@ -1,4 +1,4 @@
-dialog.background-popup {
+dialog.popup-background {
 	position: fixed;
 	width: 100vw;
 	height: 100dvh;
@@ -7,8 +7,9 @@ dialog.background-popup {
 	z-index: 9999;
 	min-width: 180px;
 	min-height: 230px;
+	border: none;
 
-	background-color: rgba(50, 50, 50, 0.6);
+	background-color: rgba(50, 50, 50, 0.65);
 	color: #eee;
 }
 
@@ -18,6 +19,11 @@ span.know-level-high   { color: #0a5; }
 img.know-level-low     { border-color: #a05; }
 img.know-level-middle  { border-color: #aa5; }
 img.know-level-high    { border-color: #0a5; }
+
+.top-flex {
+	display: flex;
+	justify-content: space-between;
+}
 
 /*
 img.know-tech {
@@ -83,11 +89,7 @@ figure {
 /* PRESENTATION */
 
 header > nav >
-div#top {
-	display: flex;
-	justify-content: space-between;
-	padding-right: 2vw;
-}
+div#top { padding-right: 2vw; }
 
 header > nav > div#top > figure#left >
 img {
@@ -146,15 +148,7 @@ p {
 
 
 
-/* POPUP > CONTAINER */
-
-header > dialog > section > nav >
-button#close-popup {
-
-
-	padding: 1.5rem;
-	margin: -1.5rem;
-}
+/* POPUP */
 
 header > dialog > section >
 nav {
@@ -163,15 +157,18 @@ nav {
 }
 
 header > dialog > section > nav >
+button {
+	font-size: max(4vw, 10px);
+
+	padding: 1.5rem;
+	margin: -1.5rem;
+}
+
+header > dialog > section > nav >
 h1 {
 	margin: 0px;
 	margin-top: -2vw;
 	font-size: max(6vw, 12px);
-}
-
-header > dialog > section > nav >
-button {
-	font-size: max(4vw, 10px);
 }
 
 header > dialog > section >
@@ -189,6 +186,7 @@ ul#knowledge {
 	justify-content: space-evenly;
 	flex-grow: 1;
 	align-items: center;
+	text-align: center;
 }
 
 header > dialog > section > ul#knowledge > li >
