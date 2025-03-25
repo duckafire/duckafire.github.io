@@ -100,7 +100,7 @@ function incrementTextual(data, dest){
 		LINKS.li = document.createElement("li");
 
 		LINKS.a = document.createElement("a");
-		LINKS.a.href  = CUR.address;
+		LINKS.a.href  = CUR.href;
 		LINKS.a.title = CUR.title;
 
 		LINKS.i = document.createElement("i");

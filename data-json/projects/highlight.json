@@ -15,8 +15,8 @@
 		"title": "foo",
 		"description": "This is a foo item",
 		"links": [
-			{"address": "https://duckafire.github.io/nest", "title": "foo", "className": "fa-solid fa-file", "textContent": "foo"},
-			{"address": "https://duckafire.github.io/nest", "title": "foo", "className": "fa-solid fa-file", "textContent": "foo"}
+			{"href": "https://duckafire.github.io/nest", "title": "foo", "className": "fa-solid fa-file", "textContent": "foo"},
+			{"href": "https://duckafire.github.io/nest", "title": "foo", "className": "fa-solid fa-file", "textContent": "foo"}
 		]
 	},
 
@@ -32,7 +32,7 @@
 		"title": "foo2",
 		"description": "This is a foo item2",
 		"links": [
-			{"address": "https://duckafire.github.io/nest", "title": "foo2", "className": "fa-solid fa-file", "textContent": "foo"}
+			{"href": "https://duckafire.github.io/nest", "title": "foo2", "className": "fa-solid fa-file", "textContent": "foo"}
 		]
 	},
 
@@ -54,9 +54,9 @@
 		"title": "foo3",
 		"description": "This is a foo item3",
 		"links": [
-			{"address": "https://duckafire.github.io/nest", "title": "foo3", "className": "fa-solid fa-file", "textContent": "foo"},
-			{"address": "https://duckafire.github.io/nest", "title": "foo3", "className": "fa-solid fa-file", "textContent": "foo"},
-			{"address": "https://duckafire.github.io/nest", "title": "foo3", "className": "fa-solid fa-file", "textContent": "foo"}
+			{"href": "https://duckafire.github.io/nest", "title": "foo3", "className": "fa-solid fa-file", "textContent": "foo"},
+			{"href": "https://duckafire.github.io/nest", "title": "foo3", "className": "fa-solid fa-file", "textContent": "foo"},
+			{"href": "https://duckafire.github.io/nest", "title": "foo3", "className": "fa-solid fa-file", "textContent": "foo"}
 		]
 	}
 ]
