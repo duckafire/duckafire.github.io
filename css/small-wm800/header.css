@@ -13,9 +13,9 @@ dialog.dialog-background {
 	color: #eee;
 }
 
-span.know-level-low    { color: #a05; }
-span.know-level-middle { color: #aa5; }
-span.know-level-high   { color: #0a5; }
+li.know-level-low    { color: #a05; }
+li.know-level-middle { color: #aa5; }
+li.know-level-high   { color: #0a5; }
 img.know-level-low     { border-color: #a05; }
 img.know-level-middle  { border-color: #aa5; }
 img.know-level-high    { border-color: #0a5; }
