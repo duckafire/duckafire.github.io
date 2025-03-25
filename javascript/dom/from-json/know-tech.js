@@ -22,10 +22,10 @@ fetch(JSON_URL.knowTech).then(response => {return response.json()}).then((json) 
 	let ids   = ["programming-lang", "markup-lang", "other-util"];
 
 	for(let i = 0; i < 3; i++){
-		for(const data of json[tags[i]]){
+		for(const DATA of json[tags[i]]){
 			newItem(
-				data.icon,
-				"know-level-" + level[data.level - 1],
+				DATA.icon,
+				"know-level-" + level[DATA.level - 1],
 				document.querySelector(`header > dialog#know-dialog > section > ul#knowledge > li > section#${ids[i]} > div`)
 			);
 		}
