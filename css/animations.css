@@ -51,14 +51,14 @@ div.image-skeleton-loading::after {
 	animation: skeleton-loading 1.5s linear infinite;
 }
 
-section#header > section#popup > div#container > div#knowledge > div > div > section >
+section#header > section#dialog > div#container > div#knowledge > div > div > section >
 div.image-skeleton-loading > img {
 	border: none;
 }
 
-section#header > section#popup > div#container > div#knowledge > div > div > section >
+section#header > section#dialog > div#container > div#knowledge > div > div > section >
 div.image-skeleton-loading,
-section#header > section#popup > div#container > div#knowledge > div > div > section >
+section#header > section#dialog > div#container > div#knowledge > div > div > section >
 div.image-skeleton-loading::after {
 	width: 10vw;
 	height: 10vw;

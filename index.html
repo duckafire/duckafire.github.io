@@ -48,7 +48,7 @@
 				<section id="right">
 					<ul class="list-no-style">
 						<li>
-							<button id="open-know-popup">
+							<button id="open-know-dialog">
 								<i class="FA-wildcard fa-solid fa-ellipsis-vertical"></i>
 							</button>
 						</li>
@@ -71,14 +71,14 @@
 			</div>
 		</nav>
 
-		<dialog class="popup-background">
+		<dialog id="know-dialog" class="dialog-background">
 			<section>
 				<nav class="top-flex">
 					<button id="donate">
 						<i class="FA-wildcard fa-solid fa-mug-hot"></i>
 					</button>
 					<h1>Title</h1>
-					<button id="close-popup">
+					<button id="close-know-dialog">
 						<i class="FA-wildcard fa-solid fa-xmark"></i>
 					</button>
 				</nav>
@@ -110,7 +110,7 @@
 			</section>
 		</dialog>
 
-		<dialog class="popup-background">
+		<dialog id="viewer" class="dialog-background">
 			<figure>
 				<img>
 			</figure>
@@ -126,6 +126,8 @@
 		</button>
 	</main>
 </body>
+
+<script src="./javascript/event.js"></script>
 
 <script src="https://kit.fontawesome.com/7d914c2988.js" crossorigin="anonymous"></script>
 

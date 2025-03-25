@@ -1,4 +1,4 @@
-dialog.popup-background {
+dialog.dialog-background {
 	position: fixed;
 	width: 100vw;
 	height: 100dvh;
@@ -116,7 +116,7 @@ h1 {
 }
 
 header > nav > div#top > section#right > ul > li >
-button#open-know-popup {
+button#open-know-dialog {
 	padding-top: 1vw;
 	font-size: max(4vw, 13px);
 
