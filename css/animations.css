@@ -35,11 +35,11 @@ div.loading-icon-animated div:nth-child(2) {
 /* SKELETON LOADING */
 
 
-div.image-skeleton-loading {
+figure.image-skeleton-loading {
 	position: relative;
 }
 
-div.image-skeleton-loading::after {
+figure.image-skeleton-loading::after {
 	content: "";
 	top: 0px;
 	left: 0px;
@@ -51,11 +51,7 @@ div.image-skeleton-loading::after {
 	animation: skeleton-loading 1.5s linear infinite;
 }
 
-section#header > section#dialog > div#container > div#knowledge > div > div > section >
-div.image-skeleton-loading > img {
-	border: none;
-}
-
+/*
 section#header > section#dialog > div#container > div#knowledge > div > div > section >
 div.image-skeleton-loading,
 section#header > section#dialog > div#container > div#knowledge > div > div > section >
@@ -83,3 +79,4 @@ div.image-skeleton-loading::after {
 	min-width: 36px;
 	min-height: 36px;
 }
+*/

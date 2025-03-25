@@ -1,15 +1,20 @@
 {
 
-let figure, img;
+let img;
 
 function newItem(data, level, dest){
-	figure = document.createElement("figure");
+	let figure = document.createElement("figure");
+	figure.className = "image-skeleton-loading";
 	
 	img = document.createElement("img");
 	img.className = "know-tech-img " + level;
 	img.alt   = data.alt;
 	img.title = data.title;
 	img.src   = data.src;
+
+	img.onload = () => {
+		figure.classList.remove("image-skeleton-loading");
+	}
 
 	figure.appendChild(img);
 	dest.appendChild(figure);
@@ -32,6 +37,6 @@ fetch(JSON_URL.knowTech).then(response => {return response.json()}).then((json) 
 	level = tags = ids = container = undefined;
 });
 
-figure = img = undefined;
+img = undefined;
 
 }
