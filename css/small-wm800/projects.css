@@ -1,19 +1,18 @@
 /* MAIN-SECTIONS */
 
-/*
-section.projects-list {
+main > dialog >
+ul {
 	display: flex;
 	flex-direction: column;
 	gap: 2.25dvh;
 }
 
-section#projects {
+main {
 	display: flex;
 	flex-direction: column;
 	gap: 2.25dvh;
 	padding-bottom: 3.5dvh;
 }
-*/
 
 main >
 button {
@@ -30,66 +29,65 @@ button {
 
 /* HIGHLIGHT x OTHER */
 
-/*
-div.projects-list-item {
+main > dialog > ul >
+li {
 	padding: 3.5vw;
 
 	background-color: #33af77;
 	border-radius: 5vw;
 }
 
-div.projects-list-item >
-div#images {
+main > dialog > ul > li >
+section#visual {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	padding: 0px 5vw 0px 5vw;
 }
 
-div.projects-list-item > div#images >
-div#showcase {
-	flex-grow: 1;
-}
+main > dialog > ul > li > section#visual > div { flex-grow: 1; }
 
-div.projects-list-item > div#images > div#showcase >
-div.showcase-container {
+main > dialog > ul > li > section#visual > div >
+section {
 	display: flex;
 	justify-content: space-evenly;
 }
 
-div.projects-list-item > div#images > div >
-i#turn-showcase {
-	padding: 1.5rem;
-	margin: -1.5rem;
-}
-
-div.projects-list-item > div#images > div#showcase >
-div#used-languages {
+main > dialog > ul > li > section#visual > div >
+section#used-langs {
 	font-size: 2.5rem;
 }
 
-div.projects-list-item > div#images > div >
+main > dialog > ul > li > section#visual > figure >
 img {
 	width: 20vw;
 	min-width: 36px;
 }
 
-div.projects-list-item > div#images > div#showcase > div#images > div >
+main > dialog > ul > li > section#visual > div > section#screenshots > figure >
 img {
 	width: 10vw;
 	min-width: 18px;
 }
 
-div.projects-list-item >
-div#text {
+main > dialog > ul > li > section#visual >
+button {
+
+
+	padding: 1.5rem;
+	margin: -1.5rem;
+}
+
+main > dialog > ul > li >
+section#textual {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	gap: 1.5dvh;
 }
 
-div.projects-list-item > div#text >
-div#links {
+main > dialog > ul > li > section#textual > dialog >
+ul {
 	display: flex;
 	flex-direction: column;
 	gap: 0.45rem;
@@ -97,7 +95,9 @@ div#links {
 	align-items: center;
 }
 
-div.projects-list-item > div#text > div#links >
+main > dialog > ul > li > section#textual > dialog > ul > li { width: 100%; }
+
+main > dialog > ul > li > section#textual > dialog > ul > li >
 a {
 	display: flex;
 	gap: 0.35rem;
@@ -109,8 +109,8 @@ a {
 	border-radius: 5vw;
 }
 
-div.projects-list-item > div#text >
-div#show-hide-links {
+main > dialog > ul > li > section#textual >
+button {
 	width: 100%;
 	text-align: center;
 	padding: 0.4rem;
@@ -121,5 +121,4 @@ div#show-hide-links {
 
 
 
-*/
 /* EXPAND-PROJECTS */

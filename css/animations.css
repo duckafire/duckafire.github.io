@@ -51,32 +51,30 @@ figure.image-skeleton-loading::after {
 	animation: skeleton-loading 1.5s linear infinite;
 }
 
-/*
-section#header > section#dialog > div#container > div#knowledge > div > div > section >
-div.image-skeleton-loading,
-section#header > section#dialog > div#container > div#knowledge > div > div > section >
-div.image-skeleton-loading::after {
+header > dialog#know-dialog > section > ul#knowledge > li > section > div >
+figure.image-skeleton-loading,
+header > dialog#know-dialog > section > ul#knowledge > li > section > div >
+figure.image-skeleton-loading::after {
 	width: 10vw;
 	height: 10vw;
 }
 
-div.projects-list-item > div#images > div#showcase > div#images >
-div.image-skeleton-loading,
-div.projects-list-item > div#images > div#showcase > div#images >
-div.image-skeleton-loading::after {
+main > dialog > ul > li > section#visual > div > section#screenshots >
+figure.image-skeleton-loading,
+main > dialog > ul > li > section#visual > div > section#screenshots >
+figure.image-skeleton-loading::after {
 	width: 10vw;
 	height: 10vw;
 	min-width: 18px;
 	min-height: 18px;
 }
 
-div.projects-list-item > div#images >
-div.image-skeleton-loading,
-div.projects-list-item > div#images >
-div.image-skeleton-loading::after {
+main > dialog > ul > li > section#visual >
+figure.image-skeleton-loading,
+main > dialog > ul > li > section#visual >
+figure.image-skeleton-loading::after {
 	width: 20vw;
 	height: 20vw;
 	min-width: 36px;
 	min-height: 36px;
 }
-*/

@@ -39,6 +39,13 @@ button {
 	cursor: auto;
 }
 
+dialog {
+	background: none;
+	position: static;
+	border: none;
+	width: 100%;
+}
+
 
 
 /* CLASSES */

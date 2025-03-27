@@ -7,7 +7,6 @@ dialog.dialog-background {
 	z-index: 9999;
 	min-width: 180px;
 	min-height: 230px;
-	border: none;
 
 	background-color: rgba(50, 50, 50, 0.65);
 	color: #eee;
