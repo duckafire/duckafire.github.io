@@ -6,7 +6,12 @@
 }
 
 @keyframes skeleton-loading {
-	0%   {background-position: 0%;}
-	50%  {background-position: 100%;}
-	100% {background-position: 0%;}
+	0%   { background-position: 0%;   }
+	50%  { background-position: 100%; }
+	100% { background-position: 0%;   }
+}
+
+@keyframes single-loading-rotation {
+	from { transform: rotate(0deg);   }
+	to   { transform: rotate(180deg); }
 }

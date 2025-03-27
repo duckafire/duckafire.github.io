@@ -68,6 +68,9 @@ function incrementVisual(data, dest){
 
 	TURN.icon.className = "FA-wildcard fa-solid fa-repeat";
 	TURN.icon.addEventListener("click", () => {
+		RESET_ANIMATION(TURN.icon);
+		TURN.icon.style.animation = "single-loading-rotation 0.35s 1";
+
 		if(CONTAINER.section.images.style.display != "none"){
 			CONTAINER.section.images.style.display = "none";
 			CONTAINER.section.icons.style.display  = "";
@@ -133,7 +136,13 @@ function incrementTextual(data, dest){
 	EXPAND.button.appendChild( EXPAND.icon );
 
 	EXPAND.button.addEventListener("click", () => {
-		LINKS.dialog.open = !LINKS.dialog.open;
+		if(LINKS.dialog.open){
+			LINKS.dialog.open = false;
+			EXPAND.icon.style.transform = "scale(1)";
+			return;
+		}
+		LINKS.dialog.open = true;
+		EXPAND.icon.style.transform = "scale(-1)";
 	});
 
 	dest.appendChild(TEXT.h1);

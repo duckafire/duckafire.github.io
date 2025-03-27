@@ -1,7 +1,5 @@
 {
 
-let foo;
-
 // open/close dialog
 
 const DIALOG = {
@@ -22,12 +20,16 @@ document.querySelector("header > dialog#know-dialog > section > nav > button#clo
 		document.body.style.overflow = "";
 	})
 
-foo = document.querySelector("main > button");
+const expOtherProj = document.querySelector("main > button");
 
-foo.addEventListener("click", () => {
-	DIALOG.other.open = !DIALOG.other.open;
+expOtherProj.addEventListener("click", () => {
+	if(DIALOG.other.open){
+		DIALOG.other.open   = false;
+		expOtherProj.style.transform = "scaleY(1)";
+		return;
+	}
+	DIALOG.other.open   = true;
+	expOtherProj.style.transform = "scaleY(-1)";
 })
-
-foo = undefined;
 
 }

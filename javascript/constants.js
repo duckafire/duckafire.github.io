@@ -5,3 +5,10 @@ const JSON_URL = {
 		"https://raw.githubusercontent.com/duckafire/nest/refs/heads/work-in-progress/data-json/projects/other.json",
 	],
 }
+
+const RESET_ANIMATION = (element) => {
+	// like magic
+	element.style.animation = 'none';
+	element.offsetHeight;
+	element.style.animation = null;
+}
