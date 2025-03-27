@@ -1,7 +1,7 @@
 {
 
 let all, visual, textual, foo;
-let main, ids = ["highlight", "other"];
+let container, ids = ["highlight", "other"];
 
 function incrementVisual(data, dest){
 	const IMAGE = {
@@ -144,7 +144,8 @@ function incrementTextual(data, dest){
 
 for(let i = 0; i < 2; i++){
 	fetch(JSON_URL.projectsItems[i]).then(response => response.json()).then((json) => {
-		main = document.querySelector(`main > dialog#${ids[i]} > ul`);
+		container = document.querySelector(`main > dialog#${ids[i]} > ul`);
+		container.removeChild( container.children[0] ); // loading icon
 
 		for(const DATA of json){
 			all = document.createElement("li");
@@ -160,13 +161,13 @@ for(let i = 0; i < 2; i++){
 			all.appendChild(visual);
 			all.appendChild(textual);
 
-			main.appendChild(all);
+			container.appendChild(all);
 		}
 
 	});
 }
 
 all = visual = textual = foo = undefined;
-main = id = undefined;
+container = id = undefined;
 
 }
