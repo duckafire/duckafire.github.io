@@ -30,6 +30,8 @@ div.know-tech-chain {
 	flex-wrap: wrap;
 }
 
+div.know-tech-chain > figure.image-skeleton-loading > img { border: none !important; }
+
 div.know-tech-chain > figure >
 img {
 	width: 10vw;

@@ -44,6 +44,8 @@ dialog {
 	position: static;
 	border: none;
 	width: 100%;
+	color: inherit;
+	font: inherit;
 }
 
 
