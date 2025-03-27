@@ -54,6 +54,10 @@ function incrementVisual(data, dest){
 		CONTAINER.section.icons.appendChild(foo);
 	}
 
+	CONTAINER.section.images.id = "screenshots";
+	CONTAINER.section.icons.id  = "used-langs";
+	CONTAINER.section.icons.style.display = "none";
+
 	CONTAINER.itself.appendChild( CONTAINER.section.images );
 	CONTAINER.itself.appendChild( CONTAINER.section.icons );
 
@@ -64,14 +68,14 @@ function incrementVisual(data, dest){
 
 	TURN.icon.className = "FA-wildcard fa-solid fa-repeat";
 	TURN.icon.addEventListener("click", () => {
-		if(CONTAINER.itself.section.images.open){
-			CONTAINER.itself.section.images.open = false;
-			CONTAINER.itself.section.icons.open  = true;
+		if(CONTAINER.section.images.style.display != "none"){
+			CONTAINER.section.images.style.display = "none";
+			CONTAINER.section.icons.style.display  = "";
 			return;
 		}
 
-		CONTAINER.itself.section.images.open = true;
-		CONTAINER.itself.section.icons.open  = false;
+		CONTAINER.section.images.style.display = "";
+		CONTAINER.section.icons.style.display  = "none";
 	});
 
 	TURN.button.appendChild( TURN.icon );
@@ -115,6 +119,7 @@ function incrementTextual(data, dest){
 		LINKS.ul.appendChild( LINKS.li );
 	}
 
+	LINKS.ul.className = "list-no-style";
 	LINKS.dialog.appendChild( LINKS.ul );
 
 	const EXPAND = {
@@ -143,7 +148,6 @@ for(let i = 0; i < 2; i++){
 
 		for(const DATA of json){
 			all = document.createElement("li");
-			all.id = "projects-list-item";
 
 			visual = document.createElement("section");
 			visual.id = "visual";
