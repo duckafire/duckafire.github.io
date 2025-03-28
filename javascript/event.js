@@ -32,4 +32,29 @@ expOtherProj.addEventListener("click", () => {
 	expOtherProj.style.transform = "scaleY(-1)";
 })
 
+// resize screen/window
+
+let currentLayout;
+
+function windowResized(){
+	const cur = WIDTH.check();
+
+	if(( currentLayout != WIDTH.small  && cur == WIDTH.small)  ||
+		(currentLayout != WIDTH.medium && cur == WIDTH.medium) ||
+		(currentLayout != WIDTH.big    && cur == WIDTH.big)){
+
+		currentLayout = cur;
+		RESPONSIVE_ELEMENTS.forEach((item) => {
+			if(item.moveIt !== undefined)
+				item.moveIt();
+
+			if(item.swapIcon !== undefined)
+				item.swapIcon();
+		});
+	}
+}
+
+window.addEventListener("DOMContentLoaded", windowResized);
+window.addEventListener("resize",           windowResized);
+
 }
