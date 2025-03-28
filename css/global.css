@@ -53,3 +53,15 @@ dialog {
 /* CLASSES */
 
 ul.list-no-style { list-style-type: none; }
+
+@media only screen and (max-width: 799px){
+	.only-medium-layout, .only-big-layout { display: none !important; }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1199px){
+	.only-small-layout, .only-big-layout { display: none !important; }
+}
+
+@media only screen and (min-width: 1200px){
+	.only-small-layout, .only-medium-layout { display: none !important; }
+}
