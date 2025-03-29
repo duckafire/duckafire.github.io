@@ -39,6 +39,4 @@ for(const cur of queries){
 	document.querySelector(cur.query).appendChild(foo);
 }
 
-foo = knowledge = queries = undefined;
-
 }

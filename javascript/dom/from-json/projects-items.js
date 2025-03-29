@@ -231,7 +231,4 @@ for(let i = 0; i < 2; i++){
 	});
 }
 
-i = all = visual = textual = foo = undefined;
-container = id = undefined;
-
 }

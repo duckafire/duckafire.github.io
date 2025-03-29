@@ -41,13 +41,9 @@ fetch(JSON_URL.knowTech).then(response => {return response.json()}).then((json) 
 			newItem( DATA.icon, "know-level-" + level[DATA.level - 1], container);
 	}
 
-	level = tags = ids = container = undefined;
-
 }).then(() => {
 	setOnloadFunction();
 	
 });
-
-img = undefined;
 
 }

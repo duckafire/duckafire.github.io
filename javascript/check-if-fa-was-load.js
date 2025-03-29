@@ -10,7 +10,6 @@ let checker = setInterval(() => {
 		});
 
 		clearInterval(checker);
-		item = checker = undefined;
 	}
 
 }, 250);
