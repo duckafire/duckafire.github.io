@@ -41,6 +41,27 @@ DIALOG.viewer.addEventListener("click", () => {
 	document.body.style.overflow = "";
 })
 
+// show/hide element (no dialog)
+
+const KNOW_TABS_DISPLAY = [
+	["", "none", "none"],
+	["none", "", "none"],
+	["none", "none", ""],
+];
+
+const KNOW_TABS_GROUPS = document.querySelectorAll("section.know-tech-chain");
+
+Array.from(document.querySelector("header > dialog#know-dialog > section > ul#tabs").children).forEach((item, i) => {
+	item.addEventListener("click", () => {
+		if(KNOW_TABS_GROUPS[i].style.display == KNOW_TABS_DISPLAY[i])
+			return;
+
+		KNOW_TABS_GROUPS.forEach((item, j) => {
+			item.style.display = KNOW_TABS_DISPLAY[i][j];
+		});
+	});
+});
+
 // resize screen/window
 
 let currentLayout;

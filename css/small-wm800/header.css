@@ -165,7 +165,7 @@ button {
 }
 
 header > dialog#know-dialog > section >
-ul#items-tab {
+ul#tabs {
 	display: flex;
 	justify-content: space-between;
 	margin-top: 5dvh;
