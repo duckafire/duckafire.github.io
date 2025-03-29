@@ -24,15 +24,15 @@ img.know-level-high    { border-color: #0a5; }
 	justify-content: space-between;
 }
 
-div.know-tech-chain {
+section.know-tech-chain {
 	display: flex;
 	justify-content: space-evenly;
 	flex-wrap: wrap;
 }
 
-div.know-tech-chain > figure.image-skeleton-loading > img { border: none !important; }
+section.know-tech-chain > figure.image-skeleton-loading > img { border: none !important; }
 
-div.know-tech-chain > figure >
+section.know-tech-chain > figure >
 img {
 	width: 10vw;
 	margin: 2px;
@@ -143,13 +143,20 @@ p {
 
 /* POPUP */
 
-header > dialog > section >
+header > dialog#know-dialog > section >
 nav {
 	display: flex;
 	justify-content: space-between;
 }
 
-header > dialog > section > nav >
+header > dialog#know-dialog > section > nav >
+h1 {
+	margin: 0px;
+	margin-top: -2vw;
+	font-size: max(6vw, 12px);
+}
+
+header > dialog#know-dialog > section > nav >
 button {
 	font-size: max(4vw, 10px);
 
@@ -157,23 +164,16 @@ button {
 	margin: -1.5rem;
 }
 
-header > dialog > section > nav >
-h1 {
-	margin: 0px;
-	margin-top: -2vw;
-	font-size: max(6vw, 12px);
-}
-
-header > dialog > section >
-ul#know-level {
+header > dialog#know-dialog > section >
+ul#items-tab {
 	display: flex;
 	justify-content: space-between;
-	margin: 3dvh 0px 3dvh 0px;
-	flex-wrap: wrap;
+	margin-top: 5dvh;
+	font-size: 3vw;
 }
 
-header > dialog > section >
-ul#knowledge {
+header > dialog#know-dialog > section >
+section#knowledge {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
@@ -182,30 +182,26 @@ ul#knowledge {
 	text-align: center;
 }
 
-header > dialog > section > ul#knowledge >
+header > dialog#know-dialog > section > section#knowledge >
 li {
 	display: inline-block;
 	width: 100%;
 }
 
-header > dialog > section > ul#knowledge > li >
+header > dialog#know-dialog > section > section#knowledge > li >
 section {
 	flex-grow: 1;
 	max-height: 20dvh;
 	display: flex;
 	flex-direction: column;
-}
-
-header > dialog > section > ul#knowledge > li > section >
-div {
-	flex-grow: 1;
 	overflow: auto;
 }
 
-header > dialog > section > ul#knowledge > li > section > div >
-h1 {
-	text-align: center;
-	margin: 0px 0px 0.1rem 0px;
+header > dialog#know-dialog > section >
+ul#know-level {
+	display: flex;
+	justify-content: space-between;
+	overflow: hidden;
 }
 
 

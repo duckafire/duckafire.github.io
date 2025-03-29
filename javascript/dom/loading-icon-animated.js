@@ -17,7 +17,7 @@ function newIcon(){
 }
 
 function knowledge(sectionId){
-	return `header > dialog#know-dialog > section > ul#knowledge > li > section#${sectionId} > div`;
+	return "header > dialog#know-dialog > section > section#knowledge > section#" + sectionId;
 }
 
 let queries = [
