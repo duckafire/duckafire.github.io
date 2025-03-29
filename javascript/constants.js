@@ -6,11 +6,11 @@ const JSON_URL = {
 	],
 }
 
-const RESET_ANIMATION = (element) => {
+const RESTART_CSS_ANIMATION = (element, animation) => {
 	// like magic
 	element.style.animation = 'none';
 	element.offsetHeight;
-	element.style.animation = null;
+	element.style.animation = animation; // it can be null
 }
 
 const WIDTH = new class {

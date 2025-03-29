@@ -1,9 +1,14 @@
 {
 
+const LISTENERS = [
+	{ visualScreenshot: [], visualTurnButton: [], textualExpandButton: [] },
+	{ visualScreenshot: [], visualTurnButton: [], textualExpandButton: [] },
+];
+
 let all, visual, textual, foo;
 let container, ids = ["highlight", "other"];
 
-function incrementVisual(data, dest){
+function incrementVisual(data, dest, i){
 	const IMAGE = {
 		figure: document.createElement("figure"),
 		img:    document.createElement("img"),
@@ -30,25 +35,14 @@ function incrementVisual(data, dest){
 
 	for(const CUR of data.showcase.images){
 		let cont = document.createElement("figure");
-		let foo  = document.createElement("img");
+		foo = document.createElement("img");
 
 		foo.alt   = CUR.alt;
 		foo.title = CUR.title;
 		foo.src   = CUR.src;
 
-		foo.addEventListener("click", () => {
-			if(WIDTH.check() == WIDTH.big)
-				return;
-
-			document.querySelector("header > dialog#viewer").open = true;
-			document.querySelector("header > dialog#viewer > figure > img").src = foo.src;
-			document.body.style.overflow = "hidden";
-		});
-
+		LISTENERS[i].visualScreenshot.push({img: foo, figure: cont});
 		cont.className = "image-skeleton-loading";
-		foo.onload = () => {
-			cont.classList.remove("image-skeleton-loading");
-		}
 
 		cont.appendChild(foo);
 		CONTAINER.section.images.appendChild(cont);
@@ -76,18 +70,13 @@ function incrementVisual(data, dest){
 	};
 
 	TURN.icon.className = "FA-wildcard fa-solid fa-repeat";
-	TURN.icon.addEventListener("click", () => {
-		RESET_ANIMATION(TURN.icon);
-		TURN.icon.style.animation = "single-loading-rotation 0.35s 1";
-
-		if(CONTAINER.section.images.style.display != "none"){
-			CONTAINER.section.images.style.display = "none";
-			CONTAINER.section.icons.style.display  = "";
-			return;
+	LISTENERS[i].visualTurnButton.push({
+		icon: TURN.icon,
+		button: TURN.button,
+		divs: {
+			images: CONTAINER.section.images,
+			icons:  CONTAINER.section.icons,
 		}
-
-		CONTAINER.section.images.style.display = "";
-		CONTAINER.section.icons.style.display  = "none";
 	});
 
 	TURN.button.appendChild( TURN.icon );
@@ -97,7 +86,7 @@ function incrementVisual(data, dest){
 	dest.appendChild(TURN.button);
 }
 
-function incrementTextual(data, dest){
+function incrementTextual(data, dest, i){
 	const TEXT = {
 		h1: document.createElement("h1"),
 		p:  document.createElement("p"),
@@ -144,20 +133,73 @@ function incrementTextual(data, dest){
 
 	EXPAND.button.appendChild( EXPAND.icon );
 
-	EXPAND.button.addEventListener("click", () => {
-		if(LINKS.dialog.open){
-			LINKS.dialog.open = false;
-			EXPAND.icon.style.transform = "scale(1)";
-			return;
-		}
-		LINKS.dialog.open = true;
-		EXPAND.icon.style.transform = "scale(-1)";
+	LISTENERS[i].textualExpandButton.push({
+		icon: EXPAND.icon,
+		button: EXPAND.button,
+		dialog: LINKS.dialog,
 	});
 
 	dest.appendChild(TEXT.h1);
 	dest.appendChild(TEXT.p);
 	dest.appendChild(LINKS.dialog);
 	dest.appendChild(EXPAND.button);
+}
+
+function setScreenshotEvent(i){
+	if(LISTENERS[i].visualScreenshot.length == 0)
+		return;
+
+	LISTENERS[i].visualScreenshot.forEach((cur) => {
+		cur.img.addEventListener("click", () => {
+			if(WIDTH.check() == WIDTH.big)
+				return;
+
+			document.querySelector("header > dialog#viewer").open = true;
+			document.querySelector("header > dialog#viewer > figure > img").src = cur.img.src;
+			document.body.style.overflow = "hidden";
+		});
+
+		cur.img.onload = () => {
+			cur.figure.classList.remove("image-skeleton-loading");
+		}
+	});
+}
+
+function setTurnButtonEvent(i){
+	if(LISTENERS[i].visualTurnButton.length == 0)
+		return;
+
+	LISTENERS[i].visualTurnButton.forEach((cur) => {
+		cur.button.addEventListener("click", () => {
+			RESTART_CSS_ANIMATION(cur.icon, "single-loading-rotation 0.35s 1");
+
+			if(cur.divs.images.style.display != "none"){
+				cur.divs.images.style.display = "none";
+				cur.divs.icons.style.display  = "";
+				return;
+			}
+
+			cur.divs.images.style.display = "";
+			cur.divs.icons.style.display  = "none";
+		});
+	});
+}
+
+function setExpandButtonEvent(i){
+	if(LISTENERS[i].textualExpandButton.length == 0)
+		return;
+
+	LISTENERS[i].textualExpandButton.forEach((cur) => {
+		cur.button.addEventListener("click", () => {
+			if(cur.dialog.open){
+				cur.dialog.open = false;
+				cur.icon.style.transform = "scale(1)";
+				return;
+			}
+			cur.dialog.open = true;
+			cur.icon.style.transform = "scale(-1)";
+		});
+	});
 }
 
 for(let i = 0; i < 2; i++){
@@ -170,11 +212,11 @@ for(let i = 0; i < 2; i++){
 
 			visual = document.createElement("section");
 			visual.id = "visual";
-			incrementVisual(DATA, visual);
+			incrementVisual(DATA, visual, i);
 
 			textual = document.createElement("section");
 			textual.id = "textual";
-			incrementTextual(DATA, textual);
+			incrementTextual(DATA, textual, i);
 
 			all.appendChild(visual);
 			all.appendChild(textual);
@@ -182,10 +224,14 @@ for(let i = 0; i < 2; i++){
 			container.appendChild(all);
 		}
 
+	}).then(() => {
+		setScreenshotEvent(i);
+		setTurnButtonEvent(i);
+		setExpandButtonEvent(i);
 	});
 }
 
-all = visual = textual = foo = undefined;
+i = all = visual = textual = foo = undefined;
 container = id = undefined;
 
 }

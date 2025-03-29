@@ -1,6 +1,7 @@
 {
 
 let img;
+const LISTENERS = [];
 
 function newItem(data, level, dest){
 	let figure = document.createElement("figure");
@@ -12,12 +13,18 @@ function newItem(data, level, dest){
 	img.title = data.title;
 	img.src   = data.src;
 
-	img.onload = () => {
-		figure.classList.remove("image-skeleton-loading");
-	}
+	LISTENERS.push({img: img, figure: figure});
 
 	figure.appendChild(img);
 	dest.appendChild(figure);
+}
+
+function setOnloadFunction(){
+	LISTENERS.forEach((cur) => {
+		cur.img.onload = () => {
+			cur.figure.classList.remove("image-skeleton-loading");
+		}
+	});
 }
 
 fetch(JSON_URL.knowTech).then(response => {return response.json()}).then((json) => {
@@ -35,6 +42,10 @@ fetch(JSON_URL.knowTech).then(response => {return response.json()}).then((json) 
 	}
 
 	level = tags = ids = container = undefined;
+
+}).then(() => {
+	setOnloadFunction();
+	
 });
 
 img = undefined;
