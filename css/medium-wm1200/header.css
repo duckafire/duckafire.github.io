@@ -2,38 +2,33 @@
 
 /* MAIN-SECTION */
 
-section#presentation {
-}
-
 /* PRESENTATION */
 
-div#header {
+header > nav
+div#top {
 	align-items: center;
 	max-height: 300px;
 }
 
-div#header >
-img#perfil-image {
+header > nav > div#top > figure#left >
+img {
 	min-width: 250px;
-	max-width: none;
+	max-height: 300px;
 	width: 30vw;
 }
 
-div#header >
-div#title-links {
-	margin-top: 0px;
+header > nav > div#top >
+section#center {
 	gap: 2.75vw;
 	justify-content: center;
-	padding: 3dvh 0px 3dvh 0px;
-	max-height: 30dvh;
+	margin: 3dvh 0px 3dvh 0px;
+	flex-grow: 1;
+	max-height: 300px;
 }
 
-div#header > div#title-links >
-h1 {
-	font-size: 4vw;
-}
+header > nav > div#top > section#center > h1 { font-size: 4vw; }
 
-div#header > div#title-links >
+header > nav > div#top > section#center >
 div {
 	overflow: scroll;
 	font-size: 1rem;
@@ -41,37 +36,36 @@ div {
 	padding: 0px 3vw 0px 3vw;
 }
 
-div#header > div#title-links > div >
+header > nav > div#top > section#center > div >
 p {
 	text-align: justify;
 	width: 100%;
 }
 
-div#header >
-div#open-popup {
+header > nav > div#top > section#right { align-self: stretch; }
+
+header > nav > div#top > section#right >
+ul {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	padding-bottom: 1vw;
-	align-self: stretch;
+	height: 100%;
+	padding: 1vw 0px 1vw 0px;
 }
 
-div#header > div#open-popup >
-i {
+header > nav > div#top > section#right > ul > li >
+button#open-know-dialog {
 
 
 	margin: 0px;
 	padding: 0px;
 }
 
-div#header > div#open-popup > i,
-div#header > div#open-popup a > i {
+header > nav > div#top > section#right > ul > li i {
 	font-size: min(4.5vw, 6.5dvh);
 }
 
-div#description {
-	display: none;
-}
+
 
 /* POPUP > CONTAINER */
 

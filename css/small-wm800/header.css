@@ -85,8 +85,7 @@ figure {
 
 /* PRESENTATION */
 
-header > nav >
-div#top { padding-right: 2vw; }
+header > nav > div#top { padding-right: 2vw; }
 
 header > nav > div#top > figure#left >
 img {
