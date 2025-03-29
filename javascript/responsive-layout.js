@@ -81,7 +81,7 @@ RESPONSIVE_ELEMENTS.push(new MoverElement(
 	"header > nav > div#bottom > p",
 	"header > nav > div#bottom",
 	"header > nav > div#top > section#center > div",
-	null,
+	"header > nav > div#top > section#center > div", // TODO: temp
 ));
 
 }
