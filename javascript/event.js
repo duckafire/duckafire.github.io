@@ -6,6 +6,7 @@ const DIALOG = {
 	know: document.querySelector("header > dialog#know-dialog"),
 	// "viewer" is opened/closed by projects items showcase images
 	other: document.querySelector("main > dialog#other"),
+	viewer: document.querySelector("header > dialog#viewer"),
 }
 
 document.querySelector("header > nav > div#top > section#right > ul > li > button#open-know-dialog")
@@ -30,6 +31,14 @@ expOtherProj.addEventListener("click", () => {
 	}
 	DIALOG.other.open   = true;
 	expOtherProj.style.transform = "scaleY(-1)";
+})
+
+document.querySelector("header > dialog#viewer > figure > img")
+	.addEventListener("click", (ev) => {ev.stopPropagation()});
+
+DIALOG.viewer.addEventListener("click", () => {
+	DIALOG.viewer.open = false;
+	document.body.style.overflow = "";
 })
 
 // resize screen/window

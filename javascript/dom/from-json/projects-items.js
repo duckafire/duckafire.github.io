@@ -30,11 +30,20 @@ function incrementVisual(data, dest){
 
 	for(const CUR of data.showcase.images){
 		let cont = document.createElement("figure");
-		foo = document.createElement("img");
+		let foo  = document.createElement("img");
 
 		foo.alt   = CUR.alt;
 		foo.title = CUR.title;
 		foo.src   = CUR.src;
+
+		foo.addEventListener("click", () => {
+			if(WIDTH.check() == WIDTH.big)
+				return;
+
+			document.querySelector("header > dialog#viewer").open = true;
+			document.querySelector("header > dialog#viewer > figure > img").src = foo.src;
+			document.body.style.overflow = "hidden";
+		});
 
 		cont.className = "image-skeleton-loading";
 		foo.onload = () => {
