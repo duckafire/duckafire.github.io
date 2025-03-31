@@ -25,9 +25,13 @@ img.know-level-high    { border-color: #0a5; }
 }
 
 section.know-tech-chain {
-	display: flex;
-	justify-content: space-evenly;
-	flex-wrap: wrap;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	height: 100%;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	margin: max(3.5dvh, 1rem) 0px max(3.5dvh, 1rem) 0px;
 }
 
 section.know-tech-chain > figure.image-skeleton-loading > img { border: none !important; }
@@ -180,6 +184,7 @@ section#knowledge {
 	flex-grow: 1;
 	align-items: center;
 	text-align: center;
+	overflow: auto;
 }
 
 header > dialog#know-dialog > section > section#knowledge >
@@ -202,6 +207,7 @@ ul#know-level {
 	display: flex;
 	justify-content: space-between;
 	overflow: hidden;
+	font-size: 3.5vw;
 }
 
 
