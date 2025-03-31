@@ -8,9 +8,7 @@ div.loading-icon-animated-container {
 	border-radius: 5vw;
 }
 
-div.loading-icon-animated-container {
-	text-align: center;
-}
+div.loading-icon-animated-container { text-align: center; }
 
 div.loading-icon-animated {
 	display: inline-block;
@@ -28,9 +26,9 @@ div.loading-icon-animated div {
 	animation: loading-animation 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
 }
 
-div.loading-icon-animated div:nth-child(2) {
-	animation-delay: -0.5s;
-}
+div.loading-icon-animated div:nth-child(2) { animation-delay: -0.5s; }
+
+section.know-tech-chain > div.loading-icon-animated-container { grid-area: _center; }
 
 /* SKELETON LOADING */
 

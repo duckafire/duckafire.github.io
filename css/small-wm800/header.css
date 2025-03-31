@@ -32,6 +32,7 @@ section.know-tech-chain {
 	justify-content: center;
 	align-items: center;
 	margin: max(3.5dvh, 1rem) 0px max(3.5dvh, 1rem) 0px;
+	grid-template-areas: ". . _center . .";
 }
 
 section.know-tech-chain > figure.image-skeleton-loading > img { border: none !important; }
