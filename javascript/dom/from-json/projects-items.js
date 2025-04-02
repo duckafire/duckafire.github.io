@@ -94,6 +94,7 @@ function incrementTextual(data, dest, i){
 
 	TEXT.h1.textContent = data.title;
 	TEXT.p.textContent  = data.description;
+	TEXT.p.className    = "paragraph-font";
 
 	// container to LINKS and EXPAND
 	const NO_TEXT = document.createElement("div");
