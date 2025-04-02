@@ -4,6 +4,10 @@
 
 /* HIGHLIGHT x OTHER */
 
+main > dialog > ul > li > section#visual > button > i { font-size: max(min(3.375vw, 4.875dvh), 1.5rem); }
+
+main > dialog > ul > li > section#visual > div > section#used-langs { font-size: 3.75rem; }
+
 /* EXPAND-PROJECTS */
 
 }

@@ -93,6 +93,7 @@ function incrementTextual(data, dest, i){
 	};
 
 	TEXT.h1.textContent = data.title;
+	TEXT.h1.className   = "title-font";
 	TEXT.p.textContent  = data.description;
 	TEXT.p.className    = "paragraph-font";
 

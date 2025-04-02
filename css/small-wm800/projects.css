@@ -53,10 +53,7 @@ section {
 	justify-content: space-evenly;
 }
 
-main > dialog > ul > li > section#visual > div >
-section#used-langs {
-	font-size: 2.5rem;
-}
+main > dialog > ul > li > section#visual > div > section#used-langs { font-size: 2.5rem; }
 
 main > dialog > ul > li > section#visual > figure >
 img {
@@ -72,6 +69,7 @@ img {
 
 main > dialog > ul > li > section#visual >
 button {
+	font-size: max(2.75vw, 10px);
 
 
 	padding: 1.5rem;
@@ -84,6 +82,7 @@ section#textual {
 	flex-direction: column;
 	align-items: center;
 	gap: 1.5dvh;
+	margin-top: 0.5rem;
 }
 
 main > dialog > ul > li > section#textual >
