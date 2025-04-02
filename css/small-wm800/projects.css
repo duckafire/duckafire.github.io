@@ -86,7 +86,15 @@ section#textual {
 	gap: 1.5dvh;
 }
 
-main > dialog > ul > li > section#textual > dialog >
+main > dialog > ul > li > section#textual >
+div {
+	display: flex;
+	flex-direction: column;
+	gap: 0.45rem;
+	width: 100%;
+}
+
+main > dialog > ul > li > section#textual > div > dialog >
 ul {
 	display: flex;
 	flex-direction: column;
@@ -95,9 +103,9 @@ ul {
 	align-items: center;
 }
 
-main > dialog > ul > li > section#textual > dialog > ul > li { width: 100%; }
+main > dialog > ul > li > section#textual > div > dialog > ul > li { width: 100%; }
 
-main > dialog > ul > li > section#textual > dialog > ul > li >
+main > dialog > ul > li > section#textual > div > dialog > ul > li >
 a {
 	display: flex;
 	gap: 0.35rem;
@@ -109,11 +117,11 @@ a {
 	border-radius: 5vw;
 }
 
-main > dialog > ul > li > section#textual >
+main > dialog > ul > li > section#textual > div >
 button {
 	width: 100%;
 	text-align: center;
-	padding: 0.4rem;
+	padding: 0.45rem;
 
 	background-color: #118d55;
 	border-radius: 5vw;

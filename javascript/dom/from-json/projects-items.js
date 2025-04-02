@@ -95,6 +95,9 @@ function incrementTextual(data, dest, i){
 	TEXT.h1.textContent = data.title;
 	TEXT.p.textContent  = data.description;
 
+	// container to LINKS and EXPAND
+	const NO_TEXT = document.createElement("div");
+
 	const LINKS = {
 		dialog: document.createElement("dialog"),
 		ul:     document.createElement("ul"),
@@ -139,10 +142,12 @@ function incrementTextual(data, dest, i){
 		dialog: LINKS.dialog,
 	});
 
+	NO_TEXT.appendChild(LINKS.dialog);
+	NO_TEXT.appendChild(EXPAND.button);
+
 	dest.appendChild(TEXT.h1);
 	dest.appendChild(TEXT.p);
-	dest.appendChild(LINKS.dialog);
-	dest.appendChild(EXPAND.button);
+	dest.appendChild(NO_TEXT);
 }
 
 function setScreenshotEvent(i){
