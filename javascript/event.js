@@ -13,12 +13,14 @@ document.querySelector("header > nav > div#top > section#right > ul > li > butto
 	.addEventListener("click", () => {
 		document.body.style.overflow = "hidden";
 		DIALOG.know.open = true
+		DIALOG.know.classList.add("know-dialog");
 	})
 
 document.querySelector("header > dialog#know-dialog > section > nav > button#close-know-dialog")
 	.addEventListener("click", () => {
-		DIALOG.know.open = false
 		document.body.style.overflow = "";
+		DIALOG.know.open = false
+		DIALOG.know.classList.remove("know-dialog");
 	})
 
 const expOtherProj = document.querySelector("main > button");

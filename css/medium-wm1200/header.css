@@ -1,5 +1,10 @@
 @media only screen and (min-width: 800px) and (max-width: 1199px){
 
+section.know-tech-chain {
+	margin-top: 5vw;
+	margin-bottom: 5vw;
+}
+
 /* MAIN-SECTION */
 
 /* PRESENTATION */
@@ -61,12 +66,11 @@ button#open-know-dialog {
 	padding: 0px;
 }
 
-header > nav > div#top > section#right > ul > li i {
-	font-size: min(4.5vw, 6.5dvh);
-}
+header > nav > div#top > section#right > ul > li i { font-size: max(min(4.5vw, 6.5dvh), 2rem); }
 
 
 
-/* POPUP > CONTAINER */
+/* POPUP */
+
 
 }

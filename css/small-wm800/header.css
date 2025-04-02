@@ -24,6 +24,11 @@ img.know-level-high    { border-color: #0a5; }
 	justify-content: space-between;
 }
 
+dialog.know-dialog {
+	display: flex;
+	align-items: center;
+}
+
 section.know-tech-chain {
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
@@ -31,7 +36,6 @@ section.know-tech-chain {
 	width: 100%;
 	justify-content: center;
 	align-items: center;
-	margin: max(3.5dvh, 1rem) 0px max(3.5dvh, 1rem) 0px;
 	grid-template-areas: ". . _center . .";
 }
 
@@ -63,10 +67,11 @@ header > nav {
 	border-radius: 5vw;
 }
 
-dialog >
+header > dialog#know-dialog >
 section {
 	width: 100%;
 	height: 100%;
+	max-height: 800px;
 	border: 0.5vw solid black;
 	padding: 7.85vw;
 	display: flex;
@@ -77,7 +82,7 @@ section {
 	border-radius: 5vw;
 }
 
-dialog >
+header > dialog >
 figure {
 	width: 100%;
 	height: 100%;
@@ -113,6 +118,13 @@ section#center {
 
 header > nav > div#top > section#center > h1 { font-size: max(6vw, 12px); }
 
+header > nav > div#top > section#center >
+ul {
+	display: flex;
+	font-size: max(6vw, 12px);
+	gap: 7.5vw;
+}
+
 header > nav > div#top > section#right > ul > li >
 button#open-know-dialog {
 	padding-top: 1vw;
@@ -120,13 +132,6 @@ button#open-know-dialog {
 
 	padding: 1.5rem;
 	margin: -1.5rem;
-}
-
-header > nav > div#top > section#center >
-ul {
-	display: flex;
-	font-size: max(6vw, 12px);
-	gap: 7.5vw;
 }
 
 header > nav >
@@ -173,7 +178,7 @@ header > dialog#know-dialog > section >
 ul#tabs {
 	display: flex;
 	justify-content: space-between;
-	margin-top: 5dvh;
+	margin-top: min(5vw, 5dvh);
 	font-size: 3vw;
 }
 
@@ -186,6 +191,9 @@ section#knowledge {
 	align-items: center;
 	text-align: center;
 	overflow: auto;
+
+	border-top: max(min(3.5vw, 3.5dvh), min(1vw, 1dvh)) solid #af6601;
+	border-bottom: max(min(3.5vw, 3.5dvh), min(1vw, 1dvh)) solid #af6601;
 }
 
 header > dialog#know-dialog > section > section#knowledge >
