@@ -67,7 +67,7 @@ header > nav {
 	border-radius: 5vw;
 }
 
-header > dialog#know-dialog >
+header > dialog#popup >
 section {
 	width: 100%;
 	height: 100%;
@@ -153,20 +153,20 @@ p {
 
 /* POPUP */
 
-header > dialog#know-dialog > section >
+header > dialog#popup > section >
 nav {
 	display: flex;
 	justify-content: space-between;
 }
 
-header > dialog#know-dialog > section > nav >
+header > dialog#popup > section > nav >
 h1 {
 	margin: 0px;
 	margin-top: -2vw;
 	font-size: max(6vw, 12px);
 }
 
-header > dialog#know-dialog > section > nav >
+header > dialog#popup > section > nav >
 button {
 	font-size: max(4vw, 10px);
 
@@ -174,7 +174,7 @@ button {
 	margin: -1.5rem;
 }
 
-header > dialog#know-dialog > section >
+header > dialog#popup > section >
 ul#tabs {
 	display: flex;
 	justify-content: space-between;
@@ -182,7 +182,7 @@ ul#tabs {
 	font-size: 3vw;
 }
 
-header > dialog#know-dialog > section >
+header > dialog#popup > section >
 section#knowledge {
 	display: flex;
 	flex-direction: column;
@@ -196,13 +196,13 @@ section#knowledge {
 	border-bottom: max(min(3.5vw, 3.5dvh), min(1vw, 1dvh)) solid #af6601;
 }
 
-header > dialog#know-dialog > section > section#knowledge >
+header > dialog#popup > section > section#knowledge >
 li {
 	display: inline-block;
 	width: 100%;
 }
 
-header > dialog#know-dialog > section > section#knowledge > li >
+header > dialog#popup > section > section#knowledge > li >
 section {
 	flex-grow: 1;
 	max-height: 20dvh;
@@ -211,7 +211,7 @@ section {
 	overflow: auto;
 }
 
-header > dialog#know-dialog > section >
+header > dialog#popup > section >
 ul#know-level {
 	display: flex;
 	justify-content: space-between;
