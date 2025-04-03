@@ -72,5 +72,7 @@ header > nav > div#top > section#right > ul > li i { font-size: max(min(4.5vw, 6
 
 /* POPUP */
 
+header > dialog#popup { min-height: 820px; }
+
 
 }

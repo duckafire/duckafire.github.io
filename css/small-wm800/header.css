@@ -24,9 +24,11 @@ img.know-level-high    { border-color: #0a5; }
 	justify-content: space-between;
 }
 
-dialog.know-dialog {
-	display: flex;
-	align-items: center;
+@media only screen and (max-width: 799px){
+	dialog.know-dialog {
+		display: flex;
+		align-items: center;
+	}
 }
 
 section.know-tech-chain {
@@ -76,7 +78,6 @@ section {
 	padding: 7.85vw;
 	display: flex;
 	flex-direction: column;
-	overflow: auto;
 
 	background-color: #af6601;
 	border-radius: 5vw;
@@ -208,14 +209,12 @@ section {
 	max-height: 20dvh;
 	display: flex;
 	flex-direction: column;
-	overflow: auto;
 }
 
 header > dialog#popup > section >
 ul#know-level {
 	display: flex;
 	justify-content: space-between;
-	overflow: hidden;
 	font-size: 3.5vw;
 }
 
