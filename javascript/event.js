@@ -9,6 +9,12 @@ const DIALOG = {
 	viewer: document.querySelector("header > dialog#viewer"),
 }
 
+function closeKnowDialog(){
+	document.body.style.overflow = "";
+	DIALOG.know.open = false
+	DIALOG.know.classList.remove("know-dialog");
+}
+
 document.querySelector("header > nav > div#top > section#right > ul > li > button#open-know-dialog")
 	.addEventListener("click", () => {
 		document.body.style.overflow = "hidden";
@@ -17,11 +23,10 @@ document.querySelector("header > nav > div#top > section#right > ul > li > butto
 	})
 
 document.querySelector("header > dialog#popup > section > nav > span#special > button#close-know-dialog")
-	.addEventListener("click", () => {
-		document.body.style.overflow = "";
-		DIALOG.know.open = false
-		DIALOG.know.classList.remove("know-dialog");
-	})
+	.addEventListener("click", closeKnowDialog);
+
+DIALOG.know.children[0].addEventListener("click", (ev) => { ev.stopPropagation() });
+DIALOG.know.addEventListener("click", closeKnowDialog);
 
 const expOtherProj = document.querySelector("main > button");
 
