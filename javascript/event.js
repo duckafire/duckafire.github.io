@@ -16,7 +16,7 @@ document.querySelector("header > nav > div#top > section#right > ul > li > butto
 		DIALOG.know.classList.add("know-dialog");
 	})
 
-document.querySelector("header > dialog#popup > section > nav > button#close-know-dialog")
+document.querySelector("header > dialog#popup > section > nav > span#special > button#close-know-dialog")
 	.addEventListener("click", () => {
 		document.body.style.overflow = "";
 		DIALOG.know.open = false
@@ -45,18 +45,21 @@ DIALOG.viewer.addEventListener("click", () => {
 
 // show/hide element (no dialog)
 
+let saveKnowTabsId = 0;
 const KNOW_TABS_DISPLAY = [
 	["", "none", "none"],
 	["none", "", "none"],
 	["none", "none", ""],
 ];
 
-const KNOW_TABS_GROUPS = document.querySelectorAll("section.know-tech-chain");
+const KNOW_TABS_GROUPS = document.querySelectorAll("li.know-tech-item");
 
 Array.from(document.querySelector("header > dialog#popup > section > ul#tabs").children).forEach((item, i) => {
 	item.addEventListener("click", () => {
 		if(KNOW_TABS_GROUPS[i].style.display == KNOW_TABS_DISPLAY[i])
 			return;
+
+		saveKnowTabsId = i;
 
 		KNOW_TABS_GROUPS.forEach((item, j) => {
 			item.style.display = KNOW_TABS_DISPLAY[i][j];
@@ -69,19 +72,26 @@ Array.from(document.querySelector("header > dialog#popup > section > ul#tabs").c
 let currentLayout;
 
 function windowResized(){
-	const cur = WIDTH.check();
+	const CUR = WIDTH.check();
 
-	if(( currentLayout != WIDTH.small  && cur == WIDTH.small)  ||
-		(currentLayout != WIDTH.medium && cur == WIDTH.medium) ||
-		(currentLayout != WIDTH.big    && cur == WIDTH.big)){
+	if(( currentLayout != WIDTH.small  && CUR == WIDTH.small)  ||
+		(currentLayout != WIDTH.medium && CUR == WIDTH.medium) ||
+		(currentLayout != WIDTH.big    && CUR == WIDTH.big)){
 
-		currentLayout = cur;
+		currentLayout = CUR;
 		RESPONSIVE_ELEMENTS.forEach((item) => {
 			if(item.moveIt !== undefined)
 				item.moveIt();
 
 			if(item.swapIcon !== undefined)
 				item.swapIcon();
+		});
+
+		KNOW_TABS_GROUPS.forEach((item, i) => {
+			if(CUR == WIDTH.small)
+				item.style.display = KNOW_TABS_DISPLAY[saveKnowTabsId][i];
+			else // TODO (temp) if(CUR == WIDTH.medium)
+				item.style.display = "";
 		});
 	}
 }

@@ -71,9 +71,9 @@ Array.from(document.querySelector("header > nav > div#top > section#center > ul"
 // open know-dialog
 RESPONSIVE_ELEMENTS.push(new IconSwaper(
 	"header > nav > div#top > section#right > ul > li > button > i",
-	"fa-solid fa-ellipsis-vertical",
-	"fa-solid fa-info-circle",
-	"fa-solid fa-info-circle", // TODO: temp
+	"fa-ellipsis-vertical",
+	"fa-info-circle",
+	"fa-info-circle", // TODO: temp
 ));
 
 // header-nav description
@@ -82,6 +82,21 @@ RESPONSIVE_ELEMENTS.push(new MoverElement(
 	"header > nav > div#bottom",
 	"header > nav > div#top > section#center > div",
 	"header > nav > div#top > section#center > div", // TODO: temp
+));
+
+// donate button from header-popup
+RESPONSIVE_ELEMENTS.push(new MoverElement(
+	"header > dialog#popup > section > nav > span#donate-button > button",
+	"header > dialog#popup > section > nav > span#donate-button",
+	"header > dialog#popup > section > nav > span#special",
+	"header > dialog#popup > section > nav > span#special", // TODO: temp
+));
+
+RESPONSIVE_ELEMENTS.push(new IconSwaper(
+	"header > dialog#popup > section > nav > span#special > button#close-know-dialog > i",
+	"fa-xmark",
+	"fa-circle-xmark",
+	"fa-circle-xmark", // TODO: temp
 ));
 
 }

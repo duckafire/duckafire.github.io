@@ -34,7 +34,7 @@ fetch(JSON_URL.knowTech).then(response => {return response.json()}).then((json) 
 	let container;
 
 	for(let i = 0; i < 3; i++){
-		container = document.querySelector("header > dialog#popup > section > section#knowledge > section#" + ids[i]);
+		container = document.querySelector("header > dialog#popup > section > ul#knowledge > li > section#" + ids[i]);
 		container.removeChild( container.children[0] ); // loading icon
 
 		for(const DATA of json[tags[i]])

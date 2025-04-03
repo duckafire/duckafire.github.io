@@ -72,31 +72,44 @@
 			</div>
 		</nav>
 
-		<dialog id="popup" class="dialog-background">
+		<dialog id="popup" class="dialog-background" open>
 			<section>
 				<nav class="top-flex">
-					<button id="donate">
-						<i class="FA-wildcard fa-solid fa-mug-hot"></i>
-					</button>
+					<span id="donate-button" class="only-small-layout">
+						<button id="donate">
+							<i class="FA-wildcard fa-solid fa-mug-hot"></i>
+						</button>
+					</span>
 					<h1>Title</h1>
-					<button id="close-know-dialog">
-						<i class="FA-wildcard fa-solid fa-xmark"></i>
-					</button>
+					<span id="special">
+						<button id="close-know-dialog">
+							<i class="FA-wildcard fa-solid fa-xmark"></i>
+						</button>
+					</span>
 				</nav>
-				<ul id="tabs" class="list-no-style">
-					<li>Programação</li>
-					<li>Marcação</li>
-					<li>Utilitários</li>
+				<ul id="tabs" class="list-no-style only-small-layout">
+					<li><h2>Programação</h2></li>
+					<li><h2>Marcação</h2></li>
+					<li><h2>Utilitários</h2></li>
 				</ul>
-				<section id="knowledge">
-					<section id="programming-lang" class="know-tech-chain"                      ></section>
-					<section id="markup-lang"      class="know-tech-chain" style="display:none;"></section>
-					<section id="other-util"       class="know-tech-chain" style="display:none;"></section>
-				</section>
+				<ul id="knowledge" class="list-no-style">
+					<li class="know-tech-item">
+						<h2 class="only-medium-layout">&#8226; Linguagens de programação</h2>
+						<section id="programming-lang" class="know-tech-chain"></section>
+					</li>
+					<li class="know-tech-item" style="display:none;">
+						<h2 class="only-medium-layout">&#8226; Linguagens de marcação</h2>
+						<section id="markup-lang" class="know-tech-chain"></section>
+					</li>
+					<li class="know-tech-item" style="display:none;">
+						<h2 class="only-medium-layout">&#8226; Utilitários e tecnologias</h2>
+						<section id="other-util" class="know-tech-chain"></section>
+					</li>
+				</ul>
 				<ul id="know-level" class="list-no-style top-flex">
-					<li class="know-level-low">Raso</li>
-					<li class="know-level-middle">Intermediário</li>
-					<li class="know-level-high">Avançado</li>
+					<li><h3 class="know-level-low">Raso</h3></li>
+					<li><h3 class="know-level-middle">Intermediário</h3></li>
+					<li><h3 class="know-level-high">Avançado</h3></li>
 				</ul>
 			</section>
 		</dialog>

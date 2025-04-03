@@ -1,11 +1,13 @@
 @media only screen and (min-width: 800px) and (max-width: 1199px){
 
-section.know-tech-chain {
-	margin-top: 5vw;
-	margin-bottom: 5vw;
-}
-
 /* MAIN-SECTION */
+
+header >
+dialog#popup {
+	padding: 0px;
+	padding-left: 25%;
+	min-height: 690px;
+}
 
 /* PRESENTATION */
 
@@ -72,7 +74,87 @@ header > nav > div#top > section#right > ul > li i { font-size: max(min(4.5vw, 6
 
 /* POPUP */
 
-header > dialog#popup { min-height: 820px; }
+/* TODO
 
+	show scrollbar (medium layout) - known tech.
+	scrollbar (hided) to header-popup
+
+*/
+
+header > dialog#popup >
+section {
+	padding: 0px;
+	border: none;
+	border-left: 0.5vw solid black;
+	border-radius: 0px;
+	width: 100%;
+	height: 100%;
+	max-height: none;
+}
+
+header > dialog#popup > section >
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2.5dvh 2.5vw 2.5dvh 2.5vw;
+}
+
+header > dialog#popup > section > nav > h1 { font-size: max(min(7.5vw, 7.5dvh), 75px); }
+
+header > dialog#popup > section > nav >
+span#special {
+	display: flex;
+	flex-direction: column;
+	gap: min(3vw, 3dvh);
+}
+header > dialog#popup > section > nav > span >
+button {
+
+
+	padding: 0px;
+	margin:  0px;
+}
+
+header > dialog#popup > section > nav > span#special i { font-size: max(min(5.75vw, 5.75dvh), 50px); }
+
+header > dialog#popup > section >
+ul#knowledge {
+	display: flex;
+	flex-direction: column;
+	padding-left: 1.2vw;
+	font-size: 2.3vw;
+}
+
+header > dialog#popup > section > ul#knowledge >
+li {
+	text-align: start;
+	align-items: stretch;
+	justify-content: stretch;
+	border: none;
+	gap: 0.75rem;
+}
+
+header > dialog#popup > section > ul#knowledge > li >
+section {
+	display: flex !important;
+	justify-content: start;
+	align-items: start;
+	gap: 1.2vw;
+	overflow: auto;
+}
+
+header > dialog#popup > section > ul#knowledge > li > section > figure >
+img {
+max-width: none;
+max-height: none;
+width: 15dvh;
+min-width: 10vw;
+}
+
+header > dialog#popup > section > ul#know-level {
+	font-size: 2.75vw;
+	padding: 0px min(1.5vw, 1.5dvh) 2rem min(1.5vw, 1.5dvh);
+}
 
 }

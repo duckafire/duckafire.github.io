@@ -49,9 +49,9 @@ figure.image-skeleton-loading::after {
 	animation: skeleton-loading 1.5s linear infinite;
 }
 
-header > dialog#popup > section > section#knowledge > section >
+header > dialog#popup > section > ul#knowledge > li > section >
 figure.image-skeleton-loading,
-header > dialog#popup > section > section#knowledge > section >
+header > dialog#popup > section > ul#knowledge > li > section >
 figure.image-skeleton-loading::after {
 	width: 10vw;
 	height: 10vw;
