@@ -93,9 +93,8 @@ function incrementTextual(data, dest, i){
 	};
 
 	TEXT.h1.textContent = data.title;
-	TEXT.h1.className   = "title-font";
+	TEXT.h1.className   = "projects-title-size";
 	TEXT.p.textContent  = data.description;
-	TEXT.p.className    = "paragraph-font";
 
 	// container to LINKS and EXPAND
 	const NO_TEXT = document.createElement("div");
@@ -112,6 +111,7 @@ function incrementTextual(data, dest, i){
 		LINKS.a = document.createElement("a");
 		LINKS.a.href  = CUR.href;
 		LINKS.a.title = CUR.title;
+		LINKS.a.className = "border-r-based-w";
 
 		LINKS.i = document.createElement("i");
 		LINKS.i.className = CUR.className + " FA-wildcard";
@@ -134,6 +134,8 @@ function incrementTextual(data, dest, i){
 	}
 
 	EXPAND.button.id = "expand-links";
+	EXPAND.button.className = "border-r-based-w";
+
 	EXPAND.icon.className = "FA-wildcard fa-solid fa-caret-down";
 
 	EXPAND.button.appendChild( EXPAND.icon );
@@ -216,6 +218,7 @@ for(let i = 0; i < 2; i++){
 
 		for(const DATA of json){
 			all = document.createElement("li");
+			all.className = "border-r-based-w";
 
 			visual = document.createElement("section");
 			visual.id = "visual";

@@ -1,8 +1,7 @@
 dialog.dialog-background {
-	position: fixed;
 	width: 100vw;
 	height: 100dvh;
-	margin: 0px;
+	position: fixed;
 	padding: 7dvh 7vw 7dvh 7vw;
 	z-index: 9999;
 	min-width: 180px;
@@ -31,8 +30,6 @@ section.know-tech-chain > figure.image-skeleton-loading > img { border: none !im
 section.know-tech-chain > figure >
 img {
 	width: 10vw;
-	margin: 2px;
-	padding: 2px;
 	max-width: 100px;
 	max-height: 100px;
 
@@ -51,13 +48,10 @@ header > nav {
 	padding: 2vw;
 
 	background-color: #8855aa;
-	border-radius: 5vw;
 }
 
 header > dialog#popup >
 section {
-	width: 100%;
-	height: 100%;
 	max-height: 800px;
 	border: 0.5vw solid black;
 	padding: 7.85vw;
@@ -65,13 +59,10 @@ section {
 	flex-direction: column;
 
 	background-color: #af6601;
-	border-radius: 5vw;
 }
 
 header > dialog >
 figure {
-	width: 100%;
-	height: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -89,7 +80,6 @@ img {
 	min-width: 54px;
 	max-width: 210px;
 
-	border-radius: 50%;
 	border: 0.75vw solid black;
 }
 
@@ -179,8 +169,6 @@ li {
 	text-align: center;
 	justify-content: space-evenly;
 	overflow: auto;
-	width: 100%;
-	height: 100%;
 
 	border-top: max(min(3.5vw, 3.5dvh), min(1vw, 1dvh)) solid #af6601;
 	border-bottom: max(min(3.5vw, 3.5dvh), min(1vw, 1dvh)) solid #af6601;
@@ -190,8 +178,6 @@ header > dialog#popup > section > ul#knowledge > li >
 section {
 	display: grid !important;
 	grid-template-columns: repeat(5, 1fr);
-	height: 100%;
-	width: 100%;
 	gap: 1px;
 	grid-template-areas: ". . _center . .";
 	justify-content: center;
@@ -208,12 +194,6 @@ ul#know-level {
 
 
 /* IMAGE VIEWER */
-
-header > dialog#viewer >
-figure {
-	width: 100%;
-	height: 100%;
-}
 
 header > dialog#viewer > figure >
 img {

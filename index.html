@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang ="en">
+<html lang ="pt-BR">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -30,10 +30,10 @@
 	
 	<header>
 
-		<nav>
+		<nav class="border-r-based-w">
 			<div id="top" class="top-flex">
 				<figure id="left">
-					<img src="./img/foo.png">
+					<img src="./img/foo.png" class="circle-radius">
 				</figure>
 				<section id="center">
 					<h1>Hello world!</h1>
@@ -57,7 +57,7 @@
 				</section>
 			</div>
 			<div id="bottom" class="only-small-layout">
-				<p class="paragraph-font">
+				<p>
 					Lorem ipsum odor amet, consectetuer adipiscing elit. Potenti
 					ultricies inceptos, quam facilisis aliquam vehicula quis. Laoreet
 					proin magna inceptos senectus lorem. Penatibus etiam metus quam
@@ -73,7 +73,7 @@
 		</nav>
 
 		<dialog id="popup" class="dialog-background">
-			<section>
+			<section class="inherit-dimensions border-r-based-w">
 				<nav class="top-flex">
 					<span id="donate-button" class="only-small-layout">
 						<button id="donate">
@@ -93,17 +93,17 @@
 					<li><h2>Utilitários</h2></li>
 				</ul>
 				<ul id="knowledge" class="list-no-style">
-					<li class="know-tech-item">
+					<li class="know-tech-item inherit-dimensions">
 						<h2 class="only-medium-layout">&#8226; Linguagens de programação</h2>
-						<section id="programming-lang" class="know-tech-chain"></section>
+						<section id="programming-lang" class="know-tech-chain inherit-dimensions"></section>
 					</li>
-					<li class="know-tech-item" style="display:none;">
+					<li class="know-tech-item inherit-dimensions" style="display:none;">
 						<h2 class="only-medium-layout">&#8226; Linguagens de marcação</h2>
-						<section id="markup-lang" class="know-tech-chain"></section>
+						<section id="markup-lang" class="know-tech-chain inherit-dimensions"></section>
 					</li>
-					<li class="know-tech-item" style="display:none;">
+					<li class="know-tech-item inherit-dimensions" style="display:none;">
 						<h2 class="only-medium-layout">&#8226; Utilitários e tecnologias</h2>
-						<section id="other-util" class="know-tech-chain"></section>
+						<section id="other-util" class="know-tech-chain inherit-dimensions"></section>
 					</li>
 				</ul>
 				<ul id="know-level" class="list-no-style top-flex">
@@ -115,7 +115,7 @@
 		</dialog>
 
 		<dialog id="viewer" class="dialog-background">
-			<figure>
+			<figure class="inherit-dimensions">
 				<img>
 			</figure>
 		</dialog>
@@ -125,7 +125,7 @@
 	<main>
 		<dialog id="highlight" open><ul class="list-no-style"></ul></dialog>
 		<dialog id="other"         ><ul class="list-no-style"></ul></dialog>
-		<button>
+		<button class="border-r-based-w">
 			<i class="FA-wildcard fa-solid fa-caret-down"></i>
 		</button>
 	</main>

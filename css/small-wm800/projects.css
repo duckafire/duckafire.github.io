@@ -1,3 +1,5 @@
+h1.projects-title-size { font-size: max(5vw, 10px); }
+
 /* MAIN-SECTIONS */
 
 main > dialog >
@@ -22,7 +24,6 @@ button {
 	font-size: 2.5rem;
 
 	background-color: #33af77;
-	border-radius: 5vw;
 }
 
 
@@ -34,7 +35,6 @@ li {
 	padding: 3.5vw;
 
 	background-color: #33af77;
-	border-radius: 5vw;
 }
 
 main > dialog > ul > li >
@@ -93,6 +93,15 @@ div {
 	width: 100%;
 }
 
+main > dialog > ul > li > section#textual > div >
+button {
+	width: 100%;
+	text-align: center;
+	padding: 0.45rem;
+
+	background-color: #118d55;
+}
+
 main > dialog > ul > li > section#textual > div > dialog >
 ul {
 	display: flex;
@@ -113,17 +122,6 @@ a {
 	justify-content: center;
 
 	background-color: #118d55;
-	border-radius: 5vw;
-}
-
-main > dialog > ul > li > section#textual > div >
-button {
-	width: 100%;
-	text-align: center;
-	padding: 0.45rem;
-
-	background-color: #118d55;
-	border-radius: 5vw;
 }
 
 
