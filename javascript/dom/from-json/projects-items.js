@@ -94,7 +94,9 @@ function incrementTextual(data, dest, i){
 
 	TEXT.h1.textContent = data.title;
 	TEXT.h1.className   = "projects-title-size";
+
 	TEXT.p.textContent  = data.description;
+	TEXT.p.className    = "common-font-size";
 
 	// container to LINKS and EXPAND
 	const NO_TEXT = document.createElement("div");
@@ -114,10 +116,11 @@ function incrementTextual(data, dest, i){
 		LINKS.a.className = "border-r-based-w";
 
 		LINKS.i = document.createElement("i");
-		LINKS.i.className = CUR.className + " FA-wildcard";
+		LINKS.i.className = CUR.className + " FA-wildcard common-font-size";
 
 		LINKS.span = document.createElement("span");
 		LINKS.span.textContent = CUR.textContent;
+		LINKS.span.className = "common-font-size"
 
 		LINKS.a.appendChild( LINKS.i );
 		LINKS.a.appendChild( LINKS.span );
