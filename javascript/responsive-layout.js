@@ -92,6 +92,7 @@ RESPONSIVE_ELEMENTS.push(new MoverElement(
 	"header > dialog#popup > section > nav > span#special", // TODO: temp
 ));
 
+// close button from header-popup
 RESPONSIVE_ELEMENTS.push(new IconSwaper(
 	"header > dialog#popup > section > nav > span#special > button#close-know-dialog > i",
 	"fa-xmark",
