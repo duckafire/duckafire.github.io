@@ -29,12 +29,12 @@ section.know-tech-chain > figure.image-skeleton-loading > img { border: none !im
 
 section.know-tech-chain > figure >
 img {
-	width: 10vw;
+	width: max(10vw, 23px);
 	max-width: 100px;
 	max-height: 100px;
 
 	border-radius: 25%;
-	border-width: 5px;
+	border-width: calc(max(10vw, 23px) / 16);
 	border-style: solid;
 }
 
@@ -50,8 +50,11 @@ header > nav {
 	background-color: #8855aa;
 }
 
+header > dialog#popup { min-width: 230px; }
+
 header > dialog#popup >
 section {
+	min-width: 230px;
 	max-height: 800px;
 	border: 0.5vw solid black;
 	padding: 7.85vw;
@@ -139,7 +142,7 @@ header > dialog#popup > section > nav >
 h1 {
 	margin: 0px;
 	margin-top: -2vw;
-	font-size: max(6vw, 12px);
+	font-size: max(6vw, 13.8px);
 }
 
 header > dialog#popup > section > nav > span >
@@ -156,7 +159,7 @@ ul#tabs {
 	display: flex;
 	justify-content: space-between;
 	margin-top: min(5vw, 5dvh);
-	font-size: 2vw;
+	font-size: max(2vw, 6.9px);
 }
 
 header > dialog#popup > section > ul#knowledge { flex-grow: 1; }
@@ -188,7 +191,7 @@ header > dialog#popup > section >
 ul#know-level {
 	display: flex;
 	justify-content: space-between;
-	font-size: 2.4vw;
+	font-size: max(2.4vw, 6.45px);
 }
 
 
