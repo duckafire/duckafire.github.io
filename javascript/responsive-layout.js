@@ -1,6 +1,6 @@
 {
 
-function getObj(obj){
+const getObj = (obj) => {
 	if(typeof obj == "string")
 		return document.querySelector(obj);
 	

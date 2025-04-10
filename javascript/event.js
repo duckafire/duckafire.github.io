@@ -9,7 +9,7 @@ const DIALOG = {
 	viewer: document.querySelector("header > dialog#viewer"),
 }
 
-function closeKnowDialog(){
+const closeKnowDialog = () => {
 	document.body.style.overflow = "";
 	DIALOG.know.open = false
 	DIALOG.know.classList.remove("know-dialog");
@@ -85,7 +85,7 @@ Array.from(document.querySelector("header > dialog#popup > section > ul#tabs").c
 
 let currentLayout;
 
-function windowResized(){
+const windowResized = () => {
 	// once
 	const CUR = WIDTH.check();
 

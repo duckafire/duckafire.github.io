@@ -8,7 +8,7 @@ const LISTENERS = [
 let all, visual, textual, foo;
 let container, ids = ["highlight", "other"];
 
-function incrementVisual(data, dest, i){
+const incrementVisual = (data, dest, i) => {
 	const IMAGE = {
 		figure: document.createElement("figure"),
 		img:    document.createElement("img"),
@@ -86,7 +86,7 @@ function incrementVisual(data, dest, i){
 	dest.appendChild(TURN.button);
 }
 
-function incrementTextual(data, dest, i){
+const incrementTextual = (data, dest, i) => {
 	const TEXT = {
 		h1: document.createElement("h1"),
 		p:  document.createElement("p"),
@@ -157,7 +157,7 @@ function incrementTextual(data, dest, i){
 	dest.appendChild(NO_TEXT);
 }
 
-function setScreenshotEvent(i){
+const setScreenshotEvent = (i) => {
 	if(LISTENERS[i].visualScreenshot.length == 0)
 		return;
 
@@ -177,7 +177,7 @@ function setScreenshotEvent(i){
 	});
 }
 
-function setTurnButtonEvent(i){
+const setTurnButtonEvent = (i) => {
 	if(LISTENERS[i].visualTurnButton.length == 0)
 		return;
 
@@ -197,7 +197,7 @@ function setTurnButtonEvent(i){
 	});
 }
 
-function setExpandButtonEvent(i){
+const setExpandButtonEvent = (i) => {
 	if(LISTENERS[i].textualExpandButton.length == 0)
 		return;
 

@@ -3,7 +3,7 @@
 let img;
 const LISTENERS = [];
 
-function newItem(data, level, dest){
+const newItem = (data, level, dest) => {
 	let figure = document.createElement("figure");
 	figure.className = "image-skeleton-loading";
 	
@@ -19,7 +19,7 @@ function newItem(data, level, dest){
 	dest.appendChild(figure);
 }
 
-function setOnloadFunction(){
+const setOnloadFunction = () => {
 	LISTENERS.forEach((cur) => {
 		cur.img.onload = () => {
 			cur.figure.classList.remove("image-skeleton-loading");

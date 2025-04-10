@@ -2,7 +2,7 @@
 
 let foo;
 
-function newIcon(){
+const newIcon = () => {
 	const CONTAINER = document.createElement("div");
 	const ICON      = document.createElement("div");
 
@@ -16,7 +16,7 @@ function newIcon(){
 	return CONTAINER;
 }
 
-function knowledge(sectionId){
+const knowledge = (sectionId) => {
 	return "header > dialog#popup > section > ul#knowledge > li > section#" + sectionId;
 }
 
