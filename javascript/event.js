@@ -20,7 +20,16 @@ document.querySelector("header > nav > div#top > section#right > ul > li > butto
 		document.body.style.overflow = "hidden";
 		DIALOG.know.open = true
 		DIALOG.know.classList.add("know-dialog");
-	})
+
+		RESPONSIVE_ELEMENTS.always.forEach((item, i) => {
+			// first two are same element:
+			// header > dialog%popup > section
+			if(i > 1)
+				return;
+
+			item.setValue();
+		});
+	});
 
 document.querySelector("header > dialog#popup > section > nav > span#special > button#close-know-dialog")
 	.addEventListener("click", closeKnowDialog);
@@ -77,6 +86,7 @@ Array.from(document.querySelector("header > dialog#popup > section > ul#tabs").c
 let currentLayout;
 
 function windowResized(){
+	// once
 	const CUR = WIDTH.check();
 
 	if(( currentLayout != WIDTH.small  && CUR == WIDTH.small)  ||
@@ -84,11 +94,11 @@ function windowResized(){
 		(currentLayout != WIDTH.big    && CUR == WIDTH.big)){
 
 		currentLayout = CUR;
-		RESPONSIVE_ELEMENTS.forEach((item) => {
+		RESPONSIVE_ELEMENTS.once.forEach((item) => {
 			if(item.moveIt !== undefined)
 				item.moveIt();
 
-			if(item.swapIcon !== undefined)
+			else if(item.swapIcon !== undefined)
 				item.swapIcon();
 		});
 
@@ -99,6 +109,12 @@ function windowResized(){
 				item.style.display = "";
 		});
 	}
+
+	// always
+	RESPONSIVE_ELEMENTS.always.forEach((item) => {
+		if(item.setValue !== undefined)
+			item.setValue();
+	});
 }
 
 window.addEventListener("DOMContentLoaded", windowResized);

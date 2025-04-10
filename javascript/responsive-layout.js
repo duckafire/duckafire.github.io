@@ -1,10 +1,17 @@
 {
 
+function getObj(obj){
+	if(typeof obj == "string")
+		return document.querySelector(obj);
+	
+	return obj;
+}
+
 class IconSwaper {
 	#itself; #current; #icon = {};
 
 	constructor(itself, small, medium, big){
-		this.#itself = (typeof itself == "string") ? document.querySelector(itself) : itself;
+		this.#itself = getObj(itself);
 
 		this.#icon.small  = (small  != null) ? small.split(" ")  : null;
 		this.#icon.medium = (medium != null) ? medium.split(" ") : null;
@@ -39,7 +46,7 @@ class MoverElement {
 	#itself; #destine = {};
 
 	constructor(itself, small, medium, big){
-		this.#itself = (typeof itself == "string") ? document.querySelector(itself) : itself;
+		this.#itself = getObj(itself);
 
 		this.#destine.small  = document.querySelector(small);
 		this.#destine.medium = document.querySelector(medium);
@@ -58,9 +65,45 @@ class MoverElement {
 	}
 }
 
+class SetFieldValueBasedOther{
+	#itself; #targetField; #baseField; #percentage; #clearField;
+	#validLayouts; // array
+
+	constructor(itself, targetField, baseField, percentage, clearField, validLayouts){
+		this.#itself       = getObj(itself);
+		this.#targetField  = targetField;
+		this.#baseField    = baseField;
+		this.#percentage   = percentage;
+		this.#clearField   = clearField;
+		this.#validLayouts = validLayouts;
+	}
+
+	setValue(){
+		let abort = true;
+
+		for(const layout of this.#validLayouts){
+			if(WIDTH.check() == layout){
+				abort = false;
+				break;
+			}
+		}
+
+		if(abort){
+			if(this.#clearField)
+				this.#itself.style[this.#targetField] = "";
+
+			return;
+		}
+
+		const dim = window.getComputedStyle(this.#itself)[this.#baseField];
+
+		this.#itself.style[this.#targetField] = String(parseFloat(dim) * this.#percentage) + "px";
+	}
+}
+
 // links below title, in header-nav
 Array.from(document.querySelector("header > nav > div#top > section#center > ul").children).forEach((item) => {
-	RESPONSIVE_ELEMENTS.push(new MoverElement(
+	RESPONSIVE_ELEMENTS.once.push(new MoverElement(
 		item,
 		"header > nav > div#top > section#center > ul",
 		"header > nav > div#top > section#right  > ul",
@@ -69,7 +112,7 @@ Array.from(document.querySelector("header > nav > div#top > section#center > ul"
 });
 
 // open know-dialog
-RESPONSIVE_ELEMENTS.push(new IconSwaper(
+RESPONSIVE_ELEMENTS.once.push(new IconSwaper(
 	"header > nav > div#top > section#right > ul > li > button > i",
 	"fa-ellipsis-vertical",
 	"fa-info-circle",
@@ -77,7 +120,7 @@ RESPONSIVE_ELEMENTS.push(new IconSwaper(
 ));
 
 // header-nav description
-RESPONSIVE_ELEMENTS.push(new MoverElement(
+RESPONSIVE_ELEMENTS.once.push(new MoverElement(
 	"header > nav > div#bottom > p",
 	"header > nav > div#bottom",
 	"header > nav > div#top > section#center > div",
@@ -85,7 +128,7 @@ RESPONSIVE_ELEMENTS.push(new MoverElement(
 ));
 
 // donate button from header-popup
-RESPONSIVE_ELEMENTS.push(new MoverElement(
+RESPONSIVE_ELEMENTS.once.push(new MoverElement(
 	"header > dialog#popup > section > nav > span#donate-button > button",
 	"header > dialog#popup > section > nav > span#donate-button",
 	"header > dialog#popup > section > nav > span#special",
@@ -93,11 +136,31 @@ RESPONSIVE_ELEMENTS.push(new MoverElement(
 ));
 
 // close button from header-popup
-RESPONSIVE_ELEMENTS.push(new IconSwaper(
+RESPONSIVE_ELEMENTS.once.push(new IconSwaper(
 	"header > dialog#popup > section > nav > span#special > button#close-know-dialog > i",
 	"fa-xmark",
 	"fa-circle-xmark",
 	"fa-circle-xmark", // TODO: temp
+));
+
+// header-popup set min-height, based its width
+RESPONSIVE_ELEMENTS.always.push(new SetFieldValueBasedOther(
+	"header > dialog#popup > section",
+	"minHeight",
+	"width",
+	0.761,
+	true,
+	[WIDTH.small],
+));
+
+// header-popup set max-height, based its width
+RESPONSIVE_ELEMENTS.always.push(new SetFieldValueBasedOther(
+	"header > dialog#popup > section",
+	"maxHeight",
+	"width",
+	1,
+	true,
+	[WIDTH.small],
 ));
 
 }

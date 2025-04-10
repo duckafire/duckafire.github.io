@@ -29,4 +29,7 @@ const WIDTH = new class {
 	}
 };
 
-const RESPONSIVE_ELEMENTS = [];
+const RESPONSIVE_ELEMENTS = {
+	once:   [], // run once after the layout to be swapped
+	always: [], // run always that the screen is modified
+};
