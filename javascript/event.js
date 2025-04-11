@@ -114,6 +114,9 @@ const windowResized = () => {
 	RESPONSIVE_ELEMENTS.always.forEach((item) => {
 		if(item.setValue !== undefined)
 			item.setValue();
+
+		else if(item.increase !== undefined)
+			item.increase();
 	});
 }
 

@@ -7,6 +7,28 @@ const getObj = (obj) => {
 	return obj;
 }
 
+const abort = (isArray, arrayOrStatic, statc) => {
+	if(isArray){
+		for(const cur of arrayOrStatic){
+			if(cur == statc)
+				return false;
+		}
+
+		return true;
+	}
+
+	return (arrayOrStatic != statc);
+}
+
+const formatv = (value, type) => (value.toString() + type);
+
+const getFField = (computed, obj, field) => {
+	if(computed)
+		return parseFloat(window.getComputedStyle(obj)[field]);
+	
+	return parseFloat(obj.style[field]);
+}
+
 class IconSwaper {
 	#itself; #current; #icon = {};
 
@@ -79,25 +101,84 @@ class SetFieldValueBasedOther{
 	}
 
 	setValue(){
-		let abort = true;
-
-		for(const layout of this.#validLayouts){
-			if(WIDTH.check() == layout){
-				abort = false;
-				break;
-			}
-		}
-
-		if(abort){
+		if(abort(true, this.#validLayouts, WIDTH.check())){
 			if(this.#clearField)
 				this.#itself.style[this.#targetField] = "";
 
 			return;
 		}
 
-		const dim = window.getComputedStyle(this.#itself)[this.#baseField];
+		const dim = getFField(true, this.#itself, this.#baseField);
 
 		this.#itself.style[this.#targetField] = String(parseFloat(dim) * this.#percentage) + "px";
+	}
+}
+
+class IncreaseHitbox {
+	#itself; #baseField;
+	#validLayout; // array
+	#percentage;  // object
+	#percStruct;
+
+	get #percOne(){ return 0} // { all }
+	get #percDim(){ return 1} // { verticcal, horizontal }
+	get #percAll(){ return 2} // { top, bottom, left, right }
+
+	constructor(itself, baseField, validLayout, percentage){
+		this.#itself      = getObj(itself);
+		this.#baseField   = baseField;
+		this.#validLayout = validLayout;
+		this.#percentage  = percentage;
+
+		if(this.#percentage.top !== undefined)
+			this.#percStruct = this.#percOne;
+		else if(this.#percentage.vertical !== undefined)
+			this.#percStruct = this.#percDim;
+		else
+			this.#percStruct = this.#percAll;
+
+		this.#percentage.empty = "";
+	}
+
+	#sett(type, field, perc){
+		const signal   = (type == "margin") ? "-" : "";
+		const cssField = type + field.charAt(0).toUpperCase() + field.slice(1);
+		const value    = signal + (getFField(true, this.#itself, this.#baseField) + this.#percentage[perc]).toString() + "px";
+
+		this.#itself.style[cssField] = value;
+	}
+
+	#setAll(perc){
+		for(const field of ["top", "bottom", "left", "right"])
+			for(const type of ["margin", "padding"])
+				this.#sett(type, field, perc || field);
+	}
+
+	#update(values){
+		if(this.#percStruct == this.#percOne){
+			this.#setAll("all");
+
+		}else if(this.#percStruct == this.#percDim){
+			for(const pair of [["top", "bottom", "vertical"], ["left", "right", "horizontal"]]){
+				this.#sett("margin",  pair[0], pair[2]);
+				this.#sett("margin",  pair[1], pair[2]);
+				this.#sett("padding", pair[0], pair[2]);
+				this.#sett("padding", pair[1], pair[2]);
+			}
+		}else{
+			this.#setAll();
+		}
+	}
+
+	increase(){
+		if(abort(true, this.#validLayout, WIDTH.check())){
+			this.#setAll("empty");
+			return;
+		}
+
+		let value = getFField(true, this.#itself, this.#baseField) * this.#percentage;
+
+		this.#update(formatv(value, "px"), formatv(value, "px"));
 	}
 }
 
@@ -161,6 +242,13 @@ RESPONSIVE_ELEMENTS.always.push(new SetFieldValueBasedOther(
 	1,
 	true,
 	[WIDTH.small],
+));
+
+RESPONSIVE_ELEMENTS.always.push(new IncreaseHitbox(
+	"header > nav > div#top > section#right > ul > li > button#open-know-dialog",
+	"font-size",
+	[WIDTH.small],
+	{vertical: 0.25, horizontal: 1},
 ));
 
 }

@@ -14,9 +14,9 @@ const RESTART_CSS_ANIMATION = (element, animation) => {
 }
 
 const WIDTH = new class {
-	get small(){  return 0};
-	get medium(){ return 1};
-	get big(){    return 2};
+	get small(){  return 0}
+	get medium(){ return 1}
+	get big(){    return 2}
 
 	check(){
 		if(window.innerWidth < 800)
