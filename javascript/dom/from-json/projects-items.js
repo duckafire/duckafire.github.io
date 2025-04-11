@@ -1,5 +1,11 @@
 {
 
+const DOM_EVENT_FIELDS = [
+	["setImageForHeaderViewer",         "visualScreenshot"   ],
+	["swapScreenshotsAndUsedLanguages", "visualTurnButton"   ],
+	["expandLinks",                     "textualExpandButton"],
+];
+
 const LISTENERS = [
 	{ visualScreenshot: [], visualTurnButton: [], textualExpandButton: [] },
 	{ visualScreenshot: [], visualTurnButton: [], textualExpandButton: [] },
@@ -157,63 +163,6 @@ const incrementTextual = (data, dest, i) => {
 	dest.appendChild(NO_TEXT);
 }
 
-const setScreenshotEvent = (i) => {
-	if(LISTENERS[i].visualScreenshot.length == 0)
-		return;
-
-	LISTENERS[i].visualScreenshot.forEach((cur) => {
-		cur.img.addEventListener("click", () => {
-			if(WIDTH.check() == WIDTH.big)
-				return;
-
-			document.querySelector("header > dialog#viewer").open = true;
-			document.querySelector("header > dialog#viewer > figure > img").src = cur.img.src;
-			document.body.style.overflow = "hidden";
-		});
-
-		cur.img.onload = () => {
-			cur.figure.classList.remove("image-skeleton-loading");
-		}
-	});
-}
-
-const setTurnButtonEvent = (i) => {
-	if(LISTENERS[i].visualTurnButton.length == 0)
-		return;
-
-	LISTENERS[i].visualTurnButton.forEach((cur) => {
-		cur.button.addEventListener("click", () => {
-			RESTART_CSS_ANIMATION(cur.icon, "single-loading-rotation 0.35s 1");
-
-			if(cur.divs.images.style.display != "none"){
-				cur.divs.images.style.display = "none";
-				cur.divs.icons.style.display  = "";
-				return;
-			}
-
-			cur.divs.images.style.display = "";
-			cur.divs.icons.style.display  = "none";
-		});
-	});
-}
-
-const setExpandButtonEvent = (i) => {
-	if(LISTENERS[i].textualExpandButton.length == 0)
-		return;
-
-	LISTENERS[i].textualExpandButton.forEach((cur) => {
-		cur.button.addEventListener("click", () => {
-			if(cur.dialog.open){
-				cur.dialog.open = false;
-				cur.icon.style.transform = "scale(1)";
-				return;
-			}
-			cur.dialog.open = true;
-			cur.icon.style.transform = "scale(-1)";
-		});
-	});
-}
-
 for(let i = 0; i < 2; i++){
 	fetch(JSON_URL.projectsItems[i]).then(response => response.json()).then((json) => {
 		container = document.querySelector(`main > dialog#${ids[i]} > ul`);
@@ -238,9 +187,9 @@ for(let i = 0; i < 2; i++){
 		}
 
 	}).then(() => {
-		setScreenshotEvent(i);
-		setTurnButtonEvent(i);
-		setExpandButtonEvent(i);
+		for(const fields of DOM_EVENT_FIELDS)
+			EV_FOR_REQUEST_ELEMENTS.projectsItems[ fields[0] ](
+				LISTENERS[i][ fields[1] ] );
 	});
 }
 

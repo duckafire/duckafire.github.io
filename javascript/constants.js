@@ -33,3 +33,5 @@ const RESPONSIVE_ELEMENTS = {
 	once:   [], // run once after the layout to be swapped
 	always: [], // run always that the screen is modified
 };
+
+const EV_FOR_REQUEST_ELEMENTS = {};

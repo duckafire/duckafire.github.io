@@ -19,14 +19,6 @@ const newItem = (data, level, dest) => {
 	dest.appendChild(figure);
 }
 
-const setOnloadFunction = () => {
-	LISTENERS.forEach((cur) => {
-		cur.img.onload = () => {
-			cur.figure.classList.remove("image-skeleton-loading");
-		}
-	});
-}
-
 fetch(JSON_URL.knowTech).then(response => {return response.json()}).then((json) => {
 	let level = ["low", "middle", "high"];
 	let tags  = ["programmingLanguages", "markupLanguages", "otherUtilities"];
@@ -42,7 +34,7 @@ fetch(JSON_URL.knowTech).then(response => {return response.json()}).then((json) 
 	}
 
 }).then(() => {
-	setOnloadFunction();
+	EV_FOR_REQUEST_ELEMENTS.knowTech.removeImageSkeleton(LISTENERS);
 	
 });
 
