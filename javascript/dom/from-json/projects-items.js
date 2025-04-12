@@ -112,7 +112,6 @@ const incrementTextual = (data, dest, i) => {
 	};
 
 	TEXT.h1.textContent = data.title;
-	TEXT.h1.className   = "projects-title-size";
 
 	TEXT.p.textContent  = data.description;
 	TEXT.p.className    = "common-font-size";

@@ -33,7 +33,7 @@ section#center {
 	max-height: 300px;
 }
 
-header > nav > div#top > section#center > h1 { font-size: 4vw; }
+header > nav > div#top > section#center > h1 { font-size: max(5vw, 5dvh); }
 
 header > nav > div#top > section#center >
 div {
