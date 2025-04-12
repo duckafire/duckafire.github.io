@@ -117,6 +117,9 @@ const windowResized = () => {
 
 		else if(item.increase !== undefined)
 			item.increase();
+
+		else if(item.swapWhen !== undefined)
+			item.swapWhen();
 	});
 }
 

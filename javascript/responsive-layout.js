@@ -182,6 +182,44 @@ class IncreaseHitbox {
 	}
 }
 
+class SwapFieldValueWhen {
+	#itself; #test; #lastResult;
+
+	// array
+	#html; #css; // fields
+	#values;
+
+	constructor(itself, test, html, css, values){
+		this.#itself = getObj(itself);
+		this.#test   = test;
+		this.#html   = html;
+		this.#css    = css;
+		this.#values = values;
+	}
+
+	swapWhen(){
+		const result = this.#test();
+
+		if(result == this.#lastResult)
+			return;
+
+		this.#lastResult = result;
+
+		const valueField = (result) ? "ok" : "fail";
+		let it;
+
+		for(const from of [this.#html, this.#css]){
+			if(from == null)
+				continue;
+
+			it = (from == this.#html) ? this.#itself : this.#itself.style;
+
+			for(let i = 0; i < from.length; i++)
+				it[ from[i] ] = this.#values[valueField][i];
+		}
+	}
+}
+
 // links below title, in header-nav
 Array.from(document.querySelector("header > nav > div#top > section#center > ul").children).forEach((item) => {
 	RESPONSIVE_ELEMENTS.once.push(new MoverElement(
@@ -244,6 +282,7 @@ RESPONSIVE_ELEMENTS.always.push(new SetFieldValueBasedOther(
 	[WIDTH.small],
 ));
 
+// hitbox of the button that open the header poup
 RESPONSIVE_ELEMENTS.always.push(new IncreaseHitbox(
 	"header > nav > div#top > section#right > ul > li > button#open-know-dialog",
 	"font-size",
@@ -251,8 +290,10 @@ RESPONSIVE_ELEMENTS.always.push(new IncreaseHitbox(
 	{vertical: 0.25, horizontal: 0.85},
 ));
 
+// events for projects items
 RH_FOR_REQUEST_ELEMENTS.projectsItems = {};
 
+// hitbox of the turn (screenshots and used languages) button
 RH_FOR_REQUEST_ELEMENTS.projectsItems.resposiveHitbox = (list) => {
 	list.forEach((button) => {
 		RESPONSIVE_ELEMENTS.always.push(new IncreaseHitbox(
@@ -263,5 +304,16 @@ RH_FOR_REQUEST_ELEMENTS.projectsItems.resposiveHitbox = (list) => {
 		));
 	});
 };
+
+RESPONSIVE_ELEMENTS.always.push(new SwapFieldValueWhen (
+	"header > dialog#popup",
+	() => WIDTH.check() == WIDTH.small && getFField(true, document.querySelector("header > dialog#popup"), "height") <= window.innerHeight,
+	null,
+	["align-items"],
+	{
+		ok: ["center"],
+		fail: ["start"]
+	}
+));
 
 }

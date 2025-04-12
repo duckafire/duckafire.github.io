@@ -18,13 +18,6 @@ img.know-level-low     { border-color: #a05; }
 img.know-level-middle  { border-color: #aa5; }
 img.know-level-high    { border-color: #0a5; }
 
-@media only screen and (max-width: 799px){
-	dialog.know-dialog {
-		display: flex;
-		align-items: center;
-	}
-}
-
 section.know-tech-chain > figure.image-skeleton-loading > img { border: none !important; }
 
 section.know-tech-chain > figure >
@@ -51,6 +44,12 @@ header > nav {
 }
 
 header > dialog#popup { min-width: 230px; }
+
+@media only screen and (max-width: 799px){
+	header > dialog#popup {
+		display: flex;
+	}
+}
 
 header > dialog#popup >
 section {
@@ -128,12 +127,6 @@ p {
 
 
 /* POPUP */
-
-header > dialog#popup > section >
-nav {
-	display: flex;
-	justify-content: space-between;
-}
 
 header > dialog#popup > section > nav >
 h1 {
