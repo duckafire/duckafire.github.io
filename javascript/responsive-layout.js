@@ -143,20 +143,20 @@ class IncreaseHitbox {
 	#sett(type, field, perc){
 		const signal   = (type == "margin") ? "-" : "";
 		const cssField = type + field.charAt(0).toUpperCase() + field.slice(1);
-		const value    = signal + (getFField(true, this.#itself, this.#baseField) + this.#percentage[perc]).toString() + "px";
+		const value    = signal + (getFField(true, this.#itself, this.#baseField) * this.#percentage[perc]).toString() + "px";
 
 		this.#itself.style[cssField] = value;
 	}
 
 	#setAll(perc){
-		for(const field of ["top", "bottom", "left", "right"])
-			for(const type of ["margin", "padding"])
+		for(const type of ["margin", "padding"])
+			for(const field of ["top", "bottom", "left", "right"])
 				this.#sett(type, field, perc || field);
 	}
 
 	#update(values){
 		if(this.#percStruct == this.#percOne){
-			this.#setAll("all");
+			this.#setAll();
 
 		}else if(this.#percStruct == this.#percDim){
 			for(const pair of [["top", "bottom", "vertical"], ["left", "right", "horizontal"]]){
@@ -166,7 +166,7 @@ class IncreaseHitbox {
 				this.#sett("padding", pair[1], pair[2]);
 			}
 		}else{
-			this.#setAll();
+			this.#setAll("all");
 		}
 	}
 
@@ -248,7 +248,7 @@ RESPONSIVE_ELEMENTS.always.push(new IncreaseHitbox(
 	"header > nav > div#top > section#right > ul > li > button#open-know-dialog",
 	"font-size",
 	[WIDTH.small],
-	{vertical: 0.25, horizontal: 1},
+	{vertical: 0.25, horizontal: 0.85},
 ));
 
 }
