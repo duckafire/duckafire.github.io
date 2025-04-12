@@ -24,8 +24,8 @@ let queries = [
 	{query: knowledge("programming-lang"),  need: null},
 	{query: knowledge("markup-lang"),       need: null},
 	{query: knowledge("other-util"),        need: null},
-	{query: "main > dialog#highlight > ul", need: "li"},
-	{query: "main > dialog#other > ul",     need: "li"},
+	{query: "main > dialog#highlight > ul", need: {elem: "li", html: [["className", "border-r-based-w"]]}},
+	{query: "main > dialog#other > ul",     need: {elem: "li", html: [["className", "border-r-based-w"]]}},
 ];
 
 for(const cur of queries){
@@ -34,7 +34,11 @@ for(const cur of queries){
 		continue;
 	}
 
-	foo = document.createElement(cur.need);
+	foo = document.createElement(cur.need.elem);
+	cur.need.html.forEach((data) => {
+		foo[data[0]] = data[1];
+	});
+
 	foo.appendChild(newIcon());
 	document.querySelector(cur.query).appendChild(foo);
 }
