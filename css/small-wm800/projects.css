@@ -67,14 +67,7 @@ img {
 	min-width: 18px;
 }
 
-main > dialog > ul > li > section#visual >
-button {
-	font-size: max(2.75vw, 10px);
-
-
-	padding: 1.5rem;
-	margin: -1.5rem;
-}
+main > dialog > ul > li > section#visual > button { font-size: max(2.75vw, 10px); }
 
 main > dialog > ul > li >
 section#textual {

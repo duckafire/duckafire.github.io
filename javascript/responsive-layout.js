@@ -251,4 +251,17 @@ RESPONSIVE_ELEMENTS.always.push(new IncreaseHitbox(
 	{vertical: 0.25, horizontal: 0.85},
 ));
 
+RH_FOR_REQUEST_ELEMENTS.projectsItems = {};
+
+RH_FOR_REQUEST_ELEMENTS.projectsItems.resposiveHitbox = (list) => {
+	list.forEach((button) => {
+		RESPONSIVE_ELEMENTS.always.push(new IncreaseHitbox(
+			button,
+			"font-size",
+			[WIDTH.small],
+			{all: 0.675},
+		));
+	});
+};
+
 }

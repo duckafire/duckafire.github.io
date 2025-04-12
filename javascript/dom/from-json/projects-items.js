@@ -1,15 +1,27 @@
 {
 
+class Listeners {
+	ev = {
+		visualScreenshot:    [],
+		visualTurnButton:    [],
+		textualExpandButton: [],
+	};
+	rh = {
+		visualTurnButton: [],
+	};
+}
+
 const DOM_EVENT_FIELDS = [
 	["setImageForHeaderViewer",         "visualScreenshot"   ],
 	["swapScreenshotsAndUsedLanguages", "visualTurnButton"   ],
 	["expandLinks",                     "textualExpandButton"],
 ];
 
-const LISTENERS = [
-	{ visualScreenshot: [], visualTurnButton: [], textualExpandButton: [] },
-	{ visualScreenshot: [], visualTurnButton: [], textualExpandButton: [] },
+const DOM_RESPOSIVE_BEHAVIOR = [
+	["resposiveHitbox", "visualTurnButton"],
 ];
+
+const LISTENERS = [ new Listeners(), new Listeners() ];
 
 let all, visual, textual, foo;
 let container, ids = ["highlight", "other"];
@@ -47,7 +59,7 @@ const incrementVisual = (data, dest, i) => {
 		foo.title = CUR.title;
 		foo.src   = CUR.src;
 
-		LISTENERS[i].visualScreenshot.push({img: foo, figure: cont});
+		LISTENERS[i].ev.visualScreenshot.push({img: foo, figure: cont});
 		cont.className = "image-skeleton-loading";
 
 		cont.appendChild(foo);
@@ -76,7 +88,7 @@ const incrementVisual = (data, dest, i) => {
 	};
 
 	TURN.icon.className = "FA-wildcard fa-solid fa-repeat";
-	LISTENERS[i].visualTurnButton.push({
+	LISTENERS[i].ev.visualTurnButton.push({
 		icon: TURN.icon,
 		button: TURN.button,
 		divs: {
@@ -84,6 +96,7 @@ const incrementVisual = (data, dest, i) => {
 			icons:  CONTAINER.section.icons,
 		}
 	});
+	LISTENERS[i].rh.visualTurnButton.push(TURN.button);
 
 	TURN.button.appendChild( TURN.icon );
 
@@ -149,7 +162,7 @@ const incrementTextual = (data, dest, i) => {
 
 	EXPAND.button.appendChild( EXPAND.icon );
 
-	LISTENERS[i].textualExpandButton.push({
+	LISTENERS[i].ev.textualExpandButton.push({
 		icon: EXPAND.icon,
 		button: EXPAND.button,
 		dialog: LINKS.dialog,
@@ -189,7 +202,18 @@ for(let i = 0; i < 2; i++){
 	}).then(() => {
 		for(const fields of DOM_EVENT_FIELDS)
 			EV_FOR_REQUEST_ELEMENTS.projectsItems[ fields[0] ](
-				LISTENERS[i][ fields[1] ] );
+				LISTENERS[i].ev[ fields[1] ] );
+
+		for(const fields of DOM_RESPOSIVE_BEHAVIOR)
+			RH_FOR_REQUEST_ELEMENTS.projectsItems[ fields[0] ](
+				LISTENERS[i].rh[ fields[1] ] );
+
+		// they are done after DOM to be loaded, then they
+		// must be loading after to be created
+		RESPONSIVE_ELEMENTS.always.forEach((item) => {
+			if(item.increase !== undefined)
+				item.increase();
+		});
 	});
 }
 

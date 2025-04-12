@@ -34,4 +34,5 @@ const RESPONSIVE_ELEMENTS = {
 	always: [], // run always that the screen is modified
 };
 
-const EV_FOR_REQUEST_ELEMENTS = {};
+const EV_FOR_REQUEST_ELEMENTS = {}; // events
+const RH_FOR_REQUEST_ELEMENTS = {}; // responsive behavior
