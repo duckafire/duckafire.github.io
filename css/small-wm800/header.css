@@ -46,7 +46,7 @@ header > nav {
 header > dialog#popup { min-width: 230px; }
 
 @media only screen and (max-width: 799px){
-	header > dialog#popup {
+	dialog.header-popup {
 		display: flex;
 	}
 }

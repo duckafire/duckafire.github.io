@@ -316,4 +316,12 @@ RESPONSIVE_ELEMENTS.always.push(new SwapFieldValueWhen (
 	}
 ));
 
+// hitbox of the button that close the header poup
+RESPONSIVE_ELEMENTS.always.push(new IncreaseHitbox(
+	"header > dialog#popup > section > nav > span#special > button#close-know-dialog",
+	"font-size",
+	[WIDTH.small],
+	{vertical: 0.35, horizontal: 0.55},
+));
+
 }

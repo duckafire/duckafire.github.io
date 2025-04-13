@@ -12,14 +12,14 @@ const DIALOG = {
 const closeKnowDialog = () => {
 	document.body.style.overflow = "";
 	DIALOG.know.open = false
-	DIALOG.know.classList.remove("know-dialog");
+	DIALOG.know.classList.remove("header-popup");
 }
 
 document.querySelector("header > nav > div#top > section#right > ul > li > button#open-know-dialog")
 	.addEventListener("click", () => {
 		document.body.style.overflow = "hidden";
 		DIALOG.know.open = true
-		DIALOG.know.classList.add("know-dialog");
+		DIALOG.know.classList.add("header-popup");
 
 		RESPONSIVE_ELEMENTS.always.forEach((item, i) => {
 			// first two are same element:
