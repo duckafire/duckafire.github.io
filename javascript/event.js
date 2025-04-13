@@ -57,6 +57,20 @@ DIALOG.viewer.addEventListener("click", () => {
 	document.body.style.overflow = "";
 })
 
+const moreDescr     = document.querySelector("header > nav > div#bottom > section > div#description > p#more-description");
+const showMoreDescr = document.querySelector("header > nav > div#bottom > button");
+
+showMoreDescr.addEventListener("click", () => {
+		if(moreDescr.style.display != "none"){
+			moreDescr.style.display = "none";
+			showMoreDescr.style.transform = "scaleY(1)"
+			return;
+		}
+
+		moreDescr.style.display = "";
+		showMoreDescr.style.transform = "scaleY(-1)"
+	});
+
 // show/hide element (no dialog)
 
 let saveKnowTabsId = 0;
@@ -111,6 +125,9 @@ const windowResized = () => {
 		(currentLayout != WIDTH.big    && CUR == WIDTH.big)){
 
 		currentLayout = CUR;
+
+		if(currentLayout == WIDTH.small)
+			document.querySelector("header > nav > div#bottom > button").style.transform = "scaleY(1)";
 
 		RESPONSIVE_ELEMENTS.once.forEach((item) => {
 			runResposiveMethod(item);

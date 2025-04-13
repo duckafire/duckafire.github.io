@@ -44,7 +44,7 @@ div {
 }
 
 header > nav > div#top > section#center > div >
-p {
+div#description {
 	text-align: justify;
 	width: 100%;
 }

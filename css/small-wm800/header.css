@@ -117,11 +117,23 @@ div#bottom {
 	margin: 1rem 0px 1rem 0px;
 }
 
-header > nav > div#bottom >
-p {
+header > nav > div#bottom > section >
+div#description {
 	text-align: justify;
 	max-width: 600px;
 	padding: 0px 3vw 0px 3vw;
+}
+
+/* in medium, one <br> is used instead this */
+header > nav > div#bottom > section > div#description > p#more-description { margin-top: 1rem; }
+
+header > nav > div#bottom >
+button {
+	margin-top: 1rem;
+	width: 40%;
+	height: 25px;
+
+	background-color: #333;
 }
 
 

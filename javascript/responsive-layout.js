@@ -240,8 +240,8 @@ RESPONSIVE_ELEMENTS.once.push(new IconSwaper(
 
 // header-nav description
 RESPONSIVE_ELEMENTS.once.push(new MoverElement(
-	"header > nav > div#bottom > p",
-	"header > nav > div#bottom",
+	"header > nav > div#bottom > section > div#description",
+	"header > nav > div#bottom > section",
 	"header > nav > div#top > section#center > div",
 	"header > nav > div#top > section#center > div", // TODO: temp
 ));
@@ -322,6 +322,18 @@ RESPONSIVE_ELEMENTS.always.push(new IncreaseHitbox(
 	"font-size",
 	[WIDTH.small],
 	{vertical: 0.35, horizontal: 0.55},
+));
+
+// show when required or show always ("more description", in header)
+RESPONSIVE_ELEMENTS.once.push(new SwapFieldValueWhen(
+	"header > nav > div#bottom > section > div#description > p#more-description",
+	() => WIDTH.check() == WIDTH.small,
+	null,
+	["display"],
+	{
+		ok: ["none"],
+		fail: [""],
+	}
 ));
 
 }
