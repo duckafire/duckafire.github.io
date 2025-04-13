@@ -1,8 +1,26 @@
 /* CHROMIUM */
 
+* ::-webkit-scrollbar-track-piece,
+* ::-webkit-scrollbar-track,
+* ::-webkit-scrollbar-button,
+* ::-webkit-scrollbar-corner {
+	display: none;
+}
 
-* ::-webkit-scrollbar { display: none; }
+* ::-webkit-scrollbar {
+	width: 4px;
+	height: 4px;
+	position: absolute;
+	margin-right: 6rem;
+}
+
+* ::-webkit-scrollbar-thumb {
+	background-color: #999;
+	border-radius: 10px;
+}
 
 /* FIREFOX */
 
-* { scrollbar-width: none; }
+@supports not selector(::-webkit-scrollbar){
+	* { scrollbar-width: thin; }
+}
