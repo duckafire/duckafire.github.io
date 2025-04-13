@@ -85,6 +85,23 @@ Array.from(document.querySelector("header > dialog#popup > section > ul#tabs").c
 
 let currentLayout;
 
+const runResposiveMethod = (item) => {
+	if(item.moveIt !== undefined)
+		item.moveIt();
+
+	else if(item.swapIcon !== undefined)
+		item.swapIcon();
+
+	else if(item.setValue !== undefined)
+		item.setValue();
+
+	else if(item.increase !== undefined)
+		item.increase();
+
+	else if(item.swapWhen !== undefined)
+		item.swapWhen();
+}
+
 const windowResized = () => {
 	// once
 	const CUR = WIDTH.check();
@@ -94,12 +111,9 @@ const windowResized = () => {
 		(currentLayout != WIDTH.big    && CUR == WIDTH.big)){
 
 		currentLayout = CUR;
-		RESPONSIVE_ELEMENTS.once.forEach((item) => {
-			if(item.moveIt !== undefined)
-				item.moveIt();
 
-			else if(item.swapIcon !== undefined)
-				item.swapIcon();
+		RESPONSIVE_ELEMENTS.once.forEach((item) => {
+			runResposiveMethod(item);
 		});
 
 		KNOW_TABS_GROUPS.forEach((item, i) => {
@@ -112,14 +126,7 @@ const windowResized = () => {
 
 	// always
 	RESPONSIVE_ELEMENTS.always.forEach((item) => {
-		if(item.setValue !== undefined)
-			item.setValue();
-
-		else if(item.increase !== undefined)
-			item.increase();
-
-		else if(item.swapWhen !== undefined)
-			item.swapWhen();
+		runResposiveMethod(item);
 	});
 }
 
