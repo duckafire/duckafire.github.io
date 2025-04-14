@@ -1,3 +1,4 @@
+/*
 {
 
 let img;
@@ -39,3 +40,4 @@ fetch(JSON_URL.knowTech).then(response => {return response.json()}).then((json) 
 });
 
 }
+*/

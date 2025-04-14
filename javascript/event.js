@@ -3,16 +3,17 @@
 // open/close dialog
 
 const DIALOG = {
-	know: document.querySelector("header > dialog#popup"),
+	//know: document.querySelector("header > dialog#popup"),
 	// "viewer" is opened/closed by projects items showcase images
 	other: document.querySelector("main > dialog#other"),
 	viewer: document.querySelector("header > dialog#viewer"),
 }
 
+/*
 const closeKnowDialog = () => {
 	document.body.style.overflow = "";
 	DIALOG.know.open = false
-	DIALOG.know.classList.remove("header-popup");
+	//DIALOG.know.classList.remove("header-popup");
 }
 
 document.querySelector("header > nav > div#top > section#right > ul > li > button#open-know-dialog")
@@ -36,6 +37,7 @@ document.querySelector("header > dialog#popup > section > nav > span#special > b
 
 DIALOG.know.children[0].addEventListener("click", (ev) => { ev.stopPropagation() });
 DIALOG.know.addEventListener("click", closeKnowDialog);
+*/
 
 const expOtherProj = document.querySelector("main > button");
 
@@ -73,6 +75,7 @@ showMoreDescr.addEventListener("click", () => {
 
 // show/hide element (no dialog)
 
+/*
 let saveKnowTabsId = 0;
 const KNOW_TABS_DISPLAY = [
 	["", "none", "none"],
@@ -94,6 +97,7 @@ Array.from(document.querySelector("header > dialog#popup > section > ul#tabs").c
 		});
 	});
 });
+*/
 
 // resize screen/window
 
@@ -133,12 +137,12 @@ const windowResized = () => {
 			runResposiveMethod(item);
 		});
 
-		KNOW_TABS_GROUPS.forEach((item, i) => {
-			if(CUR == WIDTH.small)
-				item.style.display = KNOW_TABS_DISPLAY[saveKnowTabsId][i];
-			else // TODO (temp) if(CUR == WIDTH.medium)
-				item.style.display = "";
-		});
+		//KNOW_TABS_GROUPS.forEach((item, i) => {
+		//	if(CUR == WIDTH.small)
+		//		item.style.display = KNOW_TABS_DISPLAY[saveKnowTabsId][i];
+		//	else // TODO (temp) if(CUR == WIDTH.medium)
+		//		item.style.display = "";
+		//});
 	}
 
 	// always

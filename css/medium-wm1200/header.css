@@ -74,13 +74,7 @@ header > nav > div#top > section#right > ul > li i { font-size: max(min(4.5vw, 6
 
 /* POPUP */
 
-/* TODO
-
-	show scrollbar (medium layout) - known tech.
-	scrollbar (hided) to header-popup
-
-*/
-
+/*
 header > dialog#popup >
 section {
 	padding: 0px;
@@ -156,5 +150,8 @@ header > dialog#popup > section > ul#know-level {
 	font-size: 2.75vw;
 	padding: 0px min(1.5vw, 1.5dvh) 2rem min(1.5vw, 1.5dvh);
 }
+*/
+
+/* IMAGE VIEWER */
 
 }

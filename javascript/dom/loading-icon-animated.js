@@ -16,14 +16,14 @@ const newIcon = () => {
 	return CONTAINER;
 }
 
-const knowledge = (sectionId) => {
-	return "header > dialog#popup > section > ul#knowledge > li > section#" + sectionId;
-}
+//const knowledge = (sectionId) => {
+//	return "header > dialog#popup > section > ul#knowledge > li > section#" + sectionId;
+//}
 
 let queries = [
-	{query: knowledge("programming-lang"),  need: null},
-	{query: knowledge("markup-lang"),       need: null},
-	{query: knowledge("other-util"),        need: null},
+	//{query: knowledge("programming-lang"),  need: null},
+	//{query: knowledge("markup-lang"),       need: null},
+	//{query: knowledge("other-util"),        need: null},
 	{query: "main > dialog#highlight > ul", need: {elem: "li", html: [["className", "border-r-based-w"]]}},
 	{query: "main > dialog#other > ul",     need: {elem: "li", html: [["className", "border-r-based-w"]]}},
 ];

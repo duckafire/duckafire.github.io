@@ -246,6 +246,7 @@ RESPONSIVE_ELEMENTS.once.push(new MoverElement(
 	"header > nav > div#top > section#center > div", // TODO: temp
 ));
 
+/*
 // donate button from header-popup
 RESPONSIVE_ELEMENTS.once.push(new MoverElement(
 	"header > dialog#popup > section > nav > span#donate-button > button",
@@ -281,6 +282,7 @@ RESPONSIVE_ELEMENTS.always.push(new SetFieldValueBasedOther(
 	true,
 	[WIDTH.small],
 ));
+*/
 
 // hitbox of the button that open the header poup
 RESPONSIVE_ELEMENTS.always.push(new IncreaseHitbox(
@@ -305,6 +307,7 @@ RH_FOR_REQUEST_ELEMENTS.projectsItems.resposiveHitbox = (list) => {
 	});
 };
 
+/*
 RESPONSIVE_ELEMENTS.always.push(new SwapFieldValueWhen (
 	"header > dialog#popup",
 	() => WIDTH.check() == WIDTH.small && getFField(true, document.querySelector("header > dialog#popup"), "height") <= window.innerHeight,
@@ -323,6 +326,7 @@ RESPONSIVE_ELEMENTS.always.push(new IncreaseHitbox(
 	[WIDTH.small],
 	{vertical: 0.35, horizontal: 0.55},
 ));
+*/
 
 // show when required or show always ("more description", in header)
 RESPONSIVE_ELEMENTS.once.push(new SwapFieldValueWhen(
