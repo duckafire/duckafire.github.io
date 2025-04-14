@@ -1,22 +1,24 @@
 /* CHROMIUM */
 
-* ::-webkit-scrollbar-track-piece,
-* ::-webkit-scrollbar-track,
-* ::-webkit-scrollbar-button,
-* ::-webkit-scrollbar-corner {
-	display: none;
-}
+@supports selector(::-webkit-scrollbar){
+	* ::-webkit-scrollbar-track-piece,
+	* ::-webkit-scrollbar-track,
+	* ::-webkit-scrollbar-button,
+	* ::-webkit-scrollbar-corner {
+		display: none;
+	}
 
-* ::-webkit-scrollbar {
-	width: 4px;
-	height: 4px;
-	position: absolute;
-	margin-right: 6rem;
-}
+	* ::-webkit-scrollbar {
+		width: 4px;
+		height: 4px;
+		position: absolute;
+		margin-right: 6rem;
+	}
 
-* ::-webkit-scrollbar-thumb {
-	background-color: #999;
-	border-radius: 10px;
+	* ::-webkit-scrollbar-thumb {
+		background-color: #999;
+		border-radius: 10px;
+	}
 }
 
 /* FIREFOX */
