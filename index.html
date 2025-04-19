@@ -7,161 +7,119 @@
 	<title id ="page-title">DuckAfire's Nest</title>
 	<link rel="icon" href="img/nest-website-icon.png">
 
-	<link rel="stylesheet" href="css/browser-base.css">
-	<link rel="stylesheet" href="css/global.css">
-	<link rel="stylesheet" href="css/keyframes.css">
+	<link rel="stylesheet" href="css/colors.css">
+	<link rel="stylesheet" href="css/generic.css">
+	<link rel="stylesheet" href="css/html.css">
 
-	<link rel="stylesheet" href="css/fa-wildcard.css">
-	<link rel="stylesheet" href="css/animations.css">
+	<link rel="stylesheet" href="css/mini-w0px.css">
 
-	<link rel="stylesheet" href="css/small-wm800/header.css">
-	<link rel="stylesheet" href="css/small-wm800/projects.css">
-
-	<link rel="stylesheet" href="css/medium-wm1200/header.css">
-	<link rel="stylesheet" href="css/medium-wm1200/projects.css">
-
-	<link rel="stylesheet" href="css/big-wmINF/header.css">
-	<link rel="stylesheet" href="css/big-wmINF/projects.css">
-
-	<link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
 
-<body>
-	
-	<header>
+<!-- TODO ("prefixes"):
+	measure no-style-list is-weight highlight
+	group-... small medium big
+-->
 
-		<nav class="border-r-based-w">
-			<div id="top" class="top-flex">
-				<figure id="left">
-					<img src="./img/foo.png" class="circle-radius">
-				</figure>
-				<section id="center">
-					<h1>Hello world!</h1>
-					<ul class="list-no-style only-small-layout">
-						<li><button><a href=""><i class="FA-wildcard fa-brands fa-github"  ></i></a></button></li>
-						<li><button><a href=""><i class="FA-wildcard fa-brands fa-itch-io" ></i></a></button></li>
-						<li><button><a href=""><i class="FA-wildcard fa-brands fa-facebook"></i></a></button></li>
-					</ul>
-					<div class="only-medium-layout">
-						<!-- header description -->
-					</div>
-				</section>
-				<section id="right">
-					<ul class="list-no-style">
-						<li>
-							<button id="open-know-dialog">
-								<i class="FA-wildcard fa-solid fa-ellipsis-vertical"></i>
-							</button>
-						</li>
-					</ul>
-				</section>
-			</div>
-			<div id="bottom" class="only-small-layout">
-				<section>
-					<div id="description">
-						<p class="common-font-size">
-							lorem ipsum odor amet, consectetuer adipiscing elit. potenti
-							ultricies inceptos, quam facilisis aliquam vehicula quis. laoreet
-							proin magna inceptos senectus lorem. penatibus etiam metus quam
-							sodales nisi. pellentesque mattis ligula habitasse sed eleifend
-							massa hendrerit accumsan. venenatis sed penatibus justo sagittis
-							laoreet malesuada elementum. auctor adipiscing conubia phasel lus;
-							aptent habitasse accumsan. diam inceptos finibus magna imperdiet
-							gravida molestie consequat himenaeos. imperdiet suscipit natoque
-							sem tellus ut; vel urna. vulputate cubilia sodales risus at eget
-							et sociosqu lacus commodo.
-						</p>
-						<br class="only-medium-layout"> <!-- in small, `margin-top` is used instead this -->
-						<p id="more-description" class="common-font-size">
-							LOREM IPSUM ODOR AMET, CONSECTETUER ADIPISCING ELIT. POTENTI
-							ULTRICIES INCEPTOS, QUAM FACILISIS ALIQUAM VEHICULA QUIS. LAOREET
-							PROIN MAGNA INCEPTOS SENECTUS LOREM. PENATIBUS ETIAM METUS QUAM
-							SODALES NISI. PELLENTESQUE MATTIS LIGULA HABITASSE SED ELEIFEND
-							MASSA HENDRERIT ACCUMSAN. VENENATIS SED PENATIBUS JUSTO SAGITTIS
-							LAOREET MALESUADA ELEMENTUM. AUCTOR ADIPISCING CONUBIA PHASEL LUS;
-							APTENT HABITASSE ACCUMSAN. DIAM INCEPTOS FINIBUS MAGNA IMPERDIET
-							GRAVIDA MOLESTIE CONSEQUAT HIMENAEOS. IMPERDIET SUSCIPIT NATOQUE
-							SEM TELLUS UT; VEL URNA. VULPUTATE CUBILIA SODALES RISUS AT EGET
-							ET SOCIOSQU LACUS COMMODO.
-						</p>
-					</div>
-				</section>
-				<button class="only-small-layout border-r-based-w">
-					<i class="FA-wildcard fa-solid fa-caret-down"></i>
-				</button>
-			</div>
-		</nav>
+<body class="minimum-screen-width">
+	<nav class="main-nav measure minimum-screen-width">
+		<figure class="home-image circle-radius small hover-up-scale">
+			<img src="./img/foo.png">
+		</figure>
+		<ul class="links-list no-style-list">
+			<li class="small hover-up-scale"><a href="#"><i class="fa-brands fa-github"  ></i></a></li>
+			<li class="small hover-up-scale"><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+			<li class="small hover-up-scale"><a href="#"><i class="fa-brands fa-itch-io" ></i></a></li>
+		</ul>
+	</nav>
+	<div class="main-nav measure is-weight minimum-screen-width">
+		<!-- push elements to bottom -->
+	</div>
 
-		<!--
-		<dialog id="popup" class="dialog-background">
-			<section class="inherit-dimensions border-r-based-w">
-				<nav class="top-flex">
-					<span id="donate-button" class="only-small-layout">
-						<button id="donate">
-							<i class="FA-wildcard fa-solid fa-mug-hot"></i>
-						</button>
-					</span>
-					<h1>Title</h1>
-					<span id="special">
-						<button id="close-know-dialog">
-							<i class="FA-wildcard fa-solid fa-xmark"></i>
-						</button>
-					</span>
-				</nav>
-				<ul id="tabs" class="list-no-style only-small-layout">
-					<li><h2>Programação</h2></li>
-					<li><h2>Marcação</h2></li>
-					<li><h2>Utilitários</h2></li>
-				</ul>
-				<ul id="knowledge" class="list-no-style">
-					<li class="know-tech-item inherit-dimensions">
-						<h2 class="only-medium-layout">&#8226; Linguagens de programação</h2>
-						<section id="programming-lang" class="know-tech-chain inherit-dimensions"></section>
-					</li>
-					<li class="know-tech-item inherit-dimensions" style="display:none;">
-						<h2 class="only-medium-layout">&#8226; Linguagens de marcação</h2>
-						<section id="markup-lang" class="know-tech-chain inherit-dimensions"></section>
-					</li>
-					<li class="know-tech-item inherit-dimensions" style="display:none;">
-						<h2 class="only-medium-layout">&#8226; Utilitários e tecnologias</h2>
-						<section id="other-util" class="know-tech-chain inherit-dimensions"></section>
-					</li>
-				</ul>
-				<ul id="know-level" class="list-no-style top-flex">
-					<li><h3 class="know-level-low">Raso</h3></li>
-					<li><h3 class="know-level-middle">Intermediário</h3></li>
-					<li><h3 class="know-level-high">Avançado</h3></li>
-				</ul>
-			</section>
-		</dialog>
-		-->
-
-		<dialog id="viewer" class="dialog-background">
-			<figure class="inherit-dimensions">
-				<img>
-			</figure>
-		</dialog>
-
-	</header>
-
-	<main>
-		<dialog id="highlight" open><ul class="list-no-style"></ul></dialog>
-		<dialog id="other"         ><ul class="list-no-style"></ul></dialog>
-		<button class="border-r-based-w">
-			<i class="FA-wildcard fa-solid fa-caret-down"></i>
-		</button>
+	<main class="minimum-screen-width">
+		<div class="category-title container">
+			<h1 class="category-title">Destaques</h1>
+		</div>
+		<section class="horizontal-cards-chain">
+			<ul class="projects-cards highlight group no-style-list">
+				<!-- dinamic generation -->
+				<li class="projects-cards highlight container">
+					<section class="card highlight border-r-based-w medium hover-up-scale">
+						<figure class="circle-radius">
+							<img src="./img/foo.png">
+						</figure>
+						<h1>Foo</h1>
+					</section>
+				</li>
+				<!-- dinamic generation -->
+			</ul>
+		</section>
+		<div class="category-title container">
+			<h1 class="category-title">Projetos</h1>
+		</div>
+		<section class="vertical-cards-chain">
+			<ul class="projects-cards no-style-list">
+				<!-- dinamic generation -->
+				<li class="projects-cards container">
+					<section class="card border-r-based-w big hover-up-scale">
+						<div class="title-description-container">
+							<h1>Foo</h1>
+							<p>Fast summary Fast summary Fast summary Fast summary Fast summary Fast summary</p>
+						</div>
+						<figure class="circle-radius">
+							<img src="./img/foo.png">
+						</figure>
+					</section>
+				</li>
+				<!-- dinamic generation -->
+			</ul>
+		</section>
 	</main>
+
+	<footer class="footer minimum-screen-width">
+		<ul class="part no-style-list">
+			<li>
+				<section class="left-group">
+					<h1 class="header">FOO FOO</h1>
+					<h2 class="sub-header">foo foo foo</h2>
+					<h2 class="sub-header">foo foo foo</h2>
+					<h2 class="sub-header">foo foo foo</h2>
+					<h2 class="sub-header">foo foo foo</h2>
+				</section>
+			</li>
+			<li>
+				<section class="left-group">
+					<h1 class="header">FOO FOO</h1>
+					<h2 class="sub-header">foo foo foo</h2>
+					<h2 class="sub-header">foo foo foo</h2>
+					<h2 class="sub-header">foo foo foo</h2>
+					<h2 class="sub-header">foo foo foo</h2>
+				</section>
+			</li>
+		</ul>
+		<ul class="part no-style-list">
+			<li>
+				<section class="right-group">
+					<h1 class="header">FOO FOO</h1>
+					<h2 class="sub-header">foo foo foo</h2>
+					<h2 class="sub-header">foo foo foo</h2>
+					<h2 class="sub-header">foo foo foo</h2>
+					<h2 class="sub-header">foo foo foo</h2>
+				</section>
+			</li>
+			<li>
+				<section class="right-group">
+					<h1 class="header">FOO FOO</h1>
+					<h2 class="sub-header">foo foo foo</h2>
+					<h2 class="sub-header">foo foo foo</h2>
+					<h2 class="sub-header">foo foo foo</h2>
+					<h2 class="sub-header">foo foo foo</h2>
+				</section>
+			</li>
+		</ul>
+	</footer>
 </body>
 
-<script src="./javascript/constants.js"></script>
-<script src="./javascript/responsive-layout.js"></script>
-<script src="./javascript/event.js"></script>
-
-<script src="./javascript/dom/loading-icon-animated.js"></script>
-<script src="./javascript/dom/from-json/know-tech.js" async></script>
-<script src="./javascript/dom/from-json/projects-items.js" async></script>
-
 <script src="https://kit.fontawesome.com/7d914c2988.js" crossorigin="anonymous" async></script>
-<script src="./javascript/check-if-fa-was-load.js"></script>
 
 </html>

@@ -1,0 +1,194 @@
+.main-nav:not(.is-weight) {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: fixed;
+	background-color: var(--foo-one);
+	z-index: 9999;
+}
+
+.main-nav.measure {
+	width: 100%;
+	height: 65px;
+	padding-left:  8px;
+	padding-right: 1rem;
+}
+
+nav .home-image {
+	width: 50px;
+	height: 50px;
+	min-width: 50px;
+	flex: none;
+}
+
+nav .links-list {
+	display: flex;
+	gap: 1rem;
+	font-size: 1.5rem;
+}
+
+
+main {
+	--dinamic-pcpt: 6vw;
+	--min-pcpt: 19.2px;
+	--projects-cards-padding: max(var(--dinamic-pcpt), var(--min-pcpt));
+	--half-projects-cards-padding: max(calc(var(--dinamic-pcpt) / 2), calc(var(--min-pcpt) / 2));
+}
+
+/* first category title */
+main .category-title.container:nth-child(1) {
+	margin-top: var(--projects-cards-padding);
+}
+
+/* second category title */
+main .category-title.container:nth-child(3) {
+	margin-bottom: var(--projects-cards-padding);
+}
+
+main .category-title.container {
+	--title-font-size: 0.8rem;
+}
+
+main .category-title.container {
+	width: 100%;
+}
+
+main .category-title:not(.container) {
+	font-size: var(--title-font-size);
+	margin-left: calc(var(--title-font-size) * 1.25);
+}
+
+main .category-title:not(.container)::before,
+main .category-title:not(.container)::after {
+	content: " ";
+	position: absolute;
+	background-color: var(--foo-two);
+	margin-top: calc(var(--title-font-size) * 0.5625);
+	height: calc(var(--title-font-size) * 0.1875);
+}
+
+main .category-title:not(.container)::before {
+	left: 0;
+	width: calc(var(--title-font-size) * 0.9375);
+}
+
+main .category-title:not(.container)::after {
+	width: 100%;
+
+	/* based font-size of the associated element */
+	margin-left: 0.25rem;
+}
+
+main .horizontal-cards-chain {
+	--highlight-card-width: 40vw;
+	--half-highlight-card-width: calc(var(--highlight-card-width) / 2);
+}
+
+main .horizontal-cards-chain {
+	width: 100%;
+	height: 200px;
+
+	/* TODO: set minimum % */
+	margin-left: calc(50% - var(--half-highlight-card-width));
+}
+
+main .projects-cards.highlight > .projects-cards.highlight.container {
+	height: 100%;
+	min-width: 128px;
+	max-height: 161.6px;
+}
+
+main .projects-cards.highlight figure {
+	margin: auto;
+}
+
+main .projects-cards.highlight:not(.container) {
+	height: inherit;
+	display: flex;
+	min-height: 200px;
+	gap: var(--half-projects-cards-padding);
+	padding:
+		var(--projects-cards-padding)
+		var(--half-projects-cards-padding)
+		var(--projects-cards-padding)
+		var(--half-projects-cards-padding);
+}
+
+main .card.highlight {
+	width: var(--highlight-card-width); /* children dimensions are based in this */
+	height: inherit;
+	min-width: inherit;
+	max-height: inherit;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 5% 2.5% 5% 2.5%;
+	gap: 1rem;
+	overflow: hidden;
+	background-color: var(--foo-one);
+}
+
+main .card.highlight figure {
+	width: var(--half-highlight-card-width);
+	height: var(--half-highlight-card-width);
+	min-width: 62px;
+	min-height: 62px;
+	flex: none;
+}
+
+main .card.highlight h1 {
+	margin: auto;
+	text-align: center;
+	font-size: 1.2rem; /* TODO: size based itself length */
+}
+
+main .projects-cards:not(.highlight):not(.container) {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--projects-cards-padding);
+	margin-bottom: var(--projects-cards-padding);
+}
+
+main .projects-cards:not(.highlight) > .projects-cards.container:not(.highlight) {
+	width: 85%;
+}
+
+main .card:not(.highlight) {
+	width: 100%;
+	background-color: var(--foo-one);
+	display: flex;
+	padding: 5%;
+	gap: 5%;
+	justify-content: space-between;
+}
+
+main .card:not(.highlight) figure {
+	width: 100px;
+	height: 100px;
+}
+
+
+.footer {
+	width: 100%;
+	background-color: var(--foo-one);
+	padding: 0.5rem;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+footer .part {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+footer .header {
+	font-size: 0.75rem;
+}
+
+footer .sub-header {
+	font-size: 0.75rem;
+}
