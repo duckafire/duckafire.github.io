@@ -52,7 +52,7 @@ const createHiCard = (card) => {
 	let container = createGenericCardContainer(
 		DEST_HI,
 		"co-hi--projects-cards",
-		"hi--card border-r-based-w medium--hover-up-scale",
+		"hi--card border-r-based-vw medium--hover-up-scale",
 	);
 	let figur = createImageSet(card.image, "circle-radius");
 	let title = document.createElement("h1");
@@ -67,7 +67,7 @@ const createCard = (card) => {
 	const container = createGenericCardContainer(
 		DEST,
 		"co--projects-cards",
-		"card border-r-based-w big--hover-up-scale",
+		"card border-r-based-vw big--hover-up-scale",
 	);
 
 	const text = createTextSet(true, card.text, "title-description-container", "", "");

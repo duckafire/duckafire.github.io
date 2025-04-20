@@ -24,7 +24,7 @@
 .medium--hover-up-scale:hover { transform: scale(1.03); }
 .big--hover-up-scale:hover    { transform: scale(1.015); }
 
-.border-r-based-w {
+.border-r-based-vw {
 	border-radius: max(5vw, 16px);
 }
 

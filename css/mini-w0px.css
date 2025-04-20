@@ -109,20 +109,24 @@ main .card figure {
 	width: 100%;
 	background-color: var(--foo-one);
 	padding: 0.5rem;
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
 }
 
-footer .part {
-	display: flex;
-	flex-direction: column;
+footer .links-list {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
 	gap: 0.5rem;
 }
 
-footer .header {
-	font-size: 0.75rem;
+footer .title,
+footer .link {
+	display: block;
+	width: max-content;
 }
 
-footer .sub-header {
+footer .title {
+	font-size: 0.8rem;
+}
+
+footer .link {
 	font-size: 0.75rem;
 }
