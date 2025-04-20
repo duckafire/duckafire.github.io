@@ -29,10 +29,10 @@ nav .links-list {
 
 
 main {
-	--dinamic-pcpt: 6vw;
-	--min-pcpt: 19.2px;
-	--projects-cards-padding: max(var(--dinamic-pcpt), var(--min-pcpt));
-	--half-projects-cards-padding: max(calc(var(--dinamic-pcpt) / 2), calc(var(--min-pcpt) / 2));
+	/*--dinamic-pcpt: 6vw;
+	--min-pcpt: 19.2px;*/
+	--projects-cards-padding: 19.2px; /*max(var(--dinamic-pcpt), var(--min-pcpt));*/
+	--half-projects-cards-padding: 9.6px; /*max(calc(var(--dinamic-pcpt) / 2), calc(var(--min-pcpt) / 2));*/
 }
 
 /* first category title */
@@ -87,15 +87,12 @@ main .horizontal-cards-chain {
 main .horizontal-cards-chain {
 	width: 100%;
 	height: 200px;
-
-	/* TODO: set minimum % */
-	margin-left: calc(50% - var(--half-highlight-card-width));
+	margin-left: calc(50% - calc(128px / 2))
 }
 
 main .projects-cards.highlight > .projects-cards.highlight.container {
-	height: 100%;
-	min-width: 128px;
-	max-height: 161.6px;
+	width: 128px;
+	height: 161.6px;
 }
 
 main .projects-cards.highlight figure {
@@ -115,7 +112,7 @@ main .projects-cards.highlight:not(.container) {
 }
 
 main .card.highlight {
-	width: var(--highlight-card-width); /* children dimensions are based in this */
+	width: inherit;
 	height: inherit;
 	min-width: inherit;
 	max-height: inherit;
@@ -130,8 +127,8 @@ main .card.highlight {
 }
 
 main .card.highlight figure {
-	width: var(--half-highlight-card-width);
-	height: var(--half-highlight-card-width);
+	width: 63.86px;
+	height: 63.86px;
 	min-width: 62px;
 	min-height: 62px;
 	flex: none;
@@ -153,13 +150,14 @@ main .projects-cards:not(.highlight):not(.container) {
 }
 
 main .projects-cards:not(.highlight) > .projects-cards.container:not(.highlight) {
-	width: 85%;
+	width: 272px;
 }
 
 main .card:not(.highlight) {
 	width: 100%;
 	background-color: var(--foo-one);
 	display: flex;
+	flex: none;
 	padding: 5%;
 	gap: 5%;
 	justify-content: space-between;
