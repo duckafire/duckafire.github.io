@@ -14,21 +14,15 @@
 		-1px  1px white; /* bottom-left */
 }
 
-.hover-up-scale:hover {
+.small--hover-up-scale:hover,
+.medium--hover-up-scale:hover,
+.big--hover-up-scale:hover {
 	cursor: pointer;
 }
 
-.small.hover-up-scale:hover {
-	transform: scale(1.1);
-}
-
-.medium.hover-up-scale:hover {
-	transform: scale(1.03);
-}
-
-.big.hover-up-scale:hover {
-	transform: scale(1.015);
-}
+.small--hover-up-scale:hover  { transform: scale(1.1); }
+.medium--hover-up-scale:hover { transform: scale(1.03); }
+.big--hover-up-scale:hover    { transform: scale(1.015); }
 
 .border-r-based-w {
 	border-radius: max(5vw, 16px);

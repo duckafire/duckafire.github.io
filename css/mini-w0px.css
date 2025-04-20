@@ -1,4 +1,4 @@
-.main-nav:not(.is-weight) {
+.main-nav {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -7,7 +7,8 @@
 	z-index: 9999;
 }
 
-.main-nav.measure {
+.main-nav,
+.me--main-nav {
 	width: 100%;
 	height: 65px;
 	padding-left:  8px;
@@ -36,24 +37,24 @@ main {
 }
 
 /* first category title */
-main .category-title.container:nth-child(1) {
+main .co--category-title:nth-child(1) {
 	margin-top: var(--projects-cards-padding);
 }
 
 /* second category title */
-main .category-title.container:nth-child(3) {
+main .co--category-title:nth-child(3) {
 	margin-bottom: var(--projects-cards-padding);
 }
 
-main .category-title.container {
+main .co--category-title{
 	--title-font-size: 0.8rem;
 }
 
-main .category-title.container {
+main .co--category-title{
 	width: 100%;
 }
 
-main .category-title:not(.container) {
+main .category-title {
 	font-size: var(--title-font-size);
 	margin-left: calc(var(--title-font-size) * 1.25);
 }
@@ -91,16 +92,16 @@ main .horizontal-cards-chain {
 	margin-left: calc(50% - calc(128px / 2))
 }
 
-main .projects-cards.highlight > .projects-cards.highlight.container {
+main .hi--projects-cards > .co-hi--projects-cards {
 	width: 128px;
 	height: 161.6px;
 }
 
-main .projects-cards.highlight figure {
+main .hi--projects-cards figure {
 	margin: auto;
 }
 
-main .projects-cards.highlight:not(.container) {
+main .hi--projects-cards {
 	height: inherit;
 	display: flex;
 	min-height: 200px;
@@ -108,7 +109,7 @@ main .projects-cards.highlight:not(.container) {
 	padding: var(--projects-cards-padding) 0;
 }
 
-main .card.highlight {
+main .hi--card {
 	width: inherit;
 	height: inherit;
 	min-width: inherit;
@@ -123,7 +124,7 @@ main .card.highlight {
 	background-color: var(--foo-one);
 }
 
-main .card.highlight figure {
+main .hi--card figure {
 	width: 63.86px;
 	height: 63.86px;
 	min-width: 62px;
@@ -131,13 +132,13 @@ main .card.highlight figure {
 	flex: none;
 }
 
-main .card.highlight h1 {
+main .hi--card h1 {
 	margin: auto;
 	text-align: center;
 	font-size: 1.2rem; /* TODO: size based itself length */
 }
 
-main .projects-cards:not(.highlight):not(.container) {
+main .projects-cards {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -146,11 +147,11 @@ main .projects-cards:not(.highlight):not(.container) {
 	margin-bottom: var(--projects-cards-padding);
 }
 
-main .projects-cards:not(.highlight) > .projects-cards.container:not(.highlight) {
+main .projects-cards > .co--projects-cards {
 	width: 272px;
 }
 
-main .card:not(.highlight) {
+main .card {
 	width: 100%;
 	background-color: var(--foo-one);
 	display: flex;
@@ -160,7 +161,7 @@ main .card:not(.highlight) {
 	justify-content: space-between;
 }
 
-main .card:not(.highlight) figure {
+main .card figure {
 	width: 100px;
 	height: 100px;
 }
