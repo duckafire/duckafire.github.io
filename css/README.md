@@ -10,15 +10,17 @@
 1. `co(ntainer)`: representate elements that they are used only like container. Generally
 it contains none or a little of style.
 
-2. `gr(oup)`: used to containers that will receive elements from DOM. It is single in code.
+1. `gr(oup)`: set of elements that will be manipuled by JS.
 
-3. `hi(ghlight)`: indicate that an element is a highlight version of a existent element.
+1. `hi(ghlight)`: indicate that an element is a highlight version of a existent element.
 Generally it contains a summary of original element content
 
-4. `me(asure)`: containers the same dimensions of an existent element. It is used like
+1. `me(asure)`: containers the same dimensions of an existent element. It is used like
 "weither" to some elements with `position: absolute` (like ".main-nav").
 
-5. `small`|`medium`|`big`: applied to separate animations based in element size. They are
+1. `ta(rget)`: used to containers that will receive elements from JS. It is single in code.
+
+1. `small`|`medium`|`big`: applied to separate animations based in element size. They are
 used mainlly in CSS pseudo-classes.
 
 > [!IMPORTANT]
@@ -97,3 +99,4 @@ CSS variable. They follow the following rules:
 > * `--color--aside--co-hi--list--height`
 > * `--section--content-grid--columns-quantity`
 > * `--calc--dialog--trophy--width`
+
