@@ -1,0 +1,15 @@
+:root{
+	--generic--co--category-title--font-size: 0.8rem;
+
+	--main--projects-cards--padding: 19.2px;
+	--main--hi--cards-chain--height: 200px;
+	--main--hi--cards--width: 128px;
+}
+
+/*
+@media only screen and (min-width: px) {
+	:root {
+	
+	}
+}
+*/

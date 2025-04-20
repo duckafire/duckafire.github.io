@@ -29,25 +29,14 @@ nav .links-list {
 }
 
 
-main {
-	/*--dinamic-pcpt: 6vw;
-	--min-pcpt: 19.2px;*/
-	--projects-cards-padding: 19.2px; /*max(var(--dinamic-pcpt), var(--min-pcpt));*/
-	--half-projects-cards-padding: 9.6px; /*max(calc(var(--dinamic-pcpt) / 2), calc(var(--min-pcpt) / 2));*/
-}
-
 /* first category title */
 main .co--category-title:nth-child(1) {
-	margin-top: var(--projects-cards-padding);
+	margin-top: var(--main--projects-cards--padding);
 }
 
 /* second category title */
 main .co--category-title:nth-child(3) {
-	margin-bottom: var(--projects-cards-padding);
-}
-
-main .co--category-title{
-	--title-font-size: 0.8rem;
+	margin-bottom: var(--main--projects-cards--padding);
 }
 
 main .co--category-title{
@@ -55,8 +44,8 @@ main .co--category-title{
 }
 
 main .category-title {
-	font-size: var(--title-font-size);
-	margin-left: calc(var(--title-font-size) * 1.25);
+	font-size: var(--generic--co--category-title--font-size);
+	margin-left: calc(var(--generic--co--category-title--font-size) * 1.25);
 }
 
 /*
@@ -65,13 +54,13 @@ main .category-title:not(.container)::after {
 	content: " ";
 	position: absolute;
 	background-color: var(--foo-two);
-	margin-top: calc(var(--title-font-size) * 0.5625);
-	height: calc(var(--title-font-size) * 0.1875);
+	margin-top: calc(var(--generic--co--title--font-size) * 0.5625);
+	height: calc(var(--generic--co--title--font-size) * 0.1875);
 }
 
 main .category-title:not(.container)::before {
-	left: calc(var(--title-font-size) * -1.25);
-	width: calc(var(--title-font-size) * 0.9375);
+	left: calc(var(--generic--co--title--font-size) * -1.25);
+	width: calc(var(--generic--co--title--font-size) * 0.9375);
 }
 
 main .category-title:not(.container)::after {
@@ -82,18 +71,13 @@ main .category-title:not(.container)::after {
 }
 */
 
-main .horizontal-cards-chain {
-	--highlight-card-width: 40vw;
-	--half-highlight-card-width: calc(var(--highlight-card-width) / 2);
-}
-
-main .horizontal-cards-chain {
-	height: 200px;
-	margin-left: calc(50% - calc(128px / 2))
+main .hi--cards-chain {
+	height: var(--main--hi--cards-chain--height);
+	margin-left: calc(50% - calc(var(--main--hi--cards--width) / 2))
 }
 
 main .hi--projects-cards > .co-hi--projects-cards {
-	width: 128px;
+	width: var(--main--hi--cards--width);
 	height: 161.6px;
 }
 
@@ -104,9 +88,9 @@ main .hi--projects-cards figure {
 main .hi--projects-cards {
 	height: inherit;
 	display: flex;
-	min-height: 200px;
-	gap: var(--half-projects-cards-padding);
-	padding: var(--projects-cards-padding) 0;
+	min-height: var(--main--hi--cards-chain--height);
+	gap: calc(var(--main--projects-cards--padding) / 2);
+	padding: var(--main--projects-cards--padding) 0;
 }
 
 main .hi--card {
@@ -143,8 +127,8 @@ main .projects-cards {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: var(--projects-cards-padding);
-	margin-bottom: var(--projects-cards-padding);
+	gap: var(--main--projects-cards--padding);
+	margin-bottom: var(--main--projects-cards--padding);
 }
 
 main .projects-cards > .co--projects-cards {
