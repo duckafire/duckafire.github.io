@@ -41,11 +41,11 @@
 	flex-grow: 1;
 }
 
-.title-description-container > h1 {
+.title-description-container h1 {
 	font-size: 0.9rem;
 }
 
-.title-description-container > p {
+.title-description-container p {
 	font-size: 0.65rem;
 	margin: auto;
 }
