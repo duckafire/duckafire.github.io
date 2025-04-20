@@ -38,35 +38,14 @@
 	<main class="minimum-screen-width">
 		<div class="co-ta--category-title" data-title="Destaques" data-has-margin-top="true"></div>
 		<section class="hi--cards-chain">
-			<ul class="hi--projects-cards no-style-list">
-				<!-- dinamic generation -->
-				<li class="co-hi--projects-cards">
-					<section class="hi--card border-r-based-w medium--hover-up-scale">
-						<figure class="circle-radius">
-							<img src="./img/foo.png">
-						</figure>
-						<h1>Foo</h1>
-					</section>
-				</li>
-				<!-- dinamic generation -->
+			<ul id="projects-cards-highlight" class="hi--projects-cards no-style-list">
+				<!-- from js -->
 			</ul>
 		</section>
 		<div class="co-ta--category-title" data-title="Projetos"></div>
 		<section class="vertical-cards-chain">
-			<ul class="projects-cards no-style-list">
-				<!-- dinamic generation -->
-				<li class="co--projects-cards">
-					<section class="card border-r-based-w big--hover-up-scale">
-						<div class="title-description-container">
-							<h1>Foo</h1>
-							<p>Fast summary Fast summary Fast summary Fast summary Fast summary Fast summary</p>
-						</div>
-						<figure class="circle-radius">
-							<img src="./img/foo.png">
-						</figure>
-					</section>
-				</li>
-				<!-- dinamic generation -->
+			<ul id="projects-cards" class="projects-cards no-style-list">
+				<!-- from js -->
 			</ul>
 		</section>
 	</main>
@@ -116,6 +95,8 @@
 </body>
 
 <script src="./javascript/constants.js"></script>
+<script src="./javascript/data.js"></script>
 <script src="./javascript/dom/category-title.js"></script>
+<script src="./javascript/dom/projects-cards.js"></script>
 
 </html>

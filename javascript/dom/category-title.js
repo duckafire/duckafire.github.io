@@ -3,16 +3,16 @@
 class Group {
 	#beforeSpan; #titleH1; #afterSpan; #marginProperty;
 
-	get #classPrefix(){ return "category-title-" };
+	#getClassPrefix(){ return "category-title-" };
 
 	constructor(htmlData){
 		this.#beforeSpan = document.createElement("span");
 		this.#titleH1    = document.createElement("h1");
 		this.#afterSpan  = document.createElement("span");
 
-		this.#beforeSpan.className = this.#classPrefix + "before";
-		this.#titleH1.className    = this.#classPrefix + "title";
-		this.#afterSpan.className  = this.#classPrefix + "after";
+		this.#beforeSpan.className = this.#getClassPrefix() + "before";
+		this.#titleH1.className    = this.#getClassPrefix() + "title";
+		this.#afterSpan.className  = this.#getClassPrefix() + "after";
 
 		this.#titleH1.textContent = htmlData.title;
 		this.#marginProperty = "margin" + ((htmlData.hasMarginTop !== undefined) ? "Top" : "Bottom");
