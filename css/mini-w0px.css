@@ -28,49 +28,6 @@ nav .links-list {
 	font-size: 1.5rem;
 }
 
-
-/* first category title */
-main .co--category-title:nth-child(1) {
-	margin-top: var(--main--projects-cards--padding);
-}
-
-/* second category title */
-main .co--category-title:nth-child(3) {
-	margin-bottom: var(--main--projects-cards--padding);
-}
-
-main .co--category-title{
-	width: 100%;
-}
-
-main .category-title {
-	font-size: var(--generic--co--category-title--font-size);
-	margin-left: calc(var(--generic--co--category-title--font-size) * 1.25);
-}
-
-/*
-main .category-title:not(.container)::before,
-main .category-title:not(.container)::after {
-	content: " ";
-	position: absolute;
-	background-color: var(--foo-two);
-	margin-top: calc(var(--generic--co--title--font-size) * 0.5625);
-	height: calc(var(--generic--co--title--font-size) * 0.1875);
-}
-
-main .category-title:not(.container)::before {
-	left: calc(var(--generic--co--title--font-size) * -1.25);
-	width: calc(var(--generic--co--title--font-size) * 0.9375);
-}
-
-main .category-title:not(.container)::after {
-	width: 100%;
-
-	/ based font-size of the associated element /
-	margin-left: 0.25rem;
-}
-*/
-
 main .hi--cards-chain {
 	height: var(--main--hi--cards-chain--height);
 	margin-left: calc(50% - calc(var(--main--hi--cards--width) / 2))

@@ -47,3 +47,30 @@
 .minimum-screen-width {
 	min-width: 320px;
 }
+
+.co-ta--category-title .category-title-before,
+.co-ta--category-title .category-title-after {
+	background-color: var(--foo-two);
+	margin-top: calc(var(--generic--co--title--font-size) * 0.5625);
+	height: calc(var(--generic--co--title--font-size) * 0.1875);
+	margin: calc(var(--generic--category-title-span--margin-x) * 1.5) 0;
+}
+
+.co-ta--category-title .category-title-before {
+	width: var(--generic--co--category-title--font-size);
+	margin-right: var(--generic--category-title-span--margin-x);
+}
+
+.co-ta--category-title .category-title-title {
+	font-size: var(--generic--co--category-title--font-size);
+}
+
+.co-ta--category-title .category-title-after {
+	flex-grow: 1;
+	margin-left: var(--generic--category-title-span--margin-x);
+}
+
+.co-ta--category-title{
+	width: 100%;
+	display: flex;
+}
