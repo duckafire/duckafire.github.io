@@ -38,10 +38,6 @@ main .hi--projects-cards > .co-hi--projects-cards {
 	height: 161.6px;
 }
 
-main .hi--projects-cards figure {
-	margin: auto;
-}
-
 main .hi--projects-cards {
 	height: inherit;
 	display: flex;
@@ -65,18 +61,23 @@ main .hi--card {
 	background-color: var(--foo-one);
 }
 
+main .hi--card h1 {
+	margin: auto;
+	text-align: center;
+	font-size: 1.2rem; /* TODO: size based itself length */
+}
+
 main .hi--card figure {
 	width: 63.86px;
 	height: 63.86px;
 	min-width: 62px;
 	min-height: 62px;
 	flex: none;
+	margin: auto;
 }
 
-main .hi--card h1 {
-	margin: auto;
-	text-align: center;
-	font-size: 1.2rem; /* TODO: size based itself length */
+main .projects-cards > .co--projects-cards {
+	width: 272px;
 }
 
 main .projects-cards {
@@ -86,10 +87,6 @@ main .projects-cards {
 	align-items: center;
 	gap: var(--main--projects-cards--padding);
 	margin-bottom: var(--main--projects-cards--padding);
-}
-
-main .projects-cards > .co--projects-cards {
-	width: 272px;
 }
 
 main .card {
