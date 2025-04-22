@@ -78,8 +78,8 @@ const createCard = (card) => {
 }
 
 DATA.projectsCards.forEach(card => {
-	if(card.isHi)
-		createHiCard(card);
+	//if(card.isHi)
+	//	createHiCard(card);
 
 	createCard(card);
 });

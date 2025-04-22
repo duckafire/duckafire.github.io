@@ -28,54 +28,6 @@ nav .links-list {
 	font-size: 1.5rem;
 }
 
-main .hi--cards-chain {
-	height: var(--main--hi--cards-chain--height);
-	margin-left: calc(50% - calc(var(--main--hi--cards--width) / 2))
-}
-
-main .hi--projects-cards > .co-hi--projects-cards {
-	width: var(--main--hi--cards--width);
-	height: 161.6px;
-}
-
-main .hi--projects-cards {
-	height: inherit;
-	display: flex;
-	min-height: var(--main--hi--cards-chain--height);
-	gap: calc(var(--main--projects-cards--padding) / 2);
-	padding: var(--main--projects-cards--padding) 0;
-}
-
-main .hi--card {
-	width: inherit;
-	height: inherit;
-	min-width: inherit;
-	max-height: inherit;
-	display: flex;
-	align-items: center;
-	flex-direction: column;
-	justify-content: space-between;
-	padding: 5% 2.5%;
-	gap: 1rem;
-	overflow: hidden;
-	background-color: var(--foo-one);
-}
-
-main .hi--card h1 {
-	margin: auto;
-	text-align: center;
-	font-size: 1.2rem; /* TODO: size based itself length */
-}
-
-main .hi--card figure {
-	width: 63.86px;
-	height: 63.86px;
-	min-width: 62px;
-	min-height: 62px;
-	flex: none;
-	margin: auto;
-}
-
 main .projects-cards > .co--projects-cards {
 	width: 272px;
 }
