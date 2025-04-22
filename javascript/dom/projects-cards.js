@@ -51,8 +51,8 @@ const createImageSet = (imgData, figClassList) => {
 const createHiCard = (card) => {
 	let container = createGenericCardContainer(
 		DEST_HI,
-		"co-hi--projects-cards",
-		"hi--card border-r-based-vw medium--hover-up-scale",
+		"swiper-slide border-r-based-vw",
+		"hi--card",
 	);
 	let figur = createImageSet(card.image, "circle-radius");
 	let title = document.createElement("h1");
@@ -78,8 +78,8 @@ const createCard = (card) => {
 }
 
 DATA.projectsCards.forEach(card => {
-	//if(card.isHi)
-	//	createHiCard(card);
+	if(card.isHi)
+		createHiCard(card);
 
 	createCard(card);
 });

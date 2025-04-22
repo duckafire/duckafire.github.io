@@ -36,7 +36,7 @@ DATA.projectsCards.push(
 		)
 	),
 	new ProjectsCardsBody(
-		false,
+		true,
 		new ProjectsCardsImage(
 			"property-title",
 			"alt",
@@ -62,7 +62,7 @@ DATA.projectsCards.push(
 		)
 	),
 	new ProjectsCardsBody(
-		false,
+		true,
 		new ProjectsCardsImage(
 			"property-title",
 			"alt",
@@ -75,7 +75,7 @@ DATA.projectsCards.push(
 		)
 	),
 	new ProjectsCardsBody(
-		false,
+		true,
 		new ProjectsCardsImage(
 			"property-title",
 			"alt",
