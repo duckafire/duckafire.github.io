@@ -40,16 +40,8 @@ main .hi--projects-cards-swiper .swiper-slide {
 	background-color: var(--foo-one);
 }
 
-main .hi--projects-cards-swiper .swiper-button {
-	top: 190px;
-}
-
 main .hi--projects-cards-swiper .swiper-button.swiper-button-disabled {
 	visibility: hidden;
-}
-
-main .hi--projects-cards-swiper .swiper-slide.swiper-slide-active {
-	transform: scale(1.1);
 }
 
 main .hi--card {

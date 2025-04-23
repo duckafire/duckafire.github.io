@@ -3,11 +3,15 @@ new Swiper(".hi--projects-cards-swiper", {
 	centeredSlides: true,
 	preventClicks: true,
 	preventClicksPropagation: true,
+	allowTouchMove: false,
 
-	slidesPerView: 1,
-	spaceBetween: 48,
-
+	effect: "coverflow",
 	slidesPerView: "auto",
+
+	coverflowEffect: {
+		rotate: 0,
+		slideShadows: false,
+	},
 
 	navigation: {
 		prevEl: ".swiper-button-prev",
@@ -18,4 +22,10 @@ new Swiper(".hi--projects-cards-swiper", {
 		prevSlideMessage: "Ir para o cartão anterior",
 		nextSlideMessage: "Ir para o próximo cartão",
 	},
+
+	breakpoints: {
+		0: {
+			spaceBetween: 48,
+		},
+	}
 });
