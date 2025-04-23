@@ -1,7 +1,6 @@
 @media only screen and (min-width: 480px){
 
-.main-nav,
-.me--main-nav {
+.main-nav-dimensions {
 	padding-left: 12px;
 	padding-right: 1.35rem;
 	height: 75px;
@@ -35,6 +34,7 @@ main .card {
 	font-size: 1.25rem;
 	gap: 1.25rem;
 	padding: 1.25rem;
+	border-radius: 22px;
 }
 
 main .card figure {

@@ -51,7 +51,7 @@ const createImageSet = (imgData, figClassList) => {
 const createHiCard = (card) => {
 	let container = createGenericCardContainer(
 		DEST_HI,
-		"swiper-slide border-r-based-vw",
+		"swiper-slide",
 		"hi--card",
 	);
 	let figur = createImageSet(card.image, "circle-radius");
@@ -67,7 +67,7 @@ const createCard = (card) => {
 	const container = createGenericCardContainer(
 		DEST,
 		"co--projects-cards",
-		"card border-r-based-vw big--hover-up-scale",
+		"card",
 	);
 
 	const text = createTextSet(true, card.text, "title-description-container", "", "");
