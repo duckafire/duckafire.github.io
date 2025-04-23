@@ -36,11 +36,11 @@
 }
 
 .title-description-container h1 {
-	font-size: 0.9rem;
+	font-size: 0.9em;
 }
 
 .title-description-container p {
-	font-size: 0.65rem;
+	font-size: 0.65em;
 	margin: auto;
 }
 
@@ -73,4 +73,14 @@
 .co-ta--category-title{
 	width: 100%;
 	display: flex;
+}
+
+@media only screen and (min-width: 480px) {
+	.border-r-based-vw {
+		border-radius: 2.5vw;
+	}
+
+	.small--hover-up-scale:hover  { transform: scale(1.2); }
+	.medium--hover-up-scale:hover { transform: scale(1.06); }
+	.big--hover-up-scale:hover    { transform: scale(1.03); }
 }

@@ -18,7 +18,6 @@
 nav .home-image {
 	width: 50px;
 	height: 50px;
-	min-width: 50px;
 	flex: none;
 }
 
@@ -66,27 +65,28 @@ main .hi--card figure {
 	margin: auto;
 }
 
-main .projects-cards > .co--projects-cards {
-	width: 272px;
-}
-
 main .projects-cards {
 	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
 	gap: var(--main--projects-cards--padding);
-	margin-bottom: var(--main--projects-cards--padding);
+	margin-bottom: calc(var(--main--projects-cards--padding) * 1.35);
+}
+
+main .projects-cards > .co--projects-cards {
+	width: 272px;
+	margin-inline: auto;
 }
 
 main .card {
-	width: 100%;
+	width: var(--main--cards--width);
 	background-color: var(--foo-one);
 	display: flex;
 	flex: none;
 	padding: 5%;
 	gap: 5%;
 	justify-content: space-between;
+	font-size: 1rem;
 }
 
 main .card figure {
@@ -105,6 +105,7 @@ footer .links-list {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 0.5rem;
+	font-size: 0.8rem;
 }
 
 footer .title,
@@ -114,9 +115,9 @@ footer .link {
 }
 
 footer .title {
-	font-size: 0.8rem;
+	font-size: 1em;
 }
 
 footer .link {
-	font-size: 0.75rem;
+	font-size: 0.9em;
 }

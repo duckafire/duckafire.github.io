@@ -2,16 +2,18 @@
 	--generic--co--category-title--font-size: 0.8rem;
 	--generic--category-title-span--margin-x: 0.25rem;
 
-	--main--projects-cards--padding: 19.2px;
-
 	--main--hi--swiper-container--padding-block: 20px;
 	--main--hi--cards--height: 155px;
+
+	--main--projects-cards--padding: 19.2px;
+	--main--cards--width: 100%;
 }
 
-/*
-@media only screen and (min-width: px) {
+@media only screen and (min-width: 480px) {
 	:root {
-	
+		--generic--co--category-title--font-size: 1rem;
+		--generic--category-title-span--margin-x: 0.32rem;
+
+		--main--cards--width: 180px;
 	}
 }
-*/
