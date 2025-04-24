@@ -1,17 +1,17 @@
 :root {
-	--bg-color:   #fff;
-	--font-color: #000;
-	--foo-one:    #333;
-	--foo-two:    #666;
-	--foo-thr:    #999;
+	--color-body-bg:        #fff;
+	--color-body-text-font: #000;
+	--color-foo-one:        #333;
+	--color-foo-two:        #666;
+	--color-foo-thr:        #999;
 }
 
 @media (prefers-color-scheme: dark){
 	:root {
-		--bg-color:   #000;
-		--font-color: #fff;
-		--foo-one:    #333;
-		--foo-two:    #666;
-		--foo-thr:    #999;
+		--color-body-bg:        #000;
+		--color-body-text-font: #fff;
+		--color-foo-one:        #333;
+		--color-foo-two:        #666;
+		--color-foo-thr:        #999;
 	}
 }

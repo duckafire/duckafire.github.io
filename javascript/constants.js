@@ -1,7 +1,8 @@
-const CSS_VARIABLES = getComputedStyle(document.documentElement);
+"use strict";
+const get_css_variable = (query, variable) => {
+	return getComputedStyle(document.querySelector(query)).getPropertyValue(variable);
+}
 
-const getCssVariable = (ident) => CSS_VARIABLES.getPropertyValue(ident);
-
-const DATA = {
+const Data = {
 	projectsCards: [],
 };

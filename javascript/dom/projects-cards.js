@@ -1,9 +1,10 @@
-{
+"use strict";
+{ // start
 
-const DEST    = document.getElementById("projects-cards");
-const DEST_HI = document.getElementById("projects-cards-highlight");
+const elem_dest    = document.getElementById("projects-cards");
+const elem_dest_hi = document.getElementById("projects-cards-highlight");
 
-const createGenericCardContainer = (dest, liClassList, seClassList) => {
+const create_generic_card_container = (dest, liClassList, seClassList) => {
 	const li = document.createElement("li");
 	const se = document.createElement("section");
 
@@ -16,7 +17,7 @@ const createGenericCardContainer = (dest, liClassList, seClassList) => {
 	return se;
 }
 
-const createTextSet = (isShort, data, dClassList, hClassList, pClassList) => {
+const create_text_set = (isShort, data, dClassList, hClassList, pClassList) => {
 	let d = document.createElement("div");
 	let h = document.createElement("h1");
 	let p = document.createElement("p");
@@ -34,7 +35,7 @@ const createTextSet = (isShort, data, dClassList, hClassList, pClassList) => {
 	return d;
 }
 
-const createImageSet = (imgData, figClassList) => {
+const create_image_set = (imgData, figClassList) => {
 	const fig = document.createElement("figure");
 	const img = document.createElement("img");
 
@@ -48,13 +49,13 @@ const createImageSet = (imgData, figClassList) => {
 	return fig;
 }
 
-const createHiCard = (card) => {
-	let container = createGenericCardContainer(
-		DEST_HI,
+const create_hi_card = (card) => {
+	let container = create_generic_card_container(
+		elem_dest_hi,
 		"swiper-slide",
-		"hi--card",
+		"hi-card",
 	);
-	let figur = createImageSet(card.image, "circle-radius");
+	let figur = create_image_set(card.image, "circle-radius");
 	let title = document.createElement("h1");
 
 	title.textContent = card.text.title;
@@ -63,25 +64,25 @@ const createHiCard = (card) => {
 	container.appendChild(title);
 }
 
-const createCard = (card) => {
-	const container = createGenericCardContainer(
-		DEST,
-		"co--projects-cards",
+const create_card = (card) => {
+	const container = create_generic_card_container(
+		elem_dest,
+		"co-projects-cards",
 		"card",
 	);
 
-	const text = createTextSet(true, card.text, "title-description-container", "", "");
-	const imag = createImageSet(card.image, "circle-radius");
+	const text = create_text_set(true, card.text, "title-description-container", "", "");
+	const imag = create_image_set(card.image, "circle-radius");
 
 	container.appendChild(text);
 	container.appendChild(imag);
 }
 
-DATA.projectsCards.forEach(card => {
-	if(card.isHi)
-		createHiCard(card);
+Data.projectsCards.forEach(card => {
+	if(card.isHi())
+		create_hi_card(card);
 
-	createCard(card);
+	create_card(card);
 });
 
-}
+} // end

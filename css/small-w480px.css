@@ -18,12 +18,12 @@ nav .links-list {
 
 main .projects-cards {
 	width: min-content;
-	grid-template-columns: repeat(2, var(--main--cards--width));
-	gap: var(--main--projects-cards--padding);
+	grid-template-columns: repeat(2, var(--cards-width));
+	gap: var(--projects-cards-padding);
 	margin-inline: auto;
 }
 
-main .projects-cards > .co--projects-cards {
+main .projects-cards > .co-projects-cards {
 	width: auto;
 }
 

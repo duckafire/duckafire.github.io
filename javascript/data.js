@@ -1,12 +1,21 @@
+"use strict";
+{ // start
+
 class ProjectsCardsBody {
+	#_isHi; image; text;
+
 	constructor(isHi, image, text){
-		this.isHi  = isHi;
-		this.image = { ...image };
-		this.text  = { ...text  };
+		this.#_isHi = isHi;
+		this.image  = { ...image };
+		this.text   = { ...text  };
 	}
+
+	isHi(){ return this.#_isHi; }
 }
 
 class ProjectsCardsImage {
+	title; alt; src;
+
 	constructor(title, alt, src){
 		this.title = title;
 		this.alt = alt;
@@ -15,13 +24,15 @@ class ProjectsCardsImage {
 }
 
 class ProjectsCardsText {
+	title; description;
+
 	constructor(title, short, full){
 		this.title = title;
 		this.description = {short, full};
 	}
 }
 
-DATA.projectsCards.push(
+Data.projectsCards.push(
 	new ProjectsCardsBody(
 		true,
 		new ProjectsCardsImage(
@@ -88,3 +99,5 @@ DATA.projectsCards.push(
 		)
 	),
 );
+
+} // end

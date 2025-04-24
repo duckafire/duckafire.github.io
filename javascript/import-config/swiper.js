@@ -1,4 +1,7 @@
-new Swiper(".hi--projects-cards-swiper", {
+"use strict";
+{ // start
+
+new Swiper(".hi-projects-cards-swiper", {
 	// TODO add lazy loading
 	centeredSlides: true,
 	preventClicks: true,
@@ -29,3 +32,5 @@ new Swiper(".hi--projects-cards-swiper", {
 		},
 	}
 });
+
+} // end

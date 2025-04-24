@@ -1,4 +1,5 @@
-{
+"use strict";
+{ // start
 
 class Group {
 	#beforeSpan; #titleH1; #afterSpan; #marginProperty;
@@ -18,8 +19,8 @@ class Group {
 		this.#marginProperty = "margin" + ((htmlData.hasMarginTop !== undefined) ? "Top" : "Bottom");
 	}
 
-	insetAllIn(dest){
-		dest.style[this.#marginProperty] = getCssVariable("--main--projects-cards--padding");
+	insert_all_in(dest){
+		dest.style[this.#marginProperty] = get_css_variable("main .projects-cards", "--projects-cards-padding");
 
 		dest.appendChild(this.#beforeSpan);
 		dest.appendChild(this.#titleH1);
@@ -27,8 +28,8 @@ class Group {
 	}
 }
 
-document.querySelectorAll(".co-ta--category-title").forEach((unity) => {
-	(new Group(unity.dataset)).insetAllIn(unity);
+document.querySelectorAll(".co-gr-category-title").forEach((unity) => {
+	(new Group(unity.dataset)).insert_all_in(unity);
 });
 
-}
+} // end

@@ -10,8 +10,8 @@
 body {
 	width: 100vw;
 	height: 100dvh;
-	color: var(--font-color);
-	background-color: var(--bg-color);
+	color: var(--color-body-text-font);
+	background-color: var(--color-body-bg);
 }
 
 a {
