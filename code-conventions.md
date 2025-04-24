@@ -14,7 +14,7 @@
 
 2. All tags must be correctly aligned.
 
-```
+``` html
 <p><strong> wrong </p></strong>
 
 <p><strong> right </strong></p>
@@ -125,6 +125,14 @@ must be between double quotes.
 <button id="close-foo-panel"></button>
 ```
 
+13. Avoid multiple consective hyphen in property values.
+
+``` html
+<div class="hi--foo"> wrong </div>
+
+<div class="hi-foo"> right </div>
+```
+
 ## CSS
 
 1. Style rules must be generic, then any way of to make some rule most specific is allowed.
@@ -144,11 +152,16 @@ ul.foo-list > li {}
 2. Different *versions* of similar elements must receive classes with one, or more, of the
 prefixes below (combination of prefixed must be sorted in alphabetic order):
 
+* `co`(ntainer): element created only to contain one (or more) element. Generally it need
+any style to make its *job*.
+
+* `gr`(oup): for similar elements that are used by JS for something.
+
 * `hi`(ghlight): highlight version of an element that it belong to a group of similar
 elements.
 
-* `co`(ntainer): element created only to contain one (or more) element. Generally it need
-any style to make its *job*.
+* `sc`(ope): container, without (or with minimum) style, created only to store style
+variables.
 
 > #### Example
 > 
@@ -182,12 +195,12 @@ any style to make its *job*.
 
 * They must be declared only if their values are required by more one style rule.
 * They must be declared in the lower container (in `./css/variables.css`).
-* They must have a value to all layout version (declared in `./css/variables.css` too).
 * Their names must be much descriptive.
+* Their names must be prefixed by *class prefixes* (see more about in CSS#**2**)
 
 > #### Example
 > 
-> ``` html
+> ``` css
 > .foo {
 > 	--foo-item-width: 50px;
 > }
@@ -203,12 +216,18 @@ any style to make its *job*.
 
 1. The identifiers must follow the *case styles* below:  
 
-| *Case Style*           | Identifier types                               |
-| :-:                    | :--                                            |
-| `camelCase`            | variables; local constants; enums; proprieties |
-| `PascalCase`           | classes; global objects; global arrays         |
-| `snake_case`           | functions                                      |
-| `SCREAMING_SCAKE_CASE` | global constants                               |
+| *Case Style*           | Identifier types                         |
+| :-:                    | :--                                      |
+| `camelCase`            | variables; enums; properties; parameters |
+| `PascalCase`           | classes; global objects; global arrays   |
+| `snake_case`           | functions; methods, local constants      |
+| `SCREAMING_SCAKE_CASE` | global constants                         |
+
+> To easy differentiation between `camelCase` and `snake_case`, use on minimum two
+> words to compound `snake_case` identifiers.
+
+> [!NOTE]
+> `snake_case` must not be to apply for *getters* and *setters*, instead it, use `camelCase`.
 
 2. Function must be declared like *arrow function* and they must be attributed to
 constants, instead use `function` keyword.
@@ -219,7 +238,10 @@ function wrong(){}
 const right = () => {}
 ```
 
-3. All global identifier must be constants.
+> Even that functions (technically) are constants, they will be treated like functions.
+
+3. All global identifier must be constants and they must be declared in
+`./javascript/contants.js`.
 
 ``` js
 let wrong = 10;
@@ -237,7 +259,7 @@ let right = 0;
 
 5. The strict mode must be used in **all** JS files.
 
-```
+``` js
 "use strict"; // first line of all script
 ```
 
@@ -269,7 +291,17 @@ class Right {
 }
 ```
 
-7. Class variables (proprieties) must be declared outside *constructors*.
+> [!IMPORTANT]
+> Do not use keywords `get` and `set` to create *getters* and *setters*, use the
+> prefixes `get` and `set`.
+>
+> ``` js
+> get foo(){ return this.#_foo; } // wrong
+>
+> getFoo(){ return this.#foo; } // right
+> ```
+
+7. Class variables (properties) must be declared outside *constructors*.
 
 ``` js
 class Wrong {
@@ -287,7 +319,7 @@ class Right {
 }
 ```
 
-8. `this.` must be used like prefix in all use of class proprieties, in its scope.
+8. `this.` must be used like prefix in all use of class properties, in its scope.
 
 ``` js
 class Wrong {
@@ -307,7 +339,7 @@ class Right {
 }
 ```
 
-> For private proprieties this is mandatory.
+> For private properties this is mandatory.
 
 9. Use semicolon, based C pattern.
 
@@ -317,7 +349,7 @@ let wrong = 0
 let right = 0;
 ```
 
-10. All scripts must have themselves local scope.
+10. All scripts, except `./javascript/constants.js`, must have themselves local scope.
 
 ``` js
 "use strict";
@@ -333,5 +365,14 @@ let wrong = 0;
 
 }
 ```
+
+> Use `// start` and `// end` to explicit the use of these curly braces.
+>
+> ``` js
+> "use strict";
+> { // start
+>
+> } // end
+> ```
 
 > In this case, indentation is not necessary (please do not use).
