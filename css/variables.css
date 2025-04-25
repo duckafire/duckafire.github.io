@@ -50,4 +50,8 @@ body {
 	.card {
 		--cards-width: calc(var(--scrollable-width) - 30px);
 	}
+
+	.co-hi-projects-cards-table-layout {
+		--co-hi-proj-cards-table-layout: calc(100dvh - var(--main-navbar-height))
+	}
 }

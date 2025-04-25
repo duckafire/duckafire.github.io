@@ -39,8 +39,24 @@
 	width: 120px;
 }
 
-.hi-projects-cards-swiper [class^=swiper-button].swiper-button-disabled {
-	visibility: hidden;
+[class^=custom-swiper-button] {
+	position: absolute;
+	background-color: var(--color-foo-thr);
+	z-index: 9999;
+	opacity: 0.4;
+}
+
+@media only screen {
+	@media (max-width: calc(600px - 1px)), (min-width: 1025px) {
+		[class^=custom-swiper-button] {
+			width: 25%;
+			height: 100%;
+		}
+
+		.custom-swiper-button-next {
+			margin-left: 75%;
+		}
+	}
 }
 
 .hi-card {
@@ -60,8 +76,8 @@
 }
 
 .hi-card figure {
-	width: 63.86px;
-	height: 63.86px;
+	width: 64px;
+	height: 64px;
 	flex: none;
 	margin: auto;
 }
