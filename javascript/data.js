@@ -38,7 +38,7 @@ Data.projectsCards.push(
 		new ProjectsCardsImage(
 			"property-title",
 			"alt",
-			"./img/foo.png",
+			Images.foo,
 		),
 		new ProjectsCardsText(
 			"title0",
@@ -51,7 +51,7 @@ Data.projectsCards.push(
 		new ProjectsCardsImage(
 			"property-title",
 			"alt",
-			"./img/foo.png",
+			Images.foo,
 		),
 		new ProjectsCardsText(
 			"title1",
@@ -64,7 +64,7 @@ Data.projectsCards.push(
 		new ProjectsCardsImage(
 			"property-title",
 			"alt",
-			"./img/foo.png",
+			Images.foo,
 		),
 		new ProjectsCardsText(
 			"title2",
@@ -77,7 +77,7 @@ Data.projectsCards.push(
 		new ProjectsCardsImage(
 			"property-title",
 			"alt",
-			"./img/foo.png",
+			Images.foo,
 		),
 		new ProjectsCardsText(
 			"title3",
@@ -90,7 +90,7 @@ Data.projectsCards.push(
 		new ProjectsCardsImage(
 			"property-title",
 			"alt",
-			"./img/foo.png",
+			Images.foo,
 		),
 		new ProjectsCardsText(
 			"title4",
