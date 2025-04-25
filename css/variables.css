@@ -1,27 +1,53 @@
-/* generic first */
+/* html and generic first */
+
+body {
+	--main-navbar-height: 65px;
+}
 
 .co-gr-category-title {
 	--category-title-font-size: 0.8rem;
 	--category-title-margin-inline: 0.25rem;
 }
 
-main .hi-projects-cards-swiper {
+.hi-projects-cards-swiper {
 	--hi--projects-cards-padding-block: 20px;
 	--hi--projects-cards-height: 155px;
 }
 
-main .projects-cards {
+.projects-cards {
 	--cards-width: 100%;
 	--projects-cards-padding: 19.2px;
 }
 
 @media only screen and (min-width: 480px) {
+	body {
+		--main-navbar-height: 75px;
+	}
+
 	.co-gr-category-title {
 		--category-title-font-size: 1rem;
 		--category-title-margin-inline: 0.32rem;
 	}
 
-	main .projects-cards {
+	.projects-cards {
 		--cards-width: 180px;
+	}
+}
+
+@media only screen and (min-width: 600px) {
+	body {
+		--main-navbar-height: 80px;
+	}
+
+	.scrollable-content {
+		--scrollable-width: calc(100vw - (var(--hi-cards-width) + 70px));
+	}
+
+	.page-content {
+		--hi-cards-width: 130px;
+	}
+
+	.card {
+		--cards-width: calc(var(--scrollable-width) - 30px);
 	}
 }

@@ -8,14 +8,6 @@ new Swiper(".hi-projects-cards-swiper", {
 	preventClicksPropagation: true,
 	allowTouchMove: false,
 
-	effect: "coverflow",
-	slidesPerView: "auto",
-
-	coverflowEffect: {
-		rotate: 0,
-		slideShadows: false,
-	},
-
 	navigation: {
 		prevEl: ".swiper-button-prev",
 		nextEl: ".swiper-button-next",
@@ -26,11 +18,15 @@ new Swiper(".hi-projects-cards-swiper", {
 		nextSlideMessage: "Ir para o próximo cartão",
 	},
 
-	breakpoints: {
-		0: {
-			spaceBetween: 48,
-		},
-	}
+	spaceBetween: 48,
+	slidesPerView: "auto",
+	direction: "horizontal",
+
+	effect: "coverflow",
+	coverflowEffect: {
+		rotate: 0,
+		slideShadows: false,
+	},
 });
 
 } // end

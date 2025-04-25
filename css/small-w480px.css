@@ -3,31 +3,30 @@
 .main-nav {
 	padding-left: 12px;
 	padding-right: 1.35rem;
-	height: 75px;
 }
 
-nav .home-image {
+.main-nav .home-image {
 	width: 60px;
 	height: 60px;
 }
 
-nav .links-list {
+.main-nav .links-list {
 	gap: 1.25rem;
 	font-size: 1.75rem;
 }
 
-main .projects-cards {
+.projects-cards {
 	width: min-content;
 	grid-template-columns: repeat(2, var(--cards-width));
 	gap: var(--projects-cards-padding);
 	margin-inline: auto;
 }
 
-main .projects-cards > .co-projects-cards {
+.projects-cards > .co-projects-cards {
 	width: auto;
 }
 
-main .card {
+.card {
 	min-height: 225px;
 	margin-inline: auto;
 	flex-direction: column-reverse;
@@ -37,13 +36,13 @@ main .card {
 	border-radius: 22px;
 }
 
-main .card figure {
+.card figure {
 	width: 90px;
 	height: 90px;
 	margin: auto;
 }
 
-footer .links-list {
+.page-footer .links-list {
 	grid-template-columns: repeat(3, 1fr);
 	font-size: 1rem;
 }

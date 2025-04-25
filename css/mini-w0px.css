@@ -1,6 +1,6 @@
 .main-nav {
 	width: 100%;
-	height: 65px;
+	height: var(--main-navbar-height);
 	padding-left:  8px;
 	padding-right: 1rem;
 	display: flex;
@@ -11,39 +11,39 @@
 	z-index: 9999;
 }
 
-nav .home-image {
+.main-nav .home-image {
 	width: 50px;
 	height: 50px;
 	flex: none;
 }
 
-nav .links-list {
+.main-nav .links-list {
 	display: flex;
 	gap: 1rem;
 	font-size: 1.5rem;
 }
 
-nav .main-nav-items:hover {
+.main-nav .main-nav-items:hover {
 	cursor: pointer;
 	transform: scale(1.1);
 }
 
-main .hi-projects-cards-swiper {
+.hi-projects-cards-swiper {
 	width: 100%;
 	height: calc(var(--hi--projects-cards-height) + var(--hi--projects-cards-padding-block) * 2);
 	overflow: hidden;
 	padding-block: var(--hi--projects-cards-padding-block);
 }
 
-main .hi-projects-cards-swiper .swiper-slide {
+.hi-projects-cards-swiper .swiper-slide {
 	width: 120px;
 }
 
-main .hi-projects-cards-swiper .swiper-button.swiper-button-disabled {
+.hi-projects-cards-swiper [class^=swiper-button].swiper-button-disabled {
 	visibility: hidden;
 }
 
-main .hi-card {
+.hi-card {
 	height: 100%;
 	display: flex;
 	flex-direction: column;
@@ -53,38 +53,38 @@ main .hi-card {
 	background-color: var(--color-foo-one);
 }
 
-main .hi-card h1 {
+.hi-card h1 {
 	margin: auto;
 	text-align: center;
 	font-size: 1.2rem; /* TODO: size based itself length */
 }
 
-main .hi-card figure {
+.hi-card figure {
 	width: 63.86px;
 	height: 63.86px;
 	flex: none;
 	margin: auto;
 }
 
-main .hi-card,
-main .card {
+.hi-card,
+.card {
 	border-radius: 16px;
 }
 
-main .projects-cards {
+.projects-cards {
 	width: 100%;
 	display: grid;
-	grid-template-columns: repeat(1, 1fr);
+	grid-template-columns: 1fr;
 	gap: var(--projects-cards-padding);
 	margin-bottom: calc(var(--projects-cards-padding) * 1.35);
 }
 
-main .projects-cards > .co-projects-cards {
+.projects-cards > .co-projects-cards {
 	width: 272px;
 	margin-inline: auto;
 }
 
-main .card {
+.card {
 	width: var(--cards-width);
 	background-color: var(--color-foo-one);
 	display: flex;
@@ -95,40 +95,40 @@ main .card {
 	font-size: 1rem;
 }
 
-main .card:hover {
+.card:hover {
 	cursor: pointer;
 	transform: scale(1.05);
 }
 
-main .card figure {
+.card figure {
 	width: 100px;
 	height: 100px;
 }
 
 
-.footer {
+.page-footer {
 	width: 100%;
 	background-color: var(--color-foo-one);
 	padding: 0.5rem;
 }
 
-footer .links-list {
+.page-footer .links-list {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: 0.5rem;
 	font-size: 0.8rem;
 }
 
-footer .title,
-footer .link {
+.page-footer .title,
+.page-footer .link {
 	display: block;
 	width: max-content;
 }
 
-footer .title {
+.page-footer .title {
 	font-size: 1em;
 }
 
-footer .link {
+.page-footer .link {
 	font-size: 0.9em;
 }
