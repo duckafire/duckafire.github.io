@@ -9,7 +9,7 @@
 
 body {
 	width: 100vw;
-	height: 100dvh;
+	height: max-content;
 	color: var(--color-body-text-font);
 	background-color: var(--color-body-bg);
 }
