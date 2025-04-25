@@ -68,7 +68,7 @@
 	}
 
 	@media (min-height: 382px){
-		.hi-card h1 {
+		.hi-card {
 			font-size: 1.3rem;
 		}
 
@@ -78,7 +78,7 @@
 		}
 
 		@media (min-height: 415px) {
-			.hi-card h1 {
+			.hi-card {
 				font-size: 1.5rem;
 			}
 
