@@ -71,7 +71,7 @@ const create_hi_card = (card) => {
 const create_card = (card) => {
 	const container = create_generic_card_container(
 		elem_dest,
-		"co-projects-cards",
+		"co-cards",
 		"card",
 	);
 

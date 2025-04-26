@@ -1,4 +1,4 @@
-.main-nav {
+.main-navbar {
 	width: 100%;
 	height: var(--main-navbar-height);
 	display: flex;
@@ -11,19 +11,19 @@
 	padding-inline: 0.25em 0.76em;
 }
 
-.main-nav .home-image {
+.main-navbar .home-image {
 	width: calc(var(--main-navbar-height) * 0.8);
 	height: calc(var(--main-navbar-height) * 0.8);
 	flex: none;
 }
 
-.main-nav .links-list {
+.main-navbar .links-list {
 	display: flex;
 	gap: 0.67em;
 	font-size: 1em;
 }
 
-.main-nav .main-nav-items:hover {
+.main-navbar .main-navbar-items:hover {
 	cursor: pointer;
 	transform: scale(1.1);
 }
@@ -96,7 +96,7 @@
 	margin-bottom: calc(var(--projects-cards-padding) * 1.35);
 }
 
-.projects-cards > .co-projects-cards {
+.projects-cards > .co-cards {
 	width: 272px;
 	margin-inline: auto;
 }
