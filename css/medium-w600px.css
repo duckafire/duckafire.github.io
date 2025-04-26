@@ -29,8 +29,8 @@
 .co-hi-projects-cards-table-layout {
 	position: fixed;
 	display: inline-block;
-	width: 200px;
-	height: var(--co-hi-proj-cards-table-layout);
+	width: var(--co-hi-proj-cards-table-layout-width);
+	height: var(--co-hi-proj-cards-table-layout-height);
 	top: auto;
 	left: auto;
 	border-left: 1px solid var(--color-foo-thr);
@@ -42,7 +42,7 @@
 }
 
 .hi-projects-cards-swiper {
-	padding: calc(var(--co-hi-proj-cards-table-layout) * 0.3) 0;
+	padding: calc(var(--co-hi-proj-cards-table-layout-height) * 0.3) 0;
 	margin-left: 10%;
 	width: 80%;
 	height: inherit;
@@ -89,14 +89,14 @@
 	}
 
 	.custom-swiper-button-next {
-		margin-top: calc(var(--co-hi-proj-cards-table-layout) * 0.75);
+		margin-top: calc(var(--co-hi-proj-cards-table-layout-height) * 0.75);
 	}
 }
 
 /* less based height, here and below here */
 @media (max-height: 375px) {
 	.hi-projects-cards-swiper {
-		padding: calc(var(--co-hi-proj-cards-table-layout) * 0.2) 0;
+		padding: calc(var(--co-hi-proj-cards-table-layout-height) * 0.2) 0;
 	}
 
 	[class^=custom-swiper-button] {
@@ -104,7 +104,7 @@
 	}
 
 	.custom-swiper-button-next {
-		margin-top: calc(var(--co-hi-proj-cards-table-layout) * 0.80);
+		margin-top: calc(var(--co-hi-proj-cards-table-layout-height) * 0.8);
 	}
 }
 

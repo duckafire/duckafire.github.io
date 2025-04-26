@@ -43,18 +43,18 @@ body {
 	}
 
 	.scrollable-content {
-		--scrollable-width: calc(100vw - (var(--hi-cards-width) + 70px));
+		--scrollable-width: calc(100vw - var(--co-hi-proj-cards-table-layout-width));
 	}
 
 	.page-content {
-		--hi-cards-width: 130px;
+		--co-hi-proj-cards-table-layout-width: 200px;
 	}
 
-	.card {
+	.projects-cards {
 		--cards-width: calc(var(--scrollable-width) - 30px);
 	}
 
 	.co-hi-projects-cards-table-layout {
-		--co-hi-proj-cards-table-layout: calc(100dvh - var(--main-navbar-height))
+		--co-hi-proj-cards-table-layout-height: calc(100dvh - var(--main-navbar-height));
 	}
 }
