@@ -1,0 +1,46 @@
+@media only screen and (min-width: 1025px) {
+
+.hi-projects-cards-swiper {
+	margin-inline: auto;
+	max-width: 600px;
+}
+
+.hi-projects-cards-swiper .swiper-slide {
+	width: 200px;
+}
+
+.hi-projects-cards-swiper .hi-card figure {
+	width: 100px;
+	height: 100px;
+}
+
+.scrollable-content,
+.projects-cards {
+	width: 100%;
+}
+
+.projects-cards {
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.projects-cards .co-cards {
+	width: 100%;
+}
+
+.projects-cards .card {
+	width: 100%;
+	max-width: none;
+	font-size: 2rem;
+	flex-direction: column-reverse;
+}
+
+.projects-cards .card figure {
+	width: 120px;
+	height: 120px;
+}
+
+.page-footer .links-list {
+	font-size: 1.5rem;
+}
+
+}

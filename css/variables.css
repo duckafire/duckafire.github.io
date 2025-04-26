@@ -79,3 +79,20 @@ body {
 		--cards-width: calc((var(--scrollable-width) - 30px) * 0.475);
 	}
 }
+
+@media only screen and (min-width: 801px){
+	body {
+		--main-navbar-height: 100px;
+		--main-navbar-font-size: 2.5rem;
+	}
+
+	.co-gr-category-title {
+		--category-title-font-size: 1.75rem;
+		--category-title-margin-inline: 0.675rem;
+	}
+
+	.hi-projects-cards-swiper {
+		--hi--projects-cards-padding-block: 35px;
+		--hi--projects-cards-height: 240px;
+	}
+}

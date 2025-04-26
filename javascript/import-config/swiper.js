@@ -1,6 +1,8 @@
 "use strict";
 { // start
 
+const point = (dir, spa) => ({direction: (dir == "h") ? "horizontal" : "vertical", spaceBetween: spa});
+
 new Swiper(".hi-projects-cards-swiper", {
 	// TODO add lazy loading
 	centeredSlides: true,
@@ -27,24 +29,11 @@ new Swiper(".hi-projects-cards-swiper", {
 	},
 
 	breakpoints: {
-		0: {
-			spaceBetween: 48,
-			direction: "horizontal",
-		},
-		480: {
-			direction: "horizontal",
-			spaceBetween: 40,
-		},
-		600: {
-			direction: "vertical",
-			spaceBetween: 50,
-		},
-		801: {
-			direction: "vertical",
-		},
-		1025: {
-			direction: "horizontal",
-		}
+		0:    { ...point("h", 48) },
+		480:  { ...point("h", 40) },
+		600:  { ...point("v", 50) },
+		801:  { ...point("v", 50) },
+		1025: { ...point("h", 180) },
 	},
 });
 

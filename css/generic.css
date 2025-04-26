@@ -63,7 +63,7 @@
 
 /* TODO: it must be shown */
 @media only screen {
-	@media (min-width: 600px) and (max-width: 1025px) {
+	@media (min-width: 600px) and (max-width: calc(1025px - 1px)) {
 		.co-gr-category-title {
 			display: none;
 		}
