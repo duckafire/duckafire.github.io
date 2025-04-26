@@ -39,6 +39,12 @@ new Swiper(".hi-projects-cards-swiper", {
 			direction: "vertical",
 			spaceBetween: 50,
 		},
+		801: {
+			direction: "vertical",
+		},
+		1025: {
+			direction: "horizontal",
+		}
 	},
 });
 

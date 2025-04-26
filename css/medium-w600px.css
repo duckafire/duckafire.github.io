@@ -1,9 +1,5 @@
 @media only screen and (min-width: 600px) {
 
-.co-gr-category-title {
-	display: none;
-}
-
 .scrollable-content {
 	display: inline-block;
 	width: var(--scrollable-width);

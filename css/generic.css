@@ -60,3 +60,12 @@
 	flex-grow: 1;
 	margin-left: var(--category-title-margin-inline);
 }
+
+/* TODO: it must be shown */
+@media only screen {
+	@media (min-width: 600px) and (max-width: 1025px) {
+		.co-gr-category-title {
+			display: none;
+		}
+	}
+}

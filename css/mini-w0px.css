@@ -122,6 +122,18 @@
 	height: 100px;
 }
 
+@media only screen {
+	@media (min-width: 801px) {
+		.card .card-descr-short {
+			display: none;
+		}
+	}
+	@media (max-width: calc(801px - 1px)){
+		.card .card-descr-full {
+			display: none;
+		}
+	}
+}
 
 .page-footer {
 	width: 100%;
@@ -148,4 +160,12 @@
 
 .page-footer .link {
 	font-size: 0.9em;
+}
+
+@media only screen {
+	@media (max-width: calc(600px - 1px)), (min-width: 1025px) {
+		.co-hi-projects-cards-table-layout {
+			display: none !important;
+		}
+	}
 }

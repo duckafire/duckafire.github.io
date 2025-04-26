@@ -17,22 +17,26 @@ const create_generic_card_container = (dest, liClassList, seClassList) => {
 	return se;
 }
 
-const create_text_set = (isShort, data, dClassList, hClassList, pClassList) => {
-	let d = document.createElement("div");
-	let h = document.createElement("h1");
-	let p = document.createElement("p");
+const create_text_set = (data, diClassList, h1ClassList, p0ClassList, p1ClassList) => {
+	let di = document.createElement("div");
+	let h1 = document.createElement("h1");
+	let p0 = document.createElement("p");
+	let p1 = document.createElement("p");
 
-	d.className = dClassList;
-	h.className = hClassList;
-	p.className = pClassList;
+	di.className = diClassList;
+	h1.className = h1ClassList;
+	p0.className = p0ClassList + " card-descr-short";
+	p1.className = p1ClassList + " card-descr-full";
 
-	h.textContent = data.title;
-	p.textContent = data.description[(isShort) ? "short" : "full"];
+	h1.textContent = data.title;
+	p0.textContent = data.description.short;
+	p1.textContent = data.description.full;
 
-	d.appendChild(h);
-	d.appendChild(p);
+	di.appendChild(h1);
+	di.appendChild(p0);
+	di.appendChild(p1);
 
-	return d;
+	return di;
 }
 
 const create_image_set = (imgData, figClassList) => {
@@ -71,7 +75,7 @@ const create_card = (card) => {
 		"card",
 	);
 
-	const text = create_text_set(true, card.text, "title-description-container", "", "");
+	const text = create_text_set(card.text, "title-description-container", "", "", "");
 	const imag = create_image_set(card.image, "circle-radius");
 
 	container.appendChild(text);
