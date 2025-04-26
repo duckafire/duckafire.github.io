@@ -39,7 +39,7 @@
 	width: 120px;
 }
 
-[class^=custom-swiper-button] {
+.hi-projects-cards-swiper [class^=custom-swiper-button] {
 	position: absolute;
 	background-color: var(--color-foo-thr);
 	z-index: 9999;
@@ -48,18 +48,18 @@
 
 @media only screen {
 	@media (max-width: calc(600px - 1px)), (min-width: 1025px) {
-		[class^=custom-swiper-button] {
+		.hi-projects-cards-swiper [class^=custom-swiper-button] {
 			width: 25%;
 			height: 100%;
 		}
 
-		.custom-swiper-button-next {
+		.hi-projects-cards-swiper .custom-swiper-button-next {
 			margin-left: 75%;
 		}
 	}
 }
 
-.hi-card {
+.hi-projects-cards-swiper .hi-card {
 	height: 100%;
 	display: flex;
 	flex-direction: column;
@@ -70,21 +70,21 @@
 	font-size: 1.2rem; /* TODO: size based itself length */
 }
 
-.hi-card h1 {
+.hi-projects-cards-swiper .hi-card h1 {
 	margin: auto;
 	text-align: center;
 	font-size: 1em;
 }
 
-.hi-card figure {
+.hi-projects-cards-swiper .hi-card figure {
 	width: 64px;
 	height: 64px;
 	flex: none;
 	margin: auto;
 }
 
-.hi-card,
-.card {
+.hi-projects-cards-swiper .hi-card,
+.projects-cards .card {
 	border-radius: 16px;
 }
 
@@ -96,12 +96,12 @@
 	margin-bottom: calc(var(--projects-cards-padding) * 1.35);
 }
 
-.projects-cards > .co-cards {
+.projects-cards .co-cards {
 	width: 272px;
 	margin-inline: auto;
 }
 
-.card {
+.projects-cards .card {
 	width: var(--cards-width);
 	background-color: var(--color-foo-one);
 	display: flex;
@@ -112,24 +112,24 @@
 	font-size: 1rem;
 }
 
-.card:hover {
+.projects-cards .card:hover {
 	cursor: pointer;
 	transform: scale(1.05);
 }
 
-.card figure {
+.projects-cards .card figure {
 	width: 100px;
 	height: 100px;
 }
 
 @media only screen {
 	@media (min-width: 801px) {
-		.card .card-descr-short {
+		.projects-cards .card-descr-short {
 			display: none;
 		}
 	}
 	@media (max-width: calc(801px - 1px)){
-		.card .card-descr-full {
+		 .projects-cards .card-descr-full {
 			display: none;
 		}
 	}

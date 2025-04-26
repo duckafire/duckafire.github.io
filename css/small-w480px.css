@@ -7,11 +7,11 @@
 	margin-inline: auto;
 }
 
-.projects-cards > .co-cards {
+.projects-cards .co-cards {
 	width: auto;
 }
 
-.card {
+.projects-cards .card {
 	min-height: 225px;
 	margin-inline: auto;
 	flex-direction: column-reverse;
@@ -21,7 +21,7 @@
 	border-radius: 22px;
 }
 
-.card figure {
+.projects-cards .card figure {
 	width: 90px;
 	height: 90px;
 	margin: auto;
