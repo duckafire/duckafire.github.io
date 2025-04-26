@@ -1,15 +1,5 @@
 @media only screen and (min-width: 600px) {
 
-.main-nav .home-image {
-	width: 65px;
-	height: 65px;
-}
-
-.main-nav .links-list {
-	gap: 1.6rem;
-	font-size: 2.1rem;
-}
-
 .co-gr-category-title {
 	display: none;
 }

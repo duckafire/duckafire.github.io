@@ -2,6 +2,7 @@
 
 body {
 	--main-navbar-height: 65px;
+	--main-navbar-font-size: 1.5rem;
 }
 
 .co-gr-category-title {
@@ -22,6 +23,7 @@ body {
 @media only screen and (min-width: 480px) {
 	body {
 		--main-navbar-height: 75px;
+		--main-navbar-font-size: 1.75rem;
 	}
 
 	.co-gr-category-title {
@@ -37,6 +39,7 @@ body {
 @media only screen and (min-width: 600px) {
 	body {
 		--main-navbar-height: 80px;
+		--main-navbar-font-size: 2rem;
 	}
 
 	.scrollable-content {

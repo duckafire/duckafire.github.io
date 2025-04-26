@@ -1,20 +1,5 @@
 @media only screen and (min-width: 480px){
 
-.main-nav {
-	padding-left: 12px;
-	padding-right: 1.35rem;
-}
-
-.main-nav .home-image {
-	width: 60px;
-	height: 60px;
-}
-
-.main-nav .links-list {
-	gap: 1.25rem;
-	font-size: 1.75rem;
-}
-
 .projects-cards {
 	width: min-content;
 	grid-template-columns: repeat(2, var(--cards-width));
