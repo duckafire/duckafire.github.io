@@ -58,3 +58,24 @@ body {
 		--co-hi-proj-cards-table-layout-height: calc(100dvh - var(--main-navbar-height));
 	}
 }
+
+@media only screen and (min-width: 801px){
+	body {
+		--main-navbar-height: 85px;
+		--main-navbar-font-size: 2.25rem;
+	}
+
+	.page-content {
+		--co-hi-proj-cards-table-layout-width: 250px;
+	}
+
+	.projects-cards {
+		/* NOTE:
+		*  this "calc(var(--cards-width) * 0.475)" breaks the layout,
+		*  because if the screen size descrease from a bigger than
+		*  "big", the value of `--cards-width` possibly will be
+		*  different.
+		*/
+		--cards-width: calc((var(--scrollable-width) - 30px) * 0.475);
+	}
+}
