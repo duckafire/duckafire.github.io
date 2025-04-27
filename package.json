@@ -4,7 +4,8 @@
   "description": "DuckAfire's Nest: a projects showcase.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "b-index": "node ./nodejs/insert-in-index-html.js",
+    "b-chunks": "node ./nodejs/create/projects.js"
   },
   "repository": {
     "type": "git",
