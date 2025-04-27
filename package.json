@@ -23,5 +23,9 @@
   "bugs": {
     "url": "https://github.com/duckafire/nest/issues"
   },
-  "homepage": "https://github.com/duckafire/nest#readme"
+  "homepage": "https://github.com/duckafire/nest#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "sass": "^1.32.11"
+  }
 }
