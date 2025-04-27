@@ -1,0 +1,13 @@
+@use "partial/layout";
+
+@import "html";
+@import "generic";
+
+@media only screen {
+	@import "responsive/mini";
+	@media (min-width: layout.$small)    { @import "responsive/small";    }
+	@media (min-width: layout.$medium)   { @import "responsive/medium";   }
+	@media (min-width: layout.$big)      { @import "responsive/big";      }
+	@media (min-width: layout.$huge)     { @import "responsive/huge";     }
+	@media (min-width: layout.$infinity) { @import "responsive/infinity"; }
+}

@@ -5,3 +5,6 @@ index.html
 
 html/
 node_modules/
+
+!css/pure/
+css/*

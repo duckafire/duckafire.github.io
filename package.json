@@ -6,13 +6,14 @@
   "scripts": {
     "b-all":    "npm run b-chunks && npm run b-index",
     "b-chunks": "node ./nodejs/create/projects.js",
-    "b-index" : "node ./nodejs/insert-in-index-html.js",
+    "b-index":  "node ./nodejs/insert-in-index-html.js",
+    "b-css":    "npx sass ./scss/:./css/",
 
-	"c-all":  "npm run c-html && npm run c-css",
-	"c-css":  "test ! -d ./css/  && echo  '\"./css/\" not found' && exit 0; for file in $(ls ./css -I pure); do rm -r \"./css/$file\"; done",
-	"c-html": "test ! -d ./html/ && echo '\"./html/\" not found' && exit 0; rm -r ./html/",
+    "c-all":  "npm run c-html && npm run c-css",
+    "c-css":  "test ! -d ./css/  && echo  '\"./css/\" not found' && exit 0; for file in $(ls ./css -I pure); do rm -r \"./css/$file\"; done",
+    "c-html": "test ! -d ./html/ && echo '\"./html/\" not found' && exit 0; rm -r ./html/",
 
-	"local": "npx http-server -c-1 -p 7777"
+    "local": "npx http-server -c-1 -p 7777"
   },
   "repository": {
     "type": "git",
