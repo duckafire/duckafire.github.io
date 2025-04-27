@@ -2,8 +2,8 @@
 const FS = require("fs");
 
 const OutputFile = {
-	cards:   __dirname + "/../html/cards.html",
-	hiCards: __dirname + "/../html/hi-cards.html",
+	cards:   __dirname + "/../../html/cards.html",
+	hiCards: __dirname + "/../../html/hi-cards.html",
 };
 
 class Img {

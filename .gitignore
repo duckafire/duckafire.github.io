@@ -1,5 +1,7 @@
 todo
-node_modules/
 index.html
 
-nodejs/html
+*foo*
+
+html/
+node_modules/

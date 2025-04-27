@@ -2,7 +2,7 @@
 const FS = require("fs");
 
 const HTML = {
-	inputDir:   __dirname + "/html/",
+	inputDir:   __dirname + "/../html/",
 	inputFile:  __dirname + "/../index.in.html",
 	outputFile: __dirname + "/../index.html",
 };
