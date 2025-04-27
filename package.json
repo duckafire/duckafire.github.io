@@ -1,0 +1,26 @@
+{
+  "name": "nest",
+  "version": "4.0.0-alpha",
+  "description": "DuckAfire's Nest: a projects showcase.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duckafire/nest.git"
+  },
+  "keywords": [
+    "duckafire",
+    "nest",
+    "showcase",
+    "projects",
+    "frontend"
+  ],
+  "author": "DuckAfire",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/duckafire/nest/issues"
+  },
+  "homepage": "https://github.com/duckafire/nest#readme"
+}
