@@ -28,10 +28,10 @@ const array_to_string = (array) => {
 
 const hiCard = (data) => array_to_string([
 	`<li class="swiper-slide">`,
-	`	<section class"hi-card">`,
+	`	<section class="hi-card">`,
 	`		<figure class="circle-radius">`,
 	`			<img src="${data.icon.alt}" alt="${data.icon.src}" title="${data.icon.title}" />`,
-	`		<figure>`,
+	`		</figure>`,
 	`		<h1>`,
 	`			${data.title}`,
 	`		</h1>`,
@@ -42,24 +42,24 @@ const hiCard = (data) => array_to_string([
 // TODO: store "popup" data in `li` "data-*"
 const card = (data) => array_to_string([
 	`<li class="co-cards">`,
-	`	<section class"card">`,
+	`	<section class="card">`,
 	`		<div class="title-description-container">`,
 	`			<h1>`,
 	`				${data.title}`,
 	`			</h1>`,
 	`			<p class="desc short-desc">`,
 	`				${data.pShort.replace(/\s/g, " ")}`,
-	`			<p>`,
+	`			</p>`,
 	`			<p class="desc medium-desc">`,
 	`				${data.pMedium.replace(/\s/g, " ")}`,
-	`			<p>`,
+	`			</p>`,
 	`			<p class="desc full-desc">`,
 	`				${data.pFull.replace(/\s/g, " ")}`,
-	`			<p>`,
+	`			</p>`,
 	`		</div>`,
 	`		<figure class="circle-radius">`,
 	`			<img src="${data.icon.alt}" alt="${data.icon.src}" title="${data.icon.title}" />`,
-	`		<figure>`,
+	`		</figure>`,
 	`	</section>`,
 	`</li>`,
 ]);
@@ -80,11 +80,11 @@ project({
 		pShort:  "pShort",
 		pMedium: "pMedium",
 		pFull:   "pFull",
-		icon: new Img("foo", "foo", "foo"),
+		icon: new Img("./resources/images/foo.svg", "foo", "foo"),
 	},
 	hiCard: {
 		title: "foo",
-		icon: new Img("foo", "foo", "foo"),
+		icon: new Img("./resources/images/foo.svg", "foo", "foo"),
 	}
 });
 
@@ -94,11 +94,11 @@ project({
 		pShort:  "pShort",
 		pMedium: "pMedium",
 		pFull:   "pFull",
-		icon: new Img("foo", "foo", "foo"),
+		icon: new Img("./resources/images/foo.svg", "foo", "foo"),
 	},
 	hiCard: {
 		title: "foo",
-		icon: new Img("foo", "foo", "foo"),
+		icon: new Img("./resources/images/foo.svg", "foo", "foo"),
 	}
 });
 
