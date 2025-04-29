@@ -1,9 +1,10 @@
 "use strict";
 const FS = require("fs");
+const Directory = require(__dirname + "/../../directory.js");
 
 const OutputFile = {
-	cards:   __dirname + "/../../html/cards.html",
-	hiCards: __dirname + "/../../html/hi-cards.html",
+	cards:   Directory.createDir.projects.cards,
+	hiCards: Directory.createDir.projects.hiCards,
 };
 
 class Img {
@@ -80,11 +81,11 @@ project({
 		pShort:  "pShort",
 		pMedium: "pMedium",
 		pFull:   "pFull",
-		icon: new Img("./resources/images/foo.svg", "foo", "foo"),
+		icon: new Img(Directory.images.foo, "foo", "foo"),
 	},
 	hiCard: {
 		title: "foo",
-		icon: new Img("./resources/images/foo.svg", "foo", "foo"),
+		icon: new Img(Directory.images.foo, "foo", "foo"),
 	}
 });
 
@@ -94,11 +95,11 @@ project({
 		pShort:  "pShort",
 		pMedium: "pMedium",
 		pFull:   "pFull",
-		icon: new Img("./resources/images/foo.svg", "foo", "foo"),
+		icon: new Img(Directory.images.foo, "foo", "foo"),
 	},
 	hiCard: {
 		title: "foo",
-		icon: new Img("./resources/images/foo.svg", "foo", "foo"),
+		icon: new Img(Directory.images.foo, "foo", "foo"),
 	}
 });
 

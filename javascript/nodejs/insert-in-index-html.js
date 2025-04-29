@@ -1,10 +1,11 @@
 "use strict";
 const FS = require("fs");
+const Directory = require(__dirname + "/../directory.js");
 
 const HTML = {
-	inputDir:   __dirname + "/../html/",
-	inputFile:  __dirname + "/../index.in.html",
-	outputFile: __dirname + "/../index.html",
+	inputDir:   Directory.insertInIndexHtml.inputDir,
+	inputFile:  Directory.insertInIndexHtml.inputHTML,
+	outputFile: Directory.insertInIndexHtml.outputHTML,
 };
 
 const get_ind_level = (data) => {

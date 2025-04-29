@@ -31,10 +31,3 @@ const ResponsiveElements = {
 	once:   [], // call once when the layout is updated
 	always: [], // call event that the screen in resized
 };
-
-// based "index.html" position
-const images_path = (file, ext) => ("./resources/images/" + file + "." + ((ext !== undefined) ? ext : "svg"));
-
-const Images = {
-	foo: images_path("foo"),
-};

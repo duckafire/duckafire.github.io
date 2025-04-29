@@ -1,0 +1,141 @@
+#!/usr/bin/env bash
+
+declare -ri TRUE=0
+declare -ri FALSE=1
+
+declare -r ARG_function="$1"
+
+declare -r DIR_HTML="./html/"
+declare -r DIR_CSS="./style/css/"
+declare -r DIR_SCSS="./style/scss/"
+declare -r INDEX_HTML="./index.html"
+declare -r INPUT_HTML="./input.html"
+
+is_file(){
+	test -f "$1" && return $TRUE
+	return $FALSE
+}
+
+is_dir(){
+	test -d "$1" && return $TRUE
+	return $FALSE
+}
+
+node_path(){
+	echo "./javascript/nodejs/$1"
+}
+
+
+# BUILD
+
+build_chunks_html(){
+	node "$(node_path "create/projects.js")"
+}
+
+build_index_html(){
+	is_dir "$DIR_HTML" || mkdir "$DIR_HTML"
+	node "$(node_path "insert-in-index-html.js")"
+}
+
+build_scss_to_css(){
+	npx sass "$DIR_SCSS:$DIR_CSS"
+}
+
+build_html(){
+	build_chunks_html
+	build_index_html
+}
+
+build_preprocessors(){
+	build_index_html
+	build_scss_to_css
+}
+
+build_all(){
+	build_chunks_html
+	build_index_html
+	build_scss_to_css
+}
+
+
+# CLEAR
+
+clear_chunks_html(){
+	is_dir "$DIR_HTML" || return
+	rm -r "$DIR_HTML"
+}
+
+clear_index_html(){
+	is_file "$INDEX_HTML" || return
+	rm "$INDEX_HTML"
+}
+
+clear_css_from_scss(){
+	is_dir "$DIR_CSS" || return
+
+	local IGNORE=("pure")
+
+	for file in $(ls "$DIR_CSS"); do
+		for ig in ${IGNORE[@]}; do
+			test "$file" = "$ig" && continue 2
+		done
+
+		rm -r "$DIR_CSS/$file"
+	done
+}
+
+clear_all(){
+	clear_chunks_html
+	clear_index_html
+	clear_css_from_scss
+}
+
+
+# BUILD & CLEAR
+
+build_and_clear_all(){
+	clear_all
+	build_all
+}
+
+
+# OTHER
+
+help_npm_scripts(){
+	echo -e 'chunks   build HTML chunks, in ./html/.
+index    build ./index.html.
+sass     build CSS files, from ./style/scss, in ./style/css.
+html     build HTML chunks and ./index.html.
+pre      build ./index.html and CSS files.
+ball     build HTML chunks, ./index.html and CSS files.
+nochunks delete HTML chunks, from ./html/.
+noindex  delete ./index.html.
+nocss    delete CSS files, from ./style/css.
+noall    delete HTML chunks, ./index.html and CSS files.
+all      delete and build HTML chunks, ./index.html and CSS files.
+help     display this help message.
+dev      run the page on localhost at port 7777, if ./index.html exist.'
+}
+
+run_localhost_server(){
+	if ! is_file "$INDEX_HTML"; then
+		echo '"index.html" not found.'
+		exit 0
+	fi
+
+	local -r NO_CACHE="-c-1"
+	local -r PORT="7777"
+
+	npx http-server "$NO_CACHE" -p "$PORT"
+}
+
+
+# EXECUTE
+
+if ! type "$ARG_function" &> /dev/null; then
+	echo "'$ARG_function' is a wrong script!"
+	exit 0
+fi
+
+eval "$ARG_function"
+exit 0
