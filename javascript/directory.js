@@ -1,5 +1,6 @@
 "use strict";
 const Directory = {};
+const IsNodejs = (typeof module != "undefined");
 
 
 const images_path = (file, ext) => {
@@ -12,18 +13,20 @@ Directory.images = {
 };
 
 
-if(module){
+if(IsNodejs){
+	const dirname = (!IsNodejs) ? "" : __dirname + "/";
+
 	Directory.createDir = {
 		projects: {
-			cards:   __dirname + "/../html-chunks/cards.html",
-			hiCards: __dirname + "/../html-chunks/hi-cards.html",
+			cards:   dirname + "../html-chunks/cards.html",
+			hiCards: dirname + "../html-chunks/hi-cards.html",
 		},
 	};
 
 	Directory.insertInIndexHtml = {
-		inputDir:   __dirname + "/../html-chunks/",
-		inputHTML:  __dirname + "/../input.html",
-		outputHTML: __dirname + "/../index.html",
+		inputDir:   dirname + "../html-chunks/",
+		inputHTML:  dirname + "../input.html",
+		outputHTML: dirname + "../index.html",
 	}
 
 }else{
@@ -31,5 +34,5 @@ if(module){
 }
 
 
-if(module)
+if(IsNodejs)
 	module.exports = Directory;
