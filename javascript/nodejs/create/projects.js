@@ -1,33 +1,14 @@
 "use strict";
 const FS = require("fs");
 const Directory = require(__dirname + "/../../directory.js");
+const Tools = require(__dirname + "/tools.js");
 
 const OutputFile = {
 	cards:   Directory.createDir.projects.cards,
 	hiCards: Directory.createDir.projects.hiCards,
 };
 
-class Img {
-	alt; src; title;
-
-	constructor(alt, src, title){
-		this.alt   = alt;
-		this.src   = src;
-		this.title = title;
-	}
-}
-
-const array_to_string = (array) => {
-	let string = "";
-
-	array.forEach((chunk) => {
-		string += (chunk + "\n");
-	});
-
-	return string;
-}
-
-const hiCard = (data) => array_to_string([
+const hiCard = (data) => Tools.functions.arrayToString([
 	`<li class="swiper-slide">`,
 	`	<section class="hi-card">`,
 	`		<figure class="circle-radius">`,
@@ -41,7 +22,7 @@ const hiCard = (data) => array_to_string([
 ]);
 
 // TODO: store "popup" data in `li` "data-*"
-const card = (data) => array_to_string([
+const card = (data) => Tools.functions.arrayToString([
 	`<li class="co-cards">`,
 	`	<section class="card">`,
 	`		<div class="title-description-container">`,
@@ -81,11 +62,11 @@ project({
 		pShort:  "pShort",
 		pMedium: "pMedium",
 		pFull:   "pFull",
-		icon: new Img(Directory.images.foo, "foo", "foo"),
+		icon: new Tools.classes.img(Directory.images.foo, "foo", "foo"),
 	},
 	hiCard: {
 		title: "foo",
-		icon: new Img(Directory.images.foo, "foo", "foo"),
+		icon: new Tools.classes.img(Directory.images.foo, "foo", "foo"),
 	}
 });
 
@@ -95,22 +76,15 @@ project({
 		pShort:  "pShort",
 		pMedium: "pMedium",
 		pFull:   "pFull",
-		icon: new Img(Directory.images.foo, "foo", "foo"),
+		icon: new Tools.classes.img(Directory.images.foo, "foo", "foo"),
 	},
 	hiCard: {
 		title: "foo",
-		icon: new Img(Directory.images.foo, "foo", "foo"),
+		icon: new Tools.classes.img(Directory.images.foo, "foo", "foo"),
 	}
 });
 
 // XXX: create elements (end)
 
-FS.writeFile(OutputFile.cards, Cards.join(""), (err) => {
-	if(err)
-		console.log("Error: 1");
-});
-
-FS.writeFile(OutputFile.hiCards, HiCards.join(""), (err) => {
-	if(err)
-		console.log("Error: 2");
-});
+Tools.functions.writeInFile(OutputFile.cards,   Cards);
+Tools.functions.writeInFile(OutputFile.hiCards, HiCards);

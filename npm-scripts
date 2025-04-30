@@ -29,7 +29,11 @@ node_path(){
 # BUILD
 
 build_chunks_html(){
-	node "$(node_path "create/projects.js")"
+	local -r path="$(node_path "create")"
+
+	for file in $(ls "$path"); do
+		node "$path/$file"
+	done
 }
 
 build_index_html(){

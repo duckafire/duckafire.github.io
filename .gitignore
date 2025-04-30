@@ -1,7 +1,8 @@
 todo
-index.html
+TODO
+foo.*
 
-*foo*
+index.html
 
 html/
 node_modules/
