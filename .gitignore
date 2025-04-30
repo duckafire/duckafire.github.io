@@ -4,7 +4,7 @@ foo.*
 
 index.html
 
-html/
+html-chunks/
 node_modules/
 
 !css/pure/

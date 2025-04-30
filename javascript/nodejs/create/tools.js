@@ -14,6 +14,16 @@ class Img {
 	}
 }
 
+class HyperLink {
+	title; textContent; href;
+
+	constructor(title, textContent, href){
+		this.title       = title;
+		this.textContent = textContent;
+		this.href        = href;
+	}
+}
+
 
 // FUNCTIONS
 
@@ -38,6 +48,7 @@ const write_in_file = (file, items) => {
 module.exports = {
 	classes: {
 		img: Img,
+		hyperLink: HyperLink,
 	},
 	functions: {
 		arrayToString: array_to_string,

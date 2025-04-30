@@ -17,6 +17,9 @@ if(IsNodejs){
 	const dirname = (!IsNodejs) ? "" : __dirname + "/";
 
 	Directory.createDir = {
+		footerFragments: {
+			fragment: dirname + "../html-chunks/fragment.html",
+		},
 		projects: {
 			cards:   dirname + "../html-chunks/cards.html",
 			hiCards: dirname + "../html-chunks/hi-cards.html",
