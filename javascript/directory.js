@@ -14,22 +14,20 @@ Directory.images = {
 
 
 if(IsNodejs){
-	const dirname = (!IsNodejs) ? "" : __dirname + "/";
-
 	Directory.createDir = {
 		footerFragments: {
-			fragment: dirname + "../html-chunks/fragment.html",
+			fragment: __dirname + "/../html-chunks/fragment.html",
 		},
 		projects: {
-			cards:   dirname + "../html-chunks/cards.html",
-			hiCards: dirname + "../html-chunks/hi-cards.html",
+			cards:   __dirname + "/../html-chunks/cards.html",
+			hiCards: __dirname + "/../html-chunks/hi-cards.html",
 		},
 	};
 
 	Directory.insertInIndexHtml = {
-		inputDir:   dirname + "../html-chunks/",
-		inputHTML:  dirname + "../input.html",
-		outputHTML: dirname + "../index.html",
+		inputDir:   __dirname + "/../html-chunks/",
+		inputHTML:  __dirname + "/../input.html",
+		outputHTML: __dirname + "/../index.html",
 	}
 
 }else{
