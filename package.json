@@ -14,7 +14,7 @@
     "noindex": "./npm-scripts 'clear_index_html'",
     "nocss": "./npm-scripts 'clear_css_from_scss'",
     "noall": "./npm-scripts 'clear_all'",
-    "all": "./npm-scripts 'build_and_clear_all'",
+    "all": "./npm-scripts 'clear_and_build_all'",
 	"help": "./npm-scripts 'help_npm_scripts'",
     "dev": "./npm-scripts 'run_localhost_server'"
   },

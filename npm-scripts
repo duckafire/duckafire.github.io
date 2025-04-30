@@ -5,7 +5,7 @@ declare -ri FALSE=1
 
 declare -r ARG_function="$1"
 
-declare -r DIR_HTML="./html/"
+declare -r DIR_HTML="./html-chunks/"
 declare -r DIR_CSS="./style/css/"
 declare -r DIR_SCSS="./style/scss/"
 declare -r INDEX_HTML="./index.html"
@@ -31,13 +31,14 @@ node_path(){
 build_chunks_html(){
 	local -r path="$(node_path "create")"
 
+	is_dir "$DIR_HTML" || mkdir "$DIR_HTML"
+
 	for file in $(ls "$path"); do
 		node "$path/$file"
 	done
 }
 
 build_index_html(){
-	is_dir "$DIR_HTML" || mkdir "$DIR_HTML"
 	node "$(node_path "insert-in-index-html.js")"
 }
 
@@ -97,7 +98,7 @@ clear_all(){
 
 # BUILD & CLEAR
 
-build_and_clear_all(){
+clear_and_build_all(){
 	clear_all
 	build_all
 }
