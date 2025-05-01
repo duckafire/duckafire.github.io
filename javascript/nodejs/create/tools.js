@@ -24,6 +24,15 @@ class HyperLink {
 	}
 }
 
+class Property {
+	ident; value;
+
+	constructor(ident, value){
+		this.ident = ident;
+		this.value = value;
+	}
+}
+
 
 // FUNCTIONS
 
@@ -49,6 +58,7 @@ module.exports = {
 	classes: {
 		img: Img,
 		hyperLink: HyperLink,
+		property: Property,
 	},
 	functions: {
 		arrayToString: array_to_string,
