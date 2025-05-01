@@ -28,18 +28,18 @@
 	transform: scale(1.1);
 }
 
-.hi-projects-cards-swiper {
+.hi-projects-cards {
 	width: 100%;
 	height: calc(var(--hi--projects-cards-height) + var(--hi--projects-cards-padding-block) * 2);
 	overflow: hidden;
 	padding-block: var(--hi--projects-cards-padding-block);
 }
 
-.hi-projects-cards-swiper .swiper-slide {
+.hi-projects-cards .swiper-slide {
 	width: 120px;
 }
 
-.hi-projects-cards-swiper [class^=custom-swiper-button] {
+.hi-projects-cards [class^=custom-swiper-button] {
 	position: absolute;
 	background-color: var(--color-foo-thr);
 	z-index: 9999;
@@ -48,18 +48,18 @@
 
 @media only screen {
 	@media (max-width: calc(600px - 1px)), (min-width: 1025px) {
-		.hi-projects-cards-swiper [class^=custom-swiper-button] {
+		.hi-projects-cards [class^=custom-swiper-button] {
 			width: 25%;
 			height: 100%;
 		}
 
-		.hi-projects-cards-swiper .custom-swiper-button-next {
+		.hi-projects-cards .custom-swiper-button-next {
 			margin-left: 75%;
 		}
 	}
 }
 
-.hi-projects-cards-swiper .hi-card {
+.hi-projects-cards .hi-card {
 	height: 100%;
 	display: flex;
 	flex-direction: column;
@@ -70,20 +70,20 @@
 	font-size: 1.2rem; /* TODO: size based itself length */
 }
 
-.hi-projects-cards-swiper .hi-card h1 {
+.hi-projects-cards .hi-card h1 {
 	margin: auto;
 	text-align: center;
 	font-size: 1em;
 }
 
-.hi-projects-cards-swiper .hi-card figure {
+.hi-projects-cards .hi-card figure {
 	width: 64px;
 	height: 64px;
 	flex: none;
 	margin: auto;
 }
 
-.hi-projects-cards-swiper .hi-card,
+.hi-projects-cards .hi-card,
 .projects-cards .card {
 	border-radius: 16px;
 }

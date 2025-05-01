@@ -3,7 +3,7 @@
 
 const point = (dir, spa) => ({direction: (dir == "h") ? "horizontal" : "vertical", spaceBetween: spa});
 
-new Swiper(".hi-projects-cards-swiper", {
+new Swiper(".hi-projects-cards", {
 	// TODO add lazy loading
 	centeredSlides: true,
 	preventClicks: true,

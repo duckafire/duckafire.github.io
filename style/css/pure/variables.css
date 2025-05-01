@@ -10,7 +10,7 @@ body {
 	--category-title-margin-inline: 0.25rem;
 }
 
-.hi-projects-cards-swiper {
+.hi-projects-cards {
 	--hi--projects-cards-padding-block: 20px;
 	--hi--projects-cards-height: 155px;
 }
@@ -91,7 +91,7 @@ body {
 		--category-title-margin-inline: 0.675rem;
 	}
 
-	.hi-projects-cards-swiper {
+	.hi-projects-cards {
 		--hi--projects-cards-padding-block: 35px;
 		--hi--projects-cards-height: 240px;
 	}

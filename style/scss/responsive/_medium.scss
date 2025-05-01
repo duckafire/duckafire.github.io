@@ -35,7 +35,7 @@
 	height: inherit;
 }
 
-.co-hi-projects-cards-table-layout .hi-projects-cards-swiper {
+.co-hi-projects-cards-table-layout .hi-projects-cards {
 	padding: calc(var(--co-hi-proj-cards-table-layout-height) * 0.3) 0;
 	margin-left: 10%;
 	width: 80%;
@@ -89,7 +89,7 @@
 
 /* less based height, here and below here */
 @media (max-height: 375px) {
-	.co-hi-projects-cards-table-layout .hi-projects-cards-swiper {
+	.co-hi-projects-cards-table-layout .hi-projects-cards {
 		padding: calc(var(--co-hi-proj-cards-table-layout-height) * 0.2) 0;
 	}
 
@@ -103,7 +103,7 @@
 }
 
 @media (max-height: 320px) {
-	.co-hi-projects-cards-table-layout .hi-projects-cards-swiper {
+	.co-hi-projects-cards-table-layout .hi-projects-cards {
 		padding: 48px 0;
 		min-height: 241px;
 	}
