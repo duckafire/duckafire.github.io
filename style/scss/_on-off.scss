@@ -1,0 +1,25 @@
+@media only screen {
+	@include layout.min("medium"){
+		.projects-cards .short-desc {
+			display: none;
+		}
+	}
+
+	@include layout.max("small") {
+		.projects-cards .medium-desc{
+			display: none;
+		}
+	}
+
+	@include layout.min("huge") {
+		.projects-cards .medium-desc{
+			display: none;
+		}
+	}
+
+	@include layout.max("big"){
+		.projects-cards .full-desc{
+			display: none;
+		}
+	}
+}
