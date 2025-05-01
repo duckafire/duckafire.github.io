@@ -1,13 +1,36 @@
 $minimum: 320px;
 
-$small:    480px;
-$medium:   600px;
-$big:      801px;
-$huge:     1025px;
-$infinity: 1281px;
+$levels: (
+	"small":    480px,
+	"medium":   600px,
+	"big":      801px,
+	"huge":     1025px,
+	"infinity": 1281px,
+);
 
-$max-small:    $small    - 1;
-$max-medium:   $medium   - 1;
-$max-big:      $big      - 1;
-$max-huge:     $huge     - 1;
-$max-infinity: $infinity - 1;
+@mixin min($lvl){
+	@media (min-width: map-get($levels, $lvl)) {
+		@content;
+	}
+}
+
+@function convert-max($lvl){
+	@if $lvl == "small" {
+		@return "medium"
+	}
+	@else if $lvl == "medium" {
+		@return "big"
+	}
+	@else if $lvl == "big" {
+		@return "huge"
+	}
+	@else if $lvl == "huge" {
+		@return "infinity"
+	}
+}
+
+@mixin max($lvl){
+	@media (max-width: map-get($levels, convert-max($lvl)) - 1px) {
+		@content;
+	}
+}

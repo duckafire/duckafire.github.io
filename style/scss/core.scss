@@ -9,9 +9,9 @@
 @import "responsive/mini";
 
 @media only screen {
-	@media (min-width: layout.$small)    { @import "responsive/small";    }
-	@media (min-width: layout.$medium)   { @import "responsive/medium";   }
-	@media (min-width: layout.$big)      { @import "responsive/big";      }
-	@media (min-width: layout.$huge)     { @import "responsive/huge";     }
-	@media (min-width: layout.$infinity) { @import "responsive/infinity"; }
+	@include layout.min("small")    { @import "responsive/small";    }
+	@include layout.min("medium")   { @import "responsive/medium";   }
+	@include layout.min("big")      { @import "responsive/big";      }
+	@include layout.min("huge")     { @import "responsive/huge";     }
+	@include layout.min("infinity") { @import "responsive/infinity"; }
 }
