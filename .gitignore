@@ -1,5 +1,6 @@
 todo
 TODO
+foo
 foo.*
 
 index.html
@@ -7,5 +8,5 @@ index.html
 html-chunks/
 node_modules/
 
-!css/pure/
-css/*
+!style/css/pure/
+style/css/*

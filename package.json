@@ -6,7 +6,7 @@
   "scripts": {
     "chunks": "./npm-scripts 'build_chunks_html'",
     "index": "./npm-scripts 'build_index_html'",
-    "sass": "./npm-scripts 'build_scss_to_css'",
+    "css": "./npm-scripts 'build_scss_to_css'",
     "html": "./npm-scripts 'build_html'",
     "pre": "./npm-scripts 'build_preprocessors'",
     "ball": "./npm-scripts 'build_all'",

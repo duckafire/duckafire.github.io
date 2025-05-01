@@ -1,2 +1,3 @@
 *.svg binary
 package-lock.json binary
+*.map binary
