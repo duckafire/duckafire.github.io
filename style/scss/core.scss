@@ -1,10 +1,14 @@
 @use "partial/layout";
 
+@import "partial/mixin";
+
 @import "html";
 @import "generic";
 
+/* "mini" is default [mobile FIRST] */
+@import "responsive/mini";
+
 @media only screen {
-	@import "responsive/mini";
 	@media (min-width: layout.$small)    { @import "responsive/small";    }
 	@media (min-width: layout.$medium)   { @import "responsive/medium";   }
 	@media (min-width: layout.$big)      { @import "responsive/big";      }

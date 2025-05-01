@@ -1,0 +1,7 @@
+@mixin borders-shadow($len: 1px, $color: white){
+	box-shadow:
+		 $len -$len $color, /* top-left */
+		-$len -$len $color, /* top-right */
+		 $len  $len $color, /* bottom-right */
+		-$len  $len $color; /* bottom-left */
+}

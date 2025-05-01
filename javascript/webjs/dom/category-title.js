@@ -4,16 +4,24 @@
 class Group {
 	#beforeSpan; #titleH1; #afterSpan; #marginProperty;
 
-	#getClassPrefix(){ return "category-title-" };
+	#getLineClass(specific, isTitle){
+		const chunk = "category-title-";
+		const toAll = chunk + specific;
+
+		if(isTitle)
+			return toAll;
+
+		return toAll + " " + chunk + "line";
+	}
 
 	constructor(htmlData){
 		this.#beforeSpan = document.createElement("span");
 		this.#titleH1    = document.createElement("h1");
 		this.#afterSpan  = document.createElement("span");
 
-		this.#beforeSpan.className = this.#getClassPrefix() + "before";
-		this.#titleH1.className    = this.#getClassPrefix() + "title";
-		this.#afterSpan.className  = this.#getClassPrefix() + "after";
+		this.#beforeSpan.className = this.#getLineClass("before");
+		this.#titleH1.className    = this.#getLineClass("title", true);
+		this.#afterSpan.className  = this.#getLineClass("after");
 
 		this.#titleH1.textContent = htmlData.title;
 		this.#marginProperty = "margin" + ((htmlData.hasMarginTop !== undefined) ? "Top" : "Bottom");

@@ -3,7 +3,7 @@
 	left: 0;
 	padding: 0;
 	margin: 0;
-	font-family: arial, sans, serif, auto;
+	font-family: arial, open-sans, sans-serif, serif, auto;
 	box-sizing: border-box;
 }
 
@@ -21,8 +21,8 @@ a {
 
 img {
 	/* `figure` dimensions */
-	max-width: 100%;
-	max-height: 100%;
+	max-width: inherit;
+	max-height: inherit;
 }
 
 button {
