@@ -9,6 +9,7 @@
 /* "mini" is default [mobile FIRST] */
 @import "responsive/mini";
 
+/*
 @media only screen {
 	@include layout.min("small")    { @import "responsive/small";    }
 	@include layout.min("medium")   { @import "responsive/medium";   }
@@ -16,3 +17,4 @@
 	@include layout.min("huge")     { @import "responsive/huge";     }
 	@include layout.min("infinity") { @import "responsive/infinity"; }
 }
+*/
