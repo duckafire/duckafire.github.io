@@ -4,31 +4,15 @@
   "description": "DuckAfire's Nest: a projects showcase.",
   "main": "index.js",
   "scripts": {
-    "chunks": "./npm-scripts 'build_chunks_html'",
-    "index": "./npm-scripts 'build_index_html'",
     "css": "./npm-scripts 'build_scss_to_css'",
-    "html": "./npm-scripts 'build_html'",
-    "pre": "./npm-scripts 'build_preprocessors'",
-    "ball": "./npm-scripts 'build_all'",
-    "nochunks": "./npm-scripts 'clear_chunks_html'",
-    "noindex": "./npm-scripts 'clear_index_html'",
     "nocss": "./npm-scripts 'clear_css_from_scss'",
-    "noall": "./npm-scripts 'clear_all'",
-    "all": "./npm-scripts 'clear_and_build_all'",
-	"help": "./npm-scripts 'help_npm_scripts'",
+    "help": "./npm-scripts 'help_npm_scripts'",
     "dev": "./npm-scripts 'run_localhost_server'"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/duckafire/nest.git"
   },
-  "keywords": [
-    "duckafire",
-    "nest",
-    "showcase",
-    "projects",
-    "frontend"
-  ],
   "author": "DuckAfire",
   "license": "GPL-3.0",
   "bugs": {

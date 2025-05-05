@@ -5,7 +5,6 @@ foo.*
 
 index.html
 
-html-chunks/
 node_modules/
 
 !style/css/pure/

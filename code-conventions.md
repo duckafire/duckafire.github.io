@@ -1,9 +1,9 @@
 # Code conventions
 
-> [HTML](#html) | [CSS](#css) | [SCSS](#scss) | [WebJS](#webjs) | [NodeJS](#nodejs)
+> [HTML](#html) | [CSS](#css) | [SCSS](#scss) | [JS](#js)
 
 > [!IMPORTANT]
-> CSS/WebJS rules apply to SCSS/NodeJS.
+> CSS rules apply to SCSS.
 
 ## HTML
 
@@ -33,7 +33,7 @@
 3. After processing, all rules must be present in `core.css`.
 4. Variables must be to store only not dynamic values.
 
-## WebJS
+## JS
 
 1. The identifiers must follow the *case styles* below:
 * `camelCase`: variables; arrays; objects; parameters.
@@ -51,9 +51,3 @@
 10. All properties must be declared inside *constructors*.
 11. `this.` must be used to prefix all use of class properties.
 12. Use semicolon based in C rules.
-
-## NodeJS
-
-1. They only must be used to create *HTML chunks*.
-2. New scripts must be stored in `nodejs/create/`.
-3. Script arguments were not be required.

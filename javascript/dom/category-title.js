@@ -28,7 +28,7 @@ class Group {
 	}
 
 	insert_all_in(dest){
-		dest.style[this.#marginProperty] = get_css_variable("main .projects-cards", "--projects-cards-padding");
+		dest.style[this.#marginProperty] = Get.css_var("main .projects-cards", "--projects-cards-padding");
 
 		dest.appendChild(this.#beforeSpan);
 		dest.appendChild(this.#titleH1);
