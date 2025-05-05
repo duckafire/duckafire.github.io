@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+	<title id ="page-title">DuckAfire's Nest</title>
+	<link rel="icon" href="./resources/images/foo.svg" />
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"/>
+	<script src="https://kit.fontawesome.com/7d914c2988.js" crossorigin="anonymous" async="async"></script>
+
+	<link rel="stylesheet" href="./style/css/pure/colors.css"/>
+	<link rel="stylesheet" href="./style/css/pure/variables.css"/>
+	<link rel="stylesheet" href="./style/css/core.css"/>
+</head>
+<body class="inherit-screen-dimensions minimum-width">
+	<nav class="flex-topbar">
+		<figure class="home-image circle-radius main-navbar-items">
+			<img src="./resources/images/foo.svg" alt=" " />
+		</figure>
+
+		<ul class="horizontal-flex-list no-style-list">
+			<li class="navbar-item"><a href="#"><i class="fa-brands fa-github"  ></i></a></li>
+			<li class="navbar-item"><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+			<li class="navbar-item"><a href="#"><i class="fa-brands fa-itch-io" ></i></a></li>
+		</ul>
+	</nav>
+
+	<div>
+		<div class="lined-title-container" data-title="Destaques"></div>
+
+		<section class="horizontal-swiper">
+			<ul id="highlight-projects-cards-container" class="swiper-wrapper no-style-list"></ul>
+			<button id="swiper-btn-prev" class="btn-prev circle-radius"></button>
+			<button id="swiper-btn-next" class="btn-next circle-radius"></button>
+		</section>
+
+		<div class="lined-title-container" data-title="Projetos"></div>
+
+		<main>
+			<ul id="projects-cards-container" class="projects-cards no-style-list"></ul>
+		</main>
+	</div>
+
+	<footer class="page-footer minimum-screen-width">
+		<ul class="links-list no-style-list"></ul>
+	</footer>
+</body>
+
+<!-- import/conf. js libs -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="./javascript/import-config/swiper.js"></script>
+
+<!-- global identifiers -->
+<script src="./javascript/constants.js"></script>
+<script src="./javascript/data.json.js"></script>
+
+<!-- increment html -->
+<script src="./javascript/dom/lined-title.js"></script>
+<script src="./javascript/dom/all-cards.js"></script>
+<script src="./javascript/dom/footer-chunks.js"></script>
+
+<!-- real-time manipulation -->
+<script src="./javascript/responsive-layout.js"></script>
+<script src="./javascript/events.js"></script>
+
+</html>

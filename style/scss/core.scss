@@ -2,11 +2,7 @@
 
 @import "partial/mixin";
 
-@import "on-off";
-@import "html";
-@import "generic";
-
-/* "mini" is default [mobile FIRST] */
+@import "default";
 @import "responsive/mini";
 
 /*

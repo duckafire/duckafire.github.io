@@ -3,8 +3,6 @@ TODO
 foo
 foo.*
 
-index.html
-
 node_modules/
 
 !style/css/pure/
