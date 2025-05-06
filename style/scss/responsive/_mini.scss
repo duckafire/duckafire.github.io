@@ -1,171 +1,96 @@
-.main-navbar {
-	width: 100%;
-	height: var(--main-navbar-height);
+* {
+	padding: 0;
+	margin: 0;
+	font-family: arial, open-sans, sans-serif, serif, auto;
+	box-sizing: border-box;
+}
+
+.no-std-style {
+	text-decoration: none;
+	list-style-type: none;
+	background: none;
+	border: none;
+	color: inherit;
+	font: inherit;
+	cursor: auto;
+}
+
+.main-container {
+	color: var(--color-body-text-font);
+	background-color: var(--color-body-bg);
+}
+
+.screen-dim {
+	width: 100vw;
+	height: 100dvh;
+}
+
+.foo-color {
+	background-color: var(--color-foo-one);
+}
+
+.title-fsize {
+	font-size: 1.5rem !important;
+}
+
+.generic-link {
+	font-size: 1em;
+	color: orange;
+
+	&:hover {
+		cursor: pointer;
+		color: red;
+	}
+
+	&:active {
+		cursor: default;
+		color: yellow;
+	}
+}
+
+.interation-transform{
+	&:hover {
+		cursor: pointer;
+		transform: scale(1.1);
+	}
+
+	&:active {
+		cursor: default;
+		transform: scale(0.9);
+	}
+}
+
+.active-090:active {
+	
+}
+
+.flex-topbar {
 	display: flex;
 	justify-content: space-between;
+	padding: 1.75% 2.5%;
 	align-items: center;
-	position: sticky;
-	background-color: var(--color-foo-one);
-	z-index: 9999;
-	font-size: var(--main-navbar-font-size);
-	padding-inline: 0.25em 0.76em;
 }
 
-.main-navbar .home-image {
-	width: calc(var(--main-navbar-height) * 0.8);
-	height: calc(var(--main-navbar-height) * 0.8);
+.horiz-list {
+	display: flex;
+	gap: 0.75em;
+	font-size: 1em;
+
+	& .horiz-list-item {
+		font-size: inherit;
+	}
+}
+
+.unflex {
 	flex: none;
 }
 
-.main-navbar .links-list {
-	display: flex;
-	gap: 0.67em;
-	font-size: 1em;
-}
-
-.main-navbar .main-navbar-items:hover {
-	cursor: pointer;
-	transform: scale(1.1);
-}
-
-.hi-projects-cards {
-	width: 100%;
-	height: calc(var(--hi--projects-cards-height) + var(--hi--projects-cards-padding-block) * 2);
+.circle-radius {
+	border-radius: 50%;
 	overflow: hidden;
-	padding-block: var(--hi--projects-cards-padding-block);
 }
 
-.hi-projects-cards .swiper-slide {
-	width: 120px;
-}
-
-.hi-projects-cards [class^=custom-swiper-button] {
-	position: absolute;
-	background-color: var(--color-foo-thr);
-	z-index: 9999;
-	opacity: 0.4;
-}
-
-@media only screen {
-	@media (max-width: calc(600px - 1px)), (min-width: 1025px) {
-		.hi-projects-cards [class^=custom-swiper-button] {
-			width: 25%;
-			height: 100%;
-		}
-
-		.hi-projects-cards .custom-swiper-button-next {
-			margin-left: 75%;
-		}
-	}
-}
-
-.hi-projects-cards .hi-card {
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	padding: 5% 2.5%;
-	gap: 1rem;
-	background-color: var(--color-foo-one);
-	font-size: 1.2rem; /* TODO: size based itself length */
-}
-
-.hi-projects-cards .hi-card h1 {
-	margin: auto;
-	text-align: center;
-	font-size: 1em;
-}
-
-.hi-projects-cards .hi-card figure {
-	width: 64px;
-	height: 64px;
-	flex: none;
-	margin: auto;
-}
-
-.hi-projects-cards .hi-card,
-.projects-cards .card {
-	border-radius: 16px;
-}
-
-.projects-cards {
-	width: 100%;
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: var(--projects-cards-padding);
-	margin-bottom: calc(var(--projects-cards-padding) * 1.35);
-}
-
-.projects-cards .co-cards {
-	width: 272px;
-	margin-inline: auto;
-}
-
-.projects-cards .card {
-	width: var(--cards-width);
-	background-color: var(--color-foo-one);
-	display: flex;
-	flex: none;
-	padding: 5%;
-	gap: 5%;
-	justify-content: space-between;
-	font-size: 1rem;
-}
-
-.projects-cards .card:hover {
-	cursor: pointer;
-	transform: scale(1.05);
-}
-
-.projects-cards .card figure {
-	width: 100px;
-	height: 100px;
-}
-
-@media only screen {
-	@media (min-width: 801px) {
-		.projects-cards .card-descr-short {
-			display: none;
-		}
-	}
-	@media (max-width: calc(801px - 1px)){
-		 .projects-cards .card-descr-full {
-			display: none;
-		}
-	}
-}
-
-.page-footer {
-	width: 100%;
-	background-color: var(--color-foo-one);
-	padding: 0.5rem;
-}
-
-.page-footer .links-list {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	gap: 0.5rem;
-	font-size: 0.8rem;
-}
-
-.page-footer .title,
-.page-footer .link {
-	display: block;
-	width: max-content;
-}
-
-.page-footer .title {
-	font-size: 1em;
-}
-
-.page-footer .link {
-	font-size: 0.9em;
-}
-
-@media only screen {
-	@media (max-width: calc(600px - 1px)), (min-width: 1025px) {
-		.co-hi-projects-cards-table-layout {
-			display: none !important;
-		}
-	}
+.double-board {
+	border: 1px solid black;
+	@include borders-shadow(1px);
 }
