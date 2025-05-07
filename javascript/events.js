@@ -39,4 +39,26 @@ const window_resized = () => {
 window.addEventListener("DOMContentLoaded", window_resized);
 window.addEventListener("resize",           window_resized);
 
+const open_close_main_burger = (openBurger) => {
+	const hide = (item) => { item.classList.add("hidden") }
+	const show = (item) => { item.classList.remove("hidden") }
+
+	let outContent = hide;
+	let insContent = show;
+
+	if(openBurger){
+		outContent = show;
+		insContent = hide;
+	}
+
+	document.querySelectorAll(".ins-main-burger").forEach((item) => { outContent(item); });
+	document.querySelectorAll(".out-main-burger").forEach((item) => { insContent(item); });
+}
+
+document.getElementById("open-main-burger")
+	.addEventListener("click", () => { open_close_main_burger(true) });
+
+document.getElementById("close-main-burger")
+	.addEventListener("click", () => { open_close_main_burger(false) });
+
 }

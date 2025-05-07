@@ -16,27 +16,61 @@
 	<link rel="stylesheet" href="./style/css/core.css"/>
 </head>
 <body class="main-container screen-dim min-screen">
-	<nav class="flex-topbar foo-color">
-		<img class="double-board unflex circle-radius interation-transform" width="50" src="./resources/images/foo.svg" alt=" " />
 
-		<ul class="no-std-style horiz-list unflex title-fsize">
-			<li class="horiz-list-item interation-transform">
-				<a class="no-std-style generic-link" href="#">
-					<i class="fa-brands fa-github"></i>
+	<div class="col-flex inherit-dim">
+
+		<nav class="foo-color base-to-abs">
+
+			<section class="topbar base-to-abs out-main-burger">
+				<img class="double-board inflexible circle-radius interation-transform logo-dim" src="./resources/images/foo.svg" alt=" " />
+
+				<a id="open-main-burger" class="no-std-style generic-link topbar-item inflexible interation-transform" href="#">
+					<i class="fa-solid fa-bars"></i>
 				</a>
-			</li>
-			<li class="horiz-list-item interation-transform">
-				<a class="no-std-style generic-link" href="#">
-					<i class="fa-brands fa-linkedin"></i>
-				</a>
-			</li>
-			<li class="horiz-list-item interation-transform">
-				<a class="no-std-style generic-link" href="#">
-					<i class="fa-brands fa-itch-io"></i>
-				</a>
-			</li>
-		</ul>
-	</nav>
+			</section>
+
+			<section class="foo-color ins-main-burger hidden abs-0x0 inherit-dim">
+				<ul class="no-std-style grid-col4 inherit-dim children-on-center">
+					<li class="horiz-list-item interation-transform">
+						<a class="no-std-style generic-link title-fsize" href="#">
+							<i class="fa-brands fa-github"></i>
+						</a>
+					</li>
+					<li class="horiz-list-item interation-transform">
+						<a class="no-std-style generic-link title-fsize" href="#">
+							<i class="fa-brands fa-linkedin"></i>
+						</a>
+					</li>
+					<li class="horiz-list-item interation-transform">
+						<a class="no-std-style generic-link title-fsize" href="#">
+							<i class="fa-brands fa-itch-io"></i>
+						</a>
+					</li>
+					<li id="close-main-burger" class="horiz-list-item interation-transform">
+						<a class="no-std-style generic-link title-fsize" href="#">
+							<i class="fa-solid fa-xmark"></i>
+						</a>
+					</li>
+				</ul>
+			</section>
+
+		</nav>
+
+		<aside class="foo-color2 ins-main-burger hidden fill-flex static-pos">
+			<ul class="no-std-style text-on-center col-flex vert-gap">
+				<li class="inline burger-link">
+					<a class="no-std-style subtitle-fsize" href="#">Foo</a>
+				</li>
+				<li class="inline burger-link">
+					<a class="no-std-style subtitle-fsize" href="#">Foo</a>
+				</li>
+				<li class="inline burger-link">
+					<a class="no-std-style subtitle-fsize" href="#">Foo</a>
+				</li>
+			</ul>
+		</aside>
+
+	</div>
 
 	<!--
 	<div>

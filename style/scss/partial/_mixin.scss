@@ -6,7 +6,11 @@
 		(-$len)   $len  $color; /* bottom-left */
 }
 
-@mixin mirror-dim($dim){
-	width: $dim;
+@mixin mirror-dim($dim, $min: 0, $max: none){
+	width:  $dim;
 	height: $dim;
+	min-width:  $min;
+	min-height: $min;
+	max-width:  $max;
+	max-height: $max;
 }

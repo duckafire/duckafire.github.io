@@ -1,6 +1,19 @@
+/* TODO: remove */
+.foo-color {
+	background-color: var(--color-foo-one);
+}
+.foo-color2 {
+	background-color: var(--color-foo-two);
+}
+.foo-color3 {
+	background-color: var(--color-foo-thr);
+}
+/* TODO: remove */
+
 * {
 	padding: 0;
 	margin: 0;
+	border: none;
 	font-family: arial, open-sans, sans-serif, serif, auto;
 	box-sizing: border-box;
 }
@@ -25,12 +38,57 @@
 	height: 100dvh;
 }
 
-.foo-color {
-	background-color: var(--color-foo-one);
+.title-fsize {
+	font-size: 1.75rem !important;
 }
 
-.title-fsize {
-	font-size: 1.5rem !important;
+
+.subtitle-fsize {
+	font-size: 1.4rem !important;
+}
+
+.ins-main-burger.hidden {
+	display: none;
+}
+
+.out-main-burger.hidden {
+	visibility: hidden;
+}
+
+.min-screen {
+	min-width: 320px;
+}
+
+.base-to-abs {
+	position: relative;
+}
+
+.abs-0x0 {
+	top: 0;
+	left: 0;
+	position: absolute;
+}
+
+.flex {
+	display: flex;
+}
+
+.col-flex {
+	display: flex;
+	flex-direction: column;
+}
+
+.fill-flex {
+	flex: 1;
+	@include mirror-dim(inherit);
+}
+
+.static-pos {
+	position: static;
+}
+
+.inline {
+	display: inline;
 }
 
 .generic-link {
@@ -43,8 +101,16 @@
 	}
 
 	&:active {
-		cursor: default;
 		color: yellow;
+	}
+}
+
+.burger-link {
+	font-size: 1em;
+
+	&:hover {
+		text-decoration-line: underline;
+		cursor: pointer;
 	}
 }
 
@@ -60,28 +126,34 @@
 	}
 }
 
-.active-090:active {
-	
-}
-
-.flex-topbar {
-	display: flex;
-	justify-content: space-between;
-	padding: 1.75% 2.5%;
-	align-items: center;
-}
-
 .horiz-list {
 	display: flex;
 	gap: 0.75em;
 	font-size: 1em;
 
-	& .horiz-list-item {
+	.horiz-list-item {
 		font-size: inherit;
 	}
 }
 
-.unflex {
+.topbar {
+	display: flex;
+	justify-content: space-between;
+	padding: 0.55rem 0.9rem;
+	align-items: center;
+	font-size: 1rem;
+
+	.logo-dim {
+		@include mirror-dim(3.3em);
+	}
+
+	.horiz-list,
+	.topbar-item {
+		font-size: 1.5em;
+	}
+}
+
+.inflexible {
 	flex: none;
 }
 
@@ -93,4 +165,38 @@
 .double-board {
 	border: 1px solid black;
 	@include borders-shadow(1px);
+}
+
+.inherit-dim {
+	display: block;
+	@include mirror-dim(100%, 100%, 100%);
+}
+
+.margin-align {
+	margin: auto;
+	display: block;
+	width: min-content;
+	height: min-content;
+}
+
+.children-on-center {
+	place-items: center;
+}
+
+.min-dim {
+	@include mirror-dim(min-content, min-content, min-content);
+}
+
+.grid-col4 {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.text-on-center {
+	text-align: center;
+}
+
+.vert-gap {
+	padding: 0.5rem 0;
+	gap: 0.5rem 0;
 }
