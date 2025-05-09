@@ -1,4 +1,4 @@
-/* TODO: remove */
+/* TODO: remove them (temporary) */
 .foo-color {
 	background-color: var(--color-foo-one);
 }
@@ -8,7 +8,8 @@
 .foo-color3 {
 	background-color: var(--color-foo-thr);
 }
-/* TODO: remove */
+
+/* SUPER-GENERIC: they can be replaced */
 
 * {
 	padding: 0;
@@ -28,24 +29,39 @@
 	cursor: auto;
 }
 
-.main-container {
-	color: var(--color-body-text-font);
-	background-color: var(--color-body-bg);
-}
-
-.screen-dim {
-	width: 100vw;
-	height: 100dvh;
-}
+/* IMPORTANT: they cannot be replaced */
 
 .title-fsize {
 	font-size: 1.75rem !important;
 }
 
-
 .subtitle-fsize {
 	font-size: 1.4rem !important;
 }
+
+.flex {
+	display: flex !important;
+}
+
+.static-pos {
+	position: static !important;
+}
+
+.inline {
+	display: inline !important;
+}
+
+.grid-col4 {
+	display: grid !important;
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.flex-col {
+	display: flex !important;
+	flex-direction: column;
+}
+
+/* SINGLE RULE: include single function based */
 
 .ins-main-burger.hidden {
 	display: none;
@@ -56,40 +72,34 @@
 }
 
 .min-screen {
-	min-width: 320px;
+	min-width: layout.$minimum;
 }
 
 .base-to-abs {
 	position: relative;
 }
 
-.abs-0x0 {
-	top: 0;
-	left: 0;
-	position: absolute;
+.inflexible {
+	flex: none;
 }
 
-.flex {
-	display: flex;
+.children-on-center {
+	place-items: center;
 }
 
-.col-flex {
-	display: flex;
-	flex-direction: column;
+.text-on-center {
+	text-align: center;
 }
 
-.fill-flex {
-	flex: 1;
-	@include mirror-dim(inherit);
+.inherit-cursor {
+	cursor: inherit;
 }
 
-.static-pos {
-	position: static;
+.min-dim {
+	@include mirror-dim(min-content, min-content, min-content);
 }
 
-.inline {
-	display: inline;
-}
+/* PSEUDO-X BASED: hover, active, after, before, ... */
 
 .generic-link {
 	font-size: 1em;
@@ -115,13 +125,20 @@
 }
 
 .hi-hover-trans {
-	transition: background-color 0.8s ease;
+	transition: background-color 0.5s ease;
 
 	&:hover {
 		background-color: gray;
 		transition: none;
 		cursor: pointer;
 	}
+}
+
+/* CONTAINER: only for elements that contain no-text elements */
+
+.main-container {
+	color: var(--color-body-text-font);
+	background-color: var(--color-body-bg);
 }
 
 .horiz-list {
@@ -151,8 +168,27 @@
 	}
 }
 
-.inflexible {
-	flex: none;
+.vert-gap {
+	padding: 0.5rem 0;
+	gap: 0.5rem 0;
+}
+
+/* OTHER: they are too specific */
+
+.screen-dim {
+	width: 100vw;
+	height: 100dvh;
+}
+
+.abs-0x0 {
+	top: 0;
+	left: 0;
+	position: absolute;
+}
+
+.fill-flex {
+	flex: 1;
+	@include mirror-dim(inherit);
 }
 
 .circle-radius {
@@ -175,30 +211,4 @@
 	display: block;
 	width: min-content;
 	height: min-content;
-}
-
-.children-on-center {
-	place-items: center;
-}
-
-.min-dim {
-	@include mirror-dim(min-content, min-content, min-content);
-}
-
-.grid-col4 {
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
-}
-
-.text-on-center {
-	text-align: center;
-}
-
-.vert-gap {
-	padding: 0.5rem 0;
-	gap: 0.5rem 0;
-}
-
-.inherit-cursor {
-	cursor: inherit;
 }

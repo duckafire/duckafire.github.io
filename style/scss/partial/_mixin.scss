@@ -7,8 +7,8 @@
 }
 
 @mixin mirror-dim($dim, $min: 0, $max: none){
-	width:  $dim;
-	height: $dim;
+	width:      $dim;
+	height:     $dim;
 	min-width:  $min;
 	min-height: $min;
 	max-width:  $max;
