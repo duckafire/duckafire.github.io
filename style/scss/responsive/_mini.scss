@@ -105,24 +105,22 @@
 	}
 }
 
-.burger-link {
-	font-size: 1em;
-
-	&:hover {
-		text-decoration-line: underline;
-		cursor: pointer;
-	}
+.hover-grow:hover {
+	cursor: pointer;
+	transform: scale(1.1);
 }
 
-.interation-transform{
-	&:hover {
-		cursor: pointer;
-		transform: scale(1.1);
-	}
+.active-shrink:active {
+	transform: scale(0.9);
+}
 
-	&:active {
-		cursor: default;
-		transform: scale(0.9);
+.hi-hover-trans {
+	transition: background-color 0.8s ease;
+
+	&:hover {
+		background-color: gray;
+		transition: none;
+		cursor: pointer;
 	}
 }
 
@@ -199,4 +197,8 @@
 .vert-gap {
 	padding: 0.5rem 0;
 	gap: 0.5rem 0;
+}
+
+.inherit-cursor {
+	cursor: inherit;
 }
