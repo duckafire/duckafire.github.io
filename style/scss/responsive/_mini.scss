@@ -99,7 +99,15 @@
 	@include mirror-dim(min-content, min-content, min-content);
 }
 
-/* PSEUDO-X BASED: hover, active, after, before, ... */
+.scroll-x {
+	overflow-x: auto;
+}
+
+.scroll-y {
+	overflow-y: auto;
+}
+
+/* PSEUDO-X BASED: hover, after, webkit, ... */
 
 .generic-link {
 	font-size: 1em;
@@ -131,6 +139,36 @@
 		background-color: gray;
 		transition: none;
 		cursor: pointer;
+	}
+}
+
+.scroll-x,
+.scroll-y {
+	@supports selector(::-webkit-scrollbar){
+		&::-webkit-scrollbar-track-piece,
+		&::-webkit-scrollbar-track,
+		&::-webkit-scrollbar-button,
+		&::-webkit-scrollbar-corner {
+			display: none;
+		}
+
+		&::-webkit-scrollbar {
+			width: 4px;
+			height: 4px;
+			position: absolute;
+			margin-right: 6rem;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background-color: #999;
+			border-radius: 10px;
+		}
+	}
+
+	@supports not selector(::-webkit-scrollbar) {
+		& {
+			scrollbar-width: thin;
+		}
 	}
 }
 
