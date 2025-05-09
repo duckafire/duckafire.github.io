@@ -5,14 +5,24 @@
 
 declare -r ARG_function="$1"
 
+declare -ri TRUE=0
+declare -ri FALSE=1
+
 declare -r  DIR_CSS="./style/css/"
 declare -r  DIR_SCSS="./style/scss/"
-declare -ra PROTECT_CSS_FILE=("pure")
+declare -ra PROTECT_CSS_FILE=()
+
+is_dir(){
+	test -d "$1" && return $TRUE
+	return $FALSE
+}
 
 
 # BUILD
 
 build_scss_to_css(){
+	is_dir "$DIR_CSS" || mkdir "$DIR_CSS"
+
 	npx sass "$DIR_SCSS:$DIR_CSS"
 }
 
