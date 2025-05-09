@@ -51,9 +51,10 @@
 	display: inline !important;
 }
 
-.grid-col4 {
+.grid-single-row {
+	--grid-items-quant: 1;
 	display: grid !important;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(var(--grid-items-quant), 1fr);
 }
 
 .flex-col {
@@ -109,17 +110,27 @@
 
 /* PSEUDO-X BASED: hover, after, webkit, ... */
 
-.generic-link {
+.generic-link-container {
+	--glink-cont-color-normal: orange;
+	--glink-cont-color-hover:  red;
+	--glink-cont-color-active: yellow;
+}
+
+.generic-link { /* TODO: scss variables to store default colors */
+	--glink-color-normal: var(--glink-cont-color-normal, orange);
+	--glink-color-hover:  var(--glink-cont-color-hover,  red);
+	--glink-color-active: var(--glink-cont-color-active, yellow);
+
 	font-size: 1em;
-	color: orange;
+	color: var(--glink-color-normal);
 
 	&:hover {
 		cursor: pointer;
-		color: red;
+		color: var(--glink-color-hover);
 	}
 
 	&:active {
-		color: yellow;
+		color: var(--glink-color-active);
 	}
 }
 
