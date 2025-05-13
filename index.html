@@ -15,7 +15,7 @@
 </head>
 <body class="main-container screen-dim min-screen">
 
-	<div class="flex-col inherit-dim">
+	<div id="main-topbar-container" class="flex-col">
 
 		<nav class="foo-color base-to-abs">
 
@@ -65,7 +65,8 @@
 
 		</nav>
 
-		<aside class="foo-color2 ins-main-burger hidden fill-flex static-pos scroll-y">
+		<aside class="foo-color2 ins-main-burger hidden fill-flex static-pos scroll-y move-to-forward">
+			<!--
 			<ul class="no-std-style text-on-center flex-col vert-gap">
 				<li class="inline active-shrink hi-hover-trans">
 					<a class="no-std-style subtitle-fsize inherit-cursor inherit-dim" href="#">
@@ -73,9 +74,19 @@
 					</a>
 				</li>
 			</ul>
+			-->
 		</aside>
-
 	</div>
+
+	<main>
+		<div class="lined-title">
+			<h1>Destaques</h1>
+		</div>
+		<div class="lined-title">
+			<h1>Projetos</h1>
+		</div>
+	</main>
+
 </body>
 
 <!-- import/conf. js libs -->

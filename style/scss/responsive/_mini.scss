@@ -1,3 +1,5 @@
+/* GENERIC */
+
 /* TODO: remove them (temporary) */
 .foo-color {
 	background-color: #333;
@@ -9,7 +11,7 @@
 	background-color: #999;
 }
 
-/* SUPER-GENERIC: they can be replaced */
+/* super-generic: they can be replaced */
 
 * {
 	padding: 0;
@@ -29,7 +31,7 @@
 	cursor: auto;
 }
 
-/* IMPORTANT: they cannot be replaced */
+/* important: they cannot be replaced */
 
 .title-fsize {
 	font-size: 1.75rem !important;
@@ -62,7 +64,7 @@
 	flex-direction: column;
 }
 
-/* SINGLE RULE: include single function based */
+/* single rule: include single function based */
 
 .ins-main-burger.hidden {
 	display: none;
@@ -108,7 +110,11 @@
 	overflow-y: auto;
 }
 
-/* PSEUDO-X BASED: hover, after, webkit, ... */
+.move-to-forward {
+	z-index: 9999;
+}
+
+/* pseudo-x based: hover, after, webkit, ... */
 
 .generic-link-container {
 	--glink-cont-color-normal: orange;
@@ -183,7 +189,7 @@
 	}
 }
 
-/* CONTAINER: only for elements that contain no-text elements */
+/* container: only for elements that contain no-text elements */
 
 .main-container {
 	color: #dedede;
@@ -222,7 +228,7 @@
 	gap: 0.5rem 0;
 }
 
-/* OTHER: they are too specific */
+/* other: they are too specific */
 
 .screen-dim {
 	width: 100vw;
@@ -260,4 +266,46 @@
 	display: block;
 	width: min-content;
 	height: min-content;
+}
+
+/* GROUPS */
+
+.lined-title {
+	$gap: 0.4em;
+	$line-radius: 0.2em;
+	$left-line-width: 1em;
+	$text-left: $left-line-width + $gap;
+
+	width: 100%;
+	font-size: 1.1rem;
+	margin-block: 0.33em;
+	overflow-x: hidden;
+
+	h1 {
+		left: $text-left;
+		font-size: 1em;
+		position: relative;
+		display: inline-block;
+	}
+
+	h1::before,
+	h1::after {
+		content: "";
+		margin-top: 0.45em;
+		height: 0.275em;
+		position: absolute;
+		background-color: #333;
+	}
+
+	h1::before {
+		margin-left: -($text-left);
+		width: $left-line-width;
+		border-radius: 0 $line-radius $line-radius 0;
+	}
+
+	h1::after {
+		margin-left: $gap;
+		width: 100vw;
+		border-radius: $line-radius 0 0 $line-radius;
+	}
 }

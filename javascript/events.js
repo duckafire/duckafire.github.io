@@ -43,16 +43,24 @@ const open_close_main_burger = (openBurger) => {
 	const hide = (item) => { item.classList.add("hidden") }
 	const show = (item) => { item.classList.remove("hidden") }
 
+	const container = document.getElementById("main-topbar-container");
+
 	let outContent = hide;
 	let insContent = show;
+	let coProperty = "remove";
+	let boOverflow = "";
 
 	if(openBurger){
 		outContent = show;
 		insContent = hide;
+		coProperty = "add";
+		boOverflow = "hidden";
 	}
 
 	document.querySelectorAll(".ins-main-burger").forEach((item) => { outContent(item); });
 	document.querySelectorAll(".out-main-burger").forEach((item) => { insContent(item); });
+	container.classList[ coProperty ]("inherit-dim");
+	document.body.style.overflowY = boOverflow;
 }
 
 document.getElementById("open-main-burger")
