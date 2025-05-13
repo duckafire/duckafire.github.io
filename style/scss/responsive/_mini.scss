@@ -1,12 +1,12 @@
 /* TODO: remove them (temporary) */
 .foo-color {
-	background-color: var(--color-foo-one);
+	background-color: #333;
 }
 .foo-color2 {
-	background-color: var(--color-foo-two);
+	background-color: #666;
 }
 .foo-color3 {
-	background-color: var(--color-foo-thr);
+	background-color: #999;
 }
 
 /* SUPER-GENERIC: they can be replaced */
@@ -186,8 +186,8 @@
 /* CONTAINER: only for elements that contain no-text elements */
 
 .main-container {
-	color: var(--color-body-text-font);
-	background-color: var(--color-body-bg);
+	color: #dedede;
+	background-color: #000;
 }
 
 .horiz-list {
