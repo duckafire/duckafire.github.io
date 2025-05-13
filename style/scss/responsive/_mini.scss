@@ -310,6 +310,55 @@
 	}
 }
 
+.manual-vertical-swiper {
+	width: 100%;
+	height: 180px;
+	background-color: #1f1f1f;
+}
+
+.highlight-projects-list {
+	$card-width: 140px;
+	$cover-dim: $card-width * 0.5;
+
+	@include mirror-dim(inherit);
+
+	.highlight-card {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: $cover-dim auto 1.3rem;
+		place-items: center;
+		gap: 7.5px;
+		width: $card-width;
+		height: inherit;
+		background-color: #4f4f4f;
+		padding: 15px 7.5px;
+		border-radius: 12.5px;
+		overflow-x: hidden;
+	}
+
+	.highlight-card-cover {
+		@include mirror-dim($cover-dim);
+		flex: none;
+	}
+
+	.highlight-card-title-container {
+		width: 90%;
+		overflow-x: hidden;
+		text-align: center;
+	}
+
+	.highlight-card-title {
+		font-size: 1.421rem;
+	}
+
+	.highlight-card-tech {
+		display: flex;
+		justify-content: space-between;
+		font-size: 1.1rem;
+		width: 80%;
+	}
+}
+
 .projects-list {
 	$card-height: 125px;
 
@@ -348,7 +397,6 @@
 			font-size: 0.75em;
 		}
 	}
-
 
 	.card-hr {
 		width: 2.75px;
