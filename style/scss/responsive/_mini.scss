@@ -309,3 +309,59 @@
 		border-radius: $line-radius 0 0 $line-radius;
 	}
 }
+
+.projects-list {
+	$card-height: 125px;
+
+	list-style-type: none;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	padding: 2% 5% 0 5%;
+
+	.card {
+		display: flex;
+		align-items: center;
+		width: auto;
+		height: $card-height;
+		background-color: #333;
+		border-radius: 12.5px;
+	}
+
+	.card-text-field {
+		font-size: 1rem;
+		padding: 0.5em;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1.25em;
+		height: $card-height;
+
+		h1, p {
+			place-self: center;
+		}
+
+		h1 {
+			font-size: 1.1em;
+		}
+
+		p {
+			font-size: 0.75em;
+		}
+	}
+
+
+	.card-hr {
+		width: 2.75px;
+		height: $card-height * 0.8;
+		margin-block: $card-height * 0.1;
+		background-color: #999;
+		flex: none;
+		border-radius: 15px;
+	}
+
+	.card-cover {
+		@include mirror-dim(75px);
+		margin-inline: 10px;
+		flex: none;
+	}
+}
