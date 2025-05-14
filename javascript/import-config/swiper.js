@@ -1,39 +1,33 @@
 "use strict";
 { // start
 
-const point = (dir, spa) => ({direction: (dir == "h") ? "horizontal" : "vertical", spaceBetween: spa});
+// TODO add lazy loading
 
-new Swiper(".hi-projects-cards", {
-	// TODO add lazy loading
+new Swiper(".manual-vertical-swiper", {
 	centeredSlides: true,
 	preventClicks: true,
 	preventClicksPropagation: true,
+
 	allowTouchMove: false,
 
 	slidesPerView: "auto",
-
 	effect: "coverflow",
+
+	spaceBetween: 50,
+
 	coverflowEffect: {
 		rotate: 0,
 		slideShadows: false,
 	},
 
 	navigation: {
-		prevEl: "#custom-swiper-button-prev",
-		nextEl: "#custom-swiper-button-next",
+		prevEl: ".vertical-swiper-btn-prev",
+		nextEl: ".vertical-swiper-btn-next",
 	},
 
 	a11y: {
 		prevSlideMessage: "Ir para o cartão anterior",
 		nextSlideMessage: "Ir para o próximo cartão",
-	},
-
-	breakpoints: {
-		0:    { ...point("h", 48) },
-		480:  { ...point("h", 40) },
-		600:  { ...point("v", 50) },
-		801:  { ...point("v", 50) },
-		1025: { ...point("h", 180) },
 	},
 });
 

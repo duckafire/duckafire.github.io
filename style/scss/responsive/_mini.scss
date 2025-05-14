@@ -314,6 +314,28 @@
 	width: 100%;
 	height: 180px;
 	background-color: #1f1f1f;
+	overflow-x: hidden;
+
+	.swiper-slide {
+		width: min-content !important;
+	}
+
+	.swiper-btn-container {
+		top: 0;
+		display: flex;
+		width: 100%;
+		height: inherit;
+		justify-content: space-between;
+		position: absolute;
+		z-index: 9999;
+		opacity: 0.4;
+	}
+	
+	[class^=vertical-swiper-btn] {
+		background-color: #777;
+		width: 25%;
+		height: inherit;
+	}
 }
 
 .highlight-projects-list {
