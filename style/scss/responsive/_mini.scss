@@ -426,20 +426,22 @@
 		}
 	}
 
-	.card-hr {
-		width: 2.75px;
-		height: $card-height * 0.8;
-		margin-block: $card-height * 0.1;
-		background-color: #999;
-		flex: none;
-		border-radius: 15px;
-	}
-
 	.card-cover {
 		@include mirror-dim(75px);
 		margin-inline: 10px;
 		flex: none;
 	}
+}
+
+.vertical-line {
+	--parent-height: 0;
+
+	width: 2.75px;
+	height: calc(var(--parent-height) * 0.8);
+	margin-block: calc(var(--parent-height) * 0.1);
+	background-color: #999;
+	flex: none;
+	border-radius: 15px;
 }
 
 .page-footer {
