@@ -1,36 +1,10 @@
 $minimum: 320px;
 
-$levels: (
-	"small":    480px,
-	"medium":   600px,
-	"big":      801px,
-	"huge":     1025px,
-	"infinity": 1281px,
-);
-
-@mixin min($lvl){
-	@media (min-width: map-get($levels, $lvl)) {
-		@content;
+@mixin min($layout){
+	@if $layout == "table" {
+		@media (min-width: 600px) { @content; }
 	}
-}
-
-@function convert-max($lvl){
-	@if $lvl == "small" {
-		@return "medium"
-	}
-	@else if $lvl == "medium" {
-		@return "big"
-	}
-	@else if $lvl == "big" {
-		@return "huge"
-	}
-	@else if $lvl == "huge" {
-		@return "infinity"
-	}
-}
-
-@mixin max($lvl){
-	@media (max-width: map-get($levels, convert-max($lvl)) - 1px) {
-		@content;
+	@else{
+		@media (min-width: 1025px) { @content; }
 	}
 }
