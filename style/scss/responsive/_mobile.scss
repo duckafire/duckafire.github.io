@@ -117,7 +117,7 @@
 }
 
 .inherit-width {
-	width: inherit;
+	width: 100%;
 }
 
 /* pseudo-x based: hover, after, webkit, ... */
@@ -249,7 +249,7 @@
 
 .fill-flex {
 	flex: 1;
-	@include mirror-dim(inherit);
+	@include mirror-dim(100%);
 }
 
 .circle-radius {
@@ -331,7 +331,7 @@
 		top: 0;
 		display: flex;
 		width: 100%;
-		height: inherit;
+		height: 100%;
 		justify-content: space-between;
 		position: absolute;
 		z-index: 9999;
@@ -341,7 +341,7 @@
 	[class^=vert-swiper-btn] {
 		background-color: #777;
 		width: 25%;
-		height: inherit;
+		height: 100%;
 	}
 }
 
@@ -349,7 +349,7 @@
 	$card-width: 140px;
 	$cover-dim: $card-width * 0.5;
 
-	@include mirror-dim(inherit);
+	@include mirror-dim(100%);
 
 	.highlight-card {
 		display: grid;
@@ -358,7 +358,7 @@
 		place-items: center;
 		gap: 7.5px;
 		width: $card-width;
-		height: inherit;
+		height: 100%;
 		background-color: #4f4f4f;
 		padding: 15px 7.5px;
 		border-radius: 12.5px;
@@ -427,7 +427,7 @@
 
 		p {
 			font-size: 0.75em;
-			@include mirror-dim(inherit);
+			@include mirror-dim(100%);
 			overflow-y: auto;
 			display: block;
 		}
