@@ -316,7 +316,7 @@
 	}
 }
 
-.manual-vertical-swiper {
+.manual-vert-swiper {
 	width: 100%;
 	max-width: 600px;
 	height: 180px;
@@ -338,7 +338,7 @@
 		opacity: 0.4;
 	}
 	
-	[class^=vertical-swiper-btn] {
+	[class^=vert-swiper-btn] {
 		background-color: #777;
 		width: 25%;
 		height: inherit;
@@ -444,14 +444,14 @@ $line-fix-len: 2.75px;
 @function line-dyn-len($v) { @return calc(var(#{$v}) * 0.8) }
 @function line-dmargin($v) { @return calc(var(#{$v}) * 0.1) }
 
-.vertical-line,
-.horizontal-line {
+.vert-line,
+.hori-line {
 	background-color: #999;
 	flex: none;
 	border-radius: 15px;
 }
 
-.horizontal-line {
+.hori-line {
 	--parent-width: 0;
 
 	width: line-dyn-len("--parent-width");
@@ -459,7 +459,7 @@ $line-fix-len: 2.75px;
 	margin-inline: line-dmargin("--parent-width");
 }
 
-.vertical-line {
+.vert-line {
 	--parent-height: 0;
 
 	width: var(--line-width, $line-fix-len);

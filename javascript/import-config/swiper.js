@@ -3,7 +3,7 @@
 
 // TODO add lazy loading
 
-new Swiper(".manual-vertical-swiper", {
+new Swiper(".manual-vert-swiper", {
 	centeredSlides: true,
 	preventClicks: true,
 	preventClicksPropagation: true,
@@ -21,8 +21,8 @@ new Swiper(".manual-vertical-swiper", {
 	},
 
 	navigation: {
-		prevEl: ".vertical-swiper-btn-prev",
-		nextEl: ".vertical-swiper-btn-next",
+		prevEl: ".vert-swiper-btn-prev",
+		nextEl: ".vert-swiper-btn-next",
 	},
 
 	a11y: {
