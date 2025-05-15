@@ -1,3 +1,24 @@
+.lined-title {
+	$gap: 0.4em;
+
+	text-align: center;
+	margin-block: 0.66em;
+
+	h1 {
+		left: 0;
+	}
+
+	h1::before,
+	h1:after {
+		width: 50vw;
+	}
+
+	h1::before {
+		left: -50vw;
+		margin-left: -($gap);
+	}
+}
+
 .page-footer {
 	grid-template-columns: repeat(2, 1fr);
 }
