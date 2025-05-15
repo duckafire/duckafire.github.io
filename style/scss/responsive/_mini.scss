@@ -53,10 +53,12 @@
 	display: inline !important;
 }
 
-.grid-single-row {
-	--grid-items-quant: 1;
+.grid {
+	--grid-rows: 1;
+	--grid-columns: 1;
 	display: grid !important;
-	grid-template-columns: repeat(var(--grid-items-quant), 1fr);
+	grid-template-columns: repeat(var(--grid-columns), 1fr);
+	grid-template-rows: repeat(var(--grid-rows), 1fr);
 }
 
 .flex-col {
@@ -112,6 +114,10 @@
 
 .move-to-forward {
 	z-index: 9999;
+}
+
+.inherit-width {
+	width: inherit;
 }
 
 /* pseudo-x based: hover, after, webkit, ... */
@@ -388,7 +394,7 @@
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	padding: 2% 5% 0 5%;
+	padding: 2% 5% 6% 5%;
 
 	.card {
 		display: flex;
@@ -433,5 +439,41 @@
 		@include mirror-dim(75px);
 		margin-inline: 10px;
 		flex: none;
+	}
+}
+
+.page-footer {
+	display: grid;
+	width: 100%;
+	font-size: 1rem;
+	padding: 0.3em 0.4em 0.4em 0.525em;
+	background-color: #333;
+
+	.footer-cell {
+		display: flex;
+		flex-direction: column;
+		gap: 0.1725em;
+		margin-block: 0.475em;
+		list-style-type: none;
+		text-align: center;
+	}
+
+	h1 {
+		font-size: 1em;
+		margin-bottom: 0.25em;
+	}
+
+	h2 {
+		font-size: 0.8em;
+	}
+
+	a {
+		text-decoration: none;
+		color: inherit;
+
+		&:hover {
+			text-decoration: underline;
+			cursor: pointer;
+		}
 	}
 }
