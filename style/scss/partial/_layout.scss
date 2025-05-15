@@ -1,10 +1,22 @@
 $minimum: 320px;
 
+$table: 600px;
+$computer: 1025px;
+
 @mixin min($layout){
 	@if $layout == "table" {
-		@media (min-width: 600px) { @content; }
+		@media (min-width: 600px) { @content }
 	}
-	@else{
-		@media (min-width: 1025px) { @content; }
+	@else{ /* computer */
+		@media (min-width: 1025px) { @content }
+	}
+}
+
+@mixin max($layout){
+	@if $layout == "mobile" {
+		@media (max-width: $table - 1) { @content }
+	}
+	@else { /* table */
+		@media (max-width: $computer - 1) { @content }
 	}
 }

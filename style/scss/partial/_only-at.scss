@@ -1,0 +1,23 @@
+@include layout.min("table") {
+	.only-at-mobile {
+		display: none !important;
+	}
+}
+
+@include layout.max("mobile") {
+	.only-at-table {
+		display: none !important;
+	}
+}
+
+@include layout.min("computer") {
+	.only-at-table {
+		display: none !important;
+	}
+}
+
+@include layout.max("table") {
+	.only-at-computer {
+		display: none !important;
+	}
+}
