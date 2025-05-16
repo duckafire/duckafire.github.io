@@ -17,9 +17,9 @@
 
 	<div id="main-topbar-container" class="flex-col">
 
-		<nav class="foo-color base-to-abs">
+		<nav class="relative-pos">
 
-			<section class="topbar base-to-abs out-main-burger">
+			<section class="foo-color topbar relative-pos out-main-burger">
 				<img class="double-board inflexible circle-radius hover-grow active-shrink logo-dim" src="./resources/images/foo.svg" alt=" " />
 
 				<a id="open-main-burger" class="no-std-style generic-link topbar-item inflexible hover-grow active-shrink" href="#"
@@ -32,30 +32,43 @@
 				</a>
 			</section>
 
-			<section class="foo-color ins-main-burger hidden abs-0x0 inherit-dim">
-				<ul class="no-std-style grid inherit-dim children-on-center generic-link-container"
+			<section class="foo-color ins-main-burger hidden abs-0x0 inherit-dim
+					tb:set-left tb:set-width tb:no-min-max-dim
+				" style="
+					--tb-left: calc(100% - 450px);
+					--tb-width: 450px;
+				">
+				<ul class="no-std-style grid inherit-dim children-on-center generic-link-container
+						tb:block-dis"
 					style="
 						--grid-columns: 4;
 						--glink-cont-color-normal: orange;
 						--glink-cont-color-hover: red;
 						--glink-cont-color-active: yellow;
 					">
-					<li class="horiz-list-item hover-grow active-shrink">
+					<!-- url button -->
+					<li class="horiz-list-item hover-grow active-shrink only-at-mobile">
 						<a class="no-std-style generic-link title-fsize" href="#">
 							<i class="fa-brands fa-github"></i>
 						</a>
 					</li>
-					<li class="horiz-list-item hover-grow active-shrink">
+					<li class="horiz-list-item hover-grow active-shrink only-at-mobile">
 						<a class="no-std-style generic-link title-fsize" href="#">
 							<i class="fa-brands fa-linkedin"></i>
 						</a>
 					</li>
-					<li class="horiz-list-item hover-grow active-shrink">
+					<li class="horiz-list-item hover-grow active-shrink only-at-mobile">
 						<a class="no-std-style generic-link title-fsize" href="#">
 							<i class="fa-brands fa-itch-io"></i>
 						</a>
 					</li>
-					<li id="close-main-burger" class="horiz-list-item hover-grow active-shrink">
+					<!-- close burger menu -->
+					<li id="close-main-burger" class="horiz-list-item hover-grow active-shrink
+						tb:text-on-center tb:set-single-padding tb:inherit-height"
+						style="
+							--tb-padding-top: 18.425px;
+						"
+						>
 						<a class="no-std-style generic-link title-fsize" href="#">
 							<i class="fa-solid fa-xmark"></i>
 						</a>
@@ -65,8 +78,12 @@
 
 		</nav>
 
-		<aside class="foo-color2 ins-main-burger hidden fill-flex static-pos scroll-y move-to-forward">
-			<!--
+		<aside class="foo-color2 ins-main-burger hidden fill-flex static-pos scroll-y move-to-forward
+				tb:set-left tb:set-width tb:relative-pos
+			" style="
+				--tb-left: calc(100% - 450px);
+				--tb-width: 450px;
+			">
 			<ul class="no-std-style text-on-center flex-col vert-gap">
 				<li class="inline active-shrink hi-hover-trans">
 					<a class="no-std-style subtitle-fsize inherit-cursor inherit-dim" href="#">
@@ -74,7 +91,6 @@
 					</a>
 				</li>
 			</ul>
-			-->
 		</aside>
 	</div>
 
