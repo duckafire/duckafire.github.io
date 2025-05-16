@@ -2,11 +2,19 @@
 	.only-at-mobile {
 		display: none !important;
 	}
+
+	.only-at-mobile-v {
+		visibility: hidden !important;
+	}
 }
 
 @include layout.max("mobile") {
 	.only-at-table {
 		display: none !important;
+	}
+
+	.only-at-table-v {
+		visibility: hidden !important;
 	}
 }
 
@@ -14,10 +22,18 @@
 	.only-at-table {
 		display: none !important;
 	}
+
+	.only-at-table-v {
+		visibility: hidden !important;
+	}
 }
 
 @include layout.max("table") {
 	.only-at-computer {
 		display: none !important;
+	}
+
+	.only-at-computer-v {
+		visibility: hidden !important;
 	}
 }
