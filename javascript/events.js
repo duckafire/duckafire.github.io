@@ -6,12 +6,9 @@ let currentLayout = null;
 
 const check_all_layouts = (cur) => {
 	return (
-		(cur == Layout.mini     && lastLayout != Layout.mini)   ||
-		(cur == Layout.small    && lastLayout != Layout.small)  ||
-		(cur == Layout.medium   && lastLayout != Layout.medium) ||
-		(cur == Layout.big      && lastLayout != Layout.big)    ||
-		(cur == Layout.huge     && lastLayout != Layout.huge)   ||
-		(cur == Layout.infinity && lastLayout != Layout.infinity)
+		(cur == Layout.mobile   && lastLayout != Layout.mobile)   ||
+		(cur == Layout.table    && lastLayout != Layout.table)    ||
+		(cur == Layout.computer && lastLayout != Layout.computer)
 	);
 }
 

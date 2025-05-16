@@ -5,22 +5,14 @@ const Get = new class{
 };
 
 const Layout = new class{
-	get mini    (){ return 0; }
-	get small   (){ return 1; }
-	get medium  (){ return 2; }
-	get big     (){ return 3; }
-	get huge    (){ return 4; }
-	get infinity(){ return 5; }
+	get mobile  (){ return 0; }
+	get table   (){ return 1; }
+	get computer(){ return 2; }
 
 	check(){
-		const w = window.innerWidth;
-
-		if(w < 480)  return this.mini;
-		if(w < 600)  return this.small;
-		if(w < 801)  return this.medium;
-		if(w < 1025) return this.big;
-		if(w < 1281) return this.huge;
-		return this.infinity;
+		if(window.innerWidth < 600)  return this.mobile;
+		if(window.innerWidth < 1025) return this.table;
+		return this.computer;
 	}
 };
 

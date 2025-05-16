@@ -9,7 +9,7 @@ class MoveTo {
 		this.#itself = get_itself(obj);
 		this.#destine = []
 
-		if(elemList.length != 6){
+		if(elemList.length != 3){
 			alert(
 				'Invalid quantity!\n' +
 				'"responsive-layout.js": `MoveTo` (constructor)\n' +
