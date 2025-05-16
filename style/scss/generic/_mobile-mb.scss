@@ -1,0 +1,273 @@
+/* TODO: remove them (temporary) */
+.foo-color {
+	background-color: #333;
+}
+.foo-color2 {
+	background-color: #666;
+}
+.foo-color3 {
+	background-color: #999;
+}
+
+/* SUPER-GENERIC: they can be replaced */
+
+* {
+	padding: 0;
+	margin: 0;
+	border: none;
+	font-family: arial, open-sans, sans-serif, serif, auto;
+	box-sizing: border-box;
+}
+
+.no-std-style {
+	text-decoration: none;
+	list-style-type: none;
+	background: none;
+	border: none;
+	color: inherit;
+	font: inherit;
+	cursor: auto;
+}
+
+/* IMPORTANT: they cannot be replaced */
+
+.title-fsize {
+	font-size: 1.75rem !important;
+}
+
+.subtitle-fsize {
+	font-size: 1.4rem !important;
+}
+
+.flex {
+	display: flex !important;
+}
+
+.static-pos {
+	position: static !important;
+}
+
+.inline {
+	display: inline !important;
+}
+
+.grid {
+	--grid-rows: 1;
+	--grid-columns: 1;
+	display: grid !important;
+	grid-template-columns: repeat(var(--grid-columns), 1fr);
+	grid-template-rows: repeat(var(--grid-rows), 1fr);
+}
+
+.flex-col {
+	display: flex !important;
+	flex-direction: column;
+}
+
+/* SINGLE RULE: include single function based */
+
+.ins-main-burger.hidden {
+	display: none;
+}
+
+.out-main-burger.hidden {
+	visibility: hidden;
+}
+
+.min-screen {
+	min-width: layout.$minimum;
+}
+
+.base-to-abs {
+	position: relative;
+}
+
+.inflexible {
+	flex: none;
+}
+
+.children-on-center {
+	place-items: center;
+}
+
+.text-on-center {
+	text-align: center;
+}
+
+.inherit-cursor {
+	cursor: inherit;
+}
+
+.min-dim {
+	@include mirror-dim(min-content, min-content, min-content);
+}
+
+.scroll-x {
+	overflow-x: auto;
+}
+
+.scroll-y {
+	overflow-y: auto;
+}
+
+.move-to-forward {
+	z-index: 9999;
+}
+
+.inherit-width {
+	width: 100%;
+}
+
+/* PSEUDO-X BASED: hover, after, webkit, ... */
+
+.generic-link-container {
+	--glink-cont-color-normal: orange;
+	--glink-cont-color-hover:  red;
+	--glink-cont-color-active: yellow;
+}
+
+.generic-link { /* TODO: scss variables to store default colors */
+	--glink-color-normal: var(--glink-cont-color-normal, orange);
+	--glink-color-hover:  var(--glink-cont-color-hover,  red);
+	--glink-color-active: var(--glink-cont-color-active, yellow);
+
+	font-size: 1em;
+	color: var(--glink-color-normal);
+
+	&:hover {
+		cursor: pointer;
+		color: var(--glink-color-hover);
+	}
+
+	&:active {
+		color: var(--glink-color-active);
+	}
+}
+
+.hover-grow:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+}
+
+.active-shrink:active {
+	transform: scale(0.9);
+}
+
+.hi-hover-trans {
+	transition: background-color 0.5s ease;
+
+	&:hover {
+		background-color: gray;
+		transition: none;
+		cursor: pointer;
+	}
+}
+
+.scroll-x,
+.scroll-y {
+	@supports selector(::-webkit-scrollbar){
+		&::-webkit-scrollbar-track-piece,
+		&::-webkit-scrollbar-track,
+		&::-webkit-scrollbar-button,
+		&::-webkit-scrollbar-corner {
+			display: none;
+		}
+
+		&::-webkit-scrollbar {
+			width: 4px;
+			height: 4px;
+			position: absolute;
+			margin-right: 6rem;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background-color: #999;
+			border-radius: 10px;
+		}
+	}
+
+	@supports not selector(::-webkit-scrollbar) {
+		& {
+			scrollbar-width: thin;
+		}
+	}
+}
+
+/* CONTAINER: only for elements that contain no-text elements */
+
+.main-container {
+	color: #dedede;
+	background-color: #000;
+}
+
+.horiz-list {
+	display: flex;
+	gap: 0.75em;
+	font-size: 1em;
+
+	.horiz-list-item {
+		font-size: inherit;
+	}
+}
+
+.topbar {
+	display: flex;
+	justify-content: space-between;
+	padding: 0.55rem 0.9rem;
+	align-items: center;
+	font-size: 1rem;
+
+	.logo-dim {
+		@include mirror-dim(3.3em);
+	}
+
+	.horiz-list,
+	.topbar-item {
+		font-size: 1.5em;
+	}
+}
+
+.vert-gap {
+	padding: 0.5rem 0;
+	gap: 0.5rem 0;
+}
+
+/* OTHER: they are too specific */
+
+.screen-dim {
+	width: 100vw;
+	height: 100dvh;
+}
+
+.abs-0x0 {
+	top: 0;
+	left: 0;
+	position: absolute;
+}
+
+.fill-flex {
+	flex: 1;
+	@include mirror-dim(100%);
+}
+
+.circle-radius {
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.double-board {
+	border: 1px solid black;
+	@include borders-shadow(1px);
+}
+
+.inherit-dim {
+	display: block;
+	@include mirror-dim(100%, 100%, 100%);
+}
+
+.margin-align {
+	margin: auto;
+	display: block;
+	width: min-content;
+	height: min-content;
+}

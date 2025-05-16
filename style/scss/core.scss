@@ -3,9 +3,12 @@
 @import "partial/mixin";
 @import "partial/only-at";
 
+@import "generic/mobile-mb";
 @import "responsive/mobile";
 
 @media only screen {
-	@include layout.min("table")      { @import "responsive/table";    }
-	/* @include layout.min("computer")   { @import "responsive/computer"; } */
+	@include layout.min("table") {
+		@import "generic/table-tb";
+		@import "responsive/table";
+	}
 }
