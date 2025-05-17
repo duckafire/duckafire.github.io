@@ -28,4 +28,20 @@ class MoveTo {
 	}
 }
 
+{
+	// N links + ONE button
+	const max = document.getElementById("burger-menu-list").children.length - 1;
+
+	for(let i = 0; i < max; i++){
+		ResponsiveElements.once.push(new MoveTo(
+			"burger-menu-link-" + i,
+			[
+				"mb-burger-menu-link-" + i,
+				"tb-burger-menu-link-" + i,
+				"tb-burger-menu-link-" + i,
+			]
+		));
+	}
+}
+
 }

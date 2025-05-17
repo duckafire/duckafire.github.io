@@ -27,14 +27,23 @@
 					">
 					<img class="double-board inflexible circle-radius hover-grow active-shrink" src="./resources/images/foo.svg" alt=" " width="52.8" height="52.8" />
 
-					<button id="open-main-burger" class="no-std-style generic-link topbar-item inflexible hover-grow active-shrink"
-						style="
-							--glink-color-normal: orange;
-							--glink-color-hover: red;
-							--glink-color-active: yellow;
-						">
-						<i class="fa-solid fa-bars"></i>
-					</button>
+					<ul class="no-std-style flex generic-link-container children-on-center gap-150-rem">
+						<!-- url -->
+						<li id="tb-burger-menu-link-0" class="hover-grow active-shrink only-at-table"></li>
+						<li id="tb-burger-menu-link-1" class="hover-grow active-shrink only-at-table"></li>
+						<li id="tb-burger-menu-link-2" class="hover-grow active-shrink only-at-table"></li>
+						<!-- button - open burger menu -->
+						<li>
+							<button id="open-main-burger" class="no-std-style generic-link topbar-item inflexible hover-grow active-shrink"
+								style="
+									--glink-color-normal: orange;
+									--glink-color-hover: red;
+									--glink-color-active: yellow;
+								">
+								<i class="fa-solid fa-bars"></i>
+							</button>
+						</li>
+					</ul>
 				</section>
 			</div>
 			<div id="main-topbar-shadow" class="only-at-table abs-0x0 backdrop inherit-height
@@ -49,7 +58,7 @@
 					--tb-left: calc(100vw - 450px);
 					--tb-width: 450px;
 				">
-				<ul class="no-std-style block-dis grid inherit-dim children-on-center generic-link-container
+				<ul id="burger-menu-list" class="no-std-style block-dis grid inherit-dim children-on-center generic-link-container font-size-150-rem
 						tb:grid"
 					style="
 						--grid-columns: 4;
@@ -58,23 +67,23 @@
 						--glink-cont-color-active: yellow;
 					">
 					<!-- url -->
-					<li class="horiz-list-item hover-grow active-shrink only-at-mobile">
-						<a class="no-std-style generic-link title-fsize" href="#">
+					<li id="mb-burger-menu-link-0" class="hover-grow active-shrink only-at-mobile">
+						<a id="burger-menu-link-0" class="no-std-style generic-link title-fsize" href="#">
 							<i class="fa-brands fa-github"></i>
 						</a>
 					</li>
-					<li class="horiz-list-item hover-grow active-shrink only-at-mobile">
-						<a class="no-std-style generic-link title-fsize" href="#">
+					<li id="mb-burger-menu-link-1" class="hover-grow active-shrink only-at-mobile">
+						<a id="burger-menu-link-1" class="no-std-style generic-link title-fsize" href="#">
 							<i class="fa-brands fa-linkedin"></i>
 						</a>
 					</li>
-					<li class="horiz-list-item hover-grow active-shrink only-at-mobile">
-						<a class="no-std-style generic-link title-fsize" href="#">
+					<li id="mb-burger-menu-link-2" class="hover-grow active-shrink only-at-mobile">
+						<a id="burger-menu-link-2" class="no-std-style generic-link title-fsize" href="#">
 							<i class="fa-brands fa-itch-io"></i>
 						</a>
 					</li>
 					<!-- button - close burger menu -->
-					<li id="close-main-burger" class="horiz-list-item hover-grow active-shrink
+					<li id="close-main-burger" class="hover-grow active-shrink
 						tb:text-on-center tb:set-single-padding tb:inherit-dim"
 						style="
 							--tb-padding-top: 18.425px;
