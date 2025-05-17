@@ -59,6 +59,8 @@ run_localhost_server(){
 
 git_grep_from_root(){
 	git grep -Pn "${ARG_arguments[@]}" -- ./
+
+	test $? -ne $TRUE && echo "[ Nothing was found ]"
 }
 
 
