@@ -232,6 +232,12 @@
 	gap: 0.5rem 0;
 }
 
+.backdrop {
+	--bg-color: black;
+	background-color: var(--bg-color);
+	opacity: 0.5;
+}
+
 /* OTHER: they are too specific */
 
 .screen-dim {

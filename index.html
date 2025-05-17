@@ -15,11 +15,16 @@
 </head>
 <body class="main-container screen-dim min-screen">
 
-	<div id="main-topbar-container" class="flex-col">
+	<div class="only-at-table
+		tb:set-height tb:sticky-pos" style="
+			--tb-height: 70.4px;
+		"></div>
+	<div id="main-topbar-container" class="flex-col
+		tb:abs-0x0 tb:move-to-forward tb:vw100">
 
 		<nav class="relative-pos">
 
-			<section class="foo-color topbar relative-pos out-main-burger">
+			<section class="foo-color topbar relative-pos out-main-burger tb:always-visible">
 				<img class="double-board inflexible circle-radius hover-grow active-shrink logo-dim" src="./resources/images/foo.svg" alt=" " />
 
 				<a id="open-main-burger" class="no-std-style generic-link topbar-item inflexible hover-grow active-shrink" href="#"
@@ -31,6 +36,8 @@
 					<i class="fa-solid fa-bars"></i>
 				</a>
 			</section>
+
+			<div class="only-at-table abs-0x0 screen-dim backdrop ins-main-burger hidden"></div>
 
 			<section class="foo-color ins-main-burger hidden abs-0x0 inherit-dim
 					tb:set-left tb:set-width tb:no-min-max-dim

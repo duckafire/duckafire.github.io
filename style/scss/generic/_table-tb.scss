@@ -10,6 +10,25 @@
 	display: block !important;
 }
 
+.tb\:set-left {
+	--tb-left: 0;
+	left: var(--tb-left) !important;
+}
+
+.tb\:set-width {
+	--tb-width: 0;
+	width: var(--tb-width) !important;
+}
+
+.tb\:set-height {
+	--tb-height: 0;
+	height: var(--tb-height) !important;
+}
+
+.tb\:always-visible {
+	visibility: visible !important;
+}
+
 /* SINGLE RULE: include single function based */
 
 .tb\:no-min-max-dim {
@@ -24,21 +43,29 @@ tb\:inherit-height {
 	height: 100%;
 }
 
+.tb\:move-to-forward {
+	z-index: 9999;
+}
+
+.tb\:vw100 {
+	width: 100vw;
+}
+
+.tb\:sticky-pos {
+	position: sticky;
+}
+
 /* PSEUDO-X BASED: hover, after, webkit, ... */
 
 /* CONTAINER: only for elements that contain no-text elements */
 
+.tb\:abs-0x0 {
+	top: 0;
+	left: 0;
+	position: absolute;
+}
+
 /* OTHER: they are too specific */
-
-.tb\:set-left {
-	--tb-left: 0;
-	left: var(--tb-left);
-}
-
-.tb\:set-width {
-	--tb-width: 0;
-	width: var(--tb-width);
-}
 
 .tb\:set-single-padding {
 	--tb-padding-top:    0;
