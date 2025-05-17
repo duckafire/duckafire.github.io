@@ -234,6 +234,27 @@
 	opacity: 0.5;
 }
 
+.topbar {
+	--font-size: 1rem;
+
+	display: flex;
+	justify-content: space-between;
+	font-size: var(--font-size);
+
+	.horiz-list,
+	.topbar-item {
+		font-size: 1.5em;
+	}
+}
+
+.set-pair-padding {
+	--padding-inline: 0;
+	--padding-block: 0;
+
+	padding-inline: var(--padding-inline);
+	padding-block: var(--padding-block);
+}
+
 /* OTHER: they are too specific */
 
 .screen-dim {
