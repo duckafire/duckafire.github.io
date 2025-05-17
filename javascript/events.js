@@ -37,13 +37,13 @@ window.addEventListener("DOMContentLoaded", window_resized);
 window.addEventListener("resize",           window_resized);
 
 const open_close_main_burger = (openBurger) => {
-	const indexs = ["main-topbar", "burger-topbar", "burger-menu"];
-	let   values = ["", "none", "none"];
+	const indexs = ["main-topbar-shadow", "burger-topbar", "burger-menu"];
+	let   values = ["none", "none", "none"];
 
 	let bodyOverflowY = "";
 
 	if(openBurger){
-		values = values.map(cur => cur == "" ? "none" : "");
+		values = values.map(() => "");
 
 		bodyOverflowY = "hidden";
 	}
