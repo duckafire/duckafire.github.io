@@ -7,7 +7,8 @@
     "css": "./npm-scripts 'build_scss_to_css'",
     "nocss": "./npm-scripts 'clear_css_from_scss'",
     "help": "./npm-scripts 'help_npm_scripts'",
-    "dev": "./npm-scripts 'run_localhost_server'"
+    "dev": "./npm-scripts 'run_localhost_server'",
+    "grep": "./npm-scripts 'git_grep_from_root'"
   },
   "repository": {
     "type": "git",

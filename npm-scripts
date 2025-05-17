@@ -3,7 +3,8 @@
 
 # GLOBAL
 
-declare -r ARG_function="$1"
+declare -r  ARG_function="$1"
+declare -ra ARG_arguments=(${@:2})
 
 declare -ri TRUE=0
 declare -ri FALSE=1
@@ -54,6 +55,10 @@ run_localhost_server(){
 	local -r PORT="7777"
 
 	npx http-server "$NO_CACHE" -p "$PORT"
+}
+
+git_grep_from_root(){
+	git grep -Pn "${ARG_arguments[@]}" -- ./
 }
 
 
