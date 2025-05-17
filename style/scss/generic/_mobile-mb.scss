@@ -64,15 +64,11 @@
 	flex-direction: column;
 }
 
+.h-max-content {
+	height: max-content !important;
+}
+
 /* SINGLE RULE: include single function based */
-
-.ins-main-burger.hidden {
-	display: none;
-}
-
-.out-main-burger.hidden {
-	visibility: hidden;
-}
 
 .min-screen {
 	min-width: layout.$minimum;
@@ -221,6 +217,11 @@
 	opacity: 0.5;
 }
 
+.set-height {
+	--height: 0;
+	height: var(--height) !important;
+}
+
 /* OTHER: they are too specific */
 
 .screen-dim {
@@ -232,6 +233,12 @@
 	top: 0;
 	left: 0;
 	position: absolute;
+}
+
+.sticky-0x0 {
+	top: 0;
+	left: 0;
+	position: sticky;
 }
 
 .fill-flex {
