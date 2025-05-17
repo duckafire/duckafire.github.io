@@ -29,14 +29,6 @@
 	visibility: visible !important;
 }
 
-.grid {
-	--tb-grid-rows: 1;
-	--tb-grid-columns: 1;
-	display: grid !important;
-	grid-template-columns: repeat(var(--tb-grid-columns), 1fr);
-	grid-template-rows: repeat(var(--tb-grid-rows), 1fr);
-}
-
 /* SINGLE RULE: include single function based */
 
 .tb\:no-min-dim {
