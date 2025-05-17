@@ -210,23 +210,6 @@
 	}
 }
 
-.topbar {
-	display: flex;
-	justify-content: space-between;
-	padding: 0.55rem 0.9rem;
-	align-items: center;
-	font-size: 1rem;
-
-	.logo-dim {
-		@include mirror-dim(3.3em);
-	}
-
-	.horiz-list,
-	.topbar-item {
-		font-size: 1.5em;
-	}
-}
-
 .vert-gap {
 	padding: 0.5rem 0;
 	gap: 0.5rem 0;
