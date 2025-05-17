@@ -15,12 +15,12 @@
 </head>
 <body class="main-container screen-dim min-screen h-max-content">
 
-	<nav class="foo-color vw100 set-height sticky-0x0 move-to-forward"
+	<nav class="vw100 set-height sticky-0x0 move-to-forward"
 		style="
 			--height: 70.4px;
 		">
 		<div class="inherit-dim relative-pos">
-			<div id="main-topbar" class="inherit-dim abs-0x0">
+			<div id="main-topbar" class="foo-color inherit-dim abs-0x0">
 				<section class="topbar">
 					<img class="double-board inflexible circle-radius hover-grow active-shrink" src="./resources/images/foo.svg" alt=" " width="52.8" height="52.8" />
 
@@ -33,17 +33,29 @@
 						<i class="fa-solid fa-bars"></i>
 					</button>
 				</section>
+				<div class="only-at-table abs-0x0 backdrop inherit-height
+					tb:set-left tb:set-width " style="
+						/* based #burger-topbar values */
+						--tb-left: calc( (100vw - 450px) * -1 );
+						--tb-width: calc(100vw - 450px);
+					"></div>
 			</div>
-			<div id="burger-topbar" class="inherit-dim abs-0x0" style="display:none">
+			<div id="burger-topbar" class="foo-color inherit-dim abs-0x0
+					tb:set-left tb:set-width tb:relative-pos tb:no-min-dim
+				" style="display:none;
+					/* equal #burger-menu values */
+					--tb-left: calc(100vw - 450px);
+					--tb-width: 450px;
+				">
 				<ul class="no-std-style block-dis grid inherit-dim children-on-center generic-link-container
-						tb:block-dis"
+						tb:grid"
 					style="
 						--grid-columns: 4;
 						--glink-cont-color-normal: orange;
 						--glink-cont-color-hover: red;
 						--glink-cont-color-active: yellow;
 					">
-					<!-- url button -->
+					<!-- url -->
 					<li class="horiz-list-item hover-grow active-shrink only-at-mobile">
 						<a class="no-std-style generic-link title-fsize" href="#">
 							<i class="fa-brands fa-github"></i>
@@ -59,9 +71,9 @@
 							<i class="fa-brands fa-itch-io"></i>
 						</a>
 					</li>
-					<!-- close burger menu -->
+					<!-- button - close burger menu -->
 					<li id="close-main-burger" class="horiz-list-item hover-grow active-shrink
-						tb:text-on-center tb:set-single-padding tb:inherit-height"
+						tb:text-on-center tb:set-single-padding tb:inherit-dim"
 						style="
 							--tb-padding-top: 18.425px;
 						"
@@ -74,6 +86,31 @@
 			</div>
 		</div>
 	</nav>
+
+	<aside id="burger-menu" class="fixed-pos move-to-forward vw-100 set-height
+		tb:set-left tb:set-width"
+		style="display:none;
+			--height: calc(100dvh - 70.4px);
+			/* equal #burger-topbar values */
+			--tb-left: calc(100vw - 450px);
+			--tb-width: 450px;
+		">
+		<div class="only-at-table abs-0x0 backdrop inherit-height
+			tb:set-left tb:set-width " style="
+				/* based #burger-topbar values */
+				--tb-left: calc( (100vw - 450px) * -1 );
+				--tb-width: calc(100vw - 450px);
+			"></div>
+		<div class="foo-color2 inherit-dim scroll-y">
+			<ul class="no-std-style text-on-center flex-col vert-gap">
+				<li class="inline active-shrink hi-hover-trans">
+					<a class="no-std-style subtitle-fsize inherit-cursor inherit-dim" href="#">
+						Foo
+					</a>
+				</li>
+			</ul>
+		</div>
+	</aside>
 
 	<main>
 

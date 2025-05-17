@@ -68,6 +68,11 @@
 	height: max-content !important;
 }
 
+.set-height {
+	--height: 0;
+	height: var(--height) !important;
+}
+
 /* SINGLE RULE: include single function based */
 
 .min-screen {
@@ -76,6 +81,10 @@
 
 .relative-pos {
 	position: relative;
+}
+
+.fixed-pos {
+	position: fixed;
 }
 
 .inflexible {
@@ -111,6 +120,14 @@
 }
 
 .inherit-width {
+	width: 100%;
+}
+
+.inherit-height {
+	height: 100%;
+}
+
+.vw-100 {
 	width: 100%;
 }
 
@@ -215,11 +232,6 @@
 	--bg-color: black;
 	background-color: var(--bg-color);
 	opacity: 0.5;
-}
-
-.set-height {
-	--height: 0;
-	height: var(--height) !important;
 }
 
 /* OTHER: they are too specific */

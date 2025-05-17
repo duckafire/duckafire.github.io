@@ -37,16 +37,21 @@ window.addEventListener("DOMContentLoaded", window_resized);
 window.addEventListener("resize",           window_resized);
 
 const open_close_main_burger = (openBurger) => {
-	let mainTopbar   = "";
-	let burgerTopbar = "none";
+	const indexs = ["main-topbar", "burger-topbar", "burger-menu"];
+	let   values = ["", "none", "none"];
+
+	let bodyOverflowY = "";
 
 	if(openBurger){
-		mainTopbar   = "none";
-		burgerTopbar = "";
+		values = values.map(cur => cur == "" ? "none" : "");
+
+		bodyOverflowY = "hidden";
 	}
 
-	document.getElementById("main-topbar").style.display   = mainTopbar;
-	document.getElementById("burger-topbar").style.display = burgerTopbar;
+	for(let i = 0; i < indexs.length; i++)
+		document.getElementById(indexs[i]).style.display = values[i];
+
+	document.body.style.overflowY = bodyOverflowY;
 }
 
 document.getElementById("open-main-burger")

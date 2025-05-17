@@ -29,18 +29,22 @@
 	visibility: visible !important;
 }
 
+.grid {
+	--tb-grid-rows: 1;
+	--tb-grid-columns: 1;
+	display: grid !important;
+	grid-template-columns: repeat(var(--tb-grid-columns), 1fr);
+	grid-template-rows: repeat(var(--tb-grid-rows), 1fr);
+}
+
 /* SINGLE RULE: include single function based */
 
-.tb\:no-min-max-dim {
+.tb\:no-min-dim {
 	@include mirror-dim(null, 0);
 }
 
 .tb\:text-on-center {
 	text-align: center;
-}
-
-.tb\:inherit-height {
-	height: 100%;
 }
 
 .tb\:move-to-forward {
@@ -78,4 +82,9 @@
 		var(--tb-padding-right)
 		var(--tb-padding-bottom)
 		var(--tb-padding-left);
+}
+
+.tb\:inherit-dim {
+	display: block;
+	@include mirror-dim(100%, 100%, 100%);
 }
