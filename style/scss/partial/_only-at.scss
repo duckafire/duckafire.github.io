@@ -3,9 +3,11 @@
 		display: none !important;
 	}
 
+	/*
 	.only-at-mobile-v {
 		visibility: hidden !important;
 	}
+	*/
 }
 
 @include layout.max("mobile") {
@@ -13,9 +15,11 @@
 		display: none !important;
 	}
 
+	/*
 	.only-at-table-v {
 		visibility: hidden !important;
 	}
+	*/
 }
 
 @include layout.min("computer") {
@@ -23,11 +27,14 @@
 		display: none !important;
 	}
 
+	/*
 	.only-at-table-v {
 		visibility: hidden !important;
 	}
+	*/
 }
 
+/*
 @include layout.max("table") {
 	.only-at-computer {
 		display: none !important;
@@ -37,3 +44,4 @@
 		visibility: hidden !important;
 	}
 }
+*/

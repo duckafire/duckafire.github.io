@@ -43,10 +43,6 @@
 	display: flex !important;
 }
 
-.static-pos {
-	position: static !important;
-}
-
 .inline {
 	display: inline !important;
 }
@@ -103,13 +99,11 @@
 	cursor: inherit;
 }
 
-.min-dim {
-	@include mirror-dim(min-content, min-content, min-content);
-}
-
+/*
 .scroll-x {
 	overflow-x: auto;
 }
+*/
 
 .scroll-y {
 	overflow-y: auto;
@@ -117,10 +111,6 @@
 
 .move-to-forward {
 	z-index: 9999;
-}
-
-.inherit-width {
-	width: 100%;
 }
 
 .inherit-height {
@@ -181,7 +171,7 @@
 	}
 }
 
-.scroll-x,
+/* .scroll-x, */
 .scroll-y {
 	@supports selector(::-webkit-scrollbar){
 		&::-webkit-scrollbar-track-piece,
@@ -218,16 +208,6 @@
 	background-color: #000;
 }
 
-.horiz-list {
-	display: flex;
-	gap: 0.75em;
-	font-size: 1em;
-
-	.horiz-list-item {
-		font-size: inherit;
-	}
-}
-
 .vert-gap {
 	padding: 0.5rem 0;
 	gap: 0.5rem 0;
@@ -246,7 +226,6 @@
 	justify-content: space-between;
 	font-size: var(--font-size);
 
-	.horiz-list,
 	.topbar-item {
 		font-size: 1.5em;
 	}
@@ -279,11 +258,6 @@
 	position: sticky;
 }
 
-.fill-flex {
-	flex: 1;
-	@include mirror-dim(100%);
-}
-
 .circle-radius {
 	border-radius: 50%;
 	overflow: hidden;
@@ -297,11 +271,4 @@
 .inherit-dim {
 	display: block;
 	@include mirror-dim(100%, 100%, 100%);
-}
-
-.margin-align {
-	margin: auto;
-	display: block;
-	width: min-content;
-	height: min-content;
 }
