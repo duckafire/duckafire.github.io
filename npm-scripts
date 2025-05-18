@@ -9,12 +9,19 @@ declare -ra ARG_arguments=(${@:2})
 declare -ri TRUE=0
 declare -ri FALSE=1
 
-declare -r  DIR_CSS="./style/css/"
-declare -r  DIR_SCSS="./style/scss/"
+declare -r CSS_CORE="./style/css/core.css"
+declare -r DIR_CSS="./style/css/"
+declare -r DIR_SCSS="./style/scss/"
+
 declare -ra PROTECT_CSS_FILE=()
 
 is_dir(){
 	test -d "$1" && return $TRUE
+	return $FALSE
+}
+
+is_file(){
+	test -f "$1" && return $TRUE
 	return $FALSE
 }
 
@@ -24,7 +31,17 @@ is_dir(){
 build_scss_to_css(){
 	is_dir "$DIR_CSS" || mkdir "$DIR_CSS"
 
+	if ! is_file "$CSS_CORE"; then
+		echo "'$CSS_CORE' not found"
+		return
+	fi
+
 	npx sass "$DIR_SCSS:$DIR_CSS"
+
+	local -r cleaned=$(npx cleancss "$CSS_CORE")
+	echo "$cleaned" > "$CSS_CORE"
+
+	echo '/*# sourceMappingURL=core.css.map */' >> "$CSS_CORE"
 }
 
 
@@ -47,7 +64,8 @@ help_npm_scripts(){
 	echo -e 'css      build CSS files, from ./style/scss, in ./style/css.
 nocss    delete CSS files, from ./style/css.
 help     display this help message.
-dev      run the page on localhost at port 7777, if ./index.html exist.'
+dev      run the page on localhost at port 7777, if ./index.html exist.
+grep     search a Perl RegExp pattern in all files.'
 }
 
 run_localhost_server(){
