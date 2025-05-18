@@ -6,10 +6,10 @@
   "scripts": {
     "css": "./npm-scripts 'build_scss_to_css'",
     "nocss": "./npm-scripts 'clear_css_from_scss'",
+    "uncss": "./npm-scripts 'find_unused_css_classes'",
     "help": "./npm-scripts 'help_npm_scripts'",
     "dev": "./npm-scripts 'run_localhost_server'",
-    "grep": "./npm-scripts 'git_grep_from_root'",
-    "purge": "./npm-scripts 'build_purged_css'"
+    "grep": "./npm-scripts 'git_grep_from_root'"
   },
   "repository": {
     "type": "git",

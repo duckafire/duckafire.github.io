@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 # GLOBAL
 
 declare -r  ARG_function="$1"
@@ -23,6 +22,10 @@ is_dir(){
 is_file(){
 	test -f "$1" && return $TRUE
 	return $FALSE
+}
+
+check_not_found(){
+	test $1 -ne $TRUE && echo "[ Nothing was found ]"
 }
 
 
@@ -63,6 +66,7 @@ clear_css_from_scss(){
 help_npm_scripts(){
 	echo -e 'css      build CSS files, from ./style/scss, in ./style/css.
 nocss    delete CSS files, from ./style/css.
+uncss    search unused classes (in HTML and CSS) and display them.
 help     display this help message.
 dev      run the page on localhost at port 7777, if ./index.html exist.
 grep     search a Perl RegExp pattern in all files.'
@@ -78,7 +82,13 @@ run_localhost_server(){
 git_grep_from_root(){
 	git grep -Pn "${ARG_arguments[@]}" -- ./
 
-	test $? -ne $TRUE && echo "[ Nothing was found ]"
+	check_not_found $?
+}
+
+find_unused_css_classes(){
+	node ./uncss.js | git grep -Pnf -
+
+	check_not_found $?
 }
 
 
@@ -89,3 +99,6 @@ if ! type "$ARG_function" &> /dev/null; then
 else
 	eval "$ARG_function"
 fi
+
+echo ""
+exit 0
