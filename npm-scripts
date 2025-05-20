@@ -31,7 +31,7 @@ check_not_found(){
 
 # BUILD
 
-build_scss_to_css(){
+only_build_scss_to_css(){
 	is_dir "$DIR_CSS" || mkdir "$DIR_CSS"
 
 	if ! is_file "$CSS_CORE"; then
@@ -40,11 +40,17 @@ build_scss_to_css(){
 	fi
 
 	npx sass "$DIR_SCSS:$DIR_CSS"
+}
 
+clear_css(){
 	local -r cleaned=$(npx cleancss "$CSS_CORE")
-	echo "$cleaned" > "$CSS_CORE"
 
-	echo '/*# sourceMappingURL=core.css.map */' >> "$CSS_CORE"
+	echo "$cleaned/*# sourceMappingURL=core.css.map */" > "$CSS_CORE"
+}
+
+build_scss_to_css(){
+	only_build_scss_to_css
+	clear_css
 }
 
 boot_project(){
@@ -73,6 +79,7 @@ help_npm_scripts(){
 	echo -e 'css      build CSS files, from ./style/scss, in ./style/css.
 nocss    delete CSS files, from ./style/css.
 uncss    search unused classes (in HTML and CSS) and display them.
+oncss    build CSS files without to clear their content.
 help     display this help message.
 dev      run the page on localhost at port 7777, if ./index.html exist.
 grep     search a Perl RegExp pattern in all files.
