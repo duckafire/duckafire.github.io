@@ -9,7 +9,8 @@
     "uncss": "./npm-scripts 'find_unused_css_classes'",
     "help": "./npm-scripts 'help_npm_scripts'",
     "dev": "./npm-scripts 'run_localhost_server'",
-    "grep": "./npm-scripts 'git_grep_from_root'"
+    "grep": "./npm-scripts 'git_grep_from_root'",
+	"boot": "./npm-scripts 'boot_project'"
   },
   "repository": {
     "type": "git",

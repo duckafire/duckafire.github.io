@@ -47,6 +47,12 @@ build_scss_to_css(){
 	echo '/*# sourceMappingURL=core.css.map */' >> "$CSS_CORE"
 }
 
+boot_project(){
+	clear
+	build_scss_to_css
+	run_localhost_server
+}
+
 
 # CLEAR
 
@@ -69,7 +75,8 @@ nocss    delete CSS files, from ./style/css.
 uncss    search unused classes (in HTML and CSS) and display them.
 help     display this help message.
 dev      run the page on localhost at port 7777, if ./index.html exist.
-grep     search a Perl RegExp pattern in all files.'
+grep     search a Perl RegExp pattern in all files.
+boot     clear the terminal, build CSS and run the page (clear + css + dev).'
 }
 
 run_localhost_server(){
