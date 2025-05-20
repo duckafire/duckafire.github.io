@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -u -o pipefail
+
 # GLOBAL
 
 declare -r  ARG_function="$1"
