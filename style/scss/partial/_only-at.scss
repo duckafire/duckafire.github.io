@@ -1,4 +1,4 @@
-@include layout.min("table") {
+@include layout-min("table") {
 	.only-at-mobile {
 		display: none !important;
 	}
@@ -10,7 +10,7 @@
 	*/
 }
 
-@include layout.max("mobile") {
+@include layout-max("mobile") {
 	.only-at-table {
 		display: none !important;
 	}
@@ -22,7 +22,7 @@
 	*/
 }
 
-@include layout.min("computer") {
+@include layout-min("computer") {
 	.only-at-table {
 		display: none !important;
 	}
@@ -35,7 +35,7 @@
 }
 
 /*
-@include layout.max("table") {
+@include layout-max("table") {
 	.only-at-computer {
 		display: none !important;
 	}

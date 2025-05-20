@@ -72,7 +72,7 @@
 /* SINGLE RULE: include single function based */
 
 .min-screen {
-	min-width: layout.$minimum;
+	min-width: $layout-minimum;
 }
 
 .relative-pos {
@@ -182,15 +182,15 @@
 		}
 
 		&::-webkit-scrollbar {
-			width: 4px;
-			height: 4px;
+			width: $v4;
+			height: $v4;
 			position: absolute;
 			margin-right: 6rem;
 		}
 
 		&::-webkit-scrollbar-thumb {
 			background-color: #999;
-			border-radius: 10px;
+			border-radius: $v10;
 		}
 	}
 
@@ -264,8 +264,8 @@
 }
 
 .double-board {
-	border: 1px solid black;
-	@include borders-shadow(1px);
+	border: $v1 solid black;
+	@include borders-shadow($v1);
 }
 
 .inherit-dim {

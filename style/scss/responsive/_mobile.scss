@@ -40,7 +40,7 @@
 
 .manual-vert-swiper {
 	width: 100%;
-	height: 180px;
+	height: rem(180);
 	background-color: #1f1f1f;
 	overflow-x: hidden;
 
@@ -67,8 +67,8 @@
 }
 
 .highlight-projects-list {
-	$card-width: 140px;
-	$cover-dim: $card-width * 0.5;
+	$card-width: rem(140);
+	$cover-dim: calc($card-width * 0.5);
 
 	@include mirror-dim(100%);
 
@@ -77,12 +77,12 @@
 		grid-template-columns: 1fr;
 		grid-template-rows: $cover-dim auto 1.3rem;
 		place-items: center;
-		gap: 7.5px;
+		gap: rem(7.5);
 		width: $card-width;
 		height: 100%;
 		background-color: #4f4f4f;
-		padding: 15px 7.5px;
-		border-radius: 12.5px;
+		padding: $v15 rem(7.5);
+		border-radius: rem(12.5);
 		overflow-x: hidden;
 	}
 
@@ -110,18 +110,18 @@
 }
 
 .projects-list {
-	$card-height: 125px;
+	$card-height: rem(125);
 
 	list-style-type: none;
 	display: grid;
 	width: 100%;
-	padding: 6.4px 16px 19.2px 16px;
+	padding: rem(6.4) $v16 rem(19.2) $v16;
 	place-items: center;
-	row-gap: 18px;
+	row-gap: rem(18);
 
 	.card-dim {
 		width: auto;
-		max-width: 432px;
+		max-width: rem(432);
 		height: $card-height;
 	}
 
@@ -131,7 +131,7 @@
 		display: flex;
 		align-items: center;
 		background-color: #333;
-		border-radius: 12.5px;
+		border-radius: rem(12.5);
 	}
 
 	.card-text-field {
@@ -156,13 +156,13 @@
 	}
 
 	.card-cover {
-		@include mirror-dim(75px);
-		margin-inline: 10px;
+		@include mirror-dim(rem(75));
+		margin-inline: $v10;
 		flex: none;
 	}
 }
 
-$line-fix-len: 2.75px;
+$line-fix-len: rem(2.75);
 @function line-dyn-len($v) { @return calc(var(#{$v}) * 0.8) }
 @function line-dmargin($v) { @return calc(var(#{$v}) * 0.1) }
 
@@ -170,7 +170,7 @@ $line-fix-len: 2.75px;
 .hori-line {
 	background-color: #999;
 	flex: none;
-	border-radius: 15px;
+	border-radius: $v15;
 }
 
 .hori-line {

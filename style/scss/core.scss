@@ -1,4 +1,6 @@
-@use "partial/layout";
+@import "partial/px-to-rem";
+
+@import "partial/layout-min";
 
 @import "partial/mixin";
 @import "partial/only-at";
@@ -7,7 +9,7 @@
 @import "responsive/mobile";
 
 @media only screen {
-	@include layout.min("table") {
+	@include layout-min("table") {
 		@import "generic/table-tb";
 		@import "responsive/table";
 	}
