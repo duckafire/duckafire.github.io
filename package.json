@@ -10,7 +10,7 @@
     "help": "./npm-scripts 'help_npm_scripts'",
     "dev": "./npm-scripts 'run_localhost_server'",
     "grep": "./npm-scripts 'git_grep_from_root'",
-	"boot": "./npm-scripts 'boot_project'"
+    "boot": "./npm-scripts 'boot_project'"
   },
   "engines": {
     "node": ">=18.20.8"
@@ -28,6 +28,6 @@
   "devDependencies": {
     "clean-css-cli": "^5.6.3",
     "http-server": "^14.1.1",
-    "sass": "^1.32.11"
+    "sass": "^1.79.6"
   }
 }
