@@ -130,7 +130,11 @@
 	gap: 1.5rem;
 }
 
-.ignore-events {
+.enable-events {
+	pointer-events: all;
+}
+
+.disable-events {
 	pointer-events: none;
 }
 
