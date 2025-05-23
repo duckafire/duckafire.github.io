@@ -2,46 +2,24 @@
 	.only-at-mobile {
 		display: none !important;
 	}
-
-	/*
-	.only-at-mobile-v {
-		visibility: hidden !important;
-	}
-	*/
 }
 
 @include layout-max("mobile") {
-	.only-at-table {
+	.only-at-table,
+	.only-not-at-mobile {
 		display: none !important;
 	}
-
-	/*
-	.only-at-table-v {
-		visibility: hidden !important;
-	}
-	*/
 }
 
 @include layout-min("computer") {
-	.only-at-table {
+	.only-at-table,
+	.only-not-at-computer {
 		display: none !important;
 	}
-
-	/*
-	.only-at-table-v {
-		visibility: hidden !important;
-	}
-	*/
 }
 
-/*
 @include layout-max("table") {
 	.only-at-computer {
 		display: none !important;
 	}
-
-	.only-at-computer-v {
-		visibility: hidden !important;
-	}
 }
-*/

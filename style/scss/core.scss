@@ -3,7 +3,6 @@
 @import "partial/layout-min";
 
 @import "partial/mixin";
-@import "partial/only-at";
 
 @import "generic/mobile-mb";
 @import "responsive/mobile";
@@ -19,3 +18,5 @@
 		@import "responsive/computer";
 	}
 }
+
+@import "partial/only-at";
