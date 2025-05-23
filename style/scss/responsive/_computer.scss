@@ -8,3 +8,11 @@
 		width: rem(168);
 	}
 }
+
+.projects-list {
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.page-footer {
+	grid-template-columns: repeat(3, 1fr);
+}
