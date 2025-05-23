@@ -10,7 +10,14 @@
 }
 
 .projects-list {
-	grid-template-columns: repeat(3, 1fr);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+
+	.card-dim {
+		width: rem(310);
+	}
+
 }
 
 .page-footer {
