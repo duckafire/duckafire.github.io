@@ -18,6 +18,8 @@
 1. `id` must be unique in the **whole** document.
 1. `id` must be present only in elements that are required by JS.
 1. `alt` must be present in `img` (`alt=" "` for decoration images).
+1. `img` must container the property `loading`, with the value `"lazy"`.
+1. `a` must container the property `rel", with the values `"noopener noreferrer"`.
 
 1. Classes of different layouts must be in distinct lines.
 1. Declaration of CSS variables must be indented.
