@@ -13,4 +13,9 @@
 		@import "generic/table-tb";
 		@import "responsive/table";
 	}
+
+	@include layout-min("computer") {
+		/* @import "generic/computer-cm"; */
+		@import "responsive/computer";
+	}
 }
