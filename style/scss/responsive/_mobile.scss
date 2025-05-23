@@ -140,16 +140,16 @@
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-template-rows: 1.25em;
-		height: $card-height;
 		place-items: center;
 
 		h1 {
 			font-size: 1.1em;
+			margin-bottom: 5%;
 		}
 
 		p {
 			font-size: 0.75em;
-			@include mirror-dim(100%);
+			width: 100%;
 			overflow-y: auto;
 			display: block;
 		}
