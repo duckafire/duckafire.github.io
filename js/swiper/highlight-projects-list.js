@@ -1,8 +1,6 @@
 "use strict";
 { // start
 
-// TODO add lazy loading
-
 new Swiper(".manual-vert-swiper", {
 	centeredSlides: true,
 	preventClicks: true,

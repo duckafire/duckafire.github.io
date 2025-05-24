@@ -103,7 +103,7 @@
 
 	.highlight-card-tech {
 		display: flex;
-		justify-content: space-between;
+		justify-content: space-around;
 		font-size: 1.1rem;
 		width: 80%;
 	}
@@ -142,6 +142,7 @@
 		grid-template-columns: 1fr;
 		grid-template-rows: 1.25em;
 		place-items: center;
+		max-height: 100%; /* TODO */
 
 		h1 {
 			font-size: 1.1em;

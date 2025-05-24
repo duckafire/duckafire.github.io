@@ -145,61 +145,8 @@
 
 		<div class="flex-col children-on-center">
 			<div class="manual-vert-swiper">
-				<ul class="swiper-wrapper highlight-projects-list">
-					<li class="swiper-slide">
-						<section class="highlight-card">
-							<img class="highlight-card-cover" src="./resources/images/foo.svg" alt=" " loading="lazy" />
-							<div class="highlight-card-title-container">
-								<h1 class="highlight-card-title">foo</h1>
-								<!-- TODO: animation to move title, then it is so larger -->
-								<!-- <h1 class="highlight-card-title">foofoofoofoofoofoo</h1> -->
-							</div>
-							<section class="highlight-card-tech">
-								<i class="devicon-c-plain"></i>
-								<i class="devicon-c-plain"></i>
-								<i class="devicon-c-plain"></i>
-								<i class="fa-solid fa-plus"></i>
-							</section>
-							<section class="grid children-on-center inherit-width title-fsize only-at-computer" style="
-									--grid-columns: 2;
-								">
-								<button class="no-std-style">
-									<i class="fa-brands fa-github"></i>
-								</button>
-								<button class="no-std-style">
-									<a class="generic-link" href="#" rel="noopener noreferrer">
-										<i class="fa-solid fa-square-arrow-up-right"></i>
-									</a>
-								</button>
-							</section>
-						</section>
-					</li>
-					<li class="swiper-slide">
-						<section class="highlight-card">
-							<img class="highlight-card-cover" src="./resources/images/foo.svg" alt=" " loading="lazy" />
-							<div class="highlight-card-title-container">
-								<h1 class="highlight-card-title">foo</h1>
-							</div>
-							<section class="highlight-card-tech">
-								<i class="devicon-c-plain"></i>
-								<i class="devicon-c-plain"></i>
-								<i class="devicon-c-plain"></i>
-								<i class="fa-solid fa-plus"></i>
-							</section>
-							<section class="grid children-on-center inherit-width title-fsize only-at-computer" style="
-									--grid-columns: 2;
-								">
-								<button class="no-std-style">
-									<i class="fa-brands fa-github"></i>
-								</button>
-								<button class="no-std-style">
-									<a class="generic-link" href="#" rel="noopener noreferrer">
-										<i class="fa-solid fa-square-arrow-up-right"></i>
-									</a>
-								</button>
-							</section>
-						</section>
-					</li>
+				<ul id="highlight-cards-container" class="swiper-wrapper highlight-projects-list">
+					<!-- components -->
 				</ul>
 				<div class="swiper-btn-container disable-events">
 					<button class="vert-swiper-btn-prev enable-events"></button>
@@ -212,95 +159,8 @@
 			<h1>Projetos</h1>
 		</div>
 
-		<ul class="projects-list">
-			<li class="card-dim">
-				<section class="card">
-					<section class="card-text-field">
-						<h1>Foo</h1>
-						<p>
-							Lorem ipsum odor amet, consectetuer adipiscing elit. 
-							Potenti ultricies inceptos, quam facilisis aliquam 
-							vehicula quis. Laoreet proin magna inceptos senectus lorem
-						</p>
-					</section>
-					<div class="vert-line only-at-mobile"
-						style="
-							--parent-height: 125px;
-						"></div>
-					<div class="hori-line only-not-at-mobile"
-						style="
-							--parent-width: 93.32%;
-							--line-height: 4px;
-						"></div>
-					<img class="card-cover" src="./resources/images/foo.svg" alt=" " loading="lazy" />
-				</section>
-			</li>
-			<li class="card-dim">
-				<section class="card">
-					<section class="card-text-field">
-						<h1>Foo</h1>
-						<p>
-							Lorem ipsum odor amet, consectetuer adipiscing elit. 
-							Potenti ultricies inceptos, quam facilisis aliquam 
-							vehicula quis. Laoreet proin magna inceptos senectus lorem
-						</p>
-					</section>
-					<div class="vert-line only-at-mobile"
-						style="
-							--parent-height: 125px;
-						"></div>
-					<div class="hori-line only-not-at-mobile"
-						style="
-							--parent-width: 93.32%;
-							--line-height: 4px;
-						"></div>
-					<img class="card-cover" src="./resources/images/foo.svg" alt=" " loading="lazy" />
-				</section>
-			</li>
-			<li class="card-dim">
-				<section class="card">
-					<section class="card-text-field">
-						<h1>Foo</h1>
-						<p>
-							Lorem ipsum odor amet, consectetuer adipiscing elit. 
-							Potenti ultricies inceptos, quam facilisis aliquam 
-							vehicula quis. Laoreet proin magna inceptos senectus lorem
-						</p>
-					</section>
-					<div class="vert-line only-at-mobile"
-						style="
-							--parent-height: 125px;
-						"></div>
-					<div class="hori-line only-not-at-mobile"
-						style="
-							--parent-width: 93.32%;
-							--line-height: 4px;
-						"></div>
-					<img class="card-cover" src="./resources/images/foo.svg" alt=" " loading="lazy" />
-				</section>
-			</li>
-			<li class="card-dim">
-				<section class="card">
-					<section class="card-text-field">
-						<h1>Foo</h1>
-						<p>
-							Lorem ipsum odor amet, consectetuer adipiscing elit. 
-							Potenti ultricies inceptos, quam facilisis aliquam 
-							vehicula quis. Laoreet proin magna inceptos senectus lorem
-						</p>
-					</section>
-					<div class="vert-line only-at-mobile"
-						style="
-							--parent-height: 125px;
-						"></div>
-					<div class="hori-line only-not-at-mobile"
-						style="
-							--parent-width: 93.32%;
-							--line-height: 4px;
-						"></div>
-					<img class="card-cover" src="./resources/images/foo.svg" alt=" " loading="lazy" />
-				</section>
-			</li>
+		<ul id="cards-container" class="projects-list">
+			<!-- components -->
 		</ul>
 
 	</main>
@@ -330,9 +190,19 @@
 
 </body>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="./javascript/swiper.js"></script>
+<script src="./js/constants.js">
 
-<script src="./javascript/events.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="./js/swiper/highlight-projects-list.js"></script>
+
+<script src="./js/events.js"></script>
+
+<script src="./js/components/cards/data-json.js"></script>
+<script src="./js/components/cards/highlight-cards.js"></script>
+<script src="./js/components/cards/normal-cards.js"></script>
+<script src="./js/components/cards/create.js"></script>
 
 </html>

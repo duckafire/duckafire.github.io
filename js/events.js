@@ -1,5 +1,5 @@
 "use strict";
-{
+{ // start
 
 const open_close_main_burger = (openBurger) => {
 	const indexs = ["main-topbar-shadow", "burger-topbar", "burger-menu"];
@@ -25,4 +25,4 @@ document.getElementById("open-main-burger")
 document.getElementById("close-main-burger")
 	.addEventListener("click", () => { open_close_main_burger(false) });
 
-}
+} // end
