@@ -121,6 +121,7 @@
 
 	.card-dim {
 		width: auto;
+		min-width: rem(288);
 		max-width: rem(432);
 		height: $card-height;
 	}
