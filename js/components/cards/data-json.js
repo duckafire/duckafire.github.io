@@ -9,48 +9,32 @@ const new_card = (title, description, cover_src, used_tech, highlight) => ({
 	highlight
 });
 
-DATA_JSON.cards = [
-	new_card(
-		"foo0",
-		"Lorem ipsum odor amet, consectetuer adipiscing elit. Potenti ultricies inceptos, quam facilisis aliquam vehicula quis. Laoreet proin magna inceptos senectus lorem. Penatibus etiam metus quam sodales nisi. Pellentesque mattis ligula habitasse sed eleifend massa hendrerit accumsan. Venenatis sed penatibus justo sagittis laoreet malesuada elementum. Auctor adipiscing conubia phasellus; aptent habitasse accumsan. Diam inceptos finibus magna imperdiet gravida molestie consequat himenaeos. Imperdiet suscipit natoque sem tellus ut; vel urna. Vulputate cubilia sodales risus at eget et sociosqu lacus commodo.",
-		"https://cdn.jsdelivr.net/gh/duckafire/nest@work-in-progress/resources/images/foo.svg",
-		["*c-plain", "*c-plain", "*c-plain", "*c-plain"],
-		{
-			home_page: { "link": "#", "icon": "fa-brands fa-github" }
-		}
-	),
-	new_card(
-		"foo1",
-		"Lorem ipsum odor amet, consectetuer adipiscing elit. Potenti ultricies inceptos, quam facilisis aliquam vehicula quis. Laoreet proin magna inceptos senectus lorem. Penatibus etiam metus quam sodales nisi. Pellentesque mattis ligula habitasse sed eleifend massa hendrerit accumsan. Venenatis sed penatibus justo sagittis laoreet malesuada elementum. Auctor adipiscing conubia phasellus; aptent habitasse accumsan. Diam inceptos finibus magna imperdiet gravida molestie consequat himenaeos. Imperdiet suscipit natoque sem tellus ut; vel urna. Vulputate cubilia sodales risus at eget et sociosqu lacus commodo.",
-		"https://cdn.jsdelivr.net/gh/duckafire/nest@work-in-progress/resources/images/foo.svg",
-		["*c-plain", "*c-plain"],
-		null
-	),
-	new_card(
-		"foo2",
-		"Lorem ipsum odor amet, consectetuer adipiscing elit. Potenti ultricies inceptos, quam facilisis aliquam vehicula quis. Laoreet proin magna inceptos senectus lorem. Penatibus etiam metus quam sodales nisi. Pellentesque mattis ligula habitasse sed eleifend massa hendrerit accumsan. Venenatis sed penatibus justo sagittis laoreet malesuada elementum. Auctor adipiscing conubia phasellus; aptent habitasse accumsan. Diam inceptos finibus magna imperdiet gravida molestie consequat himenaeos. Imperdiet suscipit natoque sem tellus ut; vel urna. Vulputate cubilia sodales risus at eget et sociosqu lacus commodo.",
-		"https://cdn.jsdelivr.net/gh/duckafire/nest@work-in-progress/resources/images/foo.svg",
-		["*c-plain"],
-		{
-			home_page: { "link": "#", "icon": "fa-brands fa-github" }
-		}
-	),
-	new_card(
-		"foo3",
-		"Lorem ipsum odor amet, consectetuer adipiscing elit. Potenti ultricies inceptos, quam facilisis aliquam vehicula quis. Laoreet proin magna inceptos senectus lorem. Penatibus etiam metus quam sodales nisi. Pellentesque mattis ligula habitasse sed eleifend massa hendrerit accumsan. Venenatis sed penatibus justo sagittis laoreet malesuada elementum. Auctor adipiscing conubia phasellus; aptent habitasse accumsan. Diam inceptos finibus magna imperdiet gravida molestie consequat himenaeos. Imperdiet suscipit natoque sem tellus ut; vel urna. Vulputate cubilia sodales risus at eget et sociosqu lacus commodo.",
-		"https://cdn.jsdelivr.net/gh/duckafire/nest@work-in-progress/resources/images/foo.svg",
-		["*c-plain", "*c-plain", "*c-plain", "*c-plain", "*c-plain"],
-		{
-			home_page: { "link": "#", "icon": "fa-brands fa-github" }
-		}
-	),
-	new_card(
-		"foo4",
-		"Lorem ipsum odor amet, consectetuer adipiscing elit. Potenti ultricies inceptos, quam facilisis aliquam vehicula quis. Laoreet proin magna inceptos senectus lorem. Penatibus etiam metus quam sodales nisi. Pellentesque mattis ligula habitasse sed eleifend massa hendrerit accumsan. Venenatis sed penatibus justo sagittis laoreet malesuada elementum. Auctor adipiscing conubia phasellus; aptent habitasse accumsan. Diam inceptos finibus magna imperdiet gravida molestie consequat himenaeos. Imperdiet suscipit natoque sem tellus ut; vel urna. Vulputate cubilia sodales risus at eget et sociosqu lacus commodo.",
-		"https://cdn.jsdelivr.net/gh/duckafire/nest@work-in-progress/resources/images/foo.svg",
-		["*c-plain", "*c-plain"],
-		null
-	)
-];
+DATA_JSON.cards = []
+
+/* TODO: dev code; it must be removed */
+const get_num = (max, min) => Math.floor( Math.random() * max ) + min + 1;
+const max = get_num(5, 5);
+
+let usedTech;
+let techMax;
+
+for(let i = 0; i < max; i++){
+	usedTech = [];
+	techMax = get_num(5, 1);
+	
+	for(let j = 0; j < techMax; j++)
+		usedTech.push("*c-plain");
+
+	DATA_JSON.cards.push(
+		new_card(
+			"foo" + i,
+			"Lorem ipsum odor amet, consectetuer adipiscing elit. Potenti ultricies inceptos, quam facilisis aliquam vehicula quis. Laoreet proin magna inceptos senectus lorem. Penatibus etiam metus quam sodales nisi. Pellentesque mattis ligula habitasse sed eleifend massa hendrerit accumsan. Venenatis sed penatibus justo sagittis laoreet malesuada elementum. Auctor adipiscing conubia phasellus; aptent habitasse accumsan. Diam inceptos finibus magna imperdiet gravida molestie consequat himenaeos. Imperdiet suscipit natoque sem tellus ut; vel urna. Vulputate cubilia sodales risus at eget et sociosqu lacus commodo.",
+			"https://cdn.jsdelivr.net/gh/duckafire/nest@work-in-progress/resources/images/foo.svg",
+			usedTech,
+			get_num(3, 0) == 1 ? { home_page: { "link": "#", "icon": "fa-brands fa-github" } } : null
+		)
+	);
+}
+/* TODO: dev code; it must be removed */
 
 } // end
