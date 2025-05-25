@@ -47,7 +47,7 @@ const create_main_languages_list = (data) => {
 	let quant = 0;
 
 	for(let className of data){
-		if(className.charAt(0) != "*")
+		if(className.charAt(0) != "*" || quant == 5)
 			break;
 
 		quant++;
