@@ -43,6 +43,11 @@
 	display: flex !important;
 }
 
+.rev-flex {
+	display: flex !important;
+	flex-direction: row-reverse;
+}
+
 .inline {
 	display: inline !important;
 }
@@ -53,6 +58,11 @@
 	display: grid !important;
 	grid-template-columns: repeat(var(--grid-columns), 1fr);
 	grid-template-rows: repeat(var(--grid-rows), 1fr);
+}
+
+.rev-grid {
+	@extend .grid;
+	direction: rtl;
 }
 
 .flex-col {

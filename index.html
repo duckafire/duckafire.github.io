@@ -28,24 +28,7 @@
 					">
 					<img class="double-board inflexible circle-radius hover-grow active-shrink" src="./resources/images/foo.svg" alt=" " width="52.8" height="52.8" loading="lazy" />
 
-					<ul class="no-std-style flex generic-link-container children-on-center gap-150-rem">
-						<!-- url - mirror -->
-						<li class="hover-grow active-shrink only-not-at-mobile">
-							<a class="no-std-style generic-link title-fsize" href="#" rel="noopener noreferrer">
-								<i class="fa-brands fa-github"></i>
-							</a>
-						</li>
-						<li class="hover-grow active-shrink only-not-at-mobile">
-							<a class="no-std-style generic-link title-fsize" href="#" rel="noopener noreferrer">
-								<i class="fa-brands fa-linkedin"></i>
-							</a>
-						</li>
-						<li class="hover-grow active-shrink only-not-at-mobile">
-							<a class="no-std-style generic-link title-fsize" href="#" rel="noopener noreferrer">
-								<i class="fa-brands fa-itch-io"></i>
-							</a>
-						</li>
-						<!-- button - open burger menu -->
+					<ul id="topbar-menu-list" class="no-std-style rev-flex generic-link-container children-on-center gap-150-rem">
 						<li>
 							<button id="open-main-burger" class="no-std-style generic-link topbar-item inflexible hover-grow active-shrink"
 								style="
@@ -71,30 +54,13 @@
 					--tb-left: calc(100vw - 450px);
 					--tb-width: 450px;
 				">
-				<ul id="burger-menu-list" class="no-std-style block-dis grid inherit-dim children-on-center generic-link-container font-size-150-rem"
+				<ul id="burger-menu-list" class="no-std-style block-dis rev-grid inherit-dim children-on-center generic-link-container font-size-150-rem"
 					style="
 						--grid-columns: 4;
 						--glink-cont-color-normal: orange;
 						--glink-cont-color-hover: red;
 						--glink-cont-color-active: yellow;
 					">
-					<!-- url: mirror -->
-					<li class="hover-grow active-shrink">
-						<a class="no-std-style generic-link title-fsize" href="#" rel="noopener noreferrer">
-							<i class="fa-brands fa-github"></i>
-						</a>
-					</li>
-					<li class="hover-grow active-shrink">
-						<a class="no-std-style generic-link title-fsize" href="#" rel="noopener noreferrer">
-							<i class="fa-brands fa-linkedin"></i>
-						</a>
-					</li>
-					<li class="hover-grow active-shrink">
-						<a class="no-std-style generic-link title-fsize" href="#" rel="noopener noreferrer">
-							<i class="fa-brands fa-itch-io"></i>
-						</a>
-					</li>
-					<!-- button - close burger menu -->
 					<li id="close-main-burger" class="hover-grow active-shrink"
 						style="
 							--tb-padding-top: 18.425px;
@@ -204,5 +170,7 @@
 <script src="./js/components/cards/highlight-cards.js"></script>
 <script src="./js/components/cards/normal-cards.js"></script>
 <script src="./js/components/cards/create.js"></script>
+
+<script src="./js/components/social-links.js"></script>
 
 </html>
