@@ -140,7 +140,7 @@
 		padding: 0.5em;
 		display: grid;
 		grid-template-columns: 1fr;
-		grid-template-rows: 1.25em;
+		grid-template-rows: 1.25em 1fr;
 		place-items: center;
 		max-height: 100%; /* TODO */
 
@@ -150,6 +150,7 @@
 		}
 
 		p {
+			height: 100%;
 			font-size: 0.75em;
 			width: 100%;
 			overflow-y: auto;
