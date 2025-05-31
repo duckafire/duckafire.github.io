@@ -1,14 +1,3 @@
-/* TODO: remove them (temporary) */
-.foo-color {
-	background-color: #333;
-}
-.foo-color2 {
-	background-color: #666;
-}
-.foo-color3 {
-	background-color: #999;
-}
-
 /* SUPER-GENERIC: they can be replaced */
 
 * {
@@ -191,6 +180,10 @@
 		transition: none;
 		cursor: pointer;
 	}
+}
+
+.hover-pointer:hover {
+	cursor: pointer;
 }
 
 /* .scroll-x, */

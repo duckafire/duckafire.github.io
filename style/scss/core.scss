@@ -4,6 +4,10 @@
 
 @import "partial/mixin";
 
+.t-legacy {
+	@import "themes/legacy";
+}
+
 @import "generic/mobile-mb";
 @import "responsive/mobile";
 

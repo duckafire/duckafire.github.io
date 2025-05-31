@@ -1,0 +1,56 @@
+$color-dark:  #000;
+$color-block: #444;
+$color-gray:  #888;
+$color-white: #ccc;
+$color-shine: #fff;
+
+.t-background-0 {
+	background-color: $color-dark;
+}
+
+.t-font-color {
+	color: $color-white;
+}
+
+.t-link-behavior {
+	color: $color-white;
+
+	&:hover,
+	&:focus-visible {
+		color: $color-shine;
+	}
+
+	&:active {
+		font-weight: bold;
+	}
+
+	&:focus-visible {
+		outline: none;
+		text-decoration: underline;
+	}
+
+	&:active,
+	&:focus-visible {
+		color: $color-gray;
+	}
+}
+
+.t-icon-btn {
+	color: $color-white;
+
+	&:hover:not(:active),
+	&:focus-visible:not(:active) {
+		color: $color-shine;
+		transform: scale(1.1);
+	}
+
+	&:focus-visible {
+		outline: 1px solid $color-shine;
+	}
+
+	&:active,
+	&:focus-visible {
+		color: $color-gray;
+		outline-color: $color-gray;
+	}
+}
