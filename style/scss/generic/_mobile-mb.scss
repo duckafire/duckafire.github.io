@@ -152,7 +152,7 @@
 	transition: background-color 0.5s ease;
 
 	&:hover {
-		background-color: gray;
+		/*background-color: gray;*/
 		transition: none;
 		cursor: pointer;
 	}
@@ -196,7 +196,6 @@
 
 .main-container {
 	color: #dedede;
-	background-color: #000;
 }
 
 .vert-gap {
@@ -206,7 +205,7 @@
 
 .backdrop {
 	--bg-color: black;
-	background-color: var(--bg-color);
+	/*background-color: var(--bg-color);*/
 	opacity: 0.5;
 }
 

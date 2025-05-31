@@ -22,7 +22,6 @@
 		margin-top: 0.45em;
 		height: 0.275em;
 		position: absolute;
-		background-color: #333;
 	}
 
 	h1::before {
@@ -41,7 +40,6 @@
 .manual-vert-swiper {
 	width: 100%;
 	height: rem(180);
-	background-color: #1f1f1f;
 	overflow-x: hidden;
 
 	.swiper-slide {
@@ -60,9 +58,9 @@
 	}
 	
 	[class^=vert-swiper-btn] {
-		background-color: #777;
 		width: 25%;
 		height: 100%;
+		background: 0;
 	}
 }
 
@@ -81,7 +79,6 @@
 		gap: rem(7.5);
 		width: $card-width;
 		height: 100%;
-		background-color: #4f4f4f;
 		padding: $v15 rem(7.5);
 		border-radius: rem(12.5);
 		overflow-x: hidden;
@@ -132,7 +129,6 @@
 		height: 100%;
 		display: flex;
 		align-items: center;
-		background-color: #333;
 		border-radius: rem(12.5);
 	}
 
@@ -172,7 +168,6 @@ $line-fix-len: rem(2.75);
 
 .vert-line,
 .hori-line {
-	background-color: #999;
 	flex: none;
 	border-radius: $v15;
 }
@@ -198,7 +193,6 @@ $line-fix-len: rem(2.75);
 	width: 100%;
 	font-size: 1rem;
 	padding: 0.3em 0.4em 0.4em 0.525em;
-	background-color: #333;
 
 	.footer-cell {
 		display: flex;
