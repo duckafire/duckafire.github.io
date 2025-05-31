@@ -9,8 +9,29 @@
 }
 
 .highlight-projects-list {
+	$card-width: rem(168);
+	$cover-dim: calc($card-width * 0.5);
+	$link-fsize: 1.45em;
+	$link-bmargin: 0.25em;
+
+	font-size: 1.2rem;
+
 	.highlight-card {
-		width: rem(168);
+		width: $card-width;
+		grid-template-rows: $cover-dim auto calc($link-fsize + $link-bmargin * 2);
+	}
+
+	.highlight-card-cover {
+		@include mirror-dim($cover-dim);
+	}
+
+	.highlight-cards-link-shortcut {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		place-items: center;
+		width: 100%;
+		font-size: $link-fsize;
+		margin-block: $link-bmargin;
 	}
 }
 

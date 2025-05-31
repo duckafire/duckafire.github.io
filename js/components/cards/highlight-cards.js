@@ -63,7 +63,7 @@ const create_main_languages_list = (data) => {
 		section.appendChild(i);
 	}
 
-	section.className = "highlight-card-tech";
+	section.className = "highlight-card-tech only-not-at-computer";
 
 	return section;
 };
@@ -82,8 +82,7 @@ const create_computer_layout_buttons = (data) => {
 
 	const a = new_anchor("generic-link", data.link);
 
-	section.className = "grid children-on-center inherit-width title-fsize only-at-computer";
-	section.style = "--grid-columns: 2;";
+	section.className = "highlight-cards-link-shortcut only-at-computer";
 
 	i0.className = data.icon;
 	i1.className = "fa-solid fa-square-arrow-up-right";

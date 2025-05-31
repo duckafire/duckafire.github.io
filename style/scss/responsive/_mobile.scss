@@ -71,11 +71,12 @@
 	$cover-dim: calc($card-width * 0.5);
 
 	@include mirror-dim(100%);
+	font-size: 1rem;
 
 	.highlight-card {
 		display: grid;
 		grid-template-columns: 1fr;
-		grid-template-rows: $cover-dim auto 1.3rem;
+		grid-template-rows: $cover-dim auto 1.3em;
 		place-items: center;
 		gap: rem(7.5);
 		width: $card-width;
@@ -98,13 +99,13 @@
 	}
 
 	.highlight-card-title {
-		font-size: 1.421rem;
+		font-size: 1.421em;
 	}
 
 	.highlight-card-tech {
 		display: flex;
 		justify-content: space-around;
-		font-size: 1.1rem;
+		font-size: 1.1em;
 		width: 80%;
 	}
 }
