@@ -124,8 +124,8 @@
 	width: 100%;
 }
 
-.gap-150-rem,
-.font-size-150-rem {
+.gap-one-h-fifty-rem,
+.fsize-one-h-fifty-rem {
 	gap: 1.5rem;
 }
 
@@ -138,30 +138,6 @@
 }
 
 /* PSEUDO-X BASED: hover, after, webkit, ... */
-
-.generic-link-container {
-	--glink-cont-color-normal: orange;
-	--glink-cont-color-hover:  red;
-	--glink-cont-color-active: yellow;
-}
-
-.generic-link { /* TODO: scss variables to store default colors */
-	--glink-color-normal: var(--glink-cont-color-normal, orange);
-	--glink-color-hover:  var(--glink-cont-color-hover,  red);
-	--glink-color-active: var(--glink-cont-color-active, yellow);
-
-	font-size: 1em;
-	color: var(--glink-color-normal);
-
-	&:hover {
-		cursor: pointer;
-		color: var(--glink-color-hover);
-	}
-
-	&:active {
-		color: var(--glink-color-active);
-	}
-}
 
 .hover-grow:hover {
 	cursor: pointer;
