@@ -149,16 +149,6 @@
 	transform: scale(0.9);
 }
 
-.hi-hover-trans {
-	transition: background-color 0.5s ease;
-
-	&:hover {
-		/*background-color: gray;*/
-		transition: none;
-		cursor: pointer;
-	}
-}
-
 .hover-pointer:hover {
 	cursor: pointer;
 }
