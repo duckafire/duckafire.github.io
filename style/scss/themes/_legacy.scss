@@ -1,18 +1,16 @@
 $color-dark:  #000;
-$color-block: #444;
+$color-black: #444;
 $color-gray:  #888;
 $color-white: #ccc;
 $color-shine: #fff;
 
-.t-background-0 {
-	background-color: $color-dark;
-}
 
-.t-font-color {
+.tlegacy\:font-color {
 	color: $color-white;
 }
 
-.t-link {
+
+.tlegacy\:link {
 	color: $color-white;
 
 	&:hover,
@@ -35,7 +33,7 @@ $color-shine: #fff;
 	}
 }
 
-.t-icon-btn {
+.tlegacy\:icon-btn {
 	color: $color-white;
 
 	&:hover:not(:active),
