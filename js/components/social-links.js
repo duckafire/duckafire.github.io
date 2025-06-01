@@ -21,10 +21,10 @@ const data_json = [
 const create = (data, noMobile) => {
 	const li = document.createElement("li");
 	const button = document.createElement("button");
-	const a = new_anchor("no-std-style", data[0]);
+	const a = new_anchor("no-std-style inherit-cursor", data[0]);
 	const i = document.createElement("i");
 
-	button.className = "no-std-style title-fsize tlegacy:icon-btn" + (noMobile ? " only-not-at-mobile" : "");
+	button.className = "no-std-style title-fsize hover-pointer tlegacy:icon-btn" + (noMobile ? " only-not-at-mobile" : "");
 	i.className = data[1];
 
 	a.appendChild(i)

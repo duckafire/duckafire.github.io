@@ -13,6 +13,37 @@ $color-shine:     #fff;
 	color: $color-white;
 }
 
+.tlegacy\:bg-0 {
+	background-color: $color-dark;
+}
+
+.tlegacy\:bg-1 {
+	background-color: $color-black;
+}
+
+.tlegacy\:bg-2 {
+	background-color: $color-shadow;
+}
+
+.tlegacy\:live-bg {
+	outline: none;
+	background-color: $color-silver;
+
+	&:hover:not(:active),
+	&:focus-visible:not(:active) {
+		background-color: $color-shine;
+	}
+}
+
+
+.tlegacy\:live-low-opacity {
+	opacity: 0.15;
+
+	&:hover,
+	&:focus-visible {
+		opacity: 0.375;
+	}
+}
 
 .tlegacy\:link {
 	color: $color-white;

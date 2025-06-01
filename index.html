@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
-<html lang="pt-BR">
+<html lang="pt-BR" class="using-theme-legacy">
 <head>
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
@@ -13,7 +13,7 @@
 
 	<link rel="stylesheet" href="./style/css/core.css"/>
 </head>
-<body class="main-container screen-dim min-screen h-max-content tlegacy:font-color using-tlegacy">
+<body class="main-container screen-dim min-screen h-max-content tlegacy:font-color tlegacy:bg-0">
 
 	<nav class="vw100 set-height sticky-0x0 move-to-forward"
 		style="
@@ -21,16 +21,16 @@
 		">
 
 		<div class="inherit-dim relative-pos">
-			<div id="main-topbar" class="inherit-dim abs-0x0">
+			<div id="main-topbar" class="inherit-dim abs-0x0 tlegacy:bg-2">
 				<section class="topbar children-on-center set-pair-padding" style="
 						--padding-inline: 0.9rem;
 						--padding-block: 0.55rem;
 					">
-					<img class="double-board inflexible circle-radius hover-grow active-shrink" src="./resources/images/foo.svg" alt=" " width="52.8" height="52.8" loading="lazy" />
+					<img class="double-board inflexible circle-radius" src="./resources/images/foo.svg" alt=" " width="52.8" height="52.8" loading="lazy" />
 
 					<ul id="topbar-menu-list" class="no-std-style rev-flex children-on-center gap-one-h-fifty-rem">
 						<li>
-							<button id="open-main-burger" class="no-std-style topbar-item inflexible tlegacy:icon-btn"
+							<button id="open-main-burger" class="no-std-style topbar-item inflexible hover-pointer tlegacy:icon-btn"
 								style="
 									--glink-color-normal: orange;
 									--glink-color-hover: red;
@@ -47,7 +47,7 @@
 					/* based #burger-topbar values */
 					--tb-width: calc(100vw - 450px);
 				"></div>
-			<div id="burger-topbar" class="inherit-dim abs-0x0
+			<div id="burger-topbar" class="inherit-dim abs-0x0 tlegacy:bg-2
 					tb:set-left tb:set-width tb:relative-pos tb:no-min-dim
 				" style="display:none;
 					/* equal #burger-menu values */
@@ -61,12 +61,8 @@
 						--glink-cont-color-hover: red;
 						--glink-cont-color-active: yellow;
 					">
-					<li id="close-main-burger" class="hover-grow active-shrink"
-						style="
-							--tb-padding-top: 18.425px;
-						"
-						>
-						<button class="no-std-style title-fsize tlegacy:icon-btn" href="#">
+					<li id="close-main-burger">
+						<button class="no-std-style title-fsize hover-pointer tlegacy:icon-btn" href="#">
 							<i class="fa-solid fa-xmark"></i>
 						</button>
 					</li>
@@ -89,14 +85,16 @@
 			tb:set-left tb:set-width " style="
 				/* based #burger-topbar values */
 				--tb-left: calc( (100vw - 450px) * -1 );
-				--tb-width: calc(100vw - 450px);
+				--tb-width: calc(100v - 450px);
 			"></div>
-		<div class="inherit-dim scroll-y">
+		<div class="inherit-dim scroll-y tlegacy:bg-1">
 			<ul class="no-std-style text-on-center flex-col vert-gap">
-				<li class="inline active-shrink hi-hover-trans">
-					<a class="no-std-style subtitle-fsize inherit-cursor inherit-dim" href="#" rel="noopener noreferrer">
-						Foo
-					</a>
+				<li class="inline active-shrink hi-hover-trans subtitle-fsize">
+					<button class="no-std-style inherit-cursor inherit-dim">
+						<a class="no-std-style inherit-cursor inherit-dim" href="#" rel="noopener noreferrer">
+							Foo
+						</a>
+					</button>
 				</li>
 			</ul>
 		</div>
@@ -115,8 +113,8 @@
 					<!-- components -->
 				</ul>
 				<div class="swiper-btn-container disable-events">
-					<button class="vert-swiper-btn-prev enable-events"></button>
-					<button class="vert-swiper-btn-next enable-events"></button>
+					<button class="vert-swiper-btn-prev enable-events hover-pointer tlegacy:live-bg tlegacy:live-low-opacity"></button>
+					<button class="vert-swiper-btn-next enable-events hover-pointer tlegacy:live-bg tlegacy:live-low-opacity"></button>
 				</div>
 			</div>
 		</div>
@@ -131,7 +129,7 @@
 
 	</main>
 
-	<footer class="page-footer">
+	<footer class="page-footer tlegacy:bg-1">
 
 		<ul class="footer-cell">
 			<li><h1>Foo</h1></li>

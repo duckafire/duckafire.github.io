@@ -4,10 +4,6 @@
 
 @import "partial/mixin";
 
-.using-tlegacy {
-	@import "themes/legacy";
-}
-
 @import "generic/mobile-mb";
 @import "responsive/mobile";
 
@@ -24,3 +20,7 @@
 }
 
 @import "partial/only-at";
+
+.using-theme-legacy {
+	@import "themes/legacy";
+}

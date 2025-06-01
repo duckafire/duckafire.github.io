@@ -53,7 +53,7 @@ const create_layers_of_containers = (data) => {
 	se.appendChild( separation_line(false) );
 	se.appendChild( new_img("card-cover", data.cover_src) );
 
-	li.className = "card-dim";
+	li.className = "card-dim tlegacy:bg-1";
 	li.appendChild(se);
 
 	return li;

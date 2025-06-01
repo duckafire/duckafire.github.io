@@ -100,7 +100,7 @@ const create_layers_of_containers = (data) => {
 	const li = document.createElement("li");
 	const se = document.createElement("section");
 
-	se.className = "highlight-card";
+	se.className = "highlight-card tlegacy:bg-2";
 	se.appendChild( new_img("highlight-card-cover", data.cover_src) );
 	se.appendChild( create_title(data.title) );
 	se.appendChild( create_main_languages_list(data.used_tech) );
