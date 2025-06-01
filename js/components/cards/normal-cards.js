@@ -32,11 +32,13 @@ const text_content = (title, description) => {
 const separation_line = (isVert) => {
 	const div = document.createElement("div");
 
+	div.className = "tlegacy:color-line-bar-1 ";
+
 	if(isVert){
-		div.className = "vert-line only-at-mobile";
+		div.className += "vert-line only-at-mobile";
 		div.style = "--parent-height: 125px;";
 	}else{
-		div.className = "hori-line only-not-at-mobile";
+		div.className += "hori-line only-not-at-mobile";
 		div.style = "--parent-width: 93.32%; --line-height: 4px;";
 	}
 
@@ -47,13 +49,13 @@ const create_layers_of_containers = (data) => {
 	const li = document.createElement("li");
 	const se = document.createElement("section");
 
-	se.className = "card";
+	se.className = "card tlegacy:bg-1";
 	se.appendChild( text_content(data.title, data.description) );
 	se.appendChild( separation_line(true) );
 	se.appendChild( separation_line(false) );
 	se.appendChild( new_img("card-cover", data.cover_src) );
 
-	li.className = "card-dim tlegacy:bg-1";
+	li.className = "card-dim";
 	li.appendChild(se);
 
 	return li;

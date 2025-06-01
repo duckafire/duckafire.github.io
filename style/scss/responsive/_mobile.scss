@@ -22,6 +22,7 @@
 		margin-top: 0.45em;
 		height: 0.275em;
 		position: absolute;
+		background-color: var(--color-line-bar);
 	}
 
 	h1::before {
@@ -169,6 +170,7 @@ $line-fix-len: rem(2.75);
 .hori-line {
 	flex: none;
 	border-radius: $v15;
+	background-color: var(--color-line-bar);
 }
 
 .hori-line {

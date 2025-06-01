@@ -8,10 +8,27 @@ $color-silver:    #bbb;
 $color-white:     #ddd;
 $color-shine:     #fff;
 
+/* MULTI */
 
-.tlegacy\:font-color {
-	color: $color-white;
+.tlegacy\:color-line-bar-0 {
+	--color-line-bar: #{$color-shadow};
 }
+
+.tlegacy\:color-line-bar-1 {
+	--color-line-bar: #{$color-darkgray};
+}
+
+.tlegacy\:color-line-bar-2 {
+	--color-line-bar: #{$color-gray};
+}
+
+/* EXCLUSIVE */
+
+/* simple */
+
+/*.tlegacy\:font-color {
+	color: $color-white;
+}*/
 
 .tlegacy\:bg-0 {
 	background-color: $color-dark;
@@ -25,6 +42,8 @@ $color-shine:     #fff;
 	background-color: $color-shadow;
 }
 
+/* complex */
+
 .tlegacy\:live-bg {
 	outline: none;
 	background-color: $color-silver;
@@ -34,7 +53,6 @@ $color-shine:     #fff;
 		background-color: $color-shine;
 	}
 }
-
 
 .tlegacy\:live-low-opacity {
 	opacity: 0.15;
