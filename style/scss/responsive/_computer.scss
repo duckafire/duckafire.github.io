@@ -9,16 +9,18 @@
 }
 
 .highlight-projects-list {
+	$card-hori-padding: rem(7.5);
 	$card-width: rem(168);
 	$cover-dim: calc($card-width * 0.5);
 	$link-fsize: 1.45em;
-	$link-bmargin: 0.25em;
+	$link-height: rem(50);
 
 	font-size: 1.2rem;
 
 	.highlight-card {
 		width: $card-width;
-		grid-template-rows: $cover-dim auto calc($link-fsize + $link-bmargin * 2);
+		padding-bottom: 0;
+		grid-template-rows: $cover-dim auto $link-height;
 	}
 
 	.highlight-card-cover {
@@ -29,9 +31,15 @@
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		place-items: center;
-		width: 100%;
+		width: calc(100% + $card-hori-padding * 2);
+		height: $link-height;
 		font-size: $link-fsize;
-		margin-block: $link-bmargin;
+
+		button,
+		a {
+			width: 100%;
+			height: 100%;
+		}
 	}
 }
 

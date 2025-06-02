@@ -65,6 +65,7 @@
 }
 
 .highlight-projects-list {
+	$card-hori-padding: rem(7.5);
 	$card-width: rem(140);
 	$cover-dim: calc($card-width * 0.5);
 
@@ -76,10 +77,10 @@
 		grid-template-columns: 1fr;
 		grid-template-rows: $cover-dim auto 1.3em;
 		place-items: center;
-		gap: rem(7.5);
 		width: $card-width;
 		height: 100%;
-		padding: $v15 rem(7.5);
+		gap: $card-hori-padding;
+		padding: $v15 $card-hori-padding;
 		border-radius: rem(12.5);
 		overflow-x: hidden;
 	}

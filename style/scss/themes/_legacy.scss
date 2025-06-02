@@ -22,6 +22,79 @@ $color-shine:     #fff;
 	--color-line-bar: #{$color-gray};
 }
 
+.tlegacy-opaque-twin,
+.tlegacy-highlight-twin {
+	cursor: pointer;
+}
+
+@mixin tlegacy-twins($c0, $c0-plus, $c1, $c1-plus) {
+	color: $c0;
+	background-color: $c1;
+	position: relative;
+
+	&:hover,
+	&:focus-visible {
+		outline: $c0-plus;
+	}
+
+	&:hover:not(:active),
+	&:focus-visible:not(:active) {
+		color: $c0-plus;
+		background-color: $c1-plus;
+	}
+}
+
+.tlegacy-opaque-twin {
+	@include tlegacy-twins(
+		$color-silver, $color-shine,
+		$color-shadow, $color-dark,
+	);
+}
+
+.tlegacy-highlight-twin {
+	@include tlegacy-twins(
+		$color-shadow, $color-dark,
+		$color-silver, $color-shine,
+	);
+}
+
+.tlegacy\:hightlight-card-slide {
+	/* highligth card border radius */
+	border-radius: rem(15);
+
+	&:not(.swiper-slide-active)::after {
+		content: " ";
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		border-radius: inherit;
+		position: absolute;
+		z-index: 9999;
+		background-color: $color-dark;
+		opacity: 0.9; /* it is not: active, next or prev */
+	}
+
+	/* "gambiarra" to fix small visual bug related borders */
+	&:not(.swiper-slide-active):not(.swiper-slide-prev):not(.swiper-slide-next)::after {
+		top: -0.5%;
+		left: -0.5%;
+		width: 101%;
+		height: 101%;
+	}
+
+	&.swiper-slide-active {
+		border: rem(2) solid $color-shine;
+	}
+
+	&.swiper-slide-prev::after,
+	&.swiper-slide-next::after {
+		opacity: 0.45;
+		/* I could not get to make the `border-width` to work :( */
+		border: rem(1) solid $color-shine;
+	}
+}
+
 /* EXCLUSIVE */
 
 /* simple */

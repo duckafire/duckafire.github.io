@@ -77,10 +77,10 @@ const create_computer_layout_buttons = (data) => {
 
 	for(let i = 0; i < 2; i++){
 		buttons.push( document.createElement("button") );
-		buttons[i].className = "no-std-style";
+		buttons[i].className = "no-std-style tlegacy-" + (i == 0 ? "opaque" : "highlight") + "-twin";
 	}
 
-	const a = new_anchor("generic-link", data.link);
+	const a = new_anchor("no-std-style", data.link);
 
 	section.className = "highlight-cards-link-shortcut only-at-computer";
 
@@ -106,7 +106,7 @@ const create_layers_of_containers = (data) => {
 	se.appendChild( create_main_languages_list(data.used_tech) );
 	se.appendChild( create_computer_layout_buttons(data.highlight.home_page) );
 
-	li.className = "swiper-slide";
+	li.className = "swiper-slide tlegacy:hightlight-card-slide";
 	li.appendChild(se);
 
 	return li;
