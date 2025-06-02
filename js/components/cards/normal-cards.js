@@ -22,7 +22,9 @@ const text_content = (title, description) => {
 	h1.textContent = title;
 	p.textContent = description;
 
+	p.className = "scroll-y";
 	section.className = "card-text-field";
+
 	section.appendChild(h1);
 	section.appendChild(p);
 
