@@ -51,7 +51,7 @@ const create_layers_of_containers = (data) => {
 	const li = document.createElement("li");
 	const se = document.createElement("section");
 
-	se.className = "card tlegacy:bg-1";
+	se.className = "card tlegacy:bg-1 tlegacy:normal-card-hover-highlight";
 	se.appendChild( text_content(data.title, data.description) );
 	se.appendChild( separation_line(true) );
 	se.appendChild( separation_line(false) );

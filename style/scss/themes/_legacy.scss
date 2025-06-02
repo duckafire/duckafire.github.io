@@ -95,6 +95,16 @@ $color-shine:     #fff;
 	}
 }
 
+.tlegacy\:normal-card-hover-highlight {
+	&:hover,
+	&:focus-visible,
+	&:focus-within {
+		outline: 2px solid $color-shine;
+		transform: scale(1.01);
+		cursor: pointer;
+	}
+}
+
 /* EXCLUSIVE */
 
 /* simple */
