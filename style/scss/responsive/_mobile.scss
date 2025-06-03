@@ -91,13 +91,28 @@
 	}
 
 	.highlight-card-title-container {
-		width: 90%;
+		width: calc(100% + $card-hori-padding * 2);
 		overflow-x: hidden;
 		text-align: center;
+		white-space: nowrap;
+	}
+
+	@keyframes right-to-left {
+		0% {
+			transform: translateX(101%);
+		}
+		100% {
+			transform: translateX( calc(var(--text-length) * -1) );
+		}
 	}
 
 	.highlight-card-title {
 		font-size: 1.421em;
+	}
+
+	.swiper-slide-active .highlight-card-title {
+		--text-length: 0;
+		animation: right-to-left 10s linear infinite;
 	}
 
 	.highlight-card-tech {
@@ -145,6 +160,8 @@
 		h1 {
 			font-size: 1.1em;
 			margin-bottom: 5%;
+			width: 100%; /* TODO: remove it (only to fix debug problems) */
+			overflow: hidden;
 		}
 
 		p {
