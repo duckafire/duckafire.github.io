@@ -14,15 +14,15 @@ const open_close_main_burger = (openBurger) => {
 	}
 
 	for(let i = 0; i < indexs.length; i++)
-		document.getElementById(indexs[i]).style.display = values[i];
+		$("#" + indexs[i]).style.display = values[i];
 
 	document.body.style.overflowY = bodyOverflowY;
 }
 
-document.getElementById("open-main-burger")
+$("#open-main-burger")
 	.addEventListener("click", () => { open_close_main_burger(true) });
 
-document.getElementById("close-main-burger")
+$("#close-main-burger")
 	.addEventListener("click", () => { open_close_main_burger(false) });
 
 } // end

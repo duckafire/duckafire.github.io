@@ -3,6 +3,16 @@
 const BUILD_CARD = {};
 const DATA_JSON = {};
 
+const $ = (query) => {
+	const trueQuery = query.slice(1);
+
+	switch(query.charAt(0)){
+		case "#": return document.getElementById(trueQuery);
+		case "@": return document.querySelectorAll(trueQuery);
+		default:  return document.querySelector(query);
+	}
+}
+
 const new_img = (className, src, alt, title) => {
 	const img = document.createElement("img");
 

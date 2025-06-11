@@ -35,8 +35,8 @@ const create = (data, noMobile) => {
 }
 
 const containers_list = [
-	document.getElementById("topbar-menu-list"),
-	document.getElementById("burger-menu-list"),
+	$("#topbar-menu-list"),
+	$("#burger-menu-list"),
 ];
 
 for(let i = 0; i < containers_list.length; i++)

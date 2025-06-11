@@ -1,8 +1,8 @@
 "use strict";
 { // start
 
-const normal_container = document.getElementById("cards-container");
-const highlight_container = document.getElementById("highlight-cards-container");
+const normal_container = $("#cards-container");
+const highlight_container = $("#highlight-cards-container");
 
 for(const data of DATA_JSON.cards){
 	normal_container.appendChild( BUILD_CARD.normal(data) );
@@ -11,8 +11,8 @@ for(const data of DATA_JSON.cards){
 		highlight_container.appendChild( BUILD_CARD.highlight(data) );
 }
 
-const highlight_card_width  = parseInt(getComputedStyle(document.querySelector(".highlight-card-title-container")).width);
-const highlight_cards_title = document.querySelectorAll(".highlight-card-title");
+const highlight_card_width  = parseInt(getComputedStyle($(".highlight-card-title-container")).width);
+const highlight_cards_title = $("@.highlight-card-title");
 let px;
 
 for(const title of highlight_cards_title){
