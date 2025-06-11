@@ -41,10 +41,12 @@
 		height: rem(155);
 
 		h1 {
+			text-align: center;
 			margin-top: 3%;
 		}
 
 		p {
+			text-align: justify;
 			height: 100%;
 			max-width: rem(375);
 		}
