@@ -60,6 +60,9 @@ const create_layers_of_containers = (data) => {
 	li.className = "card-dim";
 	li.appendChild(se);
 
+	// TODO: remote it
+	se.onclick = work_in_progress;
+
 	return li;
 };
 

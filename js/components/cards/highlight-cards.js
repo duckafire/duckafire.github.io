@@ -93,6 +93,9 @@ const create_computer_layout_buttons = (data) => {
 	section.appendChild(buttons[0]);
 	section.appendChild(buttons[1]);
 
+	// TODO: remote it
+	buttons[1].onclick = work_in_progress;
+
 	return section;
 };
 
