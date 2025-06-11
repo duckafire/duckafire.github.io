@@ -155,13 +155,14 @@
 		grid-template-columns: 1fr;
 		grid-template-rows: 1.25em 1fr;
 		place-items: center;
-		max-height: 100%; /* TODO */
+		max-height: 100%;
 
 		h1 {
 			font-size: 1.1em;
 			margin-bottom: 5%;
-			width: 100%; /* TODO: remove it (only to fix debug problems) */
+			width: 100%;
 			overflow: hidden;
+			white-space: nowrap;
 		}
 
 		p {

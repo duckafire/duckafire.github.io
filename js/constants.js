@@ -13,6 +13,9 @@ const $ = (query) => {
 	}
 }
 
+const get_image = (fileName) => "./resources/images/" + fileName;
+const da_github = (path) => "https://github.com/duckafire/" + path;
+
 const new_img = (className, src, alt, title) => {
 	const img = document.createElement("img");
 

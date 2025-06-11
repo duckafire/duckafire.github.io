@@ -104,7 +104,7 @@ const create_layers_of_containers = (data) => {
 	se.appendChild( new_img("highlight-card-cover", data.cover_src) );
 	se.appendChild( create_title(data.title) );
 	se.appendChild( create_main_languages_list(data.used_tech) );
-	se.appendChild( create_computer_layout_buttons(data.highlight.home_page) );
+	se.appendChild( create_computer_layout_buttons(data.highlight.homePage) );
 
 	li.className = "swiper-slide tlegacy:hightlight-card-slide";
 	li.appendChild(se);
