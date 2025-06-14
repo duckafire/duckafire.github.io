@@ -183,7 +183,7 @@
 	}
 }
 
-$line-fix-len: rem(2.75);
+$line-fix-len: $v1;
 @function line-dyn-len($v) { @return calc(var(#{$v}) * 0.8) }
 @function line-dmargin($v) { @return calc(var(#{$v}) * 0.1) }
 

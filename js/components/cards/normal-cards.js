@@ -40,8 +40,8 @@ const separation_line = (isVert) => {
 		div.className += "vert-line only-at-mobile";
 		div.style = "--parent-height: 125px;";
 	}else{
-		div.className += "hori-line only-not-at-mobile";
-		div.style = "--parent-width: 93.32%; --line-height: 4px;";
+		div.className += "hori-line only-at-table";
+		div.style = "--parent-width: 93.32%; --line-height: 2px;";
 	}
 
 	return div;
