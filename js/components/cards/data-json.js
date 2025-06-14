@@ -9,6 +9,25 @@ const new_card = (title, description, cover_src, used_tech, highlight) => ({
 	highlight
 });
 
+class Lang {
+	constructor(name, iconNameSuffix, nameComplement){
+		name = name + (nameComplement || "");
+
+		this.name        = name;
+		this.iconName    = name.toLowerCase() + "-" + iconNameSuffix;
+		this.isHighlight = (iconNameSuffix !== undefined);
+	}
+}
+
+class Highlight {
+	constructor(homePage){
+		this.homePage = {
+			link: homePage[0],
+			icon: homePage[1],
+		}
+	}
+}
+
 DATA_JSON.cards = [
 	new_card(
 		"Legendary Champion: Rebirth",
@@ -34,13 +53,12 @@ DATA_JSON.cards = [
 		"compactação de bibliotecas Lua (principalmente para o projeto TinyLibrary) em um formato " +
 		"apelidado de Pacote Local.",
 		get_image("foo.svg"),
-		["*c-plain"],
-		{
-			homePage: {
-				link: da_github("LIM"),
-				icon: "fa-brands fa-github",
-			}
-		}
+		[
+			new Lang("C", "plain"),
+		],
+		new Highlight(
+			[da_github("LIM"), "fa-brands fa-github"],
+		)
 	),
 	new_card(
 		"Small Projects",
@@ -57,13 +75,14 @@ DATA_JSON.cards = [
 		"pequena e minimalista, pensada para conectar e exibir meus projetos de maneira "         +
 		"centralizada. Um grande OBRIGADO aos mantenedores do projeto GitHub Pages!!",
 		get_image("foo.svg"),
-		["*html5-plain", "*sass-original", "*javascript-plain"],
-		{
-			homePage: {
-				link: da_github("nest"),
-				icon: "fa-brands fa-github",
-			}
-		}
+		[
+			new Lang("HTML", "plain", "5"),
+			new Lang("SASS", "original"),
+			new Lang("JavaScript", "plain"),
+		],
+		new Highlight(
+			[da_github("nest"), "fa-brands fa-github"],
+		)
 	),
 	new_card(
 		"Calculadora",
@@ -71,13 +90,12 @@ DATA_JSON.cards = [
 		"suporte a números negativos e decimais. Possui uma interface responsiva, desenvolvida com " +
 		"Java Swing, capaz de se adaptar aos mais diversos tamanhos de janela.",
 		get_image("foo.svg"),
-		["*java-plain"],
-		{
-			homePage: {
-				link: da_github("java-swing-calculator"),
-				icon: "fa-brands fa-github",
-			}
-		}
+		[
+			new Lang("Java", "plain"),
+		],
+		new Highlight(
+			[da_github("java-swing-calculator"), "fa-brands fa-github"],
+		)
 	),
 ];
 

@@ -42,23 +42,19 @@ const create_title = (title) => {
 
 const create_main_languages_list = (data) => {
 	const section = document.createElement("section");
+
 	let i;
-	
 	let quant = 0;
 
-	for(let className of data){
-		if(className.charAt(0) != "*" || quant == 5)
-			break;
-
+	for(let item of data){
 		quant++;
 
-		if(quant == 5)
-			className = "fa-solid fa-plus";
-		else
-			className = "devicon-" + className.slice(1);
+		if(!item.isHighlight || quant > 5)
+			break;
 
 		i = document.createElement("i");
-		i.className = className;
+		i.title = item.name;
+		i.className = (quant < 5) ? "devicon-" + item.iconName : "fa-solid fa-plus";
 
 		section.appendChild(i);
 	}
