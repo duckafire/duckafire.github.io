@@ -56,4 +56,12 @@
 
 .page-footer {
 	grid-template-columns: repeat(3, 1fr);
+
+	h1 {
+		margin-bottom: 0;
+	}
+
+	h2 {
+		margin-block: 0;
+	}
 }
