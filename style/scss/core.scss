@@ -9,9 +9,9 @@
 @import "responsive/mobile";
 
 @media only screen {
-	@include layout-min("table") {
-		@import "generic/table-tb";
-		@import "responsive/table";
+	@include layout-min("tablet") {
+		@import "generic/tablet-tb";
+		@import "responsive/tablet";
 	}
 
 	@include layout-min("computer") {

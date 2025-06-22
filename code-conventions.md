@@ -36,7 +36,7 @@
 1. Avoid variables to most specific elements.
 1. Children must not to use variables directly, only by heritage.
 
-1. Prefix responsive *non-mobile* classes: *table -> `tb:`*; *computer -> `cm:`*.
+1. Prefix responsive *non-mobile* classes: *tablet -> `tb:`*; *computer -> `cm:`*.
 
 > [!NOTE]
 > In CSS, scape `:` with `\`:
