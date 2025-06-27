@@ -10,10 +10,69 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"/>
 	<script src="https://kit.fontawesome.com/7d914c2988.js" crossorigin="anonymous" async="async"></script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 	<link rel="stylesheet" href="./style/css/core.css"/>
 </head>
 <body class="main-container screen-dim min-screen h-max-content scroll-y tlegacy:font-color tlegacy:bg-0">
+
+	<!-- TEMPLATES -->
+
+	<template id="highlight-card">
+		<li class="swiper-slide tlegacy:hightlight-card-slide">
+			<section class="highlight-card tlegacy:bg-2">
+
+				<img class="highlight-card-cover" src="" alt=" " loading="lazy"/>
+
+				<div class="highlight-card-title-container">
+					<h1 class="highlight-card-title"></h1>
+				</div>
+
+				<section class="highlight-card-tech highlight-card-tech only-not-at-computer">
+				</section>
+
+				<section class="highlight-cards-link-shortcut only-at-computer">
+					<button class="highlight-card-homepage-btn no-std-style tlegacy-opaque-twin">
+						<a class="no-std-style" href="" rel="noopener noreferrer">
+							<i class=""></i>
+						</a>
+					</button>
+
+					<button class="no-std-style tlegacy-highlight-twin">
+						<i class="fa-solid fa-eye"></i>
+					</button>
+				</section>
+
+			</section>
+		</li>
+	</template>
+
+	<template id="normal-card">
+		<li class="card-dim">
+			<section class="card tlegacy:bg-1 tlegacy:normal-card-hover-highlight">
+
+				<section class="card-text-field">
+					<h1></h1>
+					<p class="scroll-y"></p>
+				</section>
+
+				<div
+					class="tlegacy:color-line-bar-1 vert-line only-at-mobile"
+					style="--parent-height: 125px;"
+				></div>
+
+				<div
+					class="tlegacy:color-line-bar-1 hori-line only-at-table"
+					style="--parent-width: 93.32%; --line-height: 2px;"
+				></div>
+
+				<img class="card-cover" src="" alt=" " loading="lazy"/>
+
+			</section>
+		</li>
+	</template>
+
+	<!-- TEMPLATES -->
 
 	<nav class="vw100 set-height sticky-0x0 move-to-forward"
 		style="
@@ -162,7 +221,6 @@
 
 	</footer>
 
-
 	<!-- TODO: remote this -->
 	<div style="top:0;left:0;width:100vw;height:100dvh;position:fixed;opacity:0.4;display:flex;flex-direction:column-reverse;color:white;pointer-events:none;">
 		<h1 style="display:block;width:max-content;background-color:black;">Trabalho em progresso</h1>
@@ -170,20 +228,14 @@
 
 </body>
 
-<script src="./js/constants.js">
+<script src="./js/constants.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="./js/swiper/highlight-projects-list.js"></script>
 
 <script src="./js/events.js"></script>
 
-<script src="./js/components/cards/data-json.js"></script>
-<script src="./js/components/cards/highlight-cards.js"></script>
-<script src="./js/components/cards/normal-cards.js"></script>
-<script src="./js/components/cards/create.js"></script>
+<!-- templates -->
+<script src="./js/components/all-cards.js"></script>
 
 <script src="./js/components/social-links.js"></script>
 
