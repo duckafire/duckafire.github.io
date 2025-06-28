@@ -10,6 +10,10 @@ $color-shine:     #fff;
 
 /* MULTI */
 
+img {
+	filter: grayscale(1);
+}
+
 .tlegacy\:color-line-bar-0 {
 	--color-line-bar: #{$color-shadow};
 }
