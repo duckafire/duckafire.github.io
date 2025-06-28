@@ -43,9 +43,9 @@ const new_homepage = (link, icon) => ({
 const cards_data = [
 	new_data(
 		"Legendary Champion: Rebirth",
-		"Adentre arenas de combate com visual retrô e encarre um desafio frenético, onde seu úncio " +
+		"Adentre arenas de combate com visual retrô e encarre um desafio frenético, onde seu único " +
 		"objetivo é proteger suas CARGAS. Fuja e esconda-se de inimigos únicos e incansáveis. Corra "+
-		"em direção à glária da vitória!",
+		"em direção à glória da vitória!",
 		new_image("project-legendary-champion.png", true),
 		null,
 		null,
@@ -53,7 +53,7 @@ const cards_data = [
 	),
 	new_data(
 		"Tiny Library",
-		"Está é uma coleção de pequenas bibliotecas de código aberto, desenvolvidas em Lua para "   +
+		"Esta é uma coleção de pequenas bibliotecas de código aberto, desenvolvidas em Lua para "   +
 		"facilitar e otimizar o desenvolvimento de jogos (cartuchos) para o console/computador de " +
 		"fantasia Tic80 Tiny Computer.",
 		new_image("project-tiny-library.png", true),
@@ -99,9 +99,9 @@ const cards_data = [
 	),
 	new_data(
 		"Calculadora",
-		"Uma calculadora simples, desenvolvida para realizar operações matemáticas báscias, com "    +
+		"Uma calculadora simples, desenvolvida para realizar operações matemáticas básicas, com "    +
 		"suporte a números negativos e decimais. Possui uma interface responsiva, desenvolvida com " +
-		"Java Swing, capaz de se adaptar aos mais diversos tamanhos de janela.",
+		"Java Swing (v11), capaz de se adaptar aos mais diversos tamanhos de janela.",
 		new_image("project-java-calculator.png"),
 		new_langs(
 			["Java", "plain"]
