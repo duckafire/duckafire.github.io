@@ -1,3 +1,14 @@
+%align-card-cover {
+	flex: none;
+	display: flex;
+	align-items: center;
+}
+
+%to-all-cards-cover {
+	width: 100%;
+	height: auto;
+}
+
 .lined-title {
 	$gap: 0.4em;
 	$line-radius: 0.2em;
@@ -85,9 +96,13 @@
 		overflow-x: hidden;
 	}
 
-	.highlight-card-cover {
+	.highlight-card-cover-container {
 		@include mirror-dim($cover-dim);
-		flex: none;
+		@extend %align-card-cover;
+	}
+
+	.highlight-card-cover {
+		@extend %to-all-cards-cover;
 	}
 
 	.highlight-card-title-container {
@@ -175,10 +190,14 @@
 		}
 	}
 
-	.card-cover {
+	.card-cover-container {
 		@include mirror-dim(rem(75));
 		margin-inline: $v10;
-		flex: none;
+		@extend %align-card-cover;
+	}
+
+	.card-cover {
+		@extend %to-all-cards-cover;
 	}
 }
 

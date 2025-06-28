@@ -2,7 +2,20 @@
 
 {
 
-const new_tech = (lang, langIcon) => ({ lang, langIcon });
+
+const new_data = (title, description, cover, tech, homepage, isHighlight) => ({
+	title,
+	description,
+	cover,
+	tech,
+	homepage,
+	isHighlight,
+});
+
+const new_image = (name, isPixelated) => ({
+	src: get_image(name),
+	isPixelated: isPixelated ?? false,
+});
 
 const new_langs = (...lang_cards) => {
 	let name, suffix, complement;
@@ -27,22 +40,13 @@ const new_homepage = (link, icon) => ({
 	icon: icon || "fa-brands fa-github",
 });
 
-const new_data = (title, description, cover, tech, homepage, isHighlight) => ({
-	title,
-	description,
-	cover,
-	tech,
-	homepage,
-	isHighlight,
-});
-
 const cards_data = [
 	new_data(
 		"Legendary Champion: Rebirth",
 		"Adentre arenas de combate com visual retrô e encarre um desafio frenético, onde seu úncio " +
 		"objetivo é proteger suas CARGAS. Fuja e esconda-se de inimigos únicos e incansáveis. Corra "+
 		"em direção à glária da vitória!",
-		get_image("foo.svg"),
+		new_image("project-legendary-champion.png", true),
 		null,
 		null,
 		false,
@@ -52,7 +56,7 @@ const cards_data = [
 		"Está é uma coleção de pequenas bibliotecas de código aberto, desenvolvidas em Lua para "   +
 		"facilitar e otimizar o desenvolvimento de jogos (cartuchos) para o console/computador de " +
 		"fantasia Tic80 Tiny Computer.",
-		get_image("foo.svg"),
+		new_image("project-tiny-library.png", true),
 		null,
 		null,
 		false,
@@ -62,7 +66,7 @@ const cards_data = [
 		"\"Lua library compactor\" é um pequeno programa de terminal, criado para facilitar a "     +
 		"compactação de bibliotecas Lua (principalmente para o projeto TinyLibrary) em um formato " +
 		"apelidado de Pacote Local.",
-		get_image("foo.svg"),
+		new_image("project-lim.png"),
 		new_langs(
 			["C", "plain"]
 		),
@@ -74,7 +78,7 @@ const cards_data = [
 		"Um \"Frankenstein\" de bibliotecas, resumos, automações e TUDO que mais que você possa " +
 		"imaginar (ou não). Esse pequeno projeto foi criado para dar um lar a projetos pequenos " +
 		"demais para exigir um repositório próprio.",
-		get_image("foo.svg"),
+		new_image("project-small-projects.png", true),
 		null,
 		null,
 		false,
@@ -84,7 +88,7 @@ const cards_data = [
 		"Este é o projeto que você está utilizando agora (hehe)! Uma página web discutivelmente " +
 		"pequena e minimalista, pensada para conectar e exibir meus projetos de maneira "         +
 		"centralizada. Um grande OBRIGADO aos mantenedores do projeto GitHub Pages!!",
-		get_image("foo.svg"),
+		new_image("project-duckafires-nest.png", true),
 		new_langs(
 			["HTML", "plain", "5"],
 			["SASS", "original"],
@@ -98,7 +102,7 @@ const cards_data = [
 		"Uma calculadora simples, desenvolvida para realizar operações matemáticas báscias, com "    +
 		"suporte a números negativos e decimais. Possui uma interface responsiva, desenvolvida com " +
 		"Java Swing, capaz de se adaptar aos mais diversos tamanhos de janela.",
-		get_image("foo.svg"),
+		new_image("project-java-calculator.png"),
 		new_langs(
 			["Java", "plain"]
 		),
@@ -111,7 +115,7 @@ const normal    = new FromTo("#normal-card", "#cards-container");
 const highlight = new FromTo("#highlight-card", "#highlight-cards-container");
 
 highlight.createElem = (data) => {
-	$("img", highlight.template).src         = data.cover;
+	$("img", highlight.template).src         = data.cover.src;
 	$("h1",  highlight.template).textContent = data.title;
 
 	if(data.tech !== null){
@@ -142,9 +146,14 @@ highlight.createElem = (data) => {
 }
 
 normal.createElem = (data) => {
-	$("img", normal.template).src         = data.cover;
-	$("h1",  normal.template).textContent = data.title;
-	$("p",   normal.template).textContent = data.description;
+	const cover = $("img", normal.template);
+	cover.src = data.cover.src;
+
+	if(data.cover.isPixelated)
+		cover.classList.add("pixelated");
+
+	$("h1", normal.template).textContent = data.title;
+	$("p",  normal.template).textContent = data.description;
 
 	normal.appendTemplate();
 }

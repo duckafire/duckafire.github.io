@@ -251,3 +251,9 @@
 	display: block;
 	@include mirror-dim(100%, 100%, 100%);
 }
+
+.pixelated { /* some browsers do not support some values */
+	-ms-interpolation-mode: nearest-neighbor;
+	image-rendering: crisp-edges;
+	image-rendering: pixelated;
+}

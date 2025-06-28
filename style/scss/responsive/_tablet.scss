@@ -52,12 +52,11 @@
 		}
 	}
 
-	.card-cover {
+	.card-cover-container {
 		@include mirror-dim(rem(180));
 		margin: 0;
 		margin-bottom: $v16;
 	}
-	
 }
 
 .page-footer {
