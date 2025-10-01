@@ -1,9 +1,15 @@
+[gh-pages]: https://docs.github.com/en/pages "GitHub Pages Documentation"
+[gl-pages]: https://docs.gitlab.com/user/project/pages/ "GitLab Pages Documentation"
+[nest]: https://duckafire.github.io "DuckAfire's Nest"
+
 # DuckAfire's Nest
 
-The showcase of my projects.
+The showcase of my projects and other things about me :D
 
-* [Visit the Nest](https://duckafire.github.io/nest "Click! It is FREE!!")
+> [!TIP]
+> Visit my nest clicking [here][nest].
 
-[gh-pages]: https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages "See more about this amazing project"
-
-> Thanks to **everyone** involved in [*GitHub Pages*][gh-pages] project!
+> [!NOTE]
+> Thanks to all host projects:
+> * [Git**Hub** Pages][gh-pages]
+> * [Git**Lab** Pages][gl-pages]
