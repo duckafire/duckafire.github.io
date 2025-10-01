@@ -1,0 +1,4 @@
+*.svg binary
+*.css.map binary
+
+package-lock.json binary
