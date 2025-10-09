@@ -1,3 +1,6 @@
+@use "responsive-media-queries" as only;
+@use "style-kits" as kit;
+
 /*
 #CB3837 npm
 #181717 github
@@ -11,82 +14,6 @@ $color-l0: #1f1f1f;
 $color-l1: #303030;
 $color-l2: #444;
 $color-l3: #5d5d5d;
-
-@mixin only-mobile
-{
-	@media (max-width: calc(30em - 1px))
-	{
-		@content;
-	}
-}
-
-@mixin only-tablet
-{
-	@media (min-width: 30em) and (max-width: calc(64em - 1px))
-	{
-		@content;
-	}
-}
-
-@mixin only-computer
-{
-	@media (min-width: 30em) and (max-width: calc(64em - 1px))
-	{
-		@content;
-	}
-}
-
-@mixin double-border-line($border-color: black, $shadow-color: white,
-                          $border-length: 1px,  $shadow-length: 1px)
-{
-	border: $border-length solid $border-color;
-	box-shadow:
-		-1px -1px white,
-		-1px  1px white,
-		 1px -1px white,
-		 1px  1px white;
-}
-
-*
-{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: sans-serif, serif;
-}
-
-body
-{
-	width: 100vw;
-	height: 100vh;
-	height: 100dvh;
-	background-color: $color-l0;
-}
-
-figure > img
-{
-	width: 100%;
-	height: 100%;
-}
-
-body,
-button
-{
-	color: #c0c0c0;
-}
-
-button
-{
-	text-align: start;
-	font-size: 1em;
-}
-
-button,
-input
-{
-	background: none;
-	border: none;
-}
 
 .skill-container-alpha
 {
@@ -123,7 +50,7 @@ input
 	{
 		border-radius: 1.5em;
 		overflow: hidden;
-		@include double-border-line();
+		@include kit.double-border();
 	}
 
 	/*&.icon
@@ -231,7 +158,7 @@ input
 {
 	text-align: center;
 
-	@include only-mobile
+	@include only.mobile
 	{
 		&
 		{
@@ -239,7 +166,7 @@ input
 		}
 	}
 
-	@include only-tablet
+	@include only.tablet
 	{
 		&
 		{

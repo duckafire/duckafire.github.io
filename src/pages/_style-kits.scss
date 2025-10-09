@@ -1,0 +1,12 @@
+/* import as "set" */
+
+@mixin double-border($bcolor: black, $scolor: white, $blen: 1px,  $slen: 1px)
+{
+	/* b : Border | s : Shadow */
+	border: $blen solid $bcolor;
+	box-shadow:
+		 (-$slen) (-$slen) white,
+		 (-$slen)  ($slen) white,
+		  ($slen) (-$slen) white,
+		  ($slen)  ($slen) white;
+}
