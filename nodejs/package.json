@@ -1,0 +1,24 @@
+{
+  "name": "DuckAfire's Nest",
+  "author": "DuckAfire",
+  "license": "AGPL-3.0",
+  "version": "4.2.z",
+  "description": "A simple projects showcase.",
+  "engines": {
+    "node": ">=18.20.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duckafire/nest.git"
+  },
+  "mirrors": [
+    "https://gitlab.com/duckafire/duckafire.gitlab.io"
+  ],
+  "scripts": {
+  },
+  "devDependencies": {
+    "sass": "^1.92.1",
+    "terser": "^5.43.1",
+    "eslint": "^9.35.0"
+  }
+}
