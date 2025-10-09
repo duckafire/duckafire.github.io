@@ -1,0 +1,295 @@
+/*
+#CB3837 npm
+#181717 github
+#FC6D26 gitlab
+#2496ED docker
+#FA5C5C itch.io
+#41A6F6 tic80
+*/
+
+$color-l0: #1f1f1f;
+$color-l1: #303030;
+$color-l2: #444;
+$color-l3: #5d5d5d;
+
+@mixin only-mobile
+{
+	@media (max-width: calc(30em - 1px))
+	{
+		@content;
+	}
+}
+
+@mixin only-tablet
+{
+	@media (min-width: 30em) and (max-width: calc(64em - 1px))
+	{
+		@content;
+	}
+}
+
+@mixin only-computer
+{
+	@media (min-width: 30em) and (max-width: calc(64em - 1px))
+	{
+		@content;
+	}
+}
+
+@mixin double-border-line($border-color: black, $shadow-color: white,
+                          $border-length: 1px,  $shadow-length: 1px)
+{
+	border: $border-length solid $border-color;
+	box-shadow:
+		-1px -1px white,
+		-1px  1px white,
+		 1px -1px white,
+		 1px  1px white;
+}
+
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif, serif;
+}
+
+body
+{
+	width: 100vw;
+	height: 100vh;
+	height: 100dvh;
+	background-color: $color-l0;
+}
+
+figure > img
+{
+	width: 100%;
+	height: 100%;
+}
+
+body,
+button
+{
+	color: #c0c0c0;
+}
+
+button
+{
+	text-align: start;
+	font-size: 1em;
+}
+
+button,
+input
+{
+	background: none;
+	border: none;
+}
+
+.skill-container-alpha
+{
+	width: 100%;
+	padding: 1em;
+}
+
+.skill-container-beta
+{
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+}
+
+.skill-list
+{
+	list-style: none;
+}
+
+.skill-item
+{
+	background-color: $color-l1;
+	border-radius: 1.5em;
+	padding: 1em;
+}
+
+.skill-icon
+{
+	width: 5em;
+	height: 5em;
+	flex: none;
+
+	&.image
+	{
+		border-radius: 1.5em;
+		overflow: hidden;
+		@include double-border-line();
+	}
+
+	/*&.icon
+	{
+	}*/
+}
+
+.skill-content
+{
+	display: flex;
+	padding-inline: 1em;
+	gap: 1em;
+	margin: auto;
+	width: min-content;
+}
+
+.skill-content-options
+{
+	list-style: none;
+	display: flex;
+	font-size: 1.5em;
+	gap: 0.5em;
+	align-items: center;
+}
+
+@mixin skill-default-content-btn
+{
+	border-radius: 50%;
+	background-color: $color-l2;
+	width: 1.5em;
+	height: 1.5em;
+}
+
+.skill-perfil-options
+{
+	display: flex;
+	flex-direction: column;
+	width: min-content;
+}
+
+.skill-perfil-title
+{
+	font-size: 1.5em;
+	margin-top: auto;
+	white-space: nowrap;
+	position: relative;
+	margin-bottom: 0.25em;
+}
+
+.skill-perfil-details-manager
+{
+	height: 1.5em;
+	width: 100%;
+	text-align: center;
+
+	.skill-content-btn
+	{
+		width: 3em;
+		border-radius: 1em;
+	}
+}
+
+.skill-content-btn
+{
+	text-align: center;
+	@include skill-default-content-btn();
+}
+
+.skill-details
+{
+	margin-top: 1em;
+
+	&:not([open])
+	{
+		display: none;
+	}
+
+	> summary
+	{
+		display: none;
+	}
+}
+
+.skill-details-options
+{
+	list-style: none;
+	width: 75%;
+	margin-top: 1em;
+	margin-inline: auto;
+	display: flex;
+	gap: 0.75em;
+	flex-direction: column;
+}
+
+.skill-details-option-item
+{
+	padding: 0.25em;
+	border-radius: 0.5em;
+	background-color: $color-l2;
+	display: flex;
+	justify-content: space-between;
+}
+
+.skill-details-content-btn
+{
+	text-align: center;
+
+	@include only-mobile
+	{
+		&
+		{
+			width: 1.5em;
+		}
+	}
+
+	@include only-tablet
+	{
+		&
+		{
+			@include skill-default-content-btn();
+		}
+	}
+}
+
+.skill-details-mobile-btn-description
+{
+	font-size: 0.75em;
+	font-weight: bold;
+}
+
+.skill-details-open-url
+{
+	flex-grow: 1;
+
+	.skill-details-open-url-btn
+	{
+		width: 100%;
+	}
+}
+
+.skill-details-copy-url
+{
+	width: 1.5em;
+	text-align: center;
+}
+
+.skill-details-related-title
+{
+	font-size: 1em;
+	margin-top: 1em;
+	margin-bottom: 0.5em;
+	text-align: center;
+}
+
+.skill-details-related
+{
+	.skill-details-options
+	{
+		margin-top: 0;
+	}
+
+	.skill-details-option-item
+	{
+		button
+		{
+			color: #888;
+		}
+	}
+}
