@@ -1,4 +1,4 @@
-/* import as "set" */
+/* import as "kit" */
 
 @mixin double-border($bcolor: black, $scolor: white, $blen: 1px,  $slen: 1px)
 {
@@ -9,4 +9,16 @@
 		 (-$slen)  ($slen) white,
 		  ($slen) (-$slen) white,
 		  ($slen)  ($slen) white;
+}
+
+@mixin padding-gap($value)
+{
+	padding: $value;
+	gap: $value;
+}
+
+@mixin dimensions($value)
+{
+	width: $value;
+	height: $value;
 }

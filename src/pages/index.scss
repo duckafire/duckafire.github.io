@@ -15,83 +15,60 @@ $color-l1: #303030;
 $color-l2: #444;
 $color-l3: #5d5d5d;
 
-.skill-container-alpha
+.home-body
 {
-	width: 100%;
-	padding: 1em;
-}
-
-.skill-container-beta
-{
+	width: 100vw;
 	display: flex;
 	flex-direction: column;
-	gap: 1em;
+	background-color: #1f1f1f;
+	@include kit.padding-gap(1em);
 }
 
-.skill-list
-{
-	list-style: none;
-}
-
-.skill-item
+.card
 {
 	background-color: $color-l1;
 	border-radius: 1.5em;
 	padding: 1em;
 }
 
-.skill-icon
+.card-icon
 {
-	width: 5em;
-	height: 5em;
+	@include dimensions(5em);
 	flex: none;
-
-	&.image
-	{
-		border-radius: 1.5em;
-		overflow: hidden;
-		@include kit.double-border();
-	}
-
-	/*&.icon
-	{
-	}*/
 }
 
-.skill-content
+.main-card-image
+{
+	@extend .card-icon;
+	border-radius: 1.5em;
+	overflow: hidden;
+	@include kit.double-border();
+}
+
+.card-content
 {
 	display: flex;
-	padding-inline: 1em;
-	gap: 1em;
 	margin: auto;
 	width: min-content;
+	@include kit.padding-gap(1em);
 }
 
-.skill-content-options
+.card-options
 {
-	list-style: none;
 	display: flex;
 	font-size: 1.5em;
 	gap: 0.5em;
 	align-items: center;
 }
 
-@mixin skill-default-content-btn
-{
-	border-radius: 50%;
-	background-color: $color-l2;
-	width: 1.5em;
-	height: 1.5em;
-}
-
-.skill-perfil-options
+.perfil-miscellaneous-container
 {
 	display: flex;
 	flex-direction: column;
 	width: min-content;
 }
 
-.skill-perfil-title
+.perfil-welcome-phrase
 {
 	font-size: 1.5em;
 	margin-top: auto;
@@ -100,64 +77,43 @@ $color-l3: #5d5d5d;
 	margin-bottom: 0.25em;
 }
 
-.skill-perfil-details-manager
+.perfil-details-manager
 {
-	height: 1.5em;
 	width: 100%;
+	height: 1.5em;
 	text-align: center;
-
-	.skill-content-btn
-	{
-		width: 3em;
-		border-radius: 1em;
-	}
 }
 
-.skill-content-btn
+/* Mixin: PlaceHolder */
+@mixin mph\:ball-button()
 {
+	@include kit.dimensions(1.5em);
 	text-align: center;
-	@include skill-default-content-btn();
-}
-
-.skill-details
-{
-	margin-top: 1em;
-
-	&:not([open])
-	{
-		display: none;
-	}
-
-	> summary
-	{
-		display: none;
-	}
-}
-
-.skill-details-options
-{
-	list-style: none;
-	width: 75%;
-	margin-top: 1em;
-	margin-inline: auto;
-	display: flex;
-	gap: 0.75em;
-	flex-direction: column;
-}
-
-.skill-details-option-item
-{
-	padding: 0.25em;
-	border-radius: 0.5em;
+	border-radius: 50%;
 	background-color: $color-l2;
-	display: flex;
-	justify-content: space-between;
 }
 
-.skill-details-content-btn
+.ball-button
 {
-	text-align: center;
+	@include mph\:ball-button();
+}
 
+.perfil-ball-button
+{
+	@extend .ball-button;
+
+	@include only.mobile
+	{
+		&
+		{
+			width: 3em;
+			border-radius: 1em;
+		}
+	}
+}
+
+.details-ball-button
+{
 	@include only.mobile
 	{
 		&
@@ -170,34 +126,62 @@ $color-l3: #5d5d5d;
 	{
 		&
 		{
-			@include skill-default-content-btn();
+			@include mph\:ball-button();
 		}
 	}
 }
 
-.skill-details-mobile-btn-description
+.card-details
 {
-	font-size: 0.75em;
-	font-weight: bold;
+	margin-top: 1em;
 }
 
-.skill-details-open-url
+.links-list
 {
-	flex-grow: 1;
+	width: 75%;
+	margin-top: 1em;
+	margin-inline: auto;
+	display: flex;
+	gap: 0.75em;
+	flex-direction: column;
+}
 
-	.skill-details-open-url-btn
+.links-list-item
+{
+	padding: 0.25em;
+	border-radius: 0.5em;
+	background-color: $color-l2;
+	display: flex;
+	justify-content: space-between;
+}
+
+.links-list-description
+{
+	@include only.mobile
 	{
-		width: 100%;
+		font-size: 0.75em;
+		font-weight: bold;
+	}
+
+	@include only.no-mobile
+	{
+		display: none;
 	}
 }
 
-.skill-details-copy-url
+.links-list-button
+{
+	flex-grow: 1;
+	width: 100%;
+}
+
+.links-list-url-copier
 {
 	width: 1.5em;
 	text-align: center;
 }
 
-.skill-details-related-title
+.card-details-title
 {
 	font-size: 1em;
 	margin-top: 1em;
@@ -205,14 +189,14 @@ $color-l3: #5d5d5d;
 	text-align: center;
 }
 
-.skill-details-related
+.card-details-related
 {
-	.skill-details-options
+	.card-details
 	{
 		margin-top: 0;
 	}
 
-	.skill-details-option-item
+	.links-list-item
 	{
 		button
 		{

@@ -1,25 +1,26 @@
-document.querySelectorAll(".skill-details-manager").forEach((button, i) =>
+document.querySelectorAll(".card").forEach((card) =>
 {
-	button.addEventListener("click", () =>
-	{
-		const DETAILS = document.getElementById("skill-details-" + i);
+	const BUTTON  = card.querySelector(".details-manager-button");
+	const DETAILS = card.querySelector(".card-details");
 
+	BUTTON.addEventListener("click", () =>
+	{
 		if(DETAILS.open)
 		{
 			DETAILS.open = false;
-			button.classList.add("fa-plus");
-			button.classList.remove("fa-minus");
+			BUTTON.classList.add("fa-plus");
+			BUTTON.classList.remove("fa-minus");
 		}
 		else
 		{
 			DETAILS.open = true;
-			button.classList.add("fa-minus");
-			button.classList.remove("fa-plus");
+			BUTTON.classList.add("fa-minus");
+			BUTTON.classList.remove("fa-plus");
 		}
 	});
 });
 
-document.querySelectorAll(".skill-favorite-btn").forEach((button) =>
+document.querySelectorAll(".card-favoriter").forEach((button) =>
 {
 	button.addEventListener("click", () => {
 		if(button.classList.contains("fa-solid"))
