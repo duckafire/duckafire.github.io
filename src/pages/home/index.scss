@@ -1,5 +1,5 @@
-@use "responsive-media-queries" as only;
-@use "style-kits" as kit;
+@use "../../global/scss/responsive-media-queries" as only;
+@use "../../global/scss/style-kits" as kit;
 
 /*
 #CB3837 npm
@@ -33,7 +33,7 @@ $color-l3: #5d5d5d;
 
 .card-icon
 {
-	@include dimensions(5em);
+	@include kit.dimensions(5em);
 	flex: none;
 }
 

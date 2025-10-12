@@ -1,0 +1,11 @@
+ol.clear-style,
+ul.clear-style
+{
+	list-style: none;
+}
+
+details.clear-style:not([open]),
+details.clear-style > summary
+{
+	display: none;
+}
