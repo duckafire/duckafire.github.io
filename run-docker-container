@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+docker build "$(realpath "$(dirname "$0")")"
+docker images
+
+printf '\n\e[32mContainer hash:\e[0m '
+read input
+echo ""
+
+docker run --rm --name nest --publish 8080:8080 --detach "$input"
+
+if [[ $# -ne 0 ]]
+then
+	clear
+fi
+
+exit 0

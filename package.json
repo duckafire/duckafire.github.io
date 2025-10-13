@@ -2,7 +2,7 @@
   "name": "DuckAfire's Nest",
   "author": "DuckAfire",
   "license": "AGPL-3.0",
-  "version": "4.2.z",
+  "version": "x.y.z",
   "description": "A simple projects showcase.",
   "engines": {
     "node": ">=18.20.8"
@@ -11,15 +11,21 @@
     "type": "git",
     "url": "git+https://github.com/duckafire/nest.git"
   },
-  "mirrors": [
-    "https://gitlab.com/duckafire/duckafire.gitlab.io"
-  ],
   "scripts": {
+    "build": "./build.js",
+    "deploy": "npx http-server -c-1 -p 8080",
+    "clean": "npm uninstall sass terser clean-css-cli && rm build.js package-lock.json"
   },
   "devDependencies": {
-    "sass": "^1.92.1",
+    "sass": "^1.90.0",
     "terser": "^5.43.1",
     "clean-css-cli": "^5.6.3",
     "http-server": "^14.1.1"
+  },
+  "custom-fields": {
+    "cloud-repositories": [
+      "https://github.com/duckafire/duckafire.github.io",
+      "https://gitlab.com/duckafire/duckafire.gitlab.io"
+    ]
   }
 }
