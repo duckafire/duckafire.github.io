@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+declare -r DIR="$(dirname "$(realpath "$0")")"
+declare dest
+
+for dirname in "nest" "pages"
+do
+	dest="$DIR/$dirname"
+
+	if [[ -d "$dest" ]]
+	then
+		rm -r "$dest"
+	fi
+
+	mkdir "$dest"
+	cp "$DIR/index.html" "$dest"
+done
