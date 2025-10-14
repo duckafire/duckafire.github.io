@@ -47,7 +47,7 @@ const can_it_explore = (dir) =>
 	}
 
 	return true;
-}
+};
 
 const explore_source_files = (dir) =>
 {
@@ -116,7 +116,26 @@ const clear_empty_directories = (rootdir) =>
 		if(is_empty_dir(dir))
 			FS.rmdirSync(dir);
 	}
-}
+};
+
+const add_redirecting_pages = (rootdir) =>
+{
+	const REDIRECTOR_FILE    = PATH.join(rootdir, "asserts/pages/redirector.html");
+	const REDIRECTOR_CONTENT = FS.readFileSync( REDIRECTOR_FILE );
+
+	let dir;
+	for(const dirname of [null, "nest", "pages"])
+	{
+		dir = dirname === null ? rootdir : PATH.join(rootdir, dirname);
+
+		if(!FS.existsSync(dir))
+			FS.mkdirSync(dir, {recursive: true});
+
+		FS.writeFileSync( PATH.join(dir, "index.html"), REDIRECTOR_CONTENT);
+	};
+
+	FS.unlinkSync(REDIRECTOR_FILE);
+};
 
 const ROOT_DIR =
 	PATH.join(
@@ -127,6 +146,7 @@ const ROOT_DIR =
 	);
 
 explore_source_files(ROOT_DIR);
+add_redirecting_pages(ROOT_DIR);
 
 // delete them; it must be called before
 // `clear_emp...`, because some directories
