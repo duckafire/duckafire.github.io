@@ -71,11 +71,11 @@ const explore_source_files = (dir) =>
 		}
 		else if(is_it("css", file))
 		{
-			shell(`npx cleancss "${file}" > "${file}"`)
+			shell(`echo "$(npx cleancss "${file}")" > "${file}"`)
 		}
 		else if(is_it("js", file))
 		{
-			shell(`npx terser "${file}" --compress --mangle > "${file}"`)
+			shell(`echo "$(npx terser "${file}" --compress --mangle)" > "${file}"`)
 		}
 		else if(is_it("scss", file))
 		{
