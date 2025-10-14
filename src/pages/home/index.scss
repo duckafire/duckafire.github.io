@@ -219,7 +219,7 @@ $color-l3: #5d5d5d;
 	{
 		button
 		{
-			color: #888;
+			color: var(--low-high-char-color);
 		}
 	}
 }

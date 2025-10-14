@@ -42,6 +42,7 @@ figure > img
 body,
 button
 {
+	color: var(--default-char-color);
 	font-family: sans-serif, serif;
 }
 
