@@ -28,3 +28,9 @@ details.clear-style > summary
 {
 	display: none;
 }
+
+a.clear-style
+{
+	text-decoration: none;
+	color: inherit;
+}
