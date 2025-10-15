@@ -17,10 +17,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 
-:root
+%link-shining-little
 {
-	--default-char-color: #c9c9c9;
+	animation: link-shining-little 10s ease infinite;
+}
 
-	--low-high-char-color: #888;
-	--low-high-link-color: #88c;
+@keyframes link-shining-little
+{
+	0%   { color: var(--low-high-char-color); }
+	50%  { color: var(--low-high-link-color); }
+	100% { color: var(--low-high-char-color); }
 }

@@ -19,6 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 @use "../../global/scss/responsive-media-queries" as only;
 @use "../../global/scss/style-kits" as kit;
+@use "../../global/scss/animations" as anim;
 
 /*
 #CB3837 npm
@@ -202,8 +203,13 @@ $color-l3: #5d5d5d;
 
 .links-list-button
 {
-	flex-grow: 1;
-	width: 100%;
+	@extend %link-shining-little;
+
+	&:not(:has(.links-list-url-copier))
+	{
+		flex-grow: 1;
+		width: 100%;
+	}
 }
 
 .links-list-url-copier
