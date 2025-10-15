@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+docker kill nest &> /dev/null
+
 docker build "$(realpath "$(dirname "$0")")"
 docker images
 
