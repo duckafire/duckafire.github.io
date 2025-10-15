@@ -21,7 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 document.querySelectorAll(".card").forEach((card) =>
 {
 	const BUTTON  = card.querySelector(".details-manager-button");
-	const DETAILS = card.querySelector(".js\\:card-details");
+	const DETAILS = card.querySelector(".card-details");
 
 	BUTTON.addEventListener("click", () =>
 	{

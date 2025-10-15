@@ -32,7 +32,7 @@ const CARD = li({className: "card"},
 		ul),
 	section),
 
-	details({className: "clear-style js:card-details"},
+	details({className: "clear-style card-details"},
 		summary(),
 		div( {className: "card-details-content"},
 			h1( {className: "card-details-title"}, "Related", h1),

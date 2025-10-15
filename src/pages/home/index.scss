@@ -151,9 +151,14 @@ $color-l3: #5d5d5d;
 	}
 }
 
-.main-card .card-details-title
+.profile-card .card-details-title
 {
 	margin-top: 1em;
+}
+
+*:not(.profile-card) .card-details
+{
+	margin-top: -0.75em;
 }
 
 .card-details-title
