@@ -1,0 +1,16 @@
+todo
+TODO
+foo
+foo.*
+
+.git/
+.github/
+.gitignore
+.gitattributes
+
+gitlab-ci.yml
+LICENSE
+README.md
+run-docker-container
+
+docs/
