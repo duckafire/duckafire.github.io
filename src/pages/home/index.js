@@ -21,7 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 document.querySelectorAll(".card").forEach((card) =>
 {
 	const BUTTON  = card.querySelector(".details-manager-button");
-	const DETAILS = card.querySelector(".card-details");
+	const DETAILS = card.querySelector(".js\\:card-details");
 
 	BUTTON.addEventListener("click", () =>
 	{
@@ -40,7 +40,7 @@ document.querySelectorAll(".card").forEach((card) =>
 	});
 });
 
-document.querySelectorAll(".card-favoriter").forEach((button) =>
+document.querySelectorAll(".js\\:card-favoriter").forEach((button) =>
 {
 	button.addEventListener("click", () => {
 		if(button.classList.contains("fa-solid"))
