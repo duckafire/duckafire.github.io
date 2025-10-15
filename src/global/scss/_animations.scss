@@ -17,6 +17,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 
+@use "colors" as color;
+
 %link-shining-little
 {
 	animation: link-shining-little 10s ease infinite;
@@ -24,7 +26,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 @keyframes link-shining-little
 {
-	0%   { color: var(--low-high-char-color); }
-	50%  { color: var(--low-high-link-color); }
-	100% { color: var(--low-high-char-color); }
+	0%   { color: color.$low-high-char; }
+	50%  { color: color.$low-high-link; }
+	100% { color: color.$low-high-char; }
 }

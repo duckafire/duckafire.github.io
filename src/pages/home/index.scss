@@ -20,15 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 @use "../../global/scss/responsive-media-queries" as only;
 @use "../../global/scss/style-kits" as kit;
 @use "../../global/scss/animations" as anim;
-
-/*
-#CB3837 npm
-#181717 github
-#FC6D26 gitlab
-#2496ED docker
-#FA5C5C itch.io
-#41A6F6 tic80
-*/
+@use "../../global/scss/colors" as color;
 
 $color-l0: #1f1f1f;
 $color-l1: #303030;

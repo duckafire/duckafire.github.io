@@ -17,10 +17,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 
-:root
-{
-	--default-char-color: #c9c9c9;
+$char-default: #c9c9c9;
+$soft-black: #1f1f1f;
 
-	--low-high-char-color: #888;
-	--low-high-link-color: #88c;
-}
+$low-high-char: #888;
+$low-high-link: #88c;
+
+/*
+#cb3837 npm
+#181717 github
+#fc6d26 gitlab
+#2496ed docker
+#fa5c5c itch.io
+#41a6f6 tic80
+*/

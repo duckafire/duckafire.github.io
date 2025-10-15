@@ -42,7 +42,10 @@ figure > img
 body,
 button
 {
-	color: var(--default-char-color);
+	/* color from "_colors.scss" */
+	/* named as $char-default */
+	color: #c9c9c9;
+
 	font-family: sans-serif, serif;
 }
 
