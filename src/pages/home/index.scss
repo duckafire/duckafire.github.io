@@ -150,9 +150,21 @@ $color-l3: #5d5d5d;
 	}
 }
 
-.card-details
+.main-card .card-details-title
 {
 	margin-top: 1em;
+}
+
+.card-details-title
+{
+	font-size: 1em;
+	margin-bottom: 0.5em;
+	text-align: center;
+}
+
+.card-details .links-list-button
+{
+	color: var(--low-high-char-color);
 }
 
 .links-list
@@ -198,28 +210,4 @@ $color-l3: #5d5d5d;
 {
 	width: 1.5em;
 	text-align: center;
-}
-
-.card-details-title
-{
-	font-size: 1em;
-	margin-top: 1em;
-	margin-bottom: 0.5em;
-	text-align: center;
-}
-
-.card-details-related
-{
-	.card-details
-	{
-		margin-top: 0;
-	}
-
-	.links-list-item
-	{
-		button
-		{
-			color: var(--low-high-char-color);
-		}
-	}
 }
