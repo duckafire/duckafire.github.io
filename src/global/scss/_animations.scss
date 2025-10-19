@@ -17,16 +17,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 
-@use "colors" as color;
+/* import as "anim" */
 
-%link-shining-little
+%url-shining-little
 {
-	animation: link-shining-little 10s ease infinite;
+	animation: url-shining-little 10s ease infinite;
 }
 
-@keyframes link-shining-little
+@keyframes url-shining-little
 {
-	0%   { color: color.$low-high-char; }
-	50%  { color: color.$low-high-link; }
-	100% { color: color.$low-high-char; }
+	0%   { color: var(--FG_LOW_HIGH);  }
+	50%  { color: var(--URL_LOW_HIGH); }
+	100% { color: var(--FG_LOW_HIGH);  }
 }

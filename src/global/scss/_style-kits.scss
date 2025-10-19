@@ -19,15 +19,19 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* import as "kit" */
 
-@mixin double-border($bcolor: black, $scolor: white, $blen: 1px,  $slen: 1px)
+@mixin double-border(
+	$bcolor: var(--SOFT_BLACK),
+	$scolor: var(--SOFT_WHITE),
+	$blen: 1px,
+	$slen: 1px)
 {
 	/* b : Border | s : Shadow */
 	border: $blen solid $bcolor;
 	box-shadow:
-		 (-$slen) (-$slen) white,
-		 (-$slen)  ($slen) white,
-		  ($slen) (-$slen) white,
-		  ($slen)  ($slen) white;
+		 (-$slen) (-$slen) $scolor,
+		 (-$slen)  ($slen) $scolor,
+		  ($slen) (-$slen) $scolor,
+		  ($slen)  ($slen) $scolor;
 }
 
 @mixin padding-gap($value)
