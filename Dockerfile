@@ -4,9 +4,9 @@ WORKDIR nest
 EXPOSE 8080
 CMD ["npm", "run", "deploy"]
 
-COPY package.json .
+COPY nodejs/package.json .
 RUN npm install
-COPY build.js .
+COPY nodejs .
 
 COPY ./src ./public
 RUN    npm run build \

@@ -14,7 +14,8 @@
   "scripts": {
     "build": "./build.js",
     "deploy": "npx http-server -c-1 -p 8080",
-    "clean": "npm uninstall sass terser clean-css-cli && rm build.js package-lock.json"
+    "clean": "npm uninstall sass terser clean-css-cli && rm *.js package-lock.json",
+    "compress-json": "./compress-json.js"
   },
   "devDependencies": {
     "sass": "^1.90.0",

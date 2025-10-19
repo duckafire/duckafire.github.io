@@ -7,6 +7,7 @@ build:
   stage: build
   script:
     - mv src public
+    - mv nodejs/* .
     - npm install
     - npm run build
     - for file in $(ls); do if test "$file" != "public"; then rm -rf "$file"; done

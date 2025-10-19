@@ -89,6 +89,10 @@ const explore_source_files = (dir) =>
 				scssPartialFiles.push(file);
 			}
 		}
+		else if(is_it("json", file))
+		{
+			shell(`echo "$(npm run compress-json "${file}")" > "${file}"`)
+		}
 		else
 		{
 			// delete "strange files"
