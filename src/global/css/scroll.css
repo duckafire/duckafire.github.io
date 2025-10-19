@@ -17,48 +17,32 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 
-/* import as "kit" */
-
-@mixin double-border(
-	$bcolor: var(--SOFT_BLACK),
-	$scolor: var(--SOFT_WHITE),
-	$blen: 1px,
-	$slen: 1px)
-{
-	/* b : Border | s : Shadow */
-	border: $blen solid $bcolor;
-	box-shadow:
-		 (-$slen) (-$slen) $scolor,
-		 (-$slen)  ($slen) $scolor,
-		  ($slen) (-$slen) $scolor,
-		  ($slen)  ($slen) $scolor;
-}
-
-@mixin padding-gap($value)
-{
-	padding: $value;
-	gap: $value;
-}
-
-@mixin dimensions($value)
-{
-	width: $value;
-	height: $value;
-}
-
-@mixin flex($is-column: false, $centralize: false)
-{
-	display: flex;
-
-	@if $is-column
+@supports selector(::-webkit-scrollbar){
+	*::-webkit-scrollbar-track-piece,
+	*::-webkit-scrollbar-track,
+	*::-webkit-scrollbar-button,
+	*::-webkit-scrollbar-corner
 	{
-		flex-direction: column;
+		display: none;
 	}
 
-	@if $centralize
+	*::-webkit-scrollbar
 	{
-		align-items: center;
-		justify-content: center;
-		text-align: center;
+		width: 0.25rem;
+		height: 0.25rem;
+	}
+
+	*::-webkit-scrollbar-thumb
+	{
+		background-color: #999;
+		border-radius: 0.75rem;
 	}
 }
+
+@supports not selector(::-webkit-scrollbar) {
+	*
+	{
+		scrollbar-width: thin;
+	}
+}
+
