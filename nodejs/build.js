@@ -128,7 +128,7 @@ const add_redirecting_pages = (rootdir) =>
 	const REDIRECTOR_CONTENT = FS.readFileSync( REDIRECTOR_FILE );
 
 	let dir;
-	for(const dirname of [null, "nest", "pages"])
+	for(const dirname of [null, "nest", "pages", "home"])
 	{
 		dir = dirname === null ? rootdir : PATH.join(rootdir, dirname);
 
