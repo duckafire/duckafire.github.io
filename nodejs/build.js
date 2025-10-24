@@ -91,7 +91,7 @@ const explore_source_files = (dir) =>
 		}
 		else if(is_it("json", file))
 		{
-			shell(`echo "$(npm run compress-json "${file}")" > "${file}"`)
+			shell(`echo "$(npm run --silent compress-json "${file}")" > "${file}"`)
 		}
 		else
 		{
