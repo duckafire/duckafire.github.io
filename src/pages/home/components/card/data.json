@@ -1,0 +1,102 @@
+[
+	{
+		"type": "main",
+		"title": "Hello world",
+		"img-cover": {
+			"src": "../../asserts/images/high/duckafire-profile.png",
+			"alt": "DuckAfire's profile image."
+		},
+		"url-list": {
+			"related": [
+				{"title": "Docker Hub", "url": "hub.docker.com/u/duckafire"},
+				{"title": "GitHub",     "url": "github.com/duckafire"},
+				{"title": "GitLab",     "url": "gitlab.com/duckafire"},
+				{"title": "itch.io",    "url": "duckafire.itch.io"},
+				{"title": "NPM",        "url": "npmjs.com/~duckafire"},
+				{"title": "Tic80",      "url": "tic80.com/dev?id=8700"}
+			]
+		}
+	},
+	{
+		"type": "generic",
+		"fa-icon": "fa-brands fa-docker",
+		"url-list": {
+			"main-url": "hub.docker.com/u/duckafire",
+			"related": [
+				{"title": "Rinha de Backend 2025", "url": "hub.docker.com/r/duckafire/rb-2025"}
+			]
+		}
+	},
+	{
+		"type": "generic",
+		"fa-icon": "fa-brands fa-github",
+		"url-list": {
+			"main-url": "github.com/duckafire",
+			"related": [
+				{"title": "ancient.vim",           "url": "github.com/duckafire/ancient-vim"},
+				{"title": "Design Patterns",       "url": "github.com/duckafire/design-patterns-with-examples"},
+				{"title": "DuckAfire's Nest",      "url": "github.com/duckafire/duckafire.github.io"},
+				{"title": "QR Code Generator",     "url": "github.com/duckafire/gh-qr-code-generator"},
+				{"title": "html.js",               "url": "github.com/duckafire/html.js"},
+				{"title": "lazy-loading.js",       "url": "github.com/duckafire/lazy-loading-js"},
+				{"title": "LIM",                   "url": "github.com/duckafire/LIM"},
+				{"title": "Rinha de Backend 2025", "url": "github.com/duckafire/rb-2025"},
+				{"title": "rest-api.ts",           "url": "github.com/duckafire/simple-web-api"},
+				{"title": "Small Projects",        "url": "github.com/duckafire/Small_Projects"},
+				{"title": "TinyLibrary",           "url": "github.com/duckafire/TinyLibrary"}
+			]
+		}
+	},
+	{
+		"type": "generic",
+		"fa-icon": "fa-brands fa-gitlab",
+		"url-list": {
+			"main-url": "gitlab.com/duckafire",
+			"related": [
+				{"title": "ancient.vim",           "url": "gitlab.com/duckafire/ancient-vim"},
+				{"title": "Design Patterns",       "url": "gitlab.com/duckafire/design-patterns-with-examples"},
+				{"title": "DuckAfire's Nest",      "url": "gitlab.com/duckafire/duckafire.github.io"},
+				{"title": "QR Code Generator",     "url": "gitlab.com/duckafire-forks/github/gh-qr-code-generator"},
+				{"title": "html.js",               "url": "gitlab.com/duckafire/html.js"},
+				{"title": "lazy-loading.js",       "url": "gitlab.com/duckafire-forks/github/lazy-loading-js"},
+				{"title": "LIM",                   "url": "gitlab.com/duckafire/LIM"},
+				{"title": "Rinha de Backend 2025", "url": "gitlab.com/duckafire/rb-2025"},
+				{"title": "rest-api.ts",           "url": "gitlab.com/duckafire/simple-web-api"},
+				{"title": "Small Projects",        "url": "gitlab.com/duckafire/Small_Projects"},
+				{"title": "TinyLibrary",           "url": "gitlab.com/duckafire/TinyLibrary"}
+			]
+		}
+	},
+	{
+		"type": "generic",
+		"fa-icon": "fa-brands fa-itch-io",
+		"url-list": {
+			"main-url": "duckafire.itch.io",
+			"related": [
+				{"title": "Legendary Champion: Rebirth", "url": "duckafire.itch.io/legendary-champion"}
+			]
+		}
+	},
+	{
+		"type": "generic",
+		"fa-icon": "fa-brands fa-npm",
+		"url-list": {
+			"main-url": "npmjs.com/~duckafire",
+			"related": [
+				{"title": "html.js",         "url": "npmjs.com/package/@duckafire/html.js"},
+				{"title": "lazy-loading.js", "url": "npmjs.com/package/@duckafire/lazy-loading-js"}
+			]
+		}
+	},
+	{
+		"type": "generic",
+		"fa-icon": "fa-solid fa-gamepad",
+		"url-list": {
+			"main-url": "tic80.com/dev?id=8700",
+			"related": [
+				{"title": "Lengendary Champion: Rebirth", "url": "tic80.com/play?cart=3315"},
+				{"title": "TinyLibrary: Showcase", "url": "tic80.com/play?cart=3288"}
+			]
+		}
+	}
+]

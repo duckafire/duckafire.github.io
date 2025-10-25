@@ -30,7 +30,7 @@ const copyTextToastFailure = () =>
 }
 
 // it must be called by a "event"
-const copyTextToClipboard = (input) =>
+const copyTextFromInputToClipboard = (input) =>
 {
 	if(navigator.clipboard && navigator.clipboard.writeText)
 	{

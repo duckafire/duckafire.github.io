@@ -17,83 +17,26 @@
 
 	<meta charset="ascii"/>
 
+	<script src="https://kit.fontawesome.com/7d914c2988.js" crossorigin="anonymous" async="async"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@duckafire/html.js@0.1.1/html.min.js"></script>
+	<script> declare_htmljs({useUpperCase: true}); </script>
+
 	<link rel="stylesheet" type="text/css" href="../../global/css/default.css"/>
 	<link rel="stylesheet" type="text/css" href="../../global/css/common.css"/>
 	<link rel="stylesheet" type="text/css" href="../../global/css/colors.css"/>
 	<link rel="stylesheet" type="text/css" href="../../global/css/buttons.css"/>
 	<link rel="stylesheet" type="text/css" href="../../global/css/scroll.css"/>
+	<link rel="stylesheet" type="text/css" href="../../global/js/components/toast/style.css"/>
 	<link rel="stylesheet" type="text/css" href="./components/card/style.css"/>
 	<link rel="stylesheet" type="text/css" href="./url-list.css"/>
 
-	<script src="https://kit.fontawesome.com/7d914c2988.js" crossorigin="anonymous" async="async"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@duckafire/html.js@0.1.1/html.min.js"></script>
-	<script> declare_htmljs({useUpperCase: true}); </script>
+	<script src="../../global/js/functions/copyTextFromInputToClipboard.js"></script>
 </head>
 <body>
-	<ul class="clear-style cards-list">
-		<li>
-			<main class="profile-card">
-				<section class="card-content">
-					<img class="card-cover" src="../../asserts/images/high/duckafire-profile.png" alt="DuckAfire's profile image."/>
-					<div class="card-options">
-						<h1>Hello world!</h1>
-						<button class="js:card-details-manager oval-btn" style="font-size:1.25rem;--bg-color:var(--SOFT_SILVER)">
-							<i class="fa-solid fa-plus"></i>
-						</button>
-					</div>
-				</section>
-				<details class="clear-style card-details">
-					<summary></summary>
-					<ul class="clear-style url-list">
-						<li class="url-list-item">
-							<button class="url-list-btn rounded-rect-btn url-list-text">
-								<input value="https://example.com" type="text" readonly="readonly"/>
-							</button>
-							<button class="url-list-btn rounded-rect-btn" style="--scalew:2">
-								<i class="fa-solid fa-copy"></i>
-							</button>
-							<a role="button" class="clear-style url-list-btn rounded-rect-btn" style="--scalew:2">
-								<i class="fa-solid fa-share"></i>
-							</a>
-						</li>
-					</ul>
-				</details>
-			</main>
-		</li>
-
-		<li class="generic-card">
-			<section class="card-content">
-				<div class="card-cover">
-					<i class="fa-brands fa-gitlab"></i>
-				</div>
-				<div class="card-options" style="--bg-color:var(--SOFT_SILVER)">
-					<button class="js:card-details-manager ball-btn">
-						<i class="fa-solid fa-plus"></i>
-					</button>
-					<a role="button" class="ball-btn" href="https://example.com">
-						<i class="fa-solid fa-external-link"></i>
-					</a>
-				</div>
-			</section>
-			<details class="clear-style card-details">
-				<summary></summary>
-				<ul class="clear-style url-list">
-					<li class="url-list-item">
-						<button class="url-list-btn rounded-rect-btn url-list-text">
-							<input value="https://example.com" type="text" readonly="readonly"/>
-						</button>
-						<button class="url-list-btn rounded-rect-btn" style="--scalew:2">
-							<i class="fa-solid fa-copy"></i>
-						</button>
-						<a role="button" class="clear-style url-list-btn rounded-rect-btn" style="--scalew:2">
-							<i class="fa-solid fa-share"></i>
-						</a>
-					</li>
-				</ul>
-			</details>
-		</li>
-
+	<ul id="cards-list" class="clear-style cards-list">
 		<script src="./components/card/dom.js"></script>
 	</ul>
+	<div class="toast-queue"></div>
 </body>
+<script src="../../global/js/components/toast/dom.js"></script>
 </html>

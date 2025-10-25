@@ -17,44 +17,139 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 
-document.querySelectorAll(".profile-card, .generic-card").forEach((card) =>
+const createUrlList = (json) =>
 {
-	// open/close a details container
-	const BUTTON  = card.querySelector(".js\\:card-details-manager i[class^=fa-]");
-	const DETAILS = card.querySelector(".card-details");
+	const LIST = UL( {className: "clear-style url-list"}, UL);
+	let item;
 
-	BUTTON.addEventListener("click", () =>
+	for(const DATA of json["url-list"]["related"])
 	{
-		if(DETAILS.open)
-		{
-			DETAILS.open = false;
-			BUTTON.classList.add("fa-plus");
-			BUTTON.classList.remove("fa-minus");
-		}
-		else
-		{
-			DETAILS.open = true;
-			BUTTON.classList.add("fa-minus");
-			BUTTON.classList.remove("fa-plus");
-		}
-	});
+		LIST.appendChild(
+			LI( {className: "url-list-item"},
+				BUTTON( {className: "url-list-btn rounded-rect-btn url-list-text"},
+					INPUT( {value: "https://"+DATA["url"], title: DATA["title"], type: "text", readOnly: "readOnly", translate: "off"}),
+				BUTTON),
+				BUTTON( {className: "url-list-btn rounded-rect-btn", style: "--scalew:2"},
+					I( {className: "fa-solid fa-copy"}, I),
+				BUTTON),
+				A( {role: "button", className: "clear-style url-list-btn rounded-rect-btn", href: "https://"+DATA["url"], style: "--scalew:2", rel: "noopener noreferrer"},
+					I( {className: "fa-solid fa-external-link"}, I),
+				A),
+			LI)
+		);
+	}
 
-	// copy the content of the URLs from ".url-list-item";
-	// define the URL of the anchor from ".url-list-item"
-	card.querySelectorAll(".url-list-item").forEach(item =>
+	return LIST;
+}
+
+const createMainCard = (json) =>
+LI( null,
+	MAIN( {className: "profile-card"},
+		SECTION( {className: "card-content"},
+			IMG( {className: "card-cover", src: json["img-cover"]["src"], alt: json["img-cover"]["alt"]}),
+			DIV( {className: "card-options"},
+				H1( {translate: "off"}, json["title"], H1),
+				BUTTON( {className: "js:card-details-manager oval-btn", style: "font-size:1.25rem;--bg-color:var(--SOFT_SILVER)"},
+					I( {className: "fa-solid fa-plus"}, I),
+				BUTTON),
+			DIV),
+		SECTION),
+		DETAILS( {className: "clear-style card-details"},
+			SUMMARY( null, SUMMARY),
+			createUrlList(json),
+		DETAILS),
+	MAIN),
+LI);
+
+const createGenericCard = (json) =>
+LI( {className: "generic-card"},
+	SECTION( {className: "card-content"},
+		DIV( {className: "card-cover"},
+			I( {className: json["fa-icon"]}, I),
+		DIV),
+		DIV( {className: "card-options", style: "--bg-color:var(--SOFT_SILVER)"},
+			BUTTON( {className: "js:card-details-manager ball-btn"},
+				I( {className: "fa-solid fa-plus"}, I),
+			BUTTON),
+			A( {role: "button", className: "ball-btn", href: "https://"+json["url-list"]["main-url"], rel: "noopener noreferrer"},
+				I( {className: "fa-solid fa-external-link"}, I),
+			A),
+		DIV),
+	SECTION),
+	DETAILS( {className: "clear-style card-details"},
+		SUMMARY( null, SUMMARY),
+		createUrlList(json),
+	DETAILS),
+LI);
+
+const createCardsBasedJson = async (attempt) =>
+{
+	attempt++;
+
+fetch("./components/card/data.json")
+	.then(response =>
 	{
-		const BTN    = item.querySelectorAll(".url-list-btn");
-		const URL    = BTN[0];
-		const COPIER = BTN[1];
-		const ANCHOR = BTN[2];
+		if(!response.ok)
+			throw new Error(`Network response was not OK. Attempt #${attempt}.`);
 
-		COPIER.addEventListener("click", () =>
+		return response.json();
+	})
+	.then(json =>
+	{
+		const CARDS_LIST = document.getElementById("cards-list");
+		for(const DATA of json)
+			CARDS_LIST.appendChild( (DATA.type == "main" ? createMainCard : createGenericCard)(DATA) );
+
+		document.querySelectorAll(".profile-card, .generic-card").forEach((card) =>
 		{
-			console.log("Why does not it have a clear and easy way to copy text to the user clipboards? >:(");
+			// open/close a details container
+			const BUTTON  = card.querySelector(".js\\:card-details-manager i[class^=fa-]");
+			const DETAILS = card.querySelector(".card-details");
+
+			BUTTON.addEventListener("click", () =>
+			{
+				if(DETAILS.open)
+				{
+					DETAILS.open = false;
+					BUTTON.classList.add("fa-plus");
+					BUTTON.classList.remove("fa-minus");
+				}
+				else
+				{
+					DETAILS.open = true;
+					BUTTON.classList.add("fa-minus");
+					BUTTON.classList.remove("fa-plus");
+				}
+			});
+
+			// copy the content of the URLs from ".url-list-item";
+			// define the URL of the anchor from ".url-list-item"
+			card.querySelectorAll(".url-list-item").forEach(item =>
+			{
+				const BTN    = item.querySelectorAll(".url-list-btn");
+				const URL    = BTN[0].children[0];
+				const COPIER = BTN[1];
+
+				COPIER.addEventListener("click", () =>
+				{
+					copyTextFromInputToClipboard(URL);
+				});
+			});
+
+			// if(card.classList.contains("profile-card")) {}
 		});
+	})
+	.catch(err =>
+	{
+		if(attempt >= 5)
+		{
+			console.error(new Error(`Stopping, to try to create the cards, after #${attempts} attempts.`));
+			return;
+		}
 
-		ANCHOR.href = URL.querySelector("input").value;
+		console.error(err);
+		setTimeout(() => createCardsBasedJson(attempt), 1000);
 	});
+};
 
-	// if(card.classList.contains("profile-card")) {}
-});
+createCardsBasedJson(0);
