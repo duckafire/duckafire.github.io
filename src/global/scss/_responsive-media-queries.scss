@@ -19,15 +19,21 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* import as "only" */
 
-/* SCREEN_W_MIN: /* TODO: set this */
+$SCREEN_W_MIN: 20rem;
 
 /* $MOBILE_MIN: 0px; */
-$TABLET_MIN:   30em;
-$COMPUTER_MIN: 64em;
+$TABLET_MIN:   30rem;
+$COMPUTER_MIN: 64rem;
 
 $MOBILE_MAX: calc($TABLET_MIN   - 1px);
 $TABLET_MAX: calc($COMPUTER_MIN - 1px);
 /* $COMPUTER_MAX: infinity */
+
+
+@mixin minimum-screen-width
+{
+	@media (max-width: $SCREEN_W_MIN) { @content; }
+}
 
 
 @mixin mobile
