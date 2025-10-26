@@ -17,13 +17,24 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 
+@use "sass:math";
 @use "../../../../global/scss/style-kits" as kit;
+@use "../../../../global/scss/responsive-media-queries" as only;
+
+$CARD_CONTENT_PADDING: 1rem;
+$CARD_CONTENT_GAP: 3rem;
+
+@mixin almost-minimum-screen-width
+{
+	@media (max-width: calc(23rem - 1px)) { @content; }
+}
 
 .cards-list
 {
 	@include kit.padding-gap(1rem);
 	@include kit.flex(true);
 	width: 100vw;
+	min-width: only.$SCREEN_W_MIN;
 	background-color: var(--SOFT_BLACK);
 }
 
@@ -35,7 +46,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 	.card-cover
 	{
-		@include kit.dimensions(1em);
+		@include kit.dimensions(1em); /* this is really EM */
 		font-size: 5rem;
 		flex: none;
 		text-align: center;
@@ -46,8 +57,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 		@include kit.flex();
 		margin: auto;
 		width: min-content;
-		padding: 1em;
-		gap: 3em;
+		padding: $CARD_CONTENT_PADDING;
+		gap: $CARD_CONTENT_GAP;
+	}
+
+	@include almost-minimum-screen-width
+	{
+		& .card-content
+		{
+			padding: math.div($CARD_CONTENT_PADDING, 2) 0;
+			gap: $CARD_CONTENT_GAP - (math.floor( math.div($CARD_CONTENT_GAP, 3)) );
+		}
 	}
 }
 
@@ -77,16 +97,33 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	{
 		margin-top: -0.75rem;
 	}
+
+	@include almost-minimum-screen-width
+	{
+		& .card-content
+		{
+			gap: 0.75rem;
+		}
+	}
 }
 
 .generic-card
 {
+	$OPTIONS_GAP: 1.5rem;
 	@extend %card;
 
 	.card-options
 	{
 		@include kit.flex(false, true);
 		font-size: 1.5rem;
-		gap: 0.75rem;
+		gap: $OPTIONS_GAP;
+	}
+
+	@include almost-minimum-screen-width
+	{
+		& .card-options
+		{
+			gap: math.div($OPTIONS_GAP, 2);
+		}
 	}
 }
