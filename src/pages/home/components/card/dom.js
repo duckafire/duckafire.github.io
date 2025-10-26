@@ -44,13 +44,13 @@ const createUrlList = (json) =>
 
 const createCardDetails = (json) =>
 DIV( {className: "card-division", role: "details", style: "display:none"},
-	(json["type"] == "main" ? MAIN : DIV)( {className: "card-details"},
+	DIV( {className: "card-details"},
 		SUMMARY( null, SUMMARY),
 		createUrlList(json),
-	(json["type"] == "main" ? MAIN : DIV)),
+	DIV),
 DIV);
 
-const createMainCard = (json) =>
+const createProfileCard = (json) =>
 LI( {className: "profile-card"},
 	DIV( {className: "card-division"},
 		SECTION( {className: "card-content"},
@@ -66,8 +66,8 @@ LI( {className: "profile-card"},
 	createCardDetails(json),
 LI);
 
-const createGenericCard = (json) =>
-LI( {className: "generic-card"},
+const createWebsiteCard = (json) =>
+LI( {className: "website-card"},
 	DIV( {className: "card-division"},
 		SECTION( {className: "card-content"},
 			DIV( {className: "card-cover"},
@@ -102,9 +102,9 @@ fetch("./components/card/data.json")
 	{
 		const CARDS_LIST = document.getElementById("cards-list");
 		for(const DATA of json)
-			CARDS_LIST.appendChild( (DATA.type == "main" ? createMainCard : createGenericCard)(DATA) );
+			CARDS_LIST.appendChild( (DATA.type == "profile" ? createProfileCard : createWebsiteCard)(DATA) );
 
-		document.querySelectorAll(".profile-card, .generic-card").forEach((card) =>
+		document.querySelectorAll(".profile-card, .website-card").forEach((card) =>
 		{
 			// open/close a details container
 			const BUTTON  = card.querySelector(".js\\:card-details-manager");

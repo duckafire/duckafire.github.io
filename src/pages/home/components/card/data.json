@@ -1,6 +1,6 @@
 [
 	{
-		"type": "main",
+		"type": "profile",
 		"title": "Hello world",
 		"img-cover": {
 			"src": "../../asserts/images/high/duckafire-profile.png",
@@ -18,7 +18,7 @@
 		}
 	},
 	{
-		"type": "generic",
+		"type": "website",
 		"fa-icon": "fa-brands fa-docker",
 		"url-list": {
 			"main-url": "hub.docker.com/u/duckafire",
@@ -28,7 +28,7 @@
 		}
 	},
 	{
-		"type": "generic",
+		"type": "website",
 		"fa-icon": "fa-brands fa-github",
 		"url-list": {
 			"main-url": "github.com/duckafire",
@@ -48,7 +48,7 @@
 		}
 	},
 	{
-		"type": "generic",
+		"type": "website",
 		"fa-icon": "fa-brands fa-gitlab",
 		"url-list": {
 			"main-url": "gitlab.com/duckafire",
@@ -68,7 +68,7 @@
 		}
 	},
 	{
-		"type": "generic",
+		"type": "website",
 		"fa-icon": "fa-brands fa-itch-io",
 		"url-list": {
 			"main-url": "duckafire.itch.io",
@@ -78,7 +78,7 @@
 		}
 	},
 	{
-		"type": "generic",
+		"type": "website",
 		"fa-icon": "fa-brands fa-npm",
 		"url-list": {
 			"main-url": "npmjs.com/~duckafire",
@@ -89,7 +89,7 @@
 		}
 	},
 	{
-		"type": "generic",
+		"type": "website",
 		"fa-icon": "fa-solid fa-gamepad",
 		"url-list": {
 			"main-url": "tic80.com/dev?id=8700",
