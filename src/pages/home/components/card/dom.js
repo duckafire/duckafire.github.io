@@ -25,9 +25,9 @@ const createUrlList = (json) =>
 	for(const DATA of json["url-list"]["related"])
 	{
 		LIST.appendChild(
-			LI( {className: "url-list-item"},
+			LI( {className: "url-list-item", title: DATA["title"]},
 				BUTTON( {className: "url-list-btn rounded-rect-btn url-list-text"},
-					INPUT( {value: "https://"+DATA["url"], title: DATA["title"], type: "text", readOnly: "readOnly", translate: "off"}),
+					INPUT( {value: "https://"+DATA["url"], type: "text", readOnly: "readOnly", translate: "off"}),
 				BUTTON),
 				BUTTON( {className: "url-list-btn rounded-rect-btn", style: "--scalew:2"},
 					I( {className: "fa-solid fa-copy"}, I),
@@ -94,7 +94,7 @@ fetch("./components/card/data.json")
 	.then(response =>
 	{
 		if(!response.ok)
-			throw new Error(`Network response was not OK. Attempt #${attempt}.`);
+			throw new InternalError(`Network response was not OK. Attempt #${attempt}.`);
 
 		return response.json();
 	})
@@ -107,7 +107,7 @@ fetch("./components/card/data.json")
 		document.querySelectorAll(".profile-card, .generic-card").forEach((card) =>
 		{
 			// open/close a details container
-			const BUTTON  = card.querySelector(".js\\:card-details-manager i[class^=fa-]");
+			const BUTTON  = card.querySelector(".js\\:card-details-manager");
 			const DETAILS = card.querySelector('.card-division[role="details"]');
 
 			BUTTON.addEventListener("click", () =>
@@ -147,7 +147,7 @@ fetch("./components/card/data.json")
 	{
 		if(attempt >= 5)
 		{
-			console.error(new Error(`Stopping, to try to create the cards, after #${attempts} attempts.`));
+			console.error(new InternalError(`Stopping, to try to create the cards, after #${attempts} attempts.`));
 			return;
 		}
 
