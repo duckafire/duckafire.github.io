@@ -42,9 +42,17 @@ const createUrlList = (json) =>
 	return LIST;
 }
 
+const createCardDetails = (json) =>
+DIV( {className: "card-division", role: "details", style: "display:none"},
+	(json["type"] == "main" ? MAIN : DIV)( {className: "card-details"},
+		SUMMARY( null, SUMMARY),
+		createUrlList(json),
+	(json["type"] == "main" ? MAIN : DIV)),
+DIV);
+
 const createMainCard = (json) =>
-LI( null,
-	MAIN( {className: "profile-card"},
+LI( {className: "profile-card"},
+	DIV( {className: "card-division"},
 		SECTION( {className: "card-content"},
 			IMG( {className: "card-cover", src: json["img-cover"]["src"], alt: json["img-cover"]["alt"]}),
 			DIV( {className: "card-options"},
@@ -54,32 +62,28 @@ LI( null,
 				BUTTON),
 			DIV),
 		SECTION),
-		DETAILS( {className: "clear-style card-details"},
-			SUMMARY( null, SUMMARY),
-			createUrlList(json),
-		DETAILS),
-	MAIN),
+	DIV),
+	createCardDetails(json),
 LI);
 
 const createGenericCard = (json) =>
 LI( {className: "generic-card"},
-	SECTION( {className: "card-content"},
-		DIV( {className: "card-cover"},
-			I( {className: json["fa-icon"]}, I),
-		DIV),
-		DIV( {className: "card-options", style: "--bg-color:var(--SOFT_SILVER)"},
-			BUTTON( {className: "js:card-details-manager ball-btn"},
-				I( {className: "fa-solid fa-plus"}, I),
-			BUTTON),
-			A( {role: "button", className: "ball-btn", href: "https://"+json["url-list"]["main-url"], rel: "noopener noreferrer"},
-				I( {className: "fa-solid fa-external-link"}, I),
-			A),
-		DIV),
-	SECTION),
-	DETAILS( {className: "clear-style card-details"},
-		SUMMARY( null, SUMMARY),
-		createUrlList(json),
-	DETAILS),
+	DIV( {className: "card-division"},
+		SECTION( {className: "card-content"},
+			DIV( {className: "card-cover"},
+				I( {className: json["fa-icon"]}, I),
+			DIV),
+			DIV( {className: "card-options", style: "--bg-color:var(--SOFT_SILVER)"},
+				BUTTON( {className: "js:card-details-manager ball-btn"},
+					I( {className: "fa-solid fa-plus"}, I),
+				BUTTON),
+				A( {role: "button", className: "ball-btn", href: "https://"+json["url-list"]["main-url"], rel: "noopener noreferrer"},
+					I( {className: "fa-solid fa-external-link"}, I),
+				A),
+			DIV),
+		SECTION),
+	DIV),
+	createCardDetails(json),
 LI);
 
 const createCardsBasedJson = async (attempt) =>
@@ -104,19 +108,19 @@ fetch("./components/card/data.json")
 		{
 			// open/close a details container
 			const BUTTON  = card.querySelector(".js\\:card-details-manager i[class^=fa-]");
-			const DETAILS = card.querySelector(".card-details");
+			const DETAILS = card.querySelector('.card-division[role="details"]');
 
 			BUTTON.addEventListener("click", () =>
 			{
-				if(DETAILS.open)
+				if(DETAILS.style.display == "")
 				{
-					DETAILS.open = false;
+					DETAILS.style.display = "none";
 					BUTTON.classList.add("fa-plus");
 					BUTTON.classList.remove("fa-minus");
 				}
 				else
 				{
-					DETAILS.open = true;
+					DETAILS.style.display = "";
 					BUTTON.classList.add("fa-minus");
 					BUTTON.classList.remove("fa-plus");
 				}
