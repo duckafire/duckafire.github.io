@@ -23,6 +23,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 $CARD_CONTENT_PADDING: 1rem;
 $CARD_CONTENT_GAP: 3rem;
+$CARD_COVER_SCALE: 5rem;
 
 @mixin almost-minimum-screen-width
 {
@@ -69,8 +70,6 @@ $CARD_CONTENT_GAP: 3rem;
 
 	.card-cover
 	{
-		@include kit.dimensions(1em); /* this is really EM */
-		font-size: 5rem;
 		flex: none;
 		text-align: center;
 	}
@@ -101,6 +100,7 @@ $CARD_CONTENT_GAP: 3rem;
 	.card-cover
 	{
 		@include kit.double-border();
+		@include kit.dimensions($CARD_COVER_SCALE);
 		border-radius: 1.5rem;
 	}
 
@@ -129,6 +129,11 @@ $CARD_CONTENT_GAP: 3rem;
 {
 	$OPTIONS_GAP: 1.5rem;
 	@extend %card;
+
+	.card-cover
+	{
+		font-size: $CARD_COVER_SCALE;
+	}
 
 	.card-options
 	{
