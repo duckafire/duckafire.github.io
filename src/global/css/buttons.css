@@ -51,8 +51,8 @@ freely, subject to the following restrictions:
 .rounded-square-btn [class^=fa-],
 .rounded-rect-btn [class^=fa-]
 {
-	width: 100%;
-	height: 100%;
+	width: min-content;
+	height: min-content;
 }
 
 .oval-btn
