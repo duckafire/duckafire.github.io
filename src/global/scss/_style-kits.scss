@@ -17,21 +17,30 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 
+@use "common" as com;
+
 /* import as "kit" */
 
-@mixin double-border(
-	$bcolor: var(--SOFT_BLACK),
-	$scolor: var(--SOFT_WHITE),
-	$blen: 1px,
-	$slen: 1px)
+@mixin double-border($border-color: "", $shadow-color: "", $border-scale: "", $scale-scale: "")
 {
+	$border-color: com.validate-optional-arg($border-color, var(--C_SOFT_BLACK));
+	$shadow-color:  com.validate-optional-arg($shadow-color,  var(--C_SOFT_WHITE));
+	$border-scale: com.validate-optional-arg($border-scale, 1);
+	$scale-scale:  com.validate-optional-arg($scale-scale,  1);
+
+	/* only if 1rem == 16px */
+	$onePx: 0.0625rem;
+
+	$border-length: $onePx * $border-scale;
+	$scale-length:  $onePx * $scale-scale;
+
 	/* b : Border | s : Shadow */
-	border: $blen solid $bcolor;
+	border: $border-length solid $border-color;
 	box-shadow:
-		 (-$slen) (-$slen) $scolor,
-		 (-$slen)  ($slen) $scolor,
-		  ($slen) (-$slen) $scolor,
-		  ($slen)  ($slen) $scolor;
+		 (-$scale-length) (-$scale-length) $shadow-color,
+		 (-$scale-length)   $scale-length  $shadow-color,
+		   $scale-length  (-$scale-length) $shadow-color,
+		   $scale-length    $scale-length  $shadow-color;
 }
 
 @mixin padding-gap($value)
