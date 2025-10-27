@@ -6,6 +6,34 @@
 			"src": "../../asserts/images/high/duckafire-profile.png",
 			"alt": "DuckAfire's profile image."
 		},
+		"colors": {
+			"front": {
+				"bg": "17a334",
+				"btn": {
+					"def": {
+						"bg": "3ac13e",
+						"fg": "b4e37b"
+					},
+					"high": {
+						"bg": "cc4444",
+						"fg": "ff9c9c"
+					}
+				}
+			},
+			"details": {
+				"bg": "08691c",
+				"btn": {
+					"def": {
+						"bg": "34a737",
+						"fg": "9ec56e"
+					},
+					"high": {
+						"bg": "c13a3a",
+						"fg": "ff9c9c"
+					}
+				}
+			}
+		},
 		"url-list": {
 			"related": [
 				{"title": "Docker Hub", "url": "hub.docker.com/u/duckafire"},
@@ -20,6 +48,30 @@
 	{
 		"type": "website",
 		"fa-icon": "fa-brands fa-docker",
+		"colors": {
+			"front": {
+				"bg": "313978",
+				"btn": {
+					"def": {
+						"bg": "305fba",
+						"fg": "b6cddd"
+					},
+					"high": {
+						"bg": "4880ee",
+						"fg": "e0ecf6"
+					}
+				}
+			},
+			"details": {
+				"bg": "141b5a",
+				"btn": {
+					"def": {
+						"bg": "2d549d",
+						"fg": "99b3c5"
+					}
+				}
+			}
+		},
 		"url-list": {
 			"main-url": "hub.docker.com/u/duckafire",
 			"related": [
@@ -30,6 +82,30 @@
 	{
 		"type": "website",
 		"fa-icon": "fa-brands fa-github",
+		"colors": {
+			"front": {
+				"bg": "2c3c56",
+				"btn": {
+					"def": {
+						"bg": "345281",
+						"fg": "cad2db"
+					},
+					"high": {
+						"bg": "54709a",
+						"fg": "f0f6fc"
+					}
+				}
+			},
+			"details": {
+				"bg": "1c2534",
+				"btn": {
+					"def": {
+						"bg": "3a4d6b",
+						"fg": "afbac5"
+					}
+				}
+			}
+		},
 		"url-list": {
 			"main-url": "github.com/duckafire",
 			"related": [
@@ -50,6 +126,30 @@
 	{
 		"type": "website",
 		"fa-icon": "fa-brands fa-gitlab",
+		"colors": {
+			"front": {
+				"bg": "c34927",
+				"btn": {
+					"def": {
+						"bg": "e56c18",
+						"fg": "eeb43f"
+					},
+					"high": {
+						"bg": "f67921",
+						"fg": "ffc551"
+					}
+				}
+			},
+			"details": {
+				"bg": "8d3017",
+				"btn": {
+					"def": {
+						"bg": "c55b11",
+						"fg": "d09c34"
+					}
+				}
+			}
+		},
 		"url-list": {
 			"main-url": "gitlab.com/duckafire",
 			"related": [
@@ -70,6 +170,30 @@
 	{
 		"type": "website",
 		"fa-icon": "fa-brands fa-itch-io",
+		"colors": {
+			"front": {
+				"bg": "ae3b3b",
+				"btn": {
+					"def": {
+						"bg": "e7535a",
+						"fg": "e8bebe"
+					},
+					"high": {
+						"bg": "fb747b",
+						"fg": "ffe1e1"
+					}
+				}
+			},
+			"details": {
+				"bg": "852727",
+				"btn": {
+					"def": {
+						"bg": "cc383f",
+						"fg": "cea1a1"
+					}
+				}
+			}
+		},
 		"url-list": {
 			"main-url": "duckafire.itch.io",
 			"related": [
@@ -80,6 +204,30 @@
 	{
 		"type": "website",
 		"fa-icon": "fa-brands fa-npm",
+		"colors": {
+			"front": {
+				"bg": "be3534",
+				"btn": {
+					"def": {
+						"bg": "ea4040",
+						"fg": "d8c8b2"
+					},
+					"high": {
+						"bg": "f94040",
+						"fg": "e8e6e3"
+					}
+				}
+			},
+			"details": {
+				"bg": "921e1d",
+				"btn": {
+					"def": {
+						"bg": "d03636",
+						"fg": "c1b29c"
+					}
+				}
+			}
+		},
 		"url-list": {
 			"main-url": "npmjs.com/~duckafire",
 			"related": [
@@ -91,6 +239,30 @@
 	{
 		"type": "website",
 		"fa-icon": "fa-solid fa-gamepad",
+		"colors": {
+			"front": {
+				"bg": "3b5dc9",
+				"btn": {
+					"def": {
+						"bg": "2ba1e1",
+						"fg": "cecece"
+					},
+					"high": {
+						"bg": "56c8e1",
+						"fg": "e7e7e7"
+					}
+				}
+			},
+			"details": {
+				"bg": "29366f",
+				"btn": {
+					"def": {
+						"bg": "1681bb",
+						"fg": "b2b2b2"
+					}
+				}
+			}
+		},
 		"url-list": {
 			"main-url": "tic80.com/dev?id=8700",
 			"related": [

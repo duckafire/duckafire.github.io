@@ -19,7 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 const createUrlList = (json) =>
 {
-	const LIST = UL( {className: "clear-style url-list"}, UL);
+	const LIST = UL( {className: "clear-style url-list", cssRules: {"--fg-color": "var(--c-card-details-btn-def-fg)", "--bg-color": "var(--c-card-details-btn-def-bg)"}}, UL);
 	let item;
 
 	for(const DATA of json["url-list"]["related"])
@@ -50,37 +50,94 @@ DIV( {className: "card-division", role: "details", style: "display:none"},
 	DIV),
 DIV);
 
-const createProfileCard = (json) =>
-LI( {className: "profile-card"},
-	DIV( {className: "card-division"},
-		SECTION( {className: "card-content"},
-			IMG( {className: "card-cover", src: json["img-cover"]["src"], alt: json["img-cover"]["alt"]}),
-			DIV( {className: "card-options"},
-				H1( {translate: "off"}, json["title"], H1),
-				BUTTON( {className: "js:card-details-manager oval-btn", style: "font-size:1.25rem;--bg-color:var(--SOFT_SILVER)"},
-					I( {className: "fa-solid fa-plus"}, I),
-				BUTTON),
-			DIV),
-		SECTION),
-	DIV),
-	createCardDetails(json),
-LI);
+const setCssVariable = (cssRules, json, ...strings) =>
+{
+	let field = "--c-card";
+	let value = json["colors"];
 
-const createWebsiteCard = (json) =>
-LI( {className: "website-card"},
+	for(const STR of strings)
+	{
+		field += "-" + STR;
+		value = value[STR];
+	}
+
+	cssRules[field] = "#" + value;
+}
+
+const declareCardColorVariables = (json) =>
+{
+	const colors = {};
+
+	// Front - Btn - High - State
+	let fbhs;
+
+	for(const DIVISION in json["colors"])
+	{
+		for(const STUFF in json["colors"][DIVISION])
+		{
+			if(STUFF == "bg")
+			{
+				setCssVariable(colors, json, DIVISION, STUFF);
+				continue;
+			}
+
+			// it is `btn`
+			for(const STATE in json["colors"][DIVISION][STUFF])
+			{
+				if(DIVISION == "front")
+				{
+					if(STATE == "def")
+						fbhs = json["colors"][DIVISION][STUFF][STATE];
+				}
+				else
+				{
+					// ...(front.btn.def) == ...(details.btn.high)
+					// when the last is not supplied
+					for(const COLOR in fbhs)
+						setCssVariable(colors, json, "front", STUFF, "high", COLOR);
+				}
+
+				for(const COLOR in json["colors"][DIVISION][STUFF][STATE])
+					setCssVariable(colors, json, DIVISION, STUFF, STATE, COLOR);
+			}
+		}
+	}
+
+	return colors;
+}
+
+const createCardContent = (json) =>
+json["type"] == "profile"
+?
+[
+	IMG( {className: "card-cover", src: json["img-cover"]["src"], alt: json["img-cover"]["alt"]}),
+	DIV( {className: "card-options", cssRules: {color: "var(--c-card-front-btn-def-fg)", "--bg-color": "var(--c-card-front-btn-def-bg)"}},
+		H1( {translate: "off"}, json["title"], H1),
+		BUTTON( {className: "js:card-details-manager oval-btn", cssRules: {fontSize: "1.25rem"}},
+			I( {className: "fa-solid fa-plus"}, I),
+		BUTTON),
+	DIV),
+]
+:
+[
+	DIV( {className: "card-cover", cssRules: {color: "var(--c-card-front-btn-def-fg)"}},
+		I( {className: json["fa-icon"]}, I),
+	DIV),
+	DIV( {className: "card-options", cssRules: {color: "var(--c-card-front-btn-def-fg)", "--bg-color": "var(--c-card-front-btn-def-bg)"}},
+		BUTTON( {className: "js:card-details-manager ball-btn"},
+			I( {className: "fa-solid fa-plus"}, I),
+		BUTTON),
+		A( {role: "button", className: "ball-btn", href: "https://"+json["url-list"]["main-url"], rel: "noopener noreferrer"},
+			I( {className: "fa-solid fa-external-link"}, I),
+		A),
+	DIV),
+];
+
+const createCard = (json) =>
+LI( {className: json["type"] + "-card", cssRules = declareCardColorVariables(json)},
 	DIV( {className: "card-division"},
 		SECTION( {className: "card-content"},
-			DIV( {className: "card-cover"},
-				I( {className: json["fa-icon"]}, I),
-			DIV),
-			DIV( {className: "card-options", style: "--bg-color:var(--SOFT_SILVER)"},
-				BUTTON( {className: "js:card-details-manager ball-btn"},
-					I( {className: "fa-solid fa-plus"}, I),
-				BUTTON),
-				A( {role: "button", className: "ball-btn", href: "https://"+json["url-list"]["main-url"], rel: "noopener noreferrer"},
-					I( {className: "fa-solid fa-external-link"}, I),
-				A),
-			DIV),
+			...createCardContent(json),
 		SECTION),
 	DIV),
 	createCardDetails(json),
@@ -102,7 +159,7 @@ fetch("./components/card/data.json")
 	{
 		const CARDS_LIST = document.getElementById("cards-list");
 		for(const DATA of json)
-			CARDS_LIST.appendChild( (DATA.type == "profile" ? createProfileCard : createWebsiteCard)(DATA) );
+			CARDS_LIST.appendChild( createCard(DATA) );
 
 		document.querySelectorAll(".profile-card, .website-card").forEach((card) =>
 		{
