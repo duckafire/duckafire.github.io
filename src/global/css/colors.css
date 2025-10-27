@@ -24,11 +24,15 @@ freely, subject to the following restrictions:
 
 :root
 {
-	--SOFT_WHITE: #c9c9c9;
-	--SOFT_SILVER: #3e3e3e;
-	--SOFT_GRAY:  #2a2a2a;
-	--SOFT_BLACK: #1f1f1f;
-
-	--FG_LOW_HIGH: #888;
-	--URL_LOW_HIGH: #88c;
+	--C_BLACK:       #0d0d0d;
+	--C_SOFT_BLACK:  #1f1f1f;
+	--C_GRAPHITE:    #424242;
+	--C_ANTHRACITE:  #5b5b5b;
+	--C_DARK_GRAY:   #7e7e7e;
+	--C_MEDIUM_GRAY: #828282;
+	--C_LIGHT_GRAY:  #949494;
+	--C_SILVER:      #a7a7a7;
+	--C_PALE_SILVER: #bababa;
+	--C_SOFT_WHITE:  #c9c9c9;
+	--C_WHITE:       #e3e3e3;
 }

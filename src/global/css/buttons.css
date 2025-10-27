@@ -36,8 +36,8 @@ freely, subject to the following restrictions:
 	/* two plus their "original values"  */
 	padding: 0.2em;
 
-	background-color: var(--bg-color, --SOFT_GRAY);
-	color: var(--fg-color, --SOFT_WHITE);
+	background-color: var(--bg-color, --C_SILVER);
+	color: var(--fg-color, --C_SOFT_WHITE);
 
 	border-radius: 50%;
 	display: flex;

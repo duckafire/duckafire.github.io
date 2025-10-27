@@ -39,7 +39,7 @@ freely, subject to the following restrictions:
 
 	*::-webkit-scrollbar-thumb
 	{
-		background-color: #999;
+		background-color: var(--C_LIGHT_GRAY, #999);
 		border-radius: 0.75rem;
 	}
 }

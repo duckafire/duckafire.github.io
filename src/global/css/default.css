@@ -41,8 +41,8 @@ dialog::backdrop
 body
 {
 	font-family: sans-serif, serif;
-	color: var(--SOFT_WHITE, whitesmoke);
-	background-color: var(--SOFT_BLACK, darkslategray);
+	color: var(--C_SOFT_WHITE, whitesmoke);
+	background-color: var(--C_SOFT_BLACK, darkslategray);
 }
 
 button,
@@ -69,10 +69,15 @@ h2
 
 h1
 {
-	color: var(--SOFT_WHITE, whitesmoke);
+	color: var(--C_SOFT_WHITE, whitesmoke);
 }
 
 h2
 {
-	color: var(--SOFT_GRAY, dimgray);
+	color: var(--C_PALE_SILVER, dimgray);
+}
+
+a
+{
+	color: inherit;
 }
