@@ -76,7 +76,8 @@ const declareCardColorVariables = (json) =>
 	// Front - Btn - High - State
 	let fbhs;
 
-	for(const DIVISION in json["colors"])
+	// using a literal array to define an order
+	for(const DIVISION of ["front", "details"])
 	{
 		for(const STUFF in json["colors"][DIVISION])
 		{
@@ -96,10 +97,8 @@ const declareCardColorVariables = (json) =>
 				}
 				else
 				{
-					// ...(front.btn.def) == ...(details.btn.high)
-					// when the last is not supplied
 					for(const COLOR in fbhs)
-						setCssVariable(colors, json, "front", STUFF, "high", COLOR);
+						colors["--c-card-details-btn-high-" + COLOR] = "#" + fbhs[COLOR];
 				}
 
 				for(const COLOR in json["colors"][DIVISION][STUFF][STATE])
