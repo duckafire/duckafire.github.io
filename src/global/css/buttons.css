@@ -79,13 +79,26 @@ input.rounded-rect-btn
 	width: calc(1em * var(--scalew, 1));
 }
 
-.live-btn
+.live-btn,
+.live-input
 {
 	outline: none;
 }
 
+.live-btn:hover
+{
+	cursor: pointer !important;
+}
+
+.live-input:hover
+{
+	cursor: text !important;
+}
+
 .live-btn:hover,
-.live-btn:focus-visible
+.live-btn:focus-visible,
+.live-input:hover,
+.live-input:focus-visible
 {
 	box-shadow:
 		-0.125rem -0.125rem 0.125rem var(--fg-color, --C_SOFT_WHITE),
@@ -101,11 +114,6 @@ input.rounded-rect-btn
 		 0.125rem -0.125rem 0.125rem var(--hi-fg-color, --C_WHITE),
 		-0.125rem  0.125rem 0.125rem var(--hi-fg-color, --C_WHITE),
 		 0.125rem  0.125rem 0.125rem var(--hi-fg-color, --C_WHITE) !important;
-}
-
-.live-btn:hover
-{
-	cursor: pointer;
 }
 
 .live-btn:active

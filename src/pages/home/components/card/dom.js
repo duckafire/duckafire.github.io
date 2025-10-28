@@ -33,7 +33,7 @@ const createUrlList = (json) =>
 	{
 		LIST.appendChild(
 			LI( {className: "url-list-item", title: DATA["title"]},
-				INPUT( {className: "url-list-btn rounded-rect-btn url-list-text live-btn", role: "button", value: "https://"+DATA["url"], type: "text", readOnly: "~", translate: false}),
+				INPUT( {className: "url-list-btn rounded-rect-btn url-list-text live-input", role: "button", value: "https://"+DATA["url"], type: "text", readOnly: "~", translate: false}),
 				BUTTON( {className: "url-list-btn rounded-rect-btn live-btn unflex", style: "--scalew:2"},
 					I( {className: "fa-solid fa-copy"}, I),
 				BUTTON),
@@ -201,7 +201,7 @@ fetch("./components/card/data.json")
 			card.querySelectorAll(".url-list-item").forEach(item =>
 			{
 				const BTN    = item.querySelectorAll(".url-list-btn");
-				const URL    = BTN[0].children[0];
+				const URL    = BTN[0];
 				const COPIER = BTN[1];
 
 				COPIER.addEventListener("click", () =>
@@ -217,7 +217,7 @@ fetch("./components/card/data.json")
 	{
 		if(attempt >= 5)
 		{
-			console.error(new InternalError(`Stopping, to try to create the cards, after #${attempts} attempts.`));
+			console.error(new InternalError(`Stopping, to try to create the cards, after #${attempt} attempts.`));
 			return;
 		}
 
