@@ -19,7 +19,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 const createUrlList = (json) =>
 {
-	const LIST = UL( {className: "clear-style url-list", cssRules: {"--fg-color": "var(--c-card-details-btn-def-fg)", "--bg-color": "var(--c-card-details-btn-def-bg)"}}, UL);
+	const cssRules = {
+		"--fg-color": "var(--c-card-details-btn-def-fg)",
+		"--bg-color": "var(--c-card-details-btn-def-bg)",
+		"--hi-fg-color": "var(--c-card-details-btn-high-fg)",
+		"--hi-bg-color": "var(--c-card-details-btn-high-bg)",
+	};
+
+	const LIST = UL( {className: "clear-style url-list", cssRules}, UL);
 	let item;
 
 	for(const DATA of json["url-list"]["related"])
@@ -27,12 +34,12 @@ const createUrlList = (json) =>
 		LIST.appendChild(
 			LI( {className: "url-list-item", title: DATA["title"]},
 				BUTTON( {className: "url-list-btn rounded-rect-btn url-list-text"},
-					INPUT( {value: "https://"+DATA["url"], type: "text", readOnly: "readOnly", translate: "off"}),
+					INPUT( {value: "https://"+DATA["url"], type: "text", readOnly: "readOnly", translate: false}),
 				BUTTON),
-				BUTTON( {className: "url-list-btn rounded-rect-btn", style: "--scalew:2"},
+				BUTTON( {className: "url-list-btn rounded-rect-btn live-btn", style: "--scalew:2"},
 					I( {className: "fa-solid fa-copy"}, I),
 				BUTTON),
-				A( {role: "button", className: "clear-style url-list-btn rounded-rect-btn", href: "https://"+DATA["url"], style: "--scalew:2", rel: "noopener noreferrer"},
+				A( {role: "button", className: "clear-style url-list-btn rounded-rect-btn live-btn", href: "https://"+DATA["url"], style: "--scalew:2", rel: "noopener noreferrer"},
 					I( {className: "fa-solid fa-external-link"}, I),
 				A),
 			LI)
@@ -106,14 +113,22 @@ const declareCardColorVariables = (json) =>
 	return colors;
 }
 
+const __cardContentCssRules__ = {
+	"--fg-color": "var(--c-card-front-btn-def-fg)",
+	"--bg-color": "var(--c-card-front-btn-def-bg)",
+	"--hi-fg-color": "var(--c-card-front-btn-high-fg)",
+	"--hi-bg-color": "var(--c-card-front-btn-high-bg)",
+	color: "var(--fg-color)",
+};
+
 const createCardContent = (json) =>
 json["type"] == "profile"
 ?
 [
 	IMG( {className: "card-cover", src: json["img-cover"]["src"], alt: json["img-cover"]["alt"]}),
-	DIV( {className: "card-options", cssRules: {color: "var(--c-card-front-btn-def-fg)", "--bg-color": "var(--c-card-front-btn-def-bg)"}},
-		H1( {translate: "off"}, json["title"], H1),
-		BUTTON( {className: "js:card-details-manager oval-btn", cssRules: {fontSize: "1.25rem"}},
+	DIV( {className: "card-options", cssRules: __cardContentCssRules__},
+		H1( {translate: false}, json["title"], H1),
+		BUTTON( {className: "js:card-details-manager oval-btn live-btn", cssRules: {fontSize: "1.25rem"}},
 			I( {className: "fa-solid fa-plus"}, I),
 		BUTTON),
 	DIV),
@@ -123,11 +138,11 @@ json["type"] == "profile"
 	DIV( {className: "card-cover", cssRules: {color: "var(--c-card-front-btn-def-fg)"}},
 		I( {className: json["fa-icon"]}, I),
 	DIV),
-	DIV( {className: "card-options", cssRules: {color: "var(--c-card-front-btn-def-fg)", "--bg-color": "var(--c-card-front-btn-def-bg)"}},
-		BUTTON( {className: "js:card-details-manager ball-btn"},
+	DIV( {className: "card-options", cssRules: __cardContentCssRules__},
+		BUTTON( {className: "js:card-details-manager ball-btn live-btn"},
 			I( {className: "fa-solid fa-plus"}, I),
 		BUTTON),
-		A( {role: "button", className: "ball-btn", href: "https://"+json["url-list"]["main-url"], rel: "noopener noreferrer"},
+		A( {role: "button", className: "ball-btn live-btn", href: "https://"+json["url-list"]["main-url"], rel: "noopener noreferrer"},
 			I( {className: "fa-solid fa-external-link"}, I),
 		A),
 	DIV),
