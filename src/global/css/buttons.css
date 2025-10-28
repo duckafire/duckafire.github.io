@@ -38,7 +38,6 @@ freely, subject to the following restrictions:
 
 	background-color: var(--bg-color, --C_SILVER);
 	color: var(--fg-color, --C_SOFT_WHITE);
-
 	border-radius: 50%;
 	display: flex;
 	align-items: center;
@@ -70,4 +69,41 @@ freely, subject to the following restrictions:
 .rounded-rect-btn
 {
 	width: calc(1em * var(--scalew, 1));
+}
+
+.live-btn
+{
+	outline: none;
+}
+
+.live-btn:hover,
+.live-btn:focus-visible
+{
+	box-shadow:
+		-0.125rem -0.125rem 0.125rem var(--fg-color, --C_SOFT_WHITE),
+		 0.125rem -0.125rem 0.125rem var(--fg-color, --C_SOFT_WHITE),
+		-0.125rem  0.125rem 0.125rem var(--fg-color, --C_SOFT_WHITE),
+		 0.125rem  0.125rem 0.125rem var(--fg-color, --C_SOFT_WHITE);
+}
+
+.live-btn:active:focus-visible
+{
+	box-shadow:
+		-0.125rem -0.125rem 0.125rem var(--hi-fg-color, --C_WHITE),
+		 0.125rem -0.125rem 0.125rem var(--hi-fg-color, --C_WHITE),
+		-0.125rem  0.125rem 0.125rem var(--hi-fg-color, --C_WHITE),
+		 0.125rem  0.125rem 0.125rem var(--hi-fg-color, --C_WHITE) !important;
+}
+
+.live-btn:hover
+{
+	cursor: pointer;
+}
+
+.live-btn:active
+{
+	cursor: default !important;
+	box-shadow: none;
+	background-color: var(--hi-bg-color, --C_PALE_SILVER) !important;
+	color: var(--hi-fg-color, --C_WHITE) !important;
 }
