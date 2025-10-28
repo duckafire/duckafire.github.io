@@ -39,3 +39,8 @@ a.clear-style
 	text-decoration: none;
 	color: inherit;
 }
+
+.unflex
+{
+	flex: none;
+}

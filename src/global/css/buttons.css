@@ -45,6 +45,14 @@ freely, subject to the following restrictions:
 	text-align: center;
 }
 
+input.ball-btn,
+input.oval-btn,
+input.rounded-square-btn,
+input.rounded-rect-btn
+{
+	text-align: start;
+}
+
 .ball-btn [class^=fa-],
 .oval-btn [class^=fa-],
 .rounded-square-btn [class^=fa-],

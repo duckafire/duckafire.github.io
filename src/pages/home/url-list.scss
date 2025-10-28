@@ -51,11 +51,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 .url-list-text
 {
 	flex-grow: 1;
+}
 
-	input
-	{
-		padding-inline: 0.25em;
-		font-weight: bold;
-		width: 100%;
-	}
+input.url-list-text,
+.url-list-text input
+{
+	padding-inline: 0.5em;
+	font-weight: bold;
+	width: 100%;
 }

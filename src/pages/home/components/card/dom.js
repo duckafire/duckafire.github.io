@@ -33,13 +33,11 @@ const createUrlList = (json) =>
 	{
 		LIST.appendChild(
 			LI( {className: "url-list-item", title: DATA["title"]},
-				BUTTON( {className: "url-list-btn rounded-rect-btn url-list-text"},
-					INPUT( {value: "https://"+DATA["url"], type: "text", readOnly: "readOnly", translate: false}),
-				BUTTON),
-				BUTTON( {className: "url-list-btn rounded-rect-btn live-btn", style: "--scalew:2"},
+				INPUT( {className: "url-list-btn rounded-rect-btn url-list-text live-btn", role: "button", value: "https://"+DATA["url"], type: "text", readOnly: "~", translate: false}),
+				BUTTON( {className: "url-list-btn rounded-rect-btn live-btn unflex", style: "--scalew:2"},
 					I( {className: "fa-solid fa-copy"}, I),
 				BUTTON),
-				A( {role: "button", className: "clear-style url-list-btn rounded-rect-btn live-btn", href: "https://"+DATA["url"], style: "--scalew:2", rel: "noopener noreferrer"},
+				A( {role: "button", className: "clear-style url-list-btn rounded-rect-btn live-btn unflex", href: "https://"+DATA["url"], style: "--scalew:2", rel: "noopener noreferrer"},
 					I( {className: "fa-solid fa-external-link"}, I),
 				A),
 			LI)
