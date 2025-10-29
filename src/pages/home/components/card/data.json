@@ -10,27 +10,15 @@
 			"front": {
 				"bg": "17a334",
 				"btn": {
-					"def": {
-						"bg": "3ac13e",
-						"fg": "b4e37b"
-					},
-					"high": {
-						"bg": "cc4444",
-						"fg": "ff9c9c"
-					}
+					"bg": "3ac13e",
+					"fg": "b4e37b"
 				}
 			},
 			"details": {
 				"bg": "08691c",
 				"btn": {
-					"def": {
-						"bg": "34a737",
-						"fg": "9ec56e"
-					},
-					"high": {
-						"bg": "c13a3a",
-						"fg": "e37b7b"
-					}
+					"bg": "34a737",
+					"fg": "9ec56e"
 				}
 			}
 		},
@@ -52,23 +40,15 @@
 			"front": {
 				"bg": "313978",
 				"btn": {
-					"def": {
-						"bg": "305fba",
-						"fg": "b6cddd"
-					},
-					"high": {
-						"bg": "4880ee",
-						"fg": "e0ecf6"
-					}
+					"bg": "305fba",
+					"fg": "b6cddd"
 				}
 			},
 			"details": {
 				"bg": "141b5a",
 				"btn": {
-					"def": {
-						"bg": "2d549d",
-						"fg": "99b3c5"
-					}
+					"bg": "2d549d",
+					"fg": "99b3c5"
 				}
 			}
 		},
@@ -86,23 +66,15 @@
 			"front": {
 				"bg": "2c3c56",
 				"btn": {
-					"def": {
-						"bg": "345281",
-						"fg": "cad2db"
-					},
-					"high": {
-						"bg": "54709a",
-						"fg": "f0f6fc"
-					}
+					"bg": "345281",
+					"fg": "cad2db"
 				}
 			},
 			"details": {
 				"bg": "1c2534",
 				"btn": {
-					"def": {
-						"bg": "3a4d6b",
-						"fg": "afbac5"
-					}
+					"bg": "3a4d6b",
+					"fg": "afbac5"
 				}
 			}
 		},
@@ -130,23 +102,15 @@
 			"front": {
 				"bg": "c34927",
 				"btn": {
-					"def": {
-						"bg": "e56c18",
-						"fg": "eeb43f"
-					},
-					"high": {
-						"bg": "f67921",
-						"fg": "ffc551"
-					}
+					"bg": "e56c18",
+					"fg": "eeb43f"
 				}
 			},
 			"details": {
 				"bg": "8d3017",
 				"btn": {
-					"def": {
-						"bg": "c55b11",
-						"fg": "d09c34"
-					}
+					"bg": "c55b11",
+					"fg": "d09c34"
 				}
 			}
 		},
@@ -174,23 +138,15 @@
 			"front": {
 				"bg": "ae3b3b",
 				"btn": {
-					"def": {
-						"bg": "e7535a",
-						"fg": "e8bebe"
-					},
-					"high": {
-						"bg": "fb747b",
-						"fg": "ffe1e1"
-					}
+					"bg": "e7535a",
+					"fg": "e8bebe"
 				}
 			},
 			"details": {
 				"bg": "852727",
 				"btn": {
-					"def": {
-						"bg": "cc383f",
-						"fg": "cea1a1"
-					}
+					"bg": "cc383f",
+					"fg": "cea1a1"
 				}
 			}
 		},
@@ -208,23 +164,15 @@
 			"front": {
 				"bg": "be3534",
 				"btn": {
-					"def": {
-						"bg": "ea4040",
-						"fg": "d8c8b2"
-					},
-					"high": {
-						"bg": "f94040",
-						"fg": "e8e6e3"
-					}
+					"bg": "ea4040",
+					"fg": "d8c8b2"
 				}
 			},
 			"details": {
 				"bg": "921e1d",
 				"btn": {
-					"def": {
-						"bg": "d03636",
-						"fg": "c1b29c"
-					}
+					"bg": "d03636",
+					"fg": "c1b29c"
 				}
 			}
 		},
@@ -243,23 +191,15 @@
 			"front": {
 				"bg": "3b5dc9",
 				"btn": {
-					"def": {
-						"bg": "2ba1e1",
-						"fg": "cecece"
-					},
-					"high": {
-						"bg": "56c8e1",
-						"fg": "e7e7e7"
-					}
+					"bg": "2ba1e1",
+					"fg": "cecece"
 				}
 			},
 			"details": {
 				"bg": "29366f",
 				"btn": {
-					"def": {
-						"bg": "1681bb",
-						"fg": "b2b2b2"
-					}
+					"bg": "1681bb",
+					"fg": "b2b2b2"
 				}
 			}
 		},

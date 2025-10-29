@@ -20,10 +20,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 const createUrlList = (json) =>
 {
 	const cssRules = {
-		"--fg-color": "var(--c-card-details-btn-def-fg)",
-		"--bg-color": "var(--c-card-details-btn-def-bg)",
-		"--hi-fg-color": "var(--c-card-details-btn-high-fg)",
-		"--hi-bg-color": "var(--c-card-details-btn-high-bg)",
+		"--fg-color": "var(--c-card-details-btn-fg)",
+		"--bg-color": "var(--c-card-details-btn-bg)",
 	};
 
 	const LIST = UL( {className: "clear-style url-list", cssRules}, UL);
@@ -73,36 +71,20 @@ const declareCardColorVariables = (json) =>
 {
 	const colors = {};
 
-	// Front - Btn - High - State
-	let fbhs;
-
-	// using a literal array to define an order
-	for(const DIVISION of ["front", "details"])
+	for(const DIVISION in json["colors"])
 	{
 		for(const STUFF in json["colors"][DIVISION])
 		{
-			if(STUFF == "bg")
-			{
-				setCssVariable(colors, json, DIVISION, STUFF);
-				continue;
-			}
+			switch(STUFF){
+				case "bg":
+					setCssVariable(colors, json, DIVISION, STUFF);
+					break;
 
-			// it is `btn`
-			for(const STATE in json["colors"][DIVISION][STUFF])
-			{
-				if(DIVISION == "front")
-				{
-					if(STATE == "def")
-						fbhs = json["colors"][DIVISION][STUFF][STATE];
-				}
-				else
-				{
-					for(const COLOR in fbhs)
-						colors["--c-card-details-btn-high-" + COLOR] = "#" + fbhs[COLOR];
-				}
-
-				for(const COLOR in json["colors"][DIVISION][STUFF][STATE])
-					setCssVariable(colors, json, DIVISION, STUFF, STATE, COLOR);
+				// it is an object with
+				// multiple colors (fg;bg)
+				default:
+					for(const COLOR in json["colors"][DIVISION][STUFF])
+						setCssVariable(colors, json, DIVISION, STUFF, COLOR);
 			}
 		}
 	}
@@ -111,10 +93,8 @@ const declareCardColorVariables = (json) =>
 }
 
 const __cardContentCssRules__ = {
-	"--fg-color": "var(--c-card-front-btn-def-fg)",
-	"--bg-color": "var(--c-card-front-btn-def-bg)",
-	"--hi-fg-color": "var(--c-card-front-btn-high-fg)",
-	"--hi-bg-color": "var(--c-card-front-btn-high-bg)",
+	"--fg-color": "var(--c-card-front-btn-fg)",
+	"--bg-color": "var(--c-card-front-btn-bg)",
 	color: "var(--fg-color)",
 };
 
@@ -132,7 +112,7 @@ json["type"] == "profile"
 ]
 :
 [
-	DIV( {className: "card-cover", cssRules: {color: "var(--c-card-front-btn-def-fg)"}},
+	DIV( {className: "card-cover", cssRules: {color: "var(--c-card-front-btn-fg)"}},
 		I( {className: json["fa-icon"]}, I),
 	DIV),
 	DIV( {className: "card-options", cssRules: __cardContentCssRules__},

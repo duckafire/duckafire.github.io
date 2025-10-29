@@ -118,7 +118,7 @@ $CARD_COVER_SCALE: 5rem;
 
 	.card-cover
 	{
-		@include kit.double-border(null, var(--c-card-front-btn-def-fg), 2, 2);
+		@include kit.double-border(null, var(--c-card-front-btn-fg), 2, 2);
 		@include kit.dimensions($CARD_COVER_SCALE);
 		border-radius: 1.5rem;
 	}
