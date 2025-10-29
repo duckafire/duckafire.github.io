@@ -20,8 +20,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 const createUrlList = (json) =>
 {
 	const cssRules = {
-		"--fg-color": "var(--c-card-details-btn-fg)",
-		"--bg-color": "var(--c-card-details-btn-bg)",
+		"--fg": "var(--c-card-details-btn-fg)",
+		"--bg": "var(--c-card-details-btn-bg)",
 	};
 
 	const LIST = UL( {className: "clear-style url-list", cssRules}, UL);
@@ -93,9 +93,9 @@ const declareCardColorVariables = (json) =>
 }
 
 const __cardContentCssRules__ = {
-	"--fg-color": "var(--c-card-front-btn-fg)",
-	"--bg-color": "var(--c-card-front-btn-bg)",
-	color: "var(--fg-color)",
+	"--fg": "var(--c-card-front-btn-fg)",
+	"--bg": "var(--c-card-front-btn-bg)",
+	color: "var(--fg)",
 };
 
 const createCardContent = (json) =>

@@ -39,13 +39,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 .url-list-btn
 {
 	overflow: hidden;
-	background-color: var(--bg-color, --C_SOFT_SILVER);
+	background-color: var(--bg, --C_SOFT_SILVER);
 	height: 2rem;
 
 	/* this must be "forced" because <a> */
 	/* is not accepting this color (I do */
 	/* know why).                        */
-	color: var(--fg-color, --C_SILVER) !important;
+	color: var(--fg, --C_SILVER) !important;
 }
 
 .url-list-text

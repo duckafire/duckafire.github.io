@@ -19,8 +19,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 .page-footer
 {
-	color: var(--fg-color, inherit);
-	background-color: var(--bg-color, darkslategray);
+	color: var(--fg, inherit);
+	background-color: var(--bg, darkslategray);
 	padding: 0.75rem;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
