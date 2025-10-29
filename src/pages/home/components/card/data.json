@@ -35,7 +35,7 @@
 	},
 	{
 		"type": "website",
-		"fa-icon": "fa-brands fa-docker",
+		"class-icon": "fa-brands fa-docker",
 		"colors": {
 			"front": {
 				"bg": "184889",
@@ -61,7 +61,7 @@
 	},
 	{
 		"type": "website",
-		"fa-icon": "fa-brands fa-github",
+		"class-icon": "fa-brands fa-github",
 		"colors": {
 			"front": {
 				"bg": "2f415e",
@@ -97,7 +97,7 @@
 	},
 	{
 		"type": "website",
-		"fa-icon": "fa-brands fa-gitlab",
+		"class-icon": "fa-brands fa-gitlab",
 		"colors": {
 			"front": {
 				"bg": "ba3a17",
@@ -133,7 +133,7 @@
 	},
 	{
 		"type": "website",
-		"fa-icon": "fa-brands fa-itch-io",
+		"class-icon": "fa-brands fa-itch-io",
 		"colors": {
 			"front": {
 				"bg": "ae3b3b",
@@ -159,7 +159,7 @@
 	},
 	{
 		"type": "website",
-		"fa-icon": "fa-brands fa-npm",
+		"class-icon": "fa-brands fa-npm",
 		"colors": {
 			"front": {
 				"bg": "b22c2b",
@@ -186,7 +186,7 @@
 	},
 	{
 		"type": "website",
-		"fa-icon": "fa-solid fa-gamepad",
+		"class-icon": "fa-solid fa-gamepad",
 		"colors": {
 			"front": {
 				"bg": "2d4ba9",

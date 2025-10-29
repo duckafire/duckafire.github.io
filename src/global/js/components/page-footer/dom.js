@@ -29,10 +29,10 @@ const createPageFooterList = (json) =>
 			case "title":
 				elem =
 				LI( {className: "footer-list-title"},
-					...(ITEM["fa-icon"] === undefined
+					...(ITEM["class-icon"] === undefined
 						? [ITEM["title"]]
 						: [
-							I( {className: ITEM["fa-icon"]}, I),
+							I( {className: ITEM["class-icon"]}, I),
 							SPAN( null, ITEM["title"], SPAN),
 						]
 					),
@@ -44,7 +44,7 @@ const createPageFooterList = (json) =>
 				LI( null,
 					A( {className: "footer-url", href: ITEM["url"]},
 						// TODO: title property to no-mobile
-						I( {className: ITEM["fa-icon"]}, I),
+						I( {className: ITEM["class-icon"]}, I),
 						SPAN( null, ITEM["title"], SPAN),
 					A),
 				LI);

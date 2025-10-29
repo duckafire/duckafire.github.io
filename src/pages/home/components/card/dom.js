@@ -113,7 +113,7 @@ json["type"] == "profile"
 :
 [
 	DIV( {className: "card-cover", cssRules: {color: "var(--c-card-front-btn-fg)"}},
-		I( {className: json["fa-icon"]}, I),
+		I( {className: json["class-icon"]}, I),
 	DIV),
 	DIV( {className: "card-options", cssRules: __cardContentCssRules__},
 		BUTTON( {className: "js:card-details-manager ball-btn live-btn"},

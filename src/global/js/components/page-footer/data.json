@@ -6,37 +6,37 @@
 		},
 		{
 			"type": "item",
-			"fa-icon": "fa-brands fa-docker",
+			"class-icon": "fa-brands fa-docker",
 			"title": "Docker Hub",
 			"url": "hub.docker.com/u/duckafire"
 		},
 		{
 			"type": "item",
-			"fa-icon": "fa-brands fa-github",
+			"class-icon": "fa-brands fa-github",
 			"title": "GitHub",
 			"url": "github.com/duckafire"
 		},
 		{
 			"type": "item",
-			"fa-icon": "fa-brands fa-gitlab",
+			"class-icon": "fa-brands fa-gitlab",
 			"title": "GitLab",
 			"url": "gitlab.com/duckafire"
 		},
 		{
 			"type": "item",
-			"fa-icon": "fa-brands fa-itch-io",
+			"class-icon": "fa-brands fa-itch-io",
 			"title": "itch.io",
 			"url": "duckafire.itch.io"
 		},
 		{
 			"type": "item",
-			"fa-icon": "fa-brands fa-npm",
+			"class-icon": "fa-brands fa-npm",
 			"title": "NPM",
 			"url": "npmjs.com/~duckafire"
 		},
 		{
 			"type": "item",
-			"fa-icon": "fa-solid fa-gamepad",
+			"class-icon": "fa-solid fa-gamepad",
 			"title": "Tic80",
 			"url": "tic80.com/dev?id=8700"
 		}
@@ -48,7 +48,7 @@
 		},
 		{
 			"type": "item",
-			"fa-icon": "fa-solid fa-newspaper",
+			"class-icon": "fa-solid fa-newspaper",
 			"title": "License (AGPL3)",
 			"url": "https://www.gnu.org/licenses/agpl-3.0.en.html"
 		},
@@ -58,17 +58,17 @@
 				{
 					"type": "title",
 					"title": "Repositories",
-					"fa-icon": "fa-solid fa-folder"
+					"class-icon": "fa-solid fa-folder"
 				},
 				{
 					"type": "item",
-					"fa-icon": "fa-brands fa-github",
+					"class-icon": "fa-brands fa-github",
 					"title": "GitHub",
 					"url": "github.com/duckafire/duckafire.github.io"
 				},
 				{
 					"type": "item",
-					"fa-icon": "fa-brands fa-gitlab",
+					"class-icon": "fa-brands fa-gitlab",
 					"title": "GitLab",
 					"url": "gitlab.com/duckafire/duckafire.gitlab.io"
 				}
