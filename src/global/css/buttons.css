@@ -107,19 +107,13 @@ input.rounded-rect-btn
 		 0.125rem  0.125rem 0.125rem var(--fg-color, --C_SOFT_WHITE);
 }
 
-.live-btn:active:focus-visible
-{
-	box-shadow:
-		-0.125rem -0.125rem 0.125rem var(--hi-fg-color, --C_WHITE),
-		 0.125rem -0.125rem 0.125rem var(--hi-fg-color, --C_WHITE),
-		-0.125rem  0.125rem 0.125rem var(--hi-fg-color, --C_WHITE),
-		 0.125rem  0.125rem 0.125rem var(--hi-fg-color, --C_WHITE) !important;
-}
-
 .live-btn:active
 {
 	cursor: default !important;
+	filter: brightness(0.675);
+}
+
+.live-btn:active:not(:focus-visible)
+{
 	box-shadow: none;
-	background-color: var(--hi-bg-color, --C_PALE_SILVER) !important;
-	color: var(--hi-fg-color, --C_WHITE) !important;
 }
