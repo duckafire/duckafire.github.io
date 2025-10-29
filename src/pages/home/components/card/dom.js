@@ -157,6 +157,7 @@ fetch("./components/card/data.json")
 		{
 			// open/close a details container
 			const BUTTON  = card.querySelector(".js\\:card-details-manager");
+			const B_ICON  = BUTTON.querySelector("[class^=fa-]");
 			const DETAILS = card.querySelector('.card-division[role="details"]');
 
 			BUTTON.addEventListener("click", () =>
@@ -164,14 +165,14 @@ fetch("./components/card/data.json")
 				if(DETAILS.style.display == "")
 				{
 					DETAILS.style.display = "none";
-					BUTTON.classList.add("fa-plus");
-					BUTTON.classList.remove("fa-minus");
+					B_ICON.classList.add("fa-plus");
+					B_ICON.classList.remove("fa-minus");
 				}
 				else
 				{
 					DETAILS.style.display = "";
-					BUTTON.classList.add("fa-minus");
-					BUTTON.classList.remove("fa-plus");
+					B_ICON.classList.add("fa-minus");
+					B_ICON.classList.remove("fa-plus");
 				}
 			});
 
