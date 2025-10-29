@@ -8,17 +8,17 @@
 		},
 		"colors": {
 			"front": {
-				"bg": "17a334",
+				"bg": "098924",
 				"btn": {
-					"bg": "3ac13e",
-					"fg": "b4e37b"
+					"bg": "d6a309",
+					"fg": "e8dc9c"
 				}
 			},
 			"details": {
-				"bg": "08691c",
+				"bg": "6f3202",
 				"btn": {
-					"bg": "34a737",
-					"fg": "9ec56e"
+					"bg": "ab6617",
+					"fg": "d4ac5f"
 				}
 			}
 		},
@@ -38,16 +38,16 @@
 		"fa-icon": "fa-brands fa-docker",
 		"colors": {
 			"front": {
-				"bg": "313978",
+				"bg": "184889",
 				"btn": {
-					"bg": "305fba",
-					"fg": "b6cddd"
+					"bg": "3c62bd",
+					"fg": "b8cfdf"
 				}
 			},
 			"details": {
-				"bg": "141b5a",
+				"bg": "111854",
 				"btn": {
-					"bg": "2d549d",
+					"bg": "204da3",
 					"fg": "99b3c5"
 				}
 			}
@@ -64,14 +64,14 @@
 		"fa-icon": "fa-brands fa-github",
 		"colors": {
 			"front": {
-				"bg": "2c3c56",
+				"bg": "2f415e",
 				"btn": {
-					"bg": "345281",
+					"bg": "395889",
 					"fg": "cad2db"
 				}
 			},
 			"details": {
-				"bg": "1c2534",
+				"bg": "171f2b",
 				"btn": {
 					"bg": "3a4d6b",
 					"fg": "afbac5"
@@ -100,17 +100,17 @@
 		"fa-icon": "fa-brands fa-gitlab",
 		"colors": {
 			"front": {
-				"bg": "c34927",
+				"bg": "ba3a17",
 				"btn": {
-					"bg": "e56c18",
-					"fg": "eeb43f"
+					"bg": "e56f1d",
+					"fg": "e1b867"
 				}
 			},
 			"details": {
-				"bg": "8d3017",
+				"bg": "80250d",
 				"btn": {
-					"bg": "c55b11",
-					"fg": "d09c34"
+					"bg": "ca661f",
+					"fg": "d4a74e"
 				}
 			}
 		},
@@ -138,12 +138,12 @@
 			"front": {
 				"bg": "ae3b3b",
 				"btn": {
-					"bg": "e7535a",
+					"bg": "df5057",
 					"fg": "e8bebe"
 				}
 			},
 			"details": {
-				"bg": "852727",
+				"bg": "7e2222",
 				"btn": {
 					"bg": "cc383f",
 					"fg": "cea1a1"
@@ -162,16 +162,16 @@
 		"fa-icon": "fa-brands fa-npm",
 		"colors": {
 			"front": {
-				"bg": "be3534",
+				"bg": "b22c2b",
 				"btn": {
-					"bg": "ea4040",
+					"bg": "d63f45",
 					"fg": "d8c8b2"
 				}
 			},
 			"details": {
-				"bg": "921e1d",
+				"bg": "8b1918",
 				"btn": {
-					"bg": "d03636",
+					"bg": "d23939",
 					"fg": "c1b29c"
 				}
 			}
@@ -189,17 +189,17 @@
 		"fa-icon": "fa-solid fa-gamepad",
 		"colors": {
 			"front": {
-				"bg": "3b5dc9",
+				"bg": "2d4ba9",
 				"btn": {
-					"bg": "2ba1e1",
-					"fg": "cecece"
+					"bg": "2985b8",
+					"fg": "c3c3c3"
 				}
 			},
 			"details": {
-				"bg": "29366f",
+				"bg": "273369",
 				"btn": {
-					"bg": "1681bb",
-					"fg": "b2b2b2"
+					"bg": "1873a5",
+					"fg": "ababab"
 				}
 			}
 		},
