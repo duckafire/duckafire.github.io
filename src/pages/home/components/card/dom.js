@@ -135,11 +135,11 @@ LI( {className: json["type"] + "-card", cssRules = declareCardColorVariables(jso
 	createCardDetails(json),
 LI);
 
-const createCardsBasedJson = async (attempt) =>
+const createCardsBasedJson = async (attempt, url) =>
 {
 	attempt++;
 
-fetch("./components/card/data.json")
+fetch(url)
 	.then(response =>
 	{
 		if(!response.ok)
@@ -205,5 +205,3 @@ fetch("./components/card/data.json")
 		setTimeout(() => createCardsBasedJson(attempt), 1000);
 	});
 };
-
-createCardsBasedJson(0);
