@@ -1,0 +1,82 @@
+/*
+
+Copyright (C) 2025 DuckAfire <https://duckafire.gitlab.io>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+*/
+
+.page-footer
+{
+	color: var(--fg-color, inherit);
+	background-color: var(--bg-color, darkslategray);
+	padding: 0.75rem;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.footer-list
+{
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+
+	.footer-list
+	{
+		padding-left: 1rem;
+
+		.footer-list-title
+		{
+			filter: brightness(0.9);
+			font-size: 1rem;
+		}
+	}
+
+	.footer-url:not(:active)
+	{
+		filter: brightness(0.8);
+	}
+
+	.footer-list-title
+	{
+		font-weight: bold;
+		font-size: 1.25rem;
+	}
+
+	[class^=fa-]
+	{
+		padding-right: 0.5rem;
+	}
+}
+
+.footer-url
+{
+	text-decoration: none;
+	color: inherit;
+	outline: none;
+
+	&:hover
+	{
+		text-decoration: underline;
+		cursor: pointer;
+	}
+
+	&:focus-visible
+	{
+		text-decoration: underline white 0.125rem !important;
+		text-decoration-skip-ink: none;
+		font-style: italic;
+	}
+}

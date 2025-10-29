@@ -27,6 +27,7 @@
 	<link rel="stylesheet" type="text/css" href="../../global/css/buttons.css"/>
 	<link rel="stylesheet" type="text/css" href="../../global/css/scroll.css"/>
 	<link rel="stylesheet" type="text/css" href="../../global/js/components/Toast/style.css"/>
+	<link rel="stylesheet" type="text/css" href="../../global/js/components/page-footer/style.css"/>
 	<link rel="stylesheet" type="text/css" href="./components/card/style.css"/>
 	<link rel="stylesheet" type="text/css" href="./url-list.css"/>
 
@@ -37,9 +38,12 @@
 		<script src="./components/card/dom.js"></script>
 	</ul>
 	<div class="toast-queue"></div>
+	<footer class="page-footer" style="--bg-color:var(--C_ANTHRACITE)"></footer>
 </body>
 <script src="../../global/js/components/Toast/dom.js"></script>
+<script src="../../global/js/components/page-footer/dom.js"></script>
 <script>
 	createCardsBasedJson(0, "./components/card/data.json");
+	createPageFooter(0, "../../global/js/components/page-footer/data.json");
 </script>
 </html>
