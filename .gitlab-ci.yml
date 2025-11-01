@@ -25,7 +25,8 @@ default:
 process-source-code:
   stage: build
   script:
-    - mv src/* public
+    - cp -r src/* public
+    - rm -rf src
     - mv .github/404.html public
     - mv nodejs/* .
     - npm install
