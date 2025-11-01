@@ -14,10 +14,10 @@ workflow:
 
 default:
   before_script:
-    - echo "Starting job - '$CI_JOB_STAGE',"
+    - echo "Starting job - '$CI_JOB_NAME' ($CI_JOB_STAGE - $CI_JOB_ID),"
     - echo "At - '$(date)'."
   after_script:
-    - echo "Finishing job - '$CI_JOB_STAGE',"
+    - echo "Finishing job - '$CI_JOB_NAME' ($CI_JOB_STAGE - $CI_JOB_ID),"
     - echo "At - '$(date)'."
 
 # it had been based in
@@ -35,4 +35,4 @@ process-source-code:
 publish-content:
   stage: deploy
   script:
-    - rm -rf (ls | grep -v 'public')
+    - rm -rf $(ls | grep -v 'public')
