@@ -16,11 +16,11 @@ default:
   before_script:
     - echo "Starting job - '$CI_JOB_NAME' ($CI_JOB_STAGE - $CI_JOB_ID),"
     - echo "At - '$(date)'."
-    - echo $(ls -R)
+    - echo "Available files:"
+    - ls -R
   after_script:
     - echo "Finishing job - '$CI_JOB_NAME' ($CI_JOB_STAGE - $CI_JOB_ID),"
     - echo "At - '$(date)'."
-    - echo $(ls -R)
 
 # it had been based in
 # the `Dockerfile`
