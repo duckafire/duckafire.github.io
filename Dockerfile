@@ -6,6 +6,8 @@ CMD ["npm", "run", "deploy"]
 
 COPY nodejs/package.json .
 RUN npm install
+
+COPY .github/404.html .
 COPY nodejs .
 
 COPY ./src ./public
