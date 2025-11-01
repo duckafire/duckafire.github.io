@@ -1,12 +1,38 @@
 image: node:18.20.8-alpine3.21
 
-gitlab-pages:
+stages:
+  - build
+  - deploy
+
+cache:
+  paths:
+    - public/
+
+workflow:
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "online-gitlab"'
+
+default:
+  before_script:
+    - echo "Starting job - '$CI_JOB_STAGE',"
+    - echo "At - '$(date)'."
+  after_script:
+    - echo "Finishing job - '$CI_JOB_STAGE',"
+    - echo "At - '$(date)'."
+
+# it had been based in
+# the `Dockerfile`
+process-source-code:
   stage: build
   script:
     - mv src public
+    - mv .github/404.html public
     - mv nodejs/* .
     - npm install
     - npm run build
-    - for file in $(ls); do if test "$file" != "public"; then rm -rf "$file"; done
-  only:
-    - online-gitlab
+
+
+publish-content:
+  stage: deploy
+  script:
+    - rm -rf (ls | grep -v 'public')
