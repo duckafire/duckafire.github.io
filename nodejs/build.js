@@ -31,7 +31,7 @@ const FS = require("fs");
 const PATH = require("path");
 const { execSync } = require("child_process");
 
-const directoriesNoExplorable = ["asserts"];
+const directoriesNoExplorable = ["assets"];
 const scssPartialFiles = [];
 
 const is_empty_dir = (dir) => FS.readdirSync(dir).length === 0;
@@ -124,7 +124,7 @@ const clear_empty_directories = (rootdir) =>
 
 const add_redirecting_pages = (rootdir) =>
 {
-	const REDIRECTOR_FILE    = PATH.join(rootdir, "asserts/pages/redirector.html");
+	const REDIRECTOR_FILE    = PATH.join(rootdir, "assets/pages/redirector.html");
 	const REDIRECTOR_CONTENT = FS.readFileSync( REDIRECTOR_FILE );
 
 	let dir;
