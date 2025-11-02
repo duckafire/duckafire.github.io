@@ -19,11 +19,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* import as "only" */
 
-$SCREEN_W_MIN: 20rem;
+$SCREEN_W_MIN: 20rem; /* 320px */
 
 /* $MOBILE_MIN: 0px; */
-$TABLET_MIN:   30rem;
-$COMPUTER_MIN: 64rem;
+$TABLET_MIN:   30rem; /* 480px */
+$COMPUTER_MIN: 64rem; /* 1024px */
 
 $MOBILE_MAX: calc($TABLET_MIN   - 1px);
 $TABLET_MAX: calc($COMPUTER_MIN - 1px);

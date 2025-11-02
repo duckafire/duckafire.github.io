@@ -126,7 +126,7 @@ json["type"] == "profile"
 ];
 
 const createCard = (json) =>
-LI( {className: json["type"] + "-card", cssRules = declareCardColorVariables(json)},
+LI( {className: json["type"] + "-card", cssRules: declareCardColorVariables(json)},
 	DIV( {className: "card-division"},
 		SECTION( {className: "card-content"},
 			...createCardContent(json),
