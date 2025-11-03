@@ -3,7 +3,7 @@
 declare -r DIR="$(dirname "$(realpath "$0")")"
 declare dest
 
-for dirname in "nest" "pages"
+for dirname in "nest" "pages" "pages/home"
 do
 	dest="$DIR/$dirname"
 
@@ -12,6 +12,6 @@ do
 		rm -r "$dest"
 	fi
 
-	mkdir "$dest"
+	mkdir --parents "$dest"
 	cp "$DIR/index.html" "$dest"
 done
