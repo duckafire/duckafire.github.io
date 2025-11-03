@@ -32,8 +32,10 @@ process-source-code:
     - npm install
     - npm run build
 
-
 publish-content:
   stage: deploy
   script:
     - rm -rf $(ls | grep -v 'public')
+  artifacts:
+    paths:
+      - public/
