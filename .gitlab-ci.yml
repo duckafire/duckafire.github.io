@@ -39,3 +39,4 @@ publish-content:
   artifacts:
     paths:
       - public/
+  pages: true
