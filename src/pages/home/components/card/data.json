@@ -53,9 +53,10 @@
 			}
 		},
 		"url-list": {
-			"main-url": "hub.docker.com/u/duckafire",
+			"root-url": "hub.docker.com",
+			"main-url": "u/duckafire",
 			"related": [
-				{"title": "Rinha de Backend 2025", "url": "hub.docker.com/r/duckafire/rb-2025"}
+				{"title": "Rinha de Backend 2025", "url": "r/duckafire/rb-2025"}
 			]
 		}
 	},
@@ -79,19 +80,22 @@
 			}
 		},
 		"url-list": {
-			"main-url": "github.com/duckafire",
+			"root-url": "github.com/duckafire",
+			"main-url": null,
 			"related": [
-				{"title": "ancient.vim",           "url": "github.com/duckafire/ancient-vim"},
-				{"title": "Design Patterns",       "url": "github.com/duckafire/design-patterns-with-examples"},
-				{"title": "DuckAfire's Nest",      "url": "github.com/duckafire/duckafire.github.io"},
-				{"title": "QR Code Generator",     "url": "github.com/duckafire/gh-qr-code-generator"},
-				{"title": "html.js",               "url": "github.com/duckafire/html.js"},
-				{"title": "lazy-loading.js",       "url": "github.com/duckafire/lazy-loading-js"},
-				{"title": "LIM",                   "url": "github.com/duckafire/LIM"},
-				{"title": "Rinha de Backend 2025", "url": "github.com/duckafire/rb-2025"},
-				{"title": "rest-api.ts",           "url": "github.com/duckafire/simple-web-api"},
-				{"title": "Small Projects",        "url": "github.com/duckafire/Small_Projects"},
-				{"title": "TinyLibrary",           "url": "github.com/duckafire/TinyLibrary"}
+				{"title": "ancient.vim",           "url": "ancient-vim"},
+				{"title": "Design Patterns",       "url": "design-patterns-with-examples"},
+				{"title": "DuckAfire's Nest",      "url": "duckafire.github.io"},
+				{"title": "QR Code Generator",     "url": "gh-qr-code-generator"},
+				{"title": "html.js",               "url": "html.js"},
+				{"title": "lazy-loading.js",       "url": "lazy-loading-js"},
+				{"title": "LIM",                   "url": "LIM"},
+				{"title": "Rinha de Backend 2025", "url": "rb-2025"},
+				{"title": "rest-api.ts",           "url": "simple-web-api"},
+				{"title": "Small Projects",        "url": "Small_Projects"},
+				{"title": "TinyLibrary",           "url": "TinyLibrary"},
+				{"title": "todo-list",             "url": "todo-list"},
+				{"title": "utilities.c",           "url": "utilities.c"}
 			]
 		}
 	},
@@ -115,19 +119,22 @@
 			}
 		},
 		"url-list": {
-			"main-url": "gitlab.com/duckafire",
+			"root-url": "github.com",
+			"main-url": "duckafire",
 			"related": [
-				{"title": "ancient.vim",           "url": "gitlab.com/duckafire/ancient-vim"},
-				{"title": "Design Patterns",       "url": "gitlab.com/duckafire/design-patterns-with-examples"},
-				{"title": "DuckAfire's Nest",      "url": "gitlab.com/duckafire/duckafire.github.io"},
-				{"title": "QR Code Generator",     "url": "gitlab.com/duckafire-forks/github/gh-qr-code-generator"},
-				{"title": "html.js",               "url": "gitlab.com/duckafire/html.js"},
-				{"title": "lazy-loading.js",       "url": "gitlab.com/duckafire-forks/github/lazy-loading-js"},
-				{"title": "LIM",                   "url": "gitlab.com/duckafire/LIM"},
-				{"title": "Rinha de Backend 2025", "url": "gitlab.com/duckafire/rb-2025"},
-				{"title": "rest-api.ts",           "url": "gitlab.com/duckafire/simple-web-api"},
-				{"title": "Small Projects",        "url": "gitlab.com/duckafire/Small_Projects"},
-				{"title": "TinyLibrary",           "url": "gitlab.com/duckafire/TinyLibrary"}
+				{"title": "ancient.vim",           "url": "duckafire/ancient-vim"},
+				{"title": "Design Patterns",       "url": "duckafire/design-patterns-with-examples"},
+				{"title": "DuckAfire's Nest",      "url": "duckafire/duckafire.github.io"},
+				{"title": "QR Code Generator",     "url": "duckafire-forks/github/gh-qr-code-generator"},
+				{"title": "html.js",               "url": "duckafire/html.js"},
+				{"title": "lazy-loading.js",       "url": "duckafire-forks/github/lazy-loading-js"},
+				{"title": "LIM",                   "url": "duckafire/LIM"},
+				{"title": "Rinha de Backend 2025", "url": "duckafire/rb-2025"},
+				{"title": "rest-api.ts",           "url": "duckafire/simple-web-api"},
+				{"title": "Small Projects",        "url": "duckafire/Small_Projects"},
+				{"title": "TinyLibrary",           "url": "duckafire/TinyLibrary"},
+				{"title": "todo-list",             "url": "duckafire/todo-list"},
+				{"title": "utilities.c",           "url": "duckafire/utilities.c"}
 			]
 		}
 	},
@@ -151,9 +158,10 @@
 			}
 		},
 		"url-list": {
-			"main-url": "duckafire.itch.io",
+			"root-url": "duckafire.itch.io",
+			"main-url": null,
 			"related": [
-				{"title": "Legendary Champion: Rebirth", "url": "duckafire.itch.io/legendary-champion"}
+				{"title": "Legendary Champion: Rebirth", "url": "legendary-champion"}
 			]
 		}
 	},
@@ -177,10 +185,11 @@
 			}
 		},
 		"url-list": {
-			"main-url": "npmjs.com/~duckafire",
+			"root-url": "npmjs.com",
+			"main-url": "~duckafire",
 			"related": [
-				{"title": "html.js",         "url": "npmjs.com/package/@duckafire/html.js"},
-				{"title": "lazy-loading.js", "url": "npmjs.com/package/@duckafire/lazy-loading-js"}
+				{"title": "html.js",         "url": "package/@duckafire/html.js"},
+				{"title": "lazy-loading.js", "url": "package/@duckafire/lazy-loading-js"}
 			]
 		}
 	},
@@ -204,10 +213,11 @@
 			}
 		},
 		"url-list": {
-			"main-url": "tic80.com/dev?id=8700",
+			"root-url": "tic80.com",
+			"main-url": "dev?id=8700",
 			"related": [
-				{"title": "Lengendary Champion: Rebirth", "url": "tic80.com/play?cart=3315"},
-				{"title": "TinyLibrary: Showcase", "url": "tic80.com/play?cart=3288"}
+				{"title": "Lengendary Champion: Rebirth", "url": "play?cart=3315"},
+				{"title": "TinyLibrary: Showcase",        "url": "play?cart=3288"}
 			]
 		}
 	}

@@ -17,6 +17,25 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 
+const __cardUrl = (json, relatedItem) =>
+{
+	if(json["type"] == "profile")
+		return `https://${relatedItem["url"]}`;
+
+	return `https://${json["url-list"]["root-url"]}/${relatedItem["url"]}`;
+}
+
+const __mainCardUrl = (json) =>
+{
+	json = json["url-list"];
+	const FIRST = `https://${json["root-url"]}`;
+
+	if(json["main-url"] === null)
+		return FIRST;
+
+	return `${FIRST}/${json["main-url"]}`;
+}
+
 const createUrlList = (json) =>
 {
 	const cssRules = {
@@ -25,17 +44,19 @@ const createUrlList = (json) =>
 	};
 
 	const LIST = UL( {className: "clear-style url-list", cssRules}, UL);
-	let item;
+	let item, fullUrl;
 
 	for(const DATA of json["url-list"]["related"])
 	{
+		fullUrl = __cardUrl(json, DATA);
+
 		LIST.appendChild(
 			LI( {className: "url-list-item", title: DATA["title"]},
-				INPUT( {className: "url-list-btn rounded-rect-btn url-list-text live-input", role: "button", value: "https://"+DATA["url"], type: "text", readOnly: "~", translate: false}),
+				INPUT( {className: "url-list-btn rounded-rect-btn url-list-text live-input", role: "button", value: fullUrl, type: "text", readOnly: "~", translate: false}),
 				BUTTON( {className: "url-list-btn rounded-rect-btn live-btn unflex", style: "--scalew:2"},
 					I( {className: "fa-solid fa-copy"}, I),
 				BUTTON),
-				A( {role: "button", className: "clear-style url-list-btn rounded-rect-btn live-btn unflex", href: "https://"+DATA["url"], style: "--scalew:2", rel: "noopener noreferrer"},
+				A( {role: "button", className: "clear-style url-list-btn rounded-rect-btn live-btn unflex", href: fullUrl, style: "--scalew:2", rel: "noopener noreferrer"},
 					I( {className: "fa-solid fa-external-link"}, I),
 				A),
 			LI)
@@ -119,7 +140,7 @@ json["type"] == "profile"
 		BUTTON( {className: "js:card-details-manager ball-btn live-btn"},
 			I( {className: "fa-solid fa-plus"}, I),
 		BUTTON),
-		A( {role: "button", className: "ball-btn live-btn", href: "https://"+json["url-list"]["main-url"], rel: "noopener noreferrer"},
+		A( {role: "button", className: "ball-btn live-btn", href: __mainCardUrl(json), rel: "noopener noreferrer"},
 			I( {className: "fa-solid fa-external-link"}, I),
 		A),
 	DIV),
