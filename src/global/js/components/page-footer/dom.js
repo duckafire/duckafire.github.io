@@ -42,7 +42,7 @@ const createPageFooterList = (json) =>
 			case "item":
 				elem =
 				LI( null,
-					A( {className: "footer-url", href: ITEM["url"]},
+					A( {className: "footer-url", href: "https://"+ITEM["url"]},
 						// TODO: title property to no-mobile
 						I( {className: ITEM["class-icon"]}, I),
 						SPAN( null, ITEM["title"], SPAN),
