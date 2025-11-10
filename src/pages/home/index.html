@@ -19,8 +19,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
 
 	<script src="https://kit.fontawesome.com/7d914c2988.js" crossorigin="anonymous" async="async"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@duckafire/html.js@0.2.2/html.min.js"></script>
-	<script> declare_htmljs({useUpperCase: true}); </script>
+	<script src="https://cdn.jsdelivr.net/npm/@duckafire/html.js@0.3.0/html.min.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="../../global/css/default.css"/>
 	<link rel="stylesheet" type="text/css" href="../../global/css/common.css"/>
@@ -33,6 +32,18 @@
 	<link rel="stylesheet" type="text/css" href="./url-list.css"/>
 
 	<script src="../../global/js/functions/copyTextFromInputToClipboard.js"></script>
+
+	<script>
+		// execute some stuff required
+		// by some js libraries
+
+		// html.js
+		declare_htmljs({useUpperCase: true});
+		htmljs_set_default_properties_values({
+			a: {rel: "noopener noreferrer"},
+		});
+
+	</script>
 </head>
 <body>
 	<ul id="cards-list" class="clear-style cards-list">

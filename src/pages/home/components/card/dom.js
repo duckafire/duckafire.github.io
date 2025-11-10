@@ -56,7 +56,7 @@ const createUrlList = (json) =>
 				BUTTON( {className: "url-list-btn rounded-rect-btn live-btn unflex", style: "--scalew:2"},
 					I( {className: "fa-solid fa-copy"}, I),
 				BUTTON),
-				A( {role: "button", className: "clear-style url-list-btn rounded-rect-btn live-btn unflex", href: fullUrl, style: "--scalew:2", rel: "noopener noreferrer"},
+				A( {role: "button", className: "clear-style url-list-btn rounded-rect-btn live-btn unflex", href: fullUrl, style: "--scalew:2"},
 					I( {className: "fa-solid fa-external-link"}, I),
 				A),
 			LI)
@@ -140,7 +140,7 @@ json["type"] == "profile"
 		BUTTON( {className: "js:card-details-manager ball-btn live-btn"},
 			I( {className: "fa-solid fa-plus"}, I),
 		BUTTON),
-		A( {role: "button", className: "ball-btn live-btn", href: __mainCardUrl(json), rel: "noopener noreferrer"},
+		A( {role: "button", className: "ball-btn live-btn", href: __mainCardUrl(json)},
 			I( {className: "fa-solid fa-external-link"}, I),
 		A),
 	DIV),
