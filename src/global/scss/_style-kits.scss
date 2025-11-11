@@ -87,13 +87,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 		$bottom: $top;
 		$left:   $top;
 	}
-	@elseif $bottom == null
+	@else if $bottom == null
 	{
 		/* block inline */
 		$bottom: $top;
 		$left:   $right;
 	}
-	@elseif $left == null
+	@else if $left == null
 	{
 		/* top inline bottom */
 		$left: $right;
