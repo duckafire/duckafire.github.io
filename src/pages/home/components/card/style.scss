@@ -135,7 +135,7 @@ $CARD_COVER_SCALE: 5rem;
 		}
 	}
 
-	@include almost-minimum-screen-width
+	@media (max-width: 25rem)
 	{
 		& .card-content
 		{
