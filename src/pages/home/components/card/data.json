@@ -119,7 +119,7 @@
 			}
 		},
 		"url-list": {
-			"root-url": "github.com",
+			"root-url": "gitlab.com",
 			"main-url": "duckafire",
 			"related": [
 				{"title": "ancient.vim",           "url": "duckafire/ancient-vim"},

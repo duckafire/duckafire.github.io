@@ -17,144 +17,157 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 
-const __cardUrl = (json, relatedItem) =>
+class FormatCardURL
 {
-	if(json["type"] == "profile")
-		return `https://${relatedItem["url"]}`;
-
-	return `https://${json["url-list"]["root-url"]}/${relatedItem["url"]}`;
-}
-
-const __mainCardUrl = (json) =>
-{
-	json = json["url-list"];
-	const FIRST = `https://${json["root-url"]}`;
-
-	if(json["main-url"] === null)
-		return FIRST;
-
-	return `${FIRST}/${json["main-url"]}`;
-}
-
-const createUrlList = (json) =>
-{
-	const cssRules = {
-		"--fg": "var(--c-card-details-btn-fg)",
-		"--bg": "var(--c-card-details-btn-bg)",
-	};
-
-	const LIST = UL( {className: "clear-style url-list", cssRules}, UL);
-	let item, fullUrl;
-
-	for(const DATA of json["url-list"]["related"])
+	static main(json)
 	{
-		fullUrl = __cardUrl(json, DATA);
+		json = json["url-list"];
+		const FIRST = `https://${json["root-url"]}`;
 
-		LIST.appendChild(
-			LI( {className: "url-list-item", title: DATA["title"]},
-				INPUT( {className: "url-list-btn rounded-rect-btn url-list-text live-input", role: "button", value: fullUrl, type: "text", readOnly: "~", translate: false}),
-				BUTTON( {className: "url-list-btn rounded-rect-btn live-btn unflex", style: "--scalew:2"},
-					I( {className: "fa-solid fa-copy"}, I),
-				BUTTON),
-				A( {role: "button", className: "clear-style url-list-btn rounded-rect-btn live-btn unflex", href: fullUrl, style: "--scalew:2"},
-					I( {className: "fa-solid fa-external-link"}, I),
-				A),
-			LI)
-		);
+		if(json["main-url"] === null)
+			return FIRST;
+
+		return `${FIRST}/${json["main-url"]}`;
 	}
 
-	return LIST;
+	static related(json, data)
+	{
+		if(json["type"] == "profile")
+			return `https://${data["url"]}`;
+
+		return `https://${json["url-list"]["root-url"]}/${data["url"]}`;
+	}
 }
 
-const createCardDetails = (json) =>
-DIV( {className: "card-division", role: "details", style: "display:none"},
-	DIV( {className: "card-details"},
-		SUMMARY( null, SUMMARY),
-		createUrlList(json),
-	DIV),
-DIV);
-
-const setCssVariable = (cssRules, json, ...strings) =>
+class CardColors
 {
-	let field = "--c-card";
-	let value = json["colors"];
-
-	for(const STR of strings)
+	static build(json)
 	{
-		field += "-" + STR;
-		value = value[STR];
+		const rules = {}
+
+		for(const DIVISION in json["colors"])
+			for(const STUFF in json["colors"][DIVISION])
+				CardColors.#extractFields(rules, json, DIVISION, STUFF);
+
+		return rules;
 	}
 
-	cssRules[field] = "#" + value;
-}
-
-const declareCardColorVariables = (json) =>
-{
-	const colors = {};
-
-	for(const DIVISION in json["colors"])
+	static #extractFields(rules, json, div, stuff)
 	{
-		for(const STUFF in json["colors"][DIVISION])
-		{
-			switch(STUFF){
-				case "bg":
-					setCssVariable(colors, json, DIVISION, STUFF);
-					break;
+		switch(stuff){
+			case "bg":
+				CardColors.#declareVariable(rules, json, div, stuff);
+				break;
 
-				// it is an object with
-				// multiple colors (fg;bg)
-				default:
-					for(const COLOR in json["colors"][DIVISION][STUFF])
-						setCssVariable(colors, json, DIVISION, STUFF, COLOR);
-			}
+			// it is an object with
+			// multiple colors (fg;bg)
+			default:
+				for(const COLOR in json["colors"][div][stuff])
+					CardColors.#declareVariable(rules, json, div, stuff, COLOR);
 		}
 	}
 
-	return colors;
+	static #declareVariable(rules, json, ...strings)
+	{
+		let field = "--c-card";
+		let value = json["colors"];
+
+		for(const STR of strings)
+		{
+			field += "-" + STR;
+			value = value[STR];
+		}
+
+		rules[field] = "#" + value;
+	}
 }
 
-const __cardContentCssRules__ = {
-	"--fg": "var(--c-card-front-btn-fg)",
-	"--bg": "var(--c-card-front-btn-bg)",
-	color: "var(--fg)",
-};
+class CardURLList
+{
+	static build(json)
+	{
+		const LIST = UL( {className: "clear-style url-list", cssRules: {"--fg": "var(--c-card-details-btn-fg)", "--bg": "var(--c-card-details-btn-bg)"}}, UL);
 
-const createCardContent = (json) =>
-json["type"] == "profile"
-?
-[
-	IMG( {className: "card-cover", src: json["img-cover"]["src"], alt: json["img-cover"]["alt"]}),
-	DIV( {className: "card-options", cssRules: __cardContentCssRules__},
-		H1( {translate: false}, json["title"], H1),
-		BUTTON( {className: "js:card-details-manager oval-btn live-btn", cssRules: {fontSize: "1.25rem"}},
-			I( {className: "fa-solid fa-plus"}, I),
-		BUTTON),
-	DIV),
-]
-:
-[
-	DIV( {className: "card-cover", cssRules: {color: "var(--c-card-front-btn-fg)"}},
-		I( {className: json["class-icon"]}, I),
-	DIV),
-	DIV( {className: "card-options", cssRules: __cardContentCssRules__},
-		BUTTON( {className: "js:card-details-manager ball-btn live-btn"},
-			I( {className: "fa-solid fa-plus"}, I),
-		BUTTON),
-		A( {role: "button", className: "ball-btn live-btn", href: __mainCardUrl(json)},
-			I( {className: "fa-solid fa-external-link"}, I),
-		A),
-	DIV),
-];
+		for(const DATA of json["url-list"]["related"])
+			LIST.appendChild( CardURLList.#listItem(json, DATA) );
 
-const createCard = (json) =>
-LI( {className: json["type"] + "-card", cssRules: declareCardColorVariables(json)},
-	DIV( {className: "card-division"},
-		SECTION( {className: "card-content"},
-			...createCardContent(json),
-		SECTION),
-	DIV),
-	createCardDetails(json),
-LI);
+		return LIST;
+	}
+
+	static #listItem(json, data)
+	{
+		const FULL_URL = FormatCardURL.related(json, data);
+
+		return LI( {className: "url-list-item", title: data["title"], style: "--scalew:2"},
+			INPUT( {className: "url-list-btn rounded-rect-btn url-list-text live-input", role: "button", value: FULL_URL, type: "text", readOnly: "~", translate: false}),
+			BUTTON( {className: "url-list-btn rounded-rect-btn live-btn unflex"},
+				I( {className: "fa-solid fa-copy"}, I),
+			BUTTON),
+			A( {role: "button", className: "clear-style url-list-btn rounded-rect-btn live-btn unflex", href: FULL_URL},
+				I( {className: "fa-solid fa-external-link"}, I),
+			A),
+		LI);
+	}
+}
+
+class Card
+{
+	static #contentCssRules = {
+		"--fg":  "var(--c-card-front-btn-fg)",
+		"--bg":  "var(--c-card-front-btn-bg)",
+		"color": "var(--fg)",
+	};
+
+	static build(json)
+	{
+		return LI( {className: json["type"] + "-card", cssRules: CardColors.build(json)},
+			DIV( {className: "card-division"},
+				SECTION( {className: "card-content"},
+					...(Card.#content(json)),
+				SECTION),
+			DIV),
+			Card.#details(json),
+		LI);
+	}
+
+	static #content(json)
+	{
+		if(json["type"] == "profile")
+			return [
+				IMG( {className: "card-cover", src: json["img-cover"]["src"], alt: json["img-cover"]["alt"]}),
+				DIV( {className: "card-options", cssRules: Card.#contentCssRules},
+					H1( {translate: false}, json["title"], H1),
+					BUTTON( {className: "js:card-details-manager oval-btn live-btn", cssRules: {fontSize: "1.25rem"}},
+						I( {className: "fa-solid fa-plus"}, I),
+					BUTTON),
+				DIV),
+			];
+
+		return [
+			DIV( {className: "card-cover", cssRules: {color: "var(--c-card-front-btn-fg)"}},
+				I( {className: json["class-icon"]}, I),
+			DIV),
+			DIV( {className: "card-options", cssRules: Card.#contentCssRules},
+				BUTTON( {className: "js:card-details-manager ball-btn live-btn"},
+					I( {className: "fa-solid fa-plus"}, I),
+				BUTTON),
+				A( {role: "button", className: "ball-btn live-btn", href: FormatCardURL.main(json)},
+					I( {className: "fa-solid fa-external-link"}, I),
+				A),
+			DIV),
+		];
+	}
+
+	static #details(json)
+	{
+		return DIV( {className: "card-division", role: "details", style: "display:none"},
+			DIV( {className: "card-details"},
+				SUMMARY( null, SUMMARY),
+				CardURLList.build(json),
+			DIV),
+		DIV);
+	}
+}
 
 const createCardsBasedJson = async (attempt, url) =>
 {
@@ -172,7 +185,7 @@ fetch(url)
 	{
 		const CARDS_LIST = document.getElementById("cards-list");
 		for(const DATA of json)
-			CARDS_LIST.appendChild( createCard(DATA) );
+			CARDS_LIST.appendChild( Card.build(DATA) );
 
 		document.querySelectorAll(".profile-card, .website-card").forEach((card) =>
 		{
@@ -210,8 +223,6 @@ fetch(url)
 					copyTextFromInputToClipboard(URL);
 				});
 			});
-
-			// if(card.classList.contains("profile-card")) {}
 		});
 	})
 	.catch(err =>
