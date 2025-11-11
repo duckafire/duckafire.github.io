@@ -55,7 +55,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	height: $value;
 }
 
-@mixin flex($is-column: false, $centralize: false)
+@mixin flex($is-column: false, $centralize: false, $align-text: true)
 {
 	display: flex;
 
@@ -68,6 +68,54 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	{
 		align-items: center;
 		justify-content: center;
-		text-align: center;
+
+		@if $align-text
+		{
+			text-align: center;
+		}
 	}
+}
+
+@mixin inset($top, $right: null, $bottom: null, $left: null)
+{
+	/* some browsers do not */
+	/* support this rule    */
+	@if $right == null
+	{
+		/* all */
+		$right:  $top;
+		$bottom: $top;
+		$left:   $top;
+	}
+	@elseif $bottom == null
+	{
+		/* block inline */
+		$bottom: $top;
+		$left:   $right;
+	}
+	@elseif $left == null
+	{
+		/* top inline bottom */
+		$left: $right;
+	}
+	/* top right bottom left */
+	/* (if all are != null)  */
+
+	top:    $top;
+	right:  $right;
+	bottom: $bottom;
+	left:   $left;
+}
+
+@mixin pos-abs($top: 0, $right, $bottom, $left)
+{
+	@include inset($top, $right, $bottom, $left);
+	position: absolute;
+}
+
+@mixin full-screen()
+{
+	width: 100vw;
+	height: 100vh; /* fallback */
+	height: 100dvh;
 }
