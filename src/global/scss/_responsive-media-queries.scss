@@ -32,39 +32,39 @@ $TABLET_MAX: calc($COMPUTER_MIN - 1px);
 
 @mixin minimum-screen-width
 {
-	@media (max-width: $SCREEN_W_MIN) { @content; }
+	@media only screen and (max-width: $SCREEN_W_MIN) { @content; }
 }
 
 
 @mixin mobile
 {
-	@media (max-width: $MOBILE_MAX) { @content; }
+	@media only screen and (max-width: $MOBILE_MAX) { @content; }
 }
 
 @mixin no-mobile
 {
-	@media (min-width: $TABLET_MIN) { @content; }
+	@media only screen and (min-width: $TABLET_MIN) { @content; }
 }
 
 
 @mixin tablet
 {
-	@media (min-width: $TABLET_MIN) and (max-width: $TABLET_MAX) { @content; }
+	@media only screen and (min-width: $TABLET_MIN) and (max-width: $TABLET_MAX) { @content; }
 }
 
 @mixin no-tablet
 {
 	/* the comman is like `or` (`||`) */
-	@media (max-width: $MOBILE_MAX), (min-width: $COMPUTER_MIN) { @content; }
+	@media only screen and (max-width: $MOBILE_MAX), (min-width: $COMPUTER_MIN) { @content; }
 }
 
 
 @mixin computer
 {
-	@media (min-width: $COMPUTER_MIN) { @content; }
+	@media only screen and (min-width: $COMPUTER_MIN) { @content; }
 }
 
 @mixin no-computer
 {
-	@media (max-width: $TABLET_MAX) { @content; }
+	@media only screen and (max-width: $TABLET_MAX) { @content; }
 }

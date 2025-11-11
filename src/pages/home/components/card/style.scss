@@ -27,7 +27,7 @@ $CARD_COVER_SCALE: 5rem;
 
 @mixin almost-minimum-screen-width
 {
-	@media (max-width: calc(23rem - 1px)) { @content; }
+	@media only screen and (max-width: calc(23rem - 1px)) { @content; }
 }
 
 .cards-list
@@ -135,7 +135,7 @@ $CARD_COVER_SCALE: 5rem;
 		}
 	}
 
-	@media (max-width: 25rem)
+	@media only screen and (max-width: 25rem)
 	{
 		& .card-content
 		{
