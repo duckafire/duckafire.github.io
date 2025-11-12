@@ -26,38 +26,62 @@
 			"related": [
 				{
 					"title": "Docker Hub",
+					"description": "Lorem ipsum",
+					"class-icon": "fa-brands fa-docker",
 					"list": {
-						"home": {"url": "hub.docker.com/u/duckafire"}
+						"home":    {"url": "hub.docker.com/u/duckafire"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				},
 				{
 					"title": "GitHub",
+					"description": "Lorem ipsum",
+					"class-icon": "fa-brands fa-github",
 					"list": {
-						"home": {"url": "github.com/duckafire"}
+						"home":    {"url": "github.com/duckafire"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				},
 				{
 					"title": "GitLab",
+					"description": "Lorem ipsum",
+					"class-icon": "fa-brands fa-gitlab",
 					"list": {
-						"home": {"url": "gitlab.com/duckafire"}
+						"home":    {"url": "gitlab.com/duckafire"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				},
 				{
 					"title": "itch.io",
+					"description": "Lorem ipsum",
+					"class-icon": "fa-brands fa-itch-io",
 					"list": {
-						"home": {"url": "duckafire.itch.io"}
+						"home":    {"url": "duckafire.itch.io"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				},
 				{
 					"title": "NPM",
+					"description": "Lorem ipsum",
+					"class-icon": "fa-brands fa-npm",
 					"list": {
-						"home": {"url": "npmjs.com/~duckafire"}
+						"home":    {"url": "npmjs.com/~duckafire"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				},
 				{
 					"title": "Tic80",
+					"description": "Lorem ipsum",
+					"class-icon": "fa-solid fa-gamepad",
 					"list": {
-						"home": {"url": "tic80.com/dev?id=8700"}
+						"home":    {"url": "tic80.com/dev?id=8700"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				}
 			]
@@ -90,8 +114,11 @@
 			"related": [
 				{
 					"title": "Rinha de Backend 2025",
+					"description": "Lorem ipsum",
 					"list": {
-						"home": {"endpoint": "r/duckafire/rb-2025"}
+						"home":    {"endpoint": "r/duckafire/rb-2025"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				}
 			]
@@ -123,80 +150,119 @@
 			"related": [
 				{
 					"title": "ancient.vim",
+					"description": "Lorem ipsum",
 					"list": {
-						"home": {"endpoint": "ancient-vim"}
+						"home":    {"endpoint": "ancient-vim"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				},
 				{
 					"title": "Design Patterns",
+					"description": "Lorem ipsum",
 					"list": {
-						"home": {"endpoint": "design-patterns-with-examples"}
+						"home":    {"endpoint": "design-patterns-with-examples"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				},
 				{
 					"title": "DuckAfire's Nest",
+					"description": "Lorem ipsum",
 					"list": {
-						"home": {"endpoint": "duckafire.github.io"}
+						"home":    {"endpoint": "duckafire.github.io"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				},
 				{
 					"title": "QR Code Generator",
+					"description": "Lorem ipsum",
 					"list": {
-						"home": {"endpoint": "gh-qr-code-generator"}
+						"home":    {"endpoint": "gh-qr-code-generator"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				},
 				{
 					"title": "html.js",
+					"description": "Lorem ipsum",
 					"list": {
-						"home": {"endpoint": "html.js"}
+						"home":    {"endpoint": "html.js"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				},
 				{
 					"title": "lazy-loading.js",
+					"description": "Lorem ipsum",
 					"list": {
-						"home": {"endpoint": "lazy-loading-js"}
+						"home":    {"endpoint": "lazy-loading-js"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				},
 				{
 					"title": "LIM",
+					"description": "Lorem ipsum",
 					"list": {
-						"home": {"endpoint": "LIM"}
+						"home":    {"endpoint": "LIM"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				},
 				{
 					"title": "Rinha de Backend 2025",
+					"description": "Lorem ipsum",
 					"list": {
-						"home": {"endpoint": "rb-2025"}
+						"home":    {"endpoint": "rb-2025"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				},
 				{
 					"title": "rest-api.ts",
+					"description": "Lorem ipsum",
 					"list": {
-						"home": {"endpoint": "simple-web-api"}
+						"home":    {"endpoint": "simple-web-api"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				},
 				{
 					"title": "Small Projects",
+					"description": "Lorem ipsum",
 					"list": {
-						"home": {"endpoint": "Small_Projects"}
+						"home":    {"endpoint": "Small_Projects"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				},
 				{
 					"title": "TinyLibrary",
+					"description": "Lorem ipsum",
 					"list": {
-						"home": {"endpoint": "TinyLibrary"}
+						"home":    {"endpoint": "TinyLibrary"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				},
 				{
 					"title": "todo-list",
+					"description": "Lorem ipsum",
 					"list": {
-						"home": {"endpoint": "todo-list"}
+						"home":    {"endpoint": "todo-list"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				},
 				{
 					"title": "utilities.c",
+					"description": "Lorem ipsum",
 					"list": {
-						"home": {"endpoint": "utilities.c"}
+						"home":    {"endpoint": "utilities.c"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				}
 			]
@@ -229,80 +295,119 @@
 			"related": [
 				{
 					"title": "ancient.vim",
+					"description": "Lorem ipsum",
 					"list": {
-						"home": {"endpoint": "duckafire/ancient-vim"}
+						"home":    {"endpoint": "duckafire/ancient-vim"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				},
 				{
 					"title": "Design Patterns",
+					"description": "Lorem ipsum",
 					"list": {
-						"home": {"endpoint": "duckafire/design-patterns-with-examples"}
+						"home":    {"endpoint": "duckafire/design-patterns-with-examples"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				},
 				{
 					"title": "DuckAfire's Nest",
+					"description": "Lorem ipsum",
 					"list": {
-						"home": {"endpoint": "duckafire/duckafire.github.io"}
+						"home":    {"endpoint": "duckafire/duckafire.github.io"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				},
 				{
 					"title": "QR Code Generator",
+					"description": "Lorem ipsum",
 					"list": {
-						"home": {"endpoint": "duckafire-forks/github/gh-qr-code-generator"}
+						"home":    {"endpoint": "duckafire-forks/github/gh-qr-code-generator"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				},
 				{
 					"title": "html.js",
+					"description": "Lorem ipsum",
 					"list": {
-						"home": {"endpoint": "duckafire/html.js"}
+						"home":    {"endpoint": "duckafire/html.js"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				},
 				{
 					"title": "lazy-loading.js",
+					"description": "Lorem ipsum",
 					"list": {
-						"home": {"endpoint": "duckafire-forks/github/lazy-loading-js"}
+						"home":    {"endpoint": "duckafire-forks/github/lazy-loading-js"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				},
 				{
 					"title": "LIM",
+					"description": "Lorem ipsum",
 					"list": {
-						"home": {"endpoint": "duckafire/LIM"}
+						"home":    {"endpoint": "duckafire/LIM"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				},
 				{
 					"title": "Rinha de Backend 2025",
+					"description": "Lorem ipsum",
 					"list": {
-						"home": {"endpoint": "duckafire/rb-2025"}
+						"home":    {"endpoint": "duckafire/rb-2025"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				},
 				{
 					"title": "rest-api.ts",
+					"description": "Lorem ipsum",
 					"list": {
-						"home": {"endpoint": "duckafire/simple-web-api"}
+						"home":    {"endpoint": "duckafire/simple-web-api"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				},
 				{
 					"title": "Small Projects",
+					"description": "Lorem ipsum",
 					"list": {
-						"home": {"endpoint": "duckafire/Small_Projects"}
+						"home":    {"endpoint": "duckafire/Small_Projects"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				},
 				{
 					"title": "TinyLibrary",
+					"description": "Lorem ipsum",
 					"list": {
-						"home": {"endpoint": "duckafire/TinyLibrary"}
+						"home":    {"endpoint": "duckafire/TinyLibrary"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				},
 				{
 					"title": "todo-list",
+					"description": "Lorem ipsum",
 					"list": {
-						"home": {"endpoint": "duckafire/todo-list"}
+						"home":    {"endpoint": "duckafire/todo-list"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				},
 				{
 					"title": "utilities.c",
+					"description": "Lorem ipsum",
 					"list": {
-						"home": {"endpoint": "duckafire/utilities.c"}
+						"home":    {"endpoint": "duckafire/utilities.c"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				}
 			]
@@ -334,8 +439,11 @@
 			"related": [
 				{
 					"title": "Legendary Champion: Rebirth",
+					"description": "Lorem ipsum",
 					"list": {
-						"home": {"endpoint": "legendary-champion"}
+						"home":    {"endpoint": "legendary-champion"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				}
 			]
@@ -368,14 +476,20 @@
 			"related": [
 				{
 					"title": "html.js",
+					"description": "Lorem ipsum",
 					"list": {
-						"home": {"endpoint": "package/@duckafire/html.js"}
+						"home":    {"endpoint": "package/@duckafire/html.js"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				},
 				{
 					"title": "lazy-loading.js",
+					"description": "Lorem ipsum",
 					"list": {
-						"home": {"endpoint": "package/@duckafire/lazy-loading-js"}
+						"home":    {"endpoint": "package/@duckafire/lazy-loading-js"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				}
 			]
@@ -408,14 +522,20 @@
 			"related": [
 				{
 					"title": "Lengendary Champion: Rebirth",
+					"description": "Lorem ipsum",
 					"list": {
-						"home": {"endpoint": "play?cart=3315"}
+						"home":    {"endpoint": "play?cart=3315"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				},
 				{
 					"title": "TinyLibrary: Showcase",
+					"description": "Lorem ipsum",
 					"list": {
-						"home": {"endpoint": "play?cart=3288"}
+						"home":    {"endpoint": "play?cart=3288"},
+						"wiki":    {"url": "#0"},
+						"license": {"url": "#1"}
 					}
 				}
 			]

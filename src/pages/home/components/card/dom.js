@@ -21,11 +21,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 class CardURLCacheRelatedItem
 {
-	#rootUrl; #itemData;
-
-	constructor(rootUrl, data)
+	constructor(rootUrl, data, classIconFallback)
 	{
-		this.title = data["title"];
+		this.title       = data["title"];
+		this.description = data["description"];
+		this.classIcon   = data["class-icon"] || classIconFallback;
 
 		this.rootUrl  = rootUrl;
 		this.itemData = data["list"];
@@ -55,61 +55,94 @@ class CardURLCacheRelatedItem
 
 class CardURLCache
 {
-	static #storage;
-	static #relatedId;
+	// temporary (only during
+	// the cathing of cache
+	static #rootUrl;
+	static #mainUrl;
+	static #cardId = -1; // yes, I could have used `storage.length - 1`
+	static #cardUrlId;
+
+	static #storage = [];
 
 	static catchThem(json)
 	{
-		CardURLCache.#storage = {
-			root: null,
-			main: null,
-			related: [],
-		};
+		CardURLCache.#cardId++; // synchronized
+		CardURLCache.#storage.push( [] );
 
 		if(json["type"] === "website")
 			CardURLCache.#buildMain( json["url-list"]["main"] );
 
-		CardURLCache.#relatedId = 0;
-		CardURLCache.#buildRelatedItems( json["url-list"]["related"] );
+		CardURLCache.#cardUrlId = 0; // reseted every time
+		CardURLCache.#buildRelatedItems( json["url-list"]["related"], json["class-icon"] );
+	}
+
+	// debug;temporary
+	static getStorage()
+	{
+		return CardURLCache.#storage;
 	}
 
 	static mainUrl()
 	{
-		return CardURLCache.#storage.main;
+		return CardURLCache.#mainUrl;
 	}
 
 	static title(field)
 	{
-		return CardURLCache.#storage.related[ CardURLCache.#relatedId ].title;
+		return CardURLCache.#storagePull(true).title;
 	}
 
-	static nextRelatedUrl()
+	static nextCardUrl()
 	{
-		CardURLCache.#relatedId++;
+		CardURLCache.#cardUrlId++;
 	}
 
 	static relatedUrl(field)
 	{
-		return CardURLCache.#storage.related[ CardURLCache.#relatedId ].url[field];
+		return CardURLCache.#storagePull(true).url[field];
+	}
+
+	static htmlCacheAttr()
+	{
+		// destroy it (with `...`)
+		// after to get it
+		return {
+			// for dataset
+			"card-cache-id":     CardURLCache.#cardId,
+			"card-cache-url-id": CardURLCache.#cardUrlId,
+		}
+	}
+
+	static #storagePull(requireItem)
+	{
+		const LAST = CardURLCache.#storage[ CardURLCache.#cardId ];
+
+		if(requireItem)
+			return LAST[ CardURLCache.#cardUrlId ];
+
+		// require items list
+		return LAST;
 	}
 
 	static #buildMain(main)
 	{
 		let url = "https://" + main["url"];
-		CardURLCache.#storage.root = url;
+		CardURLCache.#rootUrl = url;
 
 		if(main["endpoint"] !== undefined)
 			url += "/" + main["endpoint"];
 
-		CardURLCache.#storage.main = url;
+		CardURLCache.#mainUrl = url;
 	}
 
-	static #buildRelatedItems(list)
+	static #buildRelatedItems(list, classIconFallback)
 	{
+		// `classIconFallback` is `undefined` is
+		// `json["type"] === "profile"`
 		for(const DATA of list)
 		{
-			CardURLCache.#storage.related.push(
-				new CardURLCacheRelatedItem( CardURLCache.#storage.root, DATA)
+			CardURLCache.#storagePull().push(
+				new CardURLCacheRelatedItem( CardURLCache.#rootUrl, DATA, classIconFallback)
 			);
 		}
 	}
@@ -175,7 +208,7 @@ class CardURLList
 				)
 			);
 
-			CardURLCache.nextRelatedUrl();
+			CardURLCache.nextCardUrl();
 		}
 
 		return LIST;
