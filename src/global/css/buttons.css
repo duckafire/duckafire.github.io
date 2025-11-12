@@ -43,6 +43,7 @@ freely, subject to the following restrictions:
 	align-items: center;
 	justify-content: center;
 	text-align: center;
+	text-decoration: none;
 }
 
 input.ball-btn,
