@@ -17,25 +17,99 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 
-class FormatCardURL
+class CardURLCacheRelatedItem
 {
-	static main(json)
+	#rootUrl; #itemData;
+
+	constructor(rootUrl, data)
 	{
-		json = json["url-list"];
-		const FIRST = `https://${json["root-url"]}`;
+		this.title = data["title"];
 
-		if(json["main-url"] === null)
-			return FIRST;
+		this.rootUrl  = rootUrl;
+		this.itemData = data["list"];
 
-		return `${FIRST}/${json["main-url"]}`;
+		this.url = {};
+
+		for(const FIELD in this.itemData)
+			this.url[ FIELD ] = this.#buildUrl( FIELD );
+
+		delete this.rootUrl;
+		delete this.itemData;
 	}
 
-	static related(json, data)
+	#buildUrl(field)
 	{
-		if(json["type"] == "profile")
-			return `https://${data["url"]}`;
+		const DATA = this.itemData[field];
 
-		return `https://${json["url-list"]["root-url"]}/${data["url"]}`;
+		if(DATA["url"] !== undefined)
+			return "https://" + DATA["url"];
+
+		if(DATA["endpoint"] !== undefined)
+			return `${this.rootUrl}/${DATA["endpoint"]}`;
+
+		throw new InternalError("Invalid field.");
+	}
+}
+
+class CardURLCache
+{
+	static #storage;
+	static #relatedId;
+
+	static catchThem(json)
+	{
+		CardURLCache.#storage = {
+			root: null,
+			main: null,
+			related: [],
+		};
+
+		if(json["type"] === "website")
+			CardURLCache.#buildMain( json["url-list"]["main"] );
+
+		CardURLCache.#relatedId = 0;
+		CardURLCache.#buildRelatedItems( json["url-list"]["related"] );
+	}
+
+	static mainUrl()
+	{
+		return CardURLCache.#storage.main;
+	}
+
+	static title(field)
+	{
+		return CardURLCache.#storage.related[ CardURLCache.#relatedId ].title;
+	}
+
+	static nextRelatedUrl()
+	{
+		CardURLCache.#relatedId++;
+	}
+
+	static relatedUrl(field)
+	{
+		return CardURLCache.#storage.related[ CardURLCache.#relatedId ].url[field];
+	}
+
+	static #buildMain(main)
+	{
+		let url = "https://" + main["url"];
+		CardURLCache.#storage.root = url;
+
+		if(main["endpoint"] !== undefined)
+			url += "/" + main["endpoint"];
+
+		CardURLCache.#storage.main = url;
+	}
+
+	static #buildRelatedItems(list)
+	{
+		for(const DATA of list)
+		{
+			CardURLCache.#storage.related.push(
+				new CardURLCacheRelatedItem( CardURLCache.#storage.root, DATA)
+			);
+		}
 	}
 }
 
@@ -89,21 +163,30 @@ class CardURLList
 		const LIST = UL( {className: "clear-style url-list", cssRules: {"--fg": "var(--c-card-details-btn-fg)", "--bg": "var(--c-card-details-btn-bg)"}}, UL);
 
 		for(const DATA of json["url-list"]["related"])
-			LIST.appendChild( CardURLList.#listItem(json, DATA) );
+		{
+			LIST.appendChild(
+				CardURLList.#listItem(
+					json,
+					DATA,
+					CardURLCache.title(),
+					CardURLCache.relatedUrl("home"),
+				)
+			);
+
+			CardURLCache.nextRelatedUrl();
+		}
 
 		return LIST;
 	}
 
-	static #listItem(json, data)
+	static #listItem(json, data, title, url)
 	{
-		const FULL_URL = FormatCardURL.related(json, data);
-
-		return LI( {className: "url-list-item", title: data["title"], style: "--scalew:2"},
-			INPUT( {className: "url-list-btn rounded-rect-btn url-list-text live-input", role: "button", value: FULL_URL, type: "text", readOnly: "~", translate: false}),
+		return LI( {className: "url-list-item", title, style: "--scalew:2"},
+			INPUT( {className: "url-list-btn rounded-rect-btn url-list-text live-input", role: "button", value: url, type: "text", readOnly: "~", translate: false}),
 			BUTTON( {className: "url-list-btn rounded-rect-btn live-btn unflex"},
 				I( {className: "fa-solid fa-copy"}, I),
 			BUTTON),
-			A( {role: "button", className: "clear-style url-list-btn rounded-rect-btn live-btn unflex", href: FULL_URL},
+			A( {role: "button", className: "clear-style url-list-btn rounded-rect-btn live-btn unflex", href: url},
 				I( {className: "fa-solid fa-external-link"}, I),
 			A),
 		LI);
@@ -120,6 +203,8 @@ class Card
 
 	static build(json)
 	{
+		CardURLCache.catchThem(json);
+
 		return LI( {className: json["type"] + "-card", cssRules: CardColors.build(json)},
 			DIV( {className: "card-division"},
 				SECTION( {className: "card-content"},
@@ -151,7 +236,7 @@ class Card
 				BUTTON( {className: "js:card-details-manager ball-btn live-btn"},
 					I( {className: "fa-solid fa-plus"}, I),
 				BUTTON),
-				A( {role: "button", className: "ball-btn live-btn", href: FormatCardURL.main(json)},
+				A( {role: "button", className: "ball-btn live-btn", href: CardURLCache.mainUrl()},
 					I( {className: "fa-solid fa-external-link"}, I),
 				A),
 			DIV),

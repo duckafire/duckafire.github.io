@@ -24,12 +24,42 @@
 		},
 		"url-list": {
 			"related": [
-				{"title": "Docker Hub", "url": "hub.docker.com/u/duckafire"},
-				{"title": "GitHub",     "url": "github.com/duckafire"},
-				{"title": "GitLab",     "url": "gitlab.com/duckafire"},
-				{"title": "itch.io",    "url": "duckafire.itch.io"},
-				{"title": "NPM",        "url": "npmjs.com/~duckafire"},
-				{"title": "Tic80",      "url": "tic80.com/dev?id=8700"}
+				{
+					"title": "Docker Hub",
+					"list": {
+						"home": {"url": "hub.docker.com/u/duckafire"}
+					}
+				},
+				{
+					"title": "GitHub",
+					"list": {
+						"home": {"url": "github.com/duckafire"}
+					}
+				},
+				{
+					"title": "GitLab",
+					"list": {
+						"home": {"url": "gitlab.com/duckafire"}
+					}
+				},
+				{
+					"title": "itch.io",
+					"list": {
+						"home": {"url": "duckafire.itch.io"}
+					}
+				},
+				{
+					"title": "NPM",
+					"list": {
+						"home": {"url": "npmjs.com/~duckafire"}
+					}
+				},
+				{
+					"title": "Tic80",
+					"list": {
+						"home": {"url": "tic80.com/dev?id=8700"}
+					}
+				}
 			]
 		}
 	},
@@ -53,10 +83,17 @@
 			}
 		},
 		"url-list": {
-			"root-url": "hub.docker.com",
-			"main-url": "u/duckafire",
+			"main": {
+				"url": "hub.docker.com",
+				"endpoint": "u/duckafire"
+			},
 			"related": [
-				{"title": "Rinha de Backend 2025", "url": "r/duckafire/rb-2025"}
+				{
+					"title": "Rinha de Backend 2025",
+					"list": {
+						"home": {"endpoint": "r/duckafire/rb-2025"}
+					}
+				}
 			]
 		}
 	},
@@ -80,22 +117,88 @@
 			}
 		},
 		"url-list": {
-			"root-url": "github.com/duckafire",
-			"main-url": null,
+			"main": {
+				"url": "github.com/duckafire"
+			},
 			"related": [
-				{"title": "ancient.vim",           "url": "ancient-vim"},
-				{"title": "Design Patterns",       "url": "design-patterns-with-examples"},
-				{"title": "DuckAfire's Nest",      "url": "duckafire.github.io"},
-				{"title": "QR Code Generator",     "url": "gh-qr-code-generator"},
-				{"title": "html.js",               "url": "html.js"},
-				{"title": "lazy-loading.js",       "url": "lazy-loading-js"},
-				{"title": "LIM",                   "url": "LIM"},
-				{"title": "Rinha de Backend 2025", "url": "rb-2025"},
-				{"title": "rest-api.ts",           "url": "simple-web-api"},
-				{"title": "Small Projects",        "url": "Small_Projects"},
-				{"title": "TinyLibrary",           "url": "TinyLibrary"},
-				{"title": "todo-list",             "url": "todo-list"},
-				{"title": "utilities.c",           "url": "utilities.c"}
+				{
+					"title": "ancient.vim",
+					"list": {
+						"home": {"endpoint": "ancient-vim"}
+					}
+				},
+				{
+					"title": "Design Patterns",
+					"list": {
+						"home": {"endpoint": "design-patterns-with-examples"}
+					}
+				},
+				{
+					"title": "DuckAfire's Nest",
+					"list": {
+						"home": {"endpoint": "duckafire.github.io"}
+					}
+				},
+				{
+					"title": "QR Code Generator",
+					"list": {
+						"home": {"endpoint": "gh-qr-code-generator"}
+					}
+				},
+				{
+					"title": "html.js",
+					"list": {
+						"home": {"endpoint": "html.js"}
+					}
+				},
+				{
+					"title": "lazy-loading.js",
+					"list": {
+						"home": {"endpoint": "lazy-loading-js"}
+					}
+				},
+				{
+					"title": "LIM",
+					"list": {
+						"home": {"endpoint": "LIM"}
+					}
+				},
+				{
+					"title": "Rinha de Backend 2025",
+					"list": {
+						"home": {"endpoint": "rb-2025"}
+					}
+				},
+				{
+					"title": "rest-api.ts",
+					"list": {
+						"home": {"endpoint": "simple-web-api"}
+					}
+				},
+				{
+					"title": "Small Projects",
+					"list": {
+						"home": {"endpoint": "Small_Projects"}
+					}
+				},
+				{
+					"title": "TinyLibrary",
+					"list": {
+						"home": {"endpoint": "TinyLibrary"}
+					}
+				},
+				{
+					"title": "todo-list",
+					"list": {
+						"home": {"endpoint": "todo-list"}
+					}
+				},
+				{
+					"title": "utilities.c",
+					"list": {
+						"home": {"endpoint": "utilities.c"}
+					}
+				}
 			]
 		}
 	},
@@ -119,22 +222,89 @@
 			}
 		},
 		"url-list": {
-			"root-url": "gitlab.com",
-			"main-url": "duckafire",
+			"main": {
+				"url": "gitlab.com",
+				"endpoint": "duckafire"
+			},
 			"related": [
-				{"title": "ancient.vim",           "url": "duckafire/ancient-vim"},
-				{"title": "Design Patterns",       "url": "duckafire/design-patterns-with-examples"},
-				{"title": "DuckAfire's Nest",      "url": "duckafire/duckafire.github.io"},
-				{"title": "QR Code Generator",     "url": "duckafire-forks/github/gh-qr-code-generator"},
-				{"title": "html.js",               "url": "duckafire/html.js"},
-				{"title": "lazy-loading.js",       "url": "duckafire-forks/github/lazy-loading-js"},
-				{"title": "LIM",                   "url": "duckafire/LIM"},
-				{"title": "Rinha de Backend 2025", "url": "duckafire/rb-2025"},
-				{"title": "rest-api.ts",           "url": "duckafire/simple-web-api"},
-				{"title": "Small Projects",        "url": "duckafire/Small_Projects"},
-				{"title": "TinyLibrary",           "url": "duckafire/TinyLibrary"},
-				{"title": "todo-list",             "url": "duckafire/todo-list"},
-				{"title": "utilities.c",           "url": "duckafire/utilities.c"}
+				{
+					"title": "ancient.vim",
+					"list": {
+						"home": {"endpoint": "duckafire/ancient-vim"}
+					}
+				},
+				{
+					"title": "Design Patterns",
+					"list": {
+						"home": {"endpoint": "duckafire/design-patterns-with-examples"}
+					}
+				},
+				{
+					"title": "DuckAfire's Nest",
+					"list": {
+						"home": {"endpoint": "duckafire/duckafire.github.io"}
+					}
+				},
+				{
+					"title": "QR Code Generator",
+					"list": {
+						"home": {"endpoint": "duckafire-forks/github/gh-qr-code-generator"}
+					}
+				},
+				{
+					"title": "html.js",
+					"list": {
+						"home": {"endpoint": "duckafire/html.js"}
+					}
+				},
+				{
+					"title": "lazy-loading.js",
+					"list": {
+						"home": {"endpoint": "duckafire-forks/github/lazy-loading-js"}
+					}
+				},
+				{
+					"title": "LIM",
+					"list": {
+						"home": {"endpoint": "duckafire/LIM"}
+					}
+				},
+				{
+					"title": "Rinha de Backend 2025",
+					"list": {
+						"home": {"endpoint": "duckafire/rb-2025"}
+					}
+				},
+				{
+					"title": "rest-api.ts",
+					"list": {
+						"home": {"endpoint": "duckafire/simple-web-api"}
+					}
+				},
+				{
+					"title": "Small Projects",
+					"list": {
+						"home": {"endpoint": "duckafire/Small_Projects"}
+					}
+				},
+				{
+					"title": "TinyLibrary",
+					"list": {
+						"home": {"endpoint": "duckafire/TinyLibrary"}
+					}
+				},
+				{
+					"title": "todo-list",
+					"list": {
+						"home": {"endpoint": "duckafire/todo-list"}
+					}
+				},
+				{
+					"title": "utilities.c",
+					"list": {
+						"home": {"endpoint": "duckafire/utilities.c"}
+					}
+				}
 			]
 		}
 	},
@@ -158,10 +328,16 @@
 			}
 		},
 		"url-list": {
-			"root-url": "duckafire.itch.io",
-			"main-url": null,
+			"main": {
+				"url": "duckafire.itch.io"
+			},
 			"related": [
-				{"title": "Legendary Champion: Rebirth", "url": "legendary-champion"}
+				{
+					"title": "Legendary Champion: Rebirth",
+					"list": {
+						"home": {"endpoint": "legendary-champion"}
+					}
+				}
 			]
 		}
 	},
@@ -185,11 +361,23 @@
 			}
 		},
 		"url-list": {
-			"root-url": "npmjs.com",
-			"main-url": "~duckafire",
+			"main": {
+				"url": "npmjs.com",
+				"endpoint": "~duckafire"
+			},
 			"related": [
-				{"title": "html.js",         "url": "package/@duckafire/html.js"},
-				{"title": "lazy-loading.js", "url": "package/@duckafire/lazy-loading-js"}
+				{
+					"title": "html.js",
+					"list": {
+						"home": {"endpoint": "package/@duckafire/html.js"}
+					}
+				},
+				{
+					"title": "lazy-loading.js",
+					"list": {
+						"home": {"endpoint": "package/@duckafire/lazy-loading-js"}
+					}
+				}
 			]
 		}
 	},
@@ -213,11 +401,23 @@
 			}
 		},
 		"url-list": {
-			"root-url": "tic80.com",
-			"main-url": "dev?id=8700",
+			"main": {
+				"url": "tic80.com",
+				"endpoint": "dev?id=8700"
+			},
 			"related": [
-				{"title": "Lengendary Champion: Rebirth", "url": "play?cart=3315"},
-				{"title": "TinyLibrary: Showcase",        "url": "play?cart=3288"}
+				{
+					"title": "Lengendary Champion: Rebirth",
+					"list": {
+						"home": {"endpoint": "play?cart=3315"}
+					}
+				},
+				{
+					"title": "TinyLibrary: Showcase",
+					"list": {
+						"home": {"endpoint": "play?cart=3288"}
+					}
+				}
 			]
 		}
 	}
