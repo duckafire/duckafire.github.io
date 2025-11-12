@@ -26,62 +26,50 @@
 			"related": [
 				{
 					"title": "Docker Hub",
-					"description": "Lorem ipsum",
+					"description": "It is the cloud repository service used by me to storage my Docker Containers. Each them have themselves repository and classification, based in version and \"container base\" (Debian; Alpine; ...). The source code of all them are available in my GitHub/Gitlab, and it can be accessed through of the repository overview.",
 					"class-icon": "fa-brands fa-docker",
 					"list": {
-						"home":    {"url": "hub.docker.com/u/duckafire"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"home": {"url": "hub.docker.com/u/duckafire"}
 					}
 				},
 				{
 					"title": "GitHub",
-					"description": "Lorem ipsum",
+					"description": "This is where I storage the source code of my Open Source projects, together with their documentation, presentation, wiki, and other things related with them. I also use this platform to help other developers, with their Open Source projects, and to fork other projects - to modify them based my ideas.",
 					"class-icon": "fa-brands fa-github",
 					"list": {
-						"home":    {"url": "github.com/duckafire"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"home": {"url": "github.com/duckafire"}
 					}
 				},
 				{
 					"title": "GitLab",
-					"description": "Lorem ipsum",
+					"description": "This is other cloud repository service, similar to GitHub. It is possible to storage projects source code, to collaborate with other users (in specific projects), and, mainly, to run DevOps pipelines (platform focus). This account was created to be a mirror of my GitHub account (because of N problems), but, after that I discover some of its amazing resource, I decide to use it to other thins, like to host the \"base branch\" of the DuckAfire's Nest.",
 					"class-icon": "fa-brands fa-gitlab",
 					"list": {
-						"home":    {"url": "gitlab.com/duckafire"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"home": {"url": "gitlab.com/duckafire"}
 					}
 				},
 				{
 					"title": "itch.io",
-					"description": "Lorem ipsum",
+					"description": "Yes, I start as a developer to be a Game Developer! I think that a lot of other developers were like me: an young with the dream to create a(n) (indie) game. Sadly I grew and I discover that the world is not a \"morango\" (I am exaggerating, LOL). But I still have some ideas of games. Because of this, and because I already published ONE (incompleted) GAME, I created this account to allow that you can download my games easily.",
 					"class-icon": "fa-brands fa-itch-io",
 					"list": {
-						"home":    {"url": "duckafire.itch.io"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"home": {"url": "duckafire.itch.io"}
 					}
 				},
 				{
 					"title": "NPM",
-					"description": "Lorem ipsum",
+					"description": "The \"pattern\" platform to storage CSS and (mainly) JavaScript packages. There, in my account, you can found all of my packages that have as focus the WEB development. The back-end packages can be donwloaded using CLIs (NPM; Yarn; ...) that can access the NPM services, and the front-end packages can be required using the jsDelivr services (these have an \"request like\" in their README). Projects source codes available there they are minimal (only necessary files), so, to see all them, it is neceesary access my GitHub/GitLab.",
 					"class-icon": "fa-brands fa-npm",
 					"list": {
-						"home":    {"url": "npmjs.com/~duckafire"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"home": {"url": "npmjs.com/~duckafire"}
 					}
 				},
 				{
 					"title": "Tic80",
-					"description": "Lorem ipsum",
+					"description": "What is this platform that do not have a branch icon in Font Awesome? This is the Tic80 Tiny Computer, alias Tic80, is a fantasy computer to create tiny games. YES! I started to program with this - it was a long time. I really love it, mainly because it taught me to like of Lua - my favorite programming language. Tiny games and tools, related with Tic80, can be found here.",
 					"class-icon": "fa-solid fa-gamepad",
 					"list": {
-						"home":    {"url": "tic80.com/dev?id=8700"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"home": {"url": "tic80.com/dev?id=8700"}
 					}
 				}
 			]
@@ -114,11 +102,10 @@
 			"related": [
 				{
 					"title": "Rinha de Backend 2025",
-					"description": "Lorem ipsum",
+					"description": "This project was created as a way to participate in the yearly event Rinha de Backend (edition 2025), a community competition to create a backend in any programming language and with any technologies to resolve a determined problem. Sadly, this project cannot participate of the competition, but it will be finished. The main goal is to learn - but win is cool!",
 					"list": {
 						"home":    {"endpoint": "r/duckafire/rb-2025"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"license": {"url": "mit-license.org"}
 					}
 				}
 			]
@@ -150,119 +137,112 @@
 			"related": [
 				{
 					"title": "ancient.vim",
-					"description": "Lorem ipsum",
+					"description": "This is a simple and generic syntax highlight for Vim, focused in terminal context. It use only the terminal colors of the ANSI Pattern.",
 					"list": {
 						"home":    {"endpoint": "ancient-vim"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"wiki":    {"url": "github.com/duckafire/ancient-vim#ancient-vim"},
+						"license": {"url": "mit-license.org"}
 					}
 				},
 				{
 					"title": "Design Patterns",
-					"description": "Lorem ipsum",
+					"description": "The purpose of this project is to introduce the main types of Design Pattern in programming, ina simple, easy and didactic way.",
 					"list": {
 						"home":    {"endpoint": "design-patterns-with-examples"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"license": {"url": "mit-license.org"}
 					}
 				},
 				{
 					"title": "DuckAfire's Nest",
-					"description": "Lorem ipsum",
+					"description": "The showcase of my projects. It is what you are using now!",
 					"list": {
 						"home":    {"endpoint": "duckafire.github.io"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"license": {"url": "www.gnu.org/licenses/agpl-3.0.en.html"}
 					}
 				},
 				{
 					"title": "QR Code Generator",
-					"description": "Lorem ipsum",
+					"description": "Interative WEB Application to generate customized QR Codes from miscellaneous URLs, with modern design and intuitive interface. Ideal for developers that want to easily the fast access to their projects.",
 					"list": {
 						"home":    {"endpoint": "gh-qr-code-generator"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"license": {"url": "mit-license.org"}
 					}
 				},
 				{
 					"title": "html.js",
-					"description": "Lorem ipsum",
+					"description": "This is a web component library thought to be: Light; Minimalist; Easy to use; Simple to understand; Similar to HTML (mainly in relation to the structure); Independent of preprocessor (or similar).",
 					"list": {
 						"home":    {"endpoint": "html.js"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"wiki":    {"url": "www.npmjs.com/package/@duckafire/html.js#topics"},
+						"license": {"url": "www.zlib.net/zlib_license.html"}
 					}
 				},
 				{
 					"title": "lazy-loading.js",
-					"description": "Lorem ipsum",
+					"description": "Small and simple JS API, developed to easily the application of the Lazy Loading tecnique to images, in order to optimize website pages.",
 					"list": {
 						"home":    {"endpoint": "lazy-loading-js"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"wiki":    {"url": "www.npmjs.com/package/@duckafire/lazy-loading-js#index"},
+						"license": {"url": "www.zlib.net/zlib_license.html"}
 					}
 				},
 				{
 					"title": "LIM",
-					"description": "Lorem ipsum",
+					"description": "The Lua Library Compactor, or only Lim, is a simple terminal program to compact Lua scripts. It was created for easily the creation, maintain and update of libraries from Tiny Library, but nothing prevent that it will be used in other contexts.",
 					"list": {
 						"home":    {"endpoint": "LIM"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"wiki":    {"url": "github.com/duckafire/LIM#indexes"},
+						"license": {"url": "mit-license.org"}
 					}
 				},
 				{
 					"title": "Rinha de Backend 2025",
-					"description": "Lorem ipsum",
+					"description": "This project was created as a way to participate in the yearly event Rinha de Backend (edition 2025), a community competition to create a backend in any programming language and with any technologies to resolve a determined problem. Sadly, this project cannot participate of the competition, but it will be finished. The main goal is to learn - but win is cool!",
 					"list": {
 						"home":    {"endpoint": "rb-2025"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"license": {"url": "mit-license.org"}
 					}
 				},
 				{
 					"title": "rest-api.ts",
-					"description": "Lorem ipsum",
+					"description": "Simple and small RESTful API, written with TypeScript, with Express.js as the main framework. The target of this project is to explore the possibilities of the NodeJS world in a Web API application.",
 					"list": {
 						"home":    {"endpoint": "simple-web-api"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"license": {"url": "mit-license.org"}
 					}
 				},
 				{
 					"title": "Small Projects",
-					"description": "Lorem ipsum",
+					"description": "Here there are tests, scripts, summaries, small programs and some other somethings.",
 					"list": {
 						"home":    {"endpoint": "Small_Projects"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"license": {"url": "mit-license.org"}
 					}
 				},
 				{
 					"title": "TinyLibrary",
-					"description": "Lorem ipsum",
+					"description": "It is a free and open-source Libraries Collection, created for to easily the creation of new cartridges to the Tic80 Tiny Computer.",
 					"list": {
 						"home":    {"endpoint": "TinyLibrary"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"wiki":    {"url": "github.com/duckafire/TinyLibrary/wiki"},
+						"license": {"url": "www.zlib.net/zlib_license.html"}
 					}
 				},
 				{
 					"title": "todo-list",
-					"description": "Lorem ipsum",
+					"description": "This project has as aim to available a safe, easy, and fast way to manager to do lists through the use of a terminal cli. Python was chosen as base language to this project because of its alignment to the proposal of it (what they already were cited) and because of the high portability of the language between different Operational System. The code of this project aims to align it to the main conventions disseminated by the community of that programming language, in order to welcome possible contributors that can collaborate to the evolution of this project.",
 					"list": {
 						"home":    {"endpoint": "todo-list"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"wiki":    {"url": "github.com/duckafire/todo-list#topics"},
+						"license": {"url": "www.gnu.org/licenses/agpl-3.0.en.html"}
 					}
 				},
 				{
 					"title": "utilities.c",
-					"description": "Lorem ipsum",
+					"description": "A simple collection of useful libraries to C.",
 					"list": {
 						"home":    {"endpoint": "utilities.c"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"license": {"url": "www.zlib.net/zlib_license.html"}
 					}
 				}
 			]
@@ -295,119 +275,112 @@
 			"related": [
 				{
 					"title": "ancient.vim",
-					"description": "Lorem ipsum",
+					"description": "This is a simple and generic syntax highlight for Vim, focused in terminal context. It use only the terminal colors of the ANSI Pattern.",
 					"list": {
 						"home":    {"endpoint": "duckafire/ancient-vim"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"wiki":    {"url": "gitlab.com/duckafire/ancient-vim#ancient-vim"},
+						"license": {"url": "mit-license.org"}
 					}
 				},
 				{
 					"title": "Design Patterns",
-					"description": "Lorem ipsum",
+					"description": "The purpose of this project is to introduce the main types of Design Pattern in programming, ina simple, easy and didactic way.",
 					"list": {
 						"home":    {"endpoint": "duckafire/design-patterns-with-examples"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"license": {"url": "mit-license.org"}
 					}
 				},
 				{
 					"title": "DuckAfire's Nest",
-					"description": "Lorem ipsum",
+					"description": "The purpose of this project is to introduce the main types of Design Pattern in programming, ina simple, easy and didactic way.",
 					"list": {
 						"home":    {"endpoint": "duckafire/duckafire.github.io"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"license": {"url": "www.gnu.org/licenses/agpl-3.0.en.html"}
 					}
 				},
 				{
 					"title": "QR Code Generator",
-					"description": "Lorem ipsum",
+					"description": "Interative WEB Application to generate customized QR Codes from miscellaneous URLs, with modern design and intuitive interface. Ideal for developers that want to easily the fast access to their projects.",
 					"list": {
 						"home":    {"endpoint": "duckafire-forks/github/gh-qr-code-generator"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"license": {"url": "mit-license.org"}
 					}
 				},
 				{
 					"title": "html.js",
-					"description": "Lorem ipsum",
+					"description": "This is a web component library thought to be: Light; Minimalist; Easy to use; Simple to understand; Similar to HTML (mainly in relation to the structure); Independent of preprocessor (or similar).",
 					"list": {
 						"home":    {"endpoint": "duckafire/html.js"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"wiki":    {"url": "www.npmjs.com/package/@duckafire/html.js#topics"},
+						"license": {"url": "www.zlib.net/zlib_license.html"}
 					}
 				},
 				{
 					"title": "lazy-loading.js",
-					"description": "Lorem ipsum",
+					"description": "Small and simple JS API, developed to easily the application of the Lazy Loading tecnique to images, in order to optimize website pages.",
 					"list": {
 						"home":    {"endpoint": "duckafire-forks/github/lazy-loading-js"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"wiki":    {"url": "www.npmjs.com/package/@duckafire/lazy-loading-js#index"},
+						"license": {"url": "www.zlib.net/zlib_license.html"}
 					}
 				},
 				{
 					"title": "LIM",
-					"description": "Lorem ipsum",
+					"description": "The Lua Library Compactor, or only Lim, is a simple terminal program to compact Lua scripts. It was created for easily the creation, maintain and update of libraries from Tiny Library, but nothing prevent that it will be used in other contexts.",
 					"list": {
 						"home":    {"endpoint": "duckafire/LIM"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"wiki":    {"url": "gitlab.com/duckafire/LIM#indexes"},
+						"license": {"url": "mit-license.org"}
 					}
 				},
 				{
 					"title": "Rinha de Backend 2025",
-					"description": "Lorem ipsum",
+					"description": "This project was created as a way to participate in the yearly event Rinha de Backend (edition 2025), a community competition to create a backend in any programming language and with any technologies to resolve a determined problem. Sadly, this project cannot participate of the competition, but it will be finished. The main goal is to learn - but win is cool!",
 					"list": {
 						"home":    {"endpoint": "duckafire/rb-2025"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"license": {"url": "mit-license.org"}
 					}
 				},
 				{
 					"title": "rest-api.ts",
-					"description": "Lorem ipsum",
+					"description": "Simple and small RESTful API, written with TypeScript, with Express.js as the main framework. The target of this project is to explore the possibilities of the NodeJS world in a Web API application.",
 					"list": {
 						"home":    {"endpoint": "duckafire/simple-web-api"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"license": {"url": "mit-license.org"}
 					}
 				},
 				{
 					"title": "Small Projects",
-					"description": "Lorem ipsum",
+					"description": "Here there are tests, scripts, summaries, small programs and some other somethings.",
 					"list": {
 						"home":    {"endpoint": "duckafire/Small_Projects"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"license": {"url": "mit-license.org"}
 					}
 				},
 				{
 					"title": "TinyLibrary",
-					"description": "Lorem ipsum",
+					"description": "It is a free and open-source Libraries Collection, created for to easily the creation of new cartridges to the Tic80 Tiny Computer.",
 					"list": {
 						"home":    {"endpoint": "duckafire/TinyLibrary"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"wiki":    {"url": "gitlab.com/duckafire/TinyLibrary/wiki"},
+						"license": {"url": "www.zlib.net/zlib_license.html"}
 					}
 				},
 				{
 					"title": "todo-list",
-					"description": "Lorem ipsum",
+					"description": "This project has as aim to available a safe, easy, and fast way to manager to do lists through the use of a terminal cli. Python was chosen as base language to this project because of its alignment to the proposal of it (what they already were cited) and because of the high portability of the language between different Operational System. The code of this project aims to align it to the main conventions disseminated by the community of that programming language, in order to welcome possible contributors that can collaborate to the evolution of this project.",
 					"list": {
 						"home":    {"endpoint": "duckafire/todo-list"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"wiki":    {"url": "gitlab.com/duckafire/todo-list#topics"},
+						"license": {"url": "www.gnu.org/licenses/agpl-3.0.en.html"}
 					}
 				},
 				{
 					"title": "utilities.c",
-					"description": "Lorem ipsum",
+					"description": "A simple collection of useful libraries to C.",
 					"list": {
 						"home":    {"endpoint": "duckafire/utilities.c"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"license": {"url": "mit-license.org"}
 					}
 				}
 			]
@@ -439,11 +412,10 @@
 			"related": [
 				{
 					"title": "Legendary Champion: Rebirth",
-					"description": "Lorem ipsum",
+					"description": "* Run. Dodge. Win! * Enter The Arena and dive into this frenetic challenge, where your only goal is to protect your Charge. Escape and hide from unique and tireless enemies. Run towards to the glory of the victory! * Customize your controls * Edit your controls the way you prefer and play comfortable. Switch between two distinct modes of movement control, configure the scale, position and more. Save the changes and have a good time! * Become legendary * Perform great achievements to unblock fun and \"familiar\" skins. Explore and win matches in busy maps and full of traps. Collect resources and face insane bosses!",
 					"list": {
 						"home":    {"endpoint": "legendary-champion"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"license": {"url": "www.gnu.org/licenses/agpl-3.0.en.html"}
 					}
 				}
 			]
@@ -476,20 +448,20 @@
 			"related": [
 				{
 					"title": "html.js",
-					"description": "Lorem ipsum",
+					"description": "This is a web component library thought to be: Light; Minimalist; Easy to use; Simple to understand; Similar to HTML (mainly in relation to the structure); Independent of preprocessor (or similar).",
 					"list": {
 						"home":    {"endpoint": "package/@duckafire/html.js"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"wiki":    {"url": "www.npmjs.com/package/@duckafire/html.js#topics"},
+						"license": {"url": "www.zlib.net/zlib_license.html"}
 					}
 				},
 				{
 					"title": "lazy-loading.js",
-					"description": "Lorem ipsum",
+					"description": "Small and simple JS API, developed to easily the application of the Lazy Loading tecnique to images, in order to optimize website pages.",
 					"list": {
 						"home":    {"endpoint": "package/@duckafire/lazy-loading-js"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"wiki":    {"url": "www.npmjs.com/package/@duckafire/lazy-loading-js#index"},
+						"license": {"url": "www.zlib.net/zlib_license.html"}
 					}
 				}
 			]
@@ -522,20 +494,19 @@
 			"related": [
 				{
 					"title": "Lengendary Champion: Rebirth",
-					"description": "Lorem ipsum",
+					"description": "* Run. Dodge. Win! * Enter The Arena and dive into this frenetic challenge, where your only goal is to protect your Charge. Escape and hide from unique and tireless enemies. Run towards to the glory of the victory! * Customize your controls * Edit your controls the way you prefer and play comfortable. Switch between two distinct modes of movement control, configure the scale, position and more. Save the changes and have a good time! * Become legendary * Perform great achievements to unblock fun and \"familiar\" skins. Explore and win matches in busy maps and full of traps. Collect resources and face insane bosses!",
 					"list": {
 						"home":    {"endpoint": "play?cart=3315"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"license": {"url": "www.gnu.org/licenses/agpl-3.0.en.html"}
 					}
 				},
 				{
 					"title": "TinyLibrary: Showcase",
-					"description": "Lorem ipsum",
+					"description": "TinyLibrary Showcase is a showcase (Wow!) of the TinyLibrary features. It is an interative Tic80 cartridge with examples, tips, and explanation related with each features present in each \"book\" from TinyLibrary. And the best: it was created using TinyLibrary features!",
 					"list": {
 						"home":    {"endpoint": "play?cart=3288"},
-						"wiki":    {"url": "#0"},
-						"license": {"url": "#1"}
+						"wiki":    {"url": "github.com/duckafire/TinyLibrary/wiki"},
+						"license": {"url": "mit-license.org"}
 					}
 				}
 			]
