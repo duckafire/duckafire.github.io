@@ -1,3 +1,5 @@
+"use strict";
+
 /*
 
 Copyright (C) 2025 DuckAfire <https://duckafire.gitlab.io>
