@@ -217,14 +217,65 @@ class CardURLList
 	static #listItem(json, data, title, url)
 	{
 		return LI( {className: "url-list-item", title, style: "--scalew:2"},
-			INPUT( {className: "url-list-btn rounded-rect-btn url-list-text live-input", role: "button", value: url, type: "text", readOnly: "~", translate: false}),
-			BUTTON( {className: "url-list-btn rounded-rect-btn live-btn unflex"},
+			INPUT( {className: "url-list-btn rounded-rect-btn url-list-text live-input", role: "button", value: url, type: "text", readOnly: "~", translate: false, dataSets: {"card-url-btn-type": "url-source"}}),
+			BUTTON( {className: "url-list-btn rounded-rect-btn live-btn unflex", dataSets: {"card-url-btn-type": "url-copier"}},
 				I( {className: "fa-solid fa-copy"}, I),
 			BUTTON),
 			A( {role: "button", className: "clear-style url-list-btn rounded-rect-btn live-btn unflex", href: url},
 				I( {className: "fa-solid fa-external-link"}, I),
 			A),
 		LI);
+	}
+}
+
+class CardEventListeners
+{
+	static #cardBuf;
+
+	static applyIn(card)
+	{
+		CardEventListeners.#cardBuf = card;
+
+		CardEventListeners.#copyHomeUrl();
+		CardEventListeners.#toggleDetailsState();
+	}
+
+	static #copyHomeUrl()
+	{
+		CardEventListeners.#cardBuf.querySelectorAll(".url-list-item").forEach(item =>
+		{
+			const URL_SOURCE = item.querySelector("[data-card-url-btn-type=url-source]");
+			const BTN_COPIER = item.querySelector("[data-card-url-btn-type=url-copier]");
+
+			BTN_COPIER.addEventListener("click", () =>
+			{
+				copyTextFromInputToClipboard(URL);
+			});
+		});
+	}
+
+	static #toggleDetailsState()
+	{
+		// CONTainer
+		const MANAGER_BTN  = CardEventListeners.#cardBuf.querySelector("[data-card-details-manager=true]");
+		const DETAILS_CONT = CardEventListeners.#cardBuf.querySelector(".card-division[role=details]");
+
+		const MANAGER_ICON = MANAGER_BTN.querySelector("[class^=fa-]");
+
+		MANAGER_BTN.addEventListener("click", () =>
+		{
+			if(DETAILS_CONT.style.display == "")
+			{
+				DETAILS_CONT.style.display = "none";
+				MANAGER_BTN.classList.add("fa-plus");
+				MANAGER_BTN.classList.remove("fa-minus");
+				return;
+			}
+
+			DETAILS_CONT.style.display = "";
+			MANAGER_ICON.classList.add("fa-minus");
+			MANAGER_ICON.classList.remove("fa-plus");
+		});
 	}
 }
 
@@ -240,7 +291,8 @@ class Card
 	{
 		CardURLCache.catchThem(json);
 
-		return LI( {className: json["type"] + "-card", cssRules: CardColors.build(json)},
+		const CARD =
+		LI( {className: json["type"] + "-card", cssRules: CardColors.build(json)},
 			DIV( {className: "card-division"},
 				SECTION( {className: "card-content"},
 					...(Card.#content(json)),
@@ -248,16 +300,22 @@ class Card
 			DIV),
 			Card.#details(json),
 		LI);
+
+		CardEventListeners.applyIn( CARD );
+		return CARD;
 	}
 
 	static #content(json)
 	{
+		// for the "details manager button"
+		const dataSets = {"card-details-manager": "true"};
+
 		if(json["type"] == "profile")
 			return [
 				IMG( {className: "card-cover", src: json["img-cover"]["src"], alt: json["img-cover"]["alt"]}),
 				DIV( {className: "card-options", cssRules: Card.#contentCssRules},
 					H1( {translate: false}, json["title"], H1),
-					BUTTON( {className: "js:card-details-manager oval-btn live-btn", cssRules: {fontSize: "1.25rem"}},
+					BUTTON( {className: "oval-btn live-btn", cssRules: {fontSize: "1.25rem"}, dataSets},
 						I( {className: "fa-solid fa-plus"}, I),
 					BUTTON),
 				DIV),
@@ -268,7 +326,7 @@ class Card
 				I( {className: json["class-icon"]}, I),
 			DIV),
 			DIV( {className: "card-options", cssRules: Card.#contentCssRules},
-				BUTTON( {className: "js:card-details-manager ball-btn live-btn"},
+				BUTTON( {className: "ball-btn live-btn", dataSets},
 					I( {className: "fa-solid fa-plus"}, I),
 				BUTTON),
 				A( {role: "button", className: "ball-btn live-btn", href: CardURLCache.mainUrl()},
@@ -304,46 +362,9 @@ fetch(url)
 	.then(json =>
 	{
 		const CARDS_LIST = document.getElementById("cards-list");
+
 		for(const DATA of json)
 			CARDS_LIST.appendChild( Card.build(DATA) );
-
-		document.querySelectorAll(".profile-card, .website-card").forEach((card) =>
-		{
-			// open/close a details container
-			const BUTTON  = card.querySelector(".js\\:card-details-manager");
-			const B_ICON  = BUTTON.querySelector("[class^=fa-]");
-			const DETAILS = card.querySelector('.card-division[role="details"]');
-
-			BUTTON.addEventListener("click", () =>
-			{
-				if(DETAILS.style.display == "")
-				{
-					DETAILS.style.display = "none";
-					B_ICON.classList.add("fa-plus");
-					B_ICON.classList.remove("fa-minus");
-				}
-				else
-				{
-					DETAILS.style.display = "";
-					B_ICON.classList.add("fa-minus");
-					B_ICON.classList.remove("fa-plus");
-				}
-			});
-
-			// copy the content of the URLs from ".url-list-item";
-			// define the URL of the anchor from ".url-list-item"
-			card.querySelectorAll(".url-list-item").forEach(item =>
-			{
-				const BTN    = item.querySelectorAll(".url-list-btn");
-				const URL    = BTN[0];
-				const COPIER = BTN[1];
-
-				COPIER.addEventListener("click", () =>
-				{
-					copyTextFromInputToClipboard(URL);
-				});
-			});
-		});
 	})
 	.catch(err =>
 	{
