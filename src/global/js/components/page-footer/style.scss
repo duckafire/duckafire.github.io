@@ -21,62 +21,20 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 {
 	color: var(--fg, inherit);
 	background-color: var(--bg, darkslategray);
-	padding: 0.75rem;
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-}
-
-.footer-list
-{
-	list-style: none;
+	padding-block: 1.25rem;
+	text-align: center;
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
+}
 
-	.footer-list
-	{
-		padding-left: 1rem;
-
-		.footer-list-title
-		{
-			filter: brightness(0.9);
-			font-size: 1rem;
-		}
-	}
-
-	.footer-url:not(:active)
-	{
-		filter: brightness(0.8);
-	}
-
-	.footer-list-title
-	{
-		font-weight: bold;
-		font-size: 1.125rem;
-	}
-
-	[class^=fa-]
-	{
-		padding-right: 0.5rem;
-	}
+.footer-text-line
+{
+	display: block;
 }
 
 .footer-url
 {
 	text-decoration: none;
-	color: inherit;
-	outline: none;
-
-	&:hover
-	{
-		text-decoration: underline;
-		cursor: pointer;
-	}
-
-	&:focus-visible
-	{
-		text-decoration: underline white 0.125rem !important;
-		text-decoration-skip-ink: none;
-		font-style: italic;
-	}
+	color: #aaf;
 }

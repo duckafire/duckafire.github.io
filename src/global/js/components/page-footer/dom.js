@@ -19,78 +19,28 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 
-const createPageFooterList = (json) =>
-{
-	const LIST = UL( {className: "footer-list"}, UL);
-	let elem;
-
-	for(const ITEM of json)
-	{
-		switch(ITEM["type"])
-		{
-			case "title":
-				elem =
-				LI( {className: "footer-list-title"},
-					...(ITEM["class-icon"] === undefined
-						? [ITEM["title"]]
-						: [
-							I( {className: ITEM["class-icon"]}, I),
-							SPAN( null, ITEM["title"], SPAN),
-						]
-					),
-				LI);
-				break;
-
-			case "item":
-				elem =
-				LI( null,
-					A( {className: "footer-url", href: "https://"+ITEM["url"]},
-						// TODO: title property to no-mobile
-						I( {className: ITEM["class-icon"]}, I),
-						SPAN( null, ITEM["title"], SPAN),
-					A),
-				LI);
-				break;
-
-			case "sublist":
-				elem = createPageFooterList(ITEM["items"]);
-				break;
-		}
-
-		LIST.appendChild(elem);
-	}
-
-	return LIST;
-}
-
-const createPageFooter = async (attempt, url) =>
-{
-	attempt++;
-
-fetch(url)
-	.then(response =>
-	{
-		if(!response.ok)
-			throw new InternalError(`Network response was not OK. Attempt #${attempt}.`);
-
-		return response.json();
-	})
-	.then(json =>
-	{
-		const PAGE_FOOTER = document.querySelector(".page-footer");
-
-		for(const GROUP of json)
-			PAGE_FOOTER.appendChild( createPageFooterList( GROUP ) );
-	})
-	.catch(err =>
-	{
-		if(attempt >= 5)
-		{
-			console.error(new InternalError(`Stopping, to try to create the cards, after #${attempt} attempts.`));
-			return;
-		}
-
-		console.error(err);
-		setTimeout(() => createCardsBasedJson(attempt), 1000);
-	});
-};
+document.body.appendChild(
+	FOOTER( {className: "page-footer", cssRules: {"--bg": "var(--C_ANTHRACITE)"}},
+		SPAN( {className: "footer-text-line"},
+			"DuckAfire's Nest Copyright (C) 2025 DuckAfire",
+		SPAN),
+		SPAN( {className: "footer-text-line"},
+			"Source code: ",
+			A( {className: "footer-url", href: "https://github.com/duckafire/duckafire.github.io"},
+				"GitHub",
+			A),
+			"; ",
+			A( {className: "footer-url", href: "https://gitlab.com/duckafire/duckafire.gitlab.io"},
+				"GitLab",
+			A),
+			".",
+		SPAN),
+		SPAN( {className: "footer-text-line"},
+			"License: ",
+			A( {className: "footer-url", href: "https://www.gnu.org/licenses/agpl-3.0.en.html"},
+				"AGPL3",
+			A),
+			".",
+		SPAN),
+	FOOTER)
+);
