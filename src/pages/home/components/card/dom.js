@@ -399,7 +399,7 @@ class CardInfoPopup
 	static place()
 	{
 		const TOGGLE_STATE_BTN =
-		BUTTON( {className: "cards-info-close-btn"},
+		BUTTON( {className: "cards-info-close-btn live-light-btn"},
 			I( {className: "fa-solid fa-xmark"}, I),
 		BUTTON);
 
@@ -545,7 +545,7 @@ class CardInfoPopup
 
 		CardInfoPopup.#applyUrlCopierEv( btn, btnTag );
 
-
+		btn.className = "live-full-light-btn";
 		btn.appendChild( I( {className: "fa-solid fa-" + classIcon}, I) );
 		btn = LI( {title: btnTitle}, btn, LI);
 

@@ -35,7 +35,7 @@ const createPageNavBarMenuItems = () =>
 	{
 		OPTIONS.push(
 			LI( null,
-				A( {role: "button", className: "page-nav-menu-item", href: "https://"+item[1]},
+				A( {role: "button", className: "page-nav-menu-item soft-live-full-light-btn", href: "https://"+item[1]},
 					item[0],
 				A),
 			LI)
@@ -74,7 +74,7 @@ document.body.appendChild( (function(){
 	const NAV_BAR =
 	NAV( {className: "page-nav-bar"},
 		DIV( {className: "page-nav-btn-container"},
-			BUTTON( {className: "page-nav-btn"},
+			BUTTON( {className: "page-nav-btn live-full-light-btn"},
 				I( {className: "fa-solid fa-bars"}, I),
 			BUTTON),
 		DIV),

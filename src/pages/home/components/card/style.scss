@@ -262,19 +262,6 @@ $CARD_COVER_SCALE: 5rem;
 		width: 100%;
 		height: 100%;
 		font-size: 1.25rem;
-
-		&:hover
-		{
-			cursor: pointer;
-			filter: brightness(1.16375);
-			backdrop-filter: brightness(1.16375);
-		}
-
-		&:active
-		{
-			filter: brightness(0.675);
-			backdrop-filter: brightness(0.675);
-		}
 	}
 
 	[class^=fa-]
