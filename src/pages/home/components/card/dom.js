@@ -26,6 +26,7 @@ class CardURLCacheRelatedItem
 		this.title       = data["title"];
 		this.description = data["description"];
 		this.classIcon   = data["class-icon"] || classIconFallback;
+		this.urlSource   = null; // it will be catched
 
 		this.rootUrl  = rootUrl;
 		this.itemData = data["list"];
@@ -76,10 +77,9 @@ class CardURLCache
 		CardURLCache.#buildRelatedItems( json["url-list"]["related"], json["class-icon"] );
 	}
 
-	// debug;temporary
-	static getStorage()
+	static getItem(cardId, cardUrlId)
 	{
-		return CardURLCache.#storage;
+		return CardURLCache.#storage[ cardId ][ cardUrlId ];
 	}
 
 	static mainUrl()
@@ -110,7 +110,17 @@ class CardURLCache
 			// for dataset
 			"card-cache-id":     CardURLCache.#cardId,
 			"card-cache-url-id": CardURLCache.#cardUrlId,
-		}
+		};
+	}
+
+	static catchCacheItemUrlSource(inputElem)
+	{
+		const item  = CardURLCache.#storage[ CardURLCache.#cardId ][ CardURLCache.#cardUrlId ];
+
+		if(item.urlSource === null)
+			item.urlSource = inputElem;
+
+		return inputElem;
 	}
 
 	static #storagePull(requireItem)
@@ -217,7 +227,26 @@ class CardURLList
 	static #listItem(json, data, title, url)
 	{
 		return LI( {className: "url-list-item", title, style: "--scalew:2"},
-			INPUT( {className: "url-list-btn rounded-rect-btn url-list-text live-input", role: "button", value: url, type: "text", readOnly: "~", translate: false, dataSets: {"card-url-btn-type": "url-source"}}),
+			CardURLCache.catchCacheItemUrlSource(
+				INPUT( {className: "url-list-btn rounded-rect-btn url-list-text live-input", role: "button", value: url, type: "text", readOnly: "~", translate: false, dataSets: {"card-url-btn-type": "url-source"}})
+			),
+			CardInfoPopup.applyOpenEvent(
+				BUTTON( {className: "url-list-btn rounded-rect-btn live-btn unflex"},
+					//   Cache attributes are putted in the icon, instead
+					// the button, because `event.target` (used as a
+					// reference to the clicked object, in the button
+					// Event Listener) can point to the button or to the
+					// button icon, because it point the CLICKED element
+					// (yes, children can throw pattern events).
+					//   So, it is not possible to get the attributes
+					// values, if they are in the button, when the button
+					// icon is clicked.
+					//   It is possible to access the icon attribute, if
+					// button is clicked, using `children` (array),
+					// `querySelector` (function), or other suchlike.
+					I( {className: "fa-solid fa-circle-info", dataSets: {...CardURLCache.htmlCacheAttr()}}, I),
+				BUTTON)
+			),
 			BUTTON( {className: "url-list-btn rounded-rect-btn live-btn unflex", dataSets: {"card-url-btn-type": "url-copier"}},
 				I( {className: "fa-solid fa-copy"}, I),
 			BUTTON),
@@ -347,6 +376,208 @@ class Card
 	}
 }
 
+class CardInfoPopup
+{
+	static #component;
+
+	static #classIcon;
+	static #title;
+	static #description;
+
+	static #btn = {
+		wiki: null,
+		license: null,
+		copier: null,
+		home: null,
+	};
+
+	static #urlSource = null;
+
+	static #lastCardId = null;
+	static #lastCardUrlId = null;
+
+	static place()
+	{
+		const TOGGLE_STATE_BTN =
+		BUTTON( {className: "cards-info-close-btn"},
+			I( {className: "fa-solid fa-xmark"}, I),
+		BUTTON);
+
+		CardInfoPopup.#component =
+		DIV( {className: "cards-info-container", cssRules: {display: "none"}},
+			DIV( {className: "cards-info"},
+				DIV( {className: "cards-info-close-btn-container"},
+					TOGGLE_STATE_BTN,
+				DIV),
+				DIV( {className: "cards-info-head"},
+					CardInfoPopup.#placeClassIcon(),
+					CardInfoPopup.#placeTitle(),
+				DIV),
+				UL( {className: "clear-style cards-info-url-list"},
+					CardInfoPopup.#placeOption("book",          "wiki",    "Wiki",       true),
+					CardInfoPopup.#placeOption("newspaper",     "license", "License",    true),
+					CardInfoPopup.#placeOption("copy",          "copier",  "Copy URL"        ),
+					CardInfoPopup.#placeOption("external-link", "home",    "Visit home", true),
+				UL),
+				DIV( {className: "cards-info-description"},
+					CardInfoPopup.#placeDescription(),
+				DIV),
+			DIV),
+		DIV);
+
+		CardInfoPopup.#applyToggleStateEv( TOGGLE_STATE_BTN );
+		document.body.appendChild( CardInfoPopup.#component );
+	}
+
+	static updateContent(btn)
+	{
+		// Cache properties are in the icon because
+		// `event.target` is a reference to the clicked
+		// element, that it can be the button or its
+		// icon.
+		if(btn instanceof HTMLButtonElement)
+			btn = btn.children[0]; // it has only one child, its icon
+
+		const CARD_ID     = parseInt(btn.dataset.cardCacheId,    10);
+		const CARD_URL_ID = parseInt(btn.dataset.cardCacheUrlId, 10);
+
+		if(CARD_ID === CardInfoPopup.#lastCardId && CARD_URL_ID === CardInfoPopup.#lastCardUrlId)
+			return;
+
+		CardInfoPopup.#lastCardId    = CARD_ID;
+		CardInfoPopup.#lastCardUrlId = CARD_URL_ID;
+
+		const ITEM_CACHE = CardURLCache.getItem( CARD_ID, CARD_URL_ID );
+
+		CardInfoPopup.#title.textContent       = ITEM_CACHE.title;
+		CardInfoPopup.#classIcon.className     = ITEM_CACHE.classIcon;
+		CardInfoPopup.#description.textContent = ITEM_CACHE.description;
+
+		CardInfoPopup.#urlSource = ITEM_CACHE.urlSource;
+
+		let jump = false;
+		const usedBtns = [];
+
+		// "copier" never will be hidden
+		for(const TAG in ITEM_CACHE.url)
+		{
+			usedBtns.push( TAG );
+			CardInfoPopup.#btn[ TAG ].children[0].href = ITEM_CACHE.url[ TAG ];
+		}
+
+		// hide buttons that
+		// do not have a url
+		for(const TAG in CardInfoPopup.#btn)
+		{
+			if(TAG === "copier")
+				return;
+
+			CardInfoPopup.#btn[ TAG ].style.display = "";
+
+			for(const SAVED of usedBtns)
+			{
+				if(TAG === SAVED)
+				{
+					jump = true;
+					break;
+				}
+			}
+
+			if(jump)
+			{
+				jump = false;
+				continue;
+			}
+
+			CardInfoPopup.#btn[ TAG ].style.display = "none";
+		}
+	}
+
+	static getUrlSource()
+	{
+		return CardInfoPopup.#urlSource;
+	}
+
+	static getComponent()
+	{
+		return CardInfoPopup.#component;
+	}
+
+	static applyOpenEvent(btn)
+	{
+		// only one function to all elements,
+		// instead one different function
+		// (with the same content) to each
+		btn.addEventListener("click", CardInfoPopup.openEvent);
+		return btn;
+	}
+
+	static openEvent(ev)
+	{
+		CardInfoPopup.getComponent().style.display = "";
+		document.body.style.overflow = "hidden";
+		CardInfoPopup.updateContent(ev.target);
+	}
+
+	static #placeClassIcon(){
+		return (CardInfoPopup.#classIcon = I());
+	}
+
+	static #placeTitle()
+	{
+		return (CardInfoPopup.#title = H1());
+	}
+
+	static #placeDescription()
+	{
+		return (CardInfoPopup.#description = P());
+	}
+
+	static #placeOption(classIcon, btnTag, btnTitle, isAnchor)
+	{
+		// <li>
+		//   <btn>
+		//     <i></i>
+		//     Button title
+		//   </btn>
+		// </li>
+		let btn = (isAnchor) ? A( {role: "button"}, A) : BUTTON();
+
+		CardInfoPopup.#applyUrlCopierEv( btn, btnTag );
+
+
+		btn.appendChild( I( {className: "fa-solid fa-" + classIcon}, I) );
+		btn = LI( {title: btnTitle}, btn, LI);
+
+		return (CardInfoPopup.#btn[ btnTag ] = btn);
+	}
+
+	static #applyToggleStateEv(btn)
+	{
+		btn.addEventListener("click", () =>
+		{
+			CardInfoPopup.getComponent().style.display = "none";
+			document.body.style.overflow = "";
+		});
+	}
+
+	static #applyUrlCopierEv(btn, btnTag)
+	{
+		if(btnTag !== "copier")
+			return;
+
+		btn.addEventListener("click", () =>
+		{
+			const URL_SOURCE = CardInfoPopup.getUrlSource();
+
+			if(URL_SOURCE === null)
+				throw new InternalError("URL Source not catched.");
+
+			copyTextFromInputToClipboard( URL_SOURCE );
+		});
+	}
+}
+
 const createCardsBasedJson = async (attempt, url) =>
 {
 	attempt++;
@@ -365,6 +596,8 @@ fetch(url)
 
 		for(const DATA of json)
 			CARDS_LIST.appendChild( Card.build(DATA) );
+
+		CardInfoPopup.place();
 	})
 	.catch(err =>
 	{
