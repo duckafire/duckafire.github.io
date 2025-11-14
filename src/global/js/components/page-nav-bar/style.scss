@@ -1,0 +1,96 @@
+/*
+
+Copyright (C) 2025 DuckAfire <https://duckafire.gitlab.io>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+*/
+
+.page-nav-bar
+{
+	top: 0;
+	left: 0;
+	width: 100vw;
+	position: sticky;
+	color: var(--fg, inherit);
+}
+
+.page-nav-btn-container
+{
+	font-size: 2.25rem;
+	position: relative;
+	background-color: var(--bg-bar, gray);
+}
+
+.page-nav-btn
+{
+	width: 100%;
+	padding-block: 0.5rem;
+	text-align: center;
+
+	&:hover
+	{
+		cursor: pointer;
+		filter: brightness(1.16375);
+		backdrop-filter: brightness(1.0001);
+	}
+
+	&:active
+	{
+		filter: brightness(0.675);
+		backdrop-filter: brightness(0.99);
+	}
+}
+
+.page-nav-menu
+{
+	width: 100vw;
+	height: calc(100vh - 100%);
+	height: calc(100dvh - 100%);
+	position: absolute;
+	text-align: center;
+	font-size: 1.25rem;
+	overflow-y: auto;
+	background-color: var(--bg-menu, dimgray);
+	list-style: none;
+}
+
+.page-nav-menu-item
+{
+	width: 100%;
+	display: block;
+	padding-inline: 10vw;
+	padding-block: 0.5rem;
+	text-decoration: none;
+	transition: filter 0.5s ease, backdrop-filter 0.5s ease;
+	filter: brightness(1);
+	backdrop-filter: brightness(1);
+	border-bottom: 0.0625rem dotted var(--fg-bar, gray);
+
+	&:hover
+	{
+		transition: none;
+		filter: brightness(1.16375);
+		backdrop-filter: brightness(1.16375);
+		border-bottom-color: transparent;
+		cursor: pointer;
+	}
+
+	&:active
+	{
+		transition: none;
+		filter: brightness(0.675);
+		backdrop-filter: brightness(0.675);
+	}
+}

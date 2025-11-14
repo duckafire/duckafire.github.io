@@ -28,6 +28,7 @@
 	<link rel="stylesheet" type="text/css" href="../../global/css/scroll.css"/>
 	<link rel="stylesheet" type="text/css" href="../../global/js/components/Toast/style.css"/>
 	<link rel="stylesheet" type="text/css" href="../../global/js/components/page-footer/style.css"/>
+	<link rel="stylesheet" type="text/css" href="../../global/js/components/page-nav-bar/style.css"/>
 	<link rel="stylesheet" type="text/css" href="./components/card/style.css"/>
 	<link rel="stylesheet" type="text/css" href="./url-list.css"/>
 
@@ -46,14 +47,18 @@
 	</script>
 </head>
 <body>
-	<ul id="cards-list" class="clear-style cards-list">
-		<script src="./components/card/dom.js"></script>
-	</ul>
+	<script src="../../global/js/components/page-nav-bar/dom.js"></script>
+
+	<ul id="cards-list" class="clear-style cards-list"></ul>
+	<script src="./components/card/dom.js"></script>
+
 	<div class="toast-queue"></div>
+	<script src="../../global/js/components/Toast/dom.js"></script>
+
 	<script src="../../global/js/components/page-footer/dom.js"></script>
+
+	<script>
+		createCardsBasedJson(0, "./components/card/data.json");
+	</script>
 </body>
-<script src="../../global/js/components/Toast/dom.js"></script>
-<script>
-	createCardsBasedJson(0, "./components/card/data.json");
-</script>
 </html>
