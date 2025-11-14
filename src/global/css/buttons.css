@@ -96,10 +96,8 @@ input.rounded-rect-btn
 	cursor: text !important;
 }
 
-.live-btn:hover,
-.live-btn:focus-visible,
-.live-input:hover,
-.live-input:focus-visible
+.live-btn:hover,   .live-btn:focus-visible,
+.live-input:hover, .live-input:focus-visible
 {
 	box-shadow:
 		-0.125rem -0.125rem 0.125rem var(--fg, --C_SOFT_WHITE),
@@ -110,11 +108,99 @@ input.rounded-rect-btn
 
 .live-btn:active
 {
-	cursor: default !important;
 	filter: brightness(0.675);
 }
 
 .live-btn:active:not(:focus-visible)
 {
-	box-shadow: none;
+	box-shadow: none !important;
+}
+
+
+.live-light-btn,           /* fg    glow/darken                   */
+.live-full-light-btn,      /* fg/bg glow/darken                   */
+.live-glow-btn,            /* fg    glow                          */
+.live-full-glow-btn,       /* fg/bg glow                          */
+.live-darken-btn,          /* fg         darken                   */
+.live-full-darken-btn,     /* fg/bg      darken                   */
+.soft-live-light-btn,      /* fg    glow/darken transition-filter */
+.soft-live-full-light-btn, /* fg/bg glow/darken transition-filter */
+.soft-live-glow-btn,       /* fg    glow        transition-filter */
+.soft-live-full-glow-btn   /* fg/bg glow        transition-filter */
+{
+	outline: none;
+}
+
+.soft-live-light-btn,
+.soft-live-glow-btn
+{
+	transition: filter 0.5s ease;
+}
+
+.soft-live-full-light-btn,
+.soft-live-full-glow-btn
+{
+	transition:
+		filter          0.5s ease,
+		backdrop-filter 0.5s ease;
+}
+
+.soft-live-light-btn:hover,      .soft-live-light-btn:focus-visible,
+.soft-live-glow-btn:hover,       .soft-live-glow-btn:focus-visible,
+.soft-live-full-light-btn:hover, .soft-live-full-light-btn:focus-visible,
+.soft-live-full-glow-btn:hover,  .soft-live-full-glow-btn:focus-visible
+{
+	transition: none;
+}
+
+.live-light-btn:hover,
+.live-full-light-btn:hover,
+.live-glow-btn:hover,
+.live-full-glow-btn:hover,
+.live-darken-btn:hover,
+.live-full-darken-btn:hover,
+.soft-live-light-btn:hover,
+.soft-live-full-light-btn:hover,
+.soft-live-glow-btn:hover,
+.soft-live-full-glow-btn:hover
+{
+	cursor: pointer !important;
+}
+
+.live-light-btn:hover,            .live-light-btn:focus-visible,
+.live-full-light-btn:hover,       .live-full-light-btn:focus-visible,
+.live-glow-btn:hover,             .live-glow-btn:focus-visible,
+.live-full-glow-btn:hover,        .live-full-glow-btn:focus-visible,
+.soft-live-light-btn:hover,       .soft-live-light-btn:focus-visible,
+.soft-live-full-light-btn:hover,  .soft-live-full-light-btn:focus-visible,
+.soft-live-glow-btn:hover,        .soft-live-glow-btn:focus-visible,
+.soft-live-full-glow-btn:hover,   .soft-live-full-glow-btn:focus-visible
+{
+	filter: brightness(1.16375);
+}
+
+.live-full-light-btn:hover,      .live-full-light-btn:focus-visible,
+.live-full-glow-btn:hover,       .live-full-glow-btn:focus-visible,
+.soft-live-full-light-btn:hover, .soft-live-full-light-btn:focus-visible,
+.soft-live-full-glow-btn:hover,  .soft-live-full-glow-btn:focus-visible
+{
+	backdrop-filter: brightness(1.16375);
+}
+
+.live-light-btn:active,
+.live-full-light-btn:active,
+.live-darken-btn:active,
+.live-full-darken-btn:active,
+.soft-live-light-btn:active,
+.soft-live-full-light-btn:active
+{
+	filter: brightness(0.675);
+}
+
+.live-full-light-btn:active,
+.live-full-darken-btn:active,
+.soft-live-full-light-btn:active,
+.soft-live-full-darken-btn:active
+{
+	backdrop-filter: brightness(0.675);
 }
