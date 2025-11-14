@@ -22,15 +22,18 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	color: var(--fg, inherit);
 	background-color: var(--bg, darkslategray);
 	padding-block: 1.25rem;
-	text-align: center;
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
 }
 
 .footer-text-line
 {
 	display: block;
+	text-align: center;
+	font-size: 0.75rem;
+
+	& + &
+	{
+		margin-top: 0.5rem;
+	}
 }
 
 .footer-url
