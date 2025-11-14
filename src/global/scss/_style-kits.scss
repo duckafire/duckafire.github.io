@@ -107,7 +107,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	left:   $left;
 }
 
-@mixin pos-abs($top: 0, $right, $bottom, $left)
+@mixin pos-abs($top: 0, $right: null, $bottom: null, $left: null)
 {
 	@include inset($top, $right, $bottom, $left);
 	position: absolute;
