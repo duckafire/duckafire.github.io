@@ -41,14 +41,14 @@ for(let i = 0; i < JSON_CONTENT.length; i++)
 {
 	c = JSON_CONTENT.charAt(i);
 
-	if(!isbackslash && c == "\"")
+	if(!isbackslash && c === "\"")
 		isstring = !isstring;
 
 	if(isbackslash)
 	{
 		isbackslash = false;
 	}
-	else if(c == "\\")
+	else if(c === "\\")
 	{
 		isbackslash = true;
 	}

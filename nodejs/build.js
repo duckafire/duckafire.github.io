@@ -42,7 +42,7 @@ const can_it_explore = (dir) =>
 {
 	for(const ignorable of directoriesNoExplorable)
 	{
-		if(dir == ignorable)
+		if(dir === ignorable)
 			return false;
 	}
 
@@ -79,7 +79,7 @@ const explore_source_files = (dir) =>
 		}
 		else if(is_it("scss", file))
 		{
-			if(filename.charAt(0) != "_")
+			if(filename.charAt(0) !== "_")
 			{
 				shell(`npx sass "${file}:${file.replace(/\.scss$/, ".css")}" --style=compressed --no-source-map`)
 				FS.unlinkSync(file);

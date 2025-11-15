@@ -293,7 +293,7 @@ class CardEventListeners
 
 		MANAGER_BTN.addEventListener("click", () =>
 		{
-			if(DETAILS_CONT.style.display == "")
+			if(DETAILS_CONT.style.display === "")
 			{
 				DETAILS_CONT.style.display = "none";
 				MANAGER_BTN.classList.add("fa-plus");
@@ -339,7 +339,7 @@ class Card
 		// for the "details manager button"
 		const dataSets = {"card-details-manager": "true"};
 
-		if(json["type"] == "profile")
+		if(json["type"] === "profile")
 			return [
 				IMG( {className: "card-cover", src: json["img-cover"]["src"], alt: json["img-cover"]["alt"]}),
 				DIV( {className: "card-options", cssRules: Card.#contentCssRules},
