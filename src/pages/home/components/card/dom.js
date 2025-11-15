@@ -287,7 +287,7 @@ class CardEventListeners
 	{
 		// CONTainer
 		const MANAGER_BTN  = CardEventListeners.#cardBuf.querySelector("[data-card-details-manager=true]");
-		const DETAILS_CONT = CardEventListeners.#cardBuf.querySelector(".card-division[role=details]");
+		const DETAILS_CONT = CardEventListeners.#cardBuf.querySelector(".card-division + .card-division");
 
 		const MANAGER_ICON = MANAGER_BTN.querySelector("[class^=fa-]");
 
@@ -367,7 +367,7 @@ class Card
 
 	static #details(json)
 	{
-		return DIV( {className: "card-division", role: "details", style: "display:none"},
+		return DIV( {className: "card-division", cssRules: {display: "none"}},
 			DIV( {className: "card-details"},
 				SUMMARY( null, SUMMARY),
 				CardInfoList.build(json),
