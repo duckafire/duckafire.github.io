@@ -19,7 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 
-class CardURLCacheRelatedItem
+class CardInfoCacheRelatedItem
 {
 	constructor(rootUrl, data, classIconFallback)
 	{
@@ -54,7 +54,7 @@ class CardURLCacheRelatedItem
 	}
 }
 
-class CardURLCache
+class CardInfoCache
 {
 	// temporary (only during
 	// the cathing of cache
@@ -67,39 +67,39 @@ class CardURLCache
 
 	static catchThem(json)
 	{
-		CardURLCache.#cardId++; // synchronized
-		CardURLCache.#storage.push( [] );
+		CardInfoCache.#cardId++; // synchronized
+		CardInfoCache.#storage.push( [] );
 
 		if(json["type"] === "website")
-			CardURLCache.#buildMain( json["url-list"]["main"] );
+			CardInfoCache.#buildMain( json["url-list"]["main"] );
 
-		CardURLCache.#cardUrlId = 0; // reseted every time
-		CardURLCache.#buildRelatedItems( json["url-list"]["related"], json["class-icon"] );
+		CardInfoCache.#cardUrlId = 0; // reseted every time
+		CardInfoCache.#buildRelatedItems( json["url-list"]["related"], json["class-icon"] );
 	}
 
 	static getItem(cardId, cardUrlId)
 	{
-		return CardURLCache.#storage[ cardId ][ cardUrlId ];
+		return CardInfoCache.#storage[ cardId ][ cardUrlId ];
 	}
 
 	static mainUrl()
 	{
-		return CardURLCache.#mainUrl;
+		return CardInfoCache.#mainUrl;
 	}
 
 	static title(field)
 	{
-		return CardURLCache.#storagePull(true).title;
+		return CardInfoCache.#storagePull(true).title;
 	}
 
 	static nextCardUrl()
 	{
-		CardURLCache.#cardUrlId++;
+		CardInfoCache.#cardUrlId++;
 	}
 
 	static relatedUrl(field)
 	{
-		return CardURLCache.#storagePull(true).url[field];
+		return CardInfoCache.#storagePull(true).url[field];
 	}
 
 	static htmlCacheAttr()
@@ -108,14 +108,14 @@ class CardURLCache
 		// after to get it
 		return {
 			// for dataset
-			"card-cache-id":     CardURLCache.#cardId,
-			"card-cache-url-id": CardURLCache.#cardUrlId,
+			"card-cache-id":     CardInfoCache.#cardId,
+			"card-cache-url-id": CardInfoCache.#cardUrlId,
 		};
 	}
 
 	static catchCacheItemUrlSource(inputElem)
 	{
-		const item  = CardURLCache.#storage[ CardURLCache.#cardId ][ CardURLCache.#cardUrlId ];
+		const item  = CardInfoCache.#storage[ CardInfoCache.#cardId ][ CardInfoCache.#cardUrlId ];
 
 		if(item.urlSource === null)
 			item.urlSource = inputElem;
@@ -125,10 +125,10 @@ class CardURLCache
 
 	static #storagePull(requireItem)
 	{
-		const LAST = CardURLCache.#storage[ CardURLCache.#cardId ];
+		const LAST = CardInfoCache.#storage[ CardInfoCache.#cardId ];
 
 		if(requireItem)
-			return LAST[ CardURLCache.#cardUrlId ];
+			return LAST[ CardInfoCache.#cardUrlId ];
 
 		// require items list
 		return LAST;
@@ -137,12 +137,12 @@ class CardURLCache
 	static #buildMain(main)
 	{
 		let url = "https://" + main["url"];
-		CardURLCache.#rootUrl = url;
+		CardInfoCache.#rootUrl = url;
 
 		if(main["endpoint"] !== undefined)
 			url += "/" + main["endpoint"];
 
-		CardURLCache.#mainUrl = url;
+		CardInfoCache.#mainUrl = url;
 	}
 
 	static #buildRelatedItems(list, classIconFallback)
@@ -151,8 +151,8 @@ class CardURLCache
 		// `json["type"] === "profile"`
 		for(const DATA of list)
 		{
-			CardURLCache.#storagePull().push(
-				new CardURLCacheRelatedItem( CardURLCache.#rootUrl, DATA, classIconFallback)
+			CardInfoCache.#storagePull().push(
+				new CardInfoCacheRelatedItem( CardInfoCache.#rootUrl, DATA, classIconFallback)
 			);
 		}
 	}
@@ -201,7 +201,7 @@ class CardColors
 	}
 }
 
-class CardURLList
+class CardInfoList
 {
 	static build(json)
 	{
@@ -210,15 +210,15 @@ class CardURLList
 		for(const DATA of json["url-list"]["related"])
 		{
 			LIST.appendChild(
-				CardURLList.#listItem(
+				CardInfoList.#listItem(
 					json,
 					DATA,
-					CardURLCache.title(),
-					CardURLCache.relatedUrl("home"),
+					CardInfoCache.title(),
+					CardInfoCache.relatedUrl("home"),
 				)
 			);
 
-			CardURLCache.nextCardUrl();
+			CardInfoCache.nextCardUrl();
 		}
 
 		return LIST;
@@ -227,7 +227,7 @@ class CardURLList
 	static #listItem(json, data, title, url)
 	{
 		return LI( {className: "url-list-item", title, style: "--scalew:2"},
-			CardURLCache.catchCacheItemUrlSource(
+			CardInfoCache.catchCacheItemUrlSource(
 				INPUT( {className: "url-list-btn rounded-rect-btn url-list-text live-input", role: "button", value: url, type: "text", readOnly: "~", translate: false, dataSets: {"card-url-btn-type": "url-source"}})
 			),
 			CardInfoPopup.applyOpenEvent(
@@ -244,7 +244,7 @@ class CardURLList
 					//   It is possible to access the icon attribute, if
 					// button is clicked, using `children` (array),
 					// `querySelector` (function), or other suchlike.
-					I( {className: "fa-solid fa-circle-info", dataSets: {...CardURLCache.htmlCacheAttr()}}, I),
+					I( {className: "fa-solid fa-circle-info", dataSets: {...CardInfoCache.htmlCacheAttr()}}, I),
 				BUTTON)
 			),
 			BUTTON( {className: "url-list-btn rounded-rect-btn live-btn unflex", dataSets: {"card-url-btn-type": "url-copier"}},
@@ -318,7 +318,7 @@ class Card
 
 	static build(json)
 	{
-		CardURLCache.catchThem(json);
+		CardInfoCache.catchThem(json);
 
 		const CARD =
 		LI( {className: json["type"] + "-card", cssRules: CardColors.build(json)},
@@ -358,7 +358,7 @@ class Card
 				BUTTON( {className: "ball-btn live-btn", dataSets},
 					I( {className: "fa-solid fa-plus"}, I),
 				BUTTON),
-				A( {role: "button", className: "ball-btn live-btn", href: CardURLCache.mainUrl()},
+				A( {role: "button", className: "ball-btn live-btn", href: CardInfoCache.mainUrl()},
 					I( {className: "fa-solid fa-external-link"}, I),
 				A),
 			DIV),
@@ -370,7 +370,7 @@ class Card
 		return DIV( {className: "card-division", role: "details", style: "display:none"},
 			DIV( {className: "card-details"},
 				SUMMARY( null, SUMMARY),
-				CardURLList.build(json),
+				CardInfoList.build(json),
 			DIV),
 		DIV);
 	}
@@ -447,7 +447,7 @@ class CardInfoPopup
 		CardInfoPopup.#lastCardId    = CARD_ID;
 		CardInfoPopup.#lastCardUrlId = CARD_URL_ID;
 
-		const ITEM_CACHE = CardURLCache.getItem( CARD_ID, CARD_URL_ID );
+		const ITEM_CACHE = CardInfoCache.getItem( CARD_ID, CARD_URL_ID );
 
 		CardInfoPopup.#title.textContent       = ITEM_CACHE.title;
 		CardInfoPopup.#classIcon.className     = ITEM_CACHE.classIcon;
