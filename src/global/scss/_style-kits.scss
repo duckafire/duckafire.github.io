@@ -24,7 +24,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 @mixin double-border($border-color: "", $shadow-color: "", $border-scale: "", $scale-scale: "")
 {
 	$border-color: com.validate-optional-arg($border-color, var(--C_SOFT_BLACK));
-	$shadow-color:  com.validate-optional-arg($shadow-color,  var(--C_SOFT_WHITE));
+	$shadow-color: com.validate-optional-arg($shadow-color, var(--C_SOFT_WHITE));
 	$border-scale: com.validate-optional-arg($border-scale, 1);
 	$scale-scale:  com.validate-optional-arg($scale-scale,  1);
 
