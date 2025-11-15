@@ -38,7 +38,6 @@ $CARD_COVER_SCALE: 5rem;
 	@include kit.padding-gap(1rem);
 	@include kit.flex(true);
 	width: 100vw;
-	min-width: only.$SCREEN_W_MIN;
 }
 
 %card
@@ -208,15 +207,27 @@ $CARD_COVER_SCALE: 5rem;
 
 .cards-info-close-btn-container
 {
+	$inline-adj-padding: 0.25rem;
+
 	@include kit.flex();
 	top: 0;
 	right: 0;
 	padding: 0;
-	padding-right: 0.25rem;
 	width: 100%;
 	position: absolute;
-	justify-content: end;
 	font-size: 2.5rem;
+	justify-content: end;
+	padding-right: $inline-adj-padding;
+
+	@include only.minimum-screen-width
+	{
+		&
+		{
+			justify-content: start;
+			padding-left: $inline-adj-padding;
+			padding-right: 0;
+		}
+	}
 }
 
 .cards-info-head

@@ -404,7 +404,7 @@ class CardInfoPopup
 		BUTTON);
 
 		CardInfoPopup.#component =
-		DIV( {className: "cards-info-container", cssRules: {display: "none"}},
+		DIV( {className: "cards-info-container min-screen-width", cssRules: {display: "none"}},
 			DIV( {className: "cards-info"},
 				DIV( {className: "cards-info-close-btn-container"},
 					TOGGLE_STATE_BTN,

@@ -72,13 +72,13 @@ const applyPageNavBarEventListeners = (component) =>
 
 document.body.appendChild( (function(){
 	const NAV_BAR =
-	NAV( {className: "page-nav-bar"},
+	NAV( {className: "page-nav-bar min-screen-width"},
 		DIV( {className: "page-nav-btn-container"},
 			BUTTON( {className: "page-nav-btn live-full-light-btn"},
 				I( {className: "fa-solid fa-bars"}, I),
 			BUTTON),
 		DIV),
-		UL( {className: "page-nav-menu", cssRules: {display: "none"}},
+		UL( {className: "page-nav-menu min-screen-width", cssRules: {display: "none"}},
 			...createPageNavBarMenuItems(),
 		UL),
 	NAV);

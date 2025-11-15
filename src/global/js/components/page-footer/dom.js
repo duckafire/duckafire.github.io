@@ -20,7 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 document.body.appendChild(
-	FOOTER( {className: "page-footer", cssRules: {"--bg": "var(--C_ANTHRACITE)"}},
+	FOOTER( {className: "page-footer min-screen-width", cssRules: {"--bg": "var(--C_ANTHRACITE)"}},
 		SPAN( {className: "footer-text-line"},
 			"DuckAfire's Nest Copyright (C) 2025 DuckAfire",
 		SPAN),

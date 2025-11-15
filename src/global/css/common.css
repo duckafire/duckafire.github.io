@@ -44,3 +44,9 @@ a.clear-style
 {
 	flex: none;
 }
+
+.min-screen-width
+{
+	/* based scss/responsive */
+	min-width: 20rem !important;
+}
