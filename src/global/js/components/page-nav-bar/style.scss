@@ -60,7 +60,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	padding-inline: 10vw;
 	padding-block: 0.5rem;
 	text-decoration: none;
-	border-bottom: 0.0625rem dotted var(--fg-bar, gray);
+	border-bottom: 0.0625rem dotted var(--bg-line, smokewhite);
 
 	&:hover
 	{

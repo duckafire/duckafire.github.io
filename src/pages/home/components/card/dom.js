@@ -398,13 +398,19 @@ class CardInfoPopup
 
 	static place()
 	{
+		const cssRules = {
+			display: "none",
+			"--fg-xmark": "var(--FG_XMARK)",
+			"--fg-low-light": "var(--FG_DARK_DEFAULT)",
+		};
+
 		const TOGGLE_STATE_BTN =
 		BUTTON( {className: "cards-info-close-btn live-light-btn"},
 			I( {className: "fa-solid fa-xmark"}, I),
 		BUTTON);
 
 		CardInfoPopup.#component =
-		DIV( {className: "cards-info-container min-screen-width", cssRules: {display: "none"}},
+		DIV( {className: "cards-info-container min-screen-width", cssRules},
 			DIV( {className: "cards-info"},
 				DIV( {className: "cards-info-close-btn-container"},
 					TOGGLE_STATE_BTN,

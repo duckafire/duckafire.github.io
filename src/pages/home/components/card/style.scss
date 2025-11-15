@@ -176,6 +176,8 @@ $CARD_COVER_SCALE: 5rem;
 /*****************************************************************************/
 // Cards Information Popup
 
+$CARDS_INFO_BORDER: 5px solid var(--BG_SUPER_HIGH);
+
 .cards-info-container
 {
 	@include kit.full-screen;
@@ -185,7 +187,7 @@ $CARD_COVER_SCALE: 5rem;
 	position: fixed;
 	backdrop-filter: blur(0.3rem);
 	background-color: rgba(0, 0, 0, 0.75);
-	color: var(--fg, inherit);
+	color: var(--FG_DEFAULT);
 }
 
 .cards-info
@@ -196,8 +198,8 @@ $CARD_COVER_SCALE: 5rem;
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	background-color: var(--bg, dimgray);
-	border: 5px solid var(--border, darkgray);
+	background-color: var(--BG_DEFAULT);
+	border: $CARDS_INFO_BORDER;
 
 	> *
 	{
@@ -216,6 +218,7 @@ $CARD_COVER_SCALE: 5rem;
 	width: 100%;
 	position: absolute;
 	font-size: 2.5rem;
+	color: var(--fg-xmark, inherit);
 	justify-content: end;
 	padding-right: $inline-adj-padding;
 
@@ -252,7 +255,7 @@ $CARD_COVER_SCALE: 5rem;
 
 .cards-info-url-list
 {
-	border-block: 5px solid var(--border, darkgray);;
+	border-block: $CARDS_INFO_BORDER;
 	display: flex;
 	text-align: center;
 	align-items: center;
@@ -277,11 +280,12 @@ $CARD_COVER_SCALE: 5rem;
 
 	[class^=fa-]
 	{
-		padding-right: 0.35rem;
+		color: var(--fg-low-light, inherit);
 	}
 }
 
 .cards-info-description
 {
 	overflow: auto;
+	color: var(--fg-low-light, inherit);
 }

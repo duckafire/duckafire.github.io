@@ -74,8 +74,15 @@ const applyPageNavBarEventListeners = (component) =>
 }
 
 document.body.appendChild( (function(){
+	const cssRules = {
+		"--bg-bar":  "var(--BG_HIGH)",
+		"--bg-menu": "var(--BG_DEFAULT)",
+		"--bg-line": "var(--BG_SUPER_HIGH)",
+		"--fg":      "var(--FG_DEFAULT)",
+	};
+
 	const NAV_BAR =
-	NAV( {className: "page-nav-bar min-screen-width"},
+	NAV( {className: "page-nav-bar min-screen-width", cssRules},
 		DIV( {className: "page-nav-btn-container"},
 			BUTTON( {className: "page-nav-btn live-full-light-btn"},
 				I( {className: "fa-solid fa-bars"}, I),

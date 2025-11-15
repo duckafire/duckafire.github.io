@@ -36,8 +36,8 @@ freely, subject to the following restrictions:
 	/* two plus their "original values"  */
 	padding: 0.2em;
 
-	background-color: var(--bg, --C_SILVER);
-	color: var(--fg, --C_SOFT_WHITE);
+	background-color: var(--bg, dimgray);
+	color: var(--fg, whitesmoke);
 	border-radius: 50%;
 	display: flex;
 	align-items: center;
@@ -100,10 +100,10 @@ input.rounded-rect-btn
 .live-input:hover, .live-input:focus-visible
 {
 	box-shadow:
-		-0.125rem -0.125rem 0.125rem var(--fg, --C_SOFT_WHITE),
-		 0.125rem -0.125rem 0.125rem var(--fg, --C_SOFT_WHITE),
-		-0.125rem  0.125rem 0.125rem var(--fg, --C_SOFT_WHITE),
-		 0.125rem  0.125rem 0.125rem var(--fg, --C_SOFT_WHITE);
+		-0.125rem -0.125rem 0.125rem var(--fg, --FG_DEFAULT),
+		 0.125rem -0.125rem 0.125rem var(--fg, --FG_DEFAULT),
+		-0.125rem  0.125rem 0.125rem var(--fg, --FG_DEFAULT),
+		 0.125rem  0.125rem 0.125rem var(--fg, --FG_DEFAULT);
 }
 
 .live-btn:active
