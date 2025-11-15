@@ -514,6 +514,7 @@ class CardInfoPopup
 
 	static openEvent(ev)
 	{
+		setInertToBrothers( CardInfoPopup.getComponent() );
 		CardInfoPopup.getComponent().style.display = "";
 		document.body.style.overflow = "hidden";
 		CardInfoPopup.updateContent(ev.target);
@@ -556,6 +557,7 @@ class CardInfoPopup
 	{
 		btn.addEventListener("click", () =>
 		{
+			unsetInertToBrothers( CardInfoPopup.getComponent() );
 			CardInfoPopup.getComponent().style.display = "none";
 			document.body.style.overflow = "";
 		});

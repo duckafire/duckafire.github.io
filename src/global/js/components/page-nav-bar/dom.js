@@ -47,8 +47,9 @@ const createPageNavBarMenuItems = () =>
 
 const applyPageNavBarEventListeners = (component) =>
 {
-	const MANAGER_BTN = component.querySelector(".page-nav-btn");
-	const MENU_LIST   = component.querySelector(".page-nav-menu");
+	const COMPONENT   = component;
+	const MANAGER_BTN = COMPONENT.querySelector(".page-nav-btn");
+	const MENU_LIST   = COMPONENT.querySelector(".page-nav-menu");
 
 	const MANAGER_ICON = MANAGER_BTN.querySelector("[class^=fa-]");
 
@@ -56,6 +57,7 @@ const applyPageNavBarEventListeners = (component) =>
 	{
 		if(MENU_LIST.style.display === "")
 		{
+			unsetInertToBrothers( COMPONENT );
 			MENU_LIST.style.display = "none";
 			document.body.style.overflow = "";
 			MANAGER_ICON.classList.remove("fa-xmark");
@@ -63,6 +65,7 @@ const applyPageNavBarEventListeners = (component) =>
 			return;
 		}
 
+		setInertToBrothers( COMPONENT );
 		MENU_LIST.style.display = "";
 		document.body.style.overflow = "hidden";
 		MANAGER_ICON.classList.remove("fa-bars");
