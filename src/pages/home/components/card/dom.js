@@ -201,7 +201,7 @@ class CardColors
 	}
 }
 
-class CardInfoList
+class CardURLList
 {
 	static build(json)
 	{
@@ -210,7 +210,7 @@ class CardInfoList
 		for(const DATA of json["url-list"]["related"])
 		{
 			LIST.appendChild(
-				CardInfoList.#listItem(
+				CardURLList.#listItem(
 					json,
 					DATA,
 					CardInfoCache.title(),
@@ -370,7 +370,7 @@ class Card
 		return DIV( {className: "card-division", cssRules: {display: "none"}},
 			DIV( {className: "card-details"},
 				SUMMARY( null, SUMMARY),
-				CardInfoList.build(json),
+				CardURLList.build(json),
 			DIV),
 		DIV);
 	}
