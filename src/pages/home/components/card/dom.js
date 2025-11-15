@@ -296,14 +296,14 @@ class CardEventListeners
 			if(DETAILS_CONT.style.display === "")
 			{
 				DETAILS_CONT.style.display = "none";
-				MANAGER_BTN.classList.add("fa-plus");
-				MANAGER_BTN.classList.remove("fa-minus");
+				MANAGER_ICON.classList.remove("fa-minus");
+				MANAGER_ICON.classList.add("fa-plus");
 				return;
 			}
 
 			DETAILS_CONT.style.display = "";
-			MANAGER_ICON.classList.add("fa-minus");
 			MANAGER_ICON.classList.remove("fa-plus");
+			MANAGER_ICON.classList.add("fa-minus");
 		});
 	}
 }
