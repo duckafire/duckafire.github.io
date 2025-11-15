@@ -24,15 +24,20 @@ freely, subject to the following restrictions:
 
 :root
 {
-	--C_BLACK:       #0d0d0d;
-	--C_SOFT_BLACK:  #1f1f1f;
-	--C_GRAPHITE:    #424242;
-	--C_ANTHRACITE:  #5b5b5b;
-	--C_DARK_GRAY:   #7e7e7e;
-	--C_MEDIUM_GRAY: #828282;
-	--C_LIGHT_GRAY:  #949494;
-	--C_SILVER:      #a7a7a7;
-	--C_PALE_SILVER: #bababa;
-	--C_SOFT_WHITE:  #c9c9c9;
-	--C_WHITE:       #e3e3e3;
+	--BG_BODY:       #1c0c0c;
+	--BG_DEFAULT:    #291919;
+	--BG_HIGH:       #342828;
+	--BG_SUPER_HIGH: #514747;
+
+	--FG_DARK_DEFAULT: #a0a0a0;
+	--FG_DARK_XMARK:   #9f302b;
+	--FG_DARK_ERROR:   var(--FG_DARK_XMARK);
+	--FG_DARK_WARN:    #ac9a37;
+	--FG_DARK_LINK:    #829837;
+
+	--FG_DEFAULT: #c9c9c9;
+	--FG_XMARK:   #e1463f;
+	--FG_ERROR:   var(--FG_XMARK);
+	--FG_WARN:    #d2bd4d;
+	--FG_LINK:    #a5c14b;
 }
