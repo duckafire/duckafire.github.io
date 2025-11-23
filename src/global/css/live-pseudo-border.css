@@ -1,0 +1,76 @@
+/*
+
+Zlib License
+
+Copyright (C) 2025 DuckAfire <https://duckafire.gitlab.io>
+
+This software is provided 'as-is', without any express or implied
+warranty. In no event will the authors be held liable for any damages
+arising from the use of this software.
+
+Permission is granted to anyone to use this software for any purpose,
+including commercial applications, and to alter it and redistribute it
+freely, subject to the following restrictions:
+
+1. The origin of this software must not be misrepresented; you must not
+   claim that you wrote the original software. If you use this software
+   in a product, an acknowledgment in the product documentation would be
+   appreciated but is not required.
+2. Altered source versions must be plainly marked as such, and must not be
+   misrepresented as being the original software.
+3. This notice may not be removed or altered from any source distribution.
+
+*/
+
+.live-pseudo-border
+{
+	--w:     var(--width,     0);
+	--h:     var(--height,    0);
+	--br:    var(--b-radius,  0);
+	--bg-c:  var(--bg-core,   #000);
+	--bg-b0: var(--bg-border-0, var(--bg-border,   #000));
+	--bg-b1: var(--bg-border-1, var(--bg-b0));
+	--a-t:   var(--animation-time, 0s);
+
+	width: var(--w);
+	height: var(--h);
+	border-radius: var(--br);
+	padding: 0.5rem;
+	overflow: hidden;
+	position: relative;
+}
+
+.live-pseudo-border-core
+{
+	background-color: var(--bg-c);
+	width: 100%;
+	height: 100%;
+	border-radius: inherit;
+	position: relative;
+}
+
+.live-pseudo-border::before
+{
+	content: "";
+	top:  calc(var(--w) * -0.25);
+	left: calc(var(--h) * -0.25);
+	width:  calc(var(--w) * 1.5);
+	height: calc(var(--h) * 1.5);
+	position: absolute;
+	animation: rotate-live-pseudo-border var(--a-t) linear infinite;
+	background-image: conic-gradient(transparent, var(--bg-b0));
+}
+
+.live-pseudo-border[data-double-live-pseudo-border="yes"]::before
+{
+	background-image: repeating-conic-gradient(
+		transparent 0%, var(--bg-b0) 50%,
+		transparent 0%, var(--bg-b0) 50%
+	);
+}
+
+@keyframes rotate-live-pseudo-border
+{
+	0%   { transform: rotate(  0deg); }
+	100% { transform: rotate(360deg); }
+}
