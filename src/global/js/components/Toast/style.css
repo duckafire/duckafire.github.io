@@ -37,15 +37,6 @@ freely, subject to the following restrictions:
 	gap: 0.5rem;
 }
 
-.toast
-{
-	margin-inline: auto;
-	background-color: rgba(60, 60, 60, 0.75);
-	padding: 0.5rem;
-	border-radius: 1rem;
-	animation: fade-in-out var(--child-time-to-live) linear;
-}
-
 .toast-queue,
 .toast
 {
@@ -55,10 +46,87 @@ freely, subject to the following restrictions:
 	z-index: 9999;
 }
 
-@keyframes fade-in-out
+.toast
 {
-	0%   { opacity: 0; }
-	20%  { opacity: 1; }
-	50%  { opacity: 1; }
-	100% { opacity: 0; }
+	margin-inline: auto;
+	padding-block: 0.5rem;
+	padding-inline: 0.75rem;
+
+	/* 16 / 32 = ... */
+	letter-spacing: 0.03375rem;
+	font-weight: bold;
+	font-family: sans, sans-serif, serif, arial;
+
+	border-radius: 1rem;
+	border-style: solid;
+	border-width: 0.125rem;
+
+	box-shadow:
+		-1px -1px 0.25rem black,
+		-1px  1px 0.25rem black,
+		 1px -1px 0.25rem black,
+		 1px  1px 0.25rem black;
+
+	animation: toast-glow var(--child-time-to-live) linear;
+}
+
+.toast[data-type="success" I]
+{
+	color: #c4eeba;
+	border-color: #44813c;
+	background-color: #0f3a09;
+}
+
+.toast[data-type="information" I]
+{
+	color: #bae8ee;
+	border-color: #275e78;
+	background-color: #07212d;
+}
+
+.toast[data-type="warning" I]
+{
+	color: #eee8ba;
+	border-color: #a19932;
+	background-color: #49450f;
+}
+
+.toast[data-type="error" I]
+{
+	color: #eebaba;
+	border-color: #8e2b2b;
+	background-color: #360909;
+}
+
+
+@keyframes toast-glow
+{
+	0%
+	{
+		transform: scale(0);
+		opacity: 0;
+	}
+
+	2.5%
+	{
+		transform: scale(1.1);
+	}
+
+	4%
+	{
+		transform: scale(1);
+	}
+
+	4%,
+	70%
+	{
+		opacity: 1;
+		filter: brightness(1);
+	}
+
+	100%
+	{
+		opacity: 0;
+		filter: brightness(0);
+	}
 }

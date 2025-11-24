@@ -22,13 +22,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 const copyTextToastSuccess = () =>
 {
 	if(typeof Toast !== "undefined")
-		new Toast("URL copied");
+		new Toast("URL copied", Toast.SUCC());
 }
 
 const copyTextToastFailure = () =>
 {
 	if(typeof Toast !== "undefined")
-		new Toast("Impossible copy the URL");
+		new Toast("Impossible copy the URL", Toast.ERRO());
 }
 
 // it must be called by a "event"

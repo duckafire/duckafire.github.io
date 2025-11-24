@@ -24,11 +24,17 @@ class Toast
 	static #QUEUE = null;
 	static #DELAY = 0;
 
-	constructor(text, consoleInfo)
+	static SUCC(){ return "success"; }
+	static INFO(){ return "information"; }
+	static WARN(){ return "warning"; }
+	static ERRO(){ return "error"; }
+
+	constructor(text, type, devtext)
 	{
 		const div = document.createElement("span")
-		div.className   = "toast";
-		div.textContent = text;
+		div.className    = "toast";
+		div.textContent  = text;
+		div.dataset.type = type;
 
 		setTimeout(() =>
 		{
@@ -37,7 +43,7 @@ class Toast
 
 		Toast.#QUEUE.appendChild(div);
 
-		Toast.#console(text, consoleInfo);
+		Toast.#printInConsole(type, devtext);
 	}
 
 	static destructor(elem)
@@ -45,19 +51,18 @@ class Toast
 		Toast.#QUEUE.removeChild(elem);
 	}
 
-	static #console(text, consoleInfo)
+	static #printInConsole(type, devtext)
 	{
-		if(consoleInfo === undefined)
+		if(devtext === undefined)
 			return;
 
-		const [METHOD, MESSAGE] = Array.isArray(consoleInfo)
-			? consoleInfo
-			: [consoleInfo, text];
-
-		if(!console[METHOD])
-			throw new TypeError(`\`console\` method not found: "${METHOD}"`);
-
-		console[METHOD](MESSAGE);
+		switch(type)
+		{
+			case Toast.SUCC(): console.log(   devtext ); break;
+			case Toast.INFO(): console.info(  devtext ); break;
+			case Toast.WARN(): console.warn(  devtext ); break;
+			case Toast.ERRO(): console.error( devtext ); break;
+		}
 	}
 
 	static createContainer()
