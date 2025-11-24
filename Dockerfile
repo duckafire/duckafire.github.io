@@ -19,11 +19,12 @@ WORKDIR nest
 EXPOSE 8080
 CMD ["npm", "run", "deploy"]
 
+RUN npm config set update-notifier false
 COPY nodejs/package.json .
-RUN npm install
+RUN npm install --silent
 
 COPY .github/404.html .
 COPY nodejs .
 
 COPY ./src ./public
-RUN npm run build
+RUN npm run build --silent
