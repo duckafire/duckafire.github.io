@@ -454,7 +454,7 @@ class CardInfoPopup
 		DIV);
 
 		CardInfoPopup.#applyToggleStateEv( TOGGLE_STATE_BTN );
-		document.body.appendChild( CardInfoPopup.#component );
+		document.getElementById("cards-popup").replaceWith( CardInfoPopup.#component );
 	}
 
 	static updateContent(btn)
