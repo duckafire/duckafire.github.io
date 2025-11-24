@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ascii"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
-<html lang="en-US" dir="ltr">
+<html lang="en-US" dir="ltr" data-color-scheme=" ">
 <head>
 	<!--+==================================================+-->
 	<!--| Copyright (C) 2025 DuckAfire ~~~~~~~~~~~~~~~~~~~~|-->
@@ -22,6 +22,17 @@
 
 	<script src="https://kit.fontawesome.com/7d914c2988.js" crossorigin="anonymous" async="async"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@duckafire/html.js@0.3.0/html.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+
+	<script>
+		Cookies = Cookies.withAttributes({
+			path: "/",
+			secure: true,
+			expires: 365,
+			sameSite: "strict",
+			// domain: default,
+		});
+	</script>
 
 	<link rel="stylesheet" type="text/css" href="../../global/css/default.css"/>
 	<link rel="stylesheet" type="text/css" href="../../global/css/common.css"/>
@@ -36,6 +47,7 @@
 
 	<script src="../../global/js/functions/copyTextFromInputToClipboard.js"></script>
 	<script src="../../global/js/functions/setInertToBrothers.js"></script>
+	<script src="../../global/js/functions/setPageColorScheme.js"></script>
 
 	<script>
 		// execute some stuff required

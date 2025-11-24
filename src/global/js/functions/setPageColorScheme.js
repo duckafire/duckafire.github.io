@@ -22,27 +22,34 @@ freely, subject to the following restrictions:
 
 */
 
-:root
+const setPageColorScheme = (scheme, noUpdateCookie) =>
 {
-	--BG_BODY:       #1c0c0c;
-	--BG_DEFAULT:    #291919;
-	--BG_HIGH:       #342828;
-	--BG_SUPER_HIGH: #514747;
+	switch(scheme)
+	{
+		case "dark": case "light":
+			break;
+		default:
+			throw new InternalError(`Invalid theme: "${scheme}"`);
+	}
 
-	--FG_DARK_DEFAULT: #a0a0a0;
-	--FG_DARK_XMARK:   #9f302b;
-	--FG_DARK_ERROR:   var(--FG_DARK_XMARK);
-	--FG_DARK_WARN:    #ac9a37;
-	--FG_DARK_LINK:    #829837;
+	if(!noUpdateCookie)
+		Cookies.set("colorscheme", scheme);
 
-	--FG_DEFAULT: #c9c9c9;
-	--FG_XMARK:   #e1463f;
-	--FG_ERROR:   var(--FG_XMARK);
-	--FG_WARN:    #d2bd4d;
-	--FG_LINK:    #a5c14b;
-}
+	document.documentElement.dataset.colorScheme = scheme;
+};
 
-:root[data-color-scheme="dark"]
+(function()
 {
-	/* TODO */
-}
+	const SCHEME = Cookies.get("colorscheme");
+
+	if(SCHEME !== undefined)
+	{
+		setPageColorScheme(SCHEME, true);
+		return;
+	}
+
+	if(window.matchMedia('(prefers-color-scheme: dark)').matches)
+		setPageColorScheme("dark");
+	else
+		setPageColorScheme("light");
+})();
