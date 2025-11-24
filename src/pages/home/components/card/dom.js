@@ -650,11 +650,16 @@ fetch(url)
 	{
 		if(attempt >= 5)
 		{
-			console.error(new InternalError(`Stopping, to try to create the cards, after #${attempt} attempts.`));
+			console.error(new InternalError(`Stopping trying to create the cards, after #${attempt} attempts.`));
 			return;
 		}
 
 		console.error(err);
-		setTimeout(() => createCardsBasedJson(attempt), 1000);
+
+		setTimeout(() =>
+		{
+			console.info("Starting other attempt to get cards data (after 5s)...");
+			createCardsBasedJson(attempt);
+		}, 5000);
 	});
 };
