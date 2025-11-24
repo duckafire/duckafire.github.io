@@ -40,7 +40,7 @@ dialog::backdrop
 
 body
 {
-	font-family: sans-serif, serif;
+	font-family: sans, sans-serif, serif, arial;
 	color: var(--FG_DEFAULT, whitesmoke);
 	background-color: var(--BG_BODY, dimgray);
 }
