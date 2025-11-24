@@ -19,6 +19,28 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 
+(function(){
+	const CARDS_LIST = document.getElementById("cards-list");
+
+	for(let i = 0; i < parseInt(CARDS_LIST.dataset.placeholdersN); i++)
+	{
+		CARDS_LIST.appendChild(
+			LI( {className: "placeholder-card"},
+				// structure below is necessary
+				// to define the card dimensions
+				// size
+				DIV( {className: "card-division"},
+					DIV( {className: "card-content"},
+						DIV( {className: "card-cover"},
+							".", // this character is transparent
+						DIV),
+					DIV),
+				DIV),
+			LI)
+		);
+	}
+})();
+
 class CardInfoCacheRelatedItem
 {
 	constructor(rootUrl, data, classIconFallback)
@@ -602,8 +624,25 @@ fetch(url)
 	{
 		const CARDS_LIST = document.getElementById("cards-list");
 
+		let placeholderId     = 0;
+		let totalPlaceholders = parseInt(CARDS_LIST.dataset.placeholdersN);
+
 		for(const DATA of json)
-			CARDS_LIST.appendChild( Card.build(DATA) );
+		{
+			if(totalPlaceholders === 0)
+			{
+				CARDS_LIST.appendChild( Card.build(DATA) );
+				continue;
+			}
+
+			// It inserts a card before all placeholders
+			// and it removes the last placeholder.
+			CARDS_LIST.insertBefore( Card.build(DATA), CARDS_LIST.children[ placeholderId ] );
+			CARDS_LIST.removeChild( CARDS_LIST.children[ CARDS_LIST.children.length - 1 ] );
+
+			placeholderId++;
+			totalPlaceholders--;
+		}
 
 		CardInfoPopup.place();
 	})

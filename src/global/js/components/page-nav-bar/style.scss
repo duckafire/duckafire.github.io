@@ -21,6 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 {
 	top: 0;
 	left: 0;
+	z-index: 1;
 	width: 100vw;
 	position: sticky;
 	color: var(--fg, inherit);

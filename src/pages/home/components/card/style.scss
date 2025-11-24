@@ -172,6 +172,40 @@ $CARD_COVER_SCALE: 5rem;
 	}
 }
 
+.placeholder-card
+{
+	@extend .website-card;
+
+	position: relative;
+	overflow: hidden;
+	z-index: 0;
+	background-color: var(--BG_DEFAULT);
+
+	@keyframes shimmer
+	{
+		0%   { transform: translateX(-100%); }
+		50%  { transform: translateX( 100%); }
+		100% { transform: translateX(-100%); }
+	}
+
+	&::after
+	{
+		content: "";
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		background-image: linear-gradient(90deg, transparent, var(--BG_SUPER_HIGH), transparent);
+		animation: shimmer 5s infinite;
+	}
+
+	.card-cover
+	{
+		color: transparent;
+	}
+}
+
 
 /*****************************************************************************/
 // Cards Information Popup
@@ -184,6 +218,7 @@ $CARDS_INFO_BORDER: 5px solid var(--BG_SUPER_HIGH);
 	@include kit.flex(false, true, false);
 	top: 0;
 	left: 0;
+	z-index: 9999;
 	position: fixed;
 	backdrop-filter: blur(0.3rem);
 	background-color: rgba(0, 0, 0, 0.75);
