@@ -34,6 +34,21 @@ const copyTextToastFailure = () =>
 // it must be called by a "event"
 const copyTextFromInputToClipboard = (input) =>
 {
+	if(!(input instanceof HTMLInputElement))
+	{
+		throw new TypeError(
+			"Invalid element type: \"" +
+			(input
+				? (input.constructor
+					? input.constructor.name
+					: toString(input))
+				: toString(input)
+			) + "\""
+		);
+		copyTextToastFailure();
+		return;
+	}
+
 	if(navigator.clipboard && navigator.clipboard.writeText)
 	{
 		navigator.clipboard.writeText(input.value)
@@ -51,21 +66,6 @@ const copyTextFromInputToClipboard = (input) =>
 	}
 
 	console.error(new InternalError("Clipboard API not found."));
-
-	if(!(input instanceof HTMLInputElement))
-	{
-		throw new TypeError(
-			"Invalid element type: \"" +
-			(input
-				? (input.constructor
-					? input.constructor.name
-					: toString(input))
-				: toString(input)
-			) + "\""
-		);
-		copyTextToastFailure();
-		return;
-	}
 
 	input.focus();
 	input.select();

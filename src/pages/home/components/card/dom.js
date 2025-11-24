@@ -300,7 +300,7 @@ class CardEventListeners
 
 			BTN_COPIER.addEventListener("click", () =>
 			{
-				copyTextFromInputToClipboard(URL);
+				copyTextFromInputToClipboard(URL_SOURCE);
 			});
 		});
 	}
