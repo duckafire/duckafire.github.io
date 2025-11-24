@@ -26,5 +26,4 @@ COPY .github/404.html .
 COPY nodejs .
 
 COPY ./src ./public
-RUN    npm run build \
-	&& npm run clean
+RUN npm run build
