@@ -21,8 +21,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 class Toast
 {
-	static #QUEUE = document.querySelector(".toast-queue");
-	static #DELAY = parseInt( getComputedStyle(Toast.#QUEUE).getPropertyValue("--child-time-to-live") ) * 1000;;
+	static #QUEUE = null;
+	static #DELAY = 0;
 
 	constructor(text, consoleInfo)
 	{
@@ -59,4 +59,22 @@ class Toast
 
 		console[METHOD](MESSAGE);
 	}
+
+	static createContainer()
+	{
+		if(Toast.#QUEUE !== null)
+			return;
+
+		document.body.appendChild(
+			(Toast.#QUEUE = DIV( {className: "toast-queue"}, DIV))
+		);
+
+		Toast.#DELAY = parseInt( getComputedStyle(Toast.#QUEUE).getPropertyValue("--child-time-to-live") ) * 1000;
+	}
 };
+
+// This have to be called before
+// the end of this script;
+// `new Toast` must not be
+// called before this.
+Toast.createContainer();
