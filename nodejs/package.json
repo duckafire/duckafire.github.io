@@ -1,15 +1,6 @@
 {
-  "name": "DuckAfire's Nest",
-  "author": "DuckAfire",
-  "license": "AGPL-3.0",
-  "version": "x.y.z",
-  "description": "A simple projects showcase.",
   "engines": {
     "node": ">=18.20.8"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/duckafire/nest.git"
   },
   "scripts": {
     "build": "./build.js",
@@ -21,11 +12,5 @@
     "terser": "^5.43.1",
     "clean-css-cli": "^5.6.3",
     "http-server": "^14.1.1"
-  },
-  "custom-fields": {
-    "cloud-repositories": [
-      "https://github.com/duckafire/duckafire.github.io",
-      "https://gitlab.com/duckafire/duckafire.gitlab.io"
-    ]
   }
 }
