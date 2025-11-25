@@ -17,7 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 
-.page-nav-bar
+.nav-bar
 {
 	top: 0;
 	left: 0;
@@ -27,21 +27,21 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	color: var(--fg, inherit);
 }
 
-.page-nav-btn-container
+.nav-btn-container
 {
 	font-size: 2.25rem;
 	position: relative;
 	background-color: var(--bg-bar, gray);
 }
 
-.page-nav-btn
+.nav-btn
 {
 	width: 100%;
 	padding-block: 0.5rem;
 	text-align: center;
 }
 
-.page-nav-menu
+.nav-menu
 {
 	width: 100vw;
 	height: calc(100vh - 100%);
@@ -54,7 +54,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	list-style: none;
 }
 
-.page-nav-menu-item
+.nav-menu-item
 {
 	width: 100%;
 	display: block;

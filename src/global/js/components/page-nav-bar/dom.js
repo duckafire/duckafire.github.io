@@ -19,7 +19,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 
-const createPageNavBarMenuItems = () =>
+{ // start
+
+const createInterPageMenu = () =>
 {
 	const OPTIONS = [];
 	const ITEMS_LIST = [
@@ -31,25 +33,33 @@ const createPageNavBarMenuItems = () =>
 		["Tic80",        "tic80.com/dev?id=8700"],
 	];
 
+	let attr;
+
 	for(const item of ITEMS_LIST)
 	{
+		attr = {
+			role: "button",
+			className: "nav-menu-item soft-live-full-light-btn",
+			href: "https://"+item[1],
+		};
+
 		OPTIONS.push(
 			LI( null,
-				A( {role: "button", className: "page-nav-menu-item soft-live-full-light-btn", href: "https://"+item[1]},
-					item[0],
-				A),
+				A( attr, item[0], A),
 			LI)
 		);
 	}
 
-	return OPTIONS;
+	return UL( {className: "nav-menu min-screen-width", cssRules: {display: "none"}},
+		...OPTIONS,
+	UL);
 };
 
-const applyPageNavBarEventListeners = (component) =>
+const evOpenMainBurgerMenu = (component) =>
 {
-	const COMPONENT   = component;
-	const MANAGER_BTN = COMPONENT.querySelector(".page-nav-btn");
-	const MENU_LIST   = COMPONENT.querySelector(".page-nav-menu");
+	const component   = component;
+	const MANAGER_BTN = component.querySelector(".nav-btn");
+	const MENU_LIST   = component.querySelector(".nav-menu");
 
 	const MANAGER_ICON = MANAGER_BTN.querySelector("[class^=fa-]");
 
@@ -57,7 +67,7 @@ const applyPageNavBarEventListeners = (component) =>
 	{
 		if(MENU_LIST.style.display === "")
 		{
-			unsetInertToBrothers( COMPONENT );
+			unsetInertToBrothers( component );
 			MENU_LIST.style.display = "none";
 			document.body.style.overflow = "";
 			MANAGER_ICON.classList.remove("fa-xmark");
@@ -65,7 +75,7 @@ const applyPageNavBarEventListeners = (component) =>
 			return;
 		}
 
-		setInertToBrothers( COMPONENT );
+		setInertToBrothers( component );
 		MENU_LIST.style.display = "";
 		document.body.style.overflow = "hidden";
 		MANAGER_ICON.classList.remove("fa-bars");
@@ -73,26 +83,30 @@ const applyPageNavBarEventListeners = (component) =>
 	});
 }
 
-document.body.appendChild( (function(){
-	const cssRules = {
-		"--bg-bar":  "var(--BG_HIGH)",
-		"--bg-menu": "var(--BG_DEFAULT)",
-		"--bg-line": "var(--BG_SUPER_HIGH)",
-		"--fg":      "var(--FG_DEFAULT)",
-	};
+const applyPageNavBarEventListeners = (component) =>
+{
+	evOpenMainBurgerMenu(component);
+}
 
-	const NAV_BAR =
-	NAV( {className: "page-nav-bar min-screen-width", cssRules},
-		DIV( {className: "page-nav-btn-container"},
-			BUTTON( {className: "page-nav-btn live-full-light-btn"},
-				I( {className: "fa-solid fa-bars"}, I),
-			BUTTON),
-		DIV),
-		UL( {className: "page-nav-menu min-screen-width", cssRules: {display: "none"}},
-			...createPageNavBarMenuItems(),
-		UL),
-	NAV);
+const cssRules = {
+	"--bg-bar":  "var(--BG_HIGH)",
+	"--bg-menu": "var(--BG_DEFAULT)",
+	"--bg-line": "var(--BG_SUPER_HIGH)",
+	"--fg":      "var(--FG_DEFAULT)",
+};
 
-	applyPageNavBarEventListeners( NAV_BAR );
-	return NAV_BAR;
-})());
+const NAV_BAR =
+NAV( {className: "nav-bar min-screen-width", cssRules},
+	DIV( {className: "nav-btn-container"},
+		BUTTON( {className: "nav-btn live-full-light-btn"},
+			I( {className: "fa-solid fa-bars"}, I),
+		BUTTON),
+	DIV),
+	createInterPageMenu(),
+NAV);
+
+applyPageNavBarEventListeners( NAV_BAR );
+
+document.body.appendChild( NAV_BAR );
+
+} // end
