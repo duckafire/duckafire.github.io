@@ -29,6 +29,34 @@ SOFTWARE.
 let __setInertCache__   = null;
 let __unsetInertCache__ = null;
 
+// List of CSS elements that must
+// be hidden after to run setInert...
+const __inertCloseListQueries__ = [
+	".nav-cscheme-opt-menu-container",
+];
+
+const __inertCloseListElem__ = [];
+
+const __closeElemFromList__ = () =>
+{
+	if(__inertCloseListElem__.length === 0)
+	{
+		for(let i = 0, j = 0; i < __inertCloseListQueries__.length; i++, j++)
+		{
+			__inertCloseListElem__[j] = document.querySelector( __inertCloseListQueries__[i] );
+
+			if(__inertCloseListQueries__[j] === null)
+			{
+				__inertCloseListQueries__[j] = null;
+				j--;
+			}
+		}
+	}
+
+	for(const ELEM of __inertCloseListElem__)
+		ELEM.style.display = "none";
+};
+
 const __updateInertCache__ = (storage, useCache) =>
 {
 	if(storage !== null && useCache)
@@ -54,6 +82,8 @@ const setInertToBrothers = (elemFocused, useCache) =>
 
 		ELEM.setAttribute("inert", "inert");
 	}
+
+	__closeElemFromList__();
 };
 
 const unsetInertToBrothers = (useCache) =>

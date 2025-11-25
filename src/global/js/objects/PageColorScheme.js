@@ -43,6 +43,20 @@ const PageColorScheme = new (class
 	DARK(classIcon){  return (classIcon) ? this.#classIcons[ this.#dark  ] : this.#dark; }
 	LIGHT(classIcon){ return (classIcon) ? this.#classIcons[ this.#light ] : this.#light; }
 
+	classIconOf(scheme)
+	{
+		return this.#classIcons[ scheme ];
+	}
+
+	list()
+	{
+		return [
+			this.#auto,
+			this.#dark,
+			this.#light,
+		];
+	}
+
 	getCurrent(classIcon)
 	{
 		if(classIcon)
@@ -82,9 +96,9 @@ const PageColorScheme = new (class
 
 	#isValid(scheme)
 	{
-		if(scheme === this.#dark || scheme == this.#light)
+		if(scheme === this.#auto || scheme === this.#dark || scheme == this.#light)
 			return;
 
 		throw new InternalError(`Invalid theme: "${scheme}"`);
 	}
-})():
+})();

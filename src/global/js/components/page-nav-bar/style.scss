@@ -29,16 +29,91 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 .nav-btn-container
 {
+	$gap: 1.5rem;
+	$pblock: 0.5rem;
+
 	font-size: 2.25rem;
-	position: relative;
 	background-color: var(--bg-bar, gray);
+	display: flex;
+	justify-content: end;
+	gap: $gap;
+
+	/* they will be reverted
+	 * when menu is open */
+	padding-right: $gap;
+	padding-block: $pblock;
+
+	&[data-burger-menu-open="1"]
+	{
+		padding-right: 0;
+		padding-block: 0;
+
+		.nav-menu-man-btn
+		{
+			width: 100%;
+			text-align: center;
+			padding-block: $pblock;
+		}
+
+		/* * != .nav-menu-man-btn */
+		.nav-cscheme-man-btn
+		{
+			display: none;
+		}
+	}
 }
 
-.nav-btn
+.nav-cscheme-man-btn
 {
-	width: 100%;
-	padding-block: 0.5rem;
-	text-align: center;
+	text-align: start;
+	width: 1em;
+}
+
+.nav-cscheme-opt-menu-container
+{
+	width: 100vw;
+	display: flex;
+	justify-content: end;
+	padding-top: 0.5rem;
+	padding-right: 3rem;
+	position: absolute;
+}
+
+.nav-cscheme-opt-menu
+{
+	width: min-content;
+	background-color: var(--BG_SUPER_HIGH);
+	color: var(--FG_DEFAULT);
+	font-size: 1.25rem;
+	border-radius: 0.5rem;
+	border: 0.125rem solid var(--FG_DEFAULT);
+	box-shadow:
+		 0.0625rem  0.0625rem var(--BG_DEFAULT),
+		-0.0625rem  0.0625rem var(--BG_DEFAULT),
+		 0.0625rem -0.0625rem var(--BG_DEFAULT),
+		-0.0625rem -0.0625rem var(--BG_DEFAULT);
+
+	.nav-cscheme-opt
+	{
+		$gap: 0.5em;
+
+		width: max-content;
+		display: flex;
+		padding: $gap;
+		gap: $gap;
+		align-items: center;
+
+		&[data-enable="1"]
+		{
+			/* TODO: create a --FG green */
+			color: forestgreen;
+		}
+
+		[class^=fa-]
+		{
+			width: 1em;
+		}
+	}
 }
 
 .nav-menu
