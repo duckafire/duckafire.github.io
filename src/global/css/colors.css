@@ -25,22 +25,22 @@ freely, subject to the following restrictions:
 :host,
 :root
 {
-	--BG_BODY:       #a99e9e;
-	--BG_DEFAULT:    #bbaeae;
-	--BG_HIGH:       #ccbfbf;
-	--BG_SUPER_HIGH: #ddd0d0;
+	--BG_BODY:       #897f7f;
+	--BG_DEFAULT:    #a39898;
+	--BG_HIGH:       #b6a8a8;
+	--BG_SUPER_HIGH: #ccbfbf;
 
-	--FG_DEFAULT: #1e1e1e;
-	--FG_SUCCESS: #5b7409;
-	--FG_WARNING: #ab9006;
-	--FG_ERROR:   #9a1913;
+	--FG_DEFAULT: #131313;
+	--FG_SUCCESS: #007218;
+	--FG_WARNING: #f9c639;
+	--FG_ERROR:   #bb1d24;
 	--FG_X_MARK:  var(--FG_ERROR);
 	--FG_LINK:    var(--FG_SUCCESS);
 
-	--FG_BLURED_DEFAULT: #726f6f;
-	--FG_BLURED_SUCCESS: #889655;
-	--FG_BLURED_WARNING: #baad5d;
-	--FG_BLURED_ERROR:   #a16662;
+	--FG_BLURED_DEFAULT: #5a5656;
+	--FG_BLURED_SUCCESS: #007e1a;
+	--FG_BLURED_WARNING: #977003;
+	--FG_BLURED_ERROR:   #84191e;
 	--FG_BLURED_X_MARK:  var(--FG_BLURED_ERROR);
 	--FG_BLURED_LINK:    var(--FG_BLURED_SUCCESS);
 }
