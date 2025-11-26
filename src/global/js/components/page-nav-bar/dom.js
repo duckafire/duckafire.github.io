@@ -59,7 +59,7 @@ const createPageColorSchemeOpt = (scheme) =>
 {
 	const ATTR = {
 		role: "button",
-		class: "nav-cscheme-opt live-light-btn",
+		class: "nav-cscheme-opt live-full-light-btn",
 		dataSets: {
 			enable: (scheme === PageColorScheme.getCurrent()) ? "1" : "0",
 		},

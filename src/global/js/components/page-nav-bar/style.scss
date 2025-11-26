@@ -92,27 +92,27 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 		-0.0625rem  0.0625rem var(--BG_DEFAULT),
 		 0.0625rem -0.0625rem var(--BG_DEFAULT),
 		-0.0625rem -0.0625rem var(--BG_DEFAULT);
+}
 
-	.nav-cscheme-opt
+.nav-cscheme-opt
+{
+	$gap: 0.5em;
+
+	display: flex;
+	padding: $gap;
+	gap: $gap;
+	align-items: center;
+	font-weight: bold;
+	width: 100%;
+
+	&[data-enable="1"]
 	{
-		$gap: 0.5em;
+		color: var(--FG_SUCCESS);
+	}
 
-		width: max-content;
-		display: flex;
-		padding: $gap;
-		gap: $gap;
-		align-items: center;
-
-		&[data-enable="1"]
-		{
-			/* TODO: create a --FG green */
-			color: forestgreen;
-		}
-
-		[class^=fa-]
-		{
-			width: 1em;
-		}
+	[class^=fa-]
+	{
+		width: 1em;
 	}
 }
 
