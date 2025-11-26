@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ascii"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
+<html lang="en-US" dir="ltr" data-color-scheme="auto">
 <head>
 	<!--+==================================================+-->
 	<!--| Copyright (C) 2025 DuckAfire ~~~~~~~~~~~~~~~~~~~~|-->
@@ -18,16 +18,85 @@
 	<meta charset="ascii"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-	<link rel="stylesheet" type="text/css" href="../src/global/css/default.css"\>
-	<link rel="stylesheet" type="text/css" href="../src/global/css/common.css"\>
-	<link rel="stylesheet" type="text/css" href="../src/global/css/colors.css"\>
+	<style>
+		/* from colors.css */
+		:host,
+		:root
+		{
+			--BG_BODY:    #a99e9e;
+
+			--FG_DEFAULT: #1e1e1e;
+			--FG_SUCCESS: #5b7409;
+			--FG_ERROR:   #9a1913;
+			--FG_LINK:    var(--FG_SUCCESS);
+
+			--FG_BLURED_DEFAULT: #726f6f;
+		}
+
+		:host[data-color-scheme="dark"],
+		:root[data-color-scheme="dark"]
+		{
+			--BG_BODY:       #1c0c0c;
+
+			--FG_DEFAULT: #c9c9c9;
+			--FG_SUCCESS: #a5c14b;
+			--FG_ERROR:   #e1463f;
+			--FG_LINK:    var(--FG_SUCCESS);
+
+			--FG_BLURED_DEFAULT: #a0a0a0;
+		}
+
+		/* from default.css */
+		.def-body
+		{
+			font-family: sans, sans-serif, serif, arial;
+			background-color: var(--BG_BODY, dimgray);
+		}
+
+		/* local */
+		.body
+		{
+			padding: 2rem;
+		}
+
+		.error
+		{
+			color: var(--FG_ERROR);
+		}
+
+		.title
+		{
+			white-space: break-spaces;
+			color: var(--FG_DEFAULT, whitesmoke);
+		}
+
+		.question
+		{
+			color: var(--FG_BLURED_DEFAULT);
+		}
+
+		.url
+		{
+			color: var(--FG_LINK);
+			text-decoration: none;
+		}
+	</style>
+
+	<script>
+		const IS_DARK = matchMedia("(prefers-color-scheme: dark)").matches;
+		document.documentElement.dataset.colorScheme = IS_DARK ? "dark" : "light";
+	</script>
 </head>
-<body>
-	<h1>Page not found!</h1>
+<body class="def-body body">
+	<h1 class="title"><strong class="error">[404]</strong> Page not found!</h1>
 	<br/>
-	<span>
-		Do you want to go to the
-		<a href="https://duckafire.gitlab.io/pages/home" title="Click here to going to there" rel="noopener noreferrer"\>
+	<span class="question">
+		&emsp;Do you want to go to the
+		<a
+			class="url"
+			href="https://duckafire.gitlab.io/pages/home"
+			title="Click here to going to there" rel="noopener noreferrer"
+		>
 			DuckAfire's Nest
 		</a>
 		?
