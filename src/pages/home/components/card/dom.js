@@ -43,11 +43,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 class CardInfoCacheRelatedItem
 {
-	constructor(rootUrl, data, classIconFallback)
+	constructor(rootUrl, data, classIconFallback, cardInfo)
 	{
 		this.title       = data["title"];
 		this.description = data["description"];
 		this.classIcon   = data["class-icon"] || classIconFallback;
+		this.platform    = cardInfo.platform;
 		this.urlSource   = null; // it will be catched
 
 		this.rootUrl  = rootUrl;
@@ -95,8 +96,12 @@ class CardInfoCache
 		if(json["type"] === "website")
 			CardInfoCache.#buildMain( json["url-list"]["main"] );
 
+		const CARD_INFO = {
+			platform: json["title"],
+		};
+
 		CardInfoCache.#cardUrlId = 0; // reseted every time
-		CardInfoCache.#buildRelatedItems( json["url-list"]["related"], json["class-icon"] );
+		CardInfoCache.#buildRelatedItems( json["url-list"]["related"], json["class-icon"], CARD_INFO );
 	}
 
 	static getItem(cardId, cardUrlId)
@@ -167,14 +172,14 @@ class CardInfoCache
 		CardInfoCache.#mainUrl = url;
 	}
 
-	static #buildRelatedItems(list, classIconFallback)
+	static #buildRelatedItems(list, classIconFallback, cardInfo)
 	{
 		// `classIconFallback` is `undefined` is
 		// `json["type"] === "profile"`
 		for(const DATA of list)
 		{
 			CardInfoCache.#storagePull().push(
-				new CardInfoCacheRelatedItem( CardInfoCache.#rootUrl, DATA, classIconFallback)
+				new CardInfoCacheRelatedItem( CardInfoCache.#rootUrl, DATA, classIconFallback, cardInfo)
 			);
 		}
 	}
@@ -248,33 +253,36 @@ class CardURLList
 
 	static #listItem(json, data, title, url)
 	{
-		return LI( {className: "url-list-item", title, style: "--scalew:2"},
-			CardInfoCache.catchCacheItemUrlSource(
-				INPUT( {className: "url-list-btn rounded-rect-btn url-list-text live-input", role: "button", value: url, type: "text", readOnly: "~", translate: false, dataSets: {"card-url-btn-type": "url-source"}})
-			),
-			CardInfoPopup.applyOpenEvent(
-				BUTTON( {className: "url-list-btn rounded-rect-btn live-btn unflex"},
-					//   Cache attributes are putted in the icon, instead
-					// the button, because `event.target` (used as a
-					// reference to the clicked object, in the button
-					// Event Listener) can point to the button or to the
-					// button icon, because it point the CLICKED element
-					// (yes, children can throw pattern events).
-					//   So, it is not possible to get the attributes
-					// values, if they are in the button, when the button
-					// icon is clicked.
-					//   It is possible to access the icon attribute, if
-					// button is clicked, using `children` (array),
-					// `querySelector` (function), or other suchlike.
-					I( {className: "fa-solid fa-circle-info", dataSets: {...CardInfoCache.htmlCacheAttr()}}, I),
-				BUTTON)
-			),
-			BUTTON( {className: "url-list-btn rounded-rect-btn live-btn unflex", dataSets: {"card-url-btn-type": "url-copier"}},
-				I( {className: "fa-solid fa-copy"}, I),
-			BUTTON),
-			A( {role: "button", className: "clear-style url-list-btn rounded-rect-btn live-btn unflex", href: url},
-				I( {className: "fa-solid fa-external-link"}, I),
-			A),
+		return LI( {style: "--scalew:2"},
+			SPAN( {className: "url-list-item-title"}, title, SPAN),
+			DIV( {className: "url-list-item"},
+				CardInfoCache.catchCacheItemUrlSource(
+					INPUT( {className: "url-list-btn rounded-rect-btn url-list-text live-input", role: "button", value: url, type: "text", readOnly: "~", translate: false, dataSets: {"card-url-btn-type": "url-source"}})
+				),
+				CardInfoPopup.applyOpenEvent(
+					BUTTON( {className: "url-list-btn rounded-rect-btn live-btn unflex"},
+						//   Cache attributes are putted in the icon, instead
+						// the button, because `event.target` (used as a
+						// reference to the clicked object, in the button
+						// Event Listener) can point to the button or to the
+						// button icon, because it point the CLICKED element
+						// (yes, children can throw pattern events).
+						//   So, it is not possible to get the attributes
+						// values, if they are in the button, when the button
+						// icon is clicked.
+						//   It is possible to access the icon attribute, if
+						// button is clicked, using `children` (array),
+						// `querySelector` (function), or other suchlike.
+						I( {className: "fa-solid fa-circle-info", dataSets: {...CardInfoCache.htmlCacheAttr()}}, I),
+					BUTTON)
+				),
+				BUTTON( {className: "url-list-btn rounded-rect-btn live-btn unflex", dataSets: {"card-url-btn-type": "url-copier"}},
+					I( {className: "fa-solid fa-copy"}, I),
+				BUTTON),
+				A( {role: "button", className: "clear-style url-list-btn rounded-rect-btn live-btn unflex", href: url},
+					I( {className: "fa-solid fa-external-link"}, I),
+				A),
+			DIV),
 		LI);
 	}
 }
@@ -363,9 +371,9 @@ class Card
 
 		if(json["type"] === "profile")
 			return [
-				IMG( {className: "card-cover", src: json["img-cover"]["src"], alt: json["img-cover"]["alt"]}),
+				IMG( {className: "card-cover", src: json["img-cover"]["src"], alt: json["img-cover"]["alt"], title: json["title"]}),
 				DIV( {className: "card-options", cssRules: Card.#contentCssRules},
-					H1( {translate: false}, json["title"], H1),
+					H1( {translate: false}, json["message"], H1),
 					BUTTON( {className: "oval-btn live-btn", cssRules: {fontSize: "1.25rem"}, dataSets},
 						I( {className: "fa-solid fa-plus"}, I),
 					BUTTON),
@@ -374,7 +382,7 @@ class Card
 
 		return [
 			DIV( {className: "card-cover", cssRules: {color: "var(--c-card-front-btn-fg)"}},
-				I( {className: json["class-icon"]}, I),
+				I( {className: json["class-icon"], title: json["title"]}, I),
 			DIV),
 			DIV( {className: "card-options", cssRules: Card.#contentCssRules},
 				BUTTON( {className: "ball-btn live-btn", dataSets},
@@ -479,6 +487,7 @@ class CardInfoPopup
 
 		CardInfoPopup.#title.textContent       = ITEM_CACHE.title;
 		CardInfoPopup.#classIcon.className     = ITEM_CACHE.classIcon;
+		CardInfoPopup.#classIcon.title         = ITEM_CACHE.platform;
 		CardInfoPopup.#description.textContent = ITEM_CACHE.description;
 
 		CardInfoPopup.#urlSource = ITEM_CACHE.urlSource;

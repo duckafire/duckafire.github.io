@@ -1,7 +1,8 @@
 [
 	{
 		"type": "profile",
-		"title": "Hello world",
+		"message": "Hello world",
+		"title": "It's me!",
 		"img-cover": {
 			"src": "../../assets/images/high/duckafire-profile.png",
 			"alt": "DuckAfire's profile image."
@@ -78,6 +79,7 @@
 	{
 		"type": "website",
 		"class-icon": "fa-brands fa-docker",
+		"title": "Docker Hub",
 		"colors": {
 			"front": {
 				"bg": "184889",
@@ -114,6 +116,7 @@
 	{
 		"type": "website",
 		"class-icon": "fa-brands fa-github",
+		"title": "GitHub",
 		"colors": {
 			"front": {
 				"bg": "2f415e",
@@ -251,19 +254,20 @@
 	{
 		"type": "website",
 		"class-icon": "fa-brands fa-gitlab",
+		"title": "GitLab",
 		"colors": {
 			"front": {
 				"bg": "ba3a17",
 				"btn": {
 					"bg": "e56f1d",
-					"fg": "e1b867"
+					"fg": "dab990"
 				}
 			},
 			"details": {
 				"bg": "80250d",
 				"btn": {
 					"bg": "ca661f",
-					"fg": "d4a74e"
+					"fg": "cfaf80"
 				}
 			}
 		},
@@ -389,6 +393,7 @@
 	{
 		"type": "website",
 		"class-icon": "fa-brands fa-itch-io",
+		"title": "itch.io",
 		"colors": {
 			"front": {
 				"bg": "ae3b3b",
@@ -424,6 +429,7 @@
 	{
 		"type": "website",
 		"class-icon": "fa-brands fa-npm",
+		"title": "NPM Registry",
 		"colors": {
 			"front": {
 				"bg": "b22c2b",
@@ -470,6 +476,7 @@
 	{
 		"type": "website",
 		"class-icon": "fa-solid fa-gamepad",
+		"title": "Tic80",
 		"colors": {
 			"front": {
 				"bg": "2d4ba9",
