@@ -22,27 +22,48 @@ freely, subject to the following restrictions:
 
 */
 
+:host,
 :root
+{
+	--BG_BODY:       #a99e9e;
+	--BG_DEFAULT:    #bbaeae;
+	--BG_HIGH:       #ccbfbf;
+	--BG_SUPER_HIGH: #ddd0d0;
+
+	--FG_DEFAULT: #1e1e1e;
+	--FG_SUCCESS: #5b7409;
+	--FG_WARNING: #ab9006;
+	--FG_ERROR:   #9a1913;
+	--FG_X_MARK:  var(--FG_ERROR);
+	--FG_LINK:    var(--FG_SUCCESS);
+
+	--FG_BLURED_DEFAULT: #726f6f;
+	--FG_BLURED_SUCCESS: #889655;
+	--FG_BLURED_WARNING: #baad5d;
+	--FG_BLURED_ERROR:   #a16662;
+	--FG_BLURED_X_MARK:  var(--FG_BLURED_ERROR);
+	--FG_BLURED_LINK:    var(--FG_BLURED_SUCCESS);
+}
+
+:host[data-color-scheme="dark"],
+:root[data-color-scheme="dark"]
 {
 	--BG_BODY:       #1c0c0c;
 	--BG_DEFAULT:    #291919;
 	--BG_HIGH:       #342828;
 	--BG_SUPER_HIGH: #514747;
 
-	--FG_DARK_DEFAULT: #a0a0a0;
-	--FG_DARK_XMARK:   #9f302b;
-	--FG_DARK_ERROR:   var(--FG_DARK_XMARK);
-	--FG_DARK_WARN:    #ac9a37;
-	--FG_DARK_LINK:    #829837;
-
 	--FG_DEFAULT: #c9c9c9;
-	--FG_XMARK:   #e1463f;
-	--FG_ERROR:   var(--FG_XMARK);
-	--FG_WARN:    #d2bd4d;
-	--FG_LINK:    #a5c14b;
-}
+	--FG_SUCCESS: #a5c14b;
+	--FG_WARNING: #d2bd4d;
+	--FG_ERROR:   #e1463f;
+	--FG_X_MARK:  var(--FG_ERROR);
+	--FG_LINK:    var(--FG_SUCCESS);
 
-:root[data-color-scheme="dark"]
-{
-	/* TODO */
+	--FG_BLURED_DEFAULT: #a0a0a0;
+	--FG_BLURED_SUCCESS: #829837;
+	--FG_BLURED_WARNING: #ac9a37;
+	--FG_BLURED_ERROR:   #9f302b;
+	--FG_BLURED_X_MARK:  var(--FG_BLURED_ERROR);
+	--FG_BLURED_LINK:    var(--FG_BLURED_SUCCESS);
 }

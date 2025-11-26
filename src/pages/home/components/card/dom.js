@@ -422,8 +422,8 @@ class CardInfoPopup
 	{
 		const cssRules = {
 			display: "none",
-			"--fg-xmark": "var(--FG_XMARK)",
-			"--fg-low-light": "var(--FG_DARK_DEFAULT)",
+			"--fg-xmark": "var(--FG_X_MARK)",
+			"--fg-low-light": "var(--FG_BLURED_DEFAULT)",
 		};
 
 		const TOGGLE_STATE_BTN =
