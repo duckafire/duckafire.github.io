@@ -24,7 +24,7 @@ process-source-code:
   stage: build
   script:
     - test ! -d public && mkdir public
-    - mv -r src/* public
+    - mv src/* public
     - rmdir src
     - mv .github/404.html public
     - mv nodejs/* .
