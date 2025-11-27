@@ -56,3 +56,13 @@ SOFTWARE.
 	/* unknown characters        */
 	content: "\FFFD";
 }
+
+/* Hidden the default acessibility element
+ * created (a `<span>>`with the class
+ * `.sr-only`) by Font Awesome script
+ * (available in version less then v7.0);
+ * use the attribute `aria-label` instead. */
+.sr-only
+{
+	display: none;
+}
