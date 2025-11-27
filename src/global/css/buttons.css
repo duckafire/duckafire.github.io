@@ -131,7 +131,22 @@ input.rounded-rect-btn
 .live-full-glow-btn,   .soft-live-full-glow-btn,
 .live-full-darken-btn, .soft-live-full-darken-btn
 {
+	--hover-brightness:  1.16375;
+	--active-brightness: 0.675;
+
 	outline: none;
+}
+
+html[data-color-scheme="light"] .live-cscheme-white-filter
+{
+	--hover-brightness:  1.087;
+	--active-brightness: 0.95;
+}
+
+html[data-color-scheme="light"] .live-cscheme-black-filter
+{
+	--hover-brightness:  5;
+	--active-brightness: 0;
 }
 
 .soft-live-light-btn,
@@ -175,7 +190,7 @@ input.rounded-rect-btn
 .live-full-light-btn:focus-visible, .soft-live-full-light-btn:focus-visible,
 .live-full-glow-btn:focus-visible,  .soft-live-full-glow-btn:focus-visible
 {
-	filter: brightness(1.16375);
+	filter: brightness( var(--hover-brightness) );
 }
 
 .live-full-light-btn:hover,         .soft-live-full-light-btn:hover,
@@ -183,7 +198,7 @@ input.rounded-rect-btn
 .live-full-light-btn:focus-visible, .soft-live-full-light-btn:focus-visible,
 .live-full-glow-btn:focus-visible,  .soft-live-full-glow-btn:focus-visible
 {
-	backdrop-filter: brightness(1.16375);
+	backdrop-filter: brightness( var(--hover-brightness) );
 }
 
 .live-light-btn:active,      .soft-live-light-btn:active,
@@ -191,11 +206,11 @@ input.rounded-rect-btn
 .live-full-light-btn:active, .soft-live-full-light-btn:active,
 .live-full-darken-btn:active
 {
-	filter: brightness(0.675);
+	filter: brightness( var(--active-brightness) );
 }
 
 .live-full-light-btn:active,  .soft-live-full-light-btn:active,
 .live-full-darken-btn:active, .soft-live-full-darken-btn:active
 {
-	backdrop-filter: brightness(0.675);
+	backdrop-filter: brightness( var(--active-brightness) );
 }

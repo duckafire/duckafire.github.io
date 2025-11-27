@@ -39,7 +39,7 @@ const createInterPageMenu = () =>
 	{
 		attr = {
 			role: "button",
-			className: "nav-menu-item soft-live-full-light-btn",
+			className: "nav-menu-item soft-live-full-light-btn live-cscheme-white-filter",
 			href: "https://"+item[1],
 		};
 
@@ -64,7 +64,7 @@ const createPageColorSchemeMenu = () =>
 	{
 		btnAttr = {
 			role: "button",
-			class: "nav-cscheme-opt live-full-light-btn",
+			class: "nav-cscheme-opt live-full-light-btn live-cscheme-white-filter",
 			dataSets: {
 				enable: (SCHEME_MODE === PageColorScheme.getMode()) ? "1" : "0",
 			},
@@ -97,25 +97,31 @@ const evMainBurgerMenu = (component) =>
 		{
 			// closing
 			unsetInertToBrothers( component );
+
 			MENU_LIST.style.display = "none";
 			document.body.style.overflow = "";
-			MANAGER_ICON.classList.remove("fa-xmark");
-			MANAGER_ICON.classList.add("fa-bars");
-			MANAGER_BTN.classList.remove("live-full-light-btn");
-			MANAGER_BTN.classList.add("live-light-btn");
 			BTN_CONTAIN.dataset.burgerMenuOpen = "0";
+
+			MANAGER_ICON.classList.remove("fa-xmark");
+			MANAGER_BTN.classList.remove("live-full-light-btn", "live-cscheme-white-filter");
+
+			MANAGER_ICON.classList.add("fa-bars");
+			MANAGER_BTN.classList.add("live-light-btn", "live-cscheme-black-filter");
 			return;
 		}
 
 		// openning
 		setInertToBrothers( component );
+
 		MENU_LIST.style.display = "";
 		document.body.style.overflow = "hidden";
-		MANAGER_ICON.classList.remove("fa-bars");
-		MANAGER_ICON.classList.add("fa-xmark");
-		MANAGER_BTN.classList.remove("live-light-btn");
-		MANAGER_BTN.classList.add("live-full-light-btn");
 		BTN_CONTAIN.dataset.burgerMenuOpen = "1";
+
+		MANAGER_ICON.classList.remove("fa-bars");
+		MANAGER_BTN.classList.remove("live-light-btn", "live-cscheme-black-filter");
+
+		MANAGER_ICON.classList.add("fa-xmark");
+		MANAGER_BTN.classList.add("live-full-light-btn", "live-cscheme-white-filter");
 	});
 };
 
@@ -172,10 +178,10 @@ const cssRules = {
 const NAV_BAR =
 NAV( {className: "nav-bar min-screen-width", cssRules},
 	DIV( {className: "nav-btn-container"},
-		BUTTON( {className: "nav-cscheme-man-btn live-light-btn"},
+		BUTTON( {className: "nav-cscheme-man-btn live-light-btn live-cscheme-black-filter"},
 			I( {className: PageColorScheme.classIconOf()}, I),
 		BUTTON),
-		BUTTON( {className: "nav-menu-man-btn live-light-btn"},
+		BUTTON( {className: "nav-menu-man-btn live-light-btn live-cscheme-black-filter"},
 			I( {className: "fa-solid fa-bars"}, I),
 		BUTTON),
 	DIV),
