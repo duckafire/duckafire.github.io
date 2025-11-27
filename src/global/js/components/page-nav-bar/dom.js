@@ -55,28 +55,28 @@ const createInterPageMenu = () =>
 	UL);
 };
 
-const createPageColorSchemeOpt = (scheme) =>
-{
-	const ATTR = {
-		role: "button",
-		class: "nav-cscheme-opt live-full-light-btn",
-		dataSets: {
-			enable: (scheme === PageColorScheme.getCurrent()) ? "1" : "0",
-		},
-	};
-
-	return LI( ATTR,
-		I( {class: PageColorScheme.classIconOf( scheme ) }),
-		scheme.charAt(0).toUpperCase() + scheme.slice(1),
-	LI);
-};
-
 const createPageColorSchemeMenu = () =>
 {
 	const LIST = UL( {class: "nav-cscheme-opt-menu"}, UL);
+	let btnAttr;
 
-	for(const SCHEME of PageColorScheme.list())
-		LIST.appendChild( createPageColorSchemeOpt( SCHEME ) );
+	for(const SCHEME_MODE of PageColorScheme.listModes())
+	{
+		btnAttr = {
+			role: "button",
+			class: "nav-cscheme-opt live-full-light-btn",
+			dataSets: {
+				enable: (SCHEME_MODE === PageColorScheme.getMode()) ? "1" : "0",
+			},
+		};
+
+		LIST.appendChild(
+			LI( btnAttr,
+				I( {class: PageColorScheme.classIconOf( SCHEME_MODE ) }),
+				SCHEME_MODE.charAt(0).toUpperCase() + SCHEME_MODE.slice(1),
+			LI)
+		);
+	}
 
 	return DIV( {className: "nav-cscheme-opt-menu-container min-screen-width", cssRules: {display: "none"}},
 		LIST,
@@ -149,9 +149,9 @@ const evPageColorSchemeMenu = (component) =>
 			MENU_LIST.querySelector('.nav-cscheme-opt[data-enable="1"]').dataset.enable = "0";
 			opt.dataset.enable = "1";
 
-			let scheme = opt.textContent.toLowerCase();
-			MANAGER_ICON.className = PageColorScheme.classIconOf( scheme );
-			PageColorScheme.update( scheme );
+			let schemeMode = opt.textContent.toLowerCase();
+			MANAGER_ICON.className = PageColorScheme.classIconOf( schemeMode );
+			PageColorScheme.updateMode( schemeMode );
 		});
 	});
 };
@@ -173,7 +173,7 @@ const NAV_BAR =
 NAV( {className: "nav-bar min-screen-width", cssRules},
 	DIV( {className: "nav-btn-container"},
 		BUTTON( {className: "nav-cscheme-man-btn live-light-btn"},
-			I( {className: PageColorScheme.getCurrent(true)}, I),
+			I( {className: PageColorScheme.classIconOf()}, I),
 		BUTTON),
 		BUTTON( {className: "nav-menu-man-btn live-light-btn"},
 			I( {className: "fa-solid fa-bars"}, I),

@@ -24,8 +24,7 @@ freely, subject to the following restrictions:
 
 */
 
-// any "invalid types"
-if(Cookies == undefined || Cookies.get == undefined)
+if(!Cookies || !Cookies.get)
 	throw new InternalError("`js-cookie` API not found.");
 
 const PageColorScheme = new (class
@@ -33,72 +32,104 @@ const PageColorScheme = new (class
 	#auto  = "auto";
 	#dark  = "dark";
 	#light = "light";
+
+	#cookieName = "color-scheme-mode";
 	#classIcons = {
 		auto:  "fa-solid fa-circle-half-stroke",
 		dark:  "fa-solid fa-moon",
 		light: "fa-solid fa-sun",
 	};
 
-	AUTO(classIcon){  return (classIcon) ? this.#classIcons[ this.#auto  ] : this.#auto; }
-	DARK(classIcon){  return (classIcon) ? this.#classIcons[ this.#dark  ] : this.#dark; }
-	LIGHT(classIcon){ return (classIcon) ? this.#classIcons[ this.#light ] : this.#light; }
-
-	classIconOf(scheme)
-	{
-		return this.#classIcons[ scheme ];
-	}
-
-	list()
-	{
-		return [
-			this.#auto,
-			this.#dark,
-			this.#light,
-		];
-	}
-
-	getCurrent(classIcon)
-	{
-		if(classIcon)
-			return this.#classIcons[ document.documentElement.dataset.colorScheme ];
-
-		return document.documentElement.dataset.colorScheme;
-	}
+	AUTO(){  return this.#auto; }
+	DARK(){  return this.#dark; }
+	LIGHT(){ return this.#light; }
 
 	constructor()
 	{
-		const SCHEME = Cookies.get("colorscheme");
+		this.updateMode( Cookies.get( this.#cookieName ) );
+		this.#setAutoUpdateEv();
+	}
 
-		if(SCHEME !== undefined)
-		{
-			document.documentElement.dataset.colorScheme = SCHEME;
-			return;
-		}
+	getMode()
+	{
+		return document.documentElement.dataset.colorSchemeMode;
+	}
 
-		if(this.#isPreferColorSchemeDark())
-			this.update( this.#dark );
-		else
-			this.update( this.#light );
+	classIconOf(schemeMode)
+	{
+		return this.#classIcons[ schemeMode || this.getMode() ];
+	}
+
+	listModes()
+	{
+		return Object.keys( this.#classIcons );
 	}
 
 	update(scheme)
 	{
 		this.#isValid(scheme);
 
-		Cookies.set("colorscheme", scheme);
+		Cookies.set(this.#cookieName, scheme);
 		document.documentElement.dataset.colorScheme = scheme;
 	}
 
-	#isPreferColorSchemeDark()
+	updateMode(schemeMode)
 	{
-		return window.matchMedia('(prefers-color-scheme: dark)').matches;
+		// if false it will use `auto`
+		// (default from html)
+		if(schemeMode === undefined)
+			schemeMode = this.getMode();
+		else
+			this.#isValid(schemeMode, true);
+
+		// some scheme modes have the
+		// same name of some schemes
+		let scheme = schemeMode;
+
+		// scheme modes that do not have
+		// a scheme with their names
+		if(schemeMode === this.#auto)
+		{
+			if(matchMedia("(prefers-color-scheme: dark)").matches)
+				scheme = this.#dark;
+			else
+				scheme = this.#light;
+		}
+
+		this.update(scheme);
+		document.documentElement.dataset.colorSchemeMode = schemeMode;
 	}
 
-	#isValid(scheme)
+	#setAutoUpdateEv()
 	{
-		if(scheme === this.#auto || scheme === this.#dark || scheme == this.#light)
-			return;
+		matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (ev) =>
+		{
+			if(PageColorScheme.getMode() !== PageColorScheme.AUTO())
+				return;
 
-		throw new InternalError(`Invalid theme: "${scheme}"`);
+			PageColorScheme.update(
+				ev.matches
+				? PageColorScheme.DARK()
+				: PageColorScheme.LIGHT()
+			);
+		});
+	}
+
+	#isValid(scheme, allowModes)
+	{
+		switch(scheme)
+		{
+			case this.#dark:
+			case this.#light:
+				return;
+
+			case this.#auto:
+				if(allowModes)
+					return;
+
+				throw new InternalError(`[REFUSED] Color scheme modes are invalid here; mode: "${scheme}".`);
+		}
+
+		throw new InternalError(`Invalid color scheme: "${scheme}"`);
 	}
 })();
