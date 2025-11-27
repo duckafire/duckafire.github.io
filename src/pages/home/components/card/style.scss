@@ -130,6 +130,11 @@ $CARD_COVER_SCALE: 5rem;
 		@include kit.flex(true);
 		width: min-content;
 
+		h1
+		{
+			white-space: nowrap;
+		}
+
 		h1,
 		button
 		{
