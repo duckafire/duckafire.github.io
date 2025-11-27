@@ -117,16 +117,19 @@ input.rounded-rect-btn
 }
 
 
-.live-light-btn,           /* fg    glow/darken                   */
-.live-full-light-btn,      /* fg/bg glow/darken                   */
-.live-glow-btn,            /* fg    glow                          */
-.live-full-glow-btn,       /* fg/bg glow                          */
-.live-darken-btn,          /* fg         darken                   */
-.live-full-darken-btn,     /* fg/bg      darken                   */
-.soft-live-light-btn,      /* fg    glow/darken transition-filter */
-.soft-live-full-light-btn, /* fg/bg glow/darken transition-filter */
-.soft-live-glow-btn,       /* fg    glow        transition-filter */
-.soft-live-full-glow-btn   /* fg/bg glow        transition-filter */
+/* THEY CAN BE COMBINATED     */
+/* light  : glow and darken   */
+/* glow   : only glow         */
+/* darken : only darken       */
+/* !full  : only forward      */
+/* full   : forward and back  */
+/* soft   : filter transition */
+.live-light-btn,       .soft-live-light-btn,
+.live-glow-btn,        .soft-live-glow-btn,
+.live-darken-btn,      .soft-live-darken-btn,
+.live-full-light-btn,  .soft-live-full-light-btn,
+.live-full-glow-btn,   .soft-live-full-glow-btn,
+.live-full-darken-btn, .soft-live-full-darken-btn
 {
 	outline: none;
 }
@@ -153,54 +156,46 @@ input.rounded-rect-btn
 	transition: none;
 }
 
-.live-light-btn:hover,
-.live-full-light-btn:hover,
-.live-glow-btn:hover,
-.live-full-glow-btn:hover,
-.live-darken-btn:hover,
-.live-full-darken-btn:hover,
-.soft-live-light-btn:hover,
-.soft-live-full-light-btn:hover,
-.soft-live-glow-btn:hover,
-.soft-live-full-glow-btn:hover
+.live-light-btn:hover,       .soft-live-light-btn:hover,
+.live-glow-btn:hover,        .soft-live-glow-btn:hover,
+.live-darken-btn:hover,      .soft-live-darken-btn:hover,
+.live-full-light-btn:hover,  .soft-live-full-light-btn:hover,
+.live-full-glow-btn:hover,   .soft-live-full-glow-btn:hover,
+.live-full-darken-btn:hover, .soft-live-full-darken-btn:hover
 {
 	cursor: pointer !important;
 }
 
-.live-light-btn:hover,            .live-light-btn:focus-visible,
-.live-full-light-btn:hover,       .live-full-light-btn:focus-visible,
-.live-glow-btn:hover,             .live-glow-btn:focus-visible,
-.live-full-glow-btn:hover,        .live-full-glow-btn:focus-visible,
-.soft-live-light-btn:hover,       .soft-live-light-btn:focus-visible,
-.soft-live-full-light-btn:hover,  .soft-live-full-light-btn:focus-visible,
-.soft-live-glow-btn:hover,        .soft-live-glow-btn:focus-visible,
-.soft-live-full-glow-btn:hover,   .soft-live-full-glow-btn:focus-visible
+.live-light-btn:hover,      .soft-live-light-btn:hover,
+.live-glow-btn:hover,       .soft-live-glow-btn:hover,
+.live-full-light-btn:hover, .soft-live-full-light-btn:hover,
+.live-full-glow-btn:hover,  .soft-live-full-glow-btn:hover,
+.live-light-btn:focus-visible,      .soft-live-light-btn:focus-visible,
+.live-glow-btn:focus-visible,       .soft-live-glow-btn:focus-visible,
+.live-full-light-btn:focus-visible, .soft-live-full-light-btn:focus-visible,
+.live-full-glow-btn:focus-visible,  .soft-live-full-glow-btn:focus-visible
 {
 	filter: brightness(1.16375);
 }
 
-.live-full-light-btn:hover,      .live-full-light-btn:focus-visible,
-.live-full-glow-btn:hover,       .live-full-glow-btn:focus-visible,
-.soft-live-full-light-btn:hover, .soft-live-full-light-btn:focus-visible,
-.soft-live-full-glow-btn:hover,  .soft-live-full-glow-btn:focus-visible
+.live-full-light-btn:hover,         .soft-live-full-light-btn:hover,
+.live-full-glow-btn:hover,          .soft-live-full-glow-btn:hover,
+.live-full-light-btn:focus-visible, .soft-live-full-light-btn:focus-visible,
+.live-full-glow-btn:focus-visible,  .soft-live-full-glow-btn:focus-visible
 {
 	backdrop-filter: brightness(1.16375);
 }
 
-.live-light-btn:active,
-.live-full-light-btn:active,
+.live-light-btn:active,      .soft-live-light-btn:active,
 .live-darken-btn:active,
-.live-full-darken-btn:active,
-.soft-live-light-btn:active,
-.soft-live-full-light-btn:active
+.live-full-light-btn:active, .soft-live-full-light-btn:active,
+.live-full-darken-btn:active
 {
 	filter: brightness(0.675);
 }
 
-.live-full-light-btn:active,
-.live-full-darken-btn:active,
-.soft-live-full-light-btn:active,
-.soft-live-full-darken-btn:active
+.live-full-light-btn:active,  .soft-live-full-light-btn:active,
+.live-full-darken-btn:active, .soft-live-full-darken-btn:active
 {
 	backdrop-filter: brightness(0.675);
 }
