@@ -68,3 +68,11 @@ h6
 {
 	color: inherit;
 }
+
+@supports (@page)
+{
+	@page
+	{
+		size: A4 portrait;
+	}
+}

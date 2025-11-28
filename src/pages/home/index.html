@@ -49,6 +49,7 @@
 	<link rel="stylesheet" type="text/css" href="../../global/js/components/page-nav-bar/style.css"/>
 	<link rel="stylesheet" type="text/css" href="./components/card/style.css"/>
 	<link rel="stylesheet" type="text/css" href="./url-list.css"/>
+	<link rel="stylesheet" type="text/css" href="./printable-version.css"/>
 
 	<script src="../../global/js/functions/copyTextFromInputToClipboard.js"></script>
 	<script src="../../global/js/functions/setInertToBrothers.js"></script>
@@ -82,6 +83,45 @@
 	</div>
 
 	<script src="../../global/js/components/Toast/dom.js"></script>
+
+	<article class="printable centralizer-container">
+		<section class="print-content">
+			<header class="presentation">
+				<h1 class="print-title">Hello world!</h1>
+				<p>
+					I am <span class="fmono">DuckAfire</span>, a fullstack
+					self-taught developer who LOVES programming.
+				</p>
+				<p>
+					Learning is my thing! From theory to practice, I constantly
+					delve into the world of studies in search of new knowledge.
+					If I don't know something, I study and learn!
+				</p>
+				<h2 class="print-subtitle">
+					Scan the QR Code below and see more about my work!
+				</h2>
+			</header>
+			<div class="qr-code-container centralizer-container">
+				<figure>
+					<img class="qr-code" src="../../assets/qr-codes/home.png" alt=" "/>
+					<figcaption class="qr-code-caption">
+						https://duckafire.gitlab.io
+					</figcaption>
+				</figure>
+			</div>
+			<footer class="print-footer">
+				DuckAfire's Nest Copyright (C) 2025 DuckAfire
+				<ul>
+					<li class="url">
+						https://git<strong>hub</strong>.com/duckafire/duckafire.git<strong>hub</strong>.io
+					</li>
+					<li class="url">
+						https://git<strong>lab</strong>.com/duckafire/duckafire.git<strong>lab</strong>.io
+					</li>
+				</ul>
+			</footer>
+		</section>
+	</article>
 
 	<script>
 		createCardsBasedJson(0, "./components/card/data.json");

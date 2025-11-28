@@ -1,0 +1,135 @@
+/*
+
+Copyright (C) 2025 DuckAfire <https://duckafire.gitlab.io>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+*/
+
+.printable
+{
+	display: none;
+}
+
+@media only print
+{
+	body
+	{
+		background: none;
+		color: black;
+
+		> *:not(.printable)
+		{
+			display: none;
+		}
+	}
+
+	.printable
+	{
+		/*  1pt == 1/72 of 1in */
+		/*  1px == 1/96 of 1in */
+		/* 12pt == ~0,166...in */
+		/* 16px == ~0,166...in */
+		font-size: 16pt;
+		display: block;
+		font-family: serif-sans, serif;
+		width: 100vw;
+		height: 100vh;
+		height: 100vh;
+	}
+
+	.centralizer-container
+	{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.print-content
+	{
+		width: 85%;
+		height: 85%;
+		padding: 3em;
+		border: 0.25em solid black;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.presentation
+	{
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+		flex: 0;
+	}
+
+	.print-title
+	{
+		font-size: 1.5em;
+		font-family: sans, arial, serif-sans;
+		text-align: center;
+	}
+
+	.print-subtitle
+	{
+		font-size: 1em;
+		padding-inline: 10%;
+		font-weight: normal;
+		text-align: center;
+	}
+
+	.qr-code-caption  { font-size: 0.675em; }
+	.print-footer { font-size: 0.75em;  }
+
+	.qr-code-container
+	{
+		flex-grow: 1;
+		text-align: center;
+	}
+
+	.url
+	{
+		display: block;
+		font-size: 0.75em;
+	}
+
+	.url,
+	.fmono,
+	.qr-code-caption,
+	.print-footer
+	{
+		font-family: monospace, consolas, Lucida Console;
+	}
+
+	.qr-code,
+	.print-footer
+	{
+		width: 100%;
+		text-align: center;
+	}
+
+	.print-footer
+	{
+		display: flex;
+		flex-direction: column;
+		gap: 0.25em;
+	}
+
+	.qr-code
+	{
+		-ms-interpolation-mode: nearest-neighbor;
+		image-rendering: crisp-edges;
+		image-rendering: pixelated;
+	}
+}
