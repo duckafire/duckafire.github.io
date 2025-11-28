@@ -40,6 +40,11 @@ $CARD_COVER_SCALE: 5rem;
 	width: 100vw;
 }
 
+html[data-color-scheme="light"] %card
+{
+	border: 0.0625rem solid var(--FG_DEFAULT);
+}
+
 %card
 {
 	border-radius: 1.5rem;
