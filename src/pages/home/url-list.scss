@@ -21,7 +21,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 .url-list
 {
-	@include kit.flex(true);
+	display: flex;
+	flex-direction: column;
 	width: 80%;
 	margin-inline: auto;
 	gap: 0.75rem;
@@ -41,7 +42,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 .url-list-item
 {
-	@include kit.flex();
+	display: flex;
 	gap: 0.5rem;
 	border-radius: 0.5rem;
 	justify-content: space-between;

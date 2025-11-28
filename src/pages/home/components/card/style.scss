@@ -36,7 +36,8 @@ $CARD_COVER_SCALE: 5rem;
 .cards-list
 {
 	@include kit.padding-gap(1rem);
-	@include kit.flex(true);
+	display: flex;
+	flex-direction: column;
 	width: 100vw;
 }
 
@@ -102,7 +103,7 @@ html[data-color-scheme="light"] %card
 
 	.card-content
 	{
-		@include kit.flex();
+		display: flex;
 		margin: auto;
 		width: min-content;
 		padding: $CARD_CONTENT_PADDING;
@@ -132,7 +133,8 @@ html[data-color-scheme="light"] %card
 
 	.card-options
 	{
-		@include kit.flex(true);
+		display: flex;
+		flex-direction: column;
 		width: min-content;
 
 		h1
@@ -168,7 +170,7 @@ html[data-color-scheme="light"] %card
 
 	.card-options
 	{
-		@include kit.flex(false, true);
+		@include kit.flex-centralizer();
 		font-size: 1.5rem;
 		gap: $OPTIONS_GAP;
 	}
@@ -224,8 +226,8 @@ $CARDS_INFO_BORDER: 5px solid var(--BG_SUPER_HIGH);
 
 .cards-info-container
 {
-	@include kit.full-screen;
-	@include kit.flex(false, true, false);
+	@extend %full-screen;
+	@include kit.flex-centralizer(false);
 	top: 0;
 	left: 0;
 	z-index: 9999;
@@ -256,12 +258,12 @@ $CARDS_INFO_BORDER: 5px solid var(--BG_SUPER_HIGH);
 {
 	$inline-adj-padding: 0.25rem;
 
-	@include kit.flex();
 	top: 0;
 	right: 0;
 	padding: 0;
 	width: 100%;
 	position: absolute;
+	display: flex;
 	font-size: 2.5rem;
 	color: var(--fg-xmark, inherit);
 	justify-content: end;
