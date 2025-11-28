@@ -17,6 +17,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 
+@use "../../global/scss/style-kits" as kit;
+
 .printable
 {
 	display: none;
@@ -24,6 +26,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 @media only print
 {
+	$fmono:    monospace, consolas, Lucida Console;
+	$fsimple:  sans, arial;
+	$fdefault: serif-sans, serif;
+
 	body
 	{
 		background: none;
@@ -42,34 +48,43 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 		/* 12pt == ~0,166...in */
 		/* 16px == ~0,166...in */
 		font-size: 16pt;
-		display: block;
-		font-family: serif-sans, serif;
+		font-family: $fdefault;
+		display: block; /* show it */
 		width: 100vw;
 		height: 100vh;
-		height: 100vh;
+		height: 100dvh;
 	}
 
 	.centralizer-container
 	{
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		@include kit.flex-centralizer(false);
+	}
+
+	.url
+	{
+		display: block;
+		font-size: 0.75em;
 	}
 
 	.print-content
 	{
-		width: 85%;
-		height: 85%;
+		@include kit.dimensions(85%);
 		padding: 3em;
 		border: 0.25em solid black;
 		display: flex;
 		flex-direction: column;
 	}
 
-	.presentation
+	.print-content,
+	.presentation,
+	.print-footer
 	{
 		display: flex;
 		flex-direction: column;
+	}
+
+	.presentation
+	{
 		gap: 1em;
 		flex: 0;
 	}
@@ -77,7 +92,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	.print-title
 	{
 		font-size: 1.5em;
-		font-family: sans, arial, serif-sans;
+		font-family: $fsimple;
 		text-align: center;
 	}
 
@@ -89,8 +104,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 		text-align: center;
 	}
 
-	.qr-code-caption  { font-size: 0.675em; }
-	.print-footer { font-size: 0.75em;  }
+	.print-footer {
+		font-size: 0.75em;
+	}
 
 	.qr-code-container
 	{
@@ -98,18 +114,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 		text-align: center;
 	}
 
-	.url
+	.qr-code
 	{
-		display: block;
-		font-size: 0.75em;
+		/* x2 fallback */
+		-ms-interpolation-mode: nearest-neighbor;
+		image-rendering: crisp-edges;
+		image-rendering: pixelated;
 	}
 
-	.url,
-	.fmono,
-	.qr-code-caption,
-	.print-footer
+	.qr-code-caption
 	{
-		font-family: monospace, consolas, Lucida Console;
+		font-size: 0.675em;
 	}
 
 	.qr-code,
@@ -119,17 +134,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 		text-align: center;
 	}
 
+	.url,
+	.fmono,
+	.qr-code-caption,
 	.print-footer
 	{
-		display: flex;
-		flex-direction: column;
-		gap: 0.25em;
+		font-family: $fmono;
 	}
 
-	.qr-code
+	.print-footer
 	{
-		-ms-interpolation-mode: nearest-neighbor;
-		image-rendering: crisp-edges;
-		image-rendering: pixelated;
+		gap: 0.25em;
 	}
 }
