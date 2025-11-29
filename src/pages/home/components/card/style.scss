@@ -35,9 +35,8 @@ $CARD_COVER_SCALE: 5rem;
 
 .cards-list
 {
+	@extend %flex-col;
 	@include kit.padding-gap(1rem);
-	display: flex;
-	flex-direction: column;
 	width: 100vw;
 }
 
@@ -133,8 +132,7 @@ html[data-color-scheme="light"] %card
 
 	.card-options
 	{
-		display: flex;
-		flex-direction: column;
+		@extend %flex-col;
 		width: min-content;
 
 		h1
@@ -239,12 +237,11 @@ $CARDS_INFO_BORDER: 5px solid var(--BG_SUPER_HIGH);
 
 .cards-info
 {
+	@extend %flex-col;
 	max-width: 90%;
 	max-height: 90%;
 	border-radius: 1rem;
 	position: relative;
-	display: flex;
-	flex-direction: column;
 	background-color: var(--BG_DEFAULT);
 	border: $CARDS_INFO_BORDER;
 
