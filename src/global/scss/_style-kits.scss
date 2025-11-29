@@ -72,6 +72,19 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	}
 }
 
+
+
+/*  These "twin-styles" was created
+ * to allow the use of these placeholder
+ * inside media queries, because SASS
+ * Transpiler do not support the use of
+ * `@extend` across them.
+ *   I could use only `@mixin` to round
+ * this problem, but it could generate
+ * a lot of repeated/duplicated code,
+ * what it will fatten the code
+ * unnecessarily. */
+
 @mixin full-screen()
 {
 	width: 100vw;

@@ -26,10 +26,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 @media only print
 {
-	$fmono:    monospace, consolas, Lucida Console;
-	$fsimple:  sans, arial;
-	$fdefault: serif-sans, serif;
-
 	body
 	{
 		background: none;
@@ -43,16 +39,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 	.printable
 	{
+		@include kit.full-screen();
+		@include kit.pff-default();
 		/*  1pt == 1/72 of 1in */
 		/*  1px == 1/96 of 1in */
 		/* 12pt == ~0,166...in */
 		/* 16px == ~0,166...in */
 		font-size: 16pt;
-		font-family: $fdefault;
 		display: block; /* show it */
-		width: 100vw;
-		height: 100vh;
-		height: 100dvh;
 	}
 
 	.centralizer-container
@@ -68,31 +62,23 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 	.print-content
 	{
+		@include kit.flex-col();
 		@include kit.dimensions(85%);
 		padding: 3em;
 		border: 0.25em solid black;
-		display: flex;
-		flex-direction: column;
-	}
-
-	.print-content,
-	.presentation,
-	.print-footer
-	{
-		display: flex;
-		flex-direction: column;
 	}
 
 	.presentation
 	{
+		@include kit.flex-col();
 		gap: 1em;
 		flex: 0;
 	}
 
 	.print-title
 	{
+		@include kit.pff-simple();
 		font-size: 1.5em;
-		font-family: $fsimple;
 		text-align: center;
 	}
 
@@ -104,7 +90,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 		text-align: center;
 	}
 
-	.print-footer {
+	.print-footer
+	{
+		@include kit.flex-col();
 		font-size: 0.75em;
 	}
 
@@ -112,14 +100,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	{
 		flex-grow: 1;
 		text-align: center;
-	}
-
-	.qr-code
-	{
-		/* x2 fallback */
-		-ms-interpolation-mode: nearest-neighbor;
-		image-rendering: crisp-edges;
-		image-rendering: pixelated;
 	}
 
 	.qr-code-caption
@@ -139,7 +119,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	.qr-code-caption,
 	.print-footer
 	{
-		font-family: $fmono;
+		@include kit.pff-mono();
 	}
 
 	.print-footer

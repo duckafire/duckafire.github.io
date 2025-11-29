@@ -50,3 +50,11 @@ a.clear-style
 	/* based scss/responsive */
 	min-width: 20rem !important;
 }
+
+.nearest-rendering
+{
+	/* x2 fallback */
+	-ms-interpolation-mode: nearest-neighbor;
+	image-rendering: crisp-edges;
+	image-rendering: pixelated;
+}
