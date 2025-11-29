@@ -438,6 +438,8 @@ class CardInfoPopup
 	static #lastCardId = null;
 	static #lastCardUrlId = null;
 
+	static #colorSchemeMenu = null;
+
 	static place()
 	{
 		const cssRules = {
@@ -473,6 +475,7 @@ class CardInfoPopup
 			DIV),
 		DIV);
 
+		CardInfoPopup.#colorSchemeMenu = document.querySelector(".nav-bar .nav-cscheme-opt-menu-container");
 		CardInfoPopup.#applyToggleStateEv( TOGGLE_STATE_BTN );
 		document.getElementById("cards-popup").replaceWith( CardInfoPopup.#component );
 	}
@@ -563,6 +566,9 @@ class CardInfoPopup
 
 	static openEvent(ev)
 	{
+		if(CardInfoPopup.#colorSchemeMenu !== null)
+			CardInfoPopup.#colorSchemeMenu.style.display = "none";
+
 		setInertToBrothers( CardInfoPopup.getComponent() );
 		CardInfoPopup.getComponent().style.display = "";
 		document.body.style.overflow = "hidden";

@@ -91,6 +91,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	padding-top: 0.5rem;
 	padding-right: 3rem;
 	position: absolute;
+
+	@include only.no-mobile
+	{
+		z-index: 9999;
+	}
 }
 
 .nav-cscheme-opt-menu

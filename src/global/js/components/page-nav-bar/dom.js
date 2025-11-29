@@ -91,6 +91,8 @@ const evMainBurgerMenu = (component) =>
 
 	const MANAGER_ICON = MANAGER_BTN.querySelector("[class^=fa-]");
 
+	const CSCHEME_MANAGER_BTN = component.querySelector(".nav-cscheme-opt-menu-container");
+
 	//   This removes highlight style classes
 	// from MANAGER_BTN when the page is not
 	// in "tablet mode".
@@ -103,6 +105,8 @@ const evMainBurgerMenu = (component) =>
 
 		if(ResMQ.onlyMobile())
 		{
+			CSCHEME_MANAGER_BTN.style.display = "none";
+
 			MANAGER_BTN.classList.remove("live-light-btn");
 			MANAGER_BTN.classList.add("live-full-light-btn");
 
@@ -121,6 +125,7 @@ const evMainBurgerMenu = (component) =>
 			unsetInertToBrothers( component );
 
 			MENU_LIST.style.display = "none";
+			CSCHEME_MANAGER_BTN.style.display = "none";
 			document.body.style.overflow = "";
 			BTN_CONTAIN.dataset.burgerMenuOpen = "0";
 
@@ -147,6 +152,8 @@ const evMainBurgerMenu = (component) =>
 
 		if(ResMQ.onlyMobile())
 		{
+			CSCHEME_MANAGER_BTN.style.display = "none";
+
 			MANAGER_BTN.classList.remove("live-light-btn");
 			MANAGER_BTN.classList.add("live-full-light-btn");
 		}
