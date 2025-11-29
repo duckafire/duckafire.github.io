@@ -126,7 +126,7 @@ html[data-color-scheme="light"] %card
 
 	.card-cover
 	{
-		@include kit.double-border(null, var(--c-card-front-btn-fg), 2, 2);
+		@include kit.double-border($shadow-color: var(--c-card-front-btn-fg), $scale: 2);
 		@include kit.dimensions($CARD_COVER_SCALE);
 		border-radius: 1.5rem;
 	}

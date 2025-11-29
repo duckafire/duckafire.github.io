@@ -17,6 +17,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 
+@use "../../../scss/style-kits" as kit;
+
 .nav-bar
 {
 	top: 0;
@@ -81,17 +83,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 .nav-cscheme-opt-menu
 {
+	@include kit.double-border(var(--FG_DEFAULT), var(--BG_DEFAULT), 2);
+
 	width: min-content;
 	background-color: var(--BG_SUPER_HIGH);
 	color: var(--FG_DEFAULT);
 	font-size: 1.25rem;
 	border-radius: 0.5rem;
-	border: 0.125rem solid var(--FG_DEFAULT);
-	box-shadow:
-		 0.0625rem  0.0625rem var(--BG_DEFAULT),
-		-0.0625rem  0.0625rem var(--BG_DEFAULT),
-		 0.0625rem -0.0625rem var(--BG_DEFAULT),
-		-0.0625rem -0.0625rem var(--BG_DEFAULT);
 }
 
 .nav-cscheme-opt

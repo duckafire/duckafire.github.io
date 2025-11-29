@@ -17,16 +17,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 
-@use "common" as com;
-
 /* import as "kit" */
 
-@mixin double-border($border-color: "", $shadow-color: "", $border-scale: "", $scale-scale: "")
+@mixin double-border($border-color: #1f1f1f, $shadow-color: #c9c9c9, $border-scale: 1, $scale-scale: 1, $scale: null)
 {
-	$border-color: com.validate-optional-arg($border-color, var(--C_SOFT_BLACK));
-	$shadow-color: com.validate-optional-arg($shadow-color, var(--C_SOFT_WHITE));
-	$border-scale: com.validate-optional-arg($border-scale, 1);
-	$scale-scale:  com.validate-optional-arg($scale-scale,  1);
+	@if $scale != null
+	{
+		$border-scale: $scale;
+		$scale-scale: $scale;
+	}
 
 	/* only if 1rem == 16px */
 	$onePx: 0.0625rem;
