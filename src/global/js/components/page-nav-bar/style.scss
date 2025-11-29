@@ -18,6 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 @use "../../../scss/style-kits" as kit;
+@use "../../../scss/responsive-media-queries" as only;
 
 .nav-bar
 {
@@ -47,20 +48,31 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 	&[data-burger-menu-open="1"]
 	{
-		padding-right: 0;
-		padding-block: 0;
-
-		.nav-menu-man-btn
+		@include only.mobile
 		{
-			width: 100%;
-			text-align: center;
-			padding-block: $pblock;
+			padding-right: 0;
+			padding-block: 0;
+
+			.nav-menu-man-btn
+			{
+				width: 100%;
+				text-align: center;
+				padding-block: $pblock;
+			}
+
+			/* & > *:not(.nav-menu-man-btn) */
+			.nav-cscheme-man-btn
+			{
+				display: none;
+			}
 		}
 
-		/* * != .nav-menu-man-btn */
-		.nav-cscheme-man-btn
+		@include only.no-mobile
 		{
-			display: none;
+			.nav-menu-man-btn
+			{
+				width: 2rem;
+			}
 		}
 	}
 }

@@ -91,6 +91,28 @@ const evMainBurgerMenu = (component) =>
 
 	const MANAGER_ICON = MANAGER_BTN.querySelector("[class^=fa-]");
 
+	//   This removes highlight style classes
+	// from MANAGER_BTN when the page is not
+	// in "tablet mode".
+	//   It is done because these style are
+	// exclusive of the "mobile mode".
+	window.addEventListener("resize", () =>
+	{
+		if(MENU_LIST.style.display !== "")
+			return;
+
+		if(ResMQ.onlyMobile())
+		{
+			MANAGER_BTN.classList.remove("live-light-btn");
+			MANAGER_BTN.classList.add("live-full-light-btn");
+
+			return;
+		}
+
+		MANAGER_BTN.classList.remove("live-full-light-btn");
+		MANAGER_BTN.classList.add("live-light-btn");
+	});
+
 	MANAGER_BTN.addEventListener("click", () =>
 	{
 		if(MENU_LIST.style.display === "")
@@ -118,10 +140,16 @@ const evMainBurgerMenu = (component) =>
 		BTN_CONTAIN.dataset.burgerMenuOpen = "1";
 
 		MANAGER_ICON.classList.remove("fa-bars");
-		MANAGER_BTN.classList.remove("live-light-btn", "live-cscheme-black-filter");
+		MANAGER_BTN.classList.remove("live-cscheme-black-filter");
 
 		MANAGER_ICON.classList.add("fa-xmark");
-		MANAGER_BTN.classList.add("live-full-light-btn", "live-cscheme-white-filter");
+		MANAGER_BTN.classList.add("live-cscheme-white-filter");
+
+		if(ResMQ.onlyMobile())
+		{
+			MANAGER_BTN.classList.remove("live-light-btn");
+			MANAGER_BTN.classList.add("live-full-light-btn");
+		}
 	});
 };
 
