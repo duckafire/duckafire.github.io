@@ -259,14 +259,14 @@ class CardURLList
 			value: url,
 			type: "text",
 			readOnly: "~",
-			translate: "no",
+			translate: false,
 			dataSets: {
 				"card-url-btn-type": "url-source",
 			},
 		};
 
 		return LI( {style: "--scalew:2"},
-			SPAN( {className: "notranslate url-list-item-title", translate: "no"}, title, SPAN),
+			SPAN( {className: "notranslate url-list-item-title", translate: false}, title, SPAN),
 			DIV( {className: "url-list-item"},
 				CardInfoCache.catchCacheItemUrlSource(
 					INPUT( INPUT_ATTR)
@@ -385,7 +385,7 @@ class Card
 			return [
 				IMG( {className: "card-cover", src: json["img-cover"]["src"], alt: json["img-cover"]["alt"], title: json["title"]}),
 				DIV( {className: "card-options", cssRules: Card.#contentCssRules},
-					H1( {className: "notranslate", translate: "no"}, json["message"], H1),
+					H1( {className: "notranslate", translate: false}, json["message"], H1),
 					BUTTON( {className: "oval-btn live-btn", cssRules: {fontSize: "1.25rem"}, dataSets},
 						I( {className: "fa-solid fa-plus"}, I),
 					BUTTON),
@@ -575,7 +575,7 @@ class CardInfoPopup
 
 	static #placeTitle()
 	{
-		return (CardInfoPopup.#title = H1( {className: "notranslate", translate: "no"}, H1));
+		return (CardInfoPopup.#title = H1( {className: "notranslate", translate: false}, H1));
 	}
 
 	static #placeDescription()

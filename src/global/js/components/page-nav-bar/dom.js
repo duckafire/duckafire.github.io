@@ -44,7 +44,7 @@ const createInterPageMenu = () =>
 		};
 
 		OPTIONS.push(
-			LI( {className: "notranslate", translate: "no"},
+			LI( {className: "notranslate", translate: false},
 				A( attr, item[0], A),
 			LI)
 		);
