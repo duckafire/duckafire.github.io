@@ -72,17 +72,40 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	}
 }
 
-%full-screen
+/*   To code inside Media Queries;
+ * mq == Media Queries; it was
+ * created to declare placeholder
+ * in Media Queries, because SASS
+ * Transpiler do not support the
+ * use of `@extend` across them.
+ *   I could use `@mixin` to round
+ * this problem, but it could generate
+ * a lot of repeated/duplicated code,
+ * what it will fatten the code
+ * unnecessarily. */
+@mixin mq-compatible-placeholders()
 {
-	width: 100vw;
-	height: 100vh; /* fallback */
-	height: 100dvh;
+	%full-screen
+	{
+		width: 100vw;
+		height: 100vh; /* fallback */
+		height: 100dvh;
+	}
+
+	%nearest-img-rendering
+	{
+		/* x2 fallback */
+		-ms-interpolation-mode: nearest-neighbor;
+		image-rendering: crisp-edges;
+		image-rendering: pixelated;
+	}
+
+	%flex-col
+	{
+		display: flex;
+		flex-direction: column;
+	}
 }
 
-%nearest-img-rendering
-{
-	/* x2 fallback */
-	-ms-interpolation-mode: nearest-neighbor;
-	image-rendering: crisp-edges;
-	image-rendering: pixelated;
-}
+/* To code outside Media Queries. */
+@include mq-compatible-placeholders();
