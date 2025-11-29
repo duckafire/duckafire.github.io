@@ -50,9 +50,13 @@ const createInterPageMenu = () =>
 		);
 	}
 
-	return UL( {className: "nav-menu min-screen-width", cssRules: {display: "none"}},
-		...OPTIONS,
-	UL);
+	return DIV( {className: "nav-menu-container low-light-bg", cssRules: {display: "none"}},
+		DIV( {className: "nav-menu-aligner"},
+			UL( {className: "clear-style nav-menu min-screen-width"},
+				...OPTIONS,
+			UL),
+		DIV),
+	DIV);
 };
 
 const createPageColorSchemeMenu = () =>
@@ -87,7 +91,7 @@ const evMainBurgerMenu = (component) =>
 {
 	const MANAGER_BTN = component.querySelector(".nav-menu-man-btn");
 	const BTN_CONTAIN = component.querySelector(".nav-btn-container");
-	const MENU_LIST   = component.querySelector(".nav-menu");
+	const MENU_LIST   = component.querySelector(".nav-menu-container");
 
 	const MANAGER_ICON = MANAGER_BTN.querySelector("[class^=fa-]");
 

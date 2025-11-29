@@ -133,24 +133,40 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	}
 }
 
-.nav-menu
+.nav-menu-container
 {
 	width: 100vw;
 	height: calc(100vh - 100%);
 	height: calc(100dvh - 100%);
 	position: absolute;
-	text-align: center;
+}
+
+.nav-menu-aligner,
+.nav-menu
+{
+	@include kit.dimensions(100%);
+}
+
+.nav-menu-aligner
+{
+	display: flex;
+	justify-content: end;
+}
+
+.nav-menu
+{
 	font-size: 1.25rem;
 	overflow-y: auto;
 	background-color: var(--bg-menu, dimgray);
-	list-style: none;
+	max-width: only.$TABLET_MIN * 0.5;
+	text-align: center;
 }
 
 .nav-menu-item
 {
 	width: 100%;
 	display: block;
-	padding-inline: 10vw;
+	padding-inline: 1rem;
 	padding-block: 0.5rem;
 	text-decoration: none;
 	border-bottom: 0.0625rem dotted var(--bg-line, smokewhite);
