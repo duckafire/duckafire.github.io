@@ -27,7 +27,7 @@ freely, subject to the following restrictions:
 if(!Cookies || !Cookies.get)
 	throw new InternalError("`js-cookie` API not found.");
 
-const PageColorScheme = new (class
+const PageColorScheme = Object.freeze(new (class
 {
 	#auto  = "auto";
 	#dark  = "dark";
@@ -132,4 +132,4 @@ const PageColorScheme = new (class
 
 		throw new InternalError(`Invalid color scheme: "${scheme}"`);
 	}
-})();
+})());
