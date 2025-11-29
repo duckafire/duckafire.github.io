@@ -58,3 +58,13 @@ a.clear-style
 	image-rendering: crisp-edges;
 	image-rendering: pixelated;
 }
+
+.low-light-bg
+{
+	background-color: rgba(0, 0, 0, 0.75);
+}
+
+.blured-bg
+{
+	backdrop-filter: blur(3rem);
+}
