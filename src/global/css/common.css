@@ -50,3 +50,8 @@ freely, subject to the following restrictions:
 {
 	backdrop-filter: blur(3rem);
 }
+
+.d-ctt
+{
+	display: contents;
+}
