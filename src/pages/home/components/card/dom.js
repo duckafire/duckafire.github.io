@@ -232,7 +232,7 @@ class CardURLList
 {
 	static build(json)
 	{
-		const LIST = UL( {className: "clear-style url-list", cssRules: {"--fg": "var(--c-card-details-btn-fg)", "--bg": "var(--c-card-details-btn-bg)"}}, UL);
+		const LIST = UL( {className: "url-list", cssRules: {"--fg": "var(--c-card-details-btn-fg)", "--bg": "var(--c-card-details-btn-bg)"}}, UL);
 
 		for(const DATA of json["url-list"]["related"])
 		{
@@ -291,7 +291,7 @@ class CardURLList
 				BUTTON( {className: "url-list-btn rounded-rect-btn live-btn unflex", dataSets: {"card-url-btn-type": "url-copier"}},
 					I( {className: "fa-solid fa-copy"}, I),
 				BUTTON),
-				A( {role: "button", className: "clear-style url-list-btn rounded-rect-btn live-btn unflex", href: url},
+				A( {role: "button", className: "url-list-btn rounded-rect-btn live-btn unflex", href: url},
 					I( {className: "fa-solid fa-external-link"}, I),
 				A),
 			DIV),
@@ -461,7 +461,7 @@ class CardInfoPopup
 					CardInfoPopup.#placeClassIcon(),
 					CardInfoPopup.#placeTitle(),
 				DIV),
-				UL( {className: "clear-style cards-info-url-list"},
+				UL( {className: "cards-info-url-list"},
 					CardInfoPopup.#placeOption("book",          "wiki",    "Wiki",       true),
 					CardInfoPopup.#placeOption("newspaper",     "license", "License",    true),
 					CardInfoPopup.#placeOption("copy",          "copier",  "Copy URL"        ),

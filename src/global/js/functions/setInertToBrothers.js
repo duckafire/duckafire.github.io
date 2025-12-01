@@ -34,7 +34,7 @@ const __updateInertCache__ = (storage, useCache) =>
 	if(storage !== null && useCache)
 		return storage;
 
-	return document.querySelectorAll("body > *");
+	return document.body.querySelectorAll("body > *");
 }
 
 const clearInertCache = () =>

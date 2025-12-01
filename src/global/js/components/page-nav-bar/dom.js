@@ -52,7 +52,7 @@ const createInterPageMenu = () =>
 
 	return DIV( {className: "nav-menu-container low-light-bg", cssRules: {display: "none"}},
 		DIV( {className: "nav-menu-aligner"},
-			UL( {className: "clear-style nav-menu min-screen-width"},
+			UL( {className: "nav-menu min-screen-width"},
 				...OPTIONS,
 			UL),
 		DIV),

@@ -22,24 +22,6 @@ freely, subject to the following restrictions:
 
 */
 
-ol.clear-style,
-ul.clear-style
-{
-	list-style: none;
-}
-
-details.clear-style:not([open]),
-details.clear-style > summary
-{
-	display: none;
-}
-
-a.clear-style
-{
-	text-decoration: none;
-	color: inherit;
-}
-
 .unflex
 {
 	flex: none;
