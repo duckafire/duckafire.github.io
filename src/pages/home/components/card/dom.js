@@ -19,20 +19,43 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 */
 
+class CardContainerClass
+{
+	static #CLASS_LEFT  = "card-container-left";
+	static #CLASS_RIGHT = "card-container-right";
+	static #id;
+
+	static restart()
+	{
+		CardContainerClass.#id = 0;
+	}
+
+	static get()
+	{
+		// even === left; odd  === right
+		return ((CardContainerClass.#id++ & 1) === 0)
+			? CardContainerClass.#CLASS_LEFT
+			: CardContainerClass.#CLASS_RIGHT;
+	}
+}
+
 (function(){
 	const CARDS_LIST = document.getElementById("cards-list");
+	CardContainerClass.restart();
 
 	for(let i = 0; i < parseInt(CARDS_LIST.dataset.placeholdersN); i++)
 	{
 		CARDS_LIST.appendChild(
-			LI( {className: "placeholder-card"},
-				// structure below is necessary
-				// to define the card dimensions
-				// size
-				DIV( {className: "card-division"},
-					DIV( {className: "card-content"},
-						DIV( {className: "card-cover"},
-							".", // this character is transparent
+			LI( {className: CardContainerClass.get()},
+				DIV( {className: "placeholder-card"},
+					// structure below is necessary
+					// to define the card dimensions
+					// size
+					DIV( {className: "card-division"},
+						DIV( {className: "card-content"},
+							DIV( {className: "card-cover"},
+								".", // this character is transparent
+							DIV),
 						DIV),
 					DIV),
 				DIV),
@@ -363,13 +386,15 @@ class Card
 		CardInfoCache.catchThem(json);
 
 		const CARD =
-		LI( {className: json["type"] + "-card", cssRules: CardColors.build(json)},
-			DIV( {className: "card-division"},
-				SECTION( {className: "card-content"},
-					...(Card.#content(json)),
-				SECTION),
+		LI( {className: CardContainerClass.get()},
+			DIV( {className: json["type"] + "-card", cssRules: CardColors.build(json)},
+				DIV( {className: "card-division"},
+					SECTION( {className: "card-content"},
+						...(Card.#content(json)),
+					SECTION),
+				DIV),
+				Card.#details(json),
 			DIV),
-			Card.#details(json),
 		LI);
 
 		CardEventListeners.applyIn( CARD );
@@ -647,6 +672,8 @@ fetch(url)
 
 		let placeholderId     = 0;
 		let totalPlaceholders = parseInt(CARDS_LIST.dataset.placeholdersN);
+
+		CardContainerClass.restart();
 
 		for(const DATA of json)
 		{

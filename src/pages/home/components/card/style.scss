@@ -46,16 +46,39 @@ $CARD_COVER_SCALE: 5rem;
 
 .cards-list
 {
-	@extend %flex-col;
 	@include kit.padding-gap(1rem);
 	width: 100vw;
+	display: grid;
+	grid-template-columns: 1fr;
 
-	@include only.no-mobile
+	@include only.tablet
 	{
 		&
 		{
-			align-items: center;
+			justify-items: center;
 		}
+	}
+
+	@include only.computer
+	{
+		&
+		{
+			grid-template-columns: repeat(2, 1fr);
+			align-items: start;
+		}
+	}
+}
+
+@include only.computer
+{
+	.card-container-left
+	{
+		justify-self: end;
+	}
+
+	.card-container-right
+	{
+		justify-self: start;
 	}
 }
 
