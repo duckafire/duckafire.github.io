@@ -40,7 +40,7 @@ $CARD_COVER_SCALE: 5rem;
 
 	@for $i from 0 through $MAX
 	{
-		@media only screen and (min-width: (only.$TABLET_MIN + $CARD_CONTENT_PADDING * $i))
+		@include only.no-mobile($CARD_CONTENT_PADDING * $i)
 		{
 			&
 			{
