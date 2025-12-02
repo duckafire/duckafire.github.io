@@ -26,46 +26,59 @@ $SCREEN_W_MIN: 20rem; /* 320px */
 $TABLET_MIN:   30rem; /* 480px */
 $COMPUTER_MIN: 64rem; /* 1024px */
 
-$MOBILE_MAX: calc($TABLET_MIN   - 1px);
-$TABLET_MAX: calc($COMPUTER_MIN - 1px);
+$MOBILE_MAX: $TABLET_MIN   - 0.0625rem;
+$TABLET_MAX: $COMPUTER_MIN - 0.0625rem;
 /* $COMPUTER_MAX: infinity */
 
 
-@mixin minimum-screen-width
+@function get-min-width($value, $adj, $is-sub)
 {
-	@media only screen and (max-width: $SCREEN_W_MIN) { @content; }
+	@return $value + ($adj * ($is-sub and -1 or 1));
 }
 
 
-@mixin mobile
+@mixin minimum-screen-width($adj: 0, $is-sub: false)
 {
-	@media only screen and (max-width: $MOBILE_MAX) { @content; }
-}
-
-@mixin no-mobile
-{
-	@media only screen and (min-width: $TABLET_MIN) { @content; }
+	@media only screen and (max-width: get-min-width($SCREEN_W_MIN, $adj, $is-sub))
+	{ @content; }
 }
 
 
-@mixin tablet
+@mixin mobile($adj: 0, $is-sub: false)
 {
-	@media only screen and (min-width: $TABLET_MIN) and (max-width: $TABLET_MAX) { @content; }
+	@media only screen and (max-width: get-min-width($MOBILE_MAX, $adj, $is-sub))
+	{ @content; }
 }
 
-@mixin no-tablet
+@mixin no-mobile($adj: 0, $is-sub: false)
+{
+	@media only screen and (min-width: get-min-width($TABLET_MIN, $adj, $is-sub))
+	{ @content; }
+}
+
+
+@mixin tablet($adj: 0, $is-sub: false)
+{
+	@media only screen and (min-width: get-min-width($TABLET_MIN, $adj, $is-sub)) and (max-width: get-min-width($TABLET_MAX, $adj, $is-sub))
+	{ @content; }
+}
+
+@mixin no-tablet($adj: 0, $is-sub: false)
 {
 	/* the comman is like `or` (`||`) */
-	@media only screen and (max-width: $MOBILE_MAX), (min-width: $COMPUTER_MIN) { @content; }
+	@media only screen and (max-width: get-min-width($MOBILE_MAX, $adj, $is-sub))
+	{ @content; }
 }
 
 
-@mixin computer
+@mixin computer($adj: 0, $is-sub: false)
 {
-	@media only screen and (min-width: $COMPUTER_MIN) { @content; }
+	@media only screen and (min-width: get-min-width($COMPUTER_MIN, $adj, $is-sub))
+	{ @content; }
 }
 
-@mixin no-computer
+@mixin no-computer($adj: 0, $is-sub: false)
 {
-	@media only screen and (max-width: $TABLET_MAX) { @content; }
+	@media only screen and (max-width: get-min-width($TABLET_MAX, $adj, $is-sub))
+	{ @content; }
 }
