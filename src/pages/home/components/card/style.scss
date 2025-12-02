@@ -35,11 +35,17 @@ $CARD_COVER_SCALE: 5rem;
 
 @mixin tablet-width()
 {
-	@include only.no-mobile
+	$MAX: 2;
+	$width: 0;
+
+	@for $i from 0 through $MAX
 	{
-		&
+		@media only screen and (min-width: (only.$TABLET_MIN + $CARD_CONTENT_PADDING * $i))
 		{
-			width: only.$TABLET_MIN !important;
+			&
+			{
+				width: (only.$TABLET_MIN - $CARD_CONTENT_PADDING * ($MAX - $i)) !important;
+			}
 		}
 	}
 }
