@@ -14,9 +14,9 @@ workflow:
 
 default:
   before_script:
-    - echo "Starting job - '$CI_JOB_NAME' ($CI_JOB_STAGE - $CI_JOB_ID), At - '$(date)'."
+    - echo "Starting job, '$CI_JOB_NAME' ($CI_JOB_STAGE, $CI_JOB_ID); At '$(date)'."
   after_script:
-    - echo "Finishing job - '$CI_JOB_NAME' ($CI_JOB_STAGE - $CI_JOB_ID), At - '$(date)'."
+    - echo "Finishing job, '$CI_JOB_NAME' ($CI_JOB_STAGE, $CI_JOB_ID); At '$(date)'."
 
 # it had been based in
 # the `Dockerfile`
@@ -24,6 +24,7 @@ process-source-code:
   stage: build
   script:
     - test ! -d public && mkdir public
+    - rm -rf public/*
     - mv src/* public
     - rmdir src
     - mv .github/404.html public
