@@ -149,8 +149,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 .nav-menu-aligner
 {
-	display: flex;
-	justify-content: end;
+	@include only.no-mobile
+	{
+		display: flex;
+		justify-content: end;
+	}
 }
 
 .nav-menu
@@ -158,8 +161,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	font-size: 1.25rem;
 	overflow-y: auto;
 	background-color: var(--bg-menu, dimgray);
-	max-width: only.$TABLET_MIN * 0.5;
 	text-align: center;
+
+	@include only.no-mobile
+	{
+		&
+		{
+			max-width: only.$TABLET_MIN * 0.5;
+		}
+	}
 }
 
 .nav-menu-item
