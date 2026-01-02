@@ -408,7 +408,15 @@ class Card
 
 		if(json["type"] === "profile")
 			return [
-				IMG( {className: "card-cover", src: json["img-cover"]["src"], alt: json["img-cover"]["alt"], title: json["title"]}),
+				IMG( {
+					className: "lazy-card-cover card-cover",
+					src: "../../assets/images/min/"  + json["img-cover"]["name"],
+					alt: json["img-cover"]["alt"],
+					title: json["title"],
+					dataSets: {
+						high: "../../assets/images/high/" + json["img-cover"]["name"],
+					}
+				}),
 				DIV( {className: "card-options", cssRules: Card.#contentCssRules},
 					H1( {className: "notranslate", translate: false}, json["message"], H1),
 					BUTTON( {className: "oval-btn live-btn", cssRules: {fontSize: "1.25rem"}, dataSets},
@@ -693,6 +701,7 @@ fetch(url)
 		}
 
 		CardInfoPopup.place();
+		new LazyLoadingImages(".lazy-card-cover");
 	})
 	.catch(err =>
 	{

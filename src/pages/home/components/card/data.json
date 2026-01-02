@@ -4,7 +4,7 @@
 		"message": "Hello world",
 		"title": "It's me!",
 		"img-cover": {
-			"src": "../../assets/images/high/duckafire-profile.png",
+			"name": "duckafire-profile.png",
 			"alt": "DuckAfire's profile image."
 		},
 		"colors": {
