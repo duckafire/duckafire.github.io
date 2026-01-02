@@ -397,6 +397,7 @@ class Card
 			DIV),
 		LI);
 
+		Card.#hideDetailsIfEmpty(CARD);
 		CardEventListeners.applyIn( CARD );
 		return CARD;
 	}
@@ -448,6 +449,12 @@ class Card
 				CardURLList.build(json),
 			DIV),
 		DIV);
+	}
+
+	static #hideDetailsIfEmpty(card)
+	{
+		if(card.querySelector(".url-list").children.length === 0)
+			card.querySelector("[data-card-details-manager='true']").style.display = "none";
 	}
 }
 
