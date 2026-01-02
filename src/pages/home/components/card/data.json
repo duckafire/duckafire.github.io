@@ -102,14 +102,6 @@
 				"endpoint": "u/duckafire"
 			},
 			"related": [
-				{
-					"title": "Rinha de Backend 2025",
-					"description": "This project was created as a way to participate in the yearly event Rinha de Backend (edition 2025), a community competition to create a backend in any programming language and with any technologies to resolve a determined problem. Sadly, this project cannot participate of the competition, but it will be finished. The main goal is to learn - but win is cool!",
-					"list": {
-						"home":    {"endpoint": "r/duckafire/rb-2025"},
-						"license": {"url": "mit-license.org"}
-					}
-				}
 			]
 		}
 	},
@@ -149,7 +141,7 @@
 				},
 				{
 					"title": "Design Patterns",
-					"description": "The purpose of this project is to introduce the main types of Design Pattern in programming, in a simple, easy and didactic way.",
+					"description": "The purpose of this project is to introduce the main types of Design Pattern in programming, in a simple, easy, and didactic way.",
 					"list": {
 						"home":    {"endpoint": "design-patterns-with-examples"},
 						"license": {"url": "mit-license.org"}
@@ -164,11 +156,11 @@
 					}
 				},
 				{
-					"title": "QR Code Generator",
-					"description": "Interative WEB Application to generate customized QR Codes from miscellaneous URLs, with modern design and intuitive interface. Ideal for developers that want to easily the fast access to their projects.",
+					"title": "HASF.io",
+					"description": "Light, private, fast, and FREE (forever)! HASF.io is a characters formater, created to easily your life (or almost that!).",
 					"list": {
-						"home":    {"endpoint": "gh-qr-code-generator"},
-						"license": {"url": "mit-license.org"}
+						"home":    {"endpoint": "HASF.io"},
+						"license": {"url": "www.gnu.org/licenses/agpl-3.0.en.html"}
 					}
 				},
 				{
@@ -181,8 +173,16 @@
 					}
 				},
 				{
+					"title": "Java Swing Calculator",
+					"description": "There are no what to say about, it is a calculator; no, I did not see nil tutorial about this before make this project, this fact make me happy :D",
+					"list": {
+						"home":    {"endpoint": "ancient-vim"},
+						"license": {"url": "mit-license.org"}
+					}
+				},
+				{
 					"title": "lazy-loading.js",
-					"description": "Small and simple JS API, developed to easily the application of the Lazy Loading technique to images, in order to optimize website pages.",
+					"description": "Small and simple JS API, developed to easily the application of the Lazy Loading technique to FrontEnd WEB elements, in order to optimize website pages.",
 					"list": {
 						"home":    {"endpoint": "lazy-loading-js"},
 						"wiki":    {"url": "www.npmjs.com/package/@duckafire/lazy-loading-js#index"},
@@ -195,22 +195,6 @@
 					"list": {
 						"home":    {"endpoint": "LIM"},
 						"wiki":    {"url": "github.com/duckafire/LIM#indexes"},
-						"license": {"url": "mit-license.org"}
-					}
-				},
-				{
-					"title": "Rinha de Backend 2025",
-					"description": "This project was created as a way to participate in the yearly event Rinha de Backend (edition 2025), a community competition to create a backend in any programming language and with any technologies to resolve a determined problem. Sadly, this project cannot participate of the competition, but it will be finished. The main goal is to learn - but win is cool!",
-					"list": {
-						"home":    {"endpoint": "rb-2025"},
-						"license": {"url": "mit-license.org"}
-					}
-				},
-				{
-					"title": "rest-api.ts",
-					"description": "Simple and small RESTful API, written with TypeScript, with Express.js as the main framework. The target of this project is to explore the possibilities of the NodeJS world in a Web API application.",
-					"list": {
-						"home":    {"endpoint": "simple-web-api"},
 						"license": {"url": "mit-license.org"}
 					}
 				},
@@ -232,20 +216,19 @@
 					}
 				},
 				{
-					"title": "todo-list",
-					"description": "This project has as aim to available a safe, easy, and fast way to manager to do lists through the use of a terminal cli. Python was chosen as base language to this project because of its alignment to the proposal of it (what they already were cited) and because of the high portability of the language between different Operational System. The code of this project aims to align it to the main conventions disseminated by the community of that programming language, in order to welcome possible contributors that can collaborate to the evolution of this project.",
-					"list": {
-						"home":    {"endpoint": "todo-list"},
-						"wiki":    {"url": "github.com/duckafire/todo-list#topics"},
-						"license": {"url": "www.gnu.org/licenses/agpl-3.0.en.html"}
-					}
-				},
-				{
 					"title": "utilities.c",
 					"description": "A simple collection of useful libraries to C.",
 					"list": {
 						"home":    {"endpoint": "utilities.c"},
 						"license": {"url": "www.zlib.net/zlib_license.html"}
+					}
+				},
+				{
+					"title": "WebSet",
+					"description": "This Vim plugin is a set of syntax schemes, commands and hotkeys to easily the development of WEB FrontEnd projects.",
+					"list": {
+						"home": {"endpoint": "duckafire/webset.vim"},
+						"license": {"url": "mit-license.org"}
 					}
 				}
 			]
@@ -288,7 +271,7 @@
 				},
 				{
 					"title": "Design Patterns",
-					"description": "The purpose of this project is to introduce the main types of Design Pattern in programming, in a simple, easy and didactic way.",
+					"description": "The purpose of this project is to introduce the main types of Design Pattern in programming, in a simple, easy, and didactic way.",
 					"list": {
 						"home":    {"endpoint": "duckafire/design-patterns-with-examples"},
 						"license": {"url": "mit-license.org"}
@@ -303,11 +286,11 @@
 					}
 				},
 				{
-					"title": "QR Code Generator",
-					"description": "Interative WEB Application to generate customized QR Codes from miscellaneous URLs, with modern design and intuitive interface. Ideal for developers that want to easily the fast access to their projects.",
+					"title": "HASF.io",
+					"description": "Light, private, fast, and FREE (forever)! HASF.io is a characters formater, created to easily your life (or almost that!).",
 					"list": {
-						"home":    {"endpoint": "duckafire-forks/github/gh-qr-code-generator"},
-						"license": {"url": "mit-license.org"}
+						"home":    {"endpoint": "duckafire/HASF.io"},
+						"license": {"url": "www.gnu.org/licenses/agpl-3.0.en.html"}
 					}
 				},
 				{
@@ -320,8 +303,16 @@
 					}
 				},
 				{
+					"title": "Java Swing Calculator",
+					"description": "There are no what to say about, it is a calculator; no, I did not see nil tutorial about this before make this project, this fact make me happy :D",
+					"list": {
+						"home":    {"endpoint": "duckafire/ancient-vim"},
+						"license": {"url": "mit-license.org"}
+					}
+				},
+				{
 					"title": "lazy-loading.js",
-					"description": "Small and simple JS API, developed to easily the application of the Lazy Loading technique to images, in order to optimize website pages.",
+					"description": "Small and simple JS API, developed to easily the application of the Lazy Loading technique to FrontEnd WEB elements, in order to optimize website pages.",
 					"list": {
 						"home":    {"endpoint": "duckafire-forks/github/lazy-loading-js"},
 						"wiki":    {"url": "www.npmjs.com/package/@duckafire/lazy-loading-js#index"},
@@ -334,22 +325,6 @@
 					"list": {
 						"home":    {"endpoint": "duckafire/LIM"},
 						"wiki":    {"url": "gitlab.com/duckafire/LIM#indexes"},
-						"license": {"url": "mit-license.org"}
-					}
-				},
-				{
-					"title": "Rinha de Backend 2025",
-					"description": "This project was created as a way to participate in the yearly event Rinha de Backend (edition 2025), a community competition to create a backend in any programming language and with any technologies to resolve a determined problem. Sadly, this project cannot participate of the competition, but it will be finished. The main goal is to learn - but win is cool!",
-					"list": {
-						"home":    {"endpoint": "duckafire/rb-2025"},
-						"license": {"url": "mit-license.org"}
-					}
-				},
-				{
-					"title": "rest-api.ts",
-					"description": "Simple and small RESTful API, written with TypeScript, with Express.js as the main framework. The target of this project is to explore the possibilities of the NodeJS world in a Web API application.",
-					"list": {
-						"home":    {"endpoint": "duckafire/simple-web-api"},
 						"license": {"url": "mit-license.org"}
 					}
 				},
@@ -371,19 +346,18 @@
 					}
 				},
 				{
-					"title": "todo-list",
-					"description": "This project has as aim to available a safe, easy, and fast way to manager to do lists through the use of a terminal cli. Python was chosen as base language to this project because of its alignment to the proposal of it (what they already were cited) and because of the high portability of the language between different Operational System. The code of this project aims to align it to the main conventions disseminated by the community of that programming language, in order to welcome possible contributors that can collaborate to the evolution of this project.",
-					"list": {
-						"home":    {"endpoint": "duckafire/todo-list"},
-						"wiki":    {"url": "gitlab.com/duckafire/todo-list#topics"},
-						"license": {"url": "www.gnu.org/licenses/agpl-3.0.en.html"}
-					}
-				},
-				{
 					"title": "utilities.c",
 					"description": "A simple collection of useful libraries to C.",
 					"list": {
 						"home":    {"endpoint": "duckafire/utilities.c"},
+						"license": {"url": "mit-license.org"}
+					}
+				},
+				{
+					"title": "WebSet",
+					"description": "This Vim plugin is a set of syntax schemes, commands and hotkeys to easily the development of WEB FrontEnd projects.",
+					"list": {
+						"home": {"endpoint": "duckafire/webset.vim"},
 						"license": {"url": "mit-license.org"}
 					}
 				}
