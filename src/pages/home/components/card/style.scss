@@ -50,6 +50,11 @@ $CARD_COVER_SCALE: 5rem;
 	}
 }
 
+.cards-list-container
+{
+	flex-grow: 1;
+}
+
 .cards-list
 {
 	@include kit.padding-gap(1rem);
