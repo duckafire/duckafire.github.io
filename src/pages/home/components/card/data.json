@@ -236,7 +236,7 @@
 					"title": "WebSet",
 					"description": "This Vim plugin is a set of syntax schemes, commands and hotkeys to easily the development of WEB FrontEnd projects.",
 					"list": {
-						"home": {"endpoint": "duckafire/webset.vim"},
+						"home": {"endpoint": "webset.vim"},
 						"license": {"url": "mit-license.org"}
 					}
 				}
@@ -265,15 +265,14 @@
 		},
 		"url-list": {
 			"main": {
-				"url": "gitlab.com",
-				"endpoint": "duckafire"
+				"url": "gitlab.com/duckafire"
 			},
 			"related": [
 				{
 					"title": "ancient.vim",
 					"description": "This is a simple and generic syntax highlight for Vim, focused in terminal context. It use only the terminal colors of the ANSI Pattern.",
 					"list": {
-						"home":    {"endpoint": "duckafire/ancient-vim"},
+						"home":    {"endpoint": "ancient-vim"},
 						"wiki":    {"url": "gitlab.com/duckafire/ancient-vim#ancient-vim"},
 						"license": {"url": "mit-license.org"}
 					}
@@ -282,7 +281,7 @@
 					"title": "Design Patterns",
 					"description": "The purpose of this project is to introduce the main types of Design Pattern in programming, in a simple, easy, and didactic way.",
 					"list": {
-						"home":    {"endpoint": "duckafire/design-patterns-with-examples"},
+						"home":    {"endpoint": "design-patterns-with-examples"},
 						"license": {"url": "mit-license.org"}
 					}
 				},
@@ -290,7 +289,7 @@
 					"title": "DuckAfire's Nest",
 					"description": "The showcase of my projects. It is what you are using and seeing now!",
 					"list": {
-						"home":    {"endpoint": "duckafire/duckafire.github.io"},
+						"home":    {"endpoint": "duckafire.github.io"},
 						"license": {"url": "www.gnu.org/licenses/agpl-3.0.en.html"}
 					}
 				},
@@ -298,7 +297,7 @@
 					"title": "HASF.io",
 					"description": "Light, private, fast, and FREE (forever)! HASF.io is a characters formater, created to easily your life (or almost that!).",
 					"list": {
-						"home":    {"endpoint": "duckafire/HASF.io"},
+						"home":    {"endpoint": "HASF.io"},
 						"license": {"url": "www.gnu.org/licenses/agpl-3.0.en.html"}
 					}
 				},
@@ -306,7 +305,7 @@
 					"title": "html.js",
 					"description": "This is a web component library thought to be: light; minimalist; easy to use; simple to understand; similar to HTML (mainly in relation to the structure); and independent of preprocessor (or similar).",
 					"list": {
-						"home":    {"endpoint": "duckafire/html.js"},
+						"home":    {"endpoint": "html.js"},
 						"wiki":    {"url": "www.npmjs.com/package/@duckafire/html.js#topics"},
 						"license": {"url": "www.zlib.net/zlib_license.html"}
 					}
@@ -315,7 +314,7 @@
 					"title": "is-it",
 					"description": "Simple runtime type validator, built upon the Stream of Pipelines concept.",
 					"list": {
-						"home":    {"endpoint": "duckafire/is-it"},
+						"home":    {"endpoint": "is-it"},
 						"wiki":    {"url": "https://www.npmjs.com/package/@duckafire/is-it#user-documentation"},
 						"license": {"url": "www.zlib.net/zlib_license.html"}
 					}
@@ -324,7 +323,7 @@
 					"title": "Java Swing Calculator",
 					"description": "There are no what to say about, it is a calculator; no, I did not see nil tutorial about this before make this project, this fact make me happy :D",
 					"list": {
-						"home":    {"endpoint": "duckafire/ancient-vim"},
+						"home":    {"endpoint": "ancient-vim"},
 						"license": {"url": "mit-license.org"}
 					}
 				},
@@ -332,7 +331,7 @@
 					"title": "lazy-loading.js",
 					"description": "Small and simple JS API, developed to easily the application of the Lazy Loading technique to FrontEnd WEB elements, in order to optimize website pages.",
 					"list": {
-						"home":    {"endpoint": "duckafire-forks/github/lazy-loading-js"},
+						"home":    {"endpoint": "lazy-loading-js"},
 						"wiki":    {"url": "www.npmjs.com/package/@duckafire/lazy-loading-js#index"},
 						"license": {"url": "www.zlib.net/zlib_license.html"}
 					}
@@ -341,7 +340,7 @@
 					"title": "LIM",
 					"description": "The Lua Library Compactor, or only Lim, is a simple terminal program to compact Lua scripts. It was created for easily the creation, maintain and update of libraries from TinyLibrary, but nothing prevent that it will be used in other contexts.",
 					"list": {
-						"home":    {"endpoint": "duckafire/LIM"},
+						"home":    {"endpoint": "LIM"},
 						"wiki":    {"url": "gitlab.com/duckafire/LIM#indexes"},
 						"license": {"url": "mit-license.org"}
 					}
@@ -350,7 +349,7 @@
 					"title": "Small Projects",
 					"description": "Here there are tests, scripts, summaries, small programs, and some other somethings.",
 					"list": {
-						"home":    {"endpoint": "duckafire/Small_Projects"},
+						"home":    {"endpoint": "Small_Projects"},
 						"license": {"url": "mit-license.org"}
 					}
 				},
@@ -358,7 +357,7 @@
 					"title": "TinyLibrary",
 					"description": "It is a free and Open Source libraries collection, created to easily the creation of new cartridges to the Tic80 Tiny Computer.",
 					"list": {
-						"home":    {"endpoint": "duckafire/TinyLibrary"},
+						"home":    {"endpoint": "TinyLibrary"},
 						"wiki":    {"url": "gitlab.com/duckafire/TinyLibrary/wiki"},
 						"license": {"url": "www.zlib.net/zlib_license.html"}
 					}
@@ -367,7 +366,7 @@
 					"title": "utilities.c",
 					"description": "A simple collection of useful libraries to C.",
 					"list": {
-						"home":    {"endpoint": "duckafire/utilities.c"},
+						"home":    {"endpoint": "utilities.c"},
 						"license": {"url": "mit-license.org"}
 					}
 				},
@@ -375,7 +374,7 @@
 					"title": "WebSet",
 					"description": "This Vim plugin is a set of syntax schemes, commands and hotkeys to easily the development of WEB FrontEnd projects.",
 					"list": {
-						"home": {"endpoint": "duckafire/webset.vim"},
+						"home": {"endpoint": "webset.vim"},
 						"license": {"url": "mit-license.org"}
 					}
 				}
@@ -457,7 +456,7 @@
 					"title": "is-it",
 					"description": "Simple runtime type validator, built upon the Stream of Pipelines concept.",
 					"list": {
-						"home":    {"endpoint": "duckafire/is-it"},
+						"home":    {"endpoint": "is-it"},
 						"wiki":    {"url": "https://www.npmjs.com/package/@duckafire/is-it#user-documentation"},
 						"license": {"url": "www.zlib.net/zlib_license.html"}
 					}
