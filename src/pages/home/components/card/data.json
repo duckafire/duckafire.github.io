@@ -168,7 +168,7 @@
 					"description": "This is a web component library thought to be: light; minimalist; easy to use; simple to understand; similar to HTML (mainly in relation to the structure); and independent of preprocessor (or similar).",
 					"list": {
 						"home":    {"endpoint": "html.js"},
-						"wiki":    {"url": "www.npmjs.com/package/@duckafire/html.js#topics"},
+						"wiki":    {"url": "www.npmjs.com/package/@duckafire/html.js#faq"},
 						"license": {"url": "www.zlib.net/zlib_license.html"}
 					}
 				},
@@ -306,7 +306,7 @@
 					"description": "This is a web component library thought to be: light; minimalist; easy to use; simple to understand; similar to HTML (mainly in relation to the structure); and independent of preprocessor (or similar).",
 					"list": {
 						"home":    {"endpoint": "html.js"},
-						"wiki":    {"url": "www.npmjs.com/package/@duckafire/html.js#topics"},
+						"wiki":    {"url": "www.npmjs.com/package/@duckafire/html.js#faq"},
 						"license": {"url": "www.zlib.net/zlib_license.html"}
 					}
 				},
@@ -448,7 +448,7 @@
 					"description": "This is a web component library thought to be: light; minimalist; easy to use; simple to understand; similar to HTML (mainly in relation to the structure); and independent of preprocessor (or similar).",
 					"list": {
 						"home":    {"endpoint": "package/@duckafire/html.js"},
-						"wiki":    {"url": "www.npmjs.com/package/@duckafire/html.js#topics"},
+						"wiki":    {"url": "www.npmjs.com/package/@duckafire/html.js#faq"},
 						"license": {"url": "www.zlib.net/zlib_license.html"}
 					}
 				},
