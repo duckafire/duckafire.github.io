@@ -173,6 +173,15 @@
 					}
 				},
 				{
+					"title": "is-it",
+					"description": "Simple runtime type validator, built upon the Stream of Pipelines concept.",
+					"list": {
+						"home":    {"endpoint": "is-it"},
+						"wiki":    {"url": "https://www.npmjs.com/package/@duckafire/is-it#user-documentation"},
+						"license": {"url": "www.zlib.net/zlib_license.html"}
+					}
+				},
+				{
 					"title": "Java Swing Calculator",
 					"description": "There are no what to say about, it is a calculator; no, I did not see nil tutorial about this before make this project, this fact make me happy :D",
 					"list": {
@@ -299,6 +308,15 @@
 					"list": {
 						"home":    {"endpoint": "duckafire/html.js"},
 						"wiki":    {"url": "www.npmjs.com/package/@duckafire/html.js#topics"},
+						"license": {"url": "www.zlib.net/zlib_license.html"}
+					}
+				},
+				{
+					"title": "is-it",
+					"description": "Simple runtime type validator, built upon the Stream of Pipelines concept.",
+					"list": {
+						"home":    {"endpoint": "duckafire/is-it"},
+						"wiki":    {"url": "https://www.npmjs.com/package/@duckafire/is-it#user-documentation"},
 						"license": {"url": "www.zlib.net/zlib_license.html"}
 					}
 				},
@@ -432,6 +450,15 @@
 					"list": {
 						"home":    {"endpoint": "package/@duckafire/html.js"},
 						"wiki":    {"url": "www.npmjs.com/package/@duckafire/html.js#topics"},
+						"license": {"url": "www.zlib.net/zlib_license.html"}
+					}
+				},
+				{
+					"title": "is-it",
+					"description": "Simple runtime type validator, built upon the Stream of Pipelines concept.",
+					"list": {
+						"home":    {"endpoint": "duckafire/is-it"},
+						"wiki":    {"url": "https://www.npmjs.com/package/@duckafire/is-it#user-documentation"},
 						"license": {"url": "www.zlib.net/zlib_license.html"}
 					}
 				},
