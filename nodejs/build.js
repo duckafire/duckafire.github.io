@@ -84,7 +84,13 @@ const explore_source_files = (dir) =>
 		{
 			if(filename.charAt(0) !== "_")
 			{
-				shell(`npx sass "${file}:${file.replace(/\.scss$/, ".css")}" ${(JUMP_COMPRESSING ? "" : "--style=compressed --no-source-map")}`)
+				if(JUMP_COMPRESSING)
+				{
+					shell(`npx sass "${file}:${file.replace(/\.scss$/, ".css")}"`);
+					continue;
+				}
+
+				shell(`npx sass "${file}:${file.replace(/\.scss$/, ".css")}" --style=compressed --no-source-map"`)
 				FS.unlinkSync(file);
 			}
 			else
