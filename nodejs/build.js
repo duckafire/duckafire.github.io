@@ -90,7 +90,7 @@ const explore_source_files = (dir) =>
 					continue;
 				}
 
-				shell(`npx sass "${file}:${file.replace(/\.scss$/, ".css")}" --style=compressed --no-source-map"`)
+				shell(`npx sass "${file}:${file.replace(/\.scss$/, ".css")}" --style=compressed --no-source-map`)
 				FS.unlinkSync(file);
 			}
 			else
