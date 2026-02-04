@@ -289,13 +289,13 @@ class CardURLList
 		};
 
 		return LI( {style: "--scalew:2"},
-			SPAN( {className: "notranslate url-list-item-title", translate: false}, title, SPAN),
+			SPAN( {className: "notranslate url-list-item-title", translate: false, ariaAttributes: {label: `Project: ${title}.`}}, title, SPAN),
 			DIV( {className: "url-list-item"},
 				CardInfoCache.catchCacheItemUrlSource(
 					INPUT( INPUT_ATTR)
 				),
 				CardInfoPopup.applyOpenEvent(
-					BUTTON( {className: "url-list-btn rounded-rect-btn live-btn unflex"},
+					BUTTON( {className: "url-list-btn rounded-rect-btn live-btn unflex", ariaAttributes: {label: "Show more information about this project.", haspopup: "true"}},
 						//   Cache attributes are putted in the icon, instead
 						// the button, because `event.target` (used as a
 						// reference to the clicked object, in the button
@@ -311,10 +311,10 @@ class CardURLList
 						I( {className: "fa-solid fa-circle-info", dataSets: {...CardInfoCache.htmlCacheAttr()}}, I),
 					BUTTON)
 				),
-				BUTTON( {className: "url-list-btn rounded-rect-btn live-btn unflex", dataSets: {"card-url-btn-type": "url-copier"}},
+				BUTTON( {className: "url-list-btn rounded-rect-btn live-btn unflex", dataSets: {"card-url-btn-type": "url-copier"}, ariaAttributes: {label: "Copy URL of the project."}},
 					I( {className: "fa-solid fa-copy"}, I),
 				BUTTON),
-				A( {role: "button", className: "url-list-btn rounded-rect-btn live-btn unflex", href: url},
+				A( {role: "button", className: "url-list-btn rounded-rect-btn live-btn unflex", href: url, ariaAttributes: {label: "Go to project home page."}},
 					I( {className: "fa-solid fa-external-link"}, I),
 				A),
 			DIV),
@@ -420,7 +420,7 @@ class Card
 				}),
 				DIV( {className: "card-options", cssRules: Card.#contentCssRules},
 					H1( {className: "notranslate", translate: false}, json["message"], H1),
-					BUTTON( {className: "oval-btn live-btn", cssRules: {fontSize: "1.25rem"}, dataSets},
+					BUTTON( {className: "oval-btn live-btn", cssRules: {fontSize: "1.25rem"}, dataSets, ariaAttributes: {label: "Show related projects.", haspopup: "true"}},
 						I( {className: "fa-solid fa-plus"}, I),
 					BUTTON),
 				DIV),
@@ -431,10 +431,10 @@ class Card
 				I( {className: json["class-icon"], title: json["title"]}, I),
 			DIV),
 			DIV( {className: "card-options", cssRules: Card.#contentCssRules},
-				BUTTON( {className: "ball-btn live-btn", dataSets},
+				BUTTON( {className: "ball-btn live-btn", dataSets, ariaAttributes: {label: "Show related projects.", haspopup: "true"}},
 					I( {className: "fa-solid fa-plus"}, I),
 				BUTTON),
-				A( {role: "button", className: "ball-btn live-btn", href: CardInfoCache.mainUrl()},
+				A( {role: "button", className: "ball-btn live-btn", href: CardInfoCache.mainUrl(), ariaAttributes: {label: `Go to DuckAfire's ${json["title"]} account page.`}},
 					I( {className: "fa-solid fa-external-link"}, I),
 				A),
 			DIV),
@@ -487,7 +487,7 @@ class CardInfoPopup
 		};
 
 		const TOGGLE_STATE_BTN =
-		BUTTON( {className: "cards-info-close-btn live-light-btn"},
+		BUTTON( {className: "cards-info-close-btn live-light-btn", ariaAttributes: {label: "Close current PopUp."}},
 			I( {className: "fa-solid fa-xmark"}, I),
 		BUTTON);
 
@@ -502,10 +502,10 @@ class CardInfoPopup
 					CardInfoPopup.#placeTitle(),
 				DIV),
 				UL( {className: "cards-info-url-list"},
-					CardInfoPopup.#placeOption("book",          "wiki",    "Wiki",       true),
-					CardInfoPopup.#placeOption("newspaper",     "license", "License",    true),
-					CardInfoPopup.#placeOption("copy",          "copier",  "Copy URL"        ),
-					CardInfoPopup.#placeOption("external-link", "home",    "Visit home", true),
+					CardInfoPopup.#placeOption("book",          "wiki",    "Wiki",       "See project wiki",        true),
+					CardInfoPopup.#placeOption("newspaper",     "license", "License",    "See project license",     true),
+					CardInfoPopup.#placeOption("copy",          "copier",  "Copy URL",   "Copy project URL"             ),
+					CardInfoPopup.#placeOption("external-link", "home",    "Visit home", "Go to project home page", true),
 				UL),
 				DIV( {className: "cards-info-description"},
 					CardInfoPopup.#placeDescription(),
@@ -623,7 +623,7 @@ class CardInfoPopup
 		return (CardInfoPopup.#description = P());
 	}
 
-	static #placeOption(classIcon, btnTag, btnTitle, isAnchor)
+	static #placeOption(classIcon, btnTag, btnTitle, ariaLabel, isAnchor)
 	{
 		// <li>
 		//   <btn>
@@ -637,6 +637,7 @@ class CardInfoPopup
 
 		btn.className = "live-full-light-btn";
 		btn.appendChild( I( {className: "fa-solid fa-" + classIcon}, I) );
+		btn.setAttribute("aria-label", ariaLabel)
 		btn = LI( {title: btnTitle}, btn, LI);
 
 		return (CardInfoPopup.#btn[ btnTag ] = btn);

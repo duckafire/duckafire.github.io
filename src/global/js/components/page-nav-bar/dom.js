@@ -41,6 +41,9 @@ const createInterPageMenu = () =>
 			role: "button",
 			className: "nav-menu-item soft-live-full-light-btn live-cscheme-white-filter",
 			href: "https://"+item[1],
+			ariaAttributes: {
+				label: `Go to DuckAfire's ${item[0]} account home page.`,
+			}
 		};
 
 		OPTIONS.push(
@@ -71,6 +74,9 @@ const createPageColorSchemeMenu = () =>
 			class: "nav-cscheme-opt live-full-light-btn live-cscheme-white-filter",
 			dataSets: {
 				enable: (SCHEME_MODE === PageColorScheme.getMode()) ? "1" : "0",
+			},
+			ariaAttributes: {
+				label: `Enable ${SCHEME_MODE} color scheme.`,
 			},
 		};
 
@@ -220,10 +226,10 @@ const cssRules = {
 const NAV_BAR =
 NAV( {className: "nav-bar min-screen-width", cssRules},
 	DIV( {className: "nav-btn-container"},
-		BUTTON( {className: "nav-cscheme-man-btn live-light-btn live-cscheme-black-filter"},
+		BUTTON( {className: "nav-cscheme-man-btn live-light-btn live-cscheme-black-filter", ariaAttributes: {label: "Open/close color scheme panel.", haspopup: "true"}},
 			I( {className: PageColorScheme.classIconOf()}, I),
 		BUTTON),
-		BUTTON( {className: "nav-menu-man-btn live-light-btn live-cscheme-black-filter"},
+		BUTTON( {className: "nav-menu-man-btn live-light-btn live-cscheme-black-filter", ariaAttributes: {label: "Open/close DuckAfire's accounts list.", haspopup: "true"}},
 			I( {className: "fa-solid fa-bars"}, I),
 		BUTTON),
 	DIV),
