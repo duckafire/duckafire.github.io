@@ -27,4 +27,4 @@ COPY .github/404.html .
 COPY nodejs .
 
 COPY ./src ./public
-RUN npm run build --silent
+RUN npm run --silent build-dev

@@ -4,6 +4,7 @@
   },
   "scripts": {
     "build": "./build.js",
+    "build-dev": "./build.js jump-compressing",
     "deploy": "npx http-server -c-1 -p 8080",
     "compress-json": "./compress-json.js"
   },

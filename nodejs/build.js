@@ -38,6 +38,8 @@ const is_empty_dir = (dir) => FS.readdirSync(dir).length === 0;
 const is_it = (wantedExt, fileExt) => PATH.extname(fileExt).slice(1) === wantedExt;
 const shell = (cmd) => execSync(cmd, {shell: true});
 
+const JUMP_COMPRESSING = (process.argv.length > 2);
+
 const can_it_explore = (dir) =>
 {
 	for(const ignorable of directoriesNoExplorable)
@@ -75,13 +77,14 @@ const explore_source_files = (dir) =>
 		}
 		else if(is_it("js", file))
 		{
-			shell(`echo "$(npx terser "${file}" --compress --mangle)" > "${file}"`)
+			if(!JUMP_COMPRESSING)
+				shell(`echo "$(npx terser "${file}" --compress --mangle)" > "${file}"`)
 		}
 		else if(is_it("scss", file))
 		{
 			if(filename.charAt(0) !== "_")
 			{
-				shell(`npx sass "${file}:${file.replace(/\.scss$/, ".css")}" --style=compressed --no-source-map`)
+				shell(`npx sass "${file}:${file.replace(/\.scss$/, ".css")}" ${(JUMP_COMPRESSING ? "" : "--style=compressed --no-source-map")}`)
 				FS.unlinkSync(file);
 			}
 			else
@@ -91,7 +94,8 @@ const explore_source_files = (dir) =>
 		}
 		else if(is_it("json", file))
 		{
-			shell(`echo "$(npm run --silent compress-json "${file}")" > "${file}"`)
+			if(!JUMP_COMPRESSING)
+				shell(`echo "$(npm run --silent compress-json "${file}")" > "${file}"`)
 		}
 		else
 		{
