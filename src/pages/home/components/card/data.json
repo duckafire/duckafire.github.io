@@ -419,62 +419,6 @@
 	},
 	{
 		"type": "website",
-		"class-icon": "fa-brands fa-npm",
-		"title": "NPM Registry",
-		"colors": {
-			"front": {
-				"bg": "b22c2b",
-				"btn": {
-					"bg": "d63f45",
-					"fg": "d8c8b2"
-				}
-			},
-			"details": {
-				"bg": "8b1918",
-				"btn": {
-					"bg": "d23939",
-					"fg": "c1b29c"
-				}
-			}
-		},
-		"url-list": {
-			"main": {
-				"url": "npmjs.com",
-				"endpoint": "~duckafire"
-			},
-			"related": [
-				{
-					"title": "html.js",
-					"description": "This is a web component library thought to be: light; minimalist; easy to use; simple to understand; similar to HTML (mainly in relation to the structure); and independent of preprocessor (or similar).",
-					"list": {
-						"home":    {"endpoint": "package/@duckafire/html.js"},
-						"wiki":    {"url": "www.npmjs.com/package/@duckafire/html.js#faq"},
-						"license": {"url": "www.zlib.net/zlib_license.html"}
-					}
-				},
-				{
-					"title": "is-it",
-					"description": "Simple runtime type validator, built upon the Stream of Pipelines concept.",
-					"list": {
-						"home":    {"endpoint": "is-it"},
-						"wiki":    {"url": "https://www.npmjs.com/package/@duckafire/is-it#user-documentation"},
-						"license": {"url": "www.zlib.net/zlib_license.html"}
-					}
-				},
-				{
-					"title": "lazy-loading.js",
-					"description": "Small and simple JS API, developed to easily the application of the Lazy Loading technique to images, in order to optimize website pages.",
-					"list": {
-						"home":    {"endpoint": "package/@duckafire/lazy-loading-js"},
-						"wiki":    {"url": "www.npmjs.com/package/@duckafire/lazy-loading-js#index"},
-						"license": {"url": "www.zlib.net/zlib_license.html"}
-					}
-				}
-			]
-		}
-	},
-	{
-		"type": "website",
 		"class-icon": "fa-solid fa-gamepad",
 		"title": "Tic80",
 		"colors": {
