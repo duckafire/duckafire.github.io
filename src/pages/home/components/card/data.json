@@ -131,15 +131,6 @@
 			},
 			"related": [
 				{
-					"title": "ancient.vim",
-					"description": "This is a simple and generic syntax highlight for Vim, focused in terminal context. It use only the terminal colors of the ANSI Pattern.",
-					"list": {
-						"home":    {"endpoint": "ancient-vim"},
-						"wiki":    {"url": "github.com/duckafire/ancient-vim#ancient-vim"},
-						"license": {"url": "mit-license.org"}
-					}
-				},
-				{
 					"title": "Design Patterns",
 					"description": "The purpose of this project is to introduce the main types of Design Pattern in programming, in a simple, easy, and didactic way.",
 					"list": {
@@ -231,14 +222,6 @@
 						"home":    {"endpoint": "utilities.c"},
 						"license": {"url": "www.zlib.net/zlib_license.html"}
 					}
-				},
-				{
-					"title": "WebSet",
-					"description": "This Vim plugin is a set of syntax schemes, commands and hotkeys to easily the development of WEB FrontEnd projects.",
-					"list": {
-						"home": {"endpoint": "webset.vim"},
-						"license": {"url": "mit-license.org"}
-					}
 				}
 			]
 		}
@@ -268,15 +251,6 @@
 				"url": "gitlab.com/duckafire"
 			},
 			"related": [
-				{
-					"title": "ancient.vim",
-					"description": "This is a simple and generic syntax highlight for Vim, focused in terminal context. It use only the terminal colors of the ANSI Pattern.",
-					"list": {
-						"home":    {"endpoint": "ancient-vim"},
-						"wiki":    {"url": "gitlab.com/duckafire/ancient-vim#ancient-vim"},
-						"license": {"url": "mit-license.org"}
-					}
-				},
 				{
 					"title": "Design Patterns",
 					"description": "The purpose of this project is to introduce the main types of Design Pattern in programming, in a simple, easy, and didactic way.",
@@ -367,14 +341,6 @@
 					"description": "A simple collection of useful libraries to C.",
 					"list": {
 						"home":    {"endpoint": "utilities.c"},
-						"license": {"url": "mit-license.org"}
-					}
-				},
-				{
-					"title": "WebSet",
-					"description": "This Vim plugin is a set of syntax schemes, commands and hotkeys to easily the development of WEB FrontEnd projects.",
-					"list": {
-						"home": {"endpoint": "webset.vim"},
 						"license": {"url": "mit-license.org"}
 					}
 				}
